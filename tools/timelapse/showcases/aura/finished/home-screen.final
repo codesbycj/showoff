@@ -1,0 +1,153 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Plus, Volume2 } from 'lucide-react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { ActionRow } from '@/features/aura/components/action-row';
+import { CardStack } from '@/features/aura/components/card-stack';
+import { GoalRow } from '@/features/aura/components/goal-row';
+import { GreetingRow } from '@/features/aura/components/greeting-row';
+import { SectionHead } from '@/features/aura/components/section-head';
+import { TxnRow } from '@/features/aura/components/txn-row';
+import { PaymentCard } from '@/features/aura/components/payment-card';
+import { NAV_CLEARANCE, PillNav } from '@/features/aura/components/pill-nav';
+import { CARD, HOME, NAV, USER } from '@/features/aura/data/account';
+import { R, SP, TYPE, au, auraTheme } from '@/features/aura/theme';
+
+/**
+ * Screen 1 — home.
+ *
+ * One scrolling column with the dock floating over it. The dock is absolutely
+ * positioned rather than a sibling below the scroll, because the design has the
+ * page running underneath it — so the scroll carries `NAV_CLEARANCE` of bottom
+ * padding instead.
+ */
+export default function AuraHome() {
+  const insets = useSafeAreaInsets();
+  return (
+    <View style={[auraTheme, { flex: 1, backgroundColor: au.surface }]}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.margin,
+          paddingTop: insets.top + SP.md,
+          paddingBottom: NAV_CLEARANCE + insets.bottom,
+        }}
+      >
+        <GreetingRow
+          greeting={USER.greeting}
+          tagline={USER.tagline}
+          photo={require('../../../assets/images/aura/avatar.jpg')}
+          onPress={() => router.push('/aura/profile')}
+        />
+
+        <View style={{ marginTop: SP.lg + 8 }}>
+          <CardStack peek={CARD.peek}>
+            <PaymentCard
+              balanceLabel={CARD.balanceLabel}
+              balance={CARD.balance}
+              digits={CARD.digits}
+              topRight={
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 6,
+                    backgroundColor: 'rgba(255,255,255,0.18)',
+                    borderRadius: R.full,
+                    paddingHorizontal: 12,
+                    paddingVertical: 6,
+                  }}
+                >
+                  <Volume2 size={14} color={au.onPrimary} strokeWidth={2.4} />
+                  <Text style={[TYPE.labelSm, { color: au.onPrimary }]}>{CARD.kind}</Text>
+                </View>
+              }
+              footer={
+                <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[TYPE.labelSm, { color: 'rgba(255,255,255,0.7)' }]}>
+                      {CARD.holderLabel}
+                    </Text>
+                    <Text style={[TYPE.labelLg, { marginTop: 3, color: au.onPrimary }]}>
+                      {USER.name}
+                    </Text>
+                  </View>
+                  <View style={{ marginRight: SP.md }}>
+                    <Text style={[TYPE.labelSm, { color: 'rgba(255,255,255,0.7)' }]}>
+                      {CARD.expiresLabel}
+                    </Text>
+                    <Text style={[TYPE.labelLg, { marginTop: 3, color: au.onPrimary }]}>
+                      {CARD.expires}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      gap: 4,
+                      backgroundColor: au.surfaceLowest,
+                      borderRadius: R.full,
+                      paddingHorizontal: 12,
+                      paddingVertical: 8,
+                    }}
+                  >
+                    <Plus size={14} color={au.primary} strokeWidth={3} />
+                    <Text style={[TYPE.labelSm, { color: au.primary }]}>{CARD.addCard}</Text>
+                  </View>
+                </View>
+              }
+            />
+          </CardStack>
+        </View>
+
+        <View style={{ marginTop: SP.md }}>
+          <ActionRow actions={HOME.actions} />
+        </View>
+
+        <View style={{ marginTop: SP.md }}>
+          <GoalRow name={HOME.goal.name} note={HOME.goal.note} pct={HOME.goal.pct} />
+        </View>
+
+        <View style={{ marginTop: SP.lg }}>
+          <SectionHead title={HOME.expensesTitle} action={HOME.viewAll} />
+        </View>
+
+        <View
+          style={{
+            marginTop: SP.sm + 4,
+            backgroundColor: au.surfaceLowest,
+            borderRadius: R.lg,
+            paddingHorizontal: SP.md,
+            paddingVertical: SP.sm,
+          }}
+        >
+          {HOME.expenses.map((e) => (
+            <TxnRow key={e.key} name={e.name} when={e.when} amount={e.amount} icon={e.icon} />
+          ))}
+        </View>
+      </ScrollView>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: Math.max(insets.bottom, 10) + 14,
+        }}
+      >
+        <PillNav
+          items={NAV}
+          active="home"
+          onSelect={(k) => {
+            const item = NAV.find((n) => n.key === k);
+            if (item && k !== 'home') router.push(item.route);
+          }}
+        />
+      </View>
+    </View>
+  );
+}

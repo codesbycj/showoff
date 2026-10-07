@@ -1,0 +1,11 @@
+{
+ "boot-screen": "src/app/voteng/index.tsx",
+ "home-screen": "src/app/voteng/home.tsx",
+ "home-data": "src/features/voteng/data/home.ts",
+ "results-screen": "src/app/voteng/results.tsx",
+ "results-data": "src/features/voteng/data/results.ts",
+ "news-screen": "src/app/voteng/news.tsx",
+ "news-data": "src/features/voteng/data/news.ts",
+ "more-screen": "src/app/voteng/more.tsx",
+ "more-data": "src/features/voteng/data/more.ts"
+}

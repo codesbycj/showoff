@@ -1,0 +1,41 @@
+/** Everything the trade screen says, and the shape of its chart. */
+export const TRADE = {
+  title: 'Trade Ethereum',
+  priceLabel: 'Current Price',
+  amount: '$8,540',
+  cents: '.00',
+  delta: '8.29%',
+  buy: 'Buy',
+  sell: 'Sell',
+
+  ranges: ['1h', '2h', '8h', '1d', '1w', '1m', '1y'] as const,
+  activeRange: '1d',
+
+  /**
+   * The plot, lifted verbatim from the export's own SVG. It is already drawn
+   * on the 320×190 box the panel gives it, so nothing is re-fitted — a hand
+   * re-drawing would be a different curve, and this one is the reference.
+   */
+  path:
+    'M 35 152 C 45 150, 48 140, 52 142 C 56 145, 62 135, 68 128 C 74 120, 80 130, 86 110 ' +
+    'C 92 88, 98 75, 105 70 C 112 65, 115 85, 120 72 C 126 62, 130 95, 138 125 ' +
+    'C 144 145, 149 146, 155 125 C 160 100, 168 110, 175 140 C 180 160, 185 162, 192 145 ' +
+    'C 198 128, 204 125, 210 135 C 216 142, 222 110, 228 102 C 235 90, 242 75, 250 82',
+
+  lowLabel: '$4,960.00',
+  highLabel: '$8,540.00',
+
+  yAxis: ['$8,000', '$6,000', '$4,000', '$2,000', '$1,000', '$500'] as const,
+  xAxis: ['8:00', '10:00', '12:00', '14:00', '16:00', '18:00'] as const,
+
+  stats: [
+    // STEP 4.09 where it opened
+    // { key: 'open', value: '$342.56', label: 'Opening Price' },
+    // STEP 4.10 where it closed
+    // { key: 'prev', value: '$356.13', label: 'Previous Closing Price' },
+    // STEP 4.11 the week's swing
+    // { key: 'range', value: '$145.23 – $360.25', label: 'Weekly Range' },
+    // STEP 4.12 and how much moved
+    // { key: 'vol', value: '567,23 ETH', label: 'Volume' },
+  ],
+} as const;

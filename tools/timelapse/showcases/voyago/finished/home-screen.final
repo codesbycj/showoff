@@ -1,0 +1,94 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { CountryChips } from '@/features/voyago/components/country-chips';
+import { FeaturedCard } from '@/features/voyago/components/featured-card';
+import { HomeTitle } from '@/features/voyago/components/home-title';
+import { HotelPreviewCard } from '@/features/voyago/components/hotel-preview-card';
+import { SearchField } from '@/features/voyago/components/search-field';
+import { SectionHead } from '@/features/voyago/components/section-head';
+import { TabBar } from '@/features/voyago/components/tab-bar';
+import {
+  CHIPS,
+  FEATURED,
+  HOTEL_PREVIEW,
+  NAV,
+  SEARCH_PLACEHOLDER,
+  SECTIONS,
+} from '@/features/voyago/data/home';
+import { SP, voyagoTheme, vy } from '@/features/voyago/theme';
+
+/**
+ * Screen 1 — the discovery feed.
+ *
+ * The export draws its own iOS status bar and home indicator. Neither is
+ * rebuilt: the device supplies both, and the safe-area insets are what reserve
+ * room for them.
+ *
+ * Every destination this screen offers is wired here rather than inside a
+ * component — "View All" and the hotel teaser both go to the hotels list, and
+ * the Tickets tab goes to the boarding pass.
+ */
+export default function VoyagoHome() {
+  const insets = useSafeAreaInsets();
+  const [country, setCountry] = useState<string>(CHIPS[0].key);
+
+  return (
+    <View style={[voyagoTheme, { flex: 1, backgroundColor: vy.canvas }]}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingTop: insets.top + SP.md,
+          paddingHorizontal: SP.gutterHome,
+          paddingBottom: insets.bottom + 96,
+          gap: SP.lg,
+        }}
+      >
+        <HomeTitle />
+
+        <SearchField placeholder={SEARCH_PLACEHOLDER} />
+
+        <CountryChips chips={CHIPS} selected={country} onSelect={setCountry} />
+
+        <SectionHead
+          title={SECTIONS.nearby.title}
+          action={SECTIONS.nearby.action}
+          onAction={() => router.push('/voyago/hotels')}
+        />
+
+        <FeaturedCard
+          country={FEATURED.country}
+          city={FEATURED.city}
+          priceLabel={FEATURED.priceLabel}
+          price={FEATURED.price}
+          image={FEATURED.image}
+        />
+
+        <SectionHead title={SECTIONS.hotels.title} action={SECTIONS.hotels.action} size={14} />
+
+        <HotelPreviewCard
+          name={HOTEL_PREVIEW.name}
+          price={HOTEL_PREVIEW.price}
+          per={HOTEL_PREVIEW.per}
+          rating={HOTEL_PREVIEW.rating}
+          image={HOTEL_PREVIEW.image}
+          onPress={() => router.push('/voyago/hotels')}
+        />
+      </ScrollView>
+
+      <TabBar
+        items={NAV}
+        active="schedule"
+        inset={insets.bottom}
+        onSelect={(key) => {
+          if (key === 'tickets') router.push('/voyago/ticket');
+        }}
+      />
+    </View>
+  );
+}

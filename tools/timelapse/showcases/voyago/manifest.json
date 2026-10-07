@@ -1,0 +1,9 @@
+{
+ "home-screen": "src/app/voyago/index.tsx",
+ "home-data": "src/features/voyago/data/home.ts",
+ "hotels-screen": "src/app/voyago/hotels.tsx",
+ "hotels-data": "src/features/voyago/data/hotels.ts",
+ "hotels-card": "src/features/voyago/components/featured-hotel-card.tsx",
+ "ticket-screen": "src/app/voyago/ticket.tsx",
+ "ticket-pass": "src/features/voyago/components/boarding-pass.tsx"
+}

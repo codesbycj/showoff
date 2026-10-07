@@ -1,0 +1,494 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/home-title"
+   ],
+   "label": "import the masthead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "the masthead"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/search-field"
+   ],
+   "label": "import the search capsule"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "where would you like to go?"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/country-chips"
+   ],
+   "label": "import the destination chips"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "room for the destinations"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voyago/data/home.ts",
+    "uae"
+   ],
+   "label": "the one we are looking at"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voyago/data/home.ts",
+    "egypt"
+   ],
+   "label": "the one next door"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voyago/data/home.ts",
+    "bora"
+   ],
+   "label": "the one with no name"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/section-head"
+   ],
+   "label": "import the section head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "name the nearby rail"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/featured-card"
+   ],
+   "label": "import the Dubai hero"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the Dubai card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "name the hotels rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "name the hotels rail, a size down"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "<SectionHead title={SECTIONS.hotels.title} action={SECTIONS.hotels.action} size={22} />"
+   ],
+   "label": "the second head is a size down, not up"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/hotel-preview-card"
+   ],
+   "label": "import the hotel teaser"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the hotel teaser"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "@/features/voyago/components/tab-bar"
+   ],
+   "label": "import the floating nav"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voyago/data/home.ts",
+    "tickets"
+   ],
+   "label": "the tab we came from"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voyago/data/home.ts",
+    "schedule"
+   ],
+   "label": "the tab we are on"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voyago/data/home.ts",
+    "trips"
+   ],
+   "label": "the tab we have not been to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "pin the nav"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "pin the nav, on the right tab"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voyago/index.tsx",
+    "<TabBar"
+   ],
+   "label": "Schedule is the tab we are on, not Tickets"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-data",
+     "src/features/voyago/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/voyago/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "@/features/voyago/components/page-header"
+   ],
+   "label": "import the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "STEP 2.02"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "STEP 2.03"
+   ],
+   "label": "the header, the right way up"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "<PageHeader"
+   ],
+   "label": "the long line is the first one, not the second"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "@/features/voyago/components/featured-hotel-card"
+   ],
+   "label": "import the featured hotel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "STEP 2.06"
+   ],
+   "label": "the hotel the screen is about"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/featured-hotel-card.tsx",
+    "STEP 2.07"
+   ],
+   "label": "whose hotel this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/featured-hotel-card.tsx",
+    "STEP 2.08"
+   ],
+   "label": "the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/featured-hotel-card.tsx",
+    "STEP 2.09"
+   ],
+   "label": "what it costs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/featured-hotel-card.tsx",
+    "STEP 2.10"
+   ],
+   "label": "what people make of it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "@/features/voyago/components/stacked-hotel-card"
+   ],
+   "label": "import the stacked card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/hotels.tsx",
+    "STEP 2.12"
+   ],
+   "label": "room for the rest of them"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voyago/data/hotels.ts",
+    "grand"
+   ],
+   "label": "the orange one"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voyago/data/hotels.ts",
+    "caesars"
+   ],
+   "label": "the mint one"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voyago/data/hotels.ts",
+    "five"
+   ],
+   "label": "the one on top"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "hotels-card",
+     "src/features/voyago/components/featured-hotel-card.tsx"
+    ],
+    [
+     "hotels-data",
+     "src/features/voyago/data/hotels.ts"
+    ],
+    [
+     "hotels-screen",
+     "src/app/voyago/hotels.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "@/features/voyago/components/ticket-header"
+   ],
+   "label": "import the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "STEP 3.02"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "@/features/voyago/components/boarding-pass"
+   ],
+   "label": "import the pass"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "STEP 3.04"
+   ],
+   "label": "the pass itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.05"
+   ],
+   "label": "where you are sitting, and what you are on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.06"
+   ],
+   "label": "how you are travelling"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.07"
+   ],
+   "label": "and when"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.08"
+   ],
+   "label": "tear here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.09"
+   ],
+   "label": "where it is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.10"
+   ],
+   "label": "the badge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voyago/components/boarding-pass.tsx",
+    "STEP 3.11"
+   ],
+   "label": "the part the gate reads"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "@/features/voyago/components/ticket-dock"
+   ],
+   "label": "import the dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "STEP 3.13"
+   ],
+   "label": "the dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "STEP 3.14"
+   ],
+   "label": "the dock, labelled properly"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voyago/ticket.tsx",
+    "<TicketDock"
+   ],
+   "label": "the labels are the wrong way round"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "ticket-pass",
+     "src/features/voyago/components/boarding-pass.tsx"
+    ],
+    [
+     "ticket-screen",
+     "src/app/voyago/ticket.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

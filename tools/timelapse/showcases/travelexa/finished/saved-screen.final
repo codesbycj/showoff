@@ -1,0 +1,169 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { Pressable, ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { Dock } from '@/features/travelexa/components/dock';
+import { SavedCard } from '@/features/travelexa/components/saved-card';
+import { Symbol } from '@/features/travelexa/components/symbol';
+import { NAV } from '@/features/travelexa/data/home';
+import { COLLECTIONS, HEAD, TABS } from '@/features/travelexa/data/saved';
+import { ELEV, R, SP, TYPE, travelexaTheme, tx } from '@/features/travelexa/theme';
+
+/**
+ * Screen 4 — saved trips.
+ *
+ * The tab strip is a segmented control inside one track rather than three loose
+ * chips, so `ChipRail` is not reused here: these share a background and split
+ * the width evenly, where home's regions scroll and size to their labels.
+ *
+ * Removing a collection is wired but does not mutate the list — the reference
+ * has no empty state, so a screen that could be emptied would be inventing one.
+ * The heart toggles its own pressed feel and nothing else.
+ */
+export default function TravelexaSaved() {
+  const insets = useSafeAreaInsets();
+  const [tab, setTab] = useState<string>('destinations');
+
+  return (
+    <View style={[travelexaTheme, { flex: 1, backgroundColor: tx.surface }]}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom + 112,
+          gap: SP.lg,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            paddingHorizontal: SP.margin,
+            paddingTop: SP.md,
+            gap: SP.md,
+          }}
+        >
+          <View style={{ flexShrink: 1 }}>
+            <Text style={{ ...TYPE.headlineLg, color: tx.onSurface }}>{HEAD.title}</Text>
+            <Text style={{ ...TYPE.bodyMd, marginTop: 2, color: tx.onSurfaceVariant }}>
+              {HEAD.subtitle}
+            </Text>
+          </View>
+
+          <Pressable accessibilityRole="button" accessibilityLabel="Sort and organise">
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: R.full,
+                backgroundColor: tx.surfaceContainer,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Symbol name="tune" size={20} color={tx.onSurface} />
+            </View>
+          </Pressable>
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            marginHorizontal: SP.margin,
+            padding: 6,
+            borderRadius: R.full,
+            backgroundColor: tx.surfaceContainerLow,
+            ...ELEV.card,
+            shadowOpacity: 0.03,
+          }}
+        >
+          {TABS.map((t) => {
+            const on = t.key === tab;
+            return (
+              <Pressable key={t.key} style={{ flex: 1 }} onPress={() => setTab(t.key)}>
+                <View
+                  style={{
+                    paddingVertical: SP.sm,
+                    paddingHorizontal: SP.md - 4,
+                    borderRadius: R.full,
+                    alignItems: 'center',
+                    backgroundColor: on ? tx.primary : 'transparent',
+                  }}
+                >
+                  <Text
+                    numberOfLines={1}
+                    style={{ ...TYPE.labelMd, color: on ? tx.onPrimary : tx.onSurfaceVariant }}
+                  >
+                    {t.label}
+                  </Text>
+                </View>
+              </Pressable>
+            );
+          })}
+        </View>
+
+        <View style={{ gap: SP.md }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingHorizontal: SP.margin,
+            }}
+          >
+            <Text style={{ ...TYPE.labelLg, color: tx.onSurface }}>{HEAD.listTitle}</Text>
+            <Pressable hitSlop={8}>
+              <Text style={{ ...TYPE.labelMd, color: tx.secondary }}>{HEAD.edit}</Text>
+            </Pressable>
+          </View>
+
+          {COLLECTIONS.map((c) => (
+            <SavedCard key={c.key} item={c} onPress={() => router.push('/travelexa/destination')} />
+          ))}
+        </View>
+
+        <Pressable style={{ marginHorizontal: SP.margin }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 10,
+              height: 56,
+              borderRadius: R.full,
+              backgroundColor: tx.surfaceContainerHigh,
+            }}
+          >
+            <View
+              style={{
+                width: 28,
+                height: 28,
+                borderRadius: R.full,
+                backgroundColor: tx.primary,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Symbol name="add" size={18} color={tx.onPrimary} />
+            </View>
+            <Text style={{ ...TYPE.labelLg, color: tx.onSurface }}>{HEAD.create}</Text>
+          </View>
+        </Pressable>
+      </ScrollView>
+
+      <Dock
+        items={NAV}
+        active="saved"
+        inset={insets.bottom}
+        onSelect={(item) => {
+          if (item.key !== 'saved') router.push(item.route as never);
+        }}
+      />
+    </View>
+  );
+}

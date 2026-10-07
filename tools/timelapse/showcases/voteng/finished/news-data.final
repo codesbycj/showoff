@@ -1,0 +1,140 @@
+/**
+ * The News tab's content.
+ *
+ * This screen has no reference render behind it — the Stitch export stopped at
+ * home and results, and the News tab was a dead link in both. So it is designed
+ * from the same system rather than measured off a capture: the type scale, the
+ * radii, the card elevation and the chip shapes are the ones the two built
+ * screens already use, and nothing new was invented for it except the verdict
+ * palette, which is recorded in `theme.ts`.
+ *
+ * Every headline, outlet and timestamp here is fictional, and the photographs
+ * are free-licensed stand-ins that do not illustrate the stories they carry.
+ * See the note at the top of `assets/images/voteng/CREDITS.md`.
+ */
+
+export const NEWS_PAGE = {
+  title: 'News',
+  subtitle: 'Verified coverage, updated as results land',
+  filters: ['All', 'Election', 'Politics', 'Fact check', 'Updates'] as const,
+  topTitle: 'Top Stories',
+  topAction: 'See all',
+  factTitle: 'Fact Check',
+  factAction: 'How we verify',
+} as const;
+
+export type Story = {
+  key: string;
+  tag: string;
+  tagInk: string;
+  title: string;
+  /** Only the lead story carries a standfirst; the rows are headline-only. */
+  blurb?: string;
+  source: string;
+  when: string;
+  image: number;
+};
+
+/** The one story the screen opens on, given a full-bleed banner. */
+export const LEAD: Story = {
+  key: 'collation',
+  tag: 'Election',
+  tagInk: '#0B844D',
+  title: 'Collation enters final night as 96.8% of units report',
+  blurb:
+    'Returning officers in twelve states are still filing, but the national picture has barely moved since Tuesday.',
+  source: 'VoteNG Desk',
+  when: '18 min ago',
+  image: require('../../../../assets/images/voteng/news-queue.jpg'),
+};
+
+export const STORIES: readonly Story[] = [
+  {
+    key: 'register',
+    tag: 'Updates',
+    tagInk: '#065F46',
+    title: 'INEC releases final voter register for the 2026 ballot',
+    source: 'Federal Bulletin',
+    when: '2 hours ago',
+    image: require('../../../../assets/images/voteng/news-inec.jpg'),
+  },
+  {
+    key: 'turnout',
+    tag: 'Election',
+    tagInk: '#0B844D',
+    title: 'Turnout in Lagos runs ahead of the last three cycles',
+    source: 'Lagos Monitor',
+    when: '3 hours ago',
+    image: require('../../../../assets/images/voteng/news-lagos.jpg'),
+  },
+  {
+    key: 'transition',
+    tag: 'Politics',
+    tagInk: '#065F46',
+    title: 'Transition committee named ahead of the declaration',
+    source: 'Abuja Record',
+    when: '5 hours ago',
+    image: require('../../../../assets/images/voteng/news-secretariat.jpg'),
+  },
+  {
+    key: 'assembly',
+    tag: 'Politics',
+    tagInk: '#065F46',
+    title: 'National Assembly seats still too close to call in nine states',
+    source: 'Abuja Record',
+    when: '7 hours ago',
+    image: require('../../../../assets/images/voteng/news-assembly.jpg'),
+  },
+  {
+    key: 'observers',
+    tag: 'Updates',
+    tagInk: '#065F46',
+    title: 'Observer missions report a quiet second day of collation',
+    source: 'Civic Watch',
+    when: '9 hours ago',
+    image: require('../../../../assets/images/voteng/news-monument.jpg'),
+  },
+];
+
+export type Verdict = 'true' | 'false' | 'unclear';
+
+export type FactCheck = {
+  key: string;
+  claim: string;
+  verdict: Verdict;
+  detail: string;
+  source: string;
+};
+
+/**
+ * The fact-check rail.
+ *
+ * Its three verdicts are the one place this app puts a judgement on screen, so
+ * they are the one place it spends full-strength colour on something that is
+ * not a party — green, red and amber, each on its own pale wash, and each
+ * carrying the word as well as the colour so the verdict survives a
+ * screenshot, a colour-blind reader and a monochrome print.
+ */
+export const CHECKS: readonly FactCheck[] = [
+  {
+    key: 'result-sheets',
+    claim: 'Result sheets from Kano were uploaded twice',
+    verdict: 'false',
+    detail: 'Two scans of the same sheet were filed; the tally counted it once.',
+    source: 'Checked against the INEC upload log',
+  },
+  {
+    key: 'turnout-claim',
+    claim: 'Turnout passed 40% nationally for the first time since 2003',
+    verdict: 'true',
+    detail: 'Provisional turnout stands at 41.2% with 96.8% of units reporting.',
+    source: 'Checked against returning-officer filings',
+  },
+  {
+    key: 'deadline',
+    claim: 'Collation must finish within 48 hours of the close of polls',
+    verdict: 'unclear',
+    detail: 'The guideline sets a target, not a statutory deadline, and allows extensions.',
+    source: 'Checked against the 2026 election guidelines',
+  },
+];

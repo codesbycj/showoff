@@ -1,0 +1,129 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { ActivityList } from '@/features/volt/components/activity-list';
+import { BalanceCard } from '@/features/volt/components/balance-card';
+import { CashoutCard } from '@/features/volt/components/cashout-card';
+import { InsightsCard } from '@/features/volt/components/insights-card';
+import { ProfileCard } from '@/features/volt/components/profile-card';
+import { TabBar } from '@/features/volt/components/tab-bar';
+import { WalletHeader } from '@/features/volt/components/wallet-header';
+import { NAV } from '@/features/volt/data/home';
+import {
+  ACTIVITY,
+  ACTIVITY_HEAD,
+  BALANCE,
+  CASHOUT,
+  HEADER,
+  INSIGHTS,
+  PRESETS,
+  PROFILE,
+  STATS,
+} from '@/features/volt/data/wallet';
+import { SP, voltTheme, vt } from '@/features/volt/theme';
+
+/**
+ * Screen 5 — wallet, profile and cashout.
+ *
+ * The only screen whose header carries content, so it sits outside the scroll
+ * view and the content starts under it. The other four leave the export's fixed
+ * header empty and use the safe-area inset in its place.
+ *
+ * One selection lives here: the cashout preset. The export's script also
+ * rewrites the transfer button's label from the amount; the label is carried in
+ * the data at the reference's own value instead, so the screen never has to
+ * format currency.
+ */
+export default function VoltWallet() {
+  const insets = useSafeAreaInsets();
+  const [preset, setPreset] = useState<string>('500');
+
+  return (
+    <View style={[voltTheme, { flex: 1, backgroundColor: vt.surface }]}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: insets.top }}>
+        <WalletHeader greeting={HEADER.greeting} title={HEADER.title} avatar={HEADER.avatar} />
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.margin,
+          paddingBottom: insets.bottom + 110,
+          gap: SP.xl,
+        }}
+      >
+        <ProfileCard
+          name={PROFILE.name}
+          tier={PROFILE.tier}
+          handle={PROFILE.handle}
+          member={PROFILE.member}
+          photo={PROFILE.photo}
+          stats={STATS}
+        />
+
+        <BalanceCard
+          label={BALANCE.label}
+          currency={BALANCE.currency}
+          total={BALANCE.total}
+          audited={BALANCE.audited}
+          withdrawableLabel={BALANCE.withdrawableLabel}
+          withdrawable={BALANCE.withdrawable}
+          bonusLabel={BALANCE.bonusLabel}
+          bonus={BALANCE.bonus}
+          deposit={BALANCE.deposit}
+          cashout={BALANCE.cashout}
+        />
+
+        <CashoutCard
+          title={CASHOUT.title}
+          blurb={CASHOUT.blurb}
+          eta={CASHOUT.eta}
+          amountLabel={CASHOUT.amountLabel}
+          max={CASHOUT.max}
+          amount={CASHOUT.amount}
+          presets={PRESETS}
+          selectedPreset={preset}
+          destinationLabel={CASHOUT.destinationLabel}
+          change={CASHOUT.change}
+          card={CASHOUT.card}
+          cardNumber={CASHOUT.cardNumber}
+          bank={CASHOUT.bank}
+          cta={CASHOUT.cta}
+          security={CASHOUT.security}
+          onPreset={setPreset}
+        />
+
+        <InsightsCard
+          title={INSIGHTS.title}
+          month={INSIGHTS.month}
+          recordLabel={INSIGHTS.recordLabel}
+          wins={INSIGHTS.wins}
+          losses={INSIGHTS.losses}
+          ratio={INSIGHTS.ratio}
+          sportLabel={INSIGHTS.sportLabel}
+          sport={INSIGHTS.sport}
+          sportShare={INSIGHTS.sportShare}
+          bestLabel={INSIGHTS.bestLabel}
+          bestTicket={INSIGHTS.bestTicket}
+          bestAmount={INSIGHTS.bestAmount}
+        />
+
+        <ActivityList title={ACTIVITY_HEAD.title} action={ACTIVITY_HEAD.action} items={ACTIVITY} />
+      </ScrollView>
+
+      <TabBar
+        items={NAV}
+        active="profile"
+        inset={insets.bottom}
+        onSelect={(item) => {
+          if (item.key !== 'profile') router.push(item.route as never);
+        }}
+      />
+    </View>
+  );
+}

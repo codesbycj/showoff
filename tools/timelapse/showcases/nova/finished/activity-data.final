@@ -1,0 +1,118 @@
+import type { CoinKey } from '../theme';
+
+/** Everything the activity screen says. */
+export const ACTIVITY = {
+  title: 'Activity',
+  filters: ['All', 'Sent', 'Received', 'Trade', 'Staking'] as const,
+} as const;
+
+export type Entry = {
+  key: string;
+  coin: CoinKey;
+  title: string;
+  time: string;
+  delta: string;
+  deltaUp: boolean;
+  /** The crypto amount, signed. */
+  amount: string;
+  /** The fiat value, and how it should be coloured. */
+  value: string;
+  valueTone: 'gain' | 'loss' | 'muted';
+};
+
+export type Group = { key: string; label: string; count: string; entries: Entry[] };
+
+/**
+ * The list, grouped by day. Grouping lives in the data rather than being
+ * derived in the screen, because the reference's group labels are not all
+ * dates — "Today" and "Yesterday" sit beside "October 24, 2024".
+ */
+export const GROUPS: Group[] = [
+  {
+    key: 'today',
+    label: 'Today',
+    count: '3 transactions',
+    entries: [
+      {
+        key: 'btc',
+        coin: 'BTC',
+        title: 'Bought Bitcoin',
+        time: '14:56 PM',
+        delta: '+0.01%',
+        deltaUp: false,
+        amount: '+0.004 BTC',
+        value: '-$91.30',
+        valueTone: 'muted',
+      },
+      {
+        key: 'uni',
+        coin: 'UNI',
+        title: 'Swapped ETH to UNI',
+        time: '12:30 PM',
+        delta: '+0.51%',
+        deltaUp: true,
+        amount: '0.004 UNI',
+        value: '+$5,070',
+        valueTone: 'gain',
+      },
+      {
+        key: 'eth',
+        coin: 'ETH',
+        title: 'Received Ethereum',
+        time: '10:15 AM',
+        delta: '+0.61%',
+        deltaUp: true,
+        amount: '+0.004 ETH',
+        value: '+$9,090',
+        valueTone: 'gain',
+      },
+    ],
+  },
+  {
+    key: 'yesterday',
+    label: 'Yesterday',
+    count: '2 transactions',
+    entries: [
+      {
+        key: 'doge',
+        coin: 'DOGE',
+        title: 'Sent Dogecoin',
+        time: '16:42 PM',
+        delta: '+0.51%',
+        deltaUp: true,
+        amount: '-1,250 DOGE',
+        value: '-$230',
+        valueTone: 'loss',
+      },
+      {
+        key: 'sol',
+        coin: 'SOL',
+        title: 'Bought Solana',
+        time: '09:12 AM',
+        delta: '-0.24%',
+        deltaUp: false,
+        amount: '+2.45 SOL',
+        value: '-$342.50',
+        valueTone: 'muted',
+      },
+    ],
+  },
+  {
+    key: 'oct24',
+    label: 'October 24, 2024',
+    count: '1 transaction',
+    entries: [
+      {
+        key: 'ada',
+        coin: 'ADA',
+        title: 'Cardano Rewards',
+        time: '22:00 PM',
+        delta: '+1.12%',
+        deltaUp: true,
+        amount: '+18.2 ADA',
+        value: '+$6.45',
+        valueTone: 'gain',
+      },
+    ],
+  },
+];

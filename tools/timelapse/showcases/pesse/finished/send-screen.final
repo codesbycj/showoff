@@ -1,0 +1,225 @@
+import { Image } from 'expo-image';
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { Pressable, ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { DetailHeader } from '@/features/pesse/components/detail-header';
+import { Keypad } from '@/features/pesse/components/keypad';
+import { MiniCard } from '@/features/pesse/components/mini-card';
+import { NetworkBadge } from '@/features/pesse/components/network-badge';
+import { Symbol } from '@/features/pesse/components/symbol';
+import { SEND } from '@/features/pesse/data/send';
+import { LEVEL, R, SP, TYPE, ps, pesseTheme } from '@/features/pesse/theme';
+
+/**
+ * Screen 4 — send money.
+ *
+ * The keypad edits the amount for real. A transfer screen whose keys do nothing
+ * is the first thing anyone taps in a recording, and it is three lines of state
+ * to make it work.
+ *
+ * The lit key follows the last press rather than staying on the reference's
+ * `9` forever — the reference caught one frame mid-press, and reproducing that
+ * as a permanent highlight would be reproducing the screenshot rather than the
+ * design.
+ */
+export default function PesseSend() {
+  const insets = useSafeAreaInsets();
+  const [amount, setAmount] = useState<string>(SEND.amount);
+  const [lit, setLit] = useState<string | undefined>(SEND.pressedKey);
+
+  return (
+    <View style={[pesseTheme, { flex: 1, backgroundColor: ps.surface }]}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: insets.top, paddingHorizontal: SP.margin }}>
+        <DetailHeader
+          title={SEND.navTitle}
+          onBack={() => router.back()}
+          action="help"
+          photo={require('../../../assets/images/pesse/linda.jpg')}
+          onProfile={() => router.push('/pesse/settings')}
+        />
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.margin,
+          paddingTop: SP.sm,
+          paddingBottom: 110 + insets.bottom,
+        }}
+      >
+        <View
+          style={[
+            {
+              backgroundColor: ps.surfaceLowest,
+              borderRadius: R.lg,
+              padding: SP.md,
+              gap: SP.sm,
+            },
+            LEVEL.container,
+          ]}
+        >
+          <Text style={[TYPE.labelSm, { color: ps.secondary, letterSpacing: 0.8 }]}>
+            {SEND.sendToLabel.toUpperCase()}
+          </Text>
+
+          <View
+            style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}
+          >
+            <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: SP.md }}>
+              <View>
+                <Image
+                  source={require('../../../assets/images/pesse/rijal-send.jpg')}
+                  style={{ width: 48, height: 48, borderRadius: 24 }}
+                  contentFit="cover"
+                  transition={0}
+                />
+                <NetworkBadge
+                  badge={{ kind: 'icon', icon: 'check', fill: ps.lime, ink: ps.onLime }}
+                  size={14}
+                />
+              </View>
+
+              <View style={{ flex: 1, minWidth: 0 }}>
+                <Text style={[TYPE.headlineSm, { color: ps.onSurface }]} numberOfLines={1}>
+                  {SEND.recipient.name}
+                </Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 }}>
+                  <Text style={[TYPE.bodySm, { color: ps.secondary }]}>
+                    {SEND.recipient.account}
+                  </Text>
+                  <View
+                    style={{
+                      width: 4,
+                      height: 4,
+                      borderRadius: 2,
+                      backgroundColor: ps.outlineVariant,
+                    }}
+                  />
+                  <Text style={[TYPE.bodySm, { color: ps.secondary }]} numberOfLines={1}>
+                    {SEND.recipient.bank}
+                  </Text>
+                </View>
+              </View>
+            </View>
+
+            <ChangeButton />
+          </View>
+        </View>
+
+        <View style={{ alignItems: 'center', paddingVertical: SP.xl }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={[TYPE.display, { color: ps.onSurface }]}>${amount}</Text>
+            {/* The lime caret. A 3dp rule, not a text cursor — it has to sit
+                against the figure's cap height, which a caret glyph would not. */}
+            <View
+              style={{
+                width: 3,
+                height: 36,
+                borderRadius: 2,
+                backgroundColor: ps.lime,
+                marginLeft: 4,
+              }}
+            />
+          </View>
+          <Text style={[TYPE.labelSm, { color: ps.secondary, marginTop: 4 }]}>{SEND.feeNote}</Text>
+        </View>
+
+        <View
+          style={[
+            {
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              backgroundColor: ps.surfaceLowest,
+              borderRadius: R.lg,
+              padding: SP.md,
+              marginBottom: SP.lg,
+            },
+            LEVEL.container,
+          ]}
+        >
+          <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: SP.md }}>
+            <MiniCard last4={SEND.source.last4} />
+            <View style={{ flex: 1, minWidth: 0 }}>
+              <Text style={[TYPE.labelLg, { color: ps.onSurface }]} numberOfLines={1}>
+                {SEND.source.name}
+              </Text>
+              <Text style={[TYPE.bodySm, { color: ps.secondary, marginTop: 2 }]} numberOfLines={1}>
+                {SEND.source.balanceLabel}{' '}
+                <Text style={{ color: ps.onSurface }}>{SEND.source.balance}</Text>
+              </Text>
+            </View>
+          </View>
+
+          <ChangeButton onPress={() => router.push('/pesse/select-card')} />
+        </View>
+
+        <Keypad
+          lit={lit}
+          onKey={(key) => {
+            if (key.kind === 'backspace') {
+              setLit(undefined);
+              setAmount((a) => (a.length > 1 ? a.slice(0, -1) : '0'));
+              return;
+            }
+            setLit(key.value);
+            setAmount((a) => (a === '0' ? key.value : (a + key.value).slice(0, 9)));
+          }}
+        />
+      </ScrollView>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: SP.margin,
+          right: SP.margin,
+          bottom: Math.max(insets.bottom, 12) + 12,
+        }}
+      >
+        <Pressable onPress={() => router.back()} accessibilityRole="button">
+          <View
+            style={[
+              {
+                height: 60,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 10,
+                borderRadius: R.full,
+                backgroundColor: ps.inverse,
+              },
+              LEVEL.floating,
+            ]}
+          >
+            <Text style={[TYPE.labelLg, { color: ps.onInverse }]}>{SEND.cta}</Text>
+            <Symbol name="arrowForward" size={20} color={ps.onInverse} />
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+/** The grey "Change" pill, which both rows on this screen carry. */
+function ChangeButton({ onPress }: { onPress?: () => void }) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button">
+      <View
+        style={{
+          paddingHorizontal: 12,
+          paddingVertical: 6,
+          borderRadius: R.full,
+          backgroundColor: ps.surfaceContainer,
+          marginLeft: 8,
+        }}
+      >
+        <Text style={[TYPE.labelMd, { color: ps.onSurface }]}>{SEND.change}</Text>
+      </View>
+    </Pressable>
+  );
+}

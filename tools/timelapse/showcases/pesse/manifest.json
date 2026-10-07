@@ -1,0 +1,14 @@
+{
+ "boot-screen": "src/app/pesse/index.tsx",
+ "boot-data": "src/features/pesse/data/boot.ts",
+ "home-screen": "src/app/pesse/home.tsx",
+ "wallet-data": "src/features/pesse/data/wallet.ts",
+ "card-screen": "src/app/pesse/select-card.tsx",
+ "cards-data": "src/features/pesse/data/cards.ts",
+ "send-screen": "src/app/pesse/send.tsx",
+ "analytics-screen": "src/app/pesse/cards.tsx",
+ "analytics-data": "src/features/pesse/data/analytics.ts",
+ "settings-screen": "src/app/pesse/settings.tsx",
+ "settings-data": "src/features/pesse/data/settings.ts",
+ "profile-card": "src/features/pesse/components/profile-card.tsx"
+}

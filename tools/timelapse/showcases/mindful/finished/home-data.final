@@ -1,0 +1,106 @@
+import type { GlyphKind } from '../components/mood-glyphs';
+import { mp } from '../theme';
+
+/**
+ * The dashboard's content.
+ *
+ * The two metric tiles are given as bar *percentages* rather than heights,
+ * because that is how the export writes them (`h-[45%]` inside a fixed 64dp
+ * well) and resolving them to dp here would bake in the well's height twice.
+ * Their opacities are likewise the export's own `/20`, `/30`, `/50` steps — the
+ * bars are one colour at varying alpha, not seven colours.
+ */
+
+export const HOME = {
+  eyebrow: 'Welcome back',
+  name: 'Alex Miller',
+  date: 'Sep 14, 2025',
+  greeting: 'Hello Alex! How are you feeling today?',
+} as const;
+
+export type MoodChip = {
+  key: GlyphKind;
+  label: string;
+  /** The coloured well behind the glyph. */
+  well: string;
+  /** The glyph's stroke. */
+  ink: string;
+};
+
+export const MOOD_CHIPS: readonly MoodChip[] = [
+  { key: 'happy', label: 'Happy', well: mp.secondaryContainer, ink: mp.onSecondaryContainer },
+  { key: 'angry', label: 'Angry', well: mp.errorContainer, ink: mp.onErrorContainer },
+  { key: 'sleepy', label: 'Sleepy', well: mp.surfaceHighest, ink: mp.ink },
+  { key: 'bored', label: 'Bored', well: mp.tertiaryFixed, ink: mp.onTertiaryFixedVariant },
+];
+
+export type Metric = {
+  key: string;
+  title: string;
+  icon: 'bedtime' | 'radiology';
+  fill: string;
+  /** Title and icon colour. */
+  ink: string;
+  /** The bar colour, before opacity. */
+  bar: string;
+  /** Each bar's height as a fraction of the 64dp well, and its alpha. */
+  bars: readonly { h: number; o: number }[];
+  /** The big readout. Split so the unit can take its own style. */
+  stat: string;
+  statUnit?: string;
+  statColor: string;
+};
+
+export const METRICS: readonly Metric[] = [
+  {
+    key: 'sleep',
+    title: 'Sleep Duration',
+    icon: 'bedtime',
+    fill: mp.surfaceHighest,
+    ink: mp.ink,
+    bar: mp.primary,
+    bars: [
+      { h: 0.45, o: 0.2 },
+      { h: 0.7, o: 0.3 },
+      { h: 0.55, o: 0.2 },
+      { h: 0.9, o: 1 },
+      { h: 0.65, o: 0.5 },
+      { h: 0.4, o: 0.3 },
+      { h: 0.85, o: 0.8 },
+    ],
+    stat: '7h',
+    statUnit: '20min',
+    statColor: mp.ink,
+  },
+  {
+    key: 'stress',
+    title: 'Stress Indicator',
+    icon: 'radiology',
+    fill: mp.tertiaryFixed,
+    ink: mp.onTertiaryFixedVariant,
+    bar: mp.onTertiaryFixedVariant,
+    bars: [
+      { h: 0.25, o: 0.2 },
+      { h: 0.35, o: 0.3 },
+      { h: 0.5, o: 0.4 },
+      { h: 0.65, o: 0.6 },
+      { h: 0.8, o: 0.8 },
+      { h: 0.95, o: 1 },
+    ],
+    stat: 'High',
+    statColor: mp.onTertiaryFixed,
+  },
+];
+
+export const QUIZ = {
+  eyebrow: 'Yes or No Quiz',
+  counter: 'Question 1/8',
+  question: 'Have you been sleeping well recently?',
+  yes: 'Yes',
+  no: 'No',
+} as const;
+
+export const ROUTINE = {
+  title: 'Mindful Routine',
+  sub: '3 of 5 micro-goals achieved',
+} as const;

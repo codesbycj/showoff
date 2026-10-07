@@ -1,0 +1,186 @@
+/**
+ * Screen 2 content — live scores and schedule.
+ *
+ * This is the one screen with no usable reference render: Stitch's own
+ * `screen.png` came back empty apart from the dock, so everything here is read
+ * off the markup alone. That is the normal order of authority anyway — the
+ * markup is the spec and the PNG is only a check on it — but it is worth
+ * knowing that for this screen there was nothing to check against.
+ *
+ * `DATES`, `LEAGUES` and `MATCHES` carry explicit element types, because each is
+ * emptied one entry at a time for the timelapse and an empty array literal
+ * infers `never[]`.
+ */
+
+export const SEARCH = { placeholder: 'Search team, league, or match...' } as const;
+
+export type CalendarDay = { key: string; weekday: string; day: string };
+
+export const DATES: readonly CalendarDay[] = [
+  { key: '12', weekday: 'Sun', day: '12' },
+  { key: '13', weekday: 'Mon', day: '13' },
+  { key: '14', weekday: 'Tue', day: '14' },
+  { key: '15', weekday: 'Wed', day: '15' },
+  { key: '16', weekday: 'Thu', day: '16' },
+  { key: '17', weekday: 'Fri', day: '17' },
+  { key: '18', weekday: 'Sat', day: '18' },
+];
+
+export type League = {
+  key: string;
+  label: string;
+  icon: 'stars' | 'sportsSoccer' | 'shield' | 'militaryTech';
+};
+
+export const LEAGUES: readonly League[] = [
+  { key: 'ucl', label: 'UEFA Champions League', icon: 'stars' },
+  { key: 'epl', label: 'Premier League', icon: 'sportsSoccer' },
+  { key: 'laliga', label: 'La Liga', icon: 'shield' },
+  { key: 'seriea', label: 'Serie A', icon: 'militaryTech' },
+];
+
+export const BOARD = { title: "Live & Today's Fixtures", count: '3 Matches' } as const;
+
+export type Team = { name: string; side: string; crest: number };
+
+/** A 1/X/2 pill on a live card. */
+export type MicroOdd = { key: string; label: string; value: string };
+
+/** A stacked odds button on a scheduled card. */
+export type PreOdd = { key: string; label: string; value: string };
+
+/**
+ * One fixture.
+ *
+ * `kind` splits the card into its two real shapes rather than making every
+ * field optional: a live match shows a running clock, a score and three inline
+ * 1/X/2 pills over a social footer; a scheduled one shows a kickoff time, a VS
+ * badge and three stacked odds buttons over a projection footer. The shell
+ * around them — venue meta, the seven-column team grid, a bled footer strip — is
+ * the same, which is why they are still one component.
+ */
+export type Match =
+  | {
+      kind: 'live';
+      key: string;
+      venue: string;
+      venueIcon: 'stadium' | 'sportsSoccer';
+      clock: string;
+      home: Team;
+      away: Team;
+      score: { home: string; away: string };
+      /** Which side the lime highlight falls on, or neither. */
+      lead: 'home' | 'away' | null;
+      odds: readonly MicroOdd[];
+      activeOdd: string;
+      faces: readonly number[];
+      social: string;
+      action: string;
+    }
+  | {
+      kind: 'scheduled';
+      key: string;
+      venue: string;
+      venueIcon: 'schedule';
+      kickoff: string;
+      home: Team;
+      away: Team;
+      oddsTitle: string;
+      oddsTag: string;
+      odds: readonly PreOdd[];
+      insight: string;
+      action: string;
+    };
+
+export const MATCHES: readonly Match[] = [
+  {
+    kind: 'live',
+    key: 'che-mci',
+    venue: 'Stamford Bridge',
+    venueIcon: 'stadium',
+    clock: '1st 35:35',
+    home: {
+      name: 'Chelsea',
+      side: 'Home',
+      crest: require('../../../../assets/images/volt/crest-chelsea.jpg'),
+    },
+    away: {
+      name: 'Man City',
+      side: 'Away',
+      crest: require('../../../../assets/images/volt/crest-mancity.jpg'),
+    },
+    score: { home: '2', away: '0' },
+    lead: null,
+    odds: [
+      { key: '1', label: '1', value: '1.45' },
+      { key: 'x', label: 'X', value: '4.80' },
+      { key: '2', label: '2', value: '7.20' },
+    ],
+    activeOdd: '1',
+    faces: [
+      require('../../../../assets/images/volt/fan-2.jpg'),
+      require('../../../../assets/images/volt/fan-4.jpg'),
+      require('../../../../assets/images/volt/fan-5.jpg'),
+    ],
+    social: '2.1K People placed a bet',
+    action: 'Match Hub',
+  },
+  {
+    kind: 'live',
+    key: 'mun-fcb',
+    venue: 'Group Stage • Old Trafford',
+    venueIcon: 'sportsSoccer',
+    clock: '1st 34:34',
+    home: {
+      name: 'Man Utd',
+      side: 'Home',
+      crest: require('../../../../assets/images/volt/crest-manutd.jpg'),
+    },
+    away: {
+      name: 'FCB',
+      side: 'Away',
+      crest: require('../../../../assets/images/volt/crest-barcelona.jpg'),
+    },
+    score: { home: '1', away: '2' },
+    lead: 'away',
+    odds: [
+      { key: '1', label: '1', value: '3.85' },
+      { key: 'x', label: 'X', value: '3.10' },
+      { key: '2', label: '2', value: '1.82' },
+    ],
+    activeOdd: '2',
+    faces: [
+      require('../../../../assets/images/volt/fan-3.jpg'),
+      require('../../../../assets/images/volt/fan-6.jpg'),
+      require('../../../../assets/images/volt/fan-1.jpg'),
+    ],
+    social: '2.1K People placed a bet',
+    action: 'Match Hub',
+  },
+  {
+    kind: 'scheduled',
+    key: 'rma-fcb',
+    venue: 'Tonight • Santiago Bernabéu',
+    venueIcon: 'schedule',
+    kickoff: '20:45',
+    home: {
+      name: 'Real Madrid',
+      side: 'Home',
+      crest: require('../../../../assets/images/volt/crest-madrid.jpg'),
+    },
+    away: {
+      name: 'Bayern Munich',
+      side: 'Away',
+      crest: require('../../../../assets/images/volt/crest-bayern.jpg'),
+    },
+    oddsTitle: 'Match Odds (Full Time)',
+    oddsTag: 'Hot Bets',
+    odds: [
+      { key: 'rma', label: 'Real Madrid (1)', value: '2.10' },
+      { key: 'draw', label: 'Draw (X)', value: '3.40' },
+      { key: 'bay', label: 'Bayern (2)', value: '3.10' },
+    ],
+    insight: 'Madrid 68% win projection',
+    action: 'Set Alert',
+  },
+];

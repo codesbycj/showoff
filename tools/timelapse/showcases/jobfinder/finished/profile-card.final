@@ -1,0 +1,158 @@
+import { Check, MapPin } from 'lucide-react-native';
+import { Text, View } from 'react-native';
+
+import { PROFILE } from '../data/profile';
+import { CARD_SHADOW, FONT, R, jf } from '../theme';
+import { Avatar } from './avatar';
+import { StatTile } from './stat-tile';
+
+/**
+ * The profile header card: portrait, name, availability, and the four stats.
+ *
+ * A pale disc bleeds off the card's bottom-right corner. It is drawn *before*
+ * the content and clipped by the card, which is the one place in this showcase
+ * where a clip is unavoidable — so the card carries no elevation of its own and
+ * the shadow is put on a wrapper instead. A clip and an elevation on one View is
+ * the combination Android renders unreliably.
+ */
+export function ProfileCard({ photo }: { photo: number }) {
+  return (
+    <View style={[{ borderRadius: 28 }, CARD_SHADOW]}>
+      <View
+        style={{
+          backgroundColor: jf.card,
+          borderRadius: 28,
+          padding: 20,
+          overflow: 'hidden',
+        }}
+      >
+        <View
+          style={{
+            position: 'absolute',
+            right: -40,
+            bottom: -40,
+            width: 128,
+            height: 128,
+            borderRadius: 64,
+            backgroundColor: 'rgba(237,240,235,0.6)',
+          }}
+        />
+
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 16 }}>
+          <Avatar source={photo} size={72} ring={2} dot={jf.online} />
+
+          <View style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+              <Text
+                style={{
+                  fontFamily: FONT.bold,
+                  fontSize: 20,
+                  lineHeight: 26,
+                  letterSpacing: -0.5,
+                  color: jf.ink,
+                }}
+                numberOfLines={1}
+              >
+                {PROFILE.name}
+              </Text>
+              <View
+                style={{
+                  width: 16,
+                  height: 16,
+                  borderRadius: 8,
+                  backgroundColor: jf.verified,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Check size={10} color="#FFFFFF" strokeWidth={3.5} />
+              </View>
+            </View>
+
+            <Text
+              style={{
+                fontFamily: FONT.semibold,
+                fontSize: 12,
+                lineHeight: 17,
+                color: jf.muted,
+                marginTop: 2,
+              }}
+            >
+              {PROFILE.role}
+            </Text>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 6,
+                marginTop: 10,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 4,
+                  paddingHorizontal: 10,
+                  paddingVertical: 4,
+                  borderRadius: R.full,
+                  backgroundColor: '#E2F2E5',
+                }}
+              >
+                <View
+                  style={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: 3,
+                    backgroundColor: jf.online,
+                  }}
+                />
+                <Text
+                  style={{
+                    fontFamily: FONT.semibold,
+                    fontSize: 11,
+                    lineHeight: 15,
+                    color: '#15803D',
+                  }}
+                >
+                  {PROFILE.availability}
+                </Text>
+              </View>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+                <MapPin size={12} color={jf.muted} strokeWidth={2} />
+                <Text
+                  style={{
+                    fontFamily: FONT.medium,
+                    fontSize: 11,
+                    lineHeight: 15,
+                    color: jf.muted,
+                  }}
+                >
+                  {PROFILE.location}
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: 8,
+            marginTop: 20,
+            paddingTop: 16,
+            borderTopWidth: 1,
+            borderTopColor: '#EDF0EB',
+          }}
+        >
+          {PROFILE.stats.map((s) => (
+            <StatTile key={s.label} value={s.value} label={s.label} />
+          ))}
+        </View>
+      </View>
+    </View>
+  );
+}

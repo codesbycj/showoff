@@ -1,0 +1,134 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { AccountCard } from '@/features/voteng/components/account-card';
+import { PageHead } from '@/features/voteng/components/page-head';
+import { SectionHead } from '@/features/voteng/components/section-head';
+import { SettingsGroup, SettingsRow } from '@/features/voteng/components/settings-row';
+import { TabBar } from '@/features/voteng/components/tab-bar';
+import { Toggle } from '@/features/voteng/components/toggle';
+import { UnitCard } from '@/features/voteng/components/unit-card';
+import { NAV } from '@/features/voteng/data/election';
+import { ABOUT, ACCOUNT, FOOTER, MORE_PAGE, PREFS, TOOLS, UNIT } from '@/features/voteng/data/more';
+import { FONT, SP, vt, votengTheme } from '@/features/voteng/theme';
+
+/**
+ * Screen 5 — more.
+ *
+ * The personal half of the app. Home and results both answer "what is the
+ * country doing"; nothing until here answers "what about my vote". So this tab
+ * runs identity first — who you are and which unit you are registered at — then
+ * the tools that act on that, then what the app may send you, then the
+ * paperwork.
+ */
+export default function VotengMore() {
+  const insets = useSafeAreaInsets();
+  const [alerts, setAlerts] = useState<Record<string, boolean>>(
+    Object.fromEntries(PREFS.map((p) => [p.key, p.on])),
+  );
+
+  return (
+    <View style={[votengTheme, { flex: 1, backgroundColor: vt.canvas }]}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingTop: insets.top, paddingBottom: SP.xl }}
+      >
+        <PageHead title={MORE_PAGE.title} subtitle={MORE_PAGE.subtitle} />
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: SP.md }}>
+          <AccountCard
+            name={ACCOUNT.name}
+            meta={ACCOUNT.meta}
+            voterId={ACCOUNT.voterId}
+            action={ACCOUNT.action}
+          />
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: SP.md }}>
+          <UnitCard
+            label={UNIT.label}
+            name={UNIT.name}
+            code={UNIT.code}
+            where={`${UNIT.lga}, ${UNIT.state}`}
+            status={UNIT.status}
+          />
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: SP.lg + 4 }}>
+          <SectionHead title={MORE_PAGE.toolsTitle} />
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: 10 }}>
+          <SettingsGroup>
+            {TOOLS.map((row, i) => (
+              <SettingsRow key={row.key} row={row} divided={i > 0} />
+            ))}
+          </SettingsGroup>
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: SP.lg + 4 }}>
+          <SectionHead title={MORE_PAGE.prefsTitle} />
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: 10 }}>
+          <SettingsGroup>
+            {PREFS.map((p, i) => (
+              <SettingsRow
+                key={p.key}
+                row={{ label: p.label, note: p.note }}
+                divided={i > 0}
+                right={
+                  <Toggle
+                    on={alerts[p.key]}
+                    onChange={(next) => setAlerts((a) => ({ ...a, [p.key]: next }))}
+                  />
+                }
+              />
+            ))}
+          </SettingsGroup>
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: SP.lg + 4 }}>
+          <SectionHead title={MORE_PAGE.aboutTitle} />
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, marginTop: 10 }}>
+          <SettingsGroup>
+            {ABOUT.map((row, i) => (
+              <SettingsRow key={row.key} row={row} divided={i > 0} />
+            ))}
+          </SettingsGroup>
+        </View>
+
+        <Text
+          style={{
+            marginTop: SP.lg + 4,
+            textAlign: 'center',
+            fontFamily: FONT.medium,
+            fontSize: 10.5,
+            lineHeight: 15,
+            letterSpacing: 0.2,
+            color: vt.faint,
+          }}
+        >
+          {FOOTER}
+        </Text>
+      </ScrollView>
+
+      <TabBar
+        items={NAV}
+        active="more"
+        inset={insets.bottom}
+        onSelect={(k) => {
+          const item = NAV.find((n) => n.key === k);
+          if (item && k !== 'more') router.push(item.route);
+        }}
+      />
+    </View>
+  );
+}

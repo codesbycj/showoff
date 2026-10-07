@@ -1,0 +1,158 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { LogOut, QrCode, SlidersHorizontal } from 'lucide-react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { NAV_CLEARANCE, PillNav } from '@/features/aura/components/pill-nav';
+import { ProfileCard } from '@/features/aura/components/profile-card';
+import { ScreenHead } from '@/features/aura/components/screen-head';
+import { SettingsRow } from '@/features/aura/components/settings-row';
+import { NAV, PROFILE, USER } from '@/features/aura/data/account';
+import { R, SP, TYPE, au, auraTheme } from '@/features/aura/theme';
+
+/**
+ * Screen 4 — the account.
+ *
+ * Settings are grouped into labelled cards rather than one long list, which is
+ * what lets the rows drop their own headings — a row only has to say what it is,
+ * not which part of the app it belongs to.
+ */
+const PHOTO = require('../../../assets/images/aura/avatar.jpg');
+
+function IconButton({ children }: { children: React.ReactNode }) {
+  return (
+    <View
+      style={{
+        width: 40,
+        height: 40,
+        borderRadius: 13,
+        backgroundColor: au.surfaceLowest,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {children}
+    </View>
+  );
+}
+
+export default function AuraProfile() {
+  const insets = useSafeAreaInsets();
+  return (
+    <View style={[auraTheme, { flex: 1, backgroundColor: au.surface }]}>
+      <StatusBar style="dark" />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.margin,
+          paddingTop: insets.top + SP.md,
+          paddingBottom: NAV_CLEARANCE + insets.bottom,
+        }}
+      >
+        <ScreenHead
+          title={PROFILE.title}
+          subtitle={PROFILE.subtitle}
+          trailing={
+            <View style={{ flexDirection: 'row', gap: 8 }}>
+              <IconButton>
+                <QrCode size={19} color={au.onSurface} strokeWidth={2.2} />
+              </IconButton>
+              <IconButton>
+                <SlidersHorizontal size={19} color={au.onSurface} strokeWidth={2.2} />
+              </IconButton>
+            </View>
+          }
+        />
+
+        <View style={{ marginTop: SP.md }}>
+          <ProfileCard
+            photo={PHOTO}
+            name={USER.name}
+            handle={USER.handle}
+            email={USER.email}
+            tier={USER.tier}
+          />
+        </View>
+
+        {PROFILE.groups.map((g) => (
+          <View key={g.key} style={{ marginTop: SP.lg }}>
+            <Text style={[TYPE.labelSm, { marginLeft: 4, color: au.onSurfaceVariant }]}>
+              {g.title}
+            </Text>
+            <View
+              style={{
+                marginTop: SP.sm,
+                backgroundColor: au.surfaceLowest,
+                borderRadius: R.lg,
+                paddingHorizontal: SP.md,
+                paddingVertical: SP.xs,
+              }}
+            >
+              {g.rows.map((r, i) => (
+                <SettingsRow
+                  key={r.key}
+                  name={r.name}
+                  note={r.note}
+                  icon={r.icon}
+                  badge={'badge' in r ? r.badge : undefined}
+                  toggle={'toggle' in r ? r.toggle : undefined}
+                  dot={'dot' in r ? r.dot : undefined}
+                  first={i === 0}
+                />
+              ))}
+            </View>
+          </View>
+        ))}
+
+        <Pressable>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 8,
+              marginTop: SP.lg,
+              backgroundColor: au.errorContainer,
+              borderRadius: R.full,
+              paddingVertical: 15,
+            }}
+          >
+            <LogOut size={18} color={au.error} strokeWidth={2.4} />
+            <Text style={[TYPE.labelLg, { color: au.error }]}>{PROFILE.logOut}</Text>
+          </View>
+        </Pressable>
+
+        <View style={{ marginTop: SP.md, alignItems: 'center' }}>
+          <Text style={[TYPE.bodySm, { color: au.onSurfaceVariant }]}>{PROFILE.version}</Text>
+          <View style={{ flexDirection: 'row', gap: 6, marginTop: 4 }}>
+            {PROFILE.legal.map((l, i) => (
+              <View key={l} style={{ flexDirection: 'row', gap: 6 }}>
+                {i > 0 ? <Text style={[TYPE.bodySm, { color: au.outline }]}>•</Text> : null}
+                <Text style={[TYPE.bodySm, { color: au.primary }]}>{l}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      </ScrollView>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: Math.max(insets.bottom, 10) + 14,
+        }}
+      >
+        <PillNav
+          items={NAV}
+          active="profile"
+          onSelect={(k) => {
+            const item = NAV.find((n) => n.key === k);
+            if (item && k !== 'profile') router.push(item.route);
+          }}
+        />
+      </View>
+    </View>
+  );
+}

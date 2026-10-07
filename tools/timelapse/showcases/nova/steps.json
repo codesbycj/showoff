@@ -1,0 +1,748 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "a sticker on the corner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "say what it does"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/index.tsx",
+    "@/features/nova/components/hero-artwork"
+   ],
+   "label": "the thing they came to see"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a coin and a wallet"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/onboard.ts",
+    "easy"
+   ],
+   "label": "one word at a time"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/onboard.ts",
+    "wayto"
+   ],
+   "label": "the second line"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/onboard.ts",
+    "investin"
+   ],
+   "label": "the third"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/onboard.ts",
+    "crypto"
+   ],
+   "label": "and what it is all for"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/index.tsx",
+    "@/features/nova/components/start-button"
+   ],
+   "label": "a way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and a way to begin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the small print"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/nova/index.tsx",
+    [
+     "// MISTAKE 1.12",
+     "opacity: 0.25,"
+    ]
+   ],
+   "label": "the sub-caption came in almost invisible"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "welcome-data",
+     "src/features/nova/data/onboard.ts"
+    ],
+    [
+     "welcome-screen",
+     "src/app/nova/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/home.tsx",
+    "@/features/nova/components/bits"
+   ],
+   "label": "the small shared parts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.02"
+   ],
+   "label": "who is looking"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/home.tsx",
+    "@/features/nova/components/balance-card"
+   ],
+   "label": "the money card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.04"
+   ],
+   "label": "seventy-four thousand"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/nova/home.tsx",
+    [
+     "// MISTAKE 2.05",
+     "flexDirection: 'column',"
+    ]
+   ],
+   "label": "the three buttons came in stacked"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/home.tsx",
+    "@/features/nova/components/promo-banner"
+   ],
+   "label": "an offer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.07"
+   ],
+   "label": "zero fees this month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.08"
+   ],
+   "label": "name the list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.09"
+   ],
+   "label": "a rail to sort it by"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/home.tsx",
+    "@/features/nova/components/market-row"
+   ],
+   "label": "a line per coin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.11"
+   ],
+   "label": "fill the market in"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/market.ts",
+    "BTC"
+   ],
+   "label": "the big one"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/market.ts",
+    "ETH"
+   ],
+   "label": "and the other big one"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/market.ts",
+    "SOL"
+   ],
+   "label": "a fast one"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/market.ts",
+    "UNI"
+   ],
+   "label": "one that is down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/home.tsx",
+    "@/features/nova/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/home.tsx",
+    "STEP 2.17"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-data",
+     "src/features/nova/data/market.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/nova/home.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "@/features/nova/components/bits"
+   ],
+   "label": "the small shared parts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "STEP 3.02"
+   ],
+   "label": "the bar across the top"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "@/features/nova/components/balance-card"
+   ],
+   "label": "the money card again"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "STEP 3.04"
+   ],
+   "label": "sixty-two thousand"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "@/features/nova/components/txn-row"
+   ],
+   "label": "things to do, and what was done"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "STEP 3.06"
+   ],
+   "label": "four things you can do"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "STEP 3.07"
+   ],
+   "label": "name the list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "STEP 3.08"
+   ],
+   "label": "fill the ledger"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    [
+     "// MISTAKE 3.09",
+     "marginHorizontal: 34,"
+    ]
+   ],
+   "label": "the ledger came in inset from both edges"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/wallet.ts",
+    "btc"
+   ],
+   "label": "a bitcoin buy"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/wallet.ts",
+    "uni"
+   ],
+   "label": "a swap"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/wallet.ts",
+    "eth"
+   ],
+   "label": "some ether in"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/wallet.ts",
+    "doge"
+   ],
+   "label": "and a little doge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "@/features/nova/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/wallet.tsx",
+    "STEP 3.15"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "wallet-data",
+     "src/features/nova/data/wallet.ts"
+    ],
+    [
+     "wallet-screen",
+     "src/app/nova/wallet.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "4": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "@/features/nova/components/bits"
+   ],
+   "label": "the small shared parts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "STEP 4.02"
+   ],
+   "label": "name the pair"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "STEP 4.03"
+   ],
+   "label": "what it costs right now"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "STEP 4.04"
+   ],
+   "label": "how far back to look"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "@/features/nova/components/price-chart"
+   ],
+   "label": "the chart, and the tiles under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "STEP 4.06"
+   ],
+   "label": "draw the day"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/nova/trade.tsx",
+    [
+     "// MISTAKE 4.07",
+     "transform: [{ scaleY: 0.55 }],"
+    ]
+   ],
+   "label": "the chart came in squashed to half its height"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "STEP 4.08"
+   ],
+   "label": "the numbers behind it"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/trade.ts",
+    "open"
+   ],
+   "label": "where it opened"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/trade.ts",
+    "prev"
+   ],
+   "label": "where it closed"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/trade.ts",
+    "range"
+   ],
+   "label": "the week's swing"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/nova/data/trade.ts",
+    "vol"
+   ],
+   "label": "and how much moved"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/trade.tsx",
+    "STEP 4.13"
+   ],
+   "label": "and a way out of the position"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "trade-data",
+     "src/features/nova/data/trade.ts"
+    ],
+    [
+     "trade-screen",
+     "src/app/nova/trade.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "5": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "@/features/nova/components/bits"
+   ],
+   "label": "the small shared parts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "STEP 5.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "STEP 5.03"
+   ],
+   "label": "a rail to narrow it down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "@/features/nova/components/activity-row"
+   ],
+   "label": "a line per movement"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "STEP 5.05"
+   ],
+   "label": "group it by the day"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/nova/activity.tsx",
+    [
+     "// MISTAKE 5.06",
+     "gap: 0,"
+    ]
+   ],
+   "label": "every group came in crushed together"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/activity.ts",
+    "today"
+   ],
+   "label": "what happened today"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/activity.ts",
+    "yesterday"
+   ],
+   "label": "and yesterday"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/activity.ts",
+    "oct24"
+   ],
+   "label": "and back in october"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "@/features/nova/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/activity.tsx",
+    "STEP 5.11"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "activity-data",
+     "src/features/nova/data/activity.ts"
+    ],
+    [
+     "activity-screen",
+     "src/app/nova/activity.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "6": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "@/features/nova/components/bits"
+   ],
+   "label": "the small shared parts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "STEP 6.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "@/features/nova/components/profile-banner"
+   ],
+   "label": "who the account belongs to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "STEP 6.04"
+   ],
+   "label": "the account banner"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "@/features/nova/components/settings-row"
+   ],
+   "label": "a row per preference"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "STEP 6.06"
+   ],
+   "label": "stack the groups"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/nova/settings.tsx",
+    [
+     "// MISTAKE 6.07",
+     "paddingLeft: 56,"
+    ]
+   ],
+   "label": "the groups came in pushed off to the right"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/settings.ts",
+    "security"
+   ],
+   "label": "locking it down"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/nova/data/settings.ts",
+    "prefs"
+   ],
+   "label": "and the preferences"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "@/features/nova/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nova/settings.tsx",
+    "STEP 6.11"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "settings-data",
+     "src/features/nova/data/settings.ts"
+    ],
+    [
+     "settings-screen",
+     "src/app/nova/settings.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

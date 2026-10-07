@@ -1,0 +1,10 @@
+{
+ "splash-screen": "src/app/auralegal/index.tsx",
+ "explore-screen": "src/app/auralegal/explore.tsx",
+ "explore-data": "src/features/auralegal/data/explore.ts",
+ "explore-hero": "src/features/auralegal/components/hero-card.tsx",
+ "profile-screen": "src/app/auralegal/profile.tsx",
+ "profile-data": "src/features/auralegal/data/profile.ts",
+ "booking-screen": "src/app/auralegal/booking.tsx",
+ "booking-data": "src/features/auralegal/data/booking.ts"
+}

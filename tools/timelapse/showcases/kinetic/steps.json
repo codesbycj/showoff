@@ -1,0 +1,673 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "@/features/kinetic/components/bits"
+   ],
+   "label": "the shared kit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "name the app"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "@/features/kinetic/components/home-cards"
+   ],
+   "label": "the cards this screen is made of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "where it is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "somewhere to look things up"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "@/features/kinetic/components/parcel-art"
+   ],
+   "label": "a van and a box"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "two things you can start"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    [
+     "// MISTAKE 1.08",
+     "flexDirection: 'column',"
+    ]
+   ],
+   "label": "the two cards came in stacked"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "name the live one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the shipment in flight"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "name the older ones"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "stack the history"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "@/features/kinetic/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/home.ts",
+    "h314"
+   ],
+   "label": "the mac mini"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/home.ts",
+    "k378"
+   ],
+   "label": "the speaker"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/home.ts",
+    "d992"
+   ],
+   "label": "and the drone"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-data",
+     "src/features/kinetic/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/kinetic/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    "@/features/kinetic/components/bits"
+   ],
+   "label": "the shared kit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    "STEP 2.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    "@/features/kinetic/components/map-canvas"
+   ],
+   "label": "a map to put it on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    "STEP 2.04"
+   ],
+   "label": "draw the streets"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    "@/features/kinetic/components/tracking-sheet"
+   ],
+   "label": "the route sheet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    "STEP 2.06"
+   ],
+   "label": "the details sheet"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/kinetic/tracking.tsx",
+    [
+     "// MISTAKE 2.07",
+     "marginTop: 64,"
+    ]
+   ],
+   "label": "the sheet came in floating away from the map"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/kinetic/data/tracking.ts",
+    "from"
+   ],
+   "label": "where it came from"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/kinetic/data/tracking.ts",
+    "to"
+   ],
+   "label": "where it is going"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/kinetic/data/tracking.ts",
+    "customer"
+   ],
+   "label": "who is waiting for it"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/kinetic/data/tracking.ts",
+    "cost"
+   ],
+   "label": "what it cost"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/kinetic/data/tracking.ts",
+    "qty"
+   ],
+   "label": "how many boxes"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/kinetic/data/tracking.ts",
+    "weight"
+   ],
+   "label": "and how heavy"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "tracking-data",
+     "src/features/kinetic/data/tracking.ts"
+    ],
+    [
+     "tracking-screen",
+     "src/app/kinetic/tracking.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "@/features/kinetic/components/bits"
+   ],
+   "label": "the shared kit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "STEP 3.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "@/features/kinetic/components/parcel-card"
+   ],
+   "label": "a card per shipment"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "STEP 3.04"
+   ],
+   "label": "search the manifest"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "STEP 3.05"
+   ],
+   "label": "two numbers worth knowing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "STEP 3.06"
+   ],
+   "label": "a rail to filter by"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "STEP 3.07"
+   ],
+   "label": "stack the shipments"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    [
+     "// MISTAKE 3.08",
+     "width: '68%',"
+    ]
+   ],
+   "label": "every card came in squeezed to two thirds"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/parcels.ts",
+    "h314"
+   ],
+   "label": "one in transit"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/parcels.ts",
+    "d992"
+   ],
+   "label": "one out for delivery"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/parcels.ts",
+    "k378"
+   ],
+   "label": "one already delivered"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/parcels.ts",
+    "b102"
+   ],
+   "label": "one still packing"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/parcels.ts",
+    "x772"
+   ],
+   "label": "and one cancelled"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "@/features/kinetic/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/parcels.tsx",
+    "STEP 3.15"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "parcels-data",
+     "src/features/kinetic/data/parcels.ts"
+    ],
+    [
+     "parcels-screen",
+     "src/app/kinetic/parcels.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "4": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "@/features/kinetic/components/bits"
+   ],
+   "label": "the shared kit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "STEP 4.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "@/features/kinetic/components/map-canvas"
+   ],
+   "label": "a map to put them on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "STEP 4.04"
+   ],
+   "label": "put the city down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "@/features/kinetic/components/fleet-panel"
+   ],
+   "label": "the dispatch panel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "STEP 4.06"
+   ],
+   "label": "who is driving what"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    [
+     "// MISTAKE 4.07",
+     "marginTop: 40,"
+    ]
+   ],
+   "label": "the panel came in adrift from the map"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "STEP 4.08"
+   ],
+   "label": "who else is out there"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "@/features/kinetic/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "STEP 4.11"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/fleet.ts",
+    "tariq"
+   ],
+   "label": "a bike nearby"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/fleet.ts",
+    "mansoor"
+   ],
+   "label": "and a truck loading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/fleet.tsx",
+    "STEP 4.14"
+   ],
+   "label": "the numbers for the day"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "fleet-data",
+     "src/features/kinetic/data/fleet.ts"
+    ],
+    [
+     "fleet-screen",
+     "src/app/kinetic/fleet.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "5": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "@/features/kinetic/components/bits"
+   ],
+   "label": "the shared kit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.02"
+   ],
+   "label": "name the account"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "@/features/kinetic/components/profile-cards"
+   ],
+   "label": "the account cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.04"
+   ],
+   "label": "who it belongs to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.05"
+   ],
+   "label": "three numbers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.06"
+   ],
+   "label": "where parcels land"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    [
+     "// MISTAKE 5.07",
+     "transform: [{ rotate: '-4deg' }],"
+    ]
+   ],
+   "label": "the drop-off card came in tipped over"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.08"
+   ],
+   "label": "every preference"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.09"
+   ],
+   "label": "and a way out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "@/features/kinetic/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kinetic/profile.tsx",
+    "STEP 5.11"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/profile.ts",
+    "shipping"
+   ],
+   "label": "shipping preferences"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/profile.ts",
+    "billing"
+   ],
+   "label": "logistics and billing"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/kinetic/data/profile.ts",
+    "support"
+   ],
+   "label": "support and legal"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "profile-data",
+     "src/features/kinetic/data/profile.ts"
+    ],
+    [
+     "profile-screen",
+     "src/app/kinetic/profile.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

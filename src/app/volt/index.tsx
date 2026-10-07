@@ -1,0 +1,114 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { FeaturedMatchCard } from '@/features/volt/components/featured-match-card';
+import { FixtureCard } from '@/features/volt/components/fixture-card';
+import { HeroTitle } from '@/features/volt/components/hero-title';
+import { QuickOddsCard } from '@/features/volt/components/quick-odds-card';
+import { SectionHead } from '@/features/volt/components/section-head';
+import { SportChips } from '@/features/volt/components/sport-chips';
+import { TabBar } from '@/features/volt/components/tab-bar';
+import {
+  FEATURED,
+  FIXTURE,
+  HERO,
+  NAV,
+  ODDS,
+  QUICK,
+  SPORTS,
+  TOP_EVENTS,
+} from '@/features/volt/data/home';
+import { SP, voltTheme, vt } from '@/features/volt/theme';
+
+/**
+ * Screen 1 — explore / top events.
+ *
+ * The export reserves 80dp at the top for a fixed header that is empty on this
+ * screen: it carries a blur and a hairline shadow and no content. That is
+ * rebuilt as the safe-area inset plus the gutter rather than a spacer, which
+ * keeps the headline clear of the real status bar.
+ *
+ * Every destination is wired here — the hero's Bet Slip button and the fixture
+ * card's "Watch Live Stream" both leave this screen, and the dock reaches the
+ * other four.
+ */
+export default function VoltExplore() {
+  const insets = useSafeAreaInsets();
+  const [sport, setSport] = useState<string>('football');
+  const [odd, setOdd] = useState<string>('draw');
+
+  return (
+    <View style={[voltTheme, { flex: 1, backgroundColor: vt.surface }]}>
+      <StatusBar style="light" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingTop: insets.top + SP.gutter,
+          paddingHorizontal: SP.margin,
+          paddingBottom: insets.bottom + 110,
+          gap: SP.lg,
+        }}
+      >
+        <HeroTitle lead={HERO.lead} accent={HERO.accent} blurb={HERO.blurb} />
+
+        <SportChips sports={SPORTS} selected={sport} onSelect={setSport} />
+
+        <SectionHead
+          title={TOP_EVENTS.title}
+          action={TOP_EVENTS.action}
+          onAction={() => router.push('/volt/scores')}
+        />
+
+        <FeaturedMatchCard
+          league={FEATURED.league}
+          status={FEATURED.status}
+          home={FEATURED.home}
+          away={FEATURED.away}
+          score={FEATURED.score}
+          clock={FEATURED.clock}
+          momentum={FEATURED.momentum}
+          cta={FEATURED.cta}
+          onPress={() => router.push('/volt/slip')}
+        />
+
+        <FixtureCard
+          league={FIXTURE.league}
+          status={FIXTURE.status}
+          home={FIXTURE.home}
+          away={FIXTURE.away}
+          score={FIXTURE.score}
+          clock={FIXTURE.clock}
+          activity={FIXTURE.activity}
+          action={FIXTURE.action}
+          faces={FIXTURE.faces}
+          onPress={() => router.push('/volt/stream')}
+        />
+
+        <QuickOddsCard
+          title={QUICK.title}
+          sync={QUICK.sync}
+          odds={ODDS}
+          selected={odd}
+          stakeLabel={QUICK.stakeLabel}
+          stake={QUICK.stake}
+          cta={QUICK.cta}
+          onSelect={setOdd}
+          onLock={() => router.push('/volt/slip')}
+        />
+      </ScrollView>
+
+      <TabBar
+        items={NAV}
+        active="explore"
+        inset={insets.bottom}
+        onSelect={(item) => {
+          if (item.key !== 'explore') router.push(item.route as never);
+        }}
+      />
+    </View>
+  );
+}

@@ -1,0 +1,896 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "@/features/jobfinder/components/hero-collage"
+   ],
+   "label": "the wall of faces"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "hang them in the top half"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "senior"
+   ],
+   "label": "and one over its shoulder"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "curly"
+   ],
+   "label": "one more up top"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "young"
+   ],
+   "label": "drift into the middle"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "grey"
+   ],
+   "label": "the second-biggest face"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "micro"
+   ],
+   "label": "a small one at the right"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "side"
+   ],
+   "label": "and its opposite number"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "hero"
+   ],
+   "label": "the one the screen is about"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    "blonde"
+   ],
+   "label": "fill the last gap"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/jobfinder/data/onboarding.ts",
+    [
+     "// MISTAKE 1.11",
+     "ring: 11,"
+    ]
+   ],
+   "label": "the first face came in wearing a picture frame"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/hero-collage.tsx",
+    "STEP 1.12"
+   ],
+   "label": "a tab hanging off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/hero-collage.tsx",
+    "STEP 1.13"
+   ],
+   "label": "a lime tile"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/hero-collage.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and a plum one, under the face that clips it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/hero-collage.tsx",
+    "STEP 1.15"
+   ],
+   "label": "an N in a black circle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/hero-collage.tsx",
+    "STEP 1.16"
+   ],
+   "label": "one last badge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/hero-collage.tsx",
+    "STEP 1.17"
+   ],
+   "label": "count the crowd"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "say what this is for"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "@/features/jobfinder/components/comet"
+   ],
+   "label": "the sparkle between the words"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "the second line, with the comet on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and the small print"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "@/features/jobfinder/components/pill-button"
+   ],
+   "label": "the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "press here to start"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "ob-collage",
+     "src/features/jobfinder/components/hero-collage.tsx"
+    ],
+    [
+     "ob-data",
+     "src/features/jobfinder/data/onboarding.ts"
+    ],
+    [
+     "ob-screen",
+     "src/app/jobfinder/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "@/features/jobfinder/components/greeting-row"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "STEP 2.02"
+   ],
+   "label": "greet them by name"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "@/features/jobfinder/components/filter-pills"
+   ],
+   "label": "the filter row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "STEP 2.04"
+   ],
+   "label": "New, Hot, Near, Remote"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "@/features/jobfinder/components/job-card"
+   ],
+   "label": "a listing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "STEP 2.06"
+   ],
+   "label": "stack the listings"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/jobs.ts",
+    "js"
+   ],
+   "label": "the second listing"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/jobs.ts",
+    "smm"
+   ],
+   "label": "the third"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/jobs.ts",
+    "art"
+   ],
+   "label": "and the fourth"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    [
+     "// MISTAKE 2.10",
+     "marginLeft: 36,"
+    ]
+   ],
+   "label": "the whole list came in shoved to one side"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "@/features/jobfinder/components/tab-bar"
+   ],
+   "label": "somewhere to go next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/home.tsx",
+    "STEP 2.12"
+   ],
+   "label": "float the dock over the page"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-screen",
+     "src/app/jobfinder/home.tsx"
+    ],
+    [
+     "jobs-data",
+     "src/features/jobfinder/data/jobs.ts"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "@/features/jobfinder/components/screen-head"
+   ],
+   "label": "back, title, star"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.02"
+   ],
+   "label": "name the role"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "@/features/jobfinder/components/double-badge"
+   ],
+   "label": "the paired discs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.04"
+   ],
+   "label": "who is hiring"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "@/features/jobfinder/components/capsule"
+   ],
+   "label": "the location capsules"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.06"
+   ],
+   "label": "where, and how"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "@/features/jobfinder/components/panel"
+   ],
+   "label": "a block you read rather than tap"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.08"
+   ],
+   "label": "what the job is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "@/features/jobfinder/components/numbered-item"
+   ],
+   "label": "a numbered line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.10"
+   ],
+   "label": "and what you would be doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.11"
+   ],
+   "label": "what it pays"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "@/features/jobfinder/components/pill-button"
+   ],
+   "label": "the thing you came here to press"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    "STEP 3.13"
+   ],
+   "label": "fade the page out under a button"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/jobfinder/job.tsx",
+    [
+     "// MISTAKE 3.14",
+     "alignSelf: 'stretch',"
+    ]
+   ],
+   "label": "the capsules lined up against the left edge"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "job-screen",
+     "src/app/jobfinder/job.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "4": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "@/features/jobfinder/components/screen-head"
+   ],
+   "label": "back, and two shortcuts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "STEP 4.02"
+   ],
+   "label": "the controls across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "STEP 4.03"
+   ],
+   "label": "say where we are"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "@/features/jobfinder/components/filter-pills"
+   ],
+   "label": "Saved, Applied, Archived"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "STEP 4.05"
+   ],
+   "label": "three ways to slice it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "@/features/jobfinder/components/saved-job-card"
+   ],
+   "label": "a saved listing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "STEP 4.07"
+   ],
+   "label": "the cards you kept"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/saved.ts",
+    "s-js"
+   ],
+   "label": "the second saved role"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/saved.ts",
+    "s-figma"
+   ],
+   "label": "one from Figma"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/saved.ts",
+    "s-art"
+   ],
+   "label": "and the art director"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "@/features/jobfinder/components/tab-bar"
+   ],
+   "label": "the dock again, on its own tab"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    "STEP 4.12"
+   ],
+   "label": "float the dock"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/jobfinder/saved.tsx",
+    [
+     "// MISTAKE 4.13",
+     "alignItems: 'center',"
+    ]
+   ],
+   "label": "the heading came in centred"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "saved-data",
+     "src/features/jobfinder/data/saved.ts"
+    ],
+    [
+     "saved-screen",
+     "src/app/jobfinder/saved.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "5": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "@/features/jobfinder/components/avatar"
+   ],
+   "label": "a face and a title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "STEP 5.02"
+   ],
+   "label": "who you are, and what this is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "@/features/jobfinder/components/search-field"
+   ],
+   "label": "somewhere to type"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "STEP 5.04"
+   ],
+   "label": "search the thread list"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "@/features/jobfinder/components/filter-pills"
+   ],
+   "label": "All, Unread, Recruiters"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "STEP 5.06"
+   ],
+   "label": "and filter it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "@/features/jobfinder/components/message-card"
+   ],
+   "label": "one conversation"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "STEP 5.08"
+   ],
+   "label": "the threads themselves"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/messages.ts",
+    "marcus"
+   ],
+   "label": "a second recruiter"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/messages.ts",
+    "elena"
+   ],
+   "label": "a status update"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/messages.ts",
+    "alex"
+   ],
+   "label": "and one more, read"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "@/features/jobfinder/components/tab-bar"
+   ],
+   "label": "the dock, on the mail tab"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    "STEP 5.13"
+   ],
+   "label": "float the dock"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/jobfinder/messages.tsx",
+    [
+     "// MISTAKE 5.14",
+     "paddingHorizontal: 64,"
+    ]
+   ],
+   "label": "the search box came in half the width"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "messages-data",
+     "src/features/jobfinder/data/messages.ts"
+    ],
+    [
+     "messages-screen",
+     "src/app/jobfinder/messages.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "6": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/screen-head"
+   ],
+   "label": "back, share, edit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.02"
+   ],
+   "label": "label the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/profile-card"
+   ],
+   "label": "the card that says who this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.04"
+   ],
+   "label": "drop the card in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/profile-card.tsx",
+    "STEP 6.05"
+   ],
+   "label": "and what he does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/profile-card.tsx",
+    "STEP 6.06"
+   ],
+   "label": "say he is open to work"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/profile-card.tsx",
+    "STEP 6.07"
+   ],
+   "label": "four numbers under a rule"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/jobfinder/components/profile-card.tsx",
+    "STEP 6.08"
+   ],
+   "label": "a pale disc off the corner"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/filter-pills"
+   ],
+   "label": "four ways to read a portfolio"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.10"
+   ],
+   "label": "the portfolio tabs"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/section-head"
+   ],
+   "label": "name the section"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.12"
+   ],
+   "label": "three of eighteen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/case-study-card"
+   ],
+   "label": "a case study"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.14"
+   ],
+   "label": "the work itself"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/profile.ts",
+    "crypto"
+   ],
+   "label": "the second case study"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/jobfinder/data/profile.ts",
+    "saas"
+   ],
+   "label": "and the third"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/skills-panel"
+   ],
+   "label": "what he can do, and the CV"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.18"
+   ],
+   "label": "endorsed, and downloadable"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "@/features/jobfinder/components/tab-bar"
+   ],
+   "label": "the dock, on the profile tab"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/jobfinder/profile.tsx",
+    "STEP 6.20"
+   ],
+   "label": "float the dock"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/jobfinder/components/profile-card.tsx",
+    [
+     "// MISTAKE 6.21",
+     "paddingHorizontal: 56,"
+    ]
+   ],
+   "label": "the stats row came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "profile-card",
+     "src/features/jobfinder/components/profile-card.tsx"
+    ],
+    [
+     "profile-data",
+     "src/features/jobfinder/data/profile.ts"
+    ],
+    [
+     "profile-screen",
+     "src/app/jobfinder/profile.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

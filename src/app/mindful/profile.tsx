@@ -1,0 +1,175 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+// STEP 6.26 the floating dock
+// import { TabBar } from '@/features/mindful/components/bits';
+// STEP 6.01 everything the profile is made of
+// import { GiftRow, HeartTile, ProfileTop, SettingRow, SleepTile, StreakCard, ToolTile, } from '@/features/mindful/components/profile-parts';
+import { TABS } from '@/features/mindful/data/nav';
+import { ACCOUNT_ROWS, PROFILE, TOOLS } from '@/features/mindful/data/profile';
+import { R, SP, TYPE, mindfulTheme, mp } from '@/features/mindful/theme';
+
+/**
+ * Screen 6 — the wellness toolkit profile.
+ *
+ * Header, a 2x2 grid of pastel toolkit tiles, the streak card, two biometric
+ * tiles, the settings list, then the gifting banner.
+ *
+ * The toolkit grid is built as two rows of two rather than a wrap, so the
+ * tiles in a row share a height — a wrap would let "Gentle Rain & Woods" and
+ * "Instant Anxiety Reset" size their tiles independently and the row would
+ * come out ragged.
+ */
+export default function MindfulProfile() {
+  const insets = useSafeAreaInsets();
+  const dockSpace = 48 + SP.sm + SP.md + Math.max(insets.bottom, SP.md);
+
+  return (
+    <View style={[mindfulTheme, { flex: 1, backgroundColor: mp.bg, paddingTop: insets.top }]}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.marginSm,
+          paddingBottom: dockSpace,
+          gap: SP.lg,
+        }}
+      >
+{/* STEP 6.02 who they are
+        <ProfileTop
+          avatar={require('../../../assets/images/mindful/alex.jpg')}
+          onBell={() => router.push('/mindful/insights')}
+          onTune={() => router.push('/mindful/insights')}
+        />
+*/}
+
+{/* STEP 6.03 four things to reach for
+        <View style={{ gap: SP.sm }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingHorizontal: SP.xs,
+            }}
+          >
+            <Text style={[TYPE.headlineMd, { color: mp.ink }]}>{PROFILE.toolkitTitle}</Text>
+            <Text style={[TYPE.labelMd, { color: mp.variant }]}>{PROFILE.toolkitCount}</Text>
+          </View>
+
+          <View style={{ gap: SP.gutterSm }}>
+            {[0, 2].map((start) => (
+              <View key={start} style={{ flexDirection: 'row', gap: SP.gutterSm }}>
+                {TOOLS.slice(start, start + 2).map((t) => (
+                  <ToolTile key={t.key} tool={t} onPress={() => router.push('/mindful/insights')} />
+                ))}
+              </View>
+            ))}
+          </View>
+        </View>
+*/}
+
+{/* STEP 6.08 fourteen days running
+        <View
+          style={{
+            // MISTAKE 6.09 the streak card came in two thirds wide
+            width: '66%',
+          }}
+        >
+          <StreakCard />
+        </View>
+*/}
+
+{/* STEP 6.17 what the watch says
+        <View style={{ gap: SP.sm }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingHorizontal: SP.xs,
+            }}
+          >
+            <Text style={[TYPE.headlineMd, { color: mp.ink }]}>{PROFILE.bioTitle}</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+              <View
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: R.full,
+                  backgroundColor: mp.secondary,
+                }}
+              />
+              <Text style={[TYPE.labelMd, { color: mp.onSecondaryContainer }]}>
+                {PROFILE.bioSynced}
+              </Text>
+            </View>
+          </View>
+
+          <View style={{ flexDirection: 'row', gap: SP.gutterSm }}>
+            <HeartTile />
+            <SleepTile />
+          </View>
+        </View>
+*/}
+
+{/* STEP 6.21 the settings list
+        <View style={{ gap: SP.sm }}>
+          <Text style={[TYPE.headlineMd, { color: mp.ink, paddingHorizontal: SP.xs }]}>
+            {PROFILE.accountTitle}
+          </Text>
+
+          <View
+            style={{
+              backgroundColor: mp.surfaceLow,
+              borderRadius: R.card,
+              overflow: 'hidden',
+            }}
+          >
+            {ACCOUNT_ROWS.map((row, i) => (
+              <View key={row.key}>
+                {i > 0 ? (
+                  <View
+                    style={{
+                      height: 1,
+                      backgroundColor: mp.surfaceHigh,
+                      marginHorizontal: SP.md,
+                    }}
+                  />
+                ) : null}
+                <SettingRow row={row} onPress={() => router.push('/mindful/insights')} />
+              </View>
+            ))}
+          </View>
+        </View>
+*/}
+
+{/* STEP 6.27 and a month to give away
+        <GiftRow onInvite={() => router.push('/mindful/home')} />
+*/}
+      </ScrollView>
+
+{/* STEP 6.28 float the dock over it all
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: Math.max(insets.bottom, 0) + SP.md,
+        }}
+      >
+        <TabBar
+          active="profile-settings"
+          onSelect={(key) => {
+            const tab = TABS.find((t) => t.key === key);
+            if (tab && key !== 'profile-settings') router.push(tab.route);
+          }}
+        />
+      </View>
+*/}
+    </View>
+  );
+}

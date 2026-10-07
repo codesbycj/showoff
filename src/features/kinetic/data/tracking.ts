@@ -1,0 +1,40 @@
+/** Everything the shipment-details screen says. */
+export const TRACKING = {
+  title: 'Shipment Details',
+
+  courierTag: '4m away',
+
+  bookingLabel: 'Booking Id:',
+  bookingId: 'H314315796',
+  statusLabel: 'Status',
+  status: 'Transit',
+
+  createdLabel: 'Created, 18 Oct 2025',
+  createdPlace: 'Diriyah, Riyadh',
+  estimatedLabel: 'Estimated, 19 Oct 2025',
+  estimatedPlace: 'Jawhra, Jeddah',
+
+  courierName: 'Khalid Omor',
+  courierRole: 'Courier',
+} as const;
+
+export type Detail = { key: string; label: string; value: string; accent?: boolean };
+
+/**
+ * The detail grid. Kept as a list so the sheet lays it out rather than spelling
+ * six near-identical blocks in markup — `accent` is the one cell the reference
+ * sets in coral.
+ *
+ * It is annotated rather than left to inference, and it lives outside the
+ * `as const` block above, because the timelapse comments its entries out one at
+ * a time: inside a const assertion an emptied array infers as `readonly []`,
+ * every read off it becomes `never`, and the blank state stops typechecking.
+ */
+export const DETAILS: Detail[] = [
+  { key: 'from', label: 'Form', value: 'Diriyah, Riyadh' },
+  { key: 'to', label: 'To', value: 'Jawhra, Jeddah' },
+  { key: 'customer', label: 'Customer', value: 'Ahmad Kawsar' },
+  { key: 'cost', label: 'Order Cost', value: '$120.00', accent: true },
+  { key: 'qty', label: 'Quantity', value: '1 Box' },
+  { key: 'weight', label: 'Weight', value: '10 Kg' },
+];

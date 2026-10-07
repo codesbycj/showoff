@@ -1,0 +1,67 @@
+import type { IconName } from '../components/icon';
+import { ll } from '../theme';
+
+/** Everything the AI Study Buddy screen says. */
+export const CHAT = {
+  badge: 'AI Study Buddy',
+
+  /** The hero runs over two lines, broken exactly where the reference breaks. */
+  headlineTop: 'How Can I Help',
+  headlineBottom: 'You Today?',
+
+  placeholder: 'Ask a question...',
+  mode: 'Deep Think',
+} as const;
+
+export type Subject = {
+  key: string;
+  icon: IconName;
+  label: string;
+  fill: string;
+  border: string;
+  ink: string;
+};
+
+/**
+ * The subject chips. They run off the right edge of the screen in the
+ * reference, which is the tell that they sit in a horizontal scroller rather
+ * than wrapping.
+ */
+export const SUBJECTS: Subject[] = [
+  // STEP 2.09 maths first
+  // {
+  //   key: 'math',
+  //   icon: 'math',
+  //   label: 'Math',
+  //   fill: '#f4edfd',
+  //   border: '#e5d8fb',
+  //   ink: ll.violet.ink,
+  // },
+  // STEP 2.10 then the lab
+  // {
+  //   key: 'science',
+  //   icon: 'science',
+  //   label: 'Science',
+  //   fill: '#eaf8ee',
+  //   border: '#cbeed4',
+  //   ink: '#10b06a',
+  // },
+  // STEP 2.11 something to read
+  // {
+  //   key: 'english',
+  //   icon: 'english',
+  //   label: 'English',
+  //   fill: '#edf7f9',
+  //   border: '#cdebf0',
+  //   ink: '#0d9488',
+  // },
+  // STEP 2.12 and one that runs off the edge
+  // {
+  //   key: 'history',
+  //   icon: 'world',
+  //   label: 'History',
+  //   fill: '#eff7ea',
+  //   border: '#d2ecc8',
+  //   ink: '#3f9142',
+  // },
+];

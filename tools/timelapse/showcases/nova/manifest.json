@@ -1,0 +1,14 @@
+{
+ "welcome-screen": "src/app/nova/index.tsx",
+ "welcome-data": "src/features/nova/data/onboard.ts",
+ "home-screen": "src/app/nova/home.tsx",
+ "home-data": "src/features/nova/data/market.ts",
+ "wallet-screen": "src/app/nova/wallet.tsx",
+ "wallet-data": "src/features/nova/data/wallet.ts",
+ "trade-screen": "src/app/nova/trade.tsx",
+ "trade-data": "src/features/nova/data/trade.ts",
+ "activity-screen": "src/app/nova/activity.tsx",
+ "activity-data": "src/features/nova/data/activity.ts",
+ "settings-screen": "src/app/nova/settings.tsx",
+ "settings-data": "src/features/nova/data/settings.ts"
+}

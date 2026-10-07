@@ -1,0 +1,14 @@
+{
+ "onboarding-screen": "src/app/mindful/index.tsx",
+ "onboarding-data": "src/features/mindful/data/onboarding.ts",
+ "home-screen": "src/app/mindful/home.tsx",
+ "home-data": "src/features/mindful/data/home.ts",
+ "checkin-screen": "src/app/mindful/checkin.tsx",
+ "checkin-data": "src/features/mindful/data/checkin.ts",
+ "calendar-screen": "src/app/mindful/calendar.tsx",
+ "calendar-data": "src/features/mindful/data/calendar.ts",
+ "insights-screen": "src/app/mindful/insights.tsx",
+ "insights-data": "src/features/mindful/data/insights.ts",
+ "profile-screen": "src/app/mindful/profile.tsx",
+ "profile-data": "src/features/mindful/data/profile.ts"
+}

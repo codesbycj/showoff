@@ -1,0 +1,12 @@
+{
+ "home-screen": "src/app/travelexa/index.tsx",
+ "home-data": "src/features/travelexa/data/home.ts",
+ "discover-screen": "src/app/travelexa/discover.tsx",
+ "discover-data": "src/features/travelexa/data/discover.ts",
+ "destination-screen": "src/app/travelexa/destination.tsx",
+ "destination-data": "src/features/travelexa/data/destination.ts",
+ "saved-screen": "src/app/travelexa/saved.tsx",
+ "saved-data": "src/features/travelexa/data/saved.ts",
+ "profile-screen": "src/app/travelexa/profile.tsx",
+ "profile-data": "src/features/travelexa/data/profile.ts"
+}

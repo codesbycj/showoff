@@ -1,0 +1,1118 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "@/features/voteng/components/boot-emblem"
+   ],
+   "label": "import the emblem"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "stand the ballot box up"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "@/features/voteng/components/wordmark"
+   ],
+   "label": "import the name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "say its name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the promise"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what it actually is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "@/features/voteng/components/boot-badge"
+   ],
+   "label": "import the capsule"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "certify the feed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "seal it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "@/features/voteng/components/boot-loader"
+   ],
+   "label": "import the loader"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "count the channels in"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "@/features/voteng/components/auto-advance"
+   ],
+   "label": "let it move on by itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "hand over to home"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "boot-screen",
+     "src/app/voteng/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/app-header"
+   ],
+   "label": "import the masthead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.02"
+   ],
+   "label": "who this is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/search-field"
+   ],
+   "label": "import the search capsule"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.04"
+   ],
+   "label": "somewhere to search"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/hero-banner"
+   ],
+   "label": "import the banner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.06"
+   ],
+   "label": "nigeria decides"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/tab-strip"
+   ],
+   "label": "import the filter rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.08"
+   ],
+   "label": "four ballots to choose between"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/section-head"
+   ],
+   "label": "import the section head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.10"
+   ],
+   "label": "name the live section"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/tally-card"
+   ],
+   "label": "import the tally card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.12"
+   ],
+   "label": "room for the running order"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "obi"
+   ],
+   "label": "the man in front"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "tinubu"
+   ],
+   "label": "second place"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "atiku"
+   ],
+   "label": "third"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "kwankwaso"
+   ],
+   "label": "and fourth"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/quick-tile"
+   ],
+   "label": "import the explore tile"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.18"
+   ],
+   "label": "all four tiles in one row"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "state"
+   ],
+   "label": "results by state"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "lga"
+   ],
+   "label": "all 774 councils"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "candidates"
+   ],
+   "label": "who is standing"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "parties"
+   ],
+   "label": "and for whom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.23"
+   ],
+   "label": "the explore grid"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "<View style={{ paddingHorizontal: SP.margin, marginTop: SP.md + 4, flexDirection: 'row', gap: SP.md }}>"
+   ],
+   "label": "no — two rows of two"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.25"
+   ],
+   "label": "name the news"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/news-card"
+   ],
+   "label": "import the story card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.27"
+   ],
+   "label": "lay the rail"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "register"
+   ],
+   "label": "the voter register"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "turnout"
+   ],
+   "label": "turnout"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/home.ts",
+    "primer"
+   ],
+   "label": "what to know"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "@/features/voteng/components/tab-bar"
+   ],
+   "label": "import the tab bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/home.tsx",
+    "STEP 2.32"
+   ],
+   "label": "pin the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-data",
+     "src/features/voteng/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/voteng/home.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/results-head"
+   ],
+   "label": "import the masthead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.02"
+   ],
+   "label": "what this page is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/tab-strip"
+   ],
+   "label": "import the view rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.04"
+   ],
+   "label": "four ways to cut it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/results-hero"
+   ],
+   "label": "import the overview card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.06"
+   ],
+   "label": "how far the count has got"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/section-head"
+   ],
+   "label": "import the section head"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/metric-chip"
+   ],
+   "label": "import the metric selector"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.09"
+   ],
+   "label": "name the national tally"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/standing-card"
+   ],
+   "label": "import the standings row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.11"
+   ],
+   "label": "room for the standings"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "lp"
+   ],
+   "label": "the leader"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "apc"
+   ],
+   "label": "the incumbent"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "pdp"
+   ],
+   "label": "third"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "nnpp"
+   ],
+   "label": "fourth"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "others"
+   ],
+   "label": "everyone else"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.17"
+   ],
+   "label": "name the state breakdown"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/nigeria-map"
+   ],
+   "label": "import the map"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/state-table"
+   ],
+   "label": "import the leaderboard"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.20"
+   ],
+   "label": "map over table"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "lagos"
+   ],
+   "label": "lagos"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "fct"
+   ],
+   "label": "the capital"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "rivers"
+   ],
+   "label": "rivers"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "kano"
+   ],
+   "label": "kano"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/results.ts",
+    "kaduna"
+   ],
+   "label": "kaduna"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.26"
+   ],
+   "label": "the panel, side by side"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "<View style={[PANEL, { flexDirection: 'column' }]}>"
+   ],
+   "label": "they go side by side, not stacked"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "@/features/voteng/components/tab-bar"
+   ],
+   "label": "import the tab bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/results.tsx",
+    "STEP 3.29"
+   ],
+   "label": "pin the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "results-data",
+     "src/features/voteng/data/results.ts"
+    ],
+    [
+     "results-screen",
+     "src/app/voteng/results.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "4": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/page-head"
+   ],
+   "label": "import the masthead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.02"
+   ],
+   "label": "name the page"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/tab-strip"
+   ],
+   "label": "import the filter rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.04"
+   ],
+   "label": "five ways to narrow it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/lead-story"
+   ],
+   "label": "import the lead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.06"
+   ],
+   "label": "what the desk is leading on"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/section-head"
+   ],
+   "label": "import the section head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.08"
+   ],
+   "label": "name the top stories"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/story-row"
+   ],
+   "label": "import the story row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.10"
+   ],
+   "label": "room for the list"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "register"
+   ],
+   "label": "the voter register"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "turnout"
+   ],
+   "label": "lagos turnout"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "transition"
+   ],
+   "label": "the transition committee"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "assembly"
+   ],
+   "label": "the assembly seats"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "observers"
+   ],
+   "label": "the observers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.16"
+   ],
+   "label": "name the fact check"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/fact-check-card"
+   ],
+   "label": "import the verdict card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.18"
+   ],
+   "label": "the verdicts, stacked"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "result-sheets"
+   ],
+   "label": "the double-upload claim"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "turnout-claim"
+   ],
+   "label": "the turnout claim"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/news.ts",
+    "deadline"
+   ],
+   "label": "the deadline claim"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.22"
+   ],
+   "label": "the fact-check rail"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "<View style={{ paddingHorizontal: SP.margin, marginTop: SP.md, gap: SP.md }}>"
+   ],
+   "label": "fixed-width cards belong in a rail"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "@/features/voteng/components/tab-bar"
+   ],
+   "label": "import the tab bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/news.tsx",
+    "STEP 4.25"
+   ],
+   "label": "pin the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "news-data",
+     "src/features/voteng/data/news.ts"
+    ],
+    [
+     "news-screen",
+     "src/app/voteng/news.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "5": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/page-head"
+   ],
+   "label": "import the masthead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.02"
+   ],
+   "label": "name the page"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/account-card"
+   ],
+   "label": "import the account card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.04"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/unit-card"
+   ],
+   "label": "import the polling unit"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.06"
+   ],
+   "label": "where they vote"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/section-head"
+   ],
+   "label": "import the section head"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/settings-row"
+   ],
+   "label": "import the menu row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.09"
+   ],
+   "label": "name the tools"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.10"
+   ],
+   "label": "room for the menu"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "find-unit"
+   ],
+   "label": "find my unit"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "report"
+   ],
+   "label": "report an incident"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "calendar"
+   ],
+   "label": "the calendar"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "archive"
+   ],
+   "label": "the archive"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.15"
+   ],
+   "label": "name the alerts"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/toggle"
+   ],
+   "label": "import the switch"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.17"
+   ],
+   "label": "room for the switches"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "live"
+   ],
+   "label": "result alerts"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "breaking"
+   ],
+   "label": "breaking news"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "data-saver"
+   ],
+   "label": "data saver"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.21"
+   ],
+   "label": "name the paperwork"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.22"
+   ],
+   "label": "the about rows, uncarded"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "about"
+   ],
+   "label": "about the app"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "sources"
+   ],
+   "label": "where the numbers come from"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "terms"
+   ],
+   "label": "the paperwork"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/voteng/data/more.ts",
+    "signout"
+   ],
+   "label": "the way out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.27"
+   ],
+   "label": "the about group"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "<View style={{ paddingHorizontal: SP.margin, marginTop: 10, gap: 2 }}>"
+   ],
+   "label": "a group needs its card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "@/features/voteng/components/tab-bar"
+   ],
+   "label": "import the tab bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.30"
+   ],
+   "label": "sign the build"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voteng/more.tsx",
+    "STEP 5.31"
+   ],
+   "label": "pin the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "more-data",
+     "src/features/voteng/data/more.ts"
+    ],
+    [
+     "more-screen",
+     "src/app/voteng/more.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { AskBar } from '@/features/lumina/components/ask-bar';
+import { HeroGreeting } from '@/features/lumina/components/hero-greeting';
+import { MenuGlyph } from '@/features/lumina/components/menu-glyph';
+import { PromoBanner } from '@/features/lumina/components/promo-banner';
+import { RoundButton } from '@/features/lumina/components/round-button';
+import { SectionHead } from '@/features/lumina/components/section-head';
+import { DOCK_CLEARANCE, TabDock } from '@/features/lumina/components/tab-dock';
+import { TaskRow } from '@/features/lumina/components/task-row';
+import { ToolCard } from '@/features/lumina/components/tool-card';
+import { UserPill } from '@/features/lumina/components/user-pill';
+import { HOME, TABS, TASKS, TOOLS } from '@/features/lumina/data/home';
+import { SP, ll, luminaTheme } from '@/features/lumina/theme';
+
+/**
+ * Screen 1 — the home dashboard.
+ *
+ * One scrolling column inside the page's 20dp margin, with the status bar
+ * pinned above it and the nav dock floating over it, which is the reference's
+ * own structure: a fixed header, a `flex-1 overflow-y-auto` body, and an
+ * absolutely positioned nav.
+ *
+ * The reference draws its own iOS status bar in markup; here the OS draws the
+ * real one and the column insets below it, which is what every other showcase
+ * in this repo does and the only thing that is correct on the emulator.
+ */
+export default function LuminaHome() {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={[luminaTheme, { flex: 1, backgroundColor: ll.bg }]}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.margin,
+          paddingTop: insets.top + 12,
+          paddingBottom: DOCK_CLEARANCE + 24,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginTop: SP.xs,
+          }}
+        >
+          <UserPill
+            greeting={HOME.greeting}
+            name={HOME.name}
+            photo={require('../../../assets/images/lumina/student.jpg')}
+            onPress={() => router.push('/lumina/profile')}
+          />
+
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: SP.sm }}>
+            <RoundButton
+              icon="wand"
+              tone="lime"
+              iconSize={15}
+              label="Quick AI magic"
+              onPress={() => router.push('/lumina/chat')}
+            />
+            <RoundButton glyph={<MenuGlyph size={15} />} label="Open menu" />
+          </View>
+        </View>
+
+        <View style={{ marginTop: SP.md, marginBottom: SP.margin }}>
+          <HeroGreeting top={HOME.headlineTop} bottom={HOME.headlineBottom} />
+        </View>
+
+        <AskBar
+          placeholder={HOME.askPlaceholder}
+          onAsk={() => router.push('/lumina/chat')}
+          onScreen={() => router.push('/lumina/chat')}
+          onCamera={() => router.push('/lumina/chat')}
+          onMic={() => router.push('/lumina/chat')}
+        />
+
+        <View style={{ marginTop: SP.margin }}>
+          <PromoBanner title={HOME.promo.title} body={HOME.promo.body} cta={HOME.promo.cta} />
+        </View>
+
+        <View style={{ flexDirection: 'row', gap: 10, marginTop: SP.margin }}>
+          {TOOLS.map((tool) => (
+            <ToolCard
+              key={tool.key}
+              tool={tool}
+              onPress={() => router.push(tool.key === 'books' ? '/lumina/saved' : '/lumina/chat')}
+            />
+          ))}
+        </View>
+
+        <View style={{ marginTop: SP.lg, paddingHorizontal: SP.xs }}>
+          <SectionHead
+            title={HOME.tasksTitle}
+            action={HOME.tasksAction}
+            onAction={() => router.push('/lumina/saved')}
+          />
+        </View>
+
+        <View style={{ marginTop: 12, gap: 12 }}>
+          {TASKS.map((task) => (
+            <TaskRow key={task.key} task={task} onPress={() => router.push('/lumina/chat')} />
+          ))}
+        </View>
+      </ScrollView>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: SP.margin,
+          right: SP.margin,
+          bottom: Math.max(insets.bottom, 16) + 8,
+        }}
+      >
+        <TabDock
+          active="home"
+          onSelect={(key) => {
+            const tab = TABS.find((t) => t.key === key);
+            if (tab && key !== 'home') router.push(tab.route);
+          }}
+        />
+      </View>
+    </View>
+  );
+}

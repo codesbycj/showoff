@@ -1,0 +1,119 @@
+import { type BrandKey } from '../components/brand-mark';
+import { type TagTone, jf } from '../theme';
+
+/**
+ * The feed's listings, and the company marks that go with them.
+ *
+ * One correction to the reference: its third card is "Apple Etc." carrying
+ * NIKITIN's serif N, and its fourth is "NIKITIN Agency" carrying Apple's mark.
+ * Stitch swapped them. They are the right way round here — a mock feed that
+ * shows the wrong logo beside a company name reads as a bug in the rebuild
+ * rather than as a quirk of the source.
+ */
+export type Tag = { label: string; tone: TagTone };
+
+export type Job = {
+  key: string;
+  title: string;
+  company: string;
+  mode: string;
+  salary: string;
+  /** The unit that trails the salary in smaller, muted type. */
+  per?: string;
+  tags: readonly Tag[];
+  brand: BrandKey;
+  /** The disc behind the mark. */
+  brandBg: string;
+};
+
+export const JOBS: readonly Job[] = [
+  {
+    key: 'ux',
+    title: 'Middle UX/UI Designer',
+    company: 'Dropbox Etc.',
+    mode: 'Remote',
+    salary: '$1,200 - $1,500',
+    per: ' /month',
+    tags: [
+      { label: 'Canada', tone: 'green' },
+      { label: 'Toronto', tone: 'rose' },
+      { label: 'IT', tone: 'blue' },
+    ],
+    brand: 'dropbox',
+    brandBg: jf.dropbox,
+  },
+  // STEP 2.07 the second listing
+  // {
+  //   key: 'js',
+  //   title: 'Java Script Developer',
+  //   company: 'Poker Stars Inc.',
+  //   mode: 'Remote, Office',
+  //   salary: '$1,200 - $1,500',
+  //   per: ' /month',
+  //   tags: [
+  //     { label: 'Remote', tone: 'grey' },
+  //     { label: 'Frontend', tone: 'amber' },
+  //     { label: 'JS', tone: 'blue' },
+  //   ],
+  //   brand: 'poker',
+  //   brandBg: jf.poker,
+  // },
+  // STEP 2.08 the third
+  // {
+  //   key: 'smm',
+  //   title: 'Content Manager (SMM)',
+  //   company: 'Apple Etc.',
+  //   mode: 'Office',
+  //   salary: '$55/h - $75/h',
+  //   tags: [
+  //     { label: 'Marketing', tone: 'purple' },
+  //     { label: 'Part-time', tone: 'grey' },
+  //   ],
+  //   brand: 'apple',
+  //   brandBg: jf.apple,
+  // },
+  // STEP 2.09 and the fourth
+  // {
+  //   key: 'art',
+  //   title: 'Art Director (English C1)',
+  //   company: 'NIKITIN Agency',
+  //   mode: 'Remote, Office',
+  //   salary: '$2,400 - $2,800',
+  //   per: ' /month',
+  //   tags: [
+  //     { label: 'Design', tone: 'rose' },
+  //     { label: 'Senior', tone: 'grey' },
+  //   ],
+  //   brand: 'nikitin',
+  //   brandBg: jf.nikitin,
+  // },
+];
+
+export const HOME = {
+  greeting: 'Hi, George!',
+  tagline: 'Your job is waiting for you!',
+  filters: ['New', 'Hot', 'Near', 'Remote', 'Full-time'],
+  activeFilter: 'New',
+} as const;
+
+/**
+ * The dock.
+ *
+ * The reference disagrees with itself about the fourth slot: three exports draw
+ * a bookmark there and the profile export draws a person, and no export gives
+ * the profile screen a tab at all even though it ships one. The set is
+ * reconciled to the four screens that exist — home, messages, saved, profile —
+ * which drops the briefcase the reference carries in third place and gives the
+ * bookmark the saved screen it already points at.
+ *
+ * `route` is what the screen navigates to; the bar itself only reports which key
+ * was pressed, so adding a destination is a line in a screen, not a change here.
+ */
+export const TABS = [
+  { key: 'home', route: '/jobfinder/home' },
+  { key: 'messages', route: '/jobfinder/messages' },
+  { key: 'saved', route: '/jobfinder/saved' },
+  { key: 'profile', route: '/jobfinder/profile' },
+] as const;
+
+export type TabKey = (typeof TABS)[number]['key'];

@@ -1,0 +1,14 @@
+{
+ "home-screen": "src/app/redbrew/index.tsx",
+ "home-data": "src/features/redbrew/data/home.ts",
+ "product-screen": "src/app/redbrew/product.tsx",
+ "product-data": "src/features/redbrew/data/product.ts",
+ "cart-screen": "src/app/redbrew/cart.tsx",
+ "cart-data": "src/features/redbrew/data/cart.ts",
+ "tracking-screen": "src/app/redbrew/tracking.tsx",
+ "tracking-data": "src/features/redbrew/data/tracking.ts",
+ "orders-screen": "src/app/redbrew/orders.tsx",
+ "orders-data": "src/features/redbrew/data/orders.ts",
+ "profile-screen": "src/app/redbrew/profile.tsx",
+ "profile-data": "src/features/redbrew/data/profile.ts"
+}

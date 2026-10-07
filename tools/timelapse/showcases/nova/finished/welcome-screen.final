@@ -1,0 +1,86 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { HeroArtwork } from '@/features/nova/components/hero-artwork';
+import { Icon } from '@/features/nova/components/icon';
+import { StartButton } from '@/features/nova/components/start-button';
+import { ONBOARD } from '@/features/nova/data/onboard';
+import { FONT, SP, TYPE, nv, novaTheme } from '@/features/nova/theme';
+
+/**
+ * Screen 1 — the welcome screen, and the only dark one in the set.
+ *
+ * Three bands under `justify-content: space-between`: the artwork, the headline
+ * block that takes what is left, and the CTA. The lime badge in the top-right
+ * is deliberately half off-screen — the reference hangs it at `-right-3` and
+ * rotates it 12°, so it reads as a sticker stuck to the edge of the frame.
+ */
+export default function NovaWelcome() {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={[novaTheme, { flex: 1, backgroundColor: nv.onboardBg }]}>
+      <StatusBar style="light" />
+
+      {/* The sticker badge, clipped by the screen edge. */}
+      <View
+        style={{
+          position: 'absolute',
+          right: -12,
+          top: insets.top + 16,
+          width: 56,
+          height: 56,
+          borderRadius: 18,
+          backgroundColor: nv.lime,
+          alignItems: 'center',
+          justifyContent: 'center',
+          transform: [{ rotate: '12deg' }],
+          zIndex: 20,
+        }}
+      >
+        <View style={{ transform: [{ rotate: '-12deg' }] }}>
+          <Icon name="send" size={26} color={nv.onboardBg} strokeWidth={2.5} />
+        </View>
+      </View>
+
+      <View style={{ paddingTop: insets.top + 8, alignItems: 'center' }}>
+        <HeroArtwork size={300} />
+      </View>
+
+      <View style={{ flex: 1, justifyContent: 'center', paddingHorizontal: SP.xl }}>
+        {ONBOARD.headline.map((line) => (
+          <Text
+            key={line.key}
+            style={[TYPE.display, { color: line.accent ? nv.lime : '#ffffff' }]}
+          >
+            {line.text}
+          </Text>
+        ))}
+
+        <Text
+          style={{
+            fontFamily: FONT.regular,
+            fontSize: 14,
+            lineHeight: 22,
+            color: nv.subtle,
+            maxWidth: 270,
+            marginTop: SP.md,
+          }}
+        >
+          {ONBOARD.body}
+        </Text>
+      </View>
+
+      <View
+        style={{
+          paddingHorizontal: SP.xl,
+          paddingBottom: Math.max(insets.bottom, 16) + 24,
+        }}
+      >
+        <StartButton label={ONBOARD.cta} onPress={() => router.push('/nova/home')} />
+      </View>
+    </View>
+  );
+}

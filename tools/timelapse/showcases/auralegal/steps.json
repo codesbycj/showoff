@@ -1,0 +1,866 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "@/features/auralegal/components/ambient-glow"
+   ],
+   "label": "import the backdrop glows"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "light the room"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "@/features/auralegal/components/aura-mark"
+   ],
+   "label": "import the mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "whose app this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and what it is for"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "@/features/auralegal/components/auto-advance"
+   ],
+   "label": "import the advance"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "let it go"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "splash-screen",
+     "src/app/auralegal/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/feed-header"
+   ],
+   "label": "import the masthead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.02"
+   ],
+   "label": "the masthead"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/category-chips"
+   ],
+   "label": "import the filter rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.04"
+   ],
+   "label": "room for the practice areas"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "family"
+   ],
+   "label": "the one we are filtered to"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "realestate"
+   ],
+   "label": "conveyancing"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "corporate"
+   ],
+   "label": "the commercial one"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "criminal"
+   ],
+   "label": "the serious one"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "ip"
+   ],
+   "label": "and the one that runs off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/hero-deck"
+   ],
+   "label": "import the profile deck"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.11"
+   ],
+   "label": "the profile deck"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/auralegal/components/hero-card.tsx",
+    "STEP 2.12"
+   ],
+   "label": "how many cases"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/auralegal/components/hero-card.tsx",
+    "STEP 2.13"
+   ],
+   "label": "whose card this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/auralegal/components/hero-card.tsx",
+    "STEP 2.14"
+   ],
+   "label": "and where they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/auralegal/components/hero-card.tsx",
+    "STEP 2.15"
+   ],
+   "label": "how to reach them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/auralegal/components/hero-card.tsx",
+    "STEP 2.16"
+   ],
+   "label": "the portrait"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/auralegal/components/hero-card.tsx",
+    "STEP 2.17"
+   ],
+   "label": "the footer"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "claire"
+   ],
+   "label": "the card furthest back"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "marcus"
+   ],
+   "label": "the mint one in between"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/stats-tray"
+   ],
+   "label": "import the metrics tray"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.21"
+   ],
+   "label": "the numbers"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "success"
+   ],
+   "label": "the win rate"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "experience"
+   ],
+   "label": "the years"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "endorsement"
+   ],
+   "label": "what the profession thinks"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/briefing-banner"
+   ],
+   "label": "import the briefing banner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.26"
+   ],
+   "label": "the quick booking"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/section-head"
+   ],
+   "label": "import the section head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.28"
+   ],
+   "label": "name the list"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/expert-row"
+   ],
+   "label": "import the expert row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.30"
+   ],
+   "label": "name the list, the right way round"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "<SectionHead"
+   ],
+   "label": "the count and the link are the wrong way round"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.32"
+   ],
+   "label": "room for the experts"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "@/features/auralegal/components/dock"
+   ],
+   "label": "import the dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/explore.tsx",
+    "STEP 2.34"
+   ],
+   "label": "pin the dock"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "julian"
+   ],
+   "label": "the litigator"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "elena"
+   ],
+   "label": "the conveyancer"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "explore"
+   ],
+   "label": "where we are"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "consultations"
+   ],
+   "label": "the conversations"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "notifications"
+   ],
+   "label": "the alerts"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/explore.ts",
+    "profile"
+   ],
+   "label": "and the account"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "explore-data",
+     "src/features/auralegal/data/explore.ts"
+    ],
+    [
+     "explore-hero",
+     "src/features/auralegal/components/hero-card.tsx"
+    ],
+    [
+     "explore-screen",
+     "src/app/auralegal/explore.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/app-header"
+   ],
+   "label": "import the top bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.02"
+   ],
+   "label": "the top bar"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/profile-meta"
+   ],
+   "label": "import the name block"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.04"
+   ],
+   "label": "who this is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/portrait-card"
+   ],
+   "label": "import the portrait block"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.06"
+   ],
+   "label": "the portrait"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/metrics-tray"
+   ],
+   "label": "import the metrics"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.08"
+   ],
+   "label": "room for the numbers"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "cases"
+   ],
+   "label": "the cases"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "experience"
+   ],
+   "label": "the years, raised onto its own fill"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "rating"
+   ],
+   "label": "the rating"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/bio-card"
+   ],
+   "label": "import the biography"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.13"
+   ],
+   "label": "the biography"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "custody"
+   ],
+   "label": "custody"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "property"
+   ],
+   "label": "property"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "prenup"
+   ],
+   "label": "prenuptials"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/profile.ts",
+    "mediation"
+   ],
+   "label": "and mediation, which wraps to a second row"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/endorsement-card"
+   ],
+   "label": "import the endorsement"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.19"
+   ],
+   "label": "the ranking"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "@/features/auralegal/components/primary-button"
+   ],
+   "label": "import the call to action"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.21"
+   ],
+   "label": "the call to action"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "STEP 3.22"
+   ],
+   "label": "the call to action, labelled properly"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/auralegal/profile.tsx",
+    "<PrimaryButton label={ENDORSEMENT.title} onPress={() => router.push('/auralegal/booking')} />"
+   ],
+   "label": "that is the endorsement's title, not the button's"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "profile-data",
+     "src/features/auralegal/data/profile.ts"
+    ],
+    [
+     "profile-screen",
+     "src/app/auralegal/profile.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "4": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/app-header"
+   ],
+   "label": "import the top bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.02"
+   ],
+   "label": "the top bar"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/subject-banner"
+   ],
+   "label": "import the subject banner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.04"
+   ],
+   "label": "who is being booked"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/consult-option"
+   ],
+   "label": "import the mode row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.06"
+   ],
+   "label": "name the step"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.07"
+   ],
+   "label": "room for the three modes"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "online"
+   ],
+   "label": "the one that is selected"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "office"
+   ],
+   "label": "going to them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.10"
+   ],
+   "label": "name the calendar"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/date-fan"
+   ],
+   "label": "import the date fan"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.12"
+   ],
+   "label": "room for the dates"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "9"
+   ],
+   "label": "the far left of the fan"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "10"
+   ],
+   "label": "one in"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "11"
+   ],
+   "label": "the day itself"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "12"
+   ],
+   "label": "one out"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "client"
+   ],
+   "label": "them coming to you"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/time-dial"
+   ],
+   "label": "import the time dial"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.19"
+   ],
+   "label": "room for the times"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "13"
+   ],
+   "label": "and the far right"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "t09"
+   ],
+   "label": "first thing"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "t10"
+   ],
+   "label": "mid morning"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "t11"
+   ],
+   "label": "the slot we want"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/confirm-pod"
+   ],
+   "label": "import the confirm pod"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.25"
+   ],
+   "label": "the way on"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "@/features/auralegal/components/booking-toast"
+   ],
+   "label": "import the toast"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/auralegal/booking.tsx",
+    "STEP 4.27"
+   ],
+   "label": "confirmation, once there is something to confirm"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "t12"
+   ],
+   "label": "midday"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/auralegal/data/booking.ts",
+    "t13"
+   ],
+   "label": "and after lunch"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "booking-data",
+     "src/features/auralegal/data/booking.ts"
+    ],
+    [
+     "booking-screen",
+     "src/app/auralegal/booking.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

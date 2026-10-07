@@ -1,0 +1,153 @@
+import { type SymbolName } from '../symbols';
+
+/**
+ * The settings screen's content.
+ *
+ * Rows carry a `trailing` that names what sits at their right edge. It is a
+ * tagged shape rather than a set of optional fields, because a row has exactly
+ * one of these and the alternative is four booleans with an undocumented rule
+ * about which wins.
+ */
+export type Trailing =
+  | { kind: 'toggle'; on: boolean }
+  | { kind: 'chevron' }
+  | { kind: 'pill'; text: string }
+  | { kind: 'count'; text: string }
+  | { kind: 'brand'; text: string };
+
+export type SettingRow = {
+  key: string;
+  icon: SymbolName;
+  title: string;
+  subtitle: string;
+  trailing: Trailing;
+};
+
+export type SettingGroup = {
+  key: string;
+  label: string;
+  /** The small status to the right of the group label. Only the first has one. */
+  status?: string;
+  rows: readonly SettingRow[];
+};
+
+export const SETTINGS = {
+  profile: {
+    name: 'Linda Srikandi',
+    handle: '@lindasrikandi',
+    role: 'Pro Freelancer',
+    tier: 'Tier 1 Global Account',
+    credentials: [
+      {
+        key: 'verified',
+        icon: 'verifiedUser' as SymbolName,
+        title: 'Level 3 Verified',
+        subtitle: 'Full Limit Active',
+      },
+      {
+        key: 'tax',
+        icon: 'badge' as SymbolName,
+        title: 'Tax ID Linked',
+        subtitle: 'NPWP • • • • 9021',
+      },
+    ],
+  },
+  referral: {
+    eyebrow: 'Rewards',
+    title: 'Invite Friends & Earn $50',
+    body: 'Get $50 credit for every verified creator who sends over $200.',
+    codeLabel: 'Code',
+    code: 'LINDA-PESSE24',
+    copy: 'Copy',
+  },
+  logOut: 'Log Out',
+  deleteAccount: 'Delete Pesse Account',
+  version: 'Pesse App v2.4.1 (Build 890)',
+  licence: 'Encrypted & Licensed Global Payment Gateway',
+} as const;
+
+export const SETTING_GROUPS: readonly SettingGroup[] = [
+  {
+    key: 'security',
+    label: 'Security & Access',
+    status: 'Protected',
+    rows: [
+      {
+        key: 'biometric',
+        icon: 'fingerprint',
+        title: 'Biometric Login',
+        subtitle: 'Face ID & Touch confirmation',
+        trailing: { kind: 'toggle', on: true },
+      },
+      {
+        key: '2fa',
+        // No phone-with-a-lock exists in Material Symbols; see CREDITS.md.
+        icon: 'phonelinkLock',
+        title: 'Two-Factor Authentication',
+        subtitle: 'SMS & Authenticator app',
+        trailing: { kind: 'pill', text: 'Active' },
+      },
+      {
+        key: 'pin',
+        icon: 'pin',
+        title: 'Change Passcode / PIN',
+        subtitle: 'Updated 14 days ago',
+        trailing: { kind: 'chevron' },
+      },
+      {
+        key: 'devices',
+        icon: 'devices',
+        title: 'Trusted Devices',
+        subtitle: 'iPhone 15 Pro, MacBook Air M2',
+        trailing: { kind: 'count', text: '2' },
+      },
+    ],
+  },
+  {
+    key: 'wallet',
+    label: 'Wallet & Preferences',
+    rows: [
+      {
+        key: 'payment',
+        icon: 'creditCard',
+        title: 'Default Payment Method',
+        subtitle: 'Pesse Metal Debit • • • • 2451',
+        trailing: { kind: 'brand', text: 'VISA' },
+      },
+      {
+        key: 'currency',
+        icon: 'language',
+        title: 'Currency & Region',
+        subtitle: 'USD ($) • Indonesia (IDR display)',
+        trailing: { kind: 'chevron' },
+      },
+      {
+        key: 'notifications',
+        icon: 'notificationsActive',
+        title: 'Notification Preferences',
+        subtitle: 'Push, Instant alerts, Marketing',
+        trailing: { kind: 'chevron' },
+      },
+    ],
+  },
+  {
+    key: 'support',
+    label: 'Support & Legal',
+    rows: [
+      {
+        key: 'help',
+        icon: 'supportAgent',
+        title: 'Help Center & Live Chat',
+        subtitle: 'Instant agent connection',
+        trailing: { kind: 'pill', text: '24/7 Support' },
+      },
+      {
+        key: 'privacy',
+        icon: 'description',
+        title: 'Privacy Policy & Terms',
+        subtitle: 'Regulatory & GDPR Compliance',
+        trailing: { kind: 'chevron' },
+      },
+    ],
+  },
+];

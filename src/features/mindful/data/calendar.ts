@@ -1,0 +1,196 @@
+import { mp } from '../theme';
+
+/**
+ * The mood calendar's content.
+ *
+ * Thirty-five cells, each one a pastel fill plus a tiny face. The export draws
+ * every face as its own inline SVG, which is 29 near-duplicate blocks; they
+ * reduce to **seventeen** distinct drawings, and each of those is an eyes
+ * element paired with a mouth element. So the faces are stored decomposed and
+ * `MoodCell` recombines them.
+ *
+ * That decomposition was derived by parsing the export rather than read off by
+ * eye — the variants differ by as little as a control point (`c1.5 1` versus
+ * `c1.5 1.5`), which is exactly the kind of difference that gets silently
+ * flattened when 29 blocks are transcribed by hand.
+ *
+ * `dim` carries the export's `opacity-40` on the two leading days and
+ * `opacity-85` on the four trailing ones. Those are what mark September's grid
+ * as a window onto a longer year, so they are content rather than styling.
+ */
+
+export type Eyes = { kind: 'dots'; r: number } | { kind: 'path'; d: string };
+export type Mouth =
+  | { kind: 'path'; d: string }
+  | { kind: 'dot'; cx: number; cy: number; r: number }
+  | { kind: 'oval'; cx: number; cy: number; rx: number; ry: number };
+
+export type Face = { eyes: Eyes; mouth: Mouth };
+
+/** The seventeen distinct faces, in the order the export first uses them. */
+export const FACES: Record<string, Face> = {
+  v0: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M8 15h8' } },
+  v1: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M8 16c2-1 6-1 8 0' } },
+  v2: {
+    eyes: { kind: 'path', d: 'M6 10c.8-1 2.2-1 3 0M15 10c.8-1 2.2-1 3 0' },
+    mouth: { kind: 'path', d: 'M8 14c1.5 2 6.5 2 8 0' },
+  },
+  v3: {
+    eyes: { kind: 'dots', r: 1 },
+    mouth: { kind: 'oval', cx: 12, cy: 15, rx: 1.5, ry: 2 },
+  },
+  v5: {
+    eyes: { kind: 'path', d: 'M7 10c.5-.8 1.5-.8 2 0M15 10c.5-.8 1.5-.8 2 0' },
+    mouth: { kind: 'path', d: 'M9 15h6' },
+  },
+  v6: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M8 15c1.5 1 6.5 1 8 0' } },
+  v7: {
+    eyes: { kind: 'path', d: 'M7 11l3-1M17 10l-3 1' },
+    mouth: { kind: 'dot', cx: 12, cy: 15, r: 1.5 },
+  },
+  v8: {
+    eyes: { kind: 'path', d: 'M7 11h3M14 11h3' },
+    mouth: { kind: 'path', d: 'M10 15h4' },
+  },
+  v9: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M8 14c1.5 1.5 6.5 1.5 8 0' } },
+  v10: {
+    eyes: { kind: 'path', d: 'M7 10h2M15 10h2' },
+    mouth: { kind: 'path', d: 'M9 15c1 1 5 1 6 0' },
+  },
+  v11: { eyes: { kind: 'dots', r: 1.5 }, mouth: { kind: 'path', d: 'M8 16h8' } },
+  v12: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M9 14h6' } },
+  v13: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M8 14c1.5 1 6.5 1 8 0' } },
+  v14: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M9 15h6' } },
+  v15: {
+    eyes: { kind: 'path', d: 'M6 10c.8-1 2.2-1 3 0M15 10c.8-1 2.2-1 3 0' },
+    mouth: { kind: 'path', d: 'M8 14c1.5 1.5 6.5 1.5 8 0' },
+  },
+  v16: { eyes: { kind: 'dots', r: 1 }, mouth: { kind: 'path', d: 'M8 14c1.5 2 6.5 2 8 0' } },
+  v17: {
+    eyes: { kind: 'path', d: 'M7 11h2M15 11h2' },
+    mouth: { kind: 'path', d: 'M9 15c1 1 5 1 6 0' },
+  },
+};
+
+/** The five fills a logged day can take, with the ink its face is drawn in. */
+export const TONES = {
+  rose: { fill: mp.errorContainer, ink: mp.onErrorContainer },
+  mint: { fill: mp.secondaryContainer, ink: mp.onSecondaryContainer },
+  grey: { fill: '#e4e1e6', ink: mp.variant },
+  green: { fill: mp.secondaryFixed, ink: mp.onSecondaryFixed },
+  lilac: { fill: mp.tertiaryFixed, ink: mp.onTertiaryFixedVariant },
+} as const;
+
+export type ToneName = keyof typeof TONES;
+
+/** One cell: either a logged day, or a day with no entry. */
+export type Day = { tone: ToneName; face: string; dim?: number } | { empty: true; dim?: number };
+
+export const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as const;
+
+/** Thirty-five cells, row-major from Sunday. */
+export const DAYS: readonly Day[] = [
+  // week 1 — two leading days from August
+  { empty: true, dim: 0.4 },
+  { empty: true, dim: 0.4 },
+  { tone: 'rose', face: 'v0' },
+  { tone: 'rose', face: 'v1' },
+  { tone: 'rose', face: 'v0' },
+  { tone: 'mint', face: 'v2' },
+  { tone: 'grey', face: 'v3' },
+  // week 2
+  { empty: true },
+  { tone: 'green', face: 'v5' },
+  { tone: 'green', face: 'v6' },
+  { tone: 'lilac', face: 'v7' },
+  { tone: 'grey', face: 'v8' },
+  { tone: 'mint', face: 'v2' },
+  { tone: 'mint', face: 'v9' },
+  // week 3
+  { tone: 'lilac', face: 'v10' },
+  { tone: 'rose', face: 'v11' },
+  { empty: true },
+  { tone: 'green', face: 'v12' },
+  { tone: 'green', face: 'v13' },
+  { tone: 'grey', face: 'v14' },
+  { tone: 'mint', face: 'v2' },
+  // week 4
+  { tone: 'mint', face: 'v15' },
+  { tone: 'mint', face: 'v16' },
+  { empty: true },
+  { empty: true },
+  { tone: 'mint', face: 'v9' },
+  { tone: 'grey', face: 'v14' },
+  { tone: 'mint', face: 'v2' },
+  // week 5 — the last four spill into October
+  { tone: 'lilac', face: 'v17' },
+  { tone: 'rose', face: 'v1' },
+  { tone: 'rose', face: 'v0' },
+  { tone: 'lilac', face: 'v12', dim: 0.85 },
+  { tone: 'green', face: 'v6', dim: 0.85 },
+  { tone: 'grey', face: 'v14', dim: 0.85 },
+  { tone: 'mint', face: 'v2', dim: 0.85 },
+];
+
+export const CALENDAR = {
+  title: 'Mood Calendar',
+  month: 'September, 2025',
+
+  summaryEyebrow: 'Monthly Mood Summary',
+  summaryMood: 'Happy',
+  summaryBody: "You're feeling calm and optimistic. Keep up the good vibes!",
+
+  bannerTitle: '18 Days of High Positivity',
+  bannerSub: '+14% improvement from August',
+} as const;
+
+/**
+ * The hero face on the summary card, in its own 100-unit box.
+ *
+ * Bigger and simpler than a day cell's — three strokes at 4.5, no eyes element
+ * at all, just two closed arcs and a wide smile.
+ */
+export const SUMMARY_FACE = {
+  eyeL: 'M18 36c4 6 12 6 16 0',
+  eyeR: 'M52 36c4 6 12 6 16 0',
+  mouth: 'M26 62c9 10 32 10 42 0',
+} as const;
+
+export type StatTile = {
+  key: string;
+  label: string;
+  icon: 'directionsWalk' | 'psychology' | 'verified';
+  iconColor: string;
+  value: string;
+  sub: string;
+};
+
+export const STATS: readonly StatTile[] = [
+  // STEP 4.09 steps walked
+  // {
+  //   key: 'activity',
+  //   label: 'Activity',
+  //   icon: 'directionsWalk',
+  //   iconColor: mp.secondary,
+  //   value: '101,513',
+  //   sub: 'Steps',
+  // },
+  // STEP 4.10 therapy sessions
+  // {
+  //   key: 'therapy',
+  //   label: 'Therapy',
+  //   icon: 'psychology',
+  //   iconColor: mp.onTertiaryContainer,
+  //   value: '10/30',
+  //   sub: 'Sessions',
+  // },
+  // STEP 4.11 focus score
+  // {
+  //   key: 'discipline',
+  //   label: 'Discipline',
+  //   icon: 'verified',
+  //   iconColor: mp.secondary,
+  //   value: '88%',
+  //   sub: 'Focus score',
+  // },
+];

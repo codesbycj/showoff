@@ -1,0 +1,202 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { CalendarDays, ChevronDown, TrendingDown } from 'lucide-react-native';
+import { ScrollView, Text, View, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+// STEP 3.11 one category
+// import { CategoryRow } from '@/features/aura/components/category-row';
+// STEP 3.07 what it means
+// import { InsightCard } from '@/features/aura/components/insight-card';
+import { NAV_CLEARANCE, PillNav } from '@/features/aura/components/pill-nav';
+// STEP 3.13 against the cap
+// import { RingGauge } from '@/features/aura/components/ring-gauge';
+// STEP 3.01 name the screen
+// import { ScreenHead } from '@/features/aura/components/screen-head';
+// STEP 3.09 name the breakdown
+// import { SectionHead } from '@/features/aura/components/section-head';
+// STEP 3.03 pick the period
+// import { Segmented } from '@/features/aura/components/segmented';
+// STEP 3.05 how it moved
+// import { TrendChart } from '@/features/aura/components/trend-chart';
+import { ANALYTICS, NAV } from '@/features/aura/data/account';
+import { R, SP, TYPE, au, auraTheme } from '@/features/aura/theme';
+
+/**
+ * Screen 3 — analytics.
+ *
+ * The one screen with a fixed bar above the scroll, because the month it is
+ * showing has to stay on screen while the charts move under it.
+ */
+export default function AuraAnalytics() {
+  const insets = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
+  return (
+    <View style={[auraTheme, { flex: 1, backgroundColor: au.surface }]}>
+      <StatusBar style="dark" />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: SP.margin,
+          paddingTop: insets.top + SP.md,
+          paddingBottom: NAV_CLEARANCE + insets.bottom,
+        }}
+      >
+{/* STEP 3.02 analytics, for a month
+        <ScreenHead
+          title={ANALYTICS.title}
+          subtitle={ANALYTICS.subtitle}
+          trailing={
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 6,
+                backgroundColor: au.surfaceLowest,
+                borderRadius: R.full,
+                paddingHorizontal: 14,
+                paddingVertical: 9,
+              }}
+            >
+              <CalendarDays size={15} color={au.primary} strokeWidth={2.2} />
+              <Text style={[TYPE.labelMd, { color: au.onSurface }]}>{ANALYTICS.period}</Text>
+              <ChevronDown size={14} color={au.onSurfaceVariant} strokeWidth={2.4} />
+            </View>
+          }
+        />
+*/}
+
+{/* STEP 3.04 what went out
+        <View
+          style={{
+            marginTop: SP.md,
+            backgroundColor: au.primary,
+            borderRadius: R.lg,
+            padding: SP.md,
+          }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+            <View style={{ flex: 1 }}>
+              <Text style={[TYPE.labelMd, { color: 'rgba(255,255,255,0.78)' }]}>
+                {ANALYTICS.outflowLabel}
+              </Text>
+              <Text style={[TYPE.numericHero, { marginTop: 6, color: au.onPrimary }]}>
+                {ANALYTICS.outflow}
+              </Text>
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 5,
+                backgroundColor: 'rgba(255,255,255,0.18)',
+                borderRadius: R.full,
+                paddingHorizontal: 10,
+                paddingVertical: 6,
+              }}
+            >
+              <TrendingDown size={14} color={au.onPrimary} strokeWidth={2.6} />
+              <Text style={[TYPE.labelSm, { color: au.onPrimary }]}>{ANALYTICS.delta}</Text>
+            </View>
+          </View>
+
+          <View style={{ marginTop: SP.md }}>
+            <Segmented
+              options={ANALYTICS.ranges}
+              active={ANALYTICS.activeRange}
+              track="rgba(255,255,255,0.16)"
+              thumb={au.onPrimary}
+              ink="rgba(255,255,255,0.82)"
+              activeInk={au.primary}
+            />
+          </View>
+        </View>
+*/}
+
+{/* STEP 3.06 draw the trend
+        <View style={{ marginTop: SP.md }}>
+          <TrendChart
+            title={ANALYTICS.trend.title}
+            subtitle={ANALYTICS.trend.subtitle}
+            peak={ANALYTICS.trend.peak}
+            series={ANALYTICS.trend.series}
+            shadow={ANALYTICS.trend.shadow}
+            weeks={ANALYTICS.trend.weeks}
+            width={width - SP.margin * 2}
+          />
+        </View>
+*/}
+
+{/* STEP 3.08 a nudge
+        <View style={{ marginTop: SP.md }}>
+          <InsightCard title={ANALYTICS.insight.title} body={ANALYTICS.insight.body} />
+        </View>
+*/}
+
+{/* STEP 3.10 top categories
+        <View style={{ marginTop: SP.lg }}>
+          <SectionHead
+            title={ANALYTICS.categoriesTitle}
+            count={ANALYTICS.categoriesCount}
+            action={ANALYTICS.details}
+            chevron
+          />
+        </View>
+*/}
+
+{/* STEP 3.12 where it all went
+        <View
+          style={{
+            marginTop: SP.sm + 4,
+            backgroundColor: au.surfaceLowest,
+            borderRadius: R.lg,
+            paddingHorizontal: SP.md,
+            paddingVertical: SP.xs,
+          }}
+        >
+          {ANALYTICS.categories.map((c) => (
+            <CategoryRow
+              key={c.key}
+              name={c.name}
+              note={c.note}
+              amount={c.amount}
+              pct={c.pct}
+              icon={c.icon}
+            />
+          ))}
+        </View>
+*/}
+
+{/* STEP 3.14 how much is left
+        <View style={{ marginTop: SP.md }}>
+          <RingGauge
+            title={ANALYTICS.cap.title}
+            note={ANALYTICS.cap.note}
+            pct={ANALYTICS.cap.pct}
+          />
+        </View>
+*/}
+      </ScrollView>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: Math.max(insets.bottom, 10) + 14,
+        }}
+      >
+{/* STEP 3.15 float the dock
+        <PillNav
+          items={NAV}
+          active="analytics"
+          onSelect={(k) => {
+            const item = NAV.find((n) => n.key === k);
+            if (item && k !== 'analytics') router.push(item.route);
+          }}
+        />
+*/}
+      </View>
+    </View>
+  );
+}

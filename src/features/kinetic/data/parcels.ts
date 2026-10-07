@@ -1,0 +1,174 @@
+import type { StatusTone } from '../components/bits';
+import type { ProductKey } from '../components/parcel-art';
+import type { SymbolName } from '../symbols';
+
+/** Everything the parcels screen says. */
+export const PARCELS = {
+  title: 'Packages',
+  searchPlaceholder: 'Search tracking ID, item or city...',
+
+  stats: [
+    {
+      key: 'transit',
+      icon: 'localShipping' as SymbolName,
+      value: '02',
+      label: 'In Transit',
+      accent: true,
+    },
+    {
+      key: 'today',
+      icon: 'schedule' as SymbolName,
+      value: '01',
+      label: 'Arriving Today',
+      accent: false,
+    },
+  ],
+
+  filters: ['All (6)', 'Active (2)', 'Delivered (3)', 'Cancelled (1)'],
+} as const;
+
+/**
+ * The five shipment cards.
+ *
+ * Every card shares a header — thumbnail, id, item, status badge — and then
+ * differs below it. That difference is what `body` names: the reference draws
+ * five distinct bodies, and modelling them as a tagged union rather than a pile
+ * of optional fields is what stops a delivered parcel from also carrying a
+ * live-tracking stepper.
+ */
+export type ParcelBody =
+  | {
+      kind: 'tracking';
+      badge: string;
+      fromDate: string;
+      fromPlace: string;
+      toDate: string;
+      toPlace: string;
+      primary: string;
+      secondary: string;
+    }
+  | {
+      kind: 'courier';
+      noteTitle: string;
+      noteBody: string;
+      fromLabel: string;
+      fromPlace: string;
+      toLabel: string;
+      toPlace: string;
+      primary: string;
+    }
+  | {
+      kind: 'delivered';
+      noteTitle: string;
+      noteBody: string;
+      noteTag: string;
+      place: string;
+      action: string;
+    }
+  | {
+      kind: 'progress';
+      leftLabel: string;
+      rightLabel: string;
+      progress: number;
+      fromLabel: string;
+      fromPlace: string;
+      toLabel: string;
+      toPlace: string;
+    }
+  | { kind: 'cancelled'; note: string; action: string };
+
+export type Parcel = {
+  key: string;
+  id: string;
+  item: string;
+  product: ProductKey;
+  status: string;
+  tone: StatusTone;
+  body: ParcelBody;
+};
+
+export const SHIPMENTS: Parcel[] = [
+  {
+    key: 'h314',
+    id: 'ID: H314315796',
+    item: 'Mac Mini M4 Pro • 10 Kg',
+    product: 'macmini',
+    status: 'Transit',
+    tone: 'transit',
+    body: {
+      kind: 'tracking',
+      badge: '4h Away',
+      fromDate: '18 Oct 2025',
+      fromPlace: 'Diriyah, Riyadh',
+      toDate: 'Estimated 19 Oct',
+      toPlace: 'Jawhra, Jeddah',
+      primary: 'Track Live',
+      secondary: 'Details',
+    },
+  },
+  {
+    key: 'd992',
+    id: 'ID: D99214...',
+    item: 'DJI Drone Air 3 • 2...',
+    product: 'drone',
+    status: 'Out for delivery',
+    tone: 'urgent',
+    body: {
+      kind: 'courier',
+      noteTitle: 'Courier on the way',
+      noteBody: 'Est. Arrival today at 2:30 PM • 3 stops re...',
+      fromLabel: 'Dispatched',
+      fromPlace: 'Al-Malqa, Riyadh',
+      toLabel: 'Final Drop',
+      toPlace: 'Al-Nakheel, Riyadh',
+      primary: 'Contact Courier',
+    },
+  },
+  {
+    key: 'k378',
+    id: 'ID: K37856307',
+    item: 'Sonos Speaker Move 2 • ...',
+    product: 'speaker',
+    status: 'Delivered',
+    tone: 'delivered',
+    body: {
+      kind: 'delivered',
+      noteTitle: 'Delivered on 17 Oct, 4:15 PM',
+      noteBody: 'Signed by Ahmad Kawsar',
+      noteTag: 'Porch',
+      place: 'Jawhra, Jeddah',
+      action: 'View POD Receipt',
+    },
+  },
+  {
+    key: 'b102',
+    id: 'ID: B10294821',
+    item: 'Apple Studio Display • ...',
+    product: 'display',
+    status: 'Processing',
+    tone: 'transit',
+    body: {
+      kind: 'progress',
+      leftLabel: 'Order Confirmed (18 Oct)',
+      rightLabel: 'Packaging at Hub',
+      progress: 0.28,
+      fromLabel: 'Origin',
+      fromPlace: 'Dubai Logistics Port',
+      toLabel: 'Destination',
+      toPlace: 'Diriyah, Riyadh',
+    },
+  },
+  {
+    key: 'x772',
+    id: 'ID: X77291004',
+    item: 'Custom Keychron Q1 Pro...',
+    product: 'keyboard',
+    status: 'Cancelled',
+    tone: 'cancelled',
+    body: {
+      kind: 'cancelled',
+      note: 'Cancelled by sender on 14 Oct. Full refund processed.',
+      action: 'Details',
+    },
+  },
+];

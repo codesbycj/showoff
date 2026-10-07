@@ -1,0 +1,806 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/user-pill"
+   ],
+   "label": "say hello"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "whose phone this is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/round-button"
+   ],
+   "label": "round buttons"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/menu-glyph"
+   ],
+   "label": "three little bars"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "two shortcuts up top"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/hero-greeting"
+   ],
+   "label": "ask what they came for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "need help studying today?"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/ask-bar"
+   ],
+   "label": "somewhere to type a question"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the ask bar"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/promo-banner"
+   ],
+   "label": "the upsell"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "unlock study pro"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/tool-card"
+   ],
+   "label": "the shortcut tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "a row for the tools"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/lumina/index.tsx",
+    [
+     "// MISTAKE 1.14",
+     "flexDirection: 'column',"
+    ]
+   ],
+   "label": "the three tiles came in stacked on top of each other"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/home.ts",
+    "math"
+   ],
+   "label": "solve some maths"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/home.ts",
+    "answer"
+   ],
+   "label": "the one they are on"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/home.ts",
+    "books"
+   ],
+   "label": "and the books"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/section-head"
+   ],
+   "label": "name a section"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what is due today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "a heading nobody asked for"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "<SectionHead title=\"Recently Viewed\" />"
+   ],
+   "label": "take it back out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/task-row"
+   ],
+   "label": "one thing to do today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "line the tasks up"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/home.ts",
+    "video"
+   ],
+   "label": "something to watch"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/home.ts",
+    "tips"
+   ],
+   "label": "and something to read"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "@/features/lumina/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-data",
+     "src/features/lumina/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/lumina/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "2": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "@/features/lumina/components/chat-header"
+   ],
+   "label": "a way back out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "STEP 2.02"
+   ],
+   "label": "name the assistant"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "@/features/lumina/components/mascot-orb"
+   ],
+   "label": "the face of the thing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "STEP 2.04"
+   ],
+   "label": "wake it up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "STEP 2.05"
+   ],
+   "label": "ask the question back"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "@/features/lumina/components/subject-chip"
+   ],
+   "label": "pick a subject"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "STEP 2.07"
+   ],
+   "label": "a rail for the subjects"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    [
+     "// MISTAKE 2.08",
+     "paddingLeft: 90,"
+    ]
+   ],
+   "label": "the rail came in indented like a pull quote"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/chat.ts",
+    "math"
+   ],
+   "label": "maths first"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/chat.ts",
+    "science"
+   ],
+   "label": "then the lab"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/chat.ts",
+    "english"
+   ],
+   "label": "something to read"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/chat.ts",
+    "history"
+   ],
+   "label": "and one that runs off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "@/features/lumina/components/prompt-dock"
+   ],
+   "label": "somewhere to type"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/chat.tsx",
+    "STEP 2.14"
+   ],
+   "label": "the composer"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "chat-data",
+     "src/features/lumina/data/chat.ts"
+    ],
+    [
+     "chat-screen",
+     "src/app/lumina/chat.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "3": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/screen-head"
+   ],
+   "label": "a way back out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/search-field"
+   ],
+   "label": "a way to look things up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.04"
+   ],
+   "label": "search the shelf"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/filter-chip"
+   ],
+   "label": "a way to narrow it down"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.06"
+   ],
+   "label": "a rail for the filters"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "all"
+   ],
+   "label": "everything at once"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "textbooks"
+   ],
+   "label": "just the books"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "notes"
+   ],
+   "label": "just the notes"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "practice"
+   ],
+   "label": "just the drills"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "videos"
+   ],
+   "label": "and one that runs off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/section-head"
+   ],
+   "label": "name a section"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.13"
+   ],
+   "label": "what they were reading"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/textbook-card"
+   ],
+   "label": "a book on the shelf"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.15"
+   ],
+   "label": "line the books up"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    [
+     "// MISTAKE 3.16",
+     "paddingLeft: 88,"
+    ]
+   ],
+   "label": "the books came in shoved away from the edge"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "bio"
+   ],
+   "label": "the biology one"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "calc"
+   ],
+   "label": "and the calculus one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.19"
+   ],
+   "label": "what they wrote down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/note-row"
+   ],
+   "label": "one saved note"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.21"
+   ],
+   "label": "stack the notes"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "chem"
+   ],
+   "label": "chemistry"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "math"
+   ],
+   "label": "maths"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/saved.ts",
+    "lit"
+   ],
+   "label": "and english"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.25"
+   ],
+   "label": "what they bookmarked"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/quiz-card"
+   ],
+   "label": "something to practise"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.27"
+   ],
+   "label": "one quiz, ready to go"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "@/features/lumina/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/saved.tsx",
+    "STEP 3.29"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "saved-data",
+     "src/features/lumina/data/saved.ts"
+    ],
+    [
+     "saved-screen",
+     "src/app/lumina/saved.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ],
+ "4": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "@/features/lumina/components/screen-head"
+   ],
+   "label": "a way back out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.02"
+   ],
+   "label": "name the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "@/features/lumina/components/profile-identity"
+   ],
+   "label": "who they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.04"
+   ],
+   "label": "the face and the name"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "@/features/lumina/components/stat-card"
+   ],
+   "label": "how they are doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.06"
+   ],
+   "label": "two numbers beside it"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "hours"
+   ],
+   "label": "hours at the desk"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "quizzes"
+   ],
+   "label": "quizzes taken"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.09"
+   ],
+   "label": "three more below"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "xp"
+   ],
+   "label": "points earned"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "quiz"
+   ],
+   "label": "books opened"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "streak"
+   ],
+   "label": "days in a row"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "@/features/lumina/components/promo-banner"
+   ],
+   "label": "the upsell again"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.14"
+   ],
+   "label": "unlock study pro"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "@/features/lumina/components/menu-row"
+   ],
+   "label": "where else they can go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.16"
+   ],
+   "label": "stack the menu"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    [
+     "// MISTAKE 4.17",
+     "width: '55%',"
+    ]
+   ],
+   "label": "the menu came in half the width of the screen"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "saved"
+   ],
+   "label": "what they saved"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/lumina/data/profile.ts",
+    "history"
+   ],
+   "label": "and what they practised"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "@/features/lumina/components/tab-dock"
+   ],
+   "label": "somewhere else to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lumina/profile.tsx",
+    "STEP 4.21"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "profile-data",
+     "src/features/lumina/data/profile.ts"
+    ],
+    [
+     "profile-screen",
+     "src/app/lumina/profile.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

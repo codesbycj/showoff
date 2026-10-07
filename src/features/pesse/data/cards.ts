@@ -1,0 +1,90 @@
+import { ps } from '../theme';
+
+/**
+ * Linda's three cards.
+ *
+ * Each carries its own three-colour set rather than a "variant" name, because
+ * the three faces are not one design in three colours: the lime card sets its
+ * ink in obsidian, the obsidian card in white, and the frost card in obsidian
+ * again but with a grey status pill instead of a filled one. Naming them
+ * `lime | obsidian | frost` and branching on the name would put that table in a
+ * component; here it stays data.
+ */
+export type CardFace = {
+  key: string;
+  holder: string;
+  balance: string;
+  last4: string;
+  exp: string;
+  status: string;
+  /** The face colour. */
+  fill: string;
+  /** Ink for the balance and the digits. */
+  ink: string;
+  /** Ink for the holder name and the expiry, which sit back from the balance. */
+  inkSoft: string;
+  /** The status pill's fill and ink. */
+  pillFill: string;
+  pillInk: string;
+  /** Whether the pill carries a filled check. Only the main card does. */
+  checked: boolean;
+  /** The debossed wordmark's opacity over this face. */
+  watermark: string;
+};
+
+export const CARDS: readonly CardFace[] = [
+  {
+    key: 'lime',
+    holder: 'Linda Srikandi',
+    balance: '$112,411',
+    last4: '2451',
+    exp: 'EXP 08/28',
+    status: 'Main card',
+    fill: ps.lime,
+    ink: ps.oliveDarkest,
+    inkSoft: 'rgba(23,30,0,0.72)',
+    pillFill: ps.inverse,
+    pillInk: ps.onInverse,
+    checked: true,
+    watermark: 'rgba(23,30,0,0.15)',
+  },
+  {
+    key: 'obsidian',
+    holder: 'Linda Srikandi',
+    balance: '$112,411',
+    last4: '0095',
+    exp: 'EXP 03/29',
+    status: 'Virtual',
+    fill: ps.inverse,
+    ink: ps.surfaceLowest,
+    inkSoft: 'rgba(240,240,242,0.6)',
+    pillFill: 'rgba(226,226,228,0.18)',
+    pillInk: ps.onInverse,
+    checked: false,
+    watermark: 'rgba(240,240,242,0.10)',
+  },
+  {
+    key: 'frost',
+    holder: 'Linda Srikandi',
+    balance: '$12,000',
+    last4: '1122',
+    exp: 'EXP 11/27',
+    status: 'Backup',
+    fill: ps.surfaceLowest,
+    ink: ps.onSurface,
+    inkSoft: 'rgba(26,28,29,0.6)',
+    pillFill: 'transparent',
+    pillInk: ps.secondary,
+    checked: false,
+    watermark: 'rgba(26,28,29,0.06)',
+  },
+];
+
+export const SELECT_CARD = {
+  navTitle: 'Card Controls',
+  title: 'Select Card',
+  subtitle: '3 active physical & virtual cards',
+  newCard: 'New card',
+  close: 'Close',
+  activeKey: 'lime',
+} as const;

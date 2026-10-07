@@ -1,0 +1,103 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { AppHeader, SectionHead, TabBar } from '@/features/redbrew/components/bits';
+import {
+  CashCard,
+  ConciergeRow,
+  IdentityCard,
+  LogoutBlock,
+  PerkCard,
+  PrefsCard,
+  StatTiles,
+} from '@/features/redbrew/components/profile-parts';
+import { HOME } from '@/features/redbrew/data/home';
+import { TABS } from '@/features/redbrew/data/nav';
+import { PERKS, PROFILE } from '@/features/redbrew/data/profile';
+import { SP, TYPE, rb, redbrewTheme } from '@/features/redbrew/theme';
+
+/**
+ * Screen 6 — profile & rewards.
+ *
+ * A long column of blocks. The perks rail bleeds to both edges so its second
+ * card can be clipped by the right edge the way the reference shows — the tell
+ * that it scrolls rather than wraps.
+ */
+export default function RedbrewProfile() {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={[redbrewTheme, { flex: 1, backgroundColor: rb.bg }]}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: insets.top, paddingHorizontal: SP.margin }}>
+        <AppHeader
+          section={PROFILE.section}
+          store={HOME.store}
+          avatar={require('../../../assets/images/redbrew/alex.jpg')}
+          onBell={() => router.push('/redbrew/orders')}
+          onAvatar={() => router.push('/redbrew/profile')}
+          onStore={() => router.push('/redbrew')}
+        />
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: SP.lg, gap: SP.lg }}
+      >
+        <View style={{ paddingHorizontal: SP.margin, gap: SP.md }}>
+          <IdentityCard onEdit={() => router.push('/redbrew/cart')} />
+
+          <CashCard
+            onTopUp={() => router.push('/redbrew/cart')}
+            onTransfer={() => router.push('/redbrew/orders')}
+          />
+
+          <StatTiles />
+        </View>
+
+        <View style={{ gap: SP.md }}>
+          <View style={{ paddingHorizontal: SP.margin }}>
+            <SectionHead
+              title={PROFILE.perksTitle}
+              action={PROFILE.perksAction}
+              onAction={() => router.push('/redbrew')}
+            />
+          </View>
+
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: SP.margin, gap: 12, paddingVertical: 2 }}
+          >
+            {PERKS.map((p) => (
+              <PerkCard key={p.key} perk={p} onApply={() => router.push('/redbrew/cart')} />
+            ))}
+          </ScrollView>
+        </View>
+
+        <View style={{ paddingHorizontal: SP.margin, gap: SP.md }}>
+          <Text style={[TYPE.headlineMd, { color: rb.ink }]}>{PROFILE.prefsTitle}</Text>
+
+          <PrefsCard onRow={() => router.push('/redbrew/tracking')} />
+
+          <ConciergeRow onChat={() => router.push('/redbrew/tracking')} />
+
+          <LogoutBlock onPress={() => router.push('/redbrew')} />
+        </View>
+      </ScrollView>
+
+      <View style={{ paddingBottom: Math.max(insets.bottom, 8) }}>
+        <TabBar
+          active="profile"
+          onSelect={(key) => {
+            const tab = TABS.find((t) => t.key === key);
+            if (tab && key !== 'profile') router.push(tab.route);
+          }}
+        />
+      </View>
+    </View>
+  );
+}
