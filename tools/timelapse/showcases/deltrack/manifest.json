@@ -1,0 +1,7 @@
+{
+ "home-screen": "src/app/deltrack/index.tsx",
+ "home-data": "src/features/deltrack/data/home.ts",
+ "location-header": "src/features/deltrack/components/location-header.tsx",
+ "transit-card": "src/features/deltrack/components/transit-card.tsx",
+ "shipment-card": "src/features/deltrack/components/shipment-card.tsx"
+}

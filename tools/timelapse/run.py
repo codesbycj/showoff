@@ -208,8 +208,30 @@ OPS = {'jsx': jsx, 'imp': imp, 'unimp': unimp, 'entry': entry,
 
 # ── running ─────────────────────────────────────────────────────────────────
 
+def has_steps(slug):
+    return os.path.isfile(os.path.join(sdir(slug), 'steps.json'))
+
+
+def steps_path(slug):
+    """Path to a showcase's steps, or exit saying it does not have any.
+
+    A showcase built from a video is filmed by *using* it, not by building it
+    on camera, so it is registered with `snapshot.js` and has a `finished/`
+    tree and no `steps.json`. `final`, `blank` and `lock` still work on it;
+    the step-driven commands do not, and this is where they say so instead of
+    raising FileNotFoundError on a path the caller never named.
+    """
+    p = os.path.join(sdir(slug), 'steps.json')
+    if not os.path.isfile(p):
+        raise SystemExit(
+            '%s has no staged reveal - it is a final-only showcase.\n'
+            'Available for it: final, blank, lock.\n'
+            'Capture it with:  node tools/timelapse/snapshot.js %s' % (slug, slug))
+    return p
+
+
 def steps_for(slug, screen):
-    data = json.load(io.open(os.path.join(sdir(slug), 'steps.json'), encoding='utf-8'))
+    data = json.load(io.open(steps_path(slug), encoding='utf-8'))
     if screen not in data:
         raise SystemExit('showcase %s has no screen %r (have %s)'
                          % (slug, screen, ', '.join(sorted(data))))
@@ -243,7 +265,7 @@ def apply_blank(slug):
 
 
 def screens(slug):
-    data = json.load(io.open(os.path.join(sdir(slug), 'steps.json'), encoding='utf-8'))
+    data = json.load(io.open(steps_path(slug), encoding='utf-8'))
     return sorted(data)
 
 
@@ -344,8 +366,12 @@ def lock(slug):
     data = {rel: digest(rel) for rel in tracked(slug)}
     io.open(os.path.join(sdir(slug), 'lock.json'), 'w', encoding='utf-8', newline='').write(
         json.dumps(data, indent=1) + '\n')
-    apply_blank(slug)
-    print('lock: %d files recorded for %s' % (len(data), slug))
+    # A final-only showcase has no blank state to return to, and calling
+    # apply_blank on it would be a silent no-op that reads as if it had worked.
+    if has_steps(slug):
+        apply_blank(slug)
+    print('lock: %d files recorded for %s%s'
+          % (len(data), slug, '' if has_steps(slug) else ' (final-only; left in final state)'))
     return 0
 
 
@@ -380,13 +406,17 @@ def preflight(slug):
     if problems:
         print('preflight: %d file(s) drifted from lock - fix before recording' % len(problems))
         return 1
-    apply_blank(slug)
+    # A final-only showcase has no blank state. Resetting it would be a no-op
+    # that still printed "is blank", which is the one thing preflight must not
+    # get wrong: it is read immediately before a take.
+    staged = has_steps(slug)
+    apply_mode(slug, 'blank' if staged else 'final')
     ok, msg = typecheck()
     if not ok:
         print(msg)
         print('preflight: typecheck failed')
         return 1
-    print('preflight: clean - %s is blank and typechecks' % slug)
+    print('preflight: clean - %s is %s and typechecks' % (slug, 'blank' if staged else 'final'))
     return 0
 
 

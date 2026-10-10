@@ -1,0 +1,99 @@
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { HistoryRow } from '@/features/deltrack/components/history-row';
+import { LocationHeader } from '@/features/deltrack/components/location-header';
+import { PageDots } from '@/features/deltrack/components/page-dots';
+import { PageWash } from '@/features/deltrack/components/page-wash';
+import { SectionHead } from '@/features/deltrack/components/section-head';
+import { ShipmentRail } from '@/features/deltrack/components/shipment-rail';
+import { TabDock } from '@/features/deltrack/components/tab-dock';
+import { TrackBanner } from '@/features/deltrack/components/track-banner';
+import { TrackingField } from '@/features/deltrack/components/tracking-field';
+import { TransitCard } from '@/features/deltrack/components/transit-card';
+import { HISTORY, HOME, SHIPMENTS, TABS } from '@/features/deltrack/data/home';
+import { DOCK_CLEARANCE, DOCK_GAP, DOCK_MARGIN, TOP_INSET } from '@/features/deltrack/layout';
+import { deltrackTheme, dt } from '@/features/deltrack/theme';
+
+/**
+ * Screen 1 - Deltrack's home.
+ *
+ * Assembly only. Every band on the page is its own component under
+ * `src/features/deltrack/components`, so the speed-build video shows the
+ * screen arriving a piece at a time.
+ */
+export default function DeltrackHome() {
+  const insets = useSafeAreaInsets();
+  const top = Math.max(insets.top, TOP_INSET);
+
+  return (
+    <View style={[deltrackTheme, { flex: 1, backgroundColor: dt.bg }]}>
+      <StatusBar style="dark" />
+      <PageWash />
+
+      <View style={{ paddingTop: top + 7 }}>
+        <LocationHeader label={HOME.locationLabel} address={HOME.address} unread={HOME.unread} />
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingTop: 13, paddingBottom: DOCK_CLEARANCE + 8 }}
+      >
+        <TrackBanner title={HOME.hero.title} subtitle={HOME.hero.subtitle}>
+          <View style={{ marginTop: 17 }}>
+            <TrackingField placeholder={HOME.hero.placeholder} />
+          </View>
+
+          <View style={{ marginTop: 15 }}>
+            <TransitCard
+              id={HOME.transit.id}
+              status={HOME.transit.status}
+              done={HOME.transit.done}
+              at={HOME.transit.at}
+              originLabel={HOME.transit.originLabel}
+              originDate={HOME.transit.originDate}
+              destLabel={HOME.transit.destLabel}
+              destDate={HOME.transit.destDate}
+            />
+          </View>
+
+          <View style={{ marginTop: 1 }}>
+            <PageDots count={HOME.pages} page={HOME.page} />
+          </View>
+        </TrackBanner>
+
+        <View style={{ marginTop: 10 }}>
+          <SectionHead title={HOME.currentTitle} action={HOME.viewAll} />
+        </View>
+
+        <View style={{ marginTop: 15 }}>
+          <ShipmentRail shipments={SHIPMENTS} />
+        </View>
+
+        <View style={{ marginTop: 18 }}>
+          <SectionHead title={HOME.historyTitle} action={HOME.viewAll} />
+        </View>
+
+        <View style={{ marginTop: 11, gap: 12 }}>
+          {HISTORY.map((h) => (
+            <HistoryRow
+              key={h.key}
+              id={h.id}
+              note={h.note}
+              status={h.status}
+              date={h.date}
+              dimmed={h.dimmed}
+            />
+          ))}
+        </View>
+      </ScrollView>
+
+      <View
+        style={{ position: 'absolute', left: DOCK_MARGIN, right: DOCK_MARGIN, bottom: DOCK_GAP }}
+      >
+        <TabDock tabs={TABS} active="home" />
+      </View>
+    </View>
+  );
+}

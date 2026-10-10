@@ -1,0 +1,393 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/page-wash"
+   ],
+   "label": "the wash behind the top of the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "lay the wash down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/location-header"
+   ],
+   "label": "who you are and where"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "pin the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/location-header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/location-header.tsx",
+    "STEP 1.06"
+   ],
+   "label": "where you are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/location-header.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the bell, and its unread dot"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/track-banner"
+   ],
+   "label": "the card that holds the search"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/tracking-field"
+   ],
+   "label": "somewhere to type a number"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/transit-card"
+   ],
+   "label": "the parcel that is moving"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/page-dots"
+   ],
+   "label": "which of the four you are on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the hero, and everything inside it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the parcel's number"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "say what is happening to it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    [
+     "// MISTAKE 1.15",
+     "fontSize: 13,"
+    ]
+   ],
+   "label": "the status came in at label size"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "how far along it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "when it left, and when it lands"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the bite the dots sit in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/transit-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "track another one"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/section-head"
+   ],
+   "label": "a section needs a name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "name the first section"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "<SectionHead title=\"Current Shipments\" action={HOME.viewAll} />"
+   ],
+   "label": "it came in with the wrong name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "name it again, properly"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/shipment-rail"
+   ],
+   "label": "the rail of shipments"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.25"
+   ],
+   "label": "lay the rail"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "ftop-1"
+   ],
+   "label": "the shipment on its way"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/shipment-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the parcel, and what is in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/shipment-card.tsx",
+    "STEP 1.28"
+   ],
+   "label": "how far it has got"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/shipment-card.tsx",
+    "STEP 1.29"
+   ],
+   "label": "the two figures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/deltrack/components/shipment-card.tsx",
+    "STEP 1.30"
+   ],
+   "label": "who is carrying it"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "ftop-2"
+   ],
+   "label": "one more, half off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.32"
+   ],
+   "label": "name the history"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/history-row"
+   ],
+   "label": "one line of history"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.34"
+   ],
+   "label": "the history list"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "96425361843"
+   ],
+   "label": "the one that arrived"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "96425671843"
+   ],
+   "label": "the one still moving"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.37"
+   ],
+   "label": "one more out of the archive"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "<HistoryRow id=\"#96425361843-XX\" note=\"Checked in at the depot\" status=\"Pending\" date=\"21 May 2025\" />"
+   ],
+   "label": "that one is not ours"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "@/features/deltrack/components/tab-dock"
+   ],
+   "label": "everywhere else the app goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/deltrack/index.tsx",
+    "STEP 1.40"
+   ],
+   "label": "pin the dock"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "home"
+   ],
+   "label": "Home"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "send"
+   ],
+   "label": "Send"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "scan"
+   ],
+   "label": "the scanner"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "history"
+   ],
+   "label": "History"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/deltrack/data/home.ts",
+    "profile"
+   ],
+   "label": "Profile"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-data",
+     "src/features/deltrack/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/deltrack/index.tsx"
+    ],
+    [
+     "location-header",
+     "src/features/deltrack/components/location-header.tsx"
+    ],
+    [
+     "shipment-card",
+     "src/features/deltrack/components/shipment-card.tsx"
+    ],
+    [
+     "transit-card",
+     "src/features/deltrack/components/transit-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+import { Pressable, Text, View } from 'react-native';
+
+import { Bell, ChevronDown, MapPin } from './icons';
+import { UserAvatar } from './user-avatar';
+import { LEVEL, SP, TYPE, dt } from '../theme';
+
+/**
+ * The pinned header: who you are, where you are, and the bell.
+ *
+ * Measured off the reference at a 59dp top inset — the avatar's disc runs
+ * y 66..112 and the bell's y 66..110, so both sit 7dp under the inset and the
+ * row is 46dp tall. "My Location" has its x-height band at 74..80 and the
+ * address its cap at 94..104, which is a 12dp baseline step.
+ *
+ * It takes `onLocation` and `onBell` and decides nothing itself: where a tap
+ * goes is the screen's business.
+ */
+
+/**
+ * The pin's ink sits 2dp inside its 24-unit box, so the glyph has to be pulled
+ * back by that much for its ink to start where the line above it does.
+ */
+const PIN_NUDGE = -2;
+export function LocationHeader({
+  label,
+  address,
+  unread,
+  onLocation,
+  onBell,
+}: {
+  label: string;
+  address: string;
+  unread?: boolean;
+  onLocation?: () => void;
+  onBell?: () => void;
+}) {
+  return (
+    <View
+      style={{
+        height: 46,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: SP.margin,
+      }}
+    >
+{/* STEP 1.05 the face
+      <UserAvatar size={46} />
+*/}
+
+{/* STEP 1.06 where you are
+      <Pressable
+        onPress={onLocation}
+        accessibilityRole="button"
+        accessibilityLabel={`${label}, ${address}`}
+        // The two lines are 24dp apart on their baselines, which the 7dp gap
+        // sets. The asymmetric padding is what places the pair: the block is
+        // centred in a 46dp row, so 2dp on top against 1dp underneath slides
+        // it down until the overline's x-height band lands on 73..82, where
+        // the reference's does.
+        style={{ flex: 1, marginLeft: 11, paddingTop: 2, paddingBottom: 1 }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3 }}>
+          <Text style={[TYPE.overline, { color: dt.muted }]}>{label}</Text>
+          <ChevronDown size={14} color={dt.muted} />
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3, marginTop: 7 }}>
+          <MapPin size={15} color={dt.ink} style={{ marginLeft: PIN_NUDGE }} />
+          <Text numberOfLines={1} style={[TYPE.address, { color: dt.ink }]}>
+            {address}
+          </Text>
+        </View>
+      </Pressable>
+*/}
+
+{/* STEP 1.07 the bell, and its unread dot
+      <Pressable onPress={onBell} accessibilityRole="button" accessibilityLabel="Notifications">
+        <View
+          style={[
+            {
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: dt.surface,
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+            LEVEL.button,
+          ]}
+        >
+          <Bell size={22} color={dt.ink} />
+        </View>
+
+        {unread ? (
+          // The badge straddles the disc's top-right edge rather than sitting
+          // inside it, which is why it is positioned off the disc's corner.
+          <View
+            style={{
+              position: 'absolute',
+              top: -2,
+              right: -2,
+              width: 14,
+              height: 14,
+              borderRadius: 7,
+              backgroundColor: dt.red,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <View style={{ width: 4, height: 4, borderRadius: 2, backgroundColor: dt.surface }} />
+          </View>
+        ) : null}
+      </Pressable>
+*/}
+    </View>
+  );
+}

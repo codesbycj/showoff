@@ -1,0 +1,161 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/schibsted-grotesk';
+
+@theme {
+  --font-sans:
+    'Schibsted Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-ink: #1b1b1b;
+  --color-ink-soft: #5c5c5c;
+  --color-ink-faint: #8e8e8e;
+  --color-paper: #ffffff;
+  --color-backdrop: #2c2c2c;
+  --color-hairline: #e4e2df;
+
+  --color-cat-housing: #625653;
+  --color-cat-interiors: #925434;
+  --color-cat-education: #c9d3df;
+  --color-cat-civic: #707569;
+  --color-cat-workplace: #e3c1aa;
+
+  --text-display: 5.5rem;
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body[data-locked='true'] {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+/* The four ways something can arrive. JavaScript flips data-revealed; the rest is here. */
+@layer components {
+  [data-reveal] {
+    will-change: transform, opacity, clip-path;
+  }
+
+  [data-reveal='fade-up'] {
+    opacity: 0;
+    transform: translateY(var(--fade-up-y, 30px));
+    transition:
+      opacity var(--dur-fade-up, 0.6s) ease-out var(--reveal-delay, 0s),
+      transform var(--dur-fade-up, 0.6s) ease-out var(--reveal-delay, 0s);
+  }
+
+  [data-reveal='image'] {
+    clip-path: var(--reveal-clip-from, inset(40% 0 0 0));
+    opacity: var(--reveal-opacity-from, 0.2);
+    overflow: hidden;
+    transition:
+      clip-path var(--dur-reveal, 1.2s) var(--ease-reveal) var(--reveal-delay, 0s),
+      opacity var(--dur-reveal, 1.2s) var(--ease-reveal) var(--reveal-delay, 0s);
+  }
+
+  [data-reveal='image'] :is(img, video) {
+    scale: var(--reveal-scale-from, 1.5);
+    transition: scale var(--dur-reveal, 1.2s) var(--ease-reveal) var(--reveal-delay, 0s);
+  }
+
+  [data-reveal='image-soft'] {
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity var(--dur-reveal, 1.2s) var(--ease-reveal) var(--reveal-delay, 0s);
+  }
+
+  [data-reveal='image-soft'] :is(img, video) {
+    scale: 1.07;
+    transition: scale var(--dur-reveal, 1.2s) var(--ease-reveal) var(--reveal-delay, 0s);
+  }
+
+  [data-reveal='text-wipe'] {
+    display: block;
+    overflow: hidden;
+  }
+
+  [data-reveal='text-wipe'] > * {
+    display: block;
+    transform: translateY(110%);
+    transition: transform 0.9s var(--ease-reveal) var(--reveal-delay, 0s);
+  }
+
+  [data-reveal='text-wipe'][data-revealed='true'] > * {
+    transform: none;
+  }
+
+  [data-reveal][data-revealed='true'] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 0 0);
+  }
+
+  [data-reveal][data-revealed='true'] :is(img, video) {
+    scale: 1;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size var(--dur-ui, 0.3s) var(--ease-ui);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  [data-reveal] > * {
+    transform: none !important;
+  }
+
+  [data-reveal] :is(img, video) {
+    scale: 1 !important;
+  }
+}

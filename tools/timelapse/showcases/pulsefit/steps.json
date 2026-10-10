@@ -1,0 +1,400 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/app-header"
+   ],
+   "label": "the bar that never moves"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "pin the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/app-header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/app-header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "who this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/app-header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the bell, and a way back to you"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/greeting-row"
+   ],
+   "label": "who is looking at this"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "say good morning"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/greeting-row.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the face, on the ring that holds it off the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/greeting-row.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and the dot that says you are here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/greeting-row.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and who you are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/greeting-row.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the day's plan, and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/weekly-hero"
+   ],
+   "label": "how the week has gone"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the week's progress, and the streak it adds up to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/weekly-hero.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the ramp, and the glow hung off its corner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/weekly-hero.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what the card is counting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/weekly-hero.tsx",
+    "STEP 1.16"
+   ],
+   "label": "how the week went"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/weekly-hero.tsx",
+    "STEP 1.17"
+   ],
+   "label": "six of the seven days, as a ring"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/metric-card"
+   ],
+   "label": "a number worth watching"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "two numbers to hit today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/metric-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "name the thing being counted"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/metric-card.tsx",
+    "STEP 1.21"
+   ],
+   "label": "a mark for it, on its own tint"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/metric-card.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and the number itself"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/week-strip"
+   ],
+   "label": "the week, as seven pills"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "the week itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/week-strip.tsx",
+    "STEP 1.25"
+   ],
+   "label": "which month this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/week-strip.tsx",
+    "STEP 1.26"
+   ],
+   "label": "a way back and forward"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/week-strip.tsx",
+    "STEP 1.27"
+   ],
+   "label": "seven pills, one of them today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/week-strip.tsx",
+    "STEP 1.28"
+   ],
+   "label": "which day of the week each one is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/week-strip.tsx",
+    "STEP 1.29"
+   ],
+   "label": "and its date under it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/pulsefit/components/week-strip.tsx",
+    [
+     "// MISTAKE 1.30",
+     "marginTop: 14,"
+    ]
+   ],
+   "label": "the dates came in sitting too low in the pill"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/section-head"
+   ],
+   "label": "something to call the list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.32"
+   ],
+   "label": "name the list"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "<SectionHead title=\"Recent Meals\" action={HOME.seeAll} />"
+   ],
+   "label": "that is the wrong list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.34"
+   ],
+   "label": "it is today's, not the archive"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/meal-row"
+   ],
+   "label": "one meal at a time"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.36"
+   ],
+   "label": "what has been eaten so far"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/meal-row.tsx",
+    "STEP 1.37"
+   ],
+   "label": "which meal this was"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/meal-row.tsx",
+    "STEP 1.38"
+   ],
+   "label": "and what it cost you"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/meal-row.tsx",
+    "STEP 1.39"
+   ],
+   "label": "the dishes, overlapping"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/meal-row.tsx",
+    "STEP 1.40"
+   ],
+   "label": "and room for one more"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "@/features/pulsefit/components/tab-dock"
+   ],
+   "label": "everywhere else the app goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/pulsefit/index.tsx",
+    "STEP 1.42"
+   ],
+   "label": "float the dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/pulsefit/components/tab-dock.tsx",
+    "STEP 1.43"
+   ],
+   "label": "five slots, and the one in the middle that is a button"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/pulsefit/components/tab-dock.tsx",
+    [
+     "// MISTAKE 1.44",
+     "borderRadius: R.full,"
+    ]
+   ],
+   "label": "the quick-add came out a circle"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-header",
+     "src/features/pulsefit/components/app-header.tsx"
+    ],
+    [
+     "greeting-row",
+     "src/features/pulsefit/components/greeting-row.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/pulsefit/index.tsx"
+    ],
+    [
+     "meal-row",
+     "src/features/pulsefit/components/meal-row.tsx"
+    ],
+    [
+     "metric-card",
+     "src/features/pulsefit/components/metric-card.tsx"
+    ],
+    [
+     "tab-dock",
+     "src/features/pulsefit/components/tab-dock.tsx"
+    ],
+    [
+     "week-strip",
+     "src/features/pulsefit/components/week-strip.tsx"
+    ],
+    [
+     "weekly-hero",
+     "src/features/pulsefit/components/weekly-hero.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

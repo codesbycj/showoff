@@ -1,6 +1,0 @@
-{
- "home-screen": "src/app/aura/index.tsx",
- "wallet-screen": "src/app/aura/wallet.tsx",
- "analytics-screen": "src/app/aura/analytics.tsx",
- "profile-screen": "src/app/aura/profile.tsx"
-}

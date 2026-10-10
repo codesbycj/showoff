@@ -24,6 +24,35 @@ screens, whichever app it is.
 5. **No git.** Never commit, branch, stage, checkout or reset. These are showcases, not
    shipped code. Back work up by copying files, never with git.
 
+## Two kinds of reference
+
+**A screenshot is a layout brief.** Rules 1-5 above are written for those: match the
+design exactly, build it screen by screen, stage it as a speed-build reveal.
+
+**A video is a motion brief, and the rules change.** When the reference is a recording of
+an animated prototype:
+
+- **The animation is the specification. The UI is inspiration.** Measure the motion frame
+  by frame and match it; do not chase the layout's pixels. A capture tool flies and zooms
+  the phone, so there is no stable pixel grid in the clip to measure a layout against even
+  if matching one were the point. Rule 1 does not apply to a video reference.
+- **It must be a real, responsive app.** Derive every size from `useWindowDimensions()`
+  through a `layout.ts`, lay blocks out in flex, and check it at several screen sizes
+  before calling it done. Fixed offsets taken off one phone are the failure mode here.
+- **One screen, not one route per beat.** The transitions in a prototype are continuities
+  between states of the same surface — a shared element flying out of the card it was in,
+  a bar growing into a sheet. `expo-router` cross-fades whole screens, which destroys
+  every one of them. Hold the state in the screen and let the layers persist.
+- **Routes live under `src/app/animated/<slug>/`,** so a motion showcase is never mixed up
+  with a screenshot one.
+- **No step-by-step staging.** There is no blank state and no reveal: the showcase is
+  filmed by *using* it. Register it with `tools/timelapse/snapshot.js <slug>` — see
+  "Final-only showcases" below.
+
+Record the measured timings in a `motion.ts` with the tracked numbers in the comments.
+They are the only thing to re-check against when something feels wrong later, and they
+cannot be recovered from the built app.
+
 ## Layout
 
 ```
@@ -219,6 +248,24 @@ Both copies of every file live in `showcases/<slug>/` and are never edited in pl
 
 Steps are element-level: composite components are staged internally so a row fills in one
 item at a time instead of landing all at once. See `tools/timelapse/README.md`.
+
+### Final-only showcases
+
+A showcase built from a **video** has no blank state and no reveal (see "Two kinds of
+reference"). Register it with
+
+```bash
+node tools/timelapse/snapshot.js <slug>          # capture the tree as finished
+node tools/timelapse/snapshot.js <slug> --check  # report drift, write nothing
+```
+
+which writes a manifest and a `finished/` tree and nothing else. `final`, `blank` and
+`lock` then work on it; `verify`, `rehearse` and the per-screen reveal say it is
+final-only rather than failing on a missing file. `preflight` still checks drift against
+`lock.json` and leaves it in **final** state, which is the resting state for this kind.
+
+Re-run `snapshot.js <slug>` after changing any of its files, or `final` will restore the
+older copy over your work. `--check` before a take says whether that has happened.
 
 **Never hand-write `steps.json`.** Put markers in the blank files and run
 `node tools/timelapse/gen.js <slug>`. The blank file is then the only source of truth: a

@@ -14,7 +14,7 @@ const showcases = path.join(root, 'tools/timelapse/showcases');
 const BOOT = path.join(root, 'src/app/index.tsx');
 
 const dirsFor = (slug) => [
-  `src/app/${slug}`,
+  routeDir(slug),
   `src/features/${slug}/components`,
   `src/features/${slug}/data`,
   `assets/images/${slug}`,
@@ -22,18 +22,51 @@ const dirsFor = (slug) => [
   `tools/timelapse/showcases/${slug}/finished`,
 ];
 
+/**
+ * Showcases built from a video live under `src/app/animated/<slug>`, so
+ * `animated` is a grouping folder and never a slug of its own. Everything
+ * here has to look one level deeper for those, or `animated` shows up in the
+ * listing as a showcase and the real one does not show up at all.
+ */
+const GROUPS = ['animated'];
+
 function existing() {
-  if (!fs.existsSync(path.join(root, 'src/app'))) return [];
-  return fs
-    .readdirSync(path.join(root, 'src/app'), { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name);
+  const appDir = path.join(root, 'src/app');
+  if (!fs.existsSync(appDir)) return [];
+  const out = [];
+  for (const d of fs.readdirSync(appDir, { withFileTypes: true })) {
+    if (!d.isDirectory()) continue;
+    if (GROUPS.includes(d.name)) {
+      for (const g of fs.readdirSync(path.join(appDir, d.name), { withFileTypes: true })) {
+        if (g.isDirectory()) out.push(g.name);
+      }
+    } else {
+      out.push(d.name);
+    }
+  }
+  return out;
+}
+
+/** Where a slug's routes actually live — grouped or not. */
+function routeDir(slug) {
+  for (const g of GROUPS) {
+    if (fs.existsSync(path.join(root, 'src/app', g, slug))) return `src/app/${g}/${slug}`;
+  }
+  return `src/app/${slug}`;
+}
+
+/** The route a slug boots to, which is its path under src/app. */
+function routeHref(slug) {
+  return '/' + routeDir(slug).replace(/^src\/app\//, '');
 }
 
 function bootSlug() {
   if (!fs.existsSync(BOOT)) return null;
-  const m = fs.readFileSync(BOOT, 'utf8').match(/href="\/([^"/]+)/);
-  return m ? m[1] : null;
+  const m = fs.readFileSync(BOOT, 'utf8').match(/href="\/([^"]+)"/);
+  if (!m) return null;
+  // "animated/pantry" -> "pantry"; "fashora" -> "fashora".
+  const parts = m[1].split('/');
+  return parts[parts.length - 1];
 }
 
 function writeBoot(slug) {
@@ -41,7 +74,7 @@ function writeBoot(slug) {
     BOOT,
     `import { Redirect } from 'expo-router';\n\n` +
       `/** The app opens on the showcase currently being built or recorded. */\n` +
-      `export default function Index() {\n  return <Redirect href="/${slug}" />;\n}\n`,
+      `export default function Index() {\n  return <Redirect href="${routeHref(slug)}" />;\n}\n`,
     'utf8',
   );
 }
@@ -92,7 +125,7 @@ if (cmd === 'new') {
     'utf8',
   );
   writeBoot(arg);
-  console.log(`scaffolded ${arg}; boot redirect now points at /${arg}`);
+  console.log(`scaffolded ${arg}; boot redirect now points at ${routeHref(arg)}`);
   console.log('expo-router typed routes are now stale - tsc will fail until the dev');
   console.log('server picks the new route up, or you run an export.');
   process.exit(0);
@@ -104,7 +137,7 @@ if (cmd === 'use') {
     process.exit(1);
   }
   writeBoot(arg);
-  console.log(`boot redirect now points at /${arg}`);
+  console.log(`boot redirect now points at ${routeHref(arg)}`);
   process.exit(0);
 }
 
@@ -118,7 +151,7 @@ function bootFallback() {
   const left = existing();
   if (left.length) {
     writeBoot(left[0]);
-    console.log(`boot redirect now points at /${left[0]}`);
+    console.log(`boot redirect now points at ${routeHref(left[0])}`);
     return;
   }
   fs.writeFileSync(

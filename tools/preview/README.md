@@ -62,11 +62,36 @@ screen plus an attribution bar: strip the bar, divide by the capture density. Fo
 1179×2676 exports used so far the screen is 1179×2556 at 3x = 393×852 dp, so a measurement
 in that image × 0.446 = dp. Recompute for any new reference size.
 
+## When the reference is markup, do not measure it at all
+
+A Google Stitch export ships `code.html` beside its `screen.png`, and that page
+is a better reference than the picture of it. Render it at the harness's own
+width and read the layout out of the DOM:
+
+```bash
+node tools/preview/boxes.js "file:///$PWD/ref/<slug>/code.html" > boxes.json
+```
+
+Every box comes back exact, along with the *resolved* letter-spacing — the
+tokens set it in `em` and the markup then overrides the tracking on most
+strings, so the two disagree on nearly every line — and the composited value of
+every alpha fill. Against that, a component can be checked to under a channel
+of mean error rather than to the nearest pixel of a screenshot.
+
+It also answers the question the PNG cannot: **what width was the export
+rendered at?** Render the markup at several candidates and diff each against the
+PNG. PulseFit's came out 390 against a next-best 393 by a factor of three in
+mean error, and its status-bar pill had implied 393. Read at the wrong width the
+error looks like a uniform 0.75% scale — which presents as everything sitting
+2-3dp low by the bottom of the screen, and is very easy to mistake for drift in
+the build rather than in the ruler.
+
 ## Files
 
 | file | does |
 |---|---|
 | `shoot.js` | screenshot a route off the running dev server (the common case) |
+| `boxes.js` | dump a reference page's own element boxes and styles, as JSON |
 | `shot.js` | screenshot any URL; drives Chrome over CDP |
 | `rows.js` | measure coloured bands in a PNG, in dp |
 | `server.js` | static file server, for shooting a built export instead |

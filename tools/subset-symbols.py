@@ -128,6 +128,11 @@ ALIASES = {
     # `card_giftcard` is Material *Icons* only. Symbols draws the same
     # gift-with-a-bow as `redeem`, which is what the profile's gifting row wants.
     "mindful": {"card_giftcard": "redeem"},
+    # Symbols carries the bell's fill on an axis rather than in two glyphs, so
+    # the legacy Material *Icons* name `notifications_none` has no entry at all;
+    # the hollow bell is plain `notifications`. PulseFit's markup names both,
+    # one in the header and one in the greeting row, and draws them identically.
+    "pulsefit": {"notifications_none": "notifications"},
 }
 ALIAS = ALIASES.get(SLUG, {})
 

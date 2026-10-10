@@ -3,17 +3,11 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "dependencies": {
-    "@expo-google-fonts/anton": "^0.4.2",
     "@expo-google-fonts/caveat": "^0.4.2",
-    "@expo-google-fonts/dm-sans": "^0.4.2",
     "@expo-google-fonts/ibm-plex-mono": "^0.4.1",
-    "@expo-google-fonts/instrument-serif": "^0.4.1",
     "@expo-google-fonts/inter": "^0.4.2",
-    "@expo-google-fonts/outfit": "^0.4.3",
     "@expo-google-fonts/plus-jakarta-sans": "^0.4.2",
-    "@expo-google-fonts/saira": "^0.4.2",
-    "@expo-google-fonts/space-grotesk": "^0.4.1",
-    "@expo-google-fonts/titillium-web": "^0.4.1",
+    "@expo-google-fonts/poppins": "^0.4.1",
     "expo": "~57.0.21",
     "expo-blur": "~57.0.3",
     "expo-constants": "~57.0.17",
@@ -55,7 +49,10 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "dev:iota": "npm --prefix websites/iota run dev",
+    "build:iota": "npm --prefix websites/iota run build",
+    "install:iota": "npm --prefix websites/iota install"
   },
   "private": true
 }
