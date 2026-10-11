@@ -149,7 +149,12 @@ for cp, gname in font.getBestCmap().items():
 names = set()
 
 if MODE == "--ref":
-    for f in glob.glob(os.path.join(REF, "*", "code.html")):
+    # A multi-screen export is a folder of screen folders; a one-screen export
+    # is just the three files. Match both, or a single-screen download has to
+    # be rearranged by hand before this will read it.
+    refs = glob.glob(os.path.join(REF, "*", "code.html"))
+    refs += glob.glob(os.path.join(REF, "code.html"))
+    for f in refs:
         html = io.open(f, encoding="utf-8").read()
         for m in re.finditer(r"material-symbols-outlined[^>]*>([a-z0-9_]+)<", html):
             names.add(m.group(1))

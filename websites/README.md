@@ -11,6 +11,7 @@ conflicts for no benefit. Clone the repo, pick a folder, install, and it runs.
 | Folder | What it is | Built with |
 |---|---|---|
 | [`iota/`](./iota) | A fictional architecture studio — acronym loader, pinned scroll | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
+| [`veld/`](./veld) | A fictional racing driver — a loader whose white screen is the car number | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
 
 The repository root has a passthrough script per site, so you never have to think about
 which directory you are in:
@@ -19,7 +20,15 @@ which directory you are in:
 npm run install:iota     # npm --prefix websites/iota install
 npm run dev:iota         # http://localhost:5180
 npm run build:iota
+
+npm run install:veld
+npm run dev:veld         # http://localhost:5184
+npm run build:veld
 ```
+
+Each site pins its own port with `strictPort`, so starting one while it is already
+running fails loudly instead of quietly moving to the next free port and leaving every
+screenshot tool pointed at the wrong site.
 
 These use `npm --prefix <dir>` rather than a `cd`, so they behave the same in PowerShell,
 cmd and bash.

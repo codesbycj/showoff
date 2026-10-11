@@ -8,6 +8,7 @@
     "@expo-google-fonts/inter": "^0.4.2",
     "@expo-google-fonts/plus-jakarta-sans": "^0.4.2",
     "@expo-google-fonts/poppins": "^0.4.1",
+    "@expo-google-fonts/space-grotesk": "^0.4.1",
     "expo": "~57.0.21",
     "expo-blur": "~57.0.3",
     "expo-constants": "~57.0.17",
@@ -52,7 +53,10 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "dev:iota": "npm --prefix websites/iota run dev",
     "build:iota": "npm --prefix websites/iota run build",
-    "install:iota": "npm --prefix websites/iota install"
+    "install:iota": "npm --prefix websites/iota install",
+    "dev:veld": "npm --prefix websites/veld run dev",
+    "build:veld": "npm --prefix websites/veld run build",
+    "install:veld": "npm --prefix websites/veld install"
   },
   "private": true
 }

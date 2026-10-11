@@ -45,6 +45,7 @@ import { Inter_400Regular } from '@expo-google-fonts/inter/400Regular';
 import { Inter_500Medium } from '@expo-google-fonts/inter/500Medium';
 import { Inter_600SemiBold } from '@expo-google-fonts/inter/600SemiBold';
 import { Inter_700Bold } from '@expo-google-fonts/inter/700Bold';
+import { PlusJakartaSans_400Regular } from '@expo-google-fonts/plus-jakarta-sans/400Regular';
 import { PlusJakartaSans_500Medium } from '@expo-google-fonts/plus-jakarta-sans/500Medium';
 import { PlusJakartaSans_600SemiBold } from '@expo-google-fonts/plus-jakarta-sans/600SemiBold';
 import { PlusJakartaSans_700Bold } from '@expo-google-fonts/plus-jakarta-sans/700Bold';
@@ -53,6 +54,7 @@ import { Poppins_400Regular } from '@expo-google-fonts/poppins/400Regular';
 import { Poppins_500Medium } from '@expo-google-fonts/poppins/500Medium';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins/600SemiBold';
 import { Poppins_700Bold } from '@expo-google-fonts/poppins/700Bold';
+import { SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk/700Bold';
 
 export const fontMap = {
   Inter_400Regular,
@@ -70,18 +72,30 @@ export const fontMap = {
   Poppins_600SemiBold,
   Poppins_700Bold,
 
-  // pulsefit - the design names Plus Jakarta Sans outright, so there is no
-  // substitute to fit. Four weights: the 400 its `body-md` token describes is
-  // never set on the one screen.
+  // pulsefit and apexpay - both designs name Plus Jakarta Sans outright, so
+  // there is no substitute to fit. Pulsefit never sets the 400 its `body-md`
+  // token describes; apexpay sets it throughout, which is what 400Regular is
+  // here for.
+  PlusJakartaSans_400Regular,
   PlusJakartaSans_500Medium,
   PlusJakartaSans_600SemiBold,
   PlusJakartaSans_700Bold,
   PlusJakartaSans_800ExtraBold,
 
+  // apexpay - Space Grotesk, also named outright, and only ever used for the
+  // two balance figures and the active card's VISA. The design asks that VISA
+  // for `font-black`; Space Grotesk stops at 700 and the browser synthesises
+  // the rest, which React Native will not do. See `theme.ts`.
+  SpaceGrotesk_700Bold,
+
   // pulsefit's icon subset - 17 glyphs out of Material Symbols Outlined, cut
   // by tools/subset-symbols.py, which also rewrote the family name inside the
   // file so it cannot collide with another showcase's cut.
   PulsefitSymbols_400Regular: require('../../assets/fonts/pulsefit-symbols/PulsefitSymbols_400Regular.ttf'),
+
+  // apexpay's icon subset - 13 glyphs, 944KB down to 2.8KB, with its own
+  // internal family name so it cannot collide with pulsefit's cut.
+  ApexpaySymbols_400Regular: require('../../assets/fonts/apexpay-symbols/ApexpaySymbols_400Regular.ttf'),
 };
 
 export const hasCustomFonts = Object.keys(fontMap).length > 0;

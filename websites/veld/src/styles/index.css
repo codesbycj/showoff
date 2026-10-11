@@ -1,0 +1,313 @@
+@import 'tailwindcss';
+@import '@fontsource/anton/400.css';
+@import '@fontsource-variable/inter';
+
+/*
+ * The whole design is sized in rem, and the root font-size is a function of the
+ * viewport. That is the responsive engine here: nothing has a width breakpoint
+ * for *type*, the root simply shrinks and the page comes with it. A 10rem
+ * heading is 160px on a 1440px display and 110px on a 992px laptop without a
+ * single media query of its own.
+ *
+ * Each band is a straight line between (vwFrom, fontFrom) and (vwTo, fontTo),
+ * expressed the way CSS can interpolate it: `calc(base * 1rem + m * 1vw)`.
+ * The bands are deliberately NOT continuous at 992px — below that the page is
+ * a different layout with different type needs, so it restarts the ramp.
+ */
+:root {
+  --ramp-from: 16;
+  --ramp-to: 19;
+  --vw-from: 14.4;
+  --vw-to: 20;
+}
+@media screen and (max-width: 1440px) {
+  :root {
+    --ramp-from: 11;
+    --ramp-to: 16;
+    --vw-from: 9.92;
+    --vw-to: 14.4;
+  }
+}
+@media screen and (max-width: 992px) {
+  :root {
+    --ramp-from: 12;
+    --ramp-to: 14;
+    --vw-from: 4.79;
+    --vw-to: 9.92;
+  }
+}
+@media screen and (max-width: 479px) {
+  :root {
+    --ramp-from: 13;
+    --ramp-to: 15;
+    --vw-from: 0.01;
+    --vw-to: 4.79;
+  }
+}
+@media screen and (min-width: 2000.01px) {
+  :root {
+    --ramp-from: 19;
+    --ramp-to: 21;
+    --vw-from: 20;
+    --vw-to: 28;
+  }
+}
+
+html {
+  --ramp-m: calc((var(--ramp-to) - var(--ramp-from)) / (var(--vw-to) - var(--vw-from)));
+  --ramp-base: calc((var(--ramp-from) - var(--vw-from) * var(--ramp-m)) / 16);
+  font-size: calc(var(--ramp-base) * 1rem + var(--ramp-m) * 1vw);
+}
+
+/*
+ * The 5rem gutter is a desktop figure. The root font-size shrinks on a phone
+ * but not nearly as fast as the screen does, so 5rem there is a third of the
+ * viewport spent on margins. These two overrides have to come after @theme,
+ * which is where the desktop values are declared.
+ */
+@media screen and (max-width: 991px) {
+  :root {
+    --spacing-gutter: 2.5rem;
+  }
+}
+@media screen and (max-width: 639px) {
+  :root {
+    --spacing-gutter: 1.5rem;
+  }
+}
+
+@theme {
+  /*
+   * Anton is the reference's own display face and is free, so the headings are
+   * a true match. Helvetica is not obtainable; Inter stands in for the body,
+   * and runs a touch wider at the same cap height — see the README.
+   */
+  --font-display: 'Anton', 'Arial Narrow', Impact, sans-serif;
+  --font-sans: 'Inter Variable', Inter, Helvetica, Arial, sans-serif;
+
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-signal: #ffe500;
+
+  --color-chalk-80: #ffffffcc;
+  --color-chalk-50: #ffffff80;
+  --color-chalk-20: #ffffff33;
+  --color-chalk-10: #ffffff1a;
+  --color-chalk-5: #ffffff0d;
+
+  --color-soot-80: #333333;
+  --color-soot-50: #00000080;
+  --color-soot-20: #00000033;
+  --color-soot-10: #0000001a;
+  --color-soot-5: #0000000d;
+
+  /* The display scale. Every one of these is a rem, so the ramp above drives it. */
+  --text-display: 10rem;
+  --text-display--line-height: 1;
+  --text-h1: 6rem;
+  --text-h1--line-height: 1;
+  --text-h2: 3.125rem;
+  --text-h2--line-height: 1;
+  --text-h3: 2rem;
+  --text-h3--line-height: 1;
+  --text-h4: 1.625rem;
+  --text-h4--line-height: 1;
+
+  --text-body-lg: 1.25rem;
+  --text-body-lg--line-height: 1.4;
+  --text-body-md: 1.15rem;
+  --text-body-md--line-height: 1.4;
+  --text-body: 1rem;
+  --text-body--line-height: 1.4;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.4;
+
+  /* Overridden below the tablet breakpoint; see the note under @theme. */
+  --spacing-gutter: 5rem;
+  --spacing-band-sm: 5rem;
+  --spacing-band: 8rem;
+  --spacing-band-lg: 10.5rem;
+  --spacing-band-xl: 12rem;
+
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    background-color: var(--color-ink);
+  }
+
+  body {
+    @apply bg-ink text-paper font-sans;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body[data-locked='true'] {
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  ::selection {
+    @apply bg-signal text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-normal uppercase;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  /*
+   * Reveals are CSS; JavaScript only splits the text and flips a transform.
+   * A line rides up out of a mask that is its own parent, because a clip-path
+   * would hide it from the observer that is meant to reveal it.
+   */
+  .reveal-mask {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+
+  .reveal-line {
+    display: block;
+    will-change: transform;
+  }
+
+  /* The vertical hairlines that run the full height of several bands. */
+  .bg-lines {
+    @apply pointer-events-none absolute inset-0 overflow-hidden;
+    z-index: 0;
+  }
+
+  .bg-lines__row {
+    @apply flex h-full w-full justify-between;
+    padding-inline: var(--spacing-gutter);
+  }
+
+  .bg-line {
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-chalk-20);
+    transform-origin: bottom center;
+  }
+
+  .bg-line--dark {
+    background-color: var(--color-soot-10);
+  }
+
+  /*
+   * The loader's numeral.
+   *
+   * The blown-up transform is declared here, not only in the timeline, so the
+   * very first painted frame is already a screen-filling white field. Setting
+   * it from JavaScript instead shows one frame of a small number over a
+   * visible hero before the tween takes hold.
+   *
+   * `inset: 0; margin: auto` with both dimensions given centres it exactly;
+   * relying on the static position of an absolute child inside a flex centre
+   * works in Chrome but is a worse thing to depend on.
+   */
+  .loader-numeral {
+    position: absolute;
+    /* Resting offset, overridden below 992px where 22rem is most of the screen. */
+    --mark-offset-x: 22rem;
+    --mark-offset-y: 5rem;
+    inset: 0;
+    margin: auto;
+    width: 11.625rem;
+    /* 11.625rem ÷ Anton's own 951:876 ratio for "96". */
+    height: 10.708rem;
+    /*
+     * Where the mark comes to rest, clear of the driver's face. This is the
+     * `translate` property rather than part of `transform` on purpose: it
+     * composes in the parent's space *after* the scale, so it moves the
+     * resting mark by 22rem and the hundred-times-magnified one by the same
+     * 22rem — which is 1% of a glyph that wide, and so cannot move the
+     * screen-covering part of it off solid ink.
+     */
+    translate: var(--mark-offset-x, 15rem) var(--mark-offset-y, 3rem);
+  }
+
+  /*
+   * Only while the hero says it is still loading. Outside that, the mark is
+   * simply the car number sitting in the hero at its own size.
+   */
+  [data-loading] .loader-numeral {
+    transform: translate(var(--loader-from-x, 95rem)) scale(var(--loader-from-scale, 100));
+    /*
+     * Deliberately NO `will-change: transform`. It promotes the numeral to its
+     * own layer, which Chrome rasterises once at the element's natural 186px
+     * and then scales the texture — so at 100x the glyph arrives as inch-wide
+     * stair-steps. Left alone, the SVG is re-rasterised as vector geometry at
+     * whatever scale the frame needs, and the edges stay razor sharp.
+     */
+  }
+
+  @media screen and (max-width: 991px) {
+    .loader-numeral {
+      --mark-offset-x: 4rem;
+      --mark-offset-y: 1rem;
+      width: 8rem;
+      height: 7.37rem;
+    }
+  }
+
+  /* Big outlined word sitting behind a band, clipped by it. */
+  .band-word {
+    @apply font-display pointer-events-none absolute uppercase select-none;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-chalk-10);
+    line-height: 0.78;
+    white-space: nowrap;
+  }
+
+  .band-word--solid {
+    color: var(--color-chalk-5);
+    -webkit-text-stroke: 0;
+  }
+}
+
+@utility text-balance-tight {
+  text-wrap: balance;
+}

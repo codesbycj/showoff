@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="VELDKAMP — a fictional racing driver, built as a front-end study of a start-light page loader and a depth-aware hero trail."
+    />
+    <title>Sem Veldkamp — Dutch Racing Driver</title>
+    <!-- Inline, so the tab icon costs no request and the console stays clean. -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffe500'/%3E%3Cg fill='%23000' transform='skewX(-10) translate(4 0)'%3E%3Ctext x='13' y='24' font-family='Arial Black,Arial,sans-serif' font-size='18' font-weight='900' text-anchor='middle'%3E96%3C/text%3E%3C/g%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <!--
+      The page's first paint, before any JavaScript exists to make one.
+
+      The body is black, and the loading sequence opens on a white screen, so
+      without this the first frame is a black flash — on a slow connection, a
+      long one. It is plain markup with inline styles on purpose: a cover that
+      waits for the stylesheet is a cover that is not there when it is needed.
+      main.tsx removes it once React has painted.
+    -->
+    <div
+      id="boot-cover"
+      style="position: fixed; inset: 0; z-index: 60; background: #fff"
+      aria-hidden="true"
+    ></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
