@@ -3,7 +3,8 @@ import Svg, { Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
 
 import { BALANCE, QUICK_ACTIONS } from '../data/home';
 import { ax, radius, type as t } from '../theme';
-import { QuickActions } from './quick-actions';
+// STEP 1.21 four things you can do with it
+// import { QuickActions } from './quick-actions';
 import { Symbol } from './symbol';
 
 /**
@@ -32,6 +33,7 @@ export function BalanceCard() {
         overflow: 'hidden',
       }}
     >
+      {/* STEP 1.16 a little light in the corner
       <View pointerEvents="none" style={{ position: 'absolute', top: -48, right: -48 }}>
         <Svg width={160} height={160}>
           <Defs>
@@ -44,7 +46,9 @@ export function BalanceCard() {
           <Rect width={160} height={160} fill="url(#bloom)" />
         </Svg>
       </View>
+      */}
 
+      {/* STEP 1.17 what it is, and a way in
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         <Text style={[t.labelMd, { color: ax.inkMuted }]}>{BALANCE.label}</Text>
         <Pressable
@@ -63,23 +67,30 @@ export function BalanceCard() {
           <Symbol name="northEast" size={13} color={ax.ink} />
         </Pressable>
       </View>
+      */}
 
       <View style={{ gap: 4 }}>
+        {/* STEP 1.18 the number everyone came for
         <Text style={[t.headlineXlMobile, { color: ax.ink }]}>
           {BALANCE.whole}
           <Text style={{ color: ax.inkMuted70 }}>{BALANCE.cents}</Text>
         </Text>
+        */}
 
+        {/* STEP 1.20 how the month has gone
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, paddingTop: 2 }}>
           <Text style={[t.labelMd, { fontFamily: t.labelLg.fontFamily, color: ax.signal }]}>
             {BALANCE.delta}
           </Text>
           <Text style={[t.bodySm, { color: ax.inkMuted }]}>{BALANCE.deltaNote}</Text>
         </View>
+        */}
       </View>
 
       <View style={{ paddingTop: 4 }}>
+        {/* STEP 1.22 the four quick actions
         <QuickActions actions={QUICK_ACTIONS} />
+        */}
       </View>
     </View>
   );

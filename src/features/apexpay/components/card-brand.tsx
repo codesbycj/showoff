@@ -47,19 +47,24 @@ export function NetworkMark({ network, size }: { network: Network; size: number 
   }
 
   /*
-   * One weight for both sizes. The export asks the stacked rows for
-   * `font-extrabold` (800) and the active card for `font-black` (900), but
-   * Plus Jakarta Sans stops at 800 and Space Grotesk — which the active card's
-   * `font-headline-md` token actually selects — stops at 700. The browser
-   * synthesises the difference by smearing the outline; React Native does not,
-   * and would silently fall back to the regular face. So both are set in the
-   * heaviest real weight there is, and the 900 is simply not available.
+   * Two different faces, not one at two sizes. The collapsed rows set VISA in
+   * `font-headline-sm`, which is Plus Jakarta Sans; the active card sets it in
+   * `font-headline-md`, which is Space Grotesk. Collapsing them to one family
+   * makes the active mark 4dp too wide and pushes the number beside it out —
+   * the reference's 16px VISA is actually *narrower* than its 15px one, which
+   * is the giveaway that the face changes.
+   *
+   * The weights asked for do not exist either way: `font-extrabold` (800) and
+   * `font-black` (900) against a Plus Jakarta Sans that stops at 800 and a
+   * Space Grotesk that stops at 700. A browser fakes the rest by smearing the
+   * outline; React Native does not, and would fall back to the regular face.
+   * So each is set in the heaviest real weight its own family has.
    */
   return (
     <Text
       allowFontScaling={false}
       style={{
-        fontFamily: font.extrabold,
+        fontFamily: size >= 16 ? font.display : font.extrabold,
         fontSize: size,
         lineHeight: 20,
         // `tracking-wider`, 0.05em.

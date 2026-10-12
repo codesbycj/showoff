@@ -9,19 +9,27 @@ import { Symbol } from './symbol';
  * The title is inset 4dp from the page margin (`px-1` on the row) where the
  * cards below it are not — so the heading sits a touch inside the card edge
  * rather than flush with it.
+ *
+ * The row also carries its own `mb-1` on top of the section's `gap-3.5`, so
+ * the real distance to the card below is 18 and not 14. Four points, and the
+ * whole stack beneath it reads as sitting too high.
  */
 export function SectionHead({ title, action }: { title: string; action: string }) {
   return (
     <View
       style={{
         height: 32,
+        marginBottom: 4,
         paddingHorizontal: 4,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
       }}
     >
+      {/* STEP 1.28 name the section
       <Text style={[t.headlineSm, { color: ax.ink }]}>{title}</Text>
+      */}
+      {/* STEP 1.29 and offer another card
       <Pressable
         accessibilityRole="button"
         style={{
@@ -37,6 +45,7 @@ export function SectionHead({ title, action }: { title: string; action: string }
         <Symbol name="add" size={16} color={ax.inkMuted} />
         <Text style={[t.body13, { color: ax.inkMuted }]}>{action}</Text>
       </Pressable>
+      */}
     </View>
   );
 }

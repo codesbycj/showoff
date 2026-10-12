@@ -13,6 +13,11 @@ const AVATAR = require('../../../../assets/images/apexpay/avatar.jpg');
  * different objects: the bar's is `surface-container` with `on-surface-variant`
  * glyphs, this one is `surface-container-high` with `on-surface`, and this one
  * alone carries the unread dot.
+ *
+ * The online dot's ring is a border in the canvas colour rather than an outer
+ * ring, which React Native has no equivalent for — so it reads as a hole
+ * punched around the dot. (Kept out of the JSX below: a comment inside a
+ * staged block would close the block early.)
  */
 export function GreetingRow({ name, greeting }: { name: string; greeting: string }) {
   return (
@@ -25,13 +30,9 @@ export function GreetingRow({ name, greeting }: { name: string; greeting: string
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        {/* STEP 1.10 the face, with a light on
         <View style={{ width: 44, height: 44 }}>
           <Image source={AVATAR} style={{ width: 44, height: 44, borderRadius: radius.full }} />
-          {/*
-            The ring is drawn as a border on a slightly larger box rather than
-            with `ring-2`, which React Native has no equivalent for. The border
-            takes the canvas colour, so it reads as a hole punched round the dot.
-          */}
           <View
             style={{
               position: 'absolute',
@@ -46,13 +47,17 @@ export function GreetingRow({ name, greeting }: { name: string; greeting: string
             }}
           />
         </View>
+        */}
 
+        {/* STEP 1.11 the time of day, and a name
         <View>
           <Text style={[t.bodySm, { color: ax.inkMuted }]}>{greeting}</Text>
           <Text style={[t.headlineSm, { color: ax.ink }]}>{name}</Text>
         </View>
+        */}
       </View>
 
+      {/* STEP 1.12 a second bell, louder than the first
       <Pressable
         accessibilityRole="button"
         accessibilityLabel="Notifications"
@@ -78,6 +83,7 @@ export function GreetingRow({ name, greeting }: { name: string; greeting: string
           }}
         />
       </Pressable>
+      */}
     </View>
   );
 }
