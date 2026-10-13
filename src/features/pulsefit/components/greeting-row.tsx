@@ -87,7 +87,6 @@ export function GreetingRow({
     >
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
         <View style={{ width: 48, height: 48 }}>
-{/* STEP 1.08 the face, on the ring that holds it off the page
           <View
             style={{
               position: 'absolute',
@@ -104,9 +103,7 @@ export function GreetingRow({
             source={avatar}
             style={[{ width: 48, height: 48, borderRadius: R.full }, LEVEL.avatar]}
           />
-*/}
 
-{/* STEP 1.09 and the dot that says you are here
           <View
             style={{
               position: 'absolute',
@@ -124,22 +121,17 @@ export function GreetingRow({
               style={{ width: 12, height: 12, borderRadius: R.full, backgroundColor: pf.lime }}
             />
           </View>
-*/}
         </View>
 
-{/* STEP 1.10 and who you are
         <View>
           <Text style={[TYPE.overline, { color: pf.muted }]}>{greeting}</Text>
           <Text style={[TYPE.name, { color: pf.ink }]}>{name}</Text>
         </View>
-*/}
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-{/* STEP 1.11 the day's plan, and what is waiting
         <RoundButton icon="calendarToday" label="Daily plan" onPress={onCalendar} />
         <RoundButton icon="notificationsNone" label="Reminders" badge onPress={onReminders} />
-*/}
       </View>
     </View>
   );

@@ -27,7 +27,6 @@ export function SpendingLimit() {
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-        {/* STEP 1.40 a glyph for the trend
         <View
           style={{
             width: 40,
@@ -40,13 +39,10 @@ export function SpendingLimit() {
         >
           <Symbol name="trendingUp" size={22} color={ax.signal} />
         </View>
-        */}
-        {/* STEP 1.41 the limit, and what is left of it
         <View>
           <Text style={[t.labelLg, { color: ax.ink }]}>{SPENDING.label}</Text>
           <Text style={[t.bodySm, { color: ax.inkMuted }]}>{SPENDING.note}</Text>
         </View>
-        */}
       </View>
 
       <View
@@ -58,7 +54,6 @@ export function SpendingLimit() {
           overflow: 'hidden',
         }}
       >
-        {/* STEP 1.42 and fill the bar
         <View
           style={{
             width: `${SPENDING.fraction * 100}%`,
@@ -67,7 +62,6 @@ export function SpendingLimit() {
             backgroundColor: ax.signal,
           }}
         />
-        */}
       </View>
     </View>
   );

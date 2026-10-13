@@ -34,13 +34,8 @@ export function AppBar() {
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-        {/* STEP 1.03 the mark
         <BrandMark size={32} />
-        */}
-        {/* STEP 1.04 and the name beside it
         <Text style={[t.headlineSm, { color: ax.ink }]}>ApexPay</Text>
-        */}
-        {/* STEP 1.05 the plan chip
         <View
           style={{
             paddingHorizontal: 6,
@@ -51,11 +46,9 @@ export function AppBar() {
         >
           <Text style={[t.labelSm, { color: ax.inkVariant }]}>PRO</Text>
         </View>
-        */}
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-        {/* STEP 1.06 somewhere for alerts to land
         <Pressable
           accessibilityRole="button"
           accessibilityLabel="Notifications"
@@ -70,11 +63,10 @@ export function AppBar() {
         >
           <Symbol name="notifications" size={20} color={ax.inkVariant} />
         </Pressable>
-        */}
 
-        {/* STEP 1.07 and the face of whoever is signed in
         <View style={{ width: 44, height: 44, alignItems: 'center', justifyContent: 'center' }}>
           <Image source={AVATAR} style={{ width: 32, height: 32, borderRadius: radius.full }} />
+          {/* Online dot, inset into the avatar's lower-right corner. */}
           <View
             style={{
               position: 'absolute',
@@ -87,7 +79,6 @@ export function AppBar() {
             }}
           />
         </View>
-        */}
       </View>
     </View>
   );

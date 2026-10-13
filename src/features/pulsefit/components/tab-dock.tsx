@@ -53,7 +53,6 @@ export function TabDock({
         LEVEL.dock,
       ]}
     >
-{/* STEP 1.43 five slots, and the one in the middle that is a button
       {tabs.map((tab) =>
         tab.key === 'scan' ? (
           <View
@@ -72,8 +71,6 @@ export function TabDock({
                     width: 56,
                     height: 56,
                     borderRadius: R.chip,
-                    // MISTAKE 1.44 the quick-add came out a circle
-                    borderRadius: R.full,
                     backgroundColor: pf.lime,
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -120,7 +117,6 @@ export function TabDock({
           </Pressable>
         ),
       )}
-*/}
     </View>
   );
 }

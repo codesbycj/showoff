@@ -49,22 +49,17 @@ export function AppHeader({
       ]}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-{/* STEP 1.03 the mark
         <BrandMark size={32} />
-*/}
 
-{/* STEP 1.04 who this is
         <View>
           <Text style={[TYPE.brandOverline, { color: pf.inkVariant, textTransform: 'uppercase' }]}>
             {brand}
           </Text>
           <Text style={[TYPE.brandTitle, { color: pf.ink }]}>{title}</Text>
         </View>
-*/}
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
-{/* STEP 1.05 the bell, and a way back to you
         <Pressable
           onPress={onNotifications}
           accessibilityRole="button"
@@ -81,7 +76,6 @@ export function AppHeader({
             style={[{ width: 32, height: 32, borderRadius: R.full }, LEVEL.avatarSm]}
           />
         </Pressable>
-*/}
       </View>
     </View>
   );

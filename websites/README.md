@@ -12,6 +12,7 @@ conflicts for no benefit. Clone the repo, pick a folder, install, and it runs.
 |---|---|---|
 | [`iota/`](./iota) | A fictional architecture studio — acronym loader, pinned scroll | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
 | [`veld/`](./veld) | A fictional racing driver — a loader whose white screen is the car number | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
+| [`switchblade/`](./switchblade) | One section of a reference site — an arcing product row that dresses the figure it passes | React 19 · Vite 8 · Tailwind 4 · Lenis |
 
 The repository root has a passthrough script per site, so you never have to think about
 which directory you are in:
@@ -24,6 +25,10 @@ npm run build:iota
 npm run install:veld
 npm run dev:veld         # http://localhost:5184
 npm run build:veld
+
+npm run install:switchblade
+npm run dev:switchblade  # http://localhost:5188
+npm run build:switchblade
 ```
 
 Each site pins its own port with `strictPort`, so starting one while it is already
@@ -44,6 +49,11 @@ Every project in here:
 - takes `prefers-reduced-motion` seriously, by switching off the loaders and pinned
   sections that setting exists for, not just shortening transitions;
 - passes `tsc`, `eslint` and `vite build` clean.
+
+One exception, declared rather than quiet: [`switchblade/`](./switchblade) uses the
+reference site's own imagery and brand, so its motion could be checked against it frame
+for frame. It is a private study and is not to be deployed; see its `README.md` and
+`src/assets/images/CREDITS.md`.
 
 ## Adding another
 

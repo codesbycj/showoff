@@ -26,10 +26,7 @@ export function SectionHead({ title, action }: { title: string; action: string }
         justifyContent: 'space-between',
       }}
     >
-      {/* STEP 1.28 name the section
       <Text style={[t.headlineSm, { color: ax.ink }]}>{title}</Text>
-      */}
-      {/* STEP 1.29 and offer another card
       <Pressable
         accessibilityRole="button"
         style={{
@@ -45,7 +42,6 @@ export function SectionHead({ title, action }: { title: string; action: string }
         <Symbol name="add" size={16} color={ax.inkMuted} />
         <Text style={[t.body13, { color: ax.inkMuted }]}>{action}</Text>
       </Pressable>
-      */}
     </View>
   );
 }

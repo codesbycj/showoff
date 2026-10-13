@@ -58,9 +58,7 @@ export function TabDock({ bottomInset = 0 }: { bottomInset?: number }) {
                 justifyContent: 'center',
               }}
             >
-              {/* STEP 1.45 four places to go
               <Symbol name={tab.icon} size={22} color={on ? ax.onSignalNav : ax.inkMuted} />
-              */}
             </Pressable>
           );
         })}

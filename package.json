@@ -56,7 +56,10 @@
     "install:iota": "npm --prefix websites/iota install",
     "dev:veld": "npm --prefix websites/veld run dev",
     "build:veld": "npm --prefix websites/veld run build",
-    "install:veld": "npm --prefix websites/veld install"
+    "install:veld": "npm --prefix websites/veld install",
+    "dev:switchblade": "npm --prefix websites/switchblade run dev",
+    "build:switchblade": "npm --prefix websites/switchblade run build",
+    "install:switchblade": "npm --prefix websites/switchblade install"
   },
   "private": true
 }

@@ -53,14 +53,11 @@ export function MetricCard({ metric, onPress }: { metric: Metric; onPress?: () =
             justifyContent: 'space-between',
           }}
         >
-{/* STEP 1.20 name the thing being counted
           <View>
             <Text style={[TYPE.tileLabel, { color: pf.muted }]}>{metric.label[0]}</Text>
             <Text style={[TYPE.tileLabel, { color: pf.muted }]}>{metric.label[1]}</Text>
           </View>
-*/}
 
-{/* STEP 1.21 a mark for it, on its own tint
           <View
             style={{
               width: 32,
@@ -73,15 +70,12 @@ export function MetricCard({ metric, onPress }: { metric: Metric; onPress?: () =
           >
             <DrawnIcon name={tone.icon} size={18} color={tone.ink} />
           </View>
-*/}
         </View>
 
-{/* STEP 1.22 and the number itself
         <View style={{ marginTop: 16, flexDirection: 'row', alignItems: 'baseline', gap: 4 }}>
           <Text style={[TYPE.metric, { color: pf.ink }]}>{metric.value}</Text>
           <Text style={[TYPE.body, { color: pf.muted }]}>{metric.unit}</Text>
         </View>
-*/}
       </View>
     </Pressable>
   );

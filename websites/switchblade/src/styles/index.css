@@ -1,0 +1,84 @@
+@import 'tailwindcss';
+@import '@fontsource/barlow/800.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource-variable/archivo';
+
+@theme {
+  --font-display: 'Barlow', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --color-ink: #0d0d0d;
+  --color-paper: #ffffff;
+  --color-accent: #0456dd;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+/**
+ * The headline wipe.
+ *
+ * The gradient is clipped to the glyphs, so the text is only ever visible where
+ * the gradient is opaque: solid ink up to the sweep position, the accent and its
+ * pale partner in a short band at the leading edge, and nothing at all in front
+ * of it. Moving `--sweep` from -30% to 130% therefore writes the line on from
+ * the left with a blue nib, with no second element and no mask to keep in sync.
+ *
+ * `--sweep` is unregistered, so it cannot be transitioned — SweepText.tsx steps
+ * it from rAF instead.
+ */
+.sweep-text {
+  --sweep: -30%;
+
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    var(--sweep-fg) 0%,
+    var(--sweep-fg) calc(var(--sweep) + var(--sweep-ink)),
+    var(--sweep-a1) calc(var(--sweep) + var(--sweep-accent)),
+    var(--sweep-a2) calc(var(--sweep) + var(--sweep-accent-soft)),
+    transparent calc(var(--sweep) + var(--sweep-clear)),
+    transparent 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nothing to wipe on with, so the line is simply there. */
+@media (prefers-reduced-motion: reduce) {
+  .sweep-text {
+    background-image: none;
+    color: var(--sweep-fg);
+    -webkit-text-fill-color: var(--sweep-fg);
+  }
+}
