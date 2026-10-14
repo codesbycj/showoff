@@ -11,7 +11,7 @@
 import { Barcode } from '@/components/Barcode';
 import { Copy } from '@/components/Copy';
 import { ListBullet } from '@/components/Marks';
-import type { Ticket } from '@/data/packages';
+import { CTA, type Ticket } from '@/data/packages';
 
 export function TicketFace({ ticket }: { ticket: Ticket }) {
   return (
@@ -35,7 +35,7 @@ export function TicketFace({ ticket }: { ticket: Ticket }) {
         </ul>
       </div>
 
-      <div className="perforation bg-paper text-sky rounded-[18px] px-6 pb-4 pt-4">
+      <div className="ticket-stub perforation bg-paper text-sky rounded-[18px] px-6 pb-4 pt-4 shadow-[10px_10px_60px_#08324414]">
         <div className="text-ink flex items-baseline justify-between">
           <span className="font-mono text-[11px] uppercase tracking-[0.06em]">
             Price starts at:
@@ -43,7 +43,19 @@ export function TicketFace({ ticket }: { ticket: Ticket }) {
           <span className="font-mono text-[15px] font-medium">{ticket.price}</span>
         </div>
 
-        <Barcode seed={ticket.code} className="text-ink mt-3 h-[46px] w-full" />
+        {/* The barcode is the button. At rest it is bars and the label is
+            invisible; closed, it is one block with the label on it. Both states
+            are the same element, which is why the link wraps the whole thing
+            rather than appearing on hover — there is nothing to appear. */}
+        <a
+          href="#enquire"
+          className="barcode-wrap text-ink relative mt-3 flex h-[46px] w-full items-center justify-center"
+        >
+          <Barcode seed={ticket.code} className="absolute inset-0 h-full w-full" />
+          <span className="button-text text-paper relative font-serif text-[18px] italic">
+            {CTA}
+          </span>
+        </a>
 
         <p className="text-ink mt-3 font-mono text-[10px] uppercase tracking-[0.12em]">
           {ticket.footnote}

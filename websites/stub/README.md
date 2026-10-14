@@ -82,6 +82,44 @@ All of it is in `motion.ts`; this is the shape.
 | 45 – 52 | The second lands. |
 | 52 – 60 | The third lands, and the pill and the small print fade in behind it. |
 
+## The hover
+
+A separate interaction, and a separate pair of action lists — `a-27` "Service Cards on
+Hover" and `a-28` "Service Cards on Hover 2", bound to `.service_card_front`, with every
+target scoped to `useEventTarget: "CHILDREN"` so one card's stub moves and its neighbours'
+do not.
+
+Only the stub moves. The face does not lift, tilt or scale, which is worth saying because
+it is the first thing you would reach for: the card stays put and the bottom quarter of it
+comes away — 16px down, 5° about its own centre, over 500ms, on
+`cubic-bezier(0.579, 0.423, 0.17, 1.452)`. That last control point is past 1, so the stub
+drops a little further than 16px and settles back up. Coming back is 300ms of `outSine`
+with no overshoot: it just returns.
+
+Hovering the reference's middle card leaves `.card_bottom` at
+`matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 16)`. This build reports the same
+matrix, to every digit. The check that it is a rotation about the centre rather than a
+resize is the bounding box: 163 × 334 at 5° should measure 191.5 tall, and the page
+reports 191.
+
+At the same time the barcode closes into a button. In the reference that is a
+`PLUGIN_LOTTIE` action driving a 294 × 48 file at 60fps with an out point of 30 — half a
+second, 36 bars on 72 layers. Here each bar slides and widens into a gapless slot, which is
+the same interpolation without shipping a player for one file. The bars overlap by 1.5
+units at full close: butted exactly edge to edge, the joins land on fractional pixels once
+the stage is scaled and the "solid" bar comes out ruled with hairlines.
+
+The morph rides a registered `--morph` custom property that the stub transitions and every
+bar reads through `calc`. It has to be registered with `@property` — to the engine an
+unregistered custom property is a string, and strings do not interpolate. Where `@property`
+is unsupported the value jumps and the button simply appears, which is the right thing to
+fall back to.
+
+The hover is also `:focus-within`, so the call-to-action inside is reachable by keyboard
+and shows itself when it gets there rather than being an invisible tab stop. And the
+trigger is the whole card rather than the stub, because the stub leaves the cursor as it
+goes and triggering off it would make it chatter.
+
 The one number in `motion.ts` that is a judgement rather than a reading is the smoothing.
 The reference binds its timeline with `smoothing: 60`, but that dial is not a time
 constant and the probe deliberately let every sample settle so the keyframes could be read
@@ -111,7 +149,9 @@ looks generous on paper can land the last card as the section starts sliding awa
 
 **Reduced motion switches the section off.** The track collapses to its content, nothing
 is pinned, and the cards are face-up where they were going to end. That setting exists to
-stop pinned sections, not to play them faster.
+stop pinned sections, not to play them faster. The hover keeps its affordance and loses
+its movement: the stub does not tear and the bars do not travel, the button is simply there
+— which is the information the motion was carrying.
 
 ## Credits
 

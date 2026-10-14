@@ -36,7 +36,12 @@ export function App() {
 
       <Stage />
 
-      <section className="flex min-h-screen flex-col justify-between px-8 py-10 md:px-16">
+      {/* Where a torn stub sends you. A real destination rather than a dead
+          `href`, so the call-to-action behaves like one when it is clicked. */}
+      <section
+        id="enquire"
+        className="flex min-h-screen flex-col justify-between px-8 py-10 md:px-16"
+      >
         <p className="max-w-[20ch] pt-24 text-[clamp(32px,5vw,64px)] leading-[1.05] tracking-[-0.02em]">
           Nothing to brief. <span className="font-serif italic">Pick a ticket.</span>
         </p>

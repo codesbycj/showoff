@@ -12,7 +12,7 @@ import { Backdrop } from '@/components/Backdrop';
 import { Headline } from '@/components/Headline';
 import { TicketCard } from '@/components/TicketCard';
 import { TICKETS } from '@/data/packages';
-import { SECTION_VH, STAGE } from '@/motion/motion';
+import { HOVER, SECTION_VH, STAGE } from '@/motion/motion';
 import { useReducedMotion } from '@/motion/useReducedMotion';
 import { useStageMetrics } from '@/motion/useStageMetrics';
 import { useTimeline } from '@/motion/useTimeline';
@@ -32,7 +32,21 @@ export function Stage() {
     <section
       ref={trackRef}
       aria-label="Packages"
-      style={{ height: reduced ? 'auto' : `${SECTION_VH}vh` }}
+      style={
+        {
+          height: reduced ? 'auto' : `${SECTION_VH}vh`,
+          // The hover's numbers live in motion.ts with the rest of the timings
+          // and are handed to CSS here, so the stylesheet never becomes a
+          // second place a duration can be changed.
+          '--stub-y': `${HOVER.stubY}px`,
+          '--stub-rotate': `${HOVER.stubRotate}deg`,
+          '--hover-in': `${HOVER.inMs}ms`,
+          '--hover-out': `${HOVER.outMs}ms`,
+          '--ease-in': HOVER.inEase,
+          '--ease-out': HOVER.outEase,
+          '--ease-fade': HOVER.fadeEase,
+        } as React.CSSProperties
+      }
       className="relative"
     >
       <div

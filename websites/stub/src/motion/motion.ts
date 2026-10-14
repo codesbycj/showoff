@@ -243,3 +243,56 @@ export const SMOOTHING_HALFLIFE_MS = 90;
 
 /** Below this the lerp is finished; stops the rAF loop from running forever. */
 export const SMOOTHING_EPSILON = 0.00002;
+
+/* ----------------------------------------------------------------- the hover */
+
+/**
+ * Tearing the stub off — a separate interaction from everything above, and a
+ * separate pair of action lists: `a-27` "Service Cards on Hover" on mouseover
+ * and `a-28` "Service Cards on Hover 2" on mouseout, both bound to
+ * `.service_card_front` with every target scoped to `useEventTarget: "CHILDREN"`
+ * so one card's stub moves and its neighbours' do not.
+ *
+ * What moves is only the stub. The face does not lift, tilt or scale, which is
+ * worth stating because it is the first thing you would reach for: the card
+ * stays exactly where it is and the bottom quarter of it comes away.
+ *
+ * Confirmed on the running page — hovering the middle card leaves
+ * `.card_bottom` at `matrix(0.996195, 0.0871557, …, 16)`, which is 5.000deg and
+ * 16px, with the stub's bounding box growing 163 -> 191. That growth is the
+ * check that matters: 163·cos5 + 334·sin5 = 191.5, so it is rotating about its
+ * own centre and not resizing.
+ */
+export const HOVER = {
+  /** `TRANSFORM_MOVE` yValue, and `TRANSFORM_ROTATE` zValue, on the stub. */
+  stubY: 16,
+  stubRotate: 5,
+
+  /** Both action lists' durations, in ms. */
+  inMs: 500,
+  outMs: 300,
+
+  /**
+   * The reference writes the in-easing as raw control points rather than one of
+   * Webflow's named curves, and the fourth is past 1 — it overshoots and comes
+   * back, so the stub drops a little further than 16px and settles up into
+   * place. That is what sells it as something coming loose.
+   */
+  inEase: 'cubic-bezier(0.579, 0.423, 0.17, 1.452)',
+  /** Webflow "outSine". No overshoot going back — it just returns. */
+  outEase: 'cubic-bezier(0.39, 0.575, 0.565, 1)',
+  /** Webflow "inOutQuad", on the button's opacity in both directions. */
+  fadeEase: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
+} as const;
+
+/**
+ * The barcode closing into a button rides the same two durations, which is not
+ * a convenience — in the reference it is a `PLUGIN_LOTTIE` action in the same
+ * two action lists, driven 1 -> 100 on the way in and back to 0 on the way out.
+ * The Lottie file is 294x48 at 60fps with an out point of 30: half a second,
+ * built from 36 bars on 72 layers.
+ *
+ * Rebuilt here as one transform per bar rather than by shipping a Lottie player
+ * for a single file — every bar slides and widens into a gapless slot, which is
+ * the same interpolation without ~250KB of runtime to run it.
+ */

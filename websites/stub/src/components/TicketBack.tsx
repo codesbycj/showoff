@@ -40,7 +40,10 @@ export function TicketBack({ ticket }: { ticket: Ticket }) {
         </div>
       </div>
 
-      <div className="perforation bg-ink text-sky flex items-center justify-between rounded-[18px] px-6 py-4">
+      {/* `.back-bottom` in the reference, and it tears with the front's stub —
+          so a card caught mid-flip does not show one half come away and the
+          other stay put. */}
+      <div className="ticket-stub perforation bg-ink text-sky flex items-center justify-between rounded-[18px] px-6 py-4">
         <Crosshair className="text-paper w-[14px]" />
         <p className="text-paper font-mono text-[10px] uppercase tracking-[0.1em]">
           Keep until handover

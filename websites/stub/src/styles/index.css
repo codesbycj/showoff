@@ -106,4 +106,84 @@
   .perforation {
     border-top: 2px dashed currentColor;
   }
+
+  /*
+   * The hover: the stub comes away.
+   *
+   * Only the stub moves — 16px down and 5deg about its own centre, on a curve
+   * whose last control point is past 1, so it drops a little further than that
+   * and settles back up. The face does not lift, tilt or scale.
+   *
+   * The trigger is the whole card rather than the stub, because the stub leaves
+   * the cursor as it goes and triggering off it would make it chatter. It is
+   * also `:focus-within`, so the call-to-action inside is reachable by keyboard
+   * and announces itself when it gets there instead of being an invisible tab
+   * stop.
+   */
+  .ticket-stub {
+    --morph: 0;
+    transform: translateY(0) rotate(0deg);
+    transition:
+      transform var(--hover-out) var(--ease-out),
+      --morph var(--hover-out) var(--ease-fade);
+  }
+
+  .ticket:hover .ticket-stub,
+  .ticket:focus-within .ticket-stub {
+    --morph: 1;
+    transform: translateY(var(--stub-y)) rotate(var(--stub-rotate));
+    transition:
+      transform var(--hover-in) var(--ease-in),
+      --morph var(--hover-in) var(--ease-fade);
+  }
+
+  /*
+   * Each bar slides left into its slot and widens to fill it. `fill-box` plus a
+   * left origin means `--bar-dx` is simply where the left edge has to end up,
+   * in the SVG's own user units, and the scale is independent of it.
+   */
+  .barcode-bar {
+    transform-box: fill-box;
+    transform-origin: left center;
+    transform: translateX(calc(var(--bar-dx) * var(--morph) * 1px))
+      scaleX(calc(1 + (var(--bar-sx) - 1) * var(--morph)));
+  }
+
+  /* The label over the closed bars, and the clip that rounds them off. */
+  .barcode-wrap {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .button-text {
+    opacity: var(--morph);
+  }
+
+  /*
+   * Reduced motion keeps the affordance and drops the movement. The stub does
+   * not tear and the bars do not travel; the button is simply there on hover,
+   * which is the information the motion was carrying.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    .ticket-stub,
+    .ticket:hover .ticket-stub,
+    .ticket:focus-within .ticket-stub {
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/*
+ * `--morph` has to be registered or it cannot be transitioned: to the engine an
+ * unregistered custom property is a string, and strings do not interpolate.
+ * Declared at the top level because `@property` is not allowed inside a layer.
+ *
+ * Where it is unsupported the value jumps 0 -> 1 and the button appears without
+ * the morph, which is the right thing to fall back to.
+ */
+@property --morph {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
 }

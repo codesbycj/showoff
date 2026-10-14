@@ -81,6 +81,16 @@ export const TICKETS: Ticket[] = [
 ];
 
 /**
+ * What the barcode says once it has closed into a button.
+ *
+ * One phrase for all three rather than a field on each ticket: the reference
+ * gives its three cards their own classes and then puts the same words on all
+ * of them, and three copies of one string in the data would only invite them to
+ * drift apart.
+ */
+export const CTA = 'Schedule a call';
+
+/**
  * The headline sitting behind the cards. Two soft lines, then one sharp one.
  *
  * Kept to roughly the reference's line lengths — eleven characters, then nine —
