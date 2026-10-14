@@ -1,0 +1,430 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/app-bar"
+   ],
+   "label": "the bar that stays put"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "pin the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/app-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a way back out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/app-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "whose shop this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/app-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what you are looking at"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/app-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "who is shopping"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/hero-showcase"
+   ],
+   "label": "the dish, and the light around it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "put the dish on the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    "STEP 1.09"
+   ],
+   "label": "light coming in at two corners"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the name of the thing, set huge and half-hidden"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and something for the bowl to cast onto"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the dish itself"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    [
+     "// MISTAKE 1.13",
+     "opacity: 0.35,"
+    ]
+   ],
+   "label": "the photograph came out washed into the panel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what it is free of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/hero-showcase.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and how hot it runs"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/title-block"
+   ],
+   "label": "what it is called, and what it costs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "name it and price it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/title-block.tsx",
+    "STEP 1.18"
+   ],
+   "label": "whose brand it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/title-block.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what it is, and how much of it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/botanic/components/title-block.tsx",
+    [
+     "// MISTAKE 1.20",
+     "textTransform: 'lowercase',"
+    ]
+   ],
+   "label": "the title lost its caps"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/title-block.tsx",
+    "STEP 1.21"
+   ],
+   "label": "what it costs, and what it used to"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/rating-pod"
+   ],
+   "label": "what everyone else made of it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/nutrition-pod"
+   ],
+   "label": "and what it does to you"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "two pods, side by side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/rating-pod.tsx",
+    "STEP 1.25"
+   ],
+   "label": "the score, and the stars that back it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/rating-pod.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and how many people said so"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/nutrition-pod.tsx",
+    "STEP 1.28"
+   ],
+   "label": "what it is called"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/nutrition-pod.tsx",
+    "STEP 1.29"
+   ],
+   "label": "and the split, and the total"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/chefs-note"
+   ],
+   "label": "what the chef wants you to know"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.31"
+   ],
+   "label": "the story behind it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/chefs-note.tsx",
+    "STEP 1.32"
+   ],
+   "label": "give it a heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/chefs-note.tsx",
+    "STEP 1.33"
+   ],
+   "label": "and the paragraph under it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/ingredient-chips"
+   ],
+   "label": "what is actually in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.35"
+   ],
+   "label": "the things it is made of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/ingredient-chips.tsx",
+    "STEP 1.36"
+   ],
+   "label": "call the list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/ingredient-chips.tsx",
+    "STEP 1.37"
+   ],
+   "label": "and fill it, one pill at a time"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/botanic/components/ingredient-chips.tsx",
+    [
+     "// MISTAKE 1.38",
+     "justifyContent: 'center',"
+    ]
+   ],
+   "label": "the pills bunched into the middle"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/verified-row"
+   ],
+   "label": "and who vouches for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.40"
+   ],
+   "label": "the kitchen's word for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/verified-row.tsx",
+    "STEP 1.41"
+   ],
+   "label": "the badge, and what it certifies"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/verified-row.tsx",
+    "STEP 1.42"
+   ],
+   "label": "and a way into the detail"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "@/features/botanic/components/purchase-bar"
+   ],
+   "label": "the only button that matters"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/botanic/index.tsx",
+    "STEP 1.44"
+   ],
+   "label": "and the way to buy it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/purchase-bar.tsx",
+    "STEP 1.45"
+   ],
+   "label": "somewhere to keep it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/botanic/components/purchase-bar.tsx",
+    [
+     "// MISTAKE 1.46",
+     "transform: [{ scale: 0.6 }],"
+    ]
+   ],
+   "label": "the heart came out shrunken"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/botanic/components/purchase-bar.tsx",
+    "STEP 1.47"
+   ],
+   "label": "and the thing you came here to press"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-bar",
+     "src/features/botanic/components/app-bar.tsx"
+    ],
+    [
+     "chefs-note",
+     "src/features/botanic/components/chefs-note.tsx"
+    ],
+    [
+     "hero-showcase",
+     "src/features/botanic/components/hero-showcase.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/botanic/index.tsx"
+    ],
+    [
+     "ingredient-chips",
+     "src/features/botanic/components/ingredient-chips.tsx"
+    ],
+    [
+     "nutrition-pod",
+     "src/features/botanic/components/nutrition-pod.tsx"
+    ],
+    [
+     "purchase-bar",
+     "src/features/botanic/components/purchase-bar.tsx"
+    ],
+    [
+     "rating-pod",
+     "src/features/botanic/components/rating-pod.tsx"
+    ],
+    [
+     "title-block",
+     "src/features/botanic/components/title-block.tsx"
+    ],
+    [
+     "verified-row",
+     "src/features/botanic/components/verified-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

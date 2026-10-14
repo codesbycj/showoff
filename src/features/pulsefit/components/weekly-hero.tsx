@@ -41,9 +41,11 @@ export function WeeklyHero({
   return (
     <View style={[{ borderRadius: R.card, backgroundColor: pf.heroVia }, LEVEL.hero]}>
       <View style={{ borderRadius: R.card, overflow: 'hidden' }}>
+{/* STEP 1.14 the ramp, and the glow hung off its corner
         <View style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0 }}>
           <HeroWash />
         </View>
+*/}
 
         <View
           style={{
@@ -54,15 +56,21 @@ export function WeeklyHero({
           }}
         >
           <View style={{ maxWidth: '58%' }}>
+{/* STEP 1.15 what the card is counting
             <IntakeBadge label={badge} />
+*/}
 
+{/* STEP 1.16 how the week went
             <Text style={[TYPE.hero, { color: pf.ink, marginTop: 8 }]}>{title}</Text>
             <Text style={[TYPE.body, { color: 'rgba(66,73,54,0.9)', marginTop: 4 }]}>
               {subtitle}
             </Text>
+*/}
           </View>
 
+{/* STEP 1.17 six of the seven days, as a ring
           <ProgressRing progress={progress} value={value} unit={unit} />
+*/}
         </View>
       </View>
     </View>

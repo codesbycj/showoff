@@ -13,6 +13,9 @@ conflicts for no benefit. Clone the repo, pick a folder, install, and it runs.
 | [`iota/`](./iota) | A fictional architecture studio — acronym loader, pinned scroll | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
 | [`veld/`](./veld) | A fictional racing driver — a loader whose white screen is the car number | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
 | [`switchblade/`](./switchblade) | One section of a reference site — an arcing product row that dresses the figure it passes | React 19 · Vite 8 · Tailwind 4 · Lenis |
+| [`tallow/`](./tallow) | A fictional video editor — app icons that fly out of a sentence onto a timeline | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
+| [`ribbon/`](./ribbon) | A fictional designer — a card strip bent by scroll velocity, and a hover that dents without moving the outline | React 19 · Vite 8 · Tailwind 4 · three.js · GSAP |
+| [`stub/`](./stub) | One section of a reference site — three ticket cards dealt up from below the fold and flipped over in turn | React 19 · Vite 8 · Tailwind 4 · Lenis |
 
 The repository root has a passthrough script per site, so you never have to think about
 which directory you are in:
@@ -29,7 +32,23 @@ npm run build:veld
 npm run install:switchblade
 npm run dev:switchblade  # http://localhost:5188
 npm run build:switchblade
+
+npm run dev:tallow       # http://localhost:5192
+npm run build:tallow
+
+npm run dev:ribbon       # http://localhost:5196
+npm run build:ribbon
+
+npm run dev:stub         # http://localhost:5200
+npm run build:stub
 ```
+
+**Install from inside the folder**, with a plain `npm install`, not through a root
+`install:` script. `npm --prefix websites/<slug> install` run from the repository root
+writes `"showoff": "file:../.."` into that site's `package.json` and symlinks the Expo
+project into its `node_modules` — exactly the coupling this folder exists to prevent.
+The `dev:` and `build:` passthroughs are fine; it is only `install:` that does it, which
+is why `tallow`, `ribbon` and `stub` have no `install:` script.
 
 Each site pins its own port with `strictPort`, so starting one while it is already
 running fails loudly instead of quietly moving to the next free port and leaving every

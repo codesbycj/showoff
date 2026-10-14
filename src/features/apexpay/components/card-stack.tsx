@@ -91,6 +91,7 @@ export function CardStack() {
         overflow: 'hidden',
       }}
     >
+      {/* STEP 1.32 the card at the back
       <CollapsedRow
         network={STACKED_CARDS[0].network}
         last4={STACKED_CARDS[0].last4}
@@ -98,6 +99,8 @@ export function CardStack() {
         numberColor={ax.inkMuted70}
         overlap={0}
       />
+      */}
+      {/* STEP 1.33 and one riding over it
       <CollapsedRow
         network={STACKED_CARDS[1].network}
         last4={STACKED_CARDS[1].last4}
@@ -105,16 +108,20 @@ export function CardStack() {
         numberColor={ax.inkMuted80}
         overlap={-4}
       />
+      */}
 
       <View
         style={{
           marginTop: -8,
+          // MISTAKE 1.34 the cards came out spaced instead of stacked
+          top: 16,
           borderRadius: radius.panel,
           backgroundColor: ax.cardActive,
           padding: 20,
           gap: 20,
         }}
       >
+        {/* STEP 1.35 the one card that is open
         <View
           style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}
         >
@@ -131,7 +138,9 @@ export function CardStack() {
             <Symbol name="visibilityOff" size={16} color={ax.inkMuted70} />
           </Pressable>
         </View>
+        */}
 
+        {/* STEP 1.36 whose it is, and what is on it
         <View style={{ gap: 6, paddingTop: 8 }}>
           <Text style={[t.body13, { color: ax.inkMuted70 }]}>{ACTIVE_CARD.holder}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
@@ -141,6 +150,7 @@ export function CardStack() {
             </Text>
           </View>
         </View>
+        */}
       </View>
     </View>
   );

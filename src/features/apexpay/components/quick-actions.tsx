@@ -37,6 +37,7 @@ export function QuickActions({ actions }: { actions: QuickAction[] }) {
               gap: 6,
             }}
           >
+            {/* STEP 1.23 a well for each glyph
             <View
               style={{
                 width: 32,
@@ -49,6 +50,8 @@ export function QuickActions({ actions }: { actions: QuickAction[] }) {
             >
               <Symbol name={action.icon} size={20} color={on ? ax.onSignal : ax.inkMuted} />
             </View>
+            */}
+            {/* STEP 1.24 and a word under it
             <Text
               style={[
                 t.labelMd,
@@ -60,6 +63,7 @@ export function QuickActions({ actions }: { actions: QuickAction[] }) {
             >
               {action.label}
             </Text>
+            */}
           </Pressable>
         );
       })}

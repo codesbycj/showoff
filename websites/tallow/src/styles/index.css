@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@theme {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --color-ink: #141414;
+  --color-ink-soft: #595751;
+  --color-ink-faint: #9a968d;
+  --color-paper: #f4f2ed;
+  --color-hairline: #e0ddd5;
+
+  /* The editor chrome. */
+  --color-panel: #121212;
+  --color-panel-dim: #8a8a8a;
+
+  /* Both are injected on :root at boot from src/motion/motion.ts, so the fluid
+     ramps live with the rest of the measurements rather than being restated
+     here. The fallbacks are the value each one takes at 1440px wide. */
+  --text-statement: var(--statement-size, 60.4px);
+  --spacing-gutter: var(--gutter, 66px);
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-sans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Lenis sets these itself, but declaring them avoids a frame of jump on load. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /**
+   * The gap left in the sentence for a tile.
+   *
+   * A square sized in `em`, so it tracks the headline's fluid type without a
+   * single breakpoint. The negative margins are optical: a square sitting on
+   * the text baseline reads as too low and too far apart, and these pull it
+   * back up into the line. The values come from LAYOUT.inline in motion.ts.
+   */
+  .inline-slot {
+    position: relative;
+    display: inline-block;
+    width: var(--slot-em-narrow);
+    height: var(--slot-em-narrow);
+    margin: var(--slot-margin-narrow);
+  }
+
+  @media (min-width: 48rem) {
+    .inline-slot {
+      width: var(--slot-em);
+      height: var(--slot-em);
+      margin: var(--slot-margin);
+    }
+  }
+
+  /**
+   * One tile. `container-type: inline-size` is what lets the rim below be a
+   * share of the tile's own width rather than a fixed blur that would read as a
+   * hairline at one size and a fog at the other.
+   */
+  .tile {
+    container-type: inline-size;
+  }
+
+  /**
+   * The lit inside edge. An inset shadow on an overlay, not a border, so it
+   * follows the squircle rather than a rounded rectangle, and a radius close
+   * enough to the squircle's that the two agree at the corners.
+   *
+   * The reference's blur is a share of a declared ceiling (`min(20vw, 28rem)`)
+   * rather than of the tile as rendered, which at desktop widths lands near 18%
+   * of the tile. That swamps artwork this flat — the reference's blocks are
+   * photographic and absorb it — so it is pulled back to 11% and taken from the
+   * tile directly, which also keeps it constant at every size.
+   */
+  .tile-rim {
+    border-radius: 22.4%;
+    box-shadow: inset 0 0 11cqw rgb(255 255 255 / 0.9);
+  }
+
+  /**
+   * The timeline. The ratio is the reference's, and it is the only thing fixing
+   * the panel's height — everything inside is a percentage of it, so the track,
+   * the chrome and the tiles all rescale together.
+   */
+  .timeline-inner {
+    container-type: inline-size;
+    aspect-ratio: 1372 / 408;
+  }
+}

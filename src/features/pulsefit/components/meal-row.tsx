@@ -64,8 +64,11 @@ export function MealRow({ meal, onAdd }: { meal: Meal; onAdd?: () => void }) {
       ]}
     >
       <View style={{ flexShrink: 1, paddingRight: 8, gap: 4 }}>
+{/* STEP 1.37 which meal this was
         <Text style={[TYPE.mealName, { color: pf.ink }]}>{meal.name}</Text>
+*/}
 
+{/* STEP 1.38 and what it cost you
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
           <View
             style={{
@@ -82,13 +85,17 @@ export function MealRow({ meal, onAdd }: { meal: Meal; onAdd?: () => void }) {
 
           <Text style={[TYPE.kcal, { color: pf.muted }]}>{meal.kcal}</Text>
         </View>
+*/}
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+{/* STEP 1.39 the dishes, overlapping
         {meal.thumbs.map((src, i) => (
           <Thumb key={i} source={src} first={i === 0} />
         ))}
+*/}
 
+{/* STEP 1.40 and room for one more
         <Pressable
           onPress={onAdd}
           accessibilityRole="button"
@@ -109,6 +116,7 @@ export function MealRow({ meal, onAdd }: { meal: Meal; onAdd?: () => void }) {
             <DrawnIcon name="addBold" size={20} color={pf.ink} />
           </View>
         </Pressable>
+*/}
       </View>
     </View>
   );

@@ -45,6 +45,8 @@ import { Inter_400Regular } from '@expo-google-fonts/inter/400Regular';
 import { Inter_500Medium } from '@expo-google-fonts/inter/500Medium';
 import { Inter_600SemiBold } from '@expo-google-fonts/inter/600SemiBold';
 import { Inter_700Bold } from '@expo-google-fonts/inter/700Bold';
+import { Oswald_600SemiBold } from '@expo-google-fonts/oswald/600SemiBold';
+import { Oswald_700Bold } from '@expo-google-fonts/oswald/700Bold';
 import { PlusJakartaSans_400Regular } from '@expo-google-fonts/plus-jakarta-sans/400Regular';
 import { PlusJakartaSans_500Medium } from '@expo-google-fonts/plus-jakarta-sans/500Medium';
 import { PlusJakartaSans_600SemiBold } from '@expo-google-fonts/plus-jakarta-sans/600SemiBold';
@@ -96,6 +98,18 @@ export const fontMap = {
   // apexpay's icon subset - 13 glyphs, 944KB down to 2.8KB, with its own
   // internal family name so it cannot collide with pulsefit's cut.
   ApexpaySymbols_400Regular: require('../../assets/fonts/apexpay-symbols/ApexpaySymbols_400Regular.ttf'),
+
+  // botanic - Oswald for the condensed display voice, named outright by the
+  // design, so there is no substitute to fit. Only two of its six weights are
+  // used: 600 for the product title and the bar's heading, 700 for the price
+  // and the editorial watermark behind the dish. Its body face is Plus Jakarta
+  // Sans, already above.
+  Oswald_600SemiBold,
+  Oswald_700Bold,
+
+  // botanic's icon subset - 11 glyphs, 944KB down to 2.8KB, with its own
+  // internal family name so it cannot collide with the other two cuts.
+  BotanicSymbols_400Regular: require('../../assets/fonts/botanic-symbols/BotanicSymbols_400Regular.ttf'),
 };
 
 export const hasCustomFonts = Object.keys(fontMap).length > 0;
