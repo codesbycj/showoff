@@ -48,8 +48,7 @@ export function AppBar({ onBack }: { onBack?: () => void }) {
         }}
       >
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-          {/* The visual box is on the inner View: a Pressable's function style
-              is dropped in a static render, which silently loses its size. */}
+{/* STEP 1.03 a way back out
           <Pressable onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">
             <View
               style={{
@@ -63,17 +62,19 @@ export function AppBar({ onBack }: { onBack?: () => void }) {
               <Symbol name="arrowBack" size={24} color={bt.ink} />
             </View>
           </Pressable>
+*/}
 
-          {/* `h-7 w-auto object-contain` — 28dp tall, and the mark's own
-              aspect gives it 50dp of width. */}
+{/* STEP 1.04 whose shop this is
           <Image
             source={logo}
             style={{ height: 28, width: 50 }}
             resizeMode="contain"
             accessibilityLabel="Sprouts"
           />
+*/}
         </View>
 
+{/* STEP 1.05 and what you are looking at
         <Text
           numberOfLines={1}
           style={{
@@ -88,7 +89,9 @@ export function AppBar({ onBack }: { onBack?: () => void }) {
         >
           {APP_BAR.title.toUpperCase()}
         </Text>
+*/}
 
+{/* STEP 1.06 who is shopping
         <Pressable accessibilityRole="button" accessibilityLabel="Profile">
           <View
             style={{
@@ -102,6 +105,7 @@ export function AppBar({ onBack }: { onBack?: () => void }) {
             <Image source={avatar} style={{ width: 32, height: 32, borderRadius: 9999 }} />
           </View>
         </Pressable>
+*/}
       </View>
     </View>
   );

@@ -5,6 +5,7 @@
   "dependencies": {
     "@expo-google-fonts/caveat": "^0.4.2",
     "@expo-google-fonts/ibm-plex-mono": "^0.4.1",
+    "@expo-google-fonts/instrument-serif": "^0.4.1",
     "@expo-google-fonts/inter": "^0.4.2",
     "@expo-google-fonts/oswald": "^0.4.2",
     "@expo-google-fonts/plus-jakarta-sans": "^0.4.2",
@@ -66,7 +67,13 @@
     "dev:ribbon": "npm --prefix websites/ribbon run dev",
     "build:ribbon": "npm --prefix websites/ribbon run build",
     "dev:stub": "npm --prefix websites/stub run dev",
-    "build:stub": "npm --prefix websites/stub run build"
+    "build:stub": "npm --prefix websites/stub run build",
+    "dev:bulwark": "npm --prefix websites/bulwark run dev",
+    "build:bulwark": "npm --prefix websites/bulwark run build",
+    "dev:onesheet": "npm --prefix websites/onesheet run dev",
+    "build:onesheet": "npm --prefix websites/onesheet run build",
+    "dev:pennant": "npm --prefix websites/pennant run dev",
+    "build:pennant": "npm --prefix websites/pennant run build"
   },
   "private": true
 }

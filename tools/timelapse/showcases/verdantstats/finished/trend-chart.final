@@ -1,0 +1,146 @@
+import { View } from 'react-native';
+
+import { trend } from '../data/analytics';
+import {
+  AXIS_WIDTH,
+  BAR_LABEL_TOP,
+  TOOLTIP_HEIGHT,
+  TOOLTIP_PAD_X,
+  TREND_HEIGHT,
+  useCharts,
+} from '../layout';
+import { radius, vs } from '../theme';
+import { T } from './text';
+
+/**
+ * Six months of spending, with this one called out.
+ *
+ * The plot area is a fixed height and every bar is a fraction of it, so the
+ * chart cannot be read wrong when the numbers change — a bar chart whose bars
+ * are sized relative to the tallest *bar* rather than to the axis says the
+ * same thing about every month, whatever was spent.
+ *
+ * The bars are laid out with `space-between` inside the plot area and the
+ * axis labels sit in their own fixed column, so the plot is whatever the page
+ * leaves after that column — no width is pinned anywhere.
+ *
+ * The callout pill sits above its bar in a layer of its own rather than inside
+ * the bar's column. Inside, it would set that column's width — and a pill
+ * reading "$754.33" is wider than a 24dp bar, so August's column would be
+ * three times its neighbours'.
+ */
+export function TrendChart() {
+  const { barWidth } = useCharts();
+  const liveIndex = trend.months.findIndex((m) => m.key === trend.live);
+
+  return (
+    <View>
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ flex: 1 }}>
+          {/* The plot, with the callout floating over it. */}
+          <View style={{ height: TREND_HEIGHT, flexDirection: 'row', alignItems: 'flex-end' }}>
+            {/*
+              The gridlines, one per axis label, behind the bars.
+
+              `space-between` over the same height as the labels' own column,
+              so a line and its value cannot drift apart — the alternative is
+              two sets of positions computed from the same numbers twice.
+            */}
+            <View
+              style={{
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+                justifyContent: 'space-between',
+              }}
+              pointerEvents="none"
+            >
+              {trend.axis.map((label) => (
+                <View key={label} style={{ height: 1, backgroundColor: vs.rule }} />
+              ))}
+            </View>
+
+            {trend.months.map((m) => {
+              const on = m.key === trend.live;
+              return (
+                <View key={m.key} style={{ flex: 1, alignItems: 'center' }}>
+                  <View
+                    style={{
+                      width: barWidth,
+                      height: Math.max(4, (m.value / trend.max) * TREND_HEIGHT),
+                      borderRadius: radius.bar,
+                      backgroundColor: on ? vs.barOn : vs.bar,
+                    }}
+                  />
+                </View>
+              );
+            })}
+          </View>
+
+          <View style={{ flexDirection: 'row', marginTop: BAR_LABEL_TOP }}>
+            {trend.months.map((m) => (
+              <View key={m.key} style={{ flex: 1, alignItems: 'center' }}>
+                <T
+                  variant={m.key === trend.live ? 'axisMonthOn' : 'axisMonth'}
+                  color={m.key === trend.live ? vs.ink : vs.muted}
+                >
+                  {m.label}
+                </T>
+              </View>
+            ))}
+          </View>
+        </View>
+
+        {/* The value axis: evenly spaced labels, top to bottom. */}
+        <View
+          style={{
+            width: AXIS_WIDTH,
+            height: TREND_HEIGHT,
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+          }}
+        >
+          {trend.axis.map((label) => (
+            <T key={label} variant="axisValue" color={vs.muted}>
+              {label}
+            </T>
+          ))}
+        </View>
+      </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: AXIS_WIDTH,
+          top: 0,
+          flexDirection: 'row',
+        }}
+        pointerEvents="none"
+      >
+        {trend.months.map((m, i) => (
+          <View key={m.key} style={{ flex: 1, alignItems: 'center' }}>
+            {i === liveIndex ? (
+              <View
+                style={{
+                  height: TOOLTIP_HEIGHT,
+                  paddingHorizontal: TOOLTIP_PAD_X,
+                  borderRadius: radius.pill,
+                  backgroundColor: vs.barOn,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <T variant="tooltip" color={vs.onGreen}>
+                  {trend.callout}
+                </T>
+              </View>
+            ) : null}
+          </View>
+        ))}
+      </View>
+    </View>
+  );
+}

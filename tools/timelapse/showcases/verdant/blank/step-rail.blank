@@ -1,0 +1,91 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { RAIL_GAP, RAIL_HEIGHT, RAIL_INSET } from '../layout';
+import { radius, vd } from '../theme';
+import { T } from './text';
+
+/**
+ * The onboarding rail: which of three screens this is, the bars, and the way
+ * out of the sequence.
+ *
+ * The counter is padded to two digits because "1 / 03" would shuffle the bars
+ * sideways on the next screen — the rail is the one thing on this flow that
+ * must not move between steps.
+ *
+ * The segments are `flex: 1` rather than a measured width. The reference's
+ * bars happen to be about 56dp on the designer's artboard; on a 360dp phone
+ * three of those plus the counter plus "Skip" no longer fit, and the rail
+ * would either wrap or push "Skip" off the edge.
+ *
+ * `onSkip` is a prop, not a `router.push` — screens decide navigation,
+ * components never do.
+ *
+ * The pressed state is held in `useState` and applied as a plain style object,
+ * rather than through `style={({pressed}) => …}`: that function is dropped in
+ * a static web render, so the harness would shoot a control that has lost it.
+ */
+export function StepRail({
+  step,
+  total,
+  onSkip,
+}: {
+  step: number;
+  total: number;
+  onSkip: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      {/* STEP 1.08 which screen this is
+      <T variant="counter" color={vd.ink}>
+        {`${pad(step)} / ${pad(total)}`}
+      </T>
+      */}
+
+      {/* STEP 1.09 a bar for each one
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          // MISTAKE 1.10 the bars came in sitting low
+          marginTop: 9,
+          gap: RAIL_GAP,
+          marginHorizontal: RAIL_INSET,
+        }}
+      >
+        {Array.from({ length: total }, (_, i) => (
+          <View
+            key={i}
+            style={{
+              flex: 1,
+              height: RAIL_HEIGHT,
+              borderRadius: radius.rail,
+              backgroundColor: i < step ? vd.railOn : vd.railOff,
+            }}
+          />
+        ))}
+      </View>
+      */}
+
+      {/* STEP 1.11 and a way out of the whole thing
+      <Pressable
+        onPress={onSkip}
+        onPressIn={() => setHeld(true)}
+        onPressOut={() => setHeld(false)}
+        hitSlop={14}
+        accessibilityRole="button"
+        accessibilityLabel="Skip onboarding"
+        style={{ opacity: held ? 0.55 : 1 }}
+      >
+        <T variant="skip" color={vd.quiet}>
+          Skip
+        </T>
+      </Pressable>
+      */}
+    </View>
+  );
+}
+
+const pad = (n: number) => String(n).padStart(2, '0');

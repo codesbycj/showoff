@@ -1,0 +1,67 @@
+import { Pressable, View } from 'react-native';
+
+import { SEG_HEIGHT, SEG_INSET } from '../layout';
+import { radius, shadow, vs } from '../theme';
+import { T } from './text';
+
+/**
+ * The four views of the month, with the live one on a pill.
+ *
+ * Equal flex columns rather than text-sized tabs: "Goals" is half the width of
+ * "Spending", and sizing to the text would leave the row lopsided and the pill
+ * jumping a different distance each time. Equal columns also mean the control
+ * fills the page on any phone without a measurement.
+ *
+ * `onSelect` is a prop, not a `router.push` — screens decide navigation,
+ * components never do.
+ */
+export function Segmented({
+  items,
+  active,
+  onSelect,
+}: {
+  items: readonly string[];
+  active: string;
+  onSelect?: (item: string) => void;
+}) {
+  return (
+    <View
+      style={{
+        height: SEG_HEIGHT,
+        borderRadius: radius.pill,
+        backgroundColor: vs.surface,
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: SEG_INSET,
+        ...shadow.soft,
+      }}
+    >
+      {items.map((item) => {
+        const on = item === active;
+        return (
+          <Pressable
+            key={item}
+            onPress={() => onSelect?.(item)}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: on }}
+            style={{ flex: 1 }}
+          >
+            <View
+              style={{
+                height: SEG_HEIGHT - SEG_INSET * 2,
+                borderRadius: radius.pill,
+                backgroundColor: on ? vs.green : 'transparent',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <T variant={on ? 'tabOn' : 'tab'} color={on ? vs.onGreen : vs.muted}>
+                {item}
+              </T>
+            </View>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}

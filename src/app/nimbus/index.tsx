@@ -1,0 +1,102 @@
+import { router } from 'expo-router';
+import { useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView, View } from 'react-native';
+
+// STEP 1.01 the header
+// import { AppBar } from '@/features/nimbus/components/app-bar';
+// STEP 1.23 the four things you can do to it
+// import { ActionRow } from '@/features/nimbus/components/action-row';
+// STEP 1.07 the card, and the two behind it
+// import { CardStack } from '@/features/nimbus/components/card-stack';
+// STEP 1.36 a heading for the list
+// import { SectionHead } from '@/features/nimbus/components/section-head';
+// STEP 1.30 what the month has cost
+// import { SpendMeter } from '@/features/nimbus/components/spend-meter';
+// STEP 1.44 somewhere to go next
+// import { TabDock } from '@/features/nimbus/components/tab-dock';
+// STEP 1.38 the transactions
+// import { TransactionList } from '@/features/nimbus/components/transaction-list';
+import {
+  HEADER_TOP,
+  MARGIN,
+  METER_TOP,
+  SECTION_TOP,
+  SCROLL_BOTTOM_PAD,
+  STACK_TOP,
+  TILES_TOP,
+} from '@/features/nimbus/layout';
+import { nb } from '@/features/nimbus/theme';
+import { useInsets } from '@/features/nimbus/use-insets';
+
+/**
+ * Nimbus — My Cards.
+ *
+ * Assembly only: a fixed header, a scroll holding the card stack and
+ * everything under it, and a dock floating over the lot.
+ *
+ * The header stays out of the scroll because it stays put in the reference's
+ * own app — the card is what moves under it.
+ *
+ * The one piece of state is whether the balance is hidden, and it lives here
+ * rather than in the card: the eye is a control on the card, but what it
+ * conceals is the screen's business, and a component that owns its own state
+ * cannot be driven from anywhere else.
+ */
+export default function NimbusCards() {
+  const insets = useInsets();
+  const [hidden, setHidden] = useState(false);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: nb.canvas }}>
+      <StatusBar style="dark" />
+
+      {/* STEP 1.02 stand the header off the status bar
+      <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
+        <AppBar title="My Cards" onBack={() => router.back()} />
+      </View>
+      */}
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: MARGIN,
+          paddingTop: STACK_TOP,
+          paddingBottom: SCROLL_BOTTOM_PAD,
+        }}
+      >
+        {/* STEP 1.08 the stack, at the top of the scroll
+        <CardStack hidden={hidden} onToggleHidden={() => setHidden((h) => !h)} />
+        */}
+
+        {/* STEP 1.24 the action tiles under it
+        <View style={{ marginTop: TILES_TOP }}>
+          <ActionRow />
+        </View>
+        */}
+
+        {/* STEP 1.31 the spend meter under those
+        <View style={{ marginTop: METER_TOP }}>
+          <SpendMeter />
+        </View>
+        */}
+
+        {/* STEP 1.37 name the list
+        <View style={{ marginTop: SECTION_TOP }}>
+          <SectionHead title="Transactions" action="See all" />
+        </View>
+        */}
+
+        {/* STEP 1.39 and run it
+        <View style={{ marginTop: 10.4 }}>
+          <TransactionList />
+        </View>
+        */}
+      </ScrollView>
+
+      {/* STEP 1.45 float the dock over the lot
+      <TabDock active="cards" />
+      */}
+    </View>
+  );
+}

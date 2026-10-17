@@ -9,6 +9,7 @@ import { Symbol } from './symbol';
 export function NutritionPod() {
   return (
     <Pod>
+{/* STEP 1.28 what it is called
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         <Text
           style={{
@@ -23,7 +24,9 @@ export function NutritionPod() {
         </Text>
         <Symbol name="nutrition" size={18} color={bt.accent} />
       </View>
+*/}
 
+{/* STEP 1.29 and the split, and the total
       <View>
         <Text
           style={{
@@ -47,6 +50,7 @@ export function NutritionPod() {
           {NUTRITION.total}
         </Text>
       </View>
+*/}
     </Pod>
   );
 }

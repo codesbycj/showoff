@@ -1,0 +1,11 @@
+{
+ "welcome-screen": "src/app/verdant/index.tsx",
+ "backdrop": "src/features/verdant/components/backdrop.tsx",
+ "step-rail": "src/features/verdant/components/step-rail.tsx",
+ "headline": "src/features/verdant/components/headline.tsx",
+ "stage": "src/features/verdant/components/stage.tsx",
+ "pedestal": "src/features/verdant/components/pedestal.tsx",
+ "wallet": "src/features/verdant/components/wallet.tsx",
+ "bank-card": "src/features/verdant/components/bank-card.tsx",
+ "primary-button": "src/features/verdant/components/primary-button.tsx"
+}

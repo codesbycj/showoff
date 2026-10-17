@@ -1,0 +1,66 @@
+import type { ImageSourcePropType } from 'react-native';
+
+import type { IconName } from '../components/icon';
+
+/**
+ * Everything this screen says, in one place, so the components stay
+ * presentational and a copy change never touches a layout file.
+ *
+ * The boat, the agent and the prices are the reference's own. Two things in it
+ * are *not* reproduced, because they are mistakes rather than decisions:
+ *
+ * - its agent's second line repeats his name verbatim under itself, which is
+ *   plainly a placeholder that never got filled in. Here it is his role.
+ * - its price reads "per hours". Here it is "per hour".
+ */
+
+export type Amenity = { id: string; label: string; icon: IconName };
+
+export const BOAT = {
+  /** The category, as shown in the pill. */
+  kind: 'Yacht',
+  name: 'Luxury Motor Yachts',
+  /** The hull name, shown over the hero and again beside the title. */
+  hull: 'Azure Serenity',
+  capacity: '12 Guests',
+  rating: '3.3',
+  reviews: '151 reviews',
+  description:
+    'Experience the Azure Serenity, a 75-foot yacht for 12 guests, featuring a sunlit deck, Jacuzzi, and stunning ocean views.',
+  hero: require('../../../../assets/images/marina/hero-yacht.jpg') as ImageSourcePropType,
+  /** How many photographs the gallery implies, and which is showing. */
+  gallery: { count: 5, active: 2 },
+  /** Starts favourited, so the filled state is visible without interacting. */
+  saved: true,
+} as const;
+
+export const AMENITIES: Amenity[] = [
+  { id: 'sun-deck', label: 'Sun Deck', icon: 'sun' },
+  { id: 'jacuzzi', label: 'Jacuzzi', icon: 'jacuzzi' },
+  { id: 'bbq', label: 'BBQ Grill', icon: 'grill' },
+  { id: 'wifi', label: 'Wi-Fi', icon: 'wifi' },
+];
+
+export const AGENT = {
+  name: 'Mr. Rahul Menon',
+  /** What the reference leaves as a duplicated name. */
+  role: 'Charter agent · Kochi',
+  avatar: require('../../../../assets/images/marina/agent.jpg') as ImageSourcePropType,
+} as const;
+
+export const PRICE = {
+  label: 'Price',
+  /** Two rates, each a figure and the unit it is charged in. */
+  rates: [
+    { amount: '₹ 600', unit: 'per hour' },
+    { amount: '₹ 4,500', unit: 'per day' },
+  ],
+  cta: 'Book Now',
+} as const;
+
+/** The three headings down the page, in order. */
+export const SECTIONS = {
+  amenities: 'Amenities',
+  description: 'Description',
+  agent: 'Contact Agent',
+} as const;

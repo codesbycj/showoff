@@ -23,6 +23,7 @@ export function VerifiedRow({ onPress }: { onPress?: () => void }) {
         backgroundColor: bt.containerLow,
       }}
     >
+{/* STEP 1.41 the badge, and what it certifies
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
         <View
           style={{
@@ -59,7 +60,9 @@ export function VerifiedRow({ onPress }: { onPress?: () => void }) {
           </Text>
         </View>
       </View>
+*/}
 
+{/* STEP 1.42 and a way into the detail
       <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel="More details">
         <View
           style={{
@@ -73,6 +76,7 @@ export function VerifiedRow({ onPress }: { onPress?: () => void }) {
           <Symbol name="chevronRight" size={20} color={bt.muted} />
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

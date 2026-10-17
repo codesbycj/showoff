@@ -15,7 +15,10 @@ import { SectionHeading } from './section-heading';
 export function ChefsNote() {
   return (
     <View style={{ gap: 8 }}>
+{/* STEP 1.32 give it a heading
       <SectionHeading>{NOTE.heading}</SectionHeading>
+*/}
+{/* STEP 1.33 and the paragraph under it
       <Text
         style={{
           fontFamily: t.note.family,
@@ -26,6 +29,7 @@ export function ChefsNote() {
       >
         {NOTE.body}
       </Text>
+*/}
     </View>
   );
 }

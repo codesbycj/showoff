@@ -9,7 +9,7 @@
  "src/app/index.tsx": "4dd979d741c9d0a3389784cbc95052dd7b0954f5554fa09a663608806ca6ba02",
  "src/app/pulsefit/index.tsx": "0cd6e257c81d7d2af3b30e225472c6ef61f20ccddd9f99aa301bc4fefbdf47c0",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "a59a9cd2025b87f7aa2ead2f2323b55246507c03a127a995c5c234def3f79edd",
+ "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/pulsefit/components/app-header.tsx": "b0e0e5087b2c2a308dcf603832fe83faa13069f3385f1a92bf43e3108908f053",
  "src/features/pulsefit/components/brand-mark.tsx": "d362081007d8ee93f9108150b150e2c46ebe42a237e8e1c2df7bbbb91c62599e",
@@ -30,7 +30,7 @@
  "src/features/pulsefit/symbols.ts": "b097b1d2e4a1482f499af403bbd757a37dcb7dd1fc562c776c419c9ab4c2d0fe",
  "src/features/pulsefit/theme.ts": "313004c09c284e71bd78d7e4389393b809b9e3eddfe9b25ddeb972d685968f62",
  "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
- "src/theme/fonts.ts": "1607d046b2600e350941fac032ec06fcd38f1ef54216aa9b70f763c73d00ff6a",
+ "src/theme/fonts.ts": "73c8acf5d6ba31568e6649ec790361eea285cec11b1f7fdf8bc67b7d2b71450c",
  "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
  "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
 }

@@ -41,6 +41,7 @@
  */
 import { Caveat_600SemiBold } from '@expo-google-fonts/caveat/600SemiBold';
 import { IBMPlexMono_400Regular } from '@expo-google-fonts/ibm-plex-mono/400Regular';
+import { InstrumentSerif_400Regular } from '@expo-google-fonts/instrument-serif/400Regular';
 import { Inter_400Regular } from '@expo-google-fonts/inter/400Regular';
 import { Inter_500Medium } from '@expo-google-fonts/inter/500Medium';
 import { Inter_600SemiBold } from '@expo-google-fonts/inter/600SemiBold';
@@ -110,6 +111,13 @@ export const fontMap = {
   // botanic's icon subset - 11 glyphs, 944KB down to 2.8KB, with its own
   // internal family name so it cannot collide with the other two cuts.
   BotanicSymbols_400Regular: require('../../assets/fonts/botanic-symbols/BotanicSymbols_400Regular.ttf'),
+
+  // nourish - Instrument Serif for the one serif line on its home screen,
+  // "Great job today". The reference sets that greeting in a high-contrast
+  // serif against an otherwise sans UI, and that contrast is the whole
+  // personality of the design; substituting a sans would lose it. One weight,
+  // no italic. Its body face is Plus Jakarta Sans, already above.
+  InstrumentSerif_400Regular,
 };
 
 export const hasCustomFonts = Object.keys(fontMap).length > 0;

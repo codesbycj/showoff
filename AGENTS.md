@@ -18,19 +18,54 @@ screens, whichever app it is.
    piece at a time.
 3. **One component per step.** Finish a component → import it into the screen → verify →
    only then start the next component. Never write two components before wiring the first.
-4. **Build the whole set.** Given N screens, build all N. Do not stop between screens for
-   approval. Report deviations at the end. Only stop early if genuinely blocked — and then
-   finish everything that isn't blocked first.
+4. **Build the whole set, one showcase per screen.** Given N screens, build all N — and
+   give each its own slug, its own `src/features/<slug>/`, its own assets folder and its
+   own staging, even when they are screens of the same app design. Duplicate whatever two
+   of them share (the theme, the layout constants, the text primitive); independence is
+   worth more than the duplication. Do not stop between screens for approval. Report
+   deviations at the end. Only stop early if genuinely blocked — and then finish
+   everything that isn't blocked first.
 5. **No git.** Never commit, branch, stage, checkout or reset. These are showcases, not
    shipped code. Back work up by copying files, never with git.
 
-## Two kinds of reference
+## Three kinds of reference
 
-**A screenshot is a layout brief.** Rules 1-5 above are written for those: match the
-design exactly, build it screen by screen, stage it as a speed-build reveal.
+**A screenshot is a layout brief.** Rules 1-5 above are written for those: an export of a
+real app's real screen, one phone filling the frame. Match the design exactly, build it
+screen by screen, stage it as a speed-build reveal.
 
-**A video is a motion brief, and the rules change.** When the reference is a recording of
-an animated prototype:
+**A design shot is an inspo brief, and rule 1 is off.** A Dribbble/Behance-style
+presentation — two or three phones posed on a coloured board, drop shadows, a 3D render
+dropped in, sometimes tilted — is a *picture of an idea*, not a spec:
+
+- **Match the spirit, not the pixels.** Take the palette, the type hierarchy, the shapes,
+  the order of the blocks and the feel. Do not reconstruct a px/dp scale off a posed
+  phone, do not measure glyph widths against it, and do not write a `layout.ts` full of
+  numbers divided by 0.88. The board's phone is whatever size the designer's artboard
+  happened to be, and half of what is in it was never on a 393dp screen.
+- **Build it at the real size instead.** Pick type and spacing that are right for a 393dp
+  phone — a display headline is ~34-40dp, body ~15-16dp, a primary button ~56dp tall, page
+  margin 20-24dp — and lay it out in flex off `useWindowDimensions()` so it holds at other
+  widths. If the reference's proportions and a phone's ergonomics disagree, the phone wins.
+- **Fix the reference's mistakes.** Typos, a stray "01 / 03" that counts wrong, a label
+  that does not match its icon, contrast too low to read, a tap target under 44dp: correct
+  it silently and say so in the handover. The design shot is not an authority.
+- **Improve it where it is obviously better.** A real pressed state, a real focus ring, an
+  animated progress bar, a gradient rebuilt as a gradient instead of a flat fill. Changes
+  that make it a better *app* are wanted; changes that restyle it into a different design
+  are not.
+- **Everything else still holds.** One showcase per screen, components not markup, one
+  component at a time, the full step-by-step staging, and the done-gate. Only rule 1
+  changes.
+- **Say which calls were yours.** The handover lists every place the build departs from
+  the shot and why.
+
+A 3D render in the shot (a wallet, a floating card, a coin) cannot be recreated and must
+not be traced badly. Either stand in free-licensed stock for it, or rebuild the *idea* of
+it in-app — a real card component, posed and shadowed. Say which.
+
+**A video is a motion brief, and the rules change further.** When the reference is a
+recording of an animated prototype:
 
 - **The animation is the specification. The UI is inspiration.** Measure the motion frame
   by frame and match it; do not chase the layout's pixels. A capture tool flies and zooms
@@ -339,6 +374,27 @@ node tools/showcase.js wipe --yes        # delete every showcase (weekly reset)
 Showcases coexist until the wipe. Two consequences worth holding in mind:
 expo-router evaluates every route file at startup, so a broken file in one app red-screens
 all of them — and imagery accumulates in the bundle, so keep each app's assets tight.
+
+**One screen per showcase.** A second screen of the same design is a second showcase with
+its own slug, not a second route under the first one. Every recording is then
+
+```bash
+node tools/showcase.js use <slug>
+python tools/timelapse/run.py <slug> 1 --delay 1.5
+```
+
+— never a take that has to perform screen 1 before it can reach screen 2, and never a
+preflight that blanks the screen the device is standing on. `run.py`'s multi-screen support
+still works and the `--no-preflight` note above still applies to anything built that way,
+but nothing new should need it.
+
+The cost is duplication: two showcases of one design each carry their own `theme.ts`,
+`layout.ts`, `use-insets.ts` and `text.tsx`. That is deliberate. `lock` and `preflight`
+track `src/app/<slug>`, `src/features/<slug>` and `assets/images/<slug>`, so two showcases
+sharing a feature folder would each report the other's blanked files as DRIFT — exactly
+the coupling this rule removes. A screen that navigates into another showcase is fine
+(`cargo`'s "Get Started" pushes `/cargohome`): that is a route push, not a staging
+dependency.
 
 Scaffolding a new route leaves expo-router's typed routes stale, so `tsc` fails until the
 dev server picks the route up or an export runs.

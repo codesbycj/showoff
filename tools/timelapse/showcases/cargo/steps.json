@@ -1,0 +1,165 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "@/features/cargo/components/hero"
+   ],
+   "label": "the road behind everything"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "lay the road down first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargo/components/hero.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the truck, washed into the page"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "@/features/cargo/components/page-dots"
+   ],
+   "label": "how far through this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "mark where we are"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "<PageDots count={PAGES.count} active={PAGES.count - 1} />"
+   ],
+   "label": "that is the last page, and this is the first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the first page, properly"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "@/features/cargo/components/intro-copy"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "say what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargo/components/intro-copy.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the promise, in two lines"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargo/components/intro-copy.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and the sentence that backs it up"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "@/features/cargo/components/start-button"
+   ],
+   "label": "the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargo/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and give them a way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargo/components/start-button.tsx",
+    "STEP 1.14"
+   ],
+   "label": "say what it does"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cargo/components/start-button.tsx",
+    [
+     "// MISTAKE 1.15",
+     "paddingLeft: 90,"
+    ]
+   ],
+   "label": "the label came out shoved off centre"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargo/components/start-button.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the parcel on its left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargo/components/start-button.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and three chevrons pulling it along"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "hero",
+     "src/features/cargo/components/hero.tsx"
+    ],
+    [
+     "intro-copy",
+     "src/features/cargo/components/intro-copy.tsx"
+    ],
+    [
+     "onboarding-screen",
+     "src/app/cargo/index.tsx"
+    ],
+    [
+     "start-button",
+     "src/features/cargo/components/start-button.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

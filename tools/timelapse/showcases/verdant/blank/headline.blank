@@ -1,0 +1,40 @@
+import { View } from 'react-native';
+
+import { vd } from '../theme';
+import { T } from './text';
+
+/**
+ * The display headline, set over two lines with the second in sage.
+ *
+ * The break is authored, not left to the wrapper: "Your Money / Better Days"
+ * is the whole idea of the screen, and a 40dp display at a 24dp margin is only
+ * ever a few dp from rewrapping into three lines on a narrow phone. Two
+ * explicit `T`s also let the second line carry its own colour, which is what
+ * the reference does and what a single string with a nested `Text` would do
+ * less legibly.
+ *
+ * `allowFontScaling` is already off in `T` — at 40dp a large accessibility
+ * setting would push the lede off the stage entirely.
+ */
+export function Headline({ top, bottom }: { top: string; bottom: string }) {
+  return (
+    <View accessibilityRole="header">
+      {/* STEP 1.14 the first line
+      <T variant="display" color={vd.ink}>
+        {top}
+      </T>
+      */}
+      {/* STEP 1.15 the second, in sage
+      <T variant="display" color={vd.mint}>
+        {bottom}
+      </T>
+      */}
+      {/* STEP 1.16 one more for luck | FIX 1.17 two lines, not three
+      <T variant="display" color={vd.ink} style={{ opacity: 0.7 }}>
+        {bottom}
+      </T>
+      */}
+
+    </View>
+  );
+}

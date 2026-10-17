@@ -17,6 +17,7 @@ import { Symbol } from './symbol';
 export function RatingPod() {
   return (
     <Pod>
+{/* STEP 1.25 the score, and the stars that back it
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         <Text
           style={{
@@ -35,7 +36,9 @@ export function RatingPod() {
           <Symbol name="starHalf" size={15} color={bt.gold} />
         </View>
       </View>
+*/}
 
+{/* STEP 1.27 and how many people said so
       <Text
         style={{
           fontFamily: t.bodySm.family,
@@ -46,6 +49,7 @@ export function RatingPod() {
       >
         {RATING.reviews}
       </Text>
+*/}
     </Pod>
   );
 }

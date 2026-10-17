@@ -1,0 +1,401 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/backdrop"
+   ],
+   "label": "the lit paper it is all printed on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "wash the top"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/greeting"
+   ],
+   "label": "say something kind"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "at the top of the page"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/calorie-gauge"
+   ],
+   "label": "the day, as one number"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "in the middle of the hero"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/calorie-gauge.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the whole day, unspent"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/calorie-gauge.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and how much of it is gone"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/calorie-gauge.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the number, inside the arc"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nourish/components/calorie-gauge.tsx",
+    [
+     "// MISTAKE 1.10",
+     "paddingTop: 24,"
+    ]
+   ],
+   "label": "the figure came in sitting low"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/flank-stat"
+   ],
+   "label": "the two figures beside it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "what is left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and what has been logged"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/macro-row"
+   ],
+   "label": "the three the big one is made of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "under the gauge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/macro-ring.tsx",
+    "STEP 1.16"
+   ],
+   "label": "a ring for the macro"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/macro-ring.tsx",
+    "STEP 1.17"
+   ],
+   "label": "filled as far as it has got"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/macro-ring.tsx",
+    "STEP 1.18"
+   ],
+   "label": "how many grams are left"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nourish/components/macro-ring.tsx",
+    [
+     "// MISTAKE 1.19",
+     "marginTop: 16,"
+    ]
+   ],
+   "label": "the grams came in sitting low in the ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/macro-ring.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and which macro it is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/carousel-dots"
+   ],
+   "label": "the hero is one page of three"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "so say so"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "a dot for every page"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "<CarouselDots count={5} active={0} />"
+   ],
+   "label": "three pages, three dots"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/section-head"
+   ],
+   "label": "name a section"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "Today"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/goal-row"
+   ],
+   "label": "what today asks of you"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.29"
+   ],
+   "label": "running off the right-hand edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/goal-card.tsx",
+    "STEP 1.30"
+   ],
+   "label": "the goal, and its mark"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nourish/components/goal-card.tsx",
+    [
+     "// MISTAKE 1.31",
+     "backgroundColor: nr.washCool,"
+    ]
+   ],
+   "label": "the cards came in tinted"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/goal-card.tsx",
+    "STEP 1.32"
+   ],
+   "label": "and where it comes from"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.34"
+   ],
+   "label": "Food Log, and a way into it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/food-log"
+   ],
+   "label": "what was eaten"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.36"
+   ],
+   "label": "under the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/log-row.tsx",
+    "STEP 1.37"
+   ],
+   "label": "what was eaten"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nourish/components/log-row.tsx",
+    [
+     "// MISTAKE 1.38",
+     "paddingLeft: 30,"
+    ]
+   ],
+   "label": "the rows came in indented"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/log-row.tsx",
+    "STEP 1.39"
+   ],
+   "label": "what it cost"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/log-row.tsx",
+    "STEP 1.40"
+   ],
+   "label": "and how it splits"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "@/features/nourish/components/tab-dock"
+   ],
+   "label": "somewhere to go next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nourish/index.tsx",
+    "STEP 1.42"
+   ],
+   "label": "floating over the lot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/tab-dock.tsx",
+    "STEP 1.43"
+   ],
+   "label": "two on the left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/tab-dock.tsx",
+    "STEP 1.44"
+   ],
+   "label": "two on the right"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nourish/components/tab-dock.tsx",
+    "STEP 1.45"
+   ],
+   "label": "and the one thing the app is for"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nourish/components/tab-dock.tsx",
+    [
+     "// MISTAKE 1.46",
+     "marginTop: 34,"
+    ]
+   ],
+   "label": "the button came in sunk into the dock"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "calorie-gauge",
+     "src/features/nourish/components/calorie-gauge.tsx"
+    ],
+    [
+     "goal-card",
+     "src/features/nourish/components/goal-card.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/nourish/index.tsx"
+    ],
+    [
+     "log-row",
+     "src/features/nourish/components/log-row.tsx"
+    ],
+    [
+     "macro-ring",
+     "src/features/nourish/components/macro-ring.tsx"
+    ],
+    [
+     "tab-dock",
+     "src/features/nourish/components/tab-dock.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

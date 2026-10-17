@@ -1,0 +1,118 @@
+import { View } from 'react-native';
+
+import { FastBadge } from './fast-badge';
+import { Icon } from './icon';
+import { ParcelStack } from './parcel-stack';
+import { ProgressTrack } from './progress-track';
+import { T } from './text';
+import { TRACKING_CARD_H, TRACKING_PARCEL } from '../layout';
+import { radius, cg } from '../theme';
+
+/** One label with its value under it. Used three times down the left column. */
+function Field({ label, value, icon }: { label: string; value: string; icon?: 'pin' | 'status' }) {
+  return (
+    <View>
+      <T variant="caption" color={cg.label}>
+        {label}
+      </T>
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 2 }}>
+        {icon ? <Icon name={icon} size={14} color={cg.ink} strokeWidth={2.2} /> : null}
+        <T variant="value" color={cg.ink}>
+          {value}
+        </T>
+      </View>
+    </View>
+  );
+}
+
+/**
+ * The consignment being tracked right now.
+ *
+ * The parcels are **drawn**, not photographed — the reference's are flat
+ * isometric renders and a stock photo would need cutting out of its
+ * background. See `parcel-stack.tsx`.
+ *
+ * The card clips, and carries no `elevation`: the two together are unreliable
+ * on Android, and the clip is what lets the parcel and the pale disc run past
+ * the card's edge and be cut by its radius.
+ *
+ * The copy column has a fixed share of the width rather than `flex: 1`. Left
+ * to flex it would give up space to the parcel on a narrow screen and
+ * "Hunters Point, LA" would wrap, which is the one line on the card that must
+ * not.
+ */
+export function TrackingCard({
+  caption,
+  code,
+  locationLabel,
+  location,
+  statusLabel,
+  status,
+  badge,
+  progress,
+}: {
+  caption: string;
+  code: string;
+  locationLabel: string;
+  location: string;
+  statusLabel: string;
+  status: string;
+  badge: string;
+  progress: number;
+}) {
+  return (
+    <View
+      style={{
+        height: TRACKING_CARD_H,
+        borderRadius: radius.card,
+        backgroundColor: cg.yellow,
+        overflow: 'hidden',
+        padding: 18,
+      }}
+    >
+      {/* A paler disc behind the badge, run off the corner and cut by the
+          radius — the only thing giving the flat fill any depth. */}
+      <View
+        style={{
+          position: 'absolute',
+          right: -46,
+          top: -40,
+          width: 150,
+          height: 150,
+          borderRadius: radius.full,
+          backgroundColor: 'rgba(255, 255, 255, 0.22)',
+        }}
+      />
+
+      <View style={{ width: '62%', gap: 14 }}>
+        <View>
+          <T variant="caption" color={cg.label}>
+            {caption}
+          </T>
+          <T variant="code" color={cg.ink} style={{ marginTop: 1 }}>
+            {code}
+          </T>
+        </View>
+
+        <Field label={locationLabel} value={location} icon="pin" />
+        <Field label={statusLabel} value={status} icon="status" />
+      </View>
+
+      <View style={{ position: 'absolute', right: 16, top: 12 }} pointerEvents="none">
+        <FastBadge label={badge} size={62} />
+      </View>
+
+      {/* The bar is drawn *before* the parcel, so the parcel covers its far
+          end and the route reads as running away behind the freight rather
+          than painted across it. The marker sits well left of the boxes, so
+          nothing that matters is hidden. */}
+      <View style={{ position: 'absolute', left: 18, right: 18, bottom: 14 }}>
+        <ProgressTrack progress={progress} tone="onYellow" />
+      </View>
+
+      <View style={{ position: 'absolute', right: -4, top: 70 }} pointerEvents="none">
+        <ParcelStack size={TRACKING_PARCEL} />
+      </View>
+    </View>
+  );
+}

@@ -16,13 +16,11 @@ import { DrawnIcon } from './drawn-icon';
  * 28dp line on a 28dp face) where the title is `leading-tight` (35 on 28), so
  * the two are deliberately not aligned to each other. The right column's
  * `pt-1` is what lines the price's cap up with the title's.
- *
- * The leaf is a `FILL 1` glyph, which the static symbol cut does not carry —
- * see `drawn-icon.tsx`.
  */
 export function TitleBlock() {
   return (
     <View style={{ gap: 6 }}>
+{/* STEP 1.18 whose brand it is
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
         <DrawnIcon name="spa" size={18} color={bt.accent} />
         <Text
@@ -37,9 +35,11 @@ export function TitleBlock() {
           {PRODUCT.brand.toUpperCase()}
         </Text>
       </View>
+*/}
 
       <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 16 }}>
         <View style={{ flex: 1, minWidth: 0 }}>
+{/* STEP 1.19 what it is, and how much of it
           <Text
             style={{
               fontFamily: t.headlineLg.family,
@@ -47,6 +47,8 @@ export function TitleBlock() {
               lineHeight: t.headlineLg.line,
               letterSpacing: t.headlineLg.tracking,
               color: bt.ink,
+              // MISTAKE 1.20 the title lost its caps
+              textTransform: 'lowercase',
             }}
           >
             {PRODUCT.title.toUpperCase()}
@@ -62,8 +64,10 @@ export function TitleBlock() {
           >
             {PRODUCT.size}
           </Text>
+*/}
         </View>
 
+{/* STEP 1.21 what it costs, and what it used to
         <View style={{ alignItems: 'flex-end', paddingTop: 4 }}>
           <Text
             style={{
@@ -88,6 +92,7 @@ export function TitleBlock() {
             {PRODUCT.wasPrice}
           </Text>
         </View>
+*/}
       </View>
     </View>
   );

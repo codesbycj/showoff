@@ -1,0 +1,74 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { INSIGHT_GLYPH, INSIGHT_PAD } from '../layout';
+import { radius, vs } from '../theme';
+import { Icon } from './icon';
+import { T } from './text';
+
+/**
+ * The one piece of the screen that says something rather than shows something.
+ *
+ * It is a `Pressable` with a chevron because it goes somewhere — an insight
+ * you cannot open is a sticker. Where it goes is the screen's business; this
+ * takes `onPress`.
+ *
+ * The visual box is an inner `View`, never the `Pressable`'s own style: a
+ * `style={({pressed}) => …}` function is dropped in a static web render, and
+ * the card would lose its tint and its padding in every harness shot.
+ */
+export function InsightCard({
+  title,
+  body,
+  onPress,
+}: {
+  title: string;
+  body: string;
+  onPress?: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <Pressable
+      onPress={onPress}
+      onPressIn={() => setHeld(true)}
+      onPressOut={() => setHeld(false)}
+      accessibilityRole="button"
+      accessibilityLabel={`${title} ${body}`}
+    >
+      <View
+        style={{
+          borderRadius: radius.card,
+          // MISTAKE 1.32 the card came in outlined
+          borderWidth: 2,
+          backgroundColor: vs.tint,
+          padding: INSIGHT_PAD,
+          flexDirection: 'row',
+          alignItems: 'center',
+          opacity: held ? 0.85 : 1,
+        }}
+      >
+        {/* STEP 1.29 a mark for it
+        <View style={{ width: INSIGHT_GLYPH, alignItems: 'center' }}>
+          <Icon name="leaf" size={21} color={vs.onTint} strokeWidth={1.8} />
+        </View>
+        */}
+
+        {/* STEP 1.30 the good news
+        <View style={{ flex: 1, marginLeft: 10 }}>
+          <T variant="insightTitle" color={vs.onTint}>
+            {title}
+          </T>
+          <T variant="insightBody" color={vs.onTint} style={{ marginTop: 2, opacity: 0.8 }}>
+            {body}
+          </T>
+        </View>
+        */}
+
+        {/* STEP 1.31 and a way in
+        <Icon name="more" size={18} color={vs.onTint} strokeWidth={2} />
+        */}
+      </View>
+    </Pressable>
+  );
+}

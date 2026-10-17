@@ -1,0 +1,10 @@
+{
+ "home-screen": "src/app/velora/index.tsx",
+ "home-data": "src/features/velora/data/home.ts",
+ "top-bar": "src/features/velora/components/top-bar.tsx",
+ "search-field": "src/features/velora/components/search-field.tsx",
+ "promo-card": "src/features/velora/components/promo-card.tsx",
+ "category-row": "src/features/velora/components/category-row.tsx",
+ "product-card": "src/features/velora/components/product-card.tsx",
+ "tab-bar": "src/features/velora/components/tab-bar.tsx"
+}

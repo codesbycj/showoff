@@ -1,0 +1,98 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { Icon } from './icon';
+import { T } from './text';
+import type { Product } from '../data/home';
+import { PRODUCT_IMAGE_H } from '../layout';
+import { radius, vl } from '../theme';
+
+/**
+ * One product: a photograph, a save button over it, a name and a price under.
+ *
+ * The card takes no width of its own — the grid gives it one. That is what
+ * lets the grid be two columns here and three on a wider screen without this
+ * file knowing anything about it.
+ *
+ * The save button sits *on* the image rather than in a corner of the card, and
+ * is a white disc rather than a bare glyph: these photographs are light at the
+ * top, and an unbacked outline heart disappears into the jacket's cream
+ * backdrop entirely.
+ */
+export function ProductCard({
+  product,
+  onPress,
+  onToggleSave,
+}: {
+  product: Product;
+  onPress?: (p: Product) => void;
+  onToggleSave?: (p: Product) => void;
+}) {
+  /*
+   * The card and the save button are siblings, not nested.
+   *
+   * `accessibilityRole="button"` makes react-native-web render a real
+   * `<button>`, and a button inside a button is invalid HTML — the static
+   * build's parser lifts the inner one out, which breaks the card's layout and
+   * logs `<button> cannot contain a nested <button>`. It renders fine on
+   * native, so only the web harness ever shows it.
+   *
+   * The save button still sits over the image: it is absolutely positioned
+   * against the same parent and comes later in the tree, so it paints on top.
+   */
+  return (
+    <View style={{ flex: 1 }}>
+      <Pressable
+        onPress={() => onPress?.(product)}
+        accessibilityRole="button"
+        accessibilityLabel={`${product.name}, ${product.price}`}
+      >
+        {/* The bed is the sunken grey: these are product shots on pale
+            studio backdrops, and on white they have no edge at all. */}
+        <View style={{ borderRadius: radius.card, overflow: 'hidden', backgroundColor: vl.field }}>
+          <Image
+            source={product.image}
+            style={{ width: '100%', height: PRODUCT_IMAGE_H }}
+            resizeMode="cover"
+            accessibilityIgnoresInvertColors
+          />
+        </View>
+
+        <View style={{ paddingTop: 10, gap: 2 }}>
+          <T variant="action" color={vl.muted} numberOfLines={1}>
+            {product.name}
+          </T>
+          <T variant="price" color={vl.ink}>
+            {product.price}
+          </T>
+        </View>
+      </Pressable>
+
+      <Pressable
+        onPress={() => onToggleSave?.(product)}
+        accessibilityRole="button"
+        accessibilityLabel={
+          product.saved ? `Remove ${product.name} from saved` : `Save ${product.name}`
+        }
+        style={{ position: 'absolute', top: 10, right: 10 }}
+      >
+        <View
+          style={{
+            width: 30,
+            height: 30,
+            borderRadius: radius.full,
+            backgroundColor: vl.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Icon
+            name="heart"
+            size={15}
+            color={product.saved ? vl.pill : vl.inkSoft}
+            filled={product.saved}
+          />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

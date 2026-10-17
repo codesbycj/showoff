@@ -4,7 +4,7 @@
  "src/app/deltrack/index.tsx": "39c72724f8c887275d0bf3d6daa08dbbe640a2ee5da86e7a62d77213126f8475",
  "src/app/index.tsx": "ac0071d2bb7a969caeee967d84a52c79e15e4819c7504d391114f7fc00a7b6cb",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "a59a9cd2025b87f7aa2ead2f2323b55246507c03a127a995c5c234def3f79edd",
+ "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/deltrack/components/history-row.tsx": "22361ac1920c02ef2a4568da7bb4160a36dfad238efaaa8b1d89b980b2ec70d5",
  "src/features/deltrack/components/icons.tsx": "cfc115368a1f42f9dd89af6d8c39ebfaf1a6a404ae0c2db8f0d00b4ba32fea78",
@@ -26,7 +26,7 @@
  "src/features/deltrack/layout.ts": "9e391c501419d5c7c2093b8798935aabc912f9e1cc6ed56695b4fcfa502f97ec",
  "src/features/deltrack/theme.ts": "0973ffd5712b6598e93b430c22047b752348fd99450089eb3bbc03b6f8d6edd3",
  "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
- "src/theme/fonts.ts": "1607d046b2600e350941fac032ec06fcd38f1ef54216aa9b70f763c73d00ff6a",
+ "src/theme/fonts.ts": "73c8acf5d6ba31568e6649ec790361eea285cec11b1f7fdf8bc67b7d2b71450c",
  "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
  "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
 }

@@ -1,0 +1,108 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+
+import { AppBar } from '@/features/verdantstats/components/app-bar';
+import { DonutChart } from '@/features/verdantstats/components/donut-chart';
+import { InsightCard } from '@/features/verdantstats/components/insight-card';
+import { Legend } from '@/features/verdantstats/components/legend';
+import { PeriodPicker } from '@/features/verdantstats/components/period-picker';
+import { SectionHead } from '@/features/verdantstats/components/section-head';
+import { Segmented } from '@/features/verdantstats/components/segmented';
+import { TabDock } from '@/features/verdantstats/components/tab-dock';
+import { TrendChart } from '@/features/verdantstats/components/trend-chart';
+import {
+  breakdown,
+  insight,
+  period,
+  segments,
+  spend,
+} from '@/features/verdantstats/data/analytics';
+import {
+  BLOCK_TOP,
+  DOCK_HEIGHT,
+  HEAD_GAP,
+  HEADER_TOP,
+  INSIGHT_TOP,
+  LEGEND_TOP,
+  MARGIN,
+  SEG_TOP,
+  useCharts,
+} from '@/features/verdantstats/layout';
+import { vs } from '@/features/verdantstats/theme';
+import { useInsets } from '@/features/verdantstats/use-insets';
+
+/**
+ * Verdant — Analytics.
+ *
+ * Assembly only: a header, the four views of the month, the spending split as
+ * a ring and a key, one sentence about it, the six-month trend, and a dock
+ * floating over the lot.
+ *
+ * The one piece of state is which view is selected, and it lives here rather
+ * than in the segmented control: the control is what changes it, but what it
+ * changes is the whole screen's business, and a component that owns its own
+ * state cannot be driven from anywhere else.
+ */
+export default function VerdantAnalytics() {
+  const insets = useInsets();
+  const { donut } = useCharts();
+  const [view, setView] = useState<string>(segments[0]);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: vs.canvas }}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingHorizontal: MARGIN,
+          paddingTop: insets.top + HEADER_TOP,
+          paddingBottom: DOCK_HEIGHT + insets.bottom + 16,
+        }}
+      >
+        <AppBar title="Analytics" onBack={() => router.back()} />
+
+        <View style={{ marginTop: SEG_TOP }}>
+          <Segmented items={segments} active={view} onSelect={setView} />
+        </View>
+
+        <View style={{ marginTop: BLOCK_TOP }}>
+          <SectionHead title="Your Spending">
+            <PeriodPicker label={period.label} />
+          </SectionHead>
+        </View>
+
+        <View style={{ marginTop: HEAD_GAP, alignItems: 'center' }}>
+          <DonutChart
+            size={donut}
+            segments={breakdown}
+            value={spend.total}
+            caption={spend.caption}
+          />
+        </View>
+
+        <View style={{ marginTop: LEGEND_TOP }}>
+          <Legend />
+        </View>
+
+        <View style={{ marginTop: INSIGHT_TOP }}>
+          <InsightCard title={insight.title} body={insight.body} />
+        </View>
+
+        <View style={{ marginTop: BLOCK_TOP }}>
+          <SectionHead title="Spending Trend" />
+        </View>
+
+        <View style={{ marginTop: HEAD_GAP }}>
+          <TrendChart />
+        </View>
+      </ScrollView>
+
+      <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+        <TabDock active="analytics" bottomInset={insets.bottom} />
+      </View>
+    </View>
+  );
+}

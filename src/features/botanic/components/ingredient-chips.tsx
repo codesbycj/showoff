@@ -13,14 +13,24 @@ import { SectionHeading } from './section-heading';
  * list.
  *
  * The pills are sized by their text and wrap at the column's edge, which makes
- * this the one block on the screen whose *shape* depends on the viewport. See
- * the note in the screen file.
+ * this the one block on the screen whose *shape* depends on the viewport.
  */
 export function IngredientChips() {
   return (
     <View style={{ gap: 10 }}>
+{/* STEP 1.36 call the list
       <SectionHeading>{INGREDIENTS.heading}</SectionHeading>
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+*/}
+{/* STEP 1.37 and fill it, one pill at a time
+      <View
+        style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          gap: 8,
+          // MISTAKE 1.38 the pills bunched into the middle
+          justifyContent: 'center',
+        }}
+      >
         {INGREDIENTS.items.map((item) => (
           <View
             key={item.label}
@@ -50,6 +60,7 @@ export function IngredientChips() {
           </View>
         ))}
       </View>
+*/}
     </View>
   );
 }

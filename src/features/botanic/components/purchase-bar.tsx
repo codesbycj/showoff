@@ -12,19 +12,9 @@ import { Symbol } from './symbol';
  * The dock: a favourite toggle and the buy button.
  *
  * Both of the export's micro-interactions are wired, because the recording
- * should be able to use the screen rather than mime it:
- *
- *   * the heart fills and turns to `error` on tap — and the filled heart is a
- *     `FILL 1` glyph, so it comes from `drawn-icon.tsx` while the outline comes
- *     from the symbol font;
- *   * the CTA swaps its label for 1800ms and brightens from `primary-container`
- *     to `primary`, then puts itself back.
- *
- * The confirmation text drops the export's party-popper emoji. An emoji is
- * drawn by whichever font claims the codepoint, so it differs across Windows,
- * Android and iOS — and the web harness renders on one of them and cannot show
- * the difference, which is exactly the class of bug this project designs out
- * rather than catches.
+ * should be able to use the screen rather than mime it: the heart fills and
+ * turns to `error` on tap, and the CTA swaps its label for 1800ms and brightens
+ * from `primary-container` to `primary` before putting itself back.
  */
 export function PurchaseBar() {
   const { bottom } = useBotanicInsets();
@@ -32,8 +22,6 @@ export function PurchaseBar() {
   const [added, setAdded] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Clear on unmount, so a tap just before leaving the screen cannot set state
-  // on a component that is gone.
   useEffect(() => () => void (timer.current && clearTimeout(timer.current)), []);
 
   const add = () => {
@@ -59,6 +47,7 @@ export function PurchaseBar() {
         backgroundColor: alpha.purchaseBar,
       }}
     >
+{/* STEP 1.45 somewhere to keep it
       <Pressable
         onPress={() => setFaved((v) => !v)}
         accessibilityRole="button"
@@ -73,6 +62,8 @@ export function PurchaseBar() {
             backgroundColor: bt.containerHigh,
             alignItems: 'center',
             justifyContent: 'center',
+            // MISTAKE 1.46 the heart came out shrunken
+            transform: [{ scale: 0.6 }],
           }}
         >
           {faved ? (
@@ -82,7 +73,9 @@ export function PurchaseBar() {
           )}
         </View>
       </Pressable>
+*/}
 
+{/* STEP 1.47 and the thing you came here to press
       <Pressable style={{ flex: 1 }} onPress={add} accessibilityRole="button">
         <View
           style={{
@@ -109,6 +102,7 @@ export function PurchaseBar() {
           </Text>
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

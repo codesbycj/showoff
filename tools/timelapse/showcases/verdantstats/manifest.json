@@ -1,0 +1,10 @@
+{
+ "stats-screen": "src/app/verdantstats/index.tsx",
+ "app-bar": "src/features/verdantstats/components/app-bar.tsx",
+ "segmented": "src/features/verdantstats/components/segmented.tsx",
+ "donut-chart": "src/features/verdantstats/components/donut-chart.tsx",
+ "legend-item": "src/features/verdantstats/components/legend-item.tsx",
+ "insight-card": "src/features/verdantstats/components/insight-card.tsx",
+ "trend-chart": "src/features/verdantstats/components/trend-chart.tsx",
+ "tab-dock": "src/features/verdantstats/components/tab-dock.tsx"
+}

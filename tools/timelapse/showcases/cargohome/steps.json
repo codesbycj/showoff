@@ -1,0 +1,317 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "@/features/cargohome/components/header-wash"
+   ],
+   "label": "the warm wash behind it all"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "lay the wash down first"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "@/features/cargohome/components/greeting-row"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "say hello"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/greeting-row.tsx",
+    "STEP 1.05"
+   ],
+   "label": "put a face to the account, and a name beside it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/greeting-row.tsx",
+    "STEP 1.06"
+   ],
+   "label": "the name, and where they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/greeting-row.tsx",
+    "STEP 1.07"
+   ],
+   "label": "and somewhere for alerts to land"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "@/features/cargohome/components/search-field"
+   ],
+   "label": "a way to find a consignment"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and give them somewhere to search"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "@/features/cargohome/components/tracking-card"
+   ],
+   "label": "the one in flight"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the consignment in flight"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "a paler disc, run off the corner and cut by the radius"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "which consignment this is"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    [
+     "// MISTAKE 1.14",
+     "alignItems: 'center',"
+    ]
+   ],
+   "label": "the column came out centred"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "where it is, and what it is doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the promise, in the corner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the route, drawn before the freight so it runs behind it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/tracking-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "and the freight itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "name what came before"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "@/features/cargohome/components/shipment-card"
+   ],
+   "label": "the ones before it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and list them"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/cargohome/data/home.ts",
+    "h62j568107"
+   ],
+   "label": "the consignment that moved last"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/shipment-card.tsx",
+    "STEP 1.23"
+   ],
+   "label": "what stage it is at"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/shipment-card.tsx",
+    "STEP 1.24"
+   ],
+   "label": "which consignment"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/shipment-card.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and when it lands"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/shipment-card.tsx",
+    "STEP 1.26"
+   ],
+   "label": "one box this time, not a stack"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/shipment-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the same route, on white"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/cargohome/data/home.ts",
+    "k41m902233"
+   ],
+   "label": "and the one almost there"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "@/features/cargohome/components/home-tab-bar"
+   ],
+   "label": "everywhere else the app goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cargohome/index.tsx",
+    "STEP 1.31"
+   ],
+   "label": "float the bar over the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cargohome/components/home-tab-bar.tsx",
+    "STEP 1.32"
+   ],
+   "label": "a tab for each destination, the one we are on darker"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/cargohome/data/home.ts",
+    "home"
+   ],
+   "label": "the one we are on"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/cargohome/data/home.ts",
+    "track"
+   ],
+   "label": "where a number goes to be looked up"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/cargohome/data/home.ts",
+    "history"
+   ],
+   "label": "everything already delivered"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/cargohome/data/home.ts",
+    "promos"
+   ],
+   "label": "and the offers"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "greeting-row",
+     "src/features/cargohome/components/greeting-row.tsx"
+    ],
+    [
+     "home-data",
+     "src/features/cargohome/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/cargohome/index.tsx"
+    ],
+    [
+     "home-tab-bar",
+     "src/features/cargohome/components/home-tab-bar.tsx"
+    ],
+    [
+     "shipment-card",
+     "src/features/cargohome/components/shipment-card.tsx"
+    ],
+    [
+     "tracking-card",
+     "src/features/cargohome/components/tracking-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

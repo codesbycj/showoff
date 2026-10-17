@@ -1,0 +1,409 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/app-bar"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/app-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the title, centred on the screen"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/app-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a second opinion"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/features/verdantstats/components/app-bar.tsx",
+    "<T variant=\"title\" color={vs.muted} style={{ opacity: 0.6 }}>"
+   ],
+   "label": "one title is enough"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/app-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and a way to change the month"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/segmented"
+   ],
+   "label": "four views of the month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/segmented.tsx",
+    "STEP 1.10"
+   ],
+   "label": "one tab each"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdantstats/components/segmented.tsx",
+    [
+     "// MISTAKE 1.11",
+     "marginHorizontal: 24,"
+    ]
+   ],
+   "label": "the bar came in too narrow"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/section-head"
+   ],
+   "label": "name a section"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/period-picker"
+   ],
+   "label": "and say which month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "Your Spending, Aug 2026"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/donut-chart"
+   ],
+   "label": "the month as a ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "centred under the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/donut-chart.tsx",
+    "STEP 1.17"
+   ],
+   "label": "a slice per category"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/donut-chart.tsx",
+    "STEP 1.18"
+   ],
+   "label": "and the total inside it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdantstats/components/donut-chart.tsx",
+    [
+     "// MISTAKE 1.19",
+     "paddingBottom: 26,"
+    ]
+   ],
+   "label": "the total came in riding high"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/legend"
+   ],
+   "label": "the key to it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "two columns under the ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/legend-item.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the colour it is drawn in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/legend-item.tsx",
+    "STEP 1.24"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/legend-item.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and what share it took"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/insight-card"
+   ],
+   "label": "one sentence about all that"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.28"
+   ],
+   "label": "under the key"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/insight-card.tsx",
+    "STEP 1.29"
+   ],
+   "label": "a mark for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/insight-card.tsx",
+    "STEP 1.30"
+   ],
+   "label": "the good news"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/insight-card.tsx",
+    "STEP 1.31"
+   ],
+   "label": "and a way in"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdantstats/components/insight-card.tsx",
+    [
+     "// MISTAKE 1.32",
+     "borderWidth: 2,"
+    ]
+   ],
+   "label": "the card came in outlined"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.33"
+   ],
+   "label": "Spending Trend"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/trend-chart"
+   ],
+   "label": "six months of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.35"
+   ],
+   "label": "under its heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/trend-chart.tsx",
+    "STEP 1.36"
+   ],
+   "label": "something to read against"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/trend-chart.tsx",
+    "STEP 1.37"
+   ],
+   "label": "a bar a month"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdantstats/components/trend-chart.tsx",
+    [
+     "// MISTAKE 1.38",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the bars came in washed out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/trend-chart.tsx",
+    "STEP 1.39"
+   ],
+   "label": "which month each is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/trend-chart.tsx",
+    "STEP 1.40"
+   ],
+   "label": "and what the heights mean"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/trend-chart.tsx",
+    "STEP 1.41"
+   ],
+   "label": "call out this one"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "@/features/verdantstats/components/tab-dock"
+   ],
+   "label": "somewhere to go next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdantstats/index.tsx",
+    "STEP 1.43"
+   ],
+   "label": "floating over the lot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/tab-dock.tsx",
+    "STEP 1.44"
+   ],
+   "label": "two on the left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/tab-dock.tsx",
+    "STEP 1.45"
+   ],
+   "label": "two on the right"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdantstats/components/tab-dock.tsx",
+    "STEP 1.46"
+   ],
+   "label": "and the thing in the middle"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdantstats/components/tab-dock.tsx",
+    [
+     "// MISTAKE 1.47",
+     "marginTop: 30,"
+    ]
+   ],
+   "label": "the button came in sunk into the dock"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-bar",
+     "src/features/verdantstats/components/app-bar.tsx"
+    ],
+    [
+     "donut-chart",
+     "src/features/verdantstats/components/donut-chart.tsx"
+    ],
+    [
+     "insight-card",
+     "src/features/verdantstats/components/insight-card.tsx"
+    ],
+    [
+     "legend-item",
+     "src/features/verdantstats/components/legend-item.tsx"
+    ],
+    [
+     "segmented",
+     "src/features/verdantstats/components/segmented.tsx"
+    ],
+    [
+     "stats-screen",
+     "src/app/verdantstats/index.tsx"
+    ],
+    [
+     "tab-dock",
+     "src/features/verdantstats/components/tab-dock.tsx"
+    ],
+    [
+     "trend-chart",
+     "src/features/verdantstats/components/trend-chart.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

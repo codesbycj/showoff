@@ -1,0 +1,8 @@
+{
+ "home-screen": "src/app/nourish/index.tsx",
+ "calorie-gauge": "src/features/nourish/components/calorie-gauge.tsx",
+ "macro-ring": "src/features/nourish/components/macro-ring.tsx",
+ "goal-card": "src/features/nourish/components/goal-card.tsx",
+ "log-row": "src/features/nourish/components/log-row.tsx",
+ "tab-dock": "src/features/nourish/components/tab-dock.tsx"
+}

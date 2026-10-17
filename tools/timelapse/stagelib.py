@@ -14,11 +14,24 @@ subtly wrong. Every rule below was a real corruption first:
   a child expression like `{DATA.title}`; walk back to the element that owns it.
 - **Handle the one-liners.** An element can open and close on a single line, or
   self-close, and neither has a closing line to search for.
+- **Never anchor on prose.** A component's own doc comment quotes the code it is
+  explaining, so `pointerEvents="none"` matched the sentence describing it forty
+  lines above the element, and the walk-back from there found the file's header
+  instead of a tag. `is_code` below drops comment lines before anything else
+  looks at them — the same rule `run.py`'s `imp` already applies to imports.
 
 Always typecheck the blank state afterwards. Every bug above compiled fine as
 text and only `tsc` caught it.
 """
 NL = chr(10)
+
+
+def is_code(line):
+    """False for a line that is only commentary — a `//`, a `*` continuing a
+    block comment, or a JSX comment. Anchors are matched against code."""
+    t = line.lstrip()
+    return not (t.startswith('//') or t.startswith('*') or t.startswith('/*')
+                or t.startswith('{/*'))
 
 
 def is_opener(line):
@@ -46,7 +59,7 @@ def tag_of(line):
 def stage(src, start_sub, label, nth=0):
     """Wrap the element containing `start_sub` in a `{/* STEP label ... */}`."""
     lines = src.split(NL)
-    hits = [k for k, l in enumerate(lines) if start_sub in l]
+    hits = [k for k, l in enumerate(lines) if start_sub in l and is_code(l)]
     assert len(hits) > nth, 'no hit %d for %r' % (nth, start_sub)
     si = hits[nth]
 

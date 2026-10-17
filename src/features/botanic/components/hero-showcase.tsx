@@ -17,14 +17,6 @@ const bowl = require('../../../../assets/images/botanic/bowl.jpg');
  * 304, so the minimum is what is actually in charge. Laying it out as content
  * plus padding would lose the 6dp of slack the reference distributes above and
  * below the dish.
- *
- * The watermark is the piece worth reading twice. Two lines of 44px Oswald at
- * `-rotate-2 scale-125` and `rotate-1 scale-110`, both at 20% opacity, centred
- * on the panel and clipped by it — the scale is what pushes "STICKY SESAME"
- * past the panel's edges so it reads as set *under* the dish rather than
- * behind it. Both transforms turn about the element's own centre, which is
- * what CSS does by default and what React Native does regardless, so the two
- * agree here without any `transformOrigin` work.
  */
 export function HeroShowcase() {
   return (
@@ -37,17 +29,11 @@ export function HeroShowcase() {
         overflow: 'hidden',
         alignItems: 'center',
         justifyContent: 'center',
-        // `pt-4 pb-8`. Not decoration: the panel's 310 minimum leaves 6dp of
-        // slack around the 256 dish, and the uneven padding is what puts 3 of
-        // it above and 3 below rather than splitting it evenly. Centring
-        // without this drops the dish — and both badges with it — 8dp.
         paddingTop: 16,
         paddingBottom: 32,
       }}
     >
-      {/* `-top-12 -left-12 w-48 h-48 bg-primary/20 blur-3xl`: a 96dp circle
-          whose centre sits 48dp in from the panel's top-left corner. The drawn
-          box is far wider than the circle, so it is placed by that centre. */}
+{/* STEP 1.09 light coming in at two corners
       <AmbientGlow
         radius={96}
         sigma={64}
@@ -59,8 +45,6 @@ export function HeroShowcase() {
           top: 48 - glowBox(96, 64) / 2,
         }}
       />
-      {/* `-bottom-10 -right-10 w-44 h-44 bg-secondary/15 blur-2xl` — an 88dp
-          circle centred 48dp in from the bottom-right. */}
       <AmbientGlow
         radius={88}
         sigma={40}
@@ -72,7 +56,9 @@ export function HeroShowcase() {
           bottom: 48 - glowBox(88, 40) / 2,
         }}
       />
+*/}
 
+{/* STEP 1.10 the name of the thing, set huge and half-hidden
       <View
         pointerEvents="none"
         style={{
@@ -110,11 +96,10 @@ export function HeroShowcase() {
           {PRODUCT.watermark[1]}
         </Text>
       </View>
+*/}
 
       <View style={{ width: DISH, height: DISH, alignItems: 'center', justifyContent: 'center' }}>
-        {/* `inset-4 bg-primary/25 blur-xl translate-y-3` — the glow the dish
-            casts onto the panel, offset down so it reads as a contact shadow
-            rather than a halo. */}
+{/* STEP 1.11 and something for the bowl to cast onto
         <AmbientGlow
           radius={112}
           sigma={24}
@@ -126,22 +111,37 @@ export function HeroShowcase() {
             top: (DISH - glowBox(112, 24)) / 2 + 12,
           }}
         />
+*/}
+
+{/* STEP 1.12 the dish itself
         <Image
           source={bowl}
-          style={{ width: DISH, height: DISH, borderRadius: radius.dish }}
+          style={{
+            width: DISH,
+            height: DISH,
+            borderRadius: radius.dish,
+            // MISTAKE 1.13 the photograph came out washed into the panel
+            opacity: 0.35,
+          }}
           resizeMode="cover"
           accessibilityLabel={PRODUCT.title}
         />
+*/}
 
-        {/* Both hang off the dish's corners rather than the panel's, by 8dp —
-            `-bottom-2 -left-2` and `top-2 right-2`. One sits outside the
-            photograph and one inside it, which is the export's own asymmetry. */}
+{/* STEP 1.14 what it is free of
         <DietaryBadge
           {...BADGES[0]}
           gap={6}
           style={{ position: 'absolute', left: -8, bottom: -8 }}
         />
-        <DietaryBadge {...BADGES[1]} gap={4} style={{ position: 'absolute', right: 8, top: 8 }} />
+*/}
+{/* STEP 1.15 and how hot it runs
+        <DietaryBadge
+          {...BADGES[1]}
+          gap={4}
+          style={{ position: 'absolute', right: 8, top: 8 }}
+        />
+*/}
       </View>
     </View>
   );

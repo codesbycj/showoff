@@ -16,6 +16,9 @@ conflicts for no benefit. Clone the repo, pick a folder, install, and it runs.
 | [`tallow/`](./tallow) | A fictional video editor — app icons that fly out of a sentence onto a timeline | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
 | [`ribbon/`](./ribbon) | A fictional designer — a card strip bent by scroll velocity, and a hover that dents without moving the outline | React 19 · Vite 8 · Tailwind 4 · three.js · GSAP |
 | [`stub/`](./stub) | One section of a reference site — three ticket cards dealt up from below the fold and flipped over in turn | React 19 · Vite 8 · Tailwind 4 · Lenis |
+| [`bulwark/`](./bulwark) | One reference site, rebuilt — a loading screen whose black wall is shoved across by a figure braced against it, and a wheel-driven 3D collage of projects | React 19 · Vite 8 · Tailwind 4 · GSAP |
+| [`onesheet/`](./onesheet) | One section of a reference site — six service cards stepping forward through a perspective stack, the front one thrown off the top | React 19 · Vite 8 · Tailwind 4 · GSAP · Lenis |
+| [`pennant/`](./pennant) | One screen of a reference site — a looping render of ribbons drawn through a WebGL displacement field that the pointer pushes around | React 19 · Vite 8 · Tailwind 4 · WebGL · GSAP |
 
 The repository root has a passthrough script per site, so you never have to think about
 which directory you are in:
@@ -41,6 +44,15 @@ npm run build:ribbon
 
 npm run dev:stub         # http://localhost:5200
 npm run build:stub
+
+npm run dev:bulwark      # http://localhost:5204
+npm run build:bulwark
+
+npm run dev:onesheet     # http://localhost:5208
+npm run build:onesheet
+
+npm run dev:pennant      # http://localhost:5212
+npm run build:pennant
 ```
 
 **Install from inside the folder**, with a plain `npm install`, not through a root
@@ -48,7 +60,8 @@ npm run build:stub
 writes `"showoff": "file:../.."` into that site's `package.json` and symlinks the Expo
 project into its `node_modules` — exactly the coupling this folder exists to prevent.
 The `dev:` and `build:` passthroughs are fine; it is only `install:` that does it, which
-is why `tallow`, `ribbon` and `stub` have no `install:` script.
+is why `tallow`, `ribbon`, `stub`, `bulwark`, `onesheet` and `pennant` have no
+`install:` script.
 
 Each site pins its own port with `strictPort`, so starting one while it is already
 running fails loudly instead of quietly moving to the next free port and leaving every
@@ -69,10 +82,22 @@ Every project in here:
   sections that setting exists for, not just shortening transitions;
 - passes `tsc`, `eslint` and `vite build` clean.
 
-One exception, declared rather than quiet: [`switchblade/`](./switchblade) uses the
-reference site's own imagery and brand, so its motion could be checked against it frame
-for frame. It is a private study and is not to be deployed; see its `README.md` and
-`src/assets/images/CREDITS.md`.
+Three exceptions, declared rather than quiet: [`switchblade/`](./switchblade),
+[`bulwark/`](./bulwark) and [`pennant/`](./pennant) use their reference sites' own imagery,
+so their motion could be checked against them frame for frame. All three are private
+studies and are not to be deployed; see each one's `README.md` and its `CREDITS.md`.
+
+`pennant` is the narrowest of the three and the clearest about why: the whole study is a
+displacement shader applied to one looping render, and a shader can only be checked by
+pointing it at the same pixels. Its brand, mark and copy are invented; the two files in
+`src/assets/video/` are not.
+
+`bulwark` is the clearer case for why the exception exists at all. Its reference's home is
+a 3D collage, so the motion *is* plates of a given shape sweeping past a camera, and the
+arrangement was measured off stills of those exact plates. It was first built with
+invented projects and generated abstract art, and with stand-ins there was nothing to
+check the geometry against — the diagonal ran the wrong way and nothing in the build could
+have revealed it.
 
 ## Adding another
 
@@ -87,6 +112,12 @@ ships rather than watching it:
 
 1. Look at the script filenames in the page source. They are usually honest —
    `preloader-*.js`, `lenisSmooth-*.js` will name the whole stack before you read a line.
+   A `<meta name="generator">` is worth reading first: a Webflow site ships its
+   interactions as an IX2 action list, and a Framer site ships its components as a plain
+   ES module with every `duration:` and `ease:` sitting in it as a literal. See
+   [`bulwark/README.md`](./bulwark#getting-the-numbers-out-of-the-reference) for the
+   Framer recipe, including what to do about the parts drawn into a WebGL canvas, which
+   are in neither the module nor a headless screenshot.
 2. Download those files and the stylesheet. Minified GSAP is still readable, and every
    duration and easing curve is sitting there as a plain number.
 3. Search the CSS for `cubic-bezier` and `transition:`, then sort by how often each

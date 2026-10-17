@@ -1,0 +1,40 @@
+{
+  "name": "bulwark-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A front-end study of two pieces of motion: a loading screen whose black wall is shoved across the viewport by a figure braced against it, and a wheel-driven index where only the centred project is legible.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
+  },
+  "dependencies": {
+    "@fontsource-variable/bodoni-moda": "^5.2.5",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.2.5",
+    "gsap": "^3.13.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.1",
+    "vite": "^8.3.4"
+  }
+}

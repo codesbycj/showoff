@@ -1,0 +1,193 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/elite/index.tsx",
+    "@/features/elite/components/hero"
+   ],
+   "label": "the photograph at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/elite/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "lay it across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/hero.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the stylist, washed and faded into the page"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/elite/index.tsx",
+    "@/features/elite/components/service-cluster"
+   ],
+   "label": "three services under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/elite/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "hang the cluster off its bottom edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/service-cluster.tsx",
+    "STEP 1.06"
+   ],
+   "label": "one behind, on the left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/service-cluster.tsx",
+    "STEP 1.07"
+   ],
+   "label": "one behind, on the right"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/service-cluster.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the one that sits in front"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/elite/components/service-cluster.tsx",
+    [
+     "// MISTAKE 1.09",
+     "opacity: 0.35,"
+    ]
+   ],
+   "label": "the whole fan came in half-developed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/elite/index.tsx",
+    "@/features/elite/components/intro-copy"
+   ],
+   "label": "what the app is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/elite/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "say what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/intro-copy.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the name, and what it promises"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/intro-copy.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the sentence under it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/elite/index.tsx",
+    "@/features/elite/components/page-dots"
+   ],
+   "label": "how far through this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/elite/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "mark where we are"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/elite/index.tsx",
+    "<PageDots count={PAGES.count} active={1} />"
+   ],
+   "label": "that is page two, and this is page one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/elite/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the first page, properly"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/elite/index.tsx",
+    "@/features/elite/components/primary-button"
+   ],
+   "label": "the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/elite/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/elite/components/primary-button.tsx",
+    "STEP 1.20"
+   ],
+   "label": "fill it, round it, and light it"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "hero",
+     "src/features/elite/components/hero.tsx"
+    ],
+    [
+     "intro-copy",
+     "src/features/elite/components/intro-copy.tsx"
+    ],
+    [
+     "onboarding-screen",
+     "src/app/elite/index.tsx"
+    ],
+    [
+     "primary-button",
+     "src/features/elite/components/primary-button.tsx"
+    ],
+    [
+     "service-cluster",
+     "src/features/elite/components/service-cluster.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+ "home-screen": "src/app/cargohome/index.tsx",
+ "greeting-row": "src/features/cargohome/components/greeting-row.tsx",
+ "tracking-card": "src/features/cargohome/components/tracking-card.tsx",
+ "shipment-card": "src/features/cargohome/components/shipment-card.tsx",
+ "home-tab-bar": "src/features/cargohome/components/home-tab-bar.tsx",
+ "home-data": "src/features/cargohome/data/home.ts"
+}

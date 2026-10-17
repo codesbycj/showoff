@@ -1,0 +1,397 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "@/features/verdant/components/backdrop"
+   ],
+   "label": "the lit page everything sits on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "put it down"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/backdrop.tsx",
+    "STEP 1.03"
+   ],
+   "label": "close the top corner down"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/backdrop.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the light the wallet stands in"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdant/components/backdrop.tsx",
+    [
+     "// MISTAKE 1.05",
+     "marginTop: -150,"
+    ]
+   ],
+   "label": "the light came in up behind the headline"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "@/features/verdant/components/step-rail"
+   ],
+   "label": "how far through you are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/step-rail.tsx",
+    "STEP 1.08"
+   ],
+   "label": "which screen this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/step-rail.tsx",
+    "STEP 1.09"
+   ],
+   "label": "a bar for each one"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdant/components/step-rail.tsx",
+    [
+     "// MISTAKE 1.10",
+     "marginTop: 9,"
+    ]
+   ],
+   "label": "the bars came in sitting low"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/step-rail.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and a way out of the whole thing"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "@/features/verdant/components/headline"
+   ],
+   "label": "what the screen is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "stand it off the rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/headline.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the first line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/headline.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the second, in sage"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/headline.tsx",
+    "STEP 1.16"
+   ],
+   "label": "one more for luck"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/features/verdant/components/headline.tsx",
+    "<T variant=\"display\" color={vd.ink} style={{ opacity: 0.7 }}>"
+   ],
+   "label": "two lines, not three"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "@/features/verdant/components/lede"
+   ],
+   "label": "and the sentence under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "under the headline"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "@/features/verdant/components/stage"
+   ],
+   "label": "the hero"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "standing on the button"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/stage.tsx",
+    "STEP 1.22"
+   ],
+   "label": "the disc it stands on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/pedestal.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the pool of shadow it sits in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/pedestal.tsx",
+    "STEP 1.24"
+   ],
+   "label": "the side wall"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/pedestal.tsx",
+    "STEP 1.25"
+   ],
+   "label": "the face, lit from the right"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/pedestal.tsx",
+    "STEP 1.26"
+   ],
+   "label": "and what the wallet throws across it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/stage.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and the wallet on top of it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdant/components/stage.tsx",
+    [
+     "// MISTAKE 1.28",
+     "marginTop: 52,"
+    ]
+   ],
+   "label": "the wallet came in sunk into the disc"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    "STEP 1.29"
+   ],
+   "label": "the pale card, furthest back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    "STEP 1.30"
+   ],
+   "label": "the green one in front of it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    [
+     "// MISTAKE 1.31",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the second card came in see-through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    "STEP 1.32"
+   ],
+   "label": "the leather that hides them both"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    "STEP 1.33"
+   ],
+   "label": "the mouth, where the cards go in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    "STEP 1.34"
+   ],
+   "label": "the stitch round the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/wallet.tsx",
+    "STEP 1.35"
+   ],
+   "label": "and the stud on the flap"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/bank-card.tsx",
+    "STEP 1.36"
+   ],
+   "label": "the sheen across every card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/bank-card.tsx",
+    "STEP 1.37"
+   ],
+   "label": "and the chip"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "@/features/verdant/components/primary-button"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/verdant/index.tsx",
+    "STEP 1.39"
+   ],
+   "label": "at the foot of the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/primary-button.tsx",
+    "STEP 1.40"
+   ],
+   "label": "say what it does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/verdant/components/primary-button.tsx",
+    "STEP 1.41"
+   ],
+   "label": "and point where it goes"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/verdant/components/primary-button.tsx",
+    [
+     "// MISTAKE 1.42",
+     "paddingLeft: 44,"
+    ]
+   ],
+   "label": "the label came in shoved left"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "backdrop",
+     "src/features/verdant/components/backdrop.tsx"
+    ],
+    [
+     "bank-card",
+     "src/features/verdant/components/bank-card.tsx"
+    ],
+    [
+     "headline",
+     "src/features/verdant/components/headline.tsx"
+    ],
+    [
+     "pedestal",
+     "src/features/verdant/components/pedestal.tsx"
+    ],
+    [
+     "primary-button",
+     "src/features/verdant/components/primary-button.tsx"
+    ],
+    [
+     "stage",
+     "src/features/verdant/components/stage.tsx"
+    ],
+    [
+     "step-rail",
+     "src/features/verdant/components/step-rail.tsx"
+    ],
+    [
+     "wallet",
+     "src/features/verdant/components/wallet.tsx"
+    ],
+    [
+     "welcome-screen",
+     "src/app/verdant/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,90 @@
+import { ScrollView, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+
+import { CategoryRow } from '@/features/velora/components/category-row';
+import { ProductGrid } from '@/features/velora/components/product-grid';
+import { PromoCard } from '@/features/velora/components/promo-card';
+import { SearchField } from '@/features/velora/components/search-field';
+import { SectionHead } from '@/features/velora/components/section-head';
+import { TabBar } from '@/features/velora/components/tab-bar';
+import { TopBar } from '@/features/velora/components/top-bar';
+import {
+  CATEGORIES,
+  NEW_ARRIVALS,
+  PROMO,
+  SEARCH_PLACEHOLDER,
+  SECTIONS,
+} from '@/features/velora/data/home';
+import { MARGIN, SCROLL_BOTTOM_PAD, SECTION_GAP } from '@/features/velora/layout';
+import { vl } from '@/features/velora/theme';
+import { useInsets } from '@/features/velora/use-insets';
+
+/**
+ * Velora — home.
+ *
+ * Assembly only. Every band on the page is a component and this file's whole
+ * job is to stack them: the page margin, the gap between sections, and which
+ * of them are allowed to run past the margin.
+ *
+ * Two things are deliberately *not* inside the `ScrollView`'s padding:
+ *
+ * - **The category row**, which takes the margin as its own content padding so
+ *   its last chip can run under the screen's right edge. That clipped chip is
+ *   what says the row scrolls.
+ * - **The tab bar**, which floats over the scroll rather than sitting under
+ *   it. `SCROLL_BOTTOM_PAD` is what keeps the last product clear of it, since
+ *   a floating bar cannot reserve its own space.
+ */
+export default function VeloraHome() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: vl.canvas }}>
+      <StatusBar style="dark" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingTop: insets.top + 8,
+          paddingBottom: SCROLL_BOTTOM_PAD + insets.bottom,
+          gap: SECTION_GAP,
+        }}
+      >
+        <View style={{ paddingHorizontal: MARGIN }}>
+          <TopBar />
+        </View>
+
+        <View style={{ paddingHorizontal: MARGIN }}>
+          <SearchField placeholder={SEARCH_PLACEHOLDER} />
+        </View>
+
+        {/* The carousel's dots belong to the carousel, so the card draws
+            them itself — notched into its own bottom edge. */}
+        <View style={{ paddingHorizontal: MARGIN }}>
+          <PromoCard
+            badge={PROMO.badge}
+            headline={PROMO.headline}
+            cta={PROMO.cta}
+            image={PROMO.image}
+            slides={PROMO.slides}
+          />
+        </View>
+
+        {/* The heading keeps the margin; the row underneath does not. */}
+        <View style={{ gap: 12 }}>
+          <View style={{ paddingHorizontal: MARGIN }}>
+            <SectionHead title={SECTIONS.categories.title} action={SECTIONS.categories.action} />
+          </View>
+          <CategoryRow categories={CATEGORIES} />
+        </View>
+
+        <View style={{ paddingHorizontal: MARGIN, gap: 14 }}>
+          <SectionHead title={SECTIONS.arrivals.title} action={SECTIONS.arrivals.action} />
+          <ProductGrid products={NEW_ARRIVALS} />
+        </View>
+      </ScrollView>
+
+      <TabBar active="home" bottomInset={insets.bottom} />
+    </View>
+  );
+}

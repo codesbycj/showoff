@@ -1,0 +1,101 @@
+import { View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { DONUT_GAP_DEG, DONUT_STROKE } from '../layout';
+import { vs } from '../theme';
+import { T } from './text';
+
+/**
+ * The spending split, as a ring, with the total inside it.
+ *
+ * Angles are degrees **clockwise from twelve o'clock**, which is how a chart
+ * like this is actually described — "it starts at the top and the biggest
+ * slice comes first" — rather than SVG's own east-is-zero convention. Getting
+ * that wrong is a quarter turn, and a quarter turn on a ring looks like a data
+ * bug rather than a drawing one.
+ *
+ * Each slice gives up `DONUT_GAP_DEG` so the ring reads as six things rather
+ * than one striped thing. The gap is taken *out of* the slice rather than
+ * added between slices, so the angles still sum to a full turn and the last
+ * slice lands exactly where the first one starts.
+ *
+ * Caps are butt, not round: round caps on a 26dp stroke would eat most of a
+ * 10% slice and overhang the gap at both ends, which reads as the small
+ * categories being bigger than they are.
+ */
+export function DonutChart({
+  size,
+  segments,
+  value,
+  caption,
+}: {
+  size: number;
+  segments: readonly { key: string; pct: number; color: string }[];
+  value: string;
+  caption: string;
+}) {
+  const r = (size - DONUT_STROKE) / 2;
+  const c = size / 2;
+
+  let cursor = 0;
+
+  return (
+    <View style={{ width: size, height: size }}>
+      <Svg width={size} height={size}>
+        {/* STEP 1.17 a slice per category
+        {segments.map((s) => {
+          const span = (s.pct / 100) * 360;
+          const from = cursor + DONUT_GAP_DEG / 2;
+          const to = cursor + span - DONUT_GAP_DEG / 2;
+          cursor += span;
+          return (
+            <Path
+              key={s.key}
+              d={arcPath(c, c, r, from, to)}
+              stroke={s.color}
+              strokeWidth={DONUT_STROKE}
+              fill="none"
+            />
+          );
+        })}
+        */}
+      </Svg>
+
+      {/* STEP 1.18 and the total inside it
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0,
+          // MISTAKE 1.19 the total came in riding high
+          paddingBottom: 26,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T variant="donutValue" color={vs.ink}>
+          {value}
+        </T>
+        <T variant="donutLabel" color={vs.muted} style={{ marginTop: 2 }}>
+          {caption}
+        </T>
+      </View>
+      */}
+    </View>
+  );
+}
+
+/** A point on the circle, in the SVG's own coordinates (y grows downward). */
+function polar(cx: number, cy: number, r: number, deg: number) {
+  const a = ((deg - 90) * Math.PI) / 180;
+  return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+}
+
+/** The `d` for an arc from `from` to `to`, clockwise. */
+function arcPath(cx: number, cy: number, r: number, from: number, to: number) {
+  const a = polar(cx, cy, r, from);
+  const b = polar(cx, cy, r, to);
+  return `M ${a.x} ${a.y} A ${r} ${r} 0 ${to - from > 180 ? 1 : 0} 1 ${b.x} ${b.y}`;
+}

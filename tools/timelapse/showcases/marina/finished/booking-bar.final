@@ -1,0 +1,96 @@
+import { Pressable, View } from 'react-native';
+
+import { T } from './text';
+import { BAR_HEIGHT, MARGIN } from '../layout';
+import { radius, shadow, mr } from '../theme';
+
+type Rate = { amount: string; unit: string };
+
+/**
+ * The prices and the way to book, fixed at the foot of the screen.
+ *
+ * Fixed over the scroll rather than inside it, which is why `layout.ts` has a
+ * `SCROLL_BOTTOM_PAD`: a bar that floats cannot reserve its own space, and
+ * without that padding the agent row ends up underneath it.
+ *
+ * The bar carries `elevation` and does **not** clip — `overflow: 'hidden'`
+ * with `elevation` on one view is unreliable on Android, and nothing here
+ * needs clipping.
+ *
+ * Each rate is a figure and its unit on one line, the figure in the accent
+ * blue and the unit in grey. Set at the same size they read as one phrase and
+ * the number stops being the thing you see first.
+ */
+export function BookingBar({
+  label,
+  rates,
+  cta,
+  bottomInset,
+  onBook,
+}: {
+  label: string;
+  rates: readonly Rate[];
+  cta: string;
+  bottomInset: number;
+  onBook?: () => void;
+}) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        paddingBottom: bottomInset,
+        backgroundColor: mr.surface,
+        borderTopWidth: 1,
+        borderTopColor: mr.rule,
+        ...shadow.bar,
+      }}
+    >
+      <View
+        style={{
+          minHeight: BAR_HEIGHT,
+          paddingHorizontal: MARGIN,
+          paddingVertical: 12,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 16,
+        }}
+      >
+        <View>
+          <T variant="small" color={mr.muted}>
+            {label}
+          </T>
+          {rates.map((r) => (
+            <View key={r.unit} style={{ flexDirection: 'row', alignItems: 'baseline', gap: 6 }}>
+              <T variant="price" color={mr.accent}>
+                {r.amount}
+              </T>
+              <T variant="small" color={mr.muted}>
+                {r.unit}
+              </T>
+            </View>
+          ))}
+        </View>
+
+        <Pressable onPress={onBook} accessibilityRole="button" accessibilityLabel={cta}>
+          <View
+            style={{
+              borderRadius: radius.full,
+              backgroundColor: mr.accent,
+              paddingHorizontal: 30,
+              paddingVertical: 16,
+              ...shadow.button,
+            }}
+          >
+            <T variant="label" color={mr.onBrand}>
+              {cta}
+            </T>
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

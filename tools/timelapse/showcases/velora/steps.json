@@ -1,0 +1,392 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/top-bar"
+   ],
+   "label": "the bar across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "hang it at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a way into the menu"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a way to the bag"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/search-field"
+   ],
+   "label": "somewhere to search from"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "drop the field in under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/search-field.tsx",
+    "STEP 1.07"
+   ],
+   "label": "say what it is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/search-field.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and a way to narrow it down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/promo-card"
+   ],
+   "label": "the offer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "lay the offer across the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "give the green something to catch the light"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "say it is not forever"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "then say what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and give them somewhere to go"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "fill the other end with the shop"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    [
+     "// MISTAKE 1.16",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the card came out of the wash, not the paint shop"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/promo-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "notch the carousel into its bottom edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/section-head"
+   ],
+   "label": "a section needs a name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "name the first section"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/velora/index.tsx",
+    "<SectionHead title=\"Catergories\" action={SECTIONS.categories.action} style={{ paddingHorizontal: MARGIN }} />"
+   ],
+   "label": "that is the reference's own typo, not ours"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "spell it properly this time"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/category-row"
+   ],
+   "label": "the row of categories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "run the chips along under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/category-row.tsx",
+    "STEP 1.24"
+   ],
+   "label": "say what each one is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/category-row.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and show it"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "womens-outfit"
+   ],
+   "label": "a second aisle"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "mens-footwear"
+   ],
+   "label": "and a third, running off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.28"
+   ],
+   "label": "name what is new"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/product-grid"
+   ],
+   "label": "somewhere to put the products"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.30"
+   ],
+   "label": "and lay the products out under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/product-card.tsx",
+    "STEP 1.31"
+   ],
+   "label": "show what is for sale"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/product-card.tsx",
+    "STEP 1.32"
+   ],
+   "label": "name it, and say what it costs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/product-card.tsx",
+    "STEP 1.33"
+   ],
+   "label": "somewhere to keep the ones they like"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "grey-casual"
+   ],
+   "label": "one of them already saved"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "rust-overshirt"
+   ],
+   "label": "start the second row"
+  },
+  {
+   "op": "block",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "ivory-trousers"
+   ],
+   "label": "and finish it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/velora/index.tsx",
+    "@/features/velora/components/tab-bar"
+   ],
+   "label": "everywhere else the app goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/velora/index.tsx",
+    "STEP 1.38"
+   ],
+   "label": "float the bar over it all"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/velora/components/tab-bar.tsx",
+    "STEP 1.39"
+   ],
+   "label": "one stop for each place the app goes"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/velora/components/tab-bar.tsx",
+    [
+     "// MISTAKE 1.40",
+     "marginHorizontal: 54,"
+    ]
+   ],
+   "label": "the bar came out squeezed into the middle"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "orders"
+   ],
+   "label": "where the orders live"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "saved"
+   ],
+   "label": "and the saved things"
+  },
+  {
+   "op": "entry",
+   "args": [
+    "src/features/velora/data/home.ts",
+    "account"
+   ],
+   "label": "and whoever is signed in"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "category-row",
+     "src/features/velora/components/category-row.tsx"
+    ],
+    [
+     "home-data",
+     "src/features/velora/data/home.ts"
+    ],
+    [
+     "home-screen",
+     "src/app/velora/index.tsx"
+    ],
+    [
+     "product-card",
+     "src/features/velora/components/product-card.tsx"
+    ],
+    [
+     "promo-card",
+     "src/features/velora/components/promo-card.tsx"
+    ],
+    [
+     "search-field",
+     "src/features/velora/components/search-field.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/velora/components/tab-bar.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/velora/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}
