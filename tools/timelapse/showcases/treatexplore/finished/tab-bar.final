@@ -1,0 +1,65 @@
+import Compass from 'lucide-react-native/icons/compass';
+import Heart from 'lucide-react-native/icons/heart';
+import House from 'lucide-react-native/icons/house';
+import ShoppingCart from 'lucide-react-native/icons/shopping-cart';
+import { Pressable, View } from 'react-native';
+
+import { selectedTab, tabs } from '../data/explore';
+import { TAB_HEIGHT } from '../layout';
+import { tr } from '../theme';
+import { T } from './text';
+
+const ICONS = {
+  home: House,
+  compass: Compass,
+  cart: ShoppingCart,
+  heart: Heart,
+} as const;
+
+type Tab = (typeof tabs)[number];
+
+/** The four places the app goes, pinned to the bottom edge. */
+export function TabBar({ onSelect }: { onSelect?: (t: Tab) => void }) {
+  return (
+    <View
+      style={{
+        height: TAB_HEIGHT,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderTopWidth: 1,
+        borderTopColor: tr.rule,
+        backgroundColor: tr.canvas,
+      }}
+    >
+      {tabs.map((t) => (
+        <Tab key={t.key} tab={t} onPress={() => onSelect?.(t)} />
+      ))}
+    </View>
+  );
+}
+
+function Tab({ tab, onPress }: { tab: Tab; onPress?: () => void }) {
+  const Icon = ICONS[tab.icon];
+  const on = tab.key === selectedTab;
+
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={tab.label}
+      style={{ flex: 1 }}
+    >
+      <View style={{ alignItems: 'center', gap: 3 }}>
+        <Icon
+          size={20}
+          color={on ? tr.ink : tr.muted}
+          strokeWidth={on ? 2.2 : 1.7}
+          fill={on && tab.solid ? tr.ink : 'none'}
+        />
+        <T variant="tab" color={on ? tr.ink : tr.muted}>
+          {tab.label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}

@@ -1,0 +1,78 @@
+import ArrowDownLeft from 'lucide-react-native/icons/arrow-down-left';
+import ArrowUpRight from 'lucide-react-native/icons/arrow-up-right';
+import { Pressable, View } from 'react-native';
+
+import { rows } from '../data/wallet';
+import { ROW_DISC, ROW_H } from '../layout';
+import { fu, radius } from '../theme';
+import { T } from './text';
+
+type Row = (typeof rows)[number];
+
+/** One movement of money: what it was, when, how much, and whether it landed. */
+export function TransactionRow({ row, onPress }: { row: Row; onPress?: () => void }) {
+  const out = row.direction === 'out';
+  const Icon = out ? ArrowUpRight : ArrowDownLeft;
+
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={row.title}>
+      <View
+        style={{
+          height: ROW_H,
+          borderRadius: radius.tile,
+          backgroundColor: fu.surface,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 12,
+          gap: 11,
+        }}
+      >
+        {/* STEP 1.18 which way the money went
+        <View
+          style={{
+            width: ROW_DISC,
+            height: ROW_DISC,
+            borderRadius: radius.full,
+            backgroundColor: fu.rowWell,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Icon size={17} color={out ? fu.up : fu.down} strokeWidth={2.2} />
+        </View>
+        */}
+
+        {/* STEP 1.19 what it was
+        <View style={{ flex: 1 }}>
+          <T variant="row" color={fu.ink}>
+            {row.title}
+          </T>
+          <T variant="rowMeta" color={fu.muted}>
+            {row.meta}
+          </T>
+        </View>
+        */}
+
+        {/* STEP 1.20 and whether it landed
+        <View style={{ alignItems: 'flex-end', gap: 3 }}>
+          <T variant="rowAmount" color={fu.ink}>
+            {row.amount}
+          </T>
+          <View
+            style={{
+              paddingHorizontal: 7,
+              paddingVertical: 2,
+              borderRadius: radius.pill,
+              backgroundColor: fu.goodWell,
+            }}
+          >
+            <T variant="rowState" color={fu.good}>
+              {row.state}
+            </T>
+          </View>
+        </View>
+        */}
+      </View>
+    </Pressable>
+  );
+}

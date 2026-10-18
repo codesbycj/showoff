@@ -1,0 +1,54 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { HEADER_BUTTON } from '../layout';
+import { radius, rx } from '../theme';
+import { Icon } from './icon';
+import { T } from './text';
+
+/**
+ * The header on the yellow: a centred title and one control.
+ *
+ * The title is absolutely positioned across the whole bar rather than placed
+ * beside the button — centred in the space the button leaves, it would sit a
+ * few dp left of the screen's centre, and a lone phrase at the top of a screen
+ * is exactly where that shows.
+ */
+export function StageHeader({ title, onFilter }: { title: string; onFilter?: () => void }) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View style={{ height: HEADER_BUTTON, justifyContent: 'center' }}>
+      <View
+        style={{ position: 'absolute', left: 0, right: 0, alignItems: 'center' }}
+        pointerEvents="none"
+      >
+        <T variant="title" color={rx.onStage}>
+          {title}
+        </T>
+      </View>
+
+      <Pressable
+        onPress={onFilter}
+        onPressIn={() => setHeld(true)}
+        onPressOut={() => setHeld(false)}
+        accessibilityRole="button"
+        accessibilityLabel="Options"
+        style={{ alignSelf: 'flex-end' }}
+      >
+        <View
+          style={{
+            width: HEADER_BUTTON,
+            height: HEADER_BUTTON,
+            borderRadius: radius.full,
+            alignItems: 'center',
+            justifyContent: 'center',
+            opacity: held ? 0.6 : 1,
+          }}
+        >
+          <Icon name="filter" size={18} color={rx.onStage} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

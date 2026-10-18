@@ -1,0 +1,173 @@
+import Bolt from 'lucide-react-native/icons/zap';
+import Heart from 'lucide-react-native/icons/heart';
+import MessageCircle from 'lucide-react-native/icons/message-circle';
+import X from 'lucide-react-native/icons/x';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
+
+import { profile, rail } from '../data/discover';
+import { RAIL_DISC, RAIL_GAP } from '../layout';
+import { hp, radius } from '../theme';
+import { T } from './text';
+
+const CARD = require('../../../../assets/images/happnswipe/card.jpg');
+
+const RAIL_ICONS = {
+  chat: MessageCircle,
+  heart: Heart,
+  bolt: Bolt,
+  close: X,
+} as const;
+
+type Rail = (typeof rail)[number];
+
+/**
+ * The person the screen is offering, and every way of answering.
+ *
+ * One photograph with everything floating on it, which is why the chips carry
+ * their own translucent fill rather than relying on a scrim: a scrim over a
+ * whole portrait greys the face, and the reference's does not.
+ *
+ * `overflow: 'hidden'` crops the picture to the card's corners, and nothing
+ * here carries `elevation` — the two together are unreliable on Android.
+ */
+export function ProfileCard({ onRail }: { onRail?: (r: Rail) => void }) {
+  return (
+    <View style={{ flex: 1, borderRadius: radius.card, overflow: 'hidden' }}>
+      {/* STEP 1.11 the photograph
+      <Image
+        source={CARD}
+        style={{ position: 'absolute', width: '100%', height: '100%' }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+      */}
+
+      {/* STEP 1.12 how new and how close
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          padding: 14,
+        }}
+      >
+        <Chip label={profile.badge} />
+        <Chip label={profile.match} drop />
+      </View>
+      */}
+
+      <View style={{ flex: 1 }} />
+
+      <View
+        style={{
+          position: 'absolute',
+          right: 12,
+          top: '34%',
+          gap: RAIL_GAP,
+        }}
+      >
+        {/* STEP 1.13 every way of answering
+        {rail.map((r) => {
+          const Icon = RAIL_ICONS[r.icon];
+          return (
+            <Pressable
+              key={r.key}
+              onPress={() => onRail?.(r)}
+              accessibilityRole="button"
+              accessibilityLabel={r.key}
+            >
+              <View
+                style={{
+                  width: RAIL_DISC,
+                  height: RAIL_DISC,
+                  borderRadius: radius.full,
+                  backgroundColor: hp.rail,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Icon size={17} color={hp.onPhoto} strokeWidth={2} />
+              </View>
+            </Pressable>
+          );
+        })}
+        */}
+      </View>
+
+      {/* Vertical, so it is not the diagonal case that comes out mirrored on
+          web (AGENTS.md, "Diagonal gradients flip on web"). */}
+      {/* STEP 1.14 something to read against
+      <LinearGradient
+        colors={['rgba(8,14,26,0)', hp.scrim]}
+        style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: '38%' }}
+      />
+      */}
+
+      {/* STEP 1.15 and who they are
+      <View style={{ padding: 18 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+          <T variant="name" color={hp.onPhoto}>
+            {profile.name}
+          </T>
+          <Verified size={17} />
+        </View>
+        <T variant="role" color={hp.onPhoto} style={{ opacity: 0.85 }}>
+          {profile.role}
+        </T>
+
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 11 }}>
+          {profile.interests.map((i) => (
+            <Chip key={i} label={i} />
+          ))}
+        </View>
+      </View>
+      */}
+    </View>
+  );
+}
+
+/** A translucent label over the photograph. */
+function Chip({ label, drop }: { label: string; drop?: boolean }) {
+  return (
+    <View
+      style={{
+        // MISTAKE 1.16 the chips came in squeezed
+        paddingVertical: 8,
+        height: 26,
+        paddingHorizontal: 9,
+        borderRadius: radius.chip,
+        backgroundColor: drop ? hp.blue : hp.chip,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <T variant="chip" color={hp.onPhoto}>
+        {label}
+      </T>
+    </View>
+  );
+}
+
+/**
+ * The verified tick.
+ *
+ * Drawn rather than taken from an icon set: the scalloped disc is a shape, not
+ * a stroke, and every set's version of it is a different number of points.
+ */
+function Verified({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 20 20">
+      <Circle cx={10} cy={10} r={9} fill={hp.blue} />
+      <Path
+        d="M5.8 10.2 L8.7 13 L14.2 7.2"
+        stroke="#ffffff"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </Svg>
+  );
+}

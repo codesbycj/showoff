@@ -1,0 +1,57 @@
+import { Pressable, ScrollView, View } from 'react-native';
+
+import { filters, selectedFilter } from '../data/map';
+import { FILTER_GAP, FILTER_HEIGHT, MARGIN } from '../layout';
+import { hp, radius } from '../theme';
+import { T } from './text';
+
+type Filter = (typeof filters)[number];
+
+/**
+ * How the radar is narrowed.
+ *
+ * A horizontal scroll and not a wrap: the reference clips the last pill at the
+ * screen edge, and a wrap layout physically cannot reproduce that (AGENTS.md,
+ * "Verifying pixel accuracy").
+ */
+export function FilterRow({ onSelect }: { onSelect?: (f: Filter) => void }) {
+  return (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={{ marginHorizontal: -MARGIN }}
+      contentContainerStyle={{ paddingHorizontal: MARGIN, gap: FILTER_GAP }}
+    >
+      {/* STEP 1.08 four ways to narrow it
+      {filters.map((f) => (
+        <Pill key={f.key} filter={f} onPress={() => onSelect?.(f)} />
+      ))}
+      */}
+    </ScrollView>
+  );
+}
+
+function Pill({ filter, onPress }: { filter: Filter; onPress?: () => void }) {
+  const on = filter.key === selectedFilter;
+
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={filter.label}>
+      <View
+        style={{
+          // MISTAKE 1.23 the pills came in dropped
+          marginTop: 14,
+          height: FILTER_HEIGHT,
+          paddingHorizontal: 18,
+          borderRadius: radius.pill,
+          backgroundColor: on ? hp.action : hp.well,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T variant="filter" color={on ? hp.onDark : hp.ink}>
+          {filter.label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}

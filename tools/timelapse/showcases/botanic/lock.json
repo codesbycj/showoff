@@ -7,7 +7,7 @@
  "src/app/botanic/index.tsx": "e2e6ae9d54bfa06ea7432e54a581402bce0692e543ed64efa5ea6c4973e4a24b",
  "src/app/index.tsx": "4c5a386bb29c8cb79df7c39c7957c37b7d478b541c8bc361100151c2e151329f",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/botanic/components/ambient-glow.tsx": "b997a142424fa44b7e6d17dd8aee8ccddb5d8616c1ec3947e1e707cb91241704",
  "src/features/botanic/components/app-bar.tsx": "747eec81b894e95847af3fae4646a11284d26b958e1dd6e72a3cbb75a64a678f",

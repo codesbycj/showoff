@@ -1,0 +1,205 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "@/features/milesbrands/components/header"
+   ],
+   "label": "whose miles these are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and whose account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "@/features/milesbrands/components/search-field"
+   ],
+   "label": "how to look through it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the title"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "@/features/milesbrands/components/stage"
+   ],
+   "label": "and what is in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "filling the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/stage.tsx",
+    "STEP 1.10"
+   ],
+   "label": "three of them, thrown"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "@/features/milesbrands/components/filter-row"
+   ],
+   "label": "how to narrow it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "in a row off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/filter-row.tsx",
+    "STEP 1.13"
+   ],
+   "label": "every category"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "@/features/milesbrands/components/promo-card"
+   ],
+   "label": "the offer being pushed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "above the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/promo-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "what the offer is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/promo-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and that it is featured"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "@/features/milesbrands/components/tab-bar"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/milesbrands/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "along the bottom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/milesbrands/components/tab-bar.tsx",
+    "STEP 1.20"
+   ],
+   "label": "the four places to be"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/milesbrands/components/filter-row.tsx",
+    [
+     "// MISTAKE 1.21",
+     "marginTop: 14,"
+    ]
+   ],
+   "label": "the pills came in dropped"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "brands-screen",
+     "src/app/milesbrands/index.tsx"
+    ],
+    [
+     "filter-row",
+     "src/features/milesbrands/components/filter-row.tsx"
+    ],
+    [
+     "header",
+     "src/features/milesbrands/components/header.tsx"
+    ],
+    [
+     "promo-card",
+     "src/features/milesbrands/components/promo-card.tsx"
+    ],
+    [
+     "stage",
+     "src/features/milesbrands/components/stage.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/milesbrands/components/tab-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

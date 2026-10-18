@@ -1,0 +1,8 @@
+{
+ "send-screen": "src/app/finanssend/index.tsx",
+ "app-bar": "src/features/finanssend/components/app-bar.tsx",
+ "destination-card": "src/features/finanssend/components/destination-card.tsx",
+ "transfer-sheet": "src/features/finanssend/components/transfer-sheet.tsx",
+ "list-row": "src/features/finanssend/components/list-row.tsx",
+ "filter-tabs": "src/features/finanssend/components/filter-tabs.tsx"
+}

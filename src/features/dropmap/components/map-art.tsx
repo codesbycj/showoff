@@ -1,0 +1,127 @@
+import { View } from 'react-native';
+import Svg, { Circle, G, Path, Rect, Text as SvgText } from 'react-native-svg';
+
+import { dm } from '../theme';
+
+/**
+ * The map under everything.
+ *
+ * The reference screenshots a real map — somebody's tiles, somebody's data,
+ * neither of which is redistributable, and a stand-in screenshot of a
+ * different real map would be the same problem wearing a different hat.
+ *
+ * So it is drawn: a dark ground, blocks between the roads, a park, a river,
+ * two grades of street, the route in the accent, and a few pins. It is the
+ * *idea* of a map rather than a place, which is what the screen actually needs
+ * — nothing above it refers to a real junction.
+ *
+ * Drawn in a 390x600 viewBox and stretched with `preserveAspectRatio="none"`,
+ * so a taller phone gets more map rather than a bigger one. A map is the one
+ * thing on a screen that should not scale with the viewport: zoomed-up roads
+ * read as a mistake.
+ *
+ * The street names are SVG text rather than RN `Text`: they belong to the
+ * drawing and have to scale and clip with it, which is exactly what an
+ * absolutely positioned sibling would not do.
+ */
+export function MapArt({ width, height }: { width: number; height: number }) {
+  return (
+    <View style={{ width, height }} pointerEvents="none">
+      <Svg width={width} height={height} viewBox="0 0 390 600" preserveAspectRatio="none">
+        <Rect x={0} y={0} width={390} height={600} fill={dm.land} />
+
+        {/* STEP 1.03 the blocks
+        <G fill={dm.block}>
+          <Rect x={18} y={40} width={120} height={96} rx={6} />
+          <Rect x={160} y={28} width={96} height={72} rx={6} />
+          <Rect x={276} y={54} width={100} height={110} rx={6} />
+          <Rect x={30} y={196} width={92} height={120} rx={6} />
+          <Rect x={240} y={210} width={130} height={92} rx={6} />
+          <Rect x={46} y={372} width={110} height={104} rx={6} />
+          <Rect x={210} y={360} width={140} height={120} rx={6} />
+          <Rect x={24} y={510} width={150} height={70} rx={6} />
+        </G>
+        */}
+
+        {/* STEP 1.04 a park
+        <Path d="M300 310 C330 330 356 364 366 410 L390 420 V300 Z" fill={dm.park} />
+        */}
+        {/* STEP 1.05 and the river
+        <Path
+          d="M0 150 C60 170 110 200 140 250 C170 300 180 360 160 420 C146 462 120 500 96 540
+             L70 600 H10 L40 530 C72 462 96 410 100 356 C104 300 76 246 20 206 L0 196 Z"
+          fill={dm.water}
+          opacity={0.9}
+        />
+        */}
+
+        {/* STEP 1.06 the main roads
+        <G stroke={dm.road} strokeLinecap="round" fill="none">
+          <Path d="M-10 170 H400" strokeWidth={13} />
+          <Path d="M-10 340 H400" strokeWidth={11} />
+          <Path d="M-10 496 H400" strokeWidth={11} />
+          <Path d="M150 -10 V610" strokeWidth={13} />
+          <Path d="M268 -10 V610" strokeWidth={10} />
+        </G>
+        */}
+
+        {/* STEP 1.07 the side streets
+        <G stroke={dm.lane} strokeLinecap="round" fill="none" strokeWidth={6}>
+          <Path d="M-10 90 H400" />
+          <Path d="M-10 420 H400" />
+          <Path d="M64 -10 V610" />
+          <Path d="M350 -10 V610" />
+          <Path d="M150 250 L268 250" />
+        </G>
+        */}
+
+        {/* STEP 1.08 the way there
+        <Path
+          d="M150 496 L150 340 L268 340 L268 170"
+          stroke={dm.route}
+          strokeWidth={6}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+          opacity={0.9}
+        />
+        */}
+
+        {/* STEP 1.09 what the streets are called
+        <G fill={dm.mapInk}>
+          <SvgText x={196} y={160} fontSize={9} fill={dm.mapInk}>
+            MC Road
+          </SvgText>
+          <SvgText x={28} y={332} fontSize={9} fill={dm.mapInk}>
+            Mannarkad
+          </SvgText>
+          <SvgText x={286} y={470} fontSize={9} fill={dm.mapInk}>
+            Indian Coffee
+          </SvgText>
+        </G>
+        */}
+
+        {/* STEP 1.10 and what is on them
+        <G>
+          <Circle cx={150} cy={496} r={9} fill={dm.pinYou} />
+          <Circle cx={150} cy={496} r={16} fill={dm.pinYou} opacity={0.22} />
+          <Pin x={268} y={170} color={dm.pinShop} />
+          <Pin x={92} y={214} color={dm.pinShop} />
+          <Pin x={330} y={120} color={dm.pinFuel} />
+        </G>
+        */}
+      </Svg>
+    </View>
+  );
+}
+
+/** A dropped pin: a disc on a point. */
+function Pin({ x, y, color }: { x: number; y: number; color: string }) {
+  return (
+    <G>
+      <Path d={`M${x} ${y + 10} L${x - 5} ${y + 1} H${x + 5} Z`} fill={color} />
+      <Circle cx={x} cy={y - 4} r={9} fill={color} />
+      <Circle cx={x} cy={y - 4} r={3.4} fill="#ffffff" />
+    </G>
+  );
+}

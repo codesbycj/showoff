@@ -5,7 +5,7 @@
  "src/app/cargo/index.tsx": "7093c48858840f4f0641bed6bb82efc71842542ae116bbea87ac08d853bf40a2",
  "src/app/index.tsx": "7357d04e6e1906b3c1d486073c254cb0992e875e0fecfd37d7c89af60facf846",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/cargo/components/hero.tsx": "d92f389561fe4366902bb18327bb0e4b477da3ab4f729694e2e83fc9ca0c10d1",
  "src/features/cargo/components/intro-copy.tsx": "9dc9108e1521509040a021558ae5f7b71262e4a045d63328e1f1f4220d6f1745",

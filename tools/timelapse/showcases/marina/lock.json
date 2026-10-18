@@ -6,7 +6,7 @@
  "src/app/index.tsx": "0ee5e09b214e1414118c37445ab02d52c9c27ea4669834e9523f28e7a597298d",
  "src/app/marina/index.tsx": "f9579249df76fcef09b42ff8a2798fa9f62aa7a90f5a2863214306e8ebdc95cb",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/marina/components/agent-row.tsx": "17f6477a2ce479eb7d165e0e845dcdc40cfcc5964b7abe85217b10e3a2181684",
  "src/features/marina/components/amenity-chips.tsx": "10dc45d63a0416eaede87a0ab12cd2e12a209133b531a6a5a28dff1ece1e3849",

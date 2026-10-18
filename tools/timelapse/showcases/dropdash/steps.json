@@ -1,0 +1,279 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/top-bar"
+   ],
+   "label": "who is on shift"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face for the account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a name for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "plus the two things they might need"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/search-field"
+   ],
+   "label": "a way to find anything"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/dropdash/components/search-field.tsx",
+    [
+     "// MISTAKE 1.08",
+     "marginHorizontal: 30,"
+    ]
+   ],
+   "label": "the field came in inset"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/stat-grid"
+   ],
+   "label": "the four figures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "two by two"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/stat-tile.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the object, and a way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/stat-tile.tsx",
+    "STEP 1.12"
+   ],
+   "label": "what it counts"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/dropdash/components/stat-tile.tsx",
+    [
+     "// MISTAKE 1.13",
+     "marginTop: 14,"
+    ]
+   ],
+   "label": "the tiles came in sitting low"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/section-head"
+   ],
+   "label": "name a section"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "Stock Overview"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/stock-bar"
+   ],
+   "label": "the state of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "in one bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/stock-bar.tsx",
+    "STEP 1.19"
+   ],
+   "label": "three states, one bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "Recent Deliveries"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/delivery-row"
+   ],
+   "label": "what went out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "under the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/delivery-row.tsx",
+    "STEP 1.25"
+   ],
+   "label": "a thumbnail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/delivery-row.tsx",
+    "STEP 1.26"
+   ],
+   "label": "and what it was"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "@/features/dropdash/components/tab-bar"
+   ],
+   "label": "somewhere to go next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropdash/index.tsx",
+    "STEP 1.28"
+   ],
+   "label": "across the bottom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/tab-bar.tsx",
+    "STEP 1.29"
+   ],
+   "label": "two on the left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/tab-bar.tsx",
+    "STEP 1.30"
+   ],
+   "label": "two on the right"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropdash/components/tab-bar.tsx",
+    "STEP 1.31"
+   ],
+   "label": "and the thing in the middle"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/dropdash/components/tab-bar.tsx",
+    [
+     "// MISTAKE 1.32",
+     "marginTop: 24,"
+    ]
+   ],
+   "label": "the add button came in sunk into the bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dash-screen",
+     "src/app/dropdash/index.tsx"
+    ],
+    [
+     "delivery-row",
+     "src/features/dropdash/components/delivery-row.tsx"
+    ],
+    [
+     "search-field",
+     "src/features/dropdash/components/search-field.tsx"
+    ],
+    [
+     "stat-tile",
+     "src/features/dropdash/components/stat-tile.tsx"
+    ],
+    [
+     "stock-bar",
+     "src/features/dropdash/components/stock-bar.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/dropdash/components/tab-bar.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/dropdash/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

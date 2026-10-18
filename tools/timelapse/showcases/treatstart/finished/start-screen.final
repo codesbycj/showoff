@@ -1,0 +1,95 @@
+import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { Pressable, useWindowDimensions, View } from 'react-native';
+
+import { HeroStack } from '@/features/treatstart/components/hero-stack';
+import { T } from '@/features/treatstart/components/text';
+import { intro } from '@/features/treatstart/data/intro';
+import {
+  BODY_TOP,
+  BUTTON_BOTTOM,
+  BUTTON_HEIGHT,
+  BUTTON_TOP,
+  COPY_TOP,
+  MARGIN,
+} from '@/features/treatstart/layout';
+import { radius, tr } from '@/features/treatstart/theme';
+import { useInsets } from '@/features/treatstart/use-insets';
+
+/**
+ * Treats — the intro.
+ *
+ * Assembly only: the throw of product cards, what the app is, and the one
+ * thing it asks.
+ *
+ * The stack takes `flex: 1` and the copy below it is a fixed number of dp, so
+ * the artwork gives first on a short phone rather than pushing the button off
+ * the page — and on a tall one the cards simply sit in more air instead of
+ * leaving a band of empty canvas at the foot.
+ */
+export default function TreatStart() {
+  const insets = useInsets();
+  const { width } = useWindowDimensions();
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: tr.canvas }}>
+      <StatusBar style="dark" />
+
+      {/* The lilac wash the board's first phone sits in. Vertical, so it is
+          not the diagonal case that comes out mirrored on web. */}
+      <LinearGradient
+        colors={[tr.canvasTop, tr.canvas]}
+        locations={[0, 0.62]}
+        style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0 }}
+      />
+
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top + 8,
+          paddingBottom: insets.bottom + BUTTON_BOTTOM,
+          paddingHorizontal: MARGIN,
+        }}
+      >
+        <HeroStack width={width - MARGIN * 2} />
+
+        <View style={{ marginTop: COPY_TOP }}>
+          <T variant="display" color={tr.ink}>
+            {intro.headlineBold}
+            <T variant="displaySoft" color={tr.inkSoft}>
+              {intro.headlineSoft}
+            </T>
+          </T>
+          <T variant="body" color={tr.muted} style={{ marginTop: BODY_TOP }}>
+            {intro.body}
+          </T>
+        </View>
+
+        <Pressable
+          onPressIn={() => setHeld(true)}
+          onPressOut={() => setHeld(false)}
+          accessibilityRole="button"
+          accessibilityLabel={intro.cta}
+          style={{ marginTop: BUTTON_TOP }}
+        >
+          <View
+            style={{
+              height: BUTTON_HEIGHT,
+              borderRadius: radius.pill,
+              backgroundColor: tr.action,
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: held ? 0.86 : 1,
+            }}
+          >
+            <T variant="button" color={tr.onAction}>
+              {intro.cta}
+            </T>
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

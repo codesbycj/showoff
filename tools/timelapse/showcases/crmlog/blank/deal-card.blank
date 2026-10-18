@@ -1,0 +1,100 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { CARD_BUTTON, CARD_HEIGHT, CARD_PAD } from '../layout';
+import { cl, radius } from '../theme';
+import { FaceStack } from './face-stack';
+import { Icon } from './icon';
+import { T } from './text';
+
+/**
+ * One deal, as a card.
+ *
+ * Four of these sit in a stack and only the fill changes between them, so the
+ * card takes its colour as a prop and nothing else — a component with four
+ * variants hardcoded is four components wearing one name.
+ *
+ * The visual box is an inner `View`, never the `Pressable`'s own style: a
+ * `style={({pressed}) => …}` function is dropped in a static web render, and
+ * the card would lose its fill and its height in every harness shot.
+ */
+export function DealCard({
+  date,
+  one,
+  two,
+  amount,
+  color,
+  onPress,
+}: {
+  date: string;
+  one: string;
+  two: string;
+  amount: string;
+  color: string;
+  onPress?: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <Pressable
+      onPress={onPress}
+      onPressIn={() => setHeld(true)}
+      onPressOut={() => setHeld(false)}
+      accessibilityRole="button"
+      accessibilityLabel={`${one} ${two}, ${amount}`}
+    >
+      <View
+        style={{
+          height: CARD_HEIGHT,
+          // MISTAKE 1.10 the cards came in inset
+          marginHorizontal: 22,
+          borderRadius: radius.card,
+          backgroundColor: color,
+          padding: CARD_PAD,
+          justifyContent: 'space-between',
+          opacity: held ? 0.92 : 1,
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+          {/* STEP 1.07 when, and what
+          <View style={{ flex: 1 }}>
+            <T variant="date" color={cl.onCardMuted}>
+              {date}
+            </T>
+            <T variant="cardTitle" color={cl.onCard} style={{ marginTop: 4 }}>
+              {one}
+            </T>
+            <T variant="cardTitle" color={cl.onCard}>
+              {two}
+            </T>
+          </View>
+          */}
+
+          {/* STEP 1.08 a way in
+          <View
+            style={{
+              width: CARD_BUTTON,
+              height: CARD_BUTTON,
+              borderRadius: radius.full,
+              backgroundColor: cl.ink,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Icon name="go" size={16} color={cl.onInk} strokeWidth={2.2} />
+          </View>
+          */}
+        </View>
+
+        {/* STEP 1.09 what it was worth, and who did it
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <T variant="amount" color={cl.onCard} style={{ flex: 1 }}>
+            {amount}
+          </T>
+          <FaceStack ring={color} />
+        </View>
+        */}
+      </View>
+    </Pressable>
+  );
+}

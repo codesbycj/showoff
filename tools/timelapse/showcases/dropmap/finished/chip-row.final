@@ -1,0 +1,52 @@
+import { ScrollView, View } from 'react-native';
+
+import { chips } from '../data/route';
+import { CHIP_GAP, CHIP_HEIGHT, MARGIN } from '../layout';
+import { dm, radius, shadow } from '../theme';
+import { Icon } from './icon';
+import { T } from './text';
+
+/**
+ * The filters over the map: add a stop, or show a kind of place.
+ *
+ * A horizontal scroll, because the list of place types has no natural end —
+ * and the padding is on the content container, not the view, so the first chip
+ * lines up with the page margin while the row still scrolls edge to edge.
+ */
+export function ChipRow({ onSelect }: { onSelect?: (key: string) => void }) {
+  return (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ paddingHorizontal: MARGIN, gap: CHIP_GAP }}
+    >
+      {chips.map((chip) => (
+        <View
+          key={chip.key}
+          style={{
+            height: CHIP_HEIGHT,
+            borderRadius: radius.chip,
+            backgroundColor: chip.accent ? dm.blue : dm.surface,
+            borderWidth: 1,
+            borderColor: chip.accent ? dm.blue : dm.edge,
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 13,
+            gap: 6,
+            ...shadow.float,
+          }}
+        >
+          <Icon
+            name={chip.key}
+            size={14}
+            color={chip.accent ? dm.onBlue : dm.ink}
+            strokeWidth={2.1}
+          />
+          <T variant="chip" color={chip.accent ? dm.onBlue : dm.ink}>
+            {chip.label}
+          </T>
+        </View>
+      ))}
+    </ScrollView>
+  );
+}

@@ -1,0 +1,74 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { ACTION_HEIGHT } from '../layout';
+import { radius, rx, shadow } from '../theme';
+import { Icon } from './icon';
+import { T } from './text';
+
+/**
+ * The bar at the foot: what it costs, and the one thing to do about it.
+ *
+ * The price and its unit sit on a shared baseline rather than being one
+ * string, the same way the stat tiles set theirs.
+ *
+ * The visual box of the button is an inner `View`, never the `Pressable`'s own
+ * style: a `style={({pressed}) => …}` function is dropped in a static web
+ * render, and the button would lose its fill and its height in every harness
+ * shot.
+ */
+export function BookBar({
+  price,
+  unit,
+  action,
+  onPress,
+}: {
+  price: string;
+  unit: string;
+  action: string;
+  onPress?: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 4 }}>
+        <T variant="price" color={rx.onDark}>
+          {price}
+        </T>
+        <T variant="priceUnit" color={rx.onDarkMuted}>
+          {unit}
+        </T>
+      </View>
+
+      <View style={{ flex: 1 }} />
+
+      <Pressable
+        onPress={onPress}
+        onPressIn={() => setHeld(true)}
+        onPressOut={() => setHeld(false)}
+        accessibilityRole="button"
+        accessibilityLabel={action}
+      >
+        <View
+          style={{
+            height: ACTION_HEIGHT,
+            paddingHorizontal: 20,
+            borderRadius: radius.pill,
+            backgroundColor: rx.action,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 8,
+            opacity: held ? 0.86 : 1,
+            ...shadow.action,
+          }}
+        >
+          <T variant="action" color={rx.onAction}>
+            {action}
+          </T>
+          <Icon name="go" size={16} color={rx.onAction} strokeWidth={2.2} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

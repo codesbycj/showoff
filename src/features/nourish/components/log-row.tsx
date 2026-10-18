@@ -34,14 +34,19 @@ export function LogRow({
       <View
         style={{
           height: LOG_ROW,
+          // MISTAKE 1.38 the rows came in indented
+          paddingLeft: 30,
           flexDirection: 'row',
           alignItems: 'center',
         }}
       >
+        {/* STEP 1.37 what was eaten
         <T variant="logTitle" color={nr.inkSoft} numberOfLines={1} style={{ flex: 1 }}>
           {title}
         </T>
+        */}
 
+        {/* STEP 1.39 what it cost
         <View style={{ flexDirection: 'row', alignItems: 'baseline', marginRight: 10 }}>
           <T variant="logValue" color={nr.ink}>
             {String(cal)}
@@ -50,12 +55,15 @@ export function LogRow({
             Cal
           </T>
         </View>
+        */}
 
+        {/* STEP 1.40 and how it splits
         <View style={{ flexDirection: 'row', gap: PILL_GAP }}>
           {grams.map((g, i) => (
             <MacroPill key={macros[i].key} grams={g} color={macros[i].color} />
           ))}
         </View>
+        */}
       </View>
     </Pressable>
   );

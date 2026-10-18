@@ -12,7 +12,7 @@
  "src/app/index.tsx": "c91402302a54d46a023f74730367eebcc0661d9fc8df3c083598cbff487b3e60",
  "src/app/velora/index.tsx": "0eb2fbbe3a71e330bab0f704e1028b664ac6f5fa116713dc9312dcc3bf9da2be",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/velora/components/carousel-dots.tsx": "dfeb810bf09994b43a54428369dee51622038a2d60d14ffe3a343f8fa205f48d",
  "src/features/velora/components/category-row.tsx": "c7912cdca2df1080ef436c1eed13dfb3af0154d36246b284f24ae380350b04d2",

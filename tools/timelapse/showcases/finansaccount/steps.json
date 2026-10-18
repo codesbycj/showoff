@@ -1,0 +1,292 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "@/features/finansaccount/components/top-bar"
+   ],
+   "label": "who is looking"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face for the account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a name for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "plus anything waiting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "@/features/finansaccount/components/card-rail"
+   ],
+   "label": "the accounts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "running off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/account-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "which currency"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/account-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "how much of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/account-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and whose account it is"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/finansaccount/components/account-card.tsx",
+    [
+     "// MISTAKE 1.12",
+     "opacity: 0.5,"
+    ]
+   ],
+   "label": "the cards came in see-through"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "@/features/finansaccount/components/action-bar"
+   ],
+   "label": "what you can do with them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "under the cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/action-bar.tsx",
+    "STEP 1.16"
+   ],
+   "label": "ask for money"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/action-bar.tsx",
+    "STEP 1.17"
+   ],
+   "label": "or send it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/action-bar.tsx",
+    "STEP 1.18"
+   ],
+   "label": "or open another account"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "@/features/finansaccount/components/transaction-sheet"
+   ],
+   "label": "and what happened today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "in a sheet at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/transaction-sheet.tsx",
+    "STEP 1.21"
+   ],
+   "label": "a sheet you can pull up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/transaction-sheet.tsx",
+    "STEP 1.22"
+   ],
+   "label": "name it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/transaction-sheet.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and say when"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/transaction-sheet.tsx",
+    "STEP 1.24"
+   ],
+   "label": "then the movements"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/transaction-row.tsx",
+    "STEP 1.25"
+   ],
+   "label": "which way it went"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/transaction-row.tsx",
+    "STEP 1.26"
+   ],
+   "label": "to whom, and when"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "@/features/finansaccount/components/tab-bar"
+   ],
+   "label": "somewhere to go next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansaccount/index.tsx",
+    "STEP 1.28"
+   ],
+   "label": "across the bottom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/tab-bar.tsx",
+    "STEP 1.29"
+   ],
+   "label": "two on the left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/tab-bar.tsx",
+    "STEP 1.30"
+   ],
+   "label": "two on the right"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansaccount/components/tab-bar.tsx",
+    "STEP 1.31"
+   ],
+   "label": "and the thing in the middle"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/finansaccount/components/tab-bar.tsx",
+    [
+     "// MISTAKE 1.32",
+     "marginTop: 26,"
+    ]
+   ],
+   "label": "the scan button came in sunk into the bar"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "account-card",
+     "src/features/finansaccount/components/account-card.tsx"
+    ],
+    [
+     "account-screen",
+     "src/app/finansaccount/index.tsx"
+    ],
+    [
+     "action-bar",
+     "src/features/finansaccount/components/action-bar.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/finansaccount/components/tab-bar.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/finansaccount/components/top-bar.tsx"
+    ],
+    [
+     "transaction-row",
+     "src/features/finansaccount/components/transaction-row.tsx"
+    ],
+    [
+     "transaction-sheet",
+     "src/features/finansaccount/components/transaction-sheet.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

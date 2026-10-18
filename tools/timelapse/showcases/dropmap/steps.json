@@ -1,0 +1,244 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "@/features/dropmap/components/map-art"
+   ],
+   "label": "the ground"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "under everything"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the blocks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a park"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the river"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.06"
+   ],
+   "label": "the main roads"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the side streets"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the way there"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what the streets are called"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/map-art.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and what is on them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "@/features/dropmap/components/search-bar"
+   ],
+   "label": "a way to search it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "floating over the map"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/search-bar.tsx",
+    "STEP 1.13"
+   ],
+   "label": "a mark for the place"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/dropmap/components/search-bar.tsx",
+    [
+     "// MISTAKE 1.14",
+     "marginHorizontal: 40,"
+    ]
+   ],
+   "label": "the bar came in inset"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "@/features/dropmap/components/chip-row"
+   ],
+   "label": "what to look for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "under the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/chip-row.tsx",
+    "STEP 1.17"
+   ],
+   "label": "one chip each"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "@/features/dropmap/components/route-sheet"
+   ],
+   "label": "and where you are going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/dropmap/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "in a sheet at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    "STEP 1.20"
+   ],
+   "label": "where you are going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    "STEP 1.21"
+   ],
+   "label": "how you are getting there"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and what to keep off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    "STEP 1.23"
+   ],
+   "label": "how long it takes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    "STEP 1.24"
+   ],
+   "label": "and why that is the best of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    "STEP 1.25"
+   ],
+   "label": "then what to do about it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/dropmap/components/route-sheet.tsx",
+    [
+     "// MISTAKE 1.26",
+     "marginHorizontal: 24,"
+    ]
+   ],
+   "label": "the sheet came in inset"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "chip-row",
+     "src/features/dropmap/components/chip-row.tsx"
+    ],
+    [
+     "map-art",
+     "src/features/dropmap/components/map-art.tsx"
+    ],
+    [
+     "map-screen",
+     "src/app/dropmap/index.tsx"
+    ],
+    [
+     "route-sheet",
+     "src/features/dropmap/components/route-sheet.tsx"
+    ],
+    [
+     "search-bar",
+     "src/features/dropmap/components/search-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

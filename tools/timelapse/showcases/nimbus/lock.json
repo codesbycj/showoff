@@ -4,7 +4,7 @@
  "src/app/index.tsx": "9595996dd5cc48e4d8f3eae42e94d6f39fcdf39b2f38835c5e90f0a8930a9d46",
  "src/app/nimbus/index.tsx": "43715467662bb2a52fb301366232ebb75afac42e40e756b197712f46974e6511",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/nimbus/components/action-row.tsx": "2105abd86cc9275319f7d2e7ed1f70542d06480bc528650e972c3aac19618eda",
  "src/features/nimbus/components/action-tile.tsx": "5f7aa45c1b73223b1abcda690ad5789fb92deaf31f87f463449c776f4b579c31",

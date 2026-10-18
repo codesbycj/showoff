@@ -6,7 +6,7 @@
  "src/app/apexpay/index.tsx": "9539711abec9a9aaf1ecb95cb7a954ba12468ac9d756c28aa30298f935a65f82",
  "src/app/index.tsx": "590a519ff98bb93535b181ce0a0b750b6f51b8b9fd301a1db5427de9df324335",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/apexpay/components/app-bar.tsx": "a49b995acb13f6e7b1ba10e5da09d62e6cd8ff541b1e2250b35c7d161fa00e89",
  "src/features/apexpay/components/balance-card.tsx": "674c073355147852192426e4cb18437503b55b5f7cf77ccf25f36a7b06093465",

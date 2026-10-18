@@ -1,0 +1,229 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "@/features/furetinold/components/header"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "their picture"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "with what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "@/features/furetinold/components/balance-card"
+   ],
+   "label": "what is in the wallet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/balance-card.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what the number is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/balance-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the number, and its currency"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/balance-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and the three things to do with it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "@/features/furetinold/components/service-panel"
+   ],
+   "label": "what it can do"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the crypto side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the bills side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/service-panel.tsx",
+    "STEP 1.14"
+   ],
+   "label": "three to a row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what happened lately"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "@/features/furetinold/components/transaction-row"
+   ],
+   "label": "one row each"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "down the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/transaction-row.tsx",
+    "STEP 1.18"
+   ],
+   "label": "which way the money went"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/transaction-row.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what it was"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/transaction-row.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and whether it landed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "@/features/furetinold/components/tab-bar"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinold/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "along the bottom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinold/components/tab-bar.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the five places to be"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/furetinold/components/service-panel.tsx",
+    [
+     "// MISTAKE 1.24",
+     "marginLeft: 22,"
+    ]
+   ],
+   "label": "the tiles came in off-centre"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "balance-card",
+     "src/features/furetinold/components/balance-card.tsx"
+    ],
+    [
+     "header",
+     "src/features/furetinold/components/header.tsx"
+    ],
+    [
+     "old-screen",
+     "src/app/furetinold/index.tsx"
+    ],
+    [
+     "service-panel",
+     "src/features/furetinold/components/service-panel.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/furetinold/components/tab-bar.tsx"
+    ],
+    [
+     "transaction-row",
+     "src/features/furetinold/components/transaction-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

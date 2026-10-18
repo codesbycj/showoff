@@ -1,0 +1,22 @@
+{
+ "assets/images/treatstart/CREDITS.md": "f1b778e9d2f2caa89c0ddc73537aa23c477f0c1ca724abd9c60df258e52c2161",
+ "assets/images/treatstart/pack-sky.jpg": "1e5e5eefc194dc3ba025bf964c960a647e447bbc507681ae08f2a73769b68f2b",
+ "assets/images/treatstart/pack-violet.jpg": "0a29c6febbfe07c4df292bb370d37861abe45483ae1a3b7597c22d330e82bf5f",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "b51a750d375f4910f15cc51b93ee829b816331d22903c7b2f2dc0dd8aca89a15",
+ "src/app/treatstart/index.tsx": "43a183fec3f1e6000d131e6946c312b6a182b43a0195c14acaeb26e18dc3333e",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/treatstart/components/hero-stack.tsx": "610651d513372aad0e87795f58ba23c00c9fdf8c2fd64aef7fd1d349df529475",
+ "src/features/treatstart/components/product-card.tsx": "9e268eff138fc0b9ae5ba577ff4a122a663cc28122a3a683f8646dfedcdc866b",
+ "src/features/treatstart/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/treatstart/data/intro.ts": "f89fcf1085c140ede9c091022faa553e657f84a48ff4bbbf00747b8f1afebd6d",
+ "src/features/treatstart/layout.ts": "94c53c191ac6c169227a9652027e8bec43a2d0f26075fbe7cf275344ac691f85",
+ "src/features/treatstart/theme.ts": "0d5f56ffbb1e8a16fc175f467e7dc53db384b8f84418a92e277e357d8c97351a",
+ "src/features/treatstart/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "73c8acf5d6ba31568e6649ec790361eea285cec11b1f7fdf8bc67b7d2b71450c",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

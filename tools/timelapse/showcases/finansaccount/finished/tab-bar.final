@@ -1,0 +1,110 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { tabs, type TabKey } from '../data/account';
+import { FAB_RISE, FAB_SIZE, TAB_HEIGHT, TAB_ICON, TAB_LABEL_TOP } from '../layout';
+import { fn, radius, shadow } from '../theme';
+import { Icon } from './icon';
+import { T } from './text';
+
+/**
+ * The bar at the foot: four destinations and the thing the app is for.
+ *
+ * The scan button is a **sibling of the row, positioned over it**, not a cell
+ * inside it. It overhangs the bar's top edge, and an overhanging child of a
+ * clipped box is the one thing Android reliably cuts off — this way nothing
+ * needs `overflow: 'hidden'` at all.
+ */
+export function TabBar({
+  active,
+  bottomInset,
+  onSelect,
+  onScan,
+}: {
+  active: TabKey;
+  bottomInset: number;
+  onSelect?: (key: TabKey) => void;
+  onScan?: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View style={{ backgroundColor: fn.surface, paddingBottom: bottomInset }}>
+      <View style={{ height: TAB_HEIGHT, flexDirection: 'row', alignItems: 'center' }}>
+        {tabs.slice(0, 2).map((t) => (
+          <Cell key={t.key} tab={t} active={active} onSelect={onSelect} />
+        ))}
+
+        <View style={{ flex: 1 }} />
+
+        {tabs.slice(2).map((t) => (
+          <Cell key={t.key} tab={t} active={active} onSelect={onSelect} />
+        ))}
+      </View>
+
+      <View
+        style={{ position: 'absolute', left: 0, right: 0, top: -FAB_RISE, alignItems: 'center' }}
+        pointerEvents="box-none"
+      >
+        <Pressable
+          onPress={onScan}
+          onPressIn={() => setHeld(true)}
+          onPressOut={() => setHeld(false)}
+          accessibilityRole="button"
+          accessibilityLabel="Scan to pay"
+        >
+          <View
+            style={{
+              width: FAB_SIZE,
+              height: FAB_SIZE,
+              borderRadius: radius.full,
+              backgroundColor: fn.yellow,
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: held ? 0.86 : 1,
+              ...shadow.fab,
+            }}
+          >
+            <Icon name="scan" size={20} color={fn.onYellow} strokeWidth={2} />
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+function Cell({
+  tab,
+  active,
+  onSelect,
+}: {
+  tab: { key: TabKey; label: string };
+  active: TabKey;
+  onSelect?: (key: TabKey) => void;
+}) {
+  const on = tab.key === active;
+  return (
+    <Pressable
+      onPress={() => onSelect?.(tab.key)}
+      accessibilityRole="button"
+      accessibilityLabel={tab.label}
+      style={{ flex: 1 }}
+    >
+      <View style={{ alignItems: 'center' }}>
+        <Icon
+          name={tab.key}
+          size={TAB_ICON}
+          color={on ? fn.ink : fn.muted}
+          strokeWidth={on ? 2.2 : 1.8}
+        />
+        <T
+          variant={on ? 'tabOn' : 'tab'}
+          color={on ? fn.ink : fn.muted}
+          style={{ marginTop: TAB_LABEL_TOP }}
+        >
+          {tab.label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}

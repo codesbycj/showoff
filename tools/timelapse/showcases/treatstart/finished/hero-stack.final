@@ -1,0 +1,145 @@
+import { View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { products } from '../data/intro';
+import { CARD_DROP, CARD_W, CHIP, STACK_H, TILT_BOTTOM, TILT_TOP } from '../layout';
+import { radius, tr } from '../theme';
+import { Heart, ProductCard } from './product-card';
+
+/**
+ * The two product cards, thrown onto the page with the controls that act on
+ * them floating alongside.
+ *
+ * Absolute placement inside a measured box rather than flex: the cards overlap
+ * and are turned, and a flex row cannot overlap its children. The box takes
+ * whatever height the screen gives it and the cards are hung from its top, so
+ * the arrangement holds its shape at other widths.
+ *
+ * Each card turns about its own centre, which is the only pivot React Native
+ * offers whatever `transformOrigin` says — and the right one here, since a
+ * card tossed onto a table turns about itself.
+ */
+export function HeroStack({ width }: { width: number }) {
+  const left = (width - CARD_W) / 2;
+
+  return (
+    <View style={{ flex: 1, justifyContent: 'center' }}>
+      <View style={{ height: STACK_H }}>
+        <View
+          style={{
+            position: 'absolute',
+            left: left - 56,
+            top: 0,
+            transform: [{ rotate: `${TILT_TOP}deg` }],
+          }}
+        >
+          <ProductCard product={products[0]} showName />
+        </View>
+
+        <View
+          style={{
+            position: 'absolute',
+            left: left + 50,
+            top: CARD_DROP,
+            transform: [{ rotate: `${TILT_BOTTOM}deg` }],
+          }}
+        >
+          <ProductCard product={products[1]} />
+        </View>
+
+        <Chip tone="violet" style={{ right: 0, top: 112 }}>
+          <Cart size={17} />
+        </Chip>
+        <Chip tone="sky" style={{ left: 0, top: 322 }}>
+          <Heart size={15} />
+        </Chip>
+
+        <View style={{ position: 'absolute', right: 26, top: 46 }}>
+          <Arrow color={tr.arrowViolet} flip />
+        </View>
+        <View style={{ position: 'absolute', left: 22, top: 268 }}>
+          <Arrow color={tr.arrowSky} />
+        </View>
+      </View>
+    </View>
+  );
+}
+
+/** A floating control: a tinted disc with a glyph in it. */
+function Chip({
+  tone,
+  style,
+  children,
+}: {
+  tone: 'violet' | 'sky';
+  style: { left?: number; right?: number; top: number };
+  children: React.ReactNode;
+}) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        ...style,
+        width: CHIP,
+        height: CHIP,
+        borderRadius: radius.full,
+        backgroundColor: tone === 'violet' ? tr.violetSoft : tr.sky,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {children}
+    </View>
+  );
+}
+
+/**
+ * The curved arrow that joins a card to the control acting on it.
+ *
+ * Drawn as one path with its head as a second path, rather than rotated: a
+ * rotation would turn about the strip's centre and push the head out of its
+ * own box, which Android then clips.
+ */
+function Arrow({ color, flip }: { color: string; flip?: boolean }) {
+  return (
+    <Svg
+      width={54}
+      height={62}
+      viewBox="0 0 54 62"
+      style={{ transform: [{ scaleX: flip ? 1 : -1 }] }}
+    >
+      <Path
+        d="M4 6 C30 2 50 16 48 44"
+        stroke={color}
+        strokeWidth={2.2}
+        strokeLinecap="round"
+        strokeDasharray="0.1 5"
+        fill="none"
+      />
+      <Path
+        d="M42 36 L48 48 L54 37"
+        stroke={color}
+        strokeWidth={2.2}
+        strokeLinecap="round"
+        fill="none"
+      />
+    </Svg>
+  );
+}
+
+/** The basket mark on the violet disc. */
+function Cart({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 20 20">
+      <Path
+        d="M1 2 H4 L6.4 12.6 H16.2 L18 5.6 H5.2"
+        stroke={tr.ink}
+        strokeWidth={1.7}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <Path d="M7.6 17.2 a1.4 1.4 0 1 0 0.01 0 Z M15 17.2 a1.4 1.4 0 1 0 0.01 0 Z" fill={tr.ink} />
+    </Svg>
+  );
+}

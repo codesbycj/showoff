@@ -1,0 +1,177 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "@/features/crmnet/components/app-bar"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/app-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/app-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a way to search it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "@/features/crmnet/components/filter-row"
+   ],
+   "label": "how to narrow it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/filter-row.tsx",
+    "STEP 1.07"
+   ],
+   "label": "one pill each"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "@/features/crmnet/components/customer-grid"
+   ],
+   "label": "the customers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "two to a row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/customer-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "a face for the customer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/customer-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/customer-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and their company"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/customer-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "what they are worth"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/customer-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and a way in"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/crmnet/components/customer-card.tsx",
+    [
+     "// MISTAKE 1.15",
+     "marginTop: 16,"
+    ]
+   ],
+   "label": "the cards came in sitting low"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "@/features/crmnet/components/float-bar"
+   ],
+   "label": "three things to do to the list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmnet/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "floating over it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmnet/components/float-bar.tsx",
+    "STEP 1.18"
+   ],
+   "label": "three buttons in it"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-bar",
+     "src/features/crmnet/components/app-bar.tsx"
+    ],
+    [
+     "customer-card",
+     "src/features/crmnet/components/customer-card.tsx"
+    ],
+    [
+     "filter-row",
+     "src/features/crmnet/components/filter-row.tsx"
+    ],
+    [
+     "float-bar",
+     "src/features/crmnet/components/float-bar.tsx"
+    ],
+    [
+     "net-screen",
+     "src/app/crmnet/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

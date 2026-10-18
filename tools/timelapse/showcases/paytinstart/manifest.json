@@ -1,0 +1,7 @@
+{
+ "start-screen": "src/app/paytinstart/index.tsx",
+ "stage": "src/features/paytinstart/components/stage.tsx",
+ "hero-art": "src/features/paytinstart/components/hero-art.tsx",
+ "headline": "src/features/paytinstart/components/headline.tsx",
+ "footer-actions": "src/features/paytinstart/components/footer-actions.tsx"
+}

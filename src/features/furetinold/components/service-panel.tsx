@@ -1,0 +1,102 @@
+import Calculator from 'lucide-react-native/icons/calculator';
+import CircleDollarSign from 'lucide-react-native/icons/circle-dollar-sign';
+import Coins from 'lucide-react-native/icons/coins';
+import Gift from 'lucide-react-native/icons/gift';
+import Smartphone from 'lucide-react-native/icons/smartphone';
+import Ticket from 'lucide-react-native/icons/ticket';
+import Tv from 'lucide-react-native/icons/tv';
+import Wifi from 'lucide-react-native/icons/wifi';
+import { Pressable, View } from 'react-native';
+
+import { crypto, services } from '../data/wallet';
+import { PANEL_PAD, TILE, TILE_ROW_GAP } from '../layout';
+import { fu, radius } from '../theme';
+import { T } from './text';
+
+const ICONS = {
+  coin: CircleDollarSign,
+  coins: Coins,
+  gift: Gift,
+  phone: Smartphone,
+  tv: Tv,
+  wifi: Wifi,
+  ticket: Ticket,
+  present: Gift,
+  calc: Calculator,
+} as const;
+
+type Service = (typeof crypto)[number] | (typeof services)[number];
+
+/**
+ * A panel of services, three to a row.
+ *
+ * Three columns rather than a wrap with a gap: the reference's rows are evenly
+ * spread across the panel and a wrap would bunch a short last row to the left.
+ * A row of three with `flex: 1` each spreads at any width.
+ */
+export function ServicePanel({
+  items,
+  onSelect,
+}: {
+  items: readonly Service[];
+  onSelect?: (s: Service) => void;
+}) {
+  const rows: Service[][] = [];
+  for (let i = 0; i < items.length; i += 3) {
+    rows.push(items.slice(i, i + 3) as Service[]);
+  }
+
+  return (
+    <View
+      style={{
+        borderRadius: radius.card,
+        backgroundColor: fu.surface,
+        padding: PANEL_PAD,
+        gap: TILE_ROW_GAP,
+      }}
+    >
+      {/* STEP 1.14 three to a row
+      {rows.map((row, i) => (
+        <View key={i} style={{ flexDirection: 'row' }}>
+          {row.map((s) => (
+            <Tile key={s.key} service={s} onPress={() => onSelect?.(s)} />
+          ))}
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}
+
+function Tile({ service, onPress }: { service: Service; onPress?: () => void }) {
+  const Icon = ICONS[service.icon];
+
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={service.label}
+      style={{ flex: 1 }}
+    >
+      <View style={{ alignItems: 'center', gap: 7 }}>
+        <View
+          style={{
+            // MISTAKE 1.24 the tiles came in off-centre
+            marginLeft: 22,
+            width: TILE,
+            height: TILE,
+            borderRadius: radius.tile,
+            backgroundColor: fu.tile[service.tile],
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Icon size={22} color={fu.tileInk[service.tile]} strokeWidth={1.9} />
+        </View>
+        <T variant="tile" color={fu.ink}>
+          {service.label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}

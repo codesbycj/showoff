@@ -1,0 +1,5 @@
+{
+ "journeys-screen": "src/app/sugarjourneys/index.tsx",
+ "top-bar": "src/features/sugarjourneys/components/top-bar.tsx",
+ "journey-card": "src/features/sugarjourneys/components/journey-card.tsx"
+}

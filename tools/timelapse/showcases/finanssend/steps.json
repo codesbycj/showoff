@@ -1,0 +1,248 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "@/features/finanssend/components/app-bar"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/app-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a way back"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "@/features/finanssend/components/destination-card"
+   ],
+   "label": "where it is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/destination-card.tsx",
+    "STEP 1.06"
+   ],
+   "label": "which bank"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/destination-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "a line between them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/destination-card.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and which account at it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/finanssend/components/destination-card.tsx",
+    [
+     "// MISTAKE 1.09",
+     "opacity: 0.5,"
+    ]
+   ],
+   "label": "the card came in see-through"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "@/features/finanssend/components/primary-button"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "under the form"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "who you sent to last"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "@/features/finanssend/components/recent-row"
+   ],
+   "label": "their faces"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "running off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "@/features/finanssend/components/transfer-sheet"
+   ],
+   "label": "and everyone else"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finanssend/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "in a sheet at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/transfer-sheet.tsx",
+    "STEP 1.17"
+   ],
+   "label": "a sheet you can pull up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/transfer-sheet.tsx",
+    "STEP 1.18"
+   ],
+   "label": "name it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/transfer-sheet.tsx",
+    "STEP 1.19"
+   ],
+   "label": "narrow it down"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/transfer-sheet.tsx",
+    "STEP 1.20"
+   ],
+   "label": "or search it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/transfer-sheet.tsx",
+    "STEP 1.21"
+   ],
+   "label": "then everyone in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/list-row.tsx",
+    "STEP 1.22"
+   ],
+   "label": "a face for the payee"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/list-row.tsx",
+    "STEP 1.23"
+   ],
+   "label": "their name and number"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/list-row.tsx",
+    "STEP 1.24"
+   ],
+   "label": "which bank"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finanssend/components/list-row.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and a way into it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/finanssend/components/filter-tabs.tsx",
+    [
+     "// MISTAKE 1.26",
+     "width: 60,"
+    ]
+   ],
+   "label": "the underline came in a fixed width"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-bar",
+     "src/features/finanssend/components/app-bar.tsx"
+    ],
+    [
+     "destination-card",
+     "src/features/finanssend/components/destination-card.tsx"
+    ],
+    [
+     "filter-tabs",
+     "src/features/finanssend/components/filter-tabs.tsx"
+    ],
+    [
+     "list-row",
+     "src/features/finanssend/components/list-row.tsx"
+    ],
+    [
+     "send-screen",
+     "src/app/finanssend/index.tsx"
+    ],
+    [
+     "transfer-sheet",
+     "src/features/finanssend/components/transfer-sheet.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -40,7 +40,10 @@ export function MacroRing({
     <View style={{ alignItems: 'center' }}>
       <View style={{ width: RING_SIZE, height: RING_SIZE }}>
         <Svg width={RING_SIZE} height={RING_SIZE}>
+          {/* STEP 1.16 a ring for the macro
           <Circle cx={c} cy={c} r={r} stroke={nr.track} strokeWidth={RING_STROKE} fill="none" />
+          */}
+          {/* STEP 1.17 filled as far as it has got
           <Path
             d={arcPath(c, c, r, 0, 360 * Math.min(1, Math.max(0, fraction)))}
             stroke={color}
@@ -48,6 +51,7 @@ export function MacroRing({
             strokeLinecap="round"
             fill="none"
           />
+          */}
         </Svg>
 
         {/*
@@ -56,6 +60,7 @@ export function MacroRing({
           that height — so the pair has to be centred by an outer column and
           aligned by an inner row.
         */}
+        {/* STEP 1.18 how many grams are left
         <View
           style={{
             position: 'absolute',
@@ -63,6 +68,8 @@ export function MacroRing({
             right: 0,
             top: 0,
             bottom: 0,
+            // MISTAKE 1.19 the grams came in sitting low in the ring
+            marginTop: 16,
             alignItems: 'center',
             justifyContent: 'center',
           }}
@@ -76,11 +83,14 @@ export function MacroRing({
             </T>
           </View>
         </View>
+        */}
       </View>
 
+      {/* STEP 1.20 and which macro it is
       <T variant="ringLabel" color={nr.muted} style={{ marginTop: RING_LABEL_TOP }}>
         {label}
       </T>
+      */}
     </View>
   );
 }

@@ -1,0 +1,84 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { HEADER_BUTTON } from '../layout';
+import { cn, radius, shadow } from '../theme';
+import { Icon, type IconName } from './icon';
+import { T } from './text';
+
+/**
+ * The header: a round button either side of a two-line title.
+ *
+ * The title is ranged left between the buttons rather than centred, which is
+ * what the reference does and the right call here — a two-line title centred
+ * between two controls reads as a heading that has lost its left edge.
+ */
+export function AppBar({
+  one,
+  two,
+  onBack,
+  onSearch,
+}: {
+  one: string;
+  two: string;
+  onBack?: () => void;
+  onSearch?: () => void;
+}) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <RoundButton name="back" onPress={onBack} label="Go back" />
+
+      {/* STEP 1.03 what the screen is
+      <View style={{ flex: 1, marginHorizontal: 12 }}>
+        <T variant="title" color={cn.text}>
+          {one}
+        </T>
+        <T variant="title" color={cn.text}>
+          {two}
+        </T>
+      </View>
+      */}
+
+      {/* STEP 1.04 and a way to search it
+      <RoundButton name="search" onPress={onSearch} label="Search" />
+      */}
+    </View>
+  );
+}
+
+function RoundButton({
+  name,
+  onPress,
+  label,
+}: {
+  name: IconName;
+  onPress?: () => void;
+  label: string;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <Pressable
+      onPress={onPress}
+      onPressIn={() => setHeld(true)}
+      onPressOut={() => setHeld(false)}
+      accessibilityRole="button"
+      accessibilityLabel={label}
+    >
+      <View
+        style={{
+          width: HEADER_BUTTON,
+          height: HEADER_BUTTON,
+          borderRadius: radius.full,
+          backgroundColor: cn.surface,
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: held ? 0.75 : 1,
+          ...shadow.card,
+        }}
+      >
+        <Icon name={name} size={18} />
+      </View>
+    </Pressable>
+  );
+}

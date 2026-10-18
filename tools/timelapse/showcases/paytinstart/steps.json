@@ -1,0 +1,236 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "@/features/paytinstart/components/scatter"
+   ],
+   "label": "the marks round the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "strewn over the top"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "@/features/paytinstart/components/stage"
+   ],
+   "label": "the artwork"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "in the middle of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/stage.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the disc it stands on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/stage.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and the drawing over it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/hero-art.tsx",
+    "STEP 1.07"
+   ],
+   "label": "an arm, pointing up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/hero-art.tsx",
+    "STEP 1.08"
+   ],
+   "label": "a fist on the end of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/hero-art.tsx",
+    "STEP 1.09"
+   ],
+   "label": "a head, with its hair up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/hero-art.tsx",
+    "STEP 1.10"
+   ],
+   "label": "a card on its way out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/hero-art.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and the wallet it all came from"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "@/features/paytinstart/components/headline"
+   ],
+   "label": "what the app is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "three lines of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/headline.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the first line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/headline.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the second, with its pill"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/paytinstart/components/headline.tsx",
+    [
+     "// MISTAKE 1.16",
+     "marginTop: 14,"
+    ]
+   ],
+   "label": "the pill came in sitting low"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/headline.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and the third"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/headline.tsx",
+    "STEP 1.18"
+   ],
+   "label": "and one more, for emphasis"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/features/paytinstart/components/headline.tsx",
+    "<T variant=\"display\" color={pt.inkSoft}>"
+   ],
+   "label": "three lines is the design"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and what it does"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "@/features/paytinstart/components/footer-actions"
+   ],
+   "label": "the way out and the way on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinstart/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "at the foot of the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/footer-actions.tsx",
+    "STEP 1.23"
+   ],
+   "label": "a way past all this"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinstart/components/footer-actions.tsx",
+    "STEP 1.24"
+   ],
+   "label": "and the way on"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/paytinstart/components/footer-actions.tsx",
+    [
+     "// MISTAKE 1.25",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the button came in faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "footer-actions",
+     "src/features/paytinstart/components/footer-actions.tsx"
+    ],
+    [
+     "headline",
+     "src/features/paytinstart/components/headline.tsx"
+    ],
+    [
+     "hero-art",
+     "src/features/paytinstart/components/hero-art.tsx"
+    ],
+    [
+     "stage",
+     "src/features/paytinstart/components/stage.tsx"
+    ],
+    [
+     "start-screen",
+     "src/app/paytinstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

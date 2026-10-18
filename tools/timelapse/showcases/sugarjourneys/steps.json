@@ -1,0 +1,161 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "@/features/sugarjourneys/components/top-bar"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the product mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "what is waiting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and whose account it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "@/features/sugarjourneys/components/journey-card"
+   ],
+   "label": "the journeys"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "one card each"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "which journey"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "who is on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "name the split"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and show it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "what it has cost"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and how big it is"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sugarjourneys/components/journey-card.tsx",
+    [
+     "// MISTAKE 1.15",
+     "marginHorizontal: 18,"
+    ]
+   ],
+   "label": "the cards came in inset"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "@/features/sugarjourneys/components/add-button"
+   ],
+   "label": "a way to start another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sugarjourneys/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "floating over the lot"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "journey-card",
+     "src/features/sugarjourneys/components/journey-card.tsx"
+    ],
+    [
+     "journeys-screen",
+     "src/app/sugarjourneys/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/sugarjourneys/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

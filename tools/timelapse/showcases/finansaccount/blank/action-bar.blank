@@ -1,0 +1,102 @@
+import { useState } from 'react';
+import { Pressable, View } from 'react-native';
+
+import { labels } from '../data/account';
+import { ACTION_GAP, ACTION_HEIGHT, ADD_SIZE } from '../layout';
+import { fn, radius, shadow } from '../theme';
+import { Icon, type IconName } from './icon';
+import { T } from './text';
+
+/**
+ * The three things you can do with an account.
+ *
+ * The two pills flex and the add button does not: a round button has a natural
+ * size and squashing it would make it an oval, so the slack goes to the pills.
+ */
+export function ActionBar({ onAction }: { onAction?: (key: string) => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: ACTION_GAP }}>
+      {/* STEP 1.16 ask for money
+      <ActionPill name="request" label={labels.request} onPress={() => onAction?.('request')} />
+      */}
+      {/* STEP 1.17 or send it
+      <ActionPill name="transfer" label={labels.transfer} onPress={() => onAction?.('transfer')} />
+      */}
+      {/* STEP 1.18 or open another account
+      <AddButton onPress={() => onAction?.('add')} />
+      */}
+    </View>
+  );
+}
+
+function ActionPill({
+  name,
+  label,
+  onPress,
+}: {
+  name: IconName;
+  label: string;
+  onPress?: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <Pressable
+      onPress={onPress}
+      onPressIn={() => setHeld(true)}
+      onPressOut={() => setHeld(false)}
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      style={{ flex: 1 }}
+    >
+      <View
+        style={{
+          height: ACTION_HEIGHT,
+          borderRadius: radius.pill,
+          backgroundColor: fn.surface,
+          borderWidth: 1,
+          borderColor: fn.edge,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 6,
+          opacity: held ? 0.8 : 1,
+        }}
+      >
+        <Icon name={name} size={15} />
+        <T variant="action" color={fn.ink}>
+          {label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}
+
+function AddButton({ onPress }: { onPress?: () => void }) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <Pressable
+      onPress={onPress}
+      onPressIn={() => setHeld(true)}
+      onPressOut={() => setHeld(false)}
+      accessibilityRole="button"
+      accessibilityLabel="Add an account"
+    >
+      <View
+        style={{
+          width: ADD_SIZE,
+          height: ADD_SIZE,
+          borderRadius: radius.full,
+          backgroundColor: fn.mint,
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: held ? 0.8 : 1,
+          ...shadow.card,
+        }}
+      >
+        <Icon name="plus" size={19} strokeWidth={2.2} />
+      </View>
+    </Pressable>
+  );
+}

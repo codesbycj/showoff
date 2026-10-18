@@ -1,0 +1,7 @@
+{
+ "work-screen": "src/app/salungwork/index.tsx",
+ "performance-banner": "src/features/salungwork/components/performance-banner.tsx",
+ "project-card": "src/features/salungwork/components/project-card.tsx",
+ "task-card": "src/features/salungwork/components/task-card.tsx",
+ "dock": "src/features/salungwork/components/dock.tsx"
+}

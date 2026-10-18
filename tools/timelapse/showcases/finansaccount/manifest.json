@@ -1,0 +1,9 @@
+{
+ "account-screen": "src/app/finansaccount/index.tsx",
+ "top-bar": "src/features/finansaccount/components/top-bar.tsx",
+ "account-card": "src/features/finansaccount/components/account-card.tsx",
+ "action-bar": "src/features/finansaccount/components/action-bar.tsx",
+ "transaction-row": "src/features/finansaccount/components/transaction-row.tsx",
+ "transaction-sheet": "src/features/finansaccount/components/transaction-sheet.tsx",
+ "tab-bar": "src/features/finansaccount/components/tab-bar.tsx"
+}

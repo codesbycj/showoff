@@ -1,0 +1,67 @@
+import CreditCard from 'lucide-react-native/icons/credit-card';
+import Gift from 'lucide-react-native/icons/gift';
+import Grid2x2 from 'lucide-react-native/icons/grid-2x2';
+import House from 'lucide-react-native/icons/house';
+import Wallet from 'lucide-react-native/icons/wallet';
+import { Pressable, View } from 'react-native';
+
+import { selectedTab, tabs } from '../data/wallet';
+import { TAB_HEIGHT } from '../layout';
+import { fu } from '../theme';
+import { T } from './text';
+
+const ICONS = {
+  home: House,
+  wallet: Wallet,
+  gift: Gift,
+  card: CreditCard,
+  grid: Grid2x2,
+} as const;
+
+type Tab = (typeof tabs)[number];
+
+/** The five places the app goes, pinned to the bottom edge. */
+export function TabBar({ onSelect }: { onSelect?: (t: Tab) => void }) {
+  return (
+    <View
+      style={{
+        height: TAB_HEIGHT,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: fu.surface,
+        borderTopWidth: 1,
+        borderTopColor: fu.rule,
+      }}
+    >
+      {tabs.map((t) => (
+        <Item key={t.key} tab={t} onPress={() => onSelect?.(t)} />
+      ))}
+    </View>
+  );
+}
+
+function Item({ tab, onPress }: { tab: Tab; onPress?: () => void }) {
+  const Icon = ICONS[tab.icon];
+  const on = tab.key === selectedTab;
+
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={tab.label}
+      style={{ flex: 1 }}
+    >
+      <View style={{ alignItems: 'center', gap: 3 }}>
+        <Icon
+          size={19}
+          color={on ? fu.tabOn : fu.tabOff}
+          strokeWidth={on ? 2.2 : 1.8}
+          fill={on && tab.icon === 'home' ? fu.tabOn : 'none'}
+        />
+        <T variant="tab" color={on ? fu.tabOn : fu.tabOff}>
+          {tab.label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}

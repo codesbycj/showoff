@@ -1,0 +1,6 @@
+{
+ "sched-screen": "src/app/sugarsched/index.tsx",
+ "app-bar": "src/features/sugarsched/components/app-bar.tsx",
+ "assignment-row": "src/features/sugarsched/components/assignment-row.tsx",
+ "range-card": "src/features/sugarsched/components/range-card.tsx"
+}

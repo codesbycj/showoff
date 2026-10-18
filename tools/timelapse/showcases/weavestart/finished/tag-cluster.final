@@ -1,0 +1,100 @@
+import { useWindowDimensions, View } from 'react-native';
+
+import { brand, tags } from '../data/signin';
+import { MARGIN, PILL_HEIGHT, PILL_PAD } from '../layout';
+import { radius, shadow, wv } from '../theme';
+import { T } from './text';
+
+/**
+ * The throw of category pills at the top of the screen.
+ *
+ * Positions come from the data as fractions of the page, so the arrangement
+ * keeps its shape on a 360dp phone as well as a 430dp one — a cluster laid out
+ * in dp slides off the narrow one and leaves a hole on the wide one.
+ *
+ * Each pill is rotated about its own centre, which is the only pivot React
+ * Native offers whatever `transformOrigin` says. That is the right pivot here:
+ * a tag thrown onto a table turns about itself.
+ *
+ * The cluster's height is given by the caller rather than measured, because
+ * the screen already knows what it can spare — and a measured height would
+ * cost a second render pass and a frame of the pills stacked at the top,
+ * which is exactly the frame a screenshot catches.
+ */
+export function TagCluster({ height }: { height: number | `${number}%` }) {
+  const { width, height: screen } = useWindowDimensions();
+  const span = width - MARGIN * 2;
+  /** Percent heights cannot be multiplied, so the throw is placed against the
+   *  window's own height when the caller hands the cluster the whole slot. */
+  const span_y = typeof height === 'number' ? height : screen * 0.46;
+
+  return (
+    <View style={{ height }}>
+      <Pill
+        label={brand.name}
+        color={wv.brand}
+        ink={wv.onBrand}
+        variant="brand"
+        left={span * brand.x}
+        top={span_y * brand.y}
+        angle={brand.angle}
+        raised
+      />
+
+      {tags.map((tag) => (
+        <Pill
+          key={tag.key}
+          label={tag.label}
+          color={tag.color}
+          ink={wv.onTag}
+          variant="tag"
+          left={span * tag.x}
+          top={span_y * tag.y}
+          angle={tag.angle}
+        />
+      ))}
+    </View>
+  );
+}
+
+function Pill({
+  label,
+  color,
+  ink,
+  variant,
+  left,
+  top,
+  angle,
+  raised,
+}: {
+  label: string;
+  color: string;
+  ink: string;
+  variant: 'brand' | 'tag';
+  left: number;
+  top: number;
+  angle: number;
+  raised?: boolean;
+}) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left,
+        top,
+        height: PILL_HEIGHT,
+        paddingHorizontal: PILL_PAD,
+        borderRadius: radius.pill,
+        backgroundColor: color,
+        alignItems: 'center',
+        justifyContent: 'center',
+        transform: [{ rotate: `${angle}deg` }],
+        ...(raised ? shadow.pill : null),
+      }}
+    >
+      <T variant={variant} color={ink}>
+        {label}
+      </T>
+    </View>
+  );
+}

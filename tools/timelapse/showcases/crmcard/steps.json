@@ -1,0 +1,157 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "@/features/crmcard/components/app-bar"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmcard/components/app-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmcard/components/app-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a way to keep it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "@/features/crmcard/components/round-button"
+   ],
+   "label": "the controls"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what you can do with the record"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/crmcard/components/round-button.tsx",
+    [
+     "// MISTAKE 1.08",
+     "marginTop: 10,"
+    ]
+   ],
+   "label": "every button came in sitting low"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the customer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "who they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "five ways to reach them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and the rest of the record"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "@/features/crmcard/components/schedule-card"
+   ],
+   "label": "their month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmcard/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmcard/components/schedule-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "name the card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmcard/components/schedule-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "which month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmcard/components/schedule-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and three weeks of it"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-bar",
+     "src/features/crmcard/components/app-bar.tsx"
+    ],
+    [
+     "card-screen",
+     "src/app/crmcard/index.tsx"
+    ],
+    [
+     "round-button",
+     "src/features/crmcard/components/round-button.tsx"
+    ],
+    [
+     "schedule-card",
+     "src/features/crmcard/components/schedule-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -5,7 +5,7 @@
  "src/app/cargohome/index.tsx": "57fc8211c8af942c7ac833abe9db4a1748a19172c6c9b18ad8c2f4c91bffe09b",
  "src/app/index.tsx": "00d5b85ab449139807c346961a73f448171f8f177c63417e5fd1e1ce572eca10",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
- "src/components/ui/screen.tsx": "70eecb761bbe9516e32a431ed99bd17bb1846f51d957da1b154519907737fb31",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
  "src/features/cargohome/components/fast-badge.tsx": "8cf0115985f9db614e01717315cdfcedc1d057e59acb47d66fdf9db103142bf9",
  "src/features/cargohome/components/greeting-row.tsx": "8b79fde3382f9249451e602aa1cd4329dd8ab3884094821225aa31748818874b",

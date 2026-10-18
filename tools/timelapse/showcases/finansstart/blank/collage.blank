@@ -1,0 +1,101 @@
+import { View } from 'react-native';
+
+import { pills } from '../data/landing';
+import { useCollage } from '../layout';
+import { fn, radius, shadow } from '../theme';
+import { BalanceCard } from './balance-card';
+import { FloatPill } from './float-pill';
+import { Icon } from './icon';
+
+/**
+ * The hero: three cards fanned out, with the app's verbs floating round them.
+ *
+ * Positions are fractions of the collage's own box rather than dp, so the
+ * arrangement holds its shape on a 360dp phone as well as a 430dp one.
+ *
+ * The cards are rotated about their own centres, which is the only pivot
+ * React Native offers whatever `transformOrigin` says — so each one is laid
+ * out where it should end up and then turned, rather than turned and nudged
+ * back.
+ *
+ * Nothing is clipped: the back card runs off the left edge of the screen by
+ * design, and the screen lets it rather than hiding the overflow, because
+ * `overflow: 'hidden'` next to an `elevation` is unreliable on Android.
+ */
+export function Collage() {
+  const { card } = useCollage();
+  const box = { width: card * 1.5, height: card * 1.15 };
+
+  return (
+    <View style={{ width: box.width, height: box.height }}>
+      {/* STEP 1.07 the card at the back
+      <View
+        style={{
+          position: 'absolute',
+          left: -card * 0.34,
+          top: card * 0.1,
+          transform: [{ rotate: '-9deg' }],
+        }}
+      >
+        <BalanceCard width={card * 0.92} tone="dark" />
+      </View>
+      */}
+
+      {/* STEP 1.08 one in front of it
+      <View
+        style={{
+          position: 'absolute',
+          right: 0,
+          top: card * 0.04,
+          transform: [{ rotate: '4deg' }],
+        }}
+      >
+        <BalanceCard width={card * 0.88} tone="pale" />
+      </View>
+      */}
+
+      {/* STEP 1.09 and the one it is all about
+      <View
+        style={{
+          position: 'absolute',
+          left: card * 0.1,
+          top: card * 0.3,
+          transform: [{ rotate: '-3deg' }],
+        }}
+      >
+        <BalanceCard width={card} tone="mint" />
+      </View>
+      */}
+
+      {/* STEP 1.10 a way to add another
+      <View
+        style={{
+          position: 'absolute',
+          left: box.width * 0.42,
+          top: -4,
+          width: 40,
+          height: 40,
+          borderRadius: radius.full,
+          backgroundColor: fn.yellow,
+          alignItems: 'center',
+          justifyContent: 'center',
+          ...shadow.pill,
+        }}
+      >
+        <Icon name="plus" size={19} color={fn.onYellow} strokeWidth={2.4} />
+      </View>
+      */}
+
+      {/* STEP 1.11 and what you can do with them
+      {pills.map((p) => (
+        <View
+          key={p.key}
+          style={{ position: 'absolute', left: box.width * p.x, top: box.height * p.y }}
+        >
+          <FloatPill name={p.name} label={p.label} />
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

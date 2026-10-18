@@ -1,0 +1,117 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmlog/index.tsx",
+    "@/features/crmlog/components/app-bar"
+   ],
+   "label": "the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmlog/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmlog/components/app-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmlog/components/app-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a way to send it on"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/crmlog/index.tsx",
+    "@/features/crmlog/components/deal-card"
+   ],
+   "label": "the deals"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/crmlog/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "stacked down the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmlog/components/deal-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "when, and what"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmlog/components/deal-card.tsx",
+    "STEP 1.08"
+   ],
+   "label": "a way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmlog/components/deal-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what it was worth, and who did it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/crmlog/components/deal-card.tsx",
+    [
+     "// MISTAKE 1.10",
+     "marginHorizontal: 22,"
+    ]
+   ],
+   "label": "the cards came in inset"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/crmlog/components/face-stack.tsx",
+    "STEP 1.11"
+   ],
+   "label": "three to a deal"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "app-bar",
+     "src/features/crmlog/components/app-bar.tsx"
+    ],
+    [
+     "deal-card",
+     "src/features/crmlog/components/deal-card.tsx"
+    ],
+    [
+     "face-stack",
+     "src/features/crmlog/components/face-stack.tsx"
+    ],
+    [
+     "log-screen",
+     "src/app/crmlog/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+import Bell from 'lucide-react-native/icons/bell';
+import Map from 'lucide-react-native/icons/map';
+import { Image, Pressable, View } from 'react-native';
+
+import { header } from '../data/discover';
+import { HEADER_AVATAR, HEADER_HEIGHT } from '../layout';
+import { hp, radius, shadow } from '../theme';
+import { FACES } from './faces';
+import { T } from './text';
+
+/**
+ * Who is here, the other way of looking, and what is waiting.
+ *
+ * Three floating surfaces rather than one bar, which is what the reference
+ * does and what suits a screen whose background is a photograph of the sky:
+ * a solid header would cut the picture in half.
+ */
+export function Header({ onMap, onAlerts }: { onMap?: () => void; onAlerts?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+      {/* STEP 1.03 the greeting
+      <View
+        style={{
+          flex: 1,
+          height: HEADER_HEIGHT,
+          borderRadius: radius.pill,
+          backgroundColor: hp.surface,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingLeft: 7,
+          paddingRight: 16,
+          gap: 9,
+          ...shadow.float,
+        }}
+      >
+        <Image
+          // The last of the cast, because the first is a man and the name
+          // beside this disc is Jenny.
+          source={FACES[5]}
+          style={{ width: HEADER_AVATAR, height: HEADER_AVATAR, borderRadius: radius.full }}
+          resizeMode="cover"
+          accessibilityIgnoresInvertColors
+        />
+        <View>
+          <T variant="greetingMeta" color={hp.muted}>
+            {header.meta}
+          </T>
+          <T variant="greeting" color={hp.ink}>
+            {header.name}
+          </T>
+        </View>
+      </View>
+      */}
+
+      {/* STEP 1.04 the other way of looking
+      <Pressable onPress={onMap} accessibilityRole="button" accessibilityLabel={header.map}>
+        <View
+          style={{
+            height: HEADER_HEIGHT,
+            paddingHorizontal: 16,
+            borderRadius: radius.pill,
+            backgroundColor: hp.surface,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 7,
+            ...shadow.float,
+          }}
+        >
+          <Map size={17} color={hp.ink} strokeWidth={1.9} />
+          <T variant="action" color={hp.ink}>
+            {header.map}
+          </T>
+        </View>
+      </Pressable>
+      */}
+
+      {/* STEP 1.05 and what is waiting
+      <Pressable onPress={onAlerts} accessibilityRole="button" accessibilityLabel="Alerts">
+        <View
+          style={{
+            width: HEADER_HEIGHT,
+            height: HEADER_HEIGHT,
+            borderRadius: radius.full,
+            backgroundColor: hp.surface,
+            alignItems: 'center',
+            justifyContent: 'center',
+            ...shadow.float,
+          }}
+        >
+          <Bell size={18} color={hp.ink} strokeWidth={1.9} />
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

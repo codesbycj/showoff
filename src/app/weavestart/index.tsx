@@ -1,0 +1,102 @@
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+// STEP 1.07 the two ways in
+// import { SignInButton } from '@/features/weavestart/components/sign-in-button';
+// STEP 1.01 the throw of tags
+// import { TagCluster } from '@/features/weavestart/components/tag-cluster';
+import { T } from '@/features/weavestart/components/text';
+import { copy } from '@/features/weavestart/data/signin';
+import {
+  BUTTON_GAP,
+  BUTTONS_TOP,
+  CLUSTER_TOP,
+  DISPLAY_TOP,
+  FOOT_BOTTOM,
+  FOOT_TOP,
+  MARGIN,
+} from '@/features/weavestart/layout';
+import { wv } from '@/features/weavestart/theme';
+import { useInsets } from '@/features/weavestart/use-insets';
+
+/**
+ * Weave — sign in.
+ *
+ * Assembly only: a throw of category pills, what the app is for, the two ways
+ * in, and a line for people who have not been here before.
+ *
+ * The cluster takes whatever height is left between the status bar and the
+ * headline, which is why it is given a height rather than measuring itself:
+ * everything else on this screen is a fixed number of dp, so the artwork's
+ * share is arithmetic, and the pills can never push the headline off the page.
+ *
+ * Every handler is empty on purpose — the rest of this design is not in scope,
+ * and what matters is that the destination is decided here.
+ */
+export default function WeaveStart() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: wv.canvas }}>
+      <StatusBar style="light" />
+
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top + CLUSTER_TOP,
+          paddingBottom: insets.bottom + FOOT_BOTTOM,
+          paddingHorizontal: MARGIN,
+        }}
+      >
+        {/*
+          The cluster takes the whole of what is left rather than a fixed 280:
+          at 280 the throw finished a third of the way down and left a band of
+          empty page between it and the headline, which is the one thing a
+          design shot never has.
+        */}
+        <View style={{ flex: 1 }}>
+          {/* STEP 1.02 across the top
+          <TagCluster height="100%" />
+          */}
+        </View>
+
+        {/* STEP 1.06 what the app is for
+        <View style={{ marginTop: DISPLAY_TOP }}>
+          {copy.headline.map((line) => (
+            <T key={line} variant="display" color={wv.ink}>
+              {line}
+            </T>
+          ))}
+        </View>
+        */}
+
+        {/* STEP 1.08 under the headline
+        <View style={{ marginTop: BUTTONS_TOP, gap: BUTTON_GAP }}>
+          <SignInButton label={copy.google} glyph="google" tone="light" />
+          <SignInButton label={copy.apple} glyph="apple" tone="dark" />
+        </View>
+        */}
+
+        {/* STEP 1.11 and one for newcomers
+        <View
+          style={{
+            marginTop: FOOT_TOP,
+            flexDirection: 'row',
+            justifyContent: 'center',
+            gap: 5,
+          }}
+        >
+          <T variant="foot" color={wv.muted}>
+            {copy.footLead}
+          </T>
+          <Pressable accessibilityRole="button" accessibilityLabel={copy.footLink}>
+            <T variant="footLink" color={wv.link}>
+              {copy.footLink}
+            </T>
+          </Pressable>
+        </View>
+        */}
+      </View>
+    </View>
+  );
+}

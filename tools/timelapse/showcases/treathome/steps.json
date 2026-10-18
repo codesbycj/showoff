@@ -1,0 +1,221 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "@/features/treathome/components/header"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "what the screen is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and their picture"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "@/features/treathome/components/search-field"
+   ],
+   "label": "what they can look for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/search-field.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the magnifier"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/search-field.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and what it asks for"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "@/features/treathome/components/filter-row"
+   ],
+   "label": "the categories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "in a row off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/filter-row.tsx",
+    "STEP 1.12"
+   ],
+   "label": "every category"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/treathome/components/filter-row.tsx",
+    [
+     "// MISTAKE 1.13",
+     "marginTop: 16,"
+    ]
+   ],
+   "label": "the pills came in dropped"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what the collection is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "@/features/treathome/components/product-card"
+   ],
+   "label": "and what is in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "one card each"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/product-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the pack shot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/product-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/product-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "whether you like it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/product-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "what it costs, and the way to buy it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "@/features/treathome/components/tab-bar"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treathome/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "along the bottom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treathome/components/tab-bar.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the four places to be"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "filter-row",
+     "src/features/treathome/components/filter-row.tsx"
+    ],
+    [
+     "header",
+     "src/features/treathome/components/header.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/treathome/index.tsx"
+    ],
+    [
+     "product-card",
+     "src/features/treathome/components/product-card.tsx"
+    ],
+    [
+     "search-field",
+     "src/features/treathome/components/search-field.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/treathome/components/tab-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

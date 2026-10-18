@@ -1,0 +1,160 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and the way to search it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "@/features/treatexplore/components/filter-row"
+   ],
+   "label": "how to narrow it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "under the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/filter-row.tsx",
+    "STEP 1.05"
+   ],
+   "label": "every filter"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/filter-row.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and what tapping it does"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/treatexplore/components/filter-row.tsx",
+    [
+     "// MISTAKE 1.07",
+     "paddingVertical: 12,"
+    ]
+   ],
+   "label": "the pills came in squeezed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "@/features/treatexplore/components/collection-card"
+   ],
+   "label": "the collections"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "one card each"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the pack"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and what is in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "what it is called"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "@/features/treatexplore/components/tab-bar"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatexplore/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "along the bottom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/tab-bar.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the four places to be"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/treatexplore/components/tab-bar.tsx",
+    [
+     "// MISTAKE 1.16",
+     "paddingTop: 20,"
+    ]
+   ],
+   "label": "the bar came in top-heavy"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "collection-card",
+     "src/features/treatexplore/components/collection-card.tsx"
+    ],
+    [
+     "explore-screen",
+     "src/app/treatexplore/index.tsx"
+    ],
+    [
+     "filter-row",
+     "src/features/treatexplore/components/filter-row.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/treatexplore/components/tab-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

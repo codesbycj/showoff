@@ -1,0 +1,42 @@
+import { Image, View } from 'react-native';
+
+import { header } from '../data/home';
+import { AVATAR } from '../layout';
+import { radius, tr } from '../theme';
+import { FACES } from './faces';
+import { T } from './text';
+
+/**
+ * Who is here, and a photograph of them.
+ *
+ * A real portrait rather than initials on a disc: the reference puts a person
+ * here, and a monogram is a fallback state, not a substitute (AGENTS.md,
+ * "Faces are photographs").
+ */
+export function Header() {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <View style={{ flex: 1 }}>
+        {/* STEP 1.03 the greeting
+        <T variant="greeting" color={tr.ink}>
+          {header.greeting}
+        </T>
+        */}
+        {/* STEP 1.04 what the screen is for
+        <T variant="greetingMeta" color={tr.muted}>
+          {header.meta}
+        </T>
+        */}
+      </View>
+
+      {/* STEP 1.05 and their picture
+      <Image
+        source={FACES[0]}
+        style={{ width: AVATAR, height: AVATAR, borderRadius: radius.full }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+      */}
+    </View>
+  );
+}

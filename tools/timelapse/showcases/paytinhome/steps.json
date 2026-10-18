@@ -1,0 +1,339 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/top-bar"
+   ],
+   "label": "who is looking"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    "./avatar"
+   ],
+   "label": "a face for the account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "on the left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the name and the greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and anything waiting"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    [
+     "// MISTAKE 1.07",
+     "marginTop: 10,"
+    ]
+   ],
+   "label": "the bell came in sitting low"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    "STEP 1.08"
+   ],
+   "label": "one more unread"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/features/paytinhome/components/top-bar.tsx",
+    "<View style={{ position: 'absolute', right: 30, top: 4, width: 8, height: 8, borderRadius: radius.full, backgroundColor: ph.alert }} />"
+   ],
+   "label": "one bell, one dot"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/balance-card"
+   ],
+   "label": "what they have"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/balance-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the block let into its side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/balance-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the scheme, and a sparkle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/balance-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the balance"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/balance-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the number"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/balance-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and whose it is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/budget-pill"
+   ],
+   "label": "and a plan for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "half over the card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/action-row"
+   ],
+   "label": "four things to do"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "under the card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/action-tile.tsx",
+    "STEP 1.21"
+   ],
+   "label": "a mark for it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/action-tile.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and what it does"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/paytinhome/components/action-tile.tsx",
+    [
+     "// MISTAKE 1.23",
+     "marginTop: 12,"
+    ]
+   ],
+   "label": "the tiles came in sitting low"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/section-head"
+   ],
+   "label": "name a section"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.25"
+   ],
+   "label": "Quick Send"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/quick-send"
+   ],
+   "label": "the people you send to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "running off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.28"
+   ],
+   "label": "Recent Activity"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/activity-list"
+   ],
+   "label": "where it went"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.30"
+   ],
+   "label": "under the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/activity-row.tsx",
+    "STEP 1.31"
+   ],
+   "label": "a mark for the merchant"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/activity-row.tsx",
+    "STEP 1.32"
+   ],
+   "label": "what it was, and when"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/activity-row.tsx",
+    "STEP 1.33"
+   ],
+   "label": "and what it cost"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "@/features/paytinhome/components/floating-dock"
+   ],
+   "label": "somewhere to go next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/paytinhome/index.tsx",
+    "STEP 1.36"
+   ],
+   "label": "floating over the lot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/paytinhome/components/floating-dock.tsx",
+    "STEP 1.37"
+   ],
+   "label": "three things in it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/paytinhome/components/floating-dock.tsx",
+    [
+     "// MISTAKE 1.38",
+     "marginBottom: 22,"
+    ]
+   ],
+   "label": "the dock came in riding low"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "action-tile",
+     "src/features/paytinhome/components/action-tile.tsx"
+    ],
+    [
+     "activity-row",
+     "src/features/paytinhome/components/activity-row.tsx"
+    ],
+    [
+     "balance-card",
+     "src/features/paytinhome/components/balance-card.tsx"
+    ],
+    [
+     "floating-dock",
+     "src/features/paytinhome/components/floating-dock.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/paytinhome/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/paytinhome/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

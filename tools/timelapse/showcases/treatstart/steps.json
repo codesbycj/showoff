@@ -1,0 +1,145 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/treatstart/index.tsx",
+    "@/features/treatstart/components/hero-stack"
+   ],
+   "label": "the throw of cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatstart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "filling the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/hero-stack.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the first card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/hero-stack.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the second, thrown over it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the pack"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.06"
+   ],
+   "label": "whether you like it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "what it costs, and the way to buy it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    [
+     "// MISTAKE 1.08",
+     "alignItems: 'center',"
+    ]
+   ],
+   "label": "the cards came in centred"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/hero-stack.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the basket it goes to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/hero-stack.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and the list it comes from"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/hero-stack.tsx",
+    "STEP 1.11"
+   ],
+   "label": "joined up"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/hero-stack.tsx",
+    "STEP 1.12"
+   ],
+   "label": "both ways"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatstart/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "what the app is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatstart/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and how it works"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/treatstart/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "hero-stack",
+     "src/features/treatstart/components/hero-stack.tsx"
+    ],
+    [
+     "product-card",
+     "src/features/treatstart/components/product-card.tsx"
+    ],
+    [
+     "start-screen",
+     "src/app/treatstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

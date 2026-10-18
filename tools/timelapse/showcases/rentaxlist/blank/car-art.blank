@@ -1,0 +1,71 @@
+import { View } from 'react-native';
+import Svg, { Ellipse, G, Path, Rect } from 'react-native-svg';
+
+import { rx } from '../theme';
+
+/**
+ * A car, drawn.
+ *
+ * The reference photographs its cars — a blue Porsche and a grey Lamborghini,
+ * cut out and dropped on the cards. Those are product photographs of specific
+ * marques: not redistributable, and the sanctioned stand-in (free-licensed
+ * stock) has no answer either, because free stock does not contain a cut-out
+ * supercar on transparency. A found photograph badly cut out looks worse than
+ * no photograph at all, which is the whole reason the rule says "must not be
+ * traced badly".
+ *
+ * So it is rebuilt as the thing the photograph is a picture of, in the flat
+ * dialect the rest of the board uses: a low silhouette, a dark glasshouse, two
+ * wheels and a contact shadow. It reads as "fast car" at card size, it takes
+ * the card's own colour scheme, it is sharp at any size, and the screen ships
+ * no bitmap.
+ *
+ * Everything is in a 200x100 viewBox, so every number is a fraction of the
+ * drawing rather than a dp, and the whole thing scales with its box.
+ */
+export function CarArt({ width, body }: { width: number; body: string }) {
+  const height = width * 0.5;
+
+  return (
+    <View style={{ width, height }}>
+      <Svg width={width} height={height} viewBox="0 0 200 100">
+        {/* STEP 1.24 a shadow on the ground
+        <Ellipse cx={100} cy={88} rx={86} ry={7} fill={rx.carShade} />
+        */}
+
+        {/* STEP 1.25 the body
+        <Path
+          d="M12 74 C8 64 14 56 28 53 L64 45 C82 33 104 29 126 32 C144 34 160 40 172 50
+             L184 54 C192 57 194 64 192 72 C191 77 186 80 180 80 H24 C17 80 13 78 12 74 Z"
+          fill={body}
+        />
+        */}
+
+        {/* STEP 1.26 the glass
+        <G fill={rx.carGlass}>
+          <Path d="M76 46 C88 38 104 35 118 37 L128 48 H74 Z" />
+          <Path d="M134 38 C144 41 153 45 161 51 H137 Z" />
+        </G>
+        */}
+
+        <Path
+          d="M12 68 C40 64 70 62 100 62 C130 62 162 64 192 68 L192 72 C191 77 186 80 180 80
+             H24 C17 80 13 78 12 74 Z"
+          fill="rgba(0,0,0,0.14)"
+        />
+
+        <Rect x={170} y={57} width={16} height={6} rx={3} fill="#ffffff" opacity={0.9} />
+        <Rect x={15} y={59} width={11} height={5} rx={2.5} fill="#ffffff" opacity={0.55} />
+
+        {/* STEP 1.27 and the wheels
+        <G>
+          <Ellipse cx={58} cy={80} rx={19} ry={19} fill="#15161a" />
+          <Ellipse cx={58} cy={80} rx={8} ry={8} fill="#5b6066" />
+          <Ellipse cx={152} cy={80} rx={19} ry={19} fill="#15161a" />
+          <Ellipse cx={152} cy={80} rx={8} ry={8} fill="#5b6066" />
+        </G>
+        */}
+      </Svg>
+    </View>
+  );
+}

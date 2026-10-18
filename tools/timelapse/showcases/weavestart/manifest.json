@@ -1,0 +1,5 @@
+{
+ "start-screen": "src/app/weavestart/index.tsx",
+ "tag-cluster": "src/features/weavestart/components/tag-cluster.tsx",
+ "sign-in-button": "src/features/weavestart/components/sign-in-button.tsx"
+}

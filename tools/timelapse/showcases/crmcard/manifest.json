@@ -1,0 +1,6 @@
+{
+ "card-screen": "src/app/crmcard/index.tsx",
+ "app-bar": "src/features/crmcard/components/app-bar.tsx",
+ "round-button": "src/features/crmcard/components/round-button.tsx",
+ "schedule-card": "src/features/crmcard/components/schedule-card.tsx"
+}

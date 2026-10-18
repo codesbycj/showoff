@@ -1,0 +1,307 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "@/features/quizhome/components/header"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top of the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the question"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "what there is to spend"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "@/features/quizhome/components/daily-challenge"
+   ],
+   "label": "the challenge of the day"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what the challenge is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what it pays"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    "STEP 1.10"
+   ],
+   "label": "how far through it you are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    "STEP 1.12"
+   ],
+   "label": "paper in the air"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and someone winning"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/quizhome/components/daily-challenge.tsx",
+    [
+     "// MISTAKE 1.14",
+     "marginLeft: 64,"
+    ]
+   ],
+   "label": "the button drifted off its edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "@/features/quizhome/components/section-head"
+   ],
+   "label": "what the sections are called"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the first of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "@/features/quizhome/components/category-row"
+   ],
+   "label": "the subjects"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "in a row that runs off the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/category-row.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the four subjects"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/quizhome/components/category-row.tsx",
+    [
+     "// MISTAKE 1.20",
+     "alignItems: 'center',"
+    ]
+   ],
+   "label": "every card came in centred"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "the second section"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "@/features/quizhome/components/trend-card"
+   ],
+   "label": "what people are playing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "one card each"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/trend-card.tsx",
+    "STEP 1.24"
+   ],
+   "label": "what the quiz is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/trend-card.tsx",
+    "STEP 1.25"
+   ],
+   "label": "what it covers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/trend-card.tsx",
+    "STEP 1.26"
+   ],
+   "label": "and how long it runs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/trend-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the artwork behind"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/trend-card.tsx",
+    "STEP 1.28"
+   ],
+   "label": "standing on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/trend-card.tsx",
+    "STEP 1.29"
+   ],
+   "label": "and the way to start"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "@/features/quizhome/components/tab-dock"
+   ],
+   "label": "and the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/quizhome/index.tsx",
+    "STEP 1.31"
+   ],
+   "label": "floating over the scroll"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/quizhome/components/tab-dock.tsx",
+    "STEP 1.32"
+   ],
+   "label": "the four places to be"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/quizhome/components/tab-dock.tsx",
+    [
+     "// MISTAKE 1.33",
+     "paddingVertical: 10,"
+    ]
+   ],
+   "label": "the dock came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "category-row",
+     "src/features/quizhome/components/category-row.tsx"
+    ],
+    [
+     "daily-challenge",
+     "src/features/quizhome/components/daily-challenge.tsx"
+    ],
+    [
+     "header",
+     "src/features/quizhome/components/header.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/quizhome/index.tsx"
+    ],
+    [
+     "tab-dock",
+     "src/features/quizhome/components/tab-dock.tsx"
+    ],
+    [
+     "trend-card",
+     "src/features/quizhome/components/trend-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

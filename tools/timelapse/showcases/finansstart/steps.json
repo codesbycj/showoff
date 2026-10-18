@@ -1,0 +1,192 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "@/features/finansstart/components/backdrop"
+   ],
+   "label": "the lit page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "warm in the corner"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "@/features/finansstart/components/wordmark"
+   ],
+   "label": "whose app this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "top left"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "@/features/finansstart/components/collage"
+   ],
+   "label": "the cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "fanned out in the middle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/collage.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the card at the back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/collage.tsx",
+    "STEP 1.08"
+   ],
+   "label": "one in front of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/collage.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and the one it is all about"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/collage.tsx",
+    "STEP 1.10"
+   ],
+   "label": "a way to add another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/collage.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and what you can do with them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/balance-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "which currency"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/balance-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "how much of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/finansstart/components/balance-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and whose account it is"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/finansstart/components/balance-card.tsx",
+    [
+     "// MISTAKE 1.15",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the cards came in see-through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "what it is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and why that matters"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "@/features/finansstart/components/primary-button"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/finansstart/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "at the foot of the page"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/finansstart/components/primary-button.tsx",
+    [
+     "// MISTAKE 1.20",
+     "width: 160,"
+    ]
+   ],
+   "label": "the button came in half the page"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "balance-card",
+     "src/features/finansstart/components/balance-card.tsx"
+    ],
+    [
+     "collage",
+     "src/features/finansstart/components/collage.tsx"
+    ],
+    [
+     "primary-button",
+     "src/features/finansstart/components/primary-button.tsx"
+    ],
+    [
+     "start-screen",
+     "src/app/finansstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

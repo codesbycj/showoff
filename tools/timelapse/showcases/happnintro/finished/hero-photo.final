@@ -1,0 +1,77 @@
+import { Image, View } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
+
+import { intro } from '../data/intro';
+import { GHOST_TOP, MARGIN, MARK_TOP, OVER_TOP } from '../layout';
+import { hp } from '../theme';
+import { T } from './text';
+
+const HERO = require('../../../../assets/images/happnintro/hero.jpg');
+
+/**
+ * The photograph the screen opens on, with the brand laid over it.
+ *
+ * The picture is a composite baked by `tools/bake/happn.py` — a studio
+ * portrait cut off its white sweep and dropped onto a sky. A person is out of
+ * drawing range (AGENTS.md), so both halves are photographs; the wordmarks
+ * over them are type, which is.
+ *
+ * The ghost line and the script line are placed as fractions of the photograph
+ * rather than in dp, so the composition holds at any phone height instead of
+ * sliding off the figure's head on a tall one.
+ */
+export function HeroPhoto({ height, topInset }: { height: number; topInset: number }) {
+  return (
+    <View style={{ height }}>
+      <Image
+        source={HERO}
+        style={{ position: 'absolute', width: '100%', height }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+
+      <View
+        style={{
+          position: 'absolute',
+          top: topInset + MARK_TOP,
+          left: 0,
+          right: 0,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 5,
+        }}
+      >
+        <Pin size={14} />
+        <T variant="mark" color={hp.onPhoto}>
+          {intro.mark}
+        </T>
+      </View>
+
+      <View style={{ position: 'absolute', top: height * GHOST_TOP, left: 0, right: 0 }}>
+        <T variant="ghost" color={hp.ghost} style={{ textAlign: 'center' }}>
+          {intro.ghost}
+        </T>
+      </View>
+
+      <View style={{ position: 'absolute', top: height * OVER_TOP, left: MARGIN }}>
+        <T variant="over" color={hp.onPhoto}>
+          {intro.over}
+        </T>
+      </View>
+    </View>
+  );
+}
+
+/** The map pin in the small mark. Drawn: an emoji pin differs per platform. */
+function Pin({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 16 16">
+      <Path
+        d="M8 1 C11 1 13.4 3.4 13.4 6.3 C13.4 10 8 15 8 15 C8 15 2.6 10 2.6 6.3 C2.6 3.4 5 1 8 1 Z"
+        fill={hp.onPhoto}
+      />
+      <Circle cx={8} cy={6.2} r={2.1} fill={hp.blue} />
+    </Svg>
+  );
+}

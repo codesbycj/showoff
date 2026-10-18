@@ -1,0 +1,6 @@
+{
+ "explore-screen": "src/app/treatexplore/index.tsx",
+ "filter-row": "src/features/treatexplore/components/filter-row.tsx",
+ "collection-card": "src/features/treatexplore/components/collection-card.tsx",
+ "tab-bar": "src/features/treatexplore/components/tab-bar.tsx"
+}

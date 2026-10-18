@@ -57,12 +57,37 @@ dropped in, sometimes tilted — is a *picture of an idea*, not a spec:
 - **Everything else still holds.** One showcase per screen, components not markup, one
   component at a time, the full step-by-step staging, and the done-gate. Only rule 1
   changes.
+- **The screen has to fill the screen.** Every phone in a design shot is full to its
+  bottom edge. A build that stops at 78% and leaves a band of empty canvas under the last
+  block looks unfinished, whatever the blocks themselves look like. Scale up rather than
+  pad: make the hero bigger, open the rhythm out, let a sheet or a list run to the bottom,
+  add the row the reference crops. Look at the last shot of every screen for dead space
+  before calling it done — if the eye finds a gap at the foot, it is not done.
 - **Say which calls were yours.** The handover lists every place the build departs from
   the shot and why.
 
 A 3D render in the shot (a wallet, a floating card, a coin) cannot be recreated and must
 not be traced badly. Either stand in free-licensed stock for it, or rebuild the *idea* of
 it in-app — a real card component, posed and shadowed. Say which.
+
+**Know what is in drawing range.** Small objects are: a wallet, a parcel, a banknote, a
+shopfront, a coin, a card, a chip, a flag disc, a stylised map, an abstract solid, a
+wordmark, any icon. Those come out well and should be drawn. **A large, specific subject
+does not** — a car, a face, a plate of food, a packet of crisps, a landscape. Vectoring
+one produces a cartoon of the thing where the design had a photograph of it, and the
+screen reads as a toy. Drawing a whole Porsche was the lesson.
+
+When the subject is out of drawing range, do not fall back to drawing it anyway. Find
+another route: free-licensed stock of the same subject, or **a different subject that
+keeps the app's plot** — a rental app can lead on a key, a road, a badge or an interior
+rather than on a badly drawn supercar. Changing the subject is allowed; shipping
+something that looks wrong is not. Say which route you took.
+
+**Faces are photographs.** Where a design shows people — contacts, reviewers, a profile,
+a leaderboard — use free-licensed portraits of real people and bundle them. Initials on a
+coloured disc is a fallback state, not a substitute for the design: a screen built from it
+is visibly missing something the reference had. Credit every file in the showcase's
+`CREDITS.md`.
 
 **A video is a motion brief, and the rules change further.** When the reference is a
 recording of an animated prototype:
@@ -247,6 +272,15 @@ compiles and writes `dist/`, and nothing installs or runs.
   Hand-fixing indentation has produced duplicated lines more than once.
 - **After changing dependencies or `app.json`, restart with `npx expo start -c`.** Metro
   will happily serve a stale cache.
+- **Scaffold a new showcase with the dev server stopped.** `showcase.js new` while it is
+  running makes expo-router's type generator scoop `src/features/<slug>/**` up as routes:
+  `.expo/types/router.d.ts` fills with entries like `/../features/<slug>/theme`, the real
+  route is listed as `/<slug>/index`, and `tsc` then rejects the boot redirect. An export
+  does not fix it. `rm -rf .expo/types` and restart the server does.
+- **Do not write a long file through a shell heredoc.** Past a few hundred lines the
+  command is truncated mid-heredoc and bash reports an unterminated quote — or worse,
+  writes half the file. Use the editor tool for anything substantial; heredocs are fine
+  for short ones.
 - **Back up before rewriting a file wholesale** — copy it, per rule 5.
 - **Strip template cruft early.** A new showcase should not carry demo screens, unused
   template packages, or experiments nobody asked for.
@@ -361,6 +395,23 @@ Every one of these was a real corruption, not a hypothetical:
   anywhere also matches prose in a header comment that names the same file.
 - **Finish each screen by copying the finished files over every file it touched**, not just
   the screen. Staged components keep their STEP banners otherwise.
+- **Nothing can be staged inside a ternary branch.** `{flag ? (<Thing />) : null}` with the
+  element wrapped leaves the branch as a JSX comment, which is not an expression and does
+  not parse. Stage a sibling, or let the thing render from the start.
+- **Stage the whole `{list.map(...)}`, never the element it returns.** Wrapping the
+  returned element leaves a callback whose body is a comment — `{}` rather than a
+  `ReactNode` — and the blank state stops typechecking. `verify` will not catch it;
+  `rehearse` will.
+- **A `// MISTAKE` line must be additive.** A second copy of a key the finished style
+  already sets is TS1117. Check the object before choosing the wrong property — `opacity`
+  and `paddingVertical` are the two that have collided so far.
+- **Step numbers are `<screen>.<two digits>`.** `gen.js` parses the part after the dot as
+  an integer, so a "1.085" squeezed between 1.08 and 1.09 becomes step 85 and runs after
+  everything else on the screen.
+- **Never anchor on prose.** A component's own doc comment quotes the code it explains, so
+  an anchor like `pointerEvents="none"` matched the sentence describing it and the
+  walk-back found the file header instead of a tag. `stagelib.is_code` now drops comment
+  lines before anything else looks at them.
 
 ## Showcase lifecycle
 

@@ -1,0 +1,8 @@
+{
+ "old-screen": "src/app/furetinold/index.tsx",
+ "header": "src/features/furetinold/components/header.tsx",
+ "balance-card": "src/features/furetinold/components/balance-card.tsx",
+ "service-panel": "src/features/furetinold/components/service-panel.tsx",
+ "transaction-row": "src/features/furetinold/components/transaction-row.tsx",
+ "tab-bar": "src/features/furetinold/components/tab-bar.tsx"
+}

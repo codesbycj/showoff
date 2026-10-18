@@ -1,0 +1,118 @@
+import Bell from 'lucide-react-native/icons/bell';
+import ChartColumnBig from 'lucide-react-native/icons/chart-column-big';
+import Gift from 'lucide-react-native/icons/gift';
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { header } from '../data/wallet';
+import { HEADER_AVATAR, HEADER_DISC } from '../layout';
+import { fu, radius } from '../theme';
+import { FACES } from './faces';
+import { T } from './text';
+
+/**
+ * Who is signed in, and the three things waiting for them.
+ *
+ * The waving hand the reference puts after "Welcome" is drawn rather than set
+ * as an emoji: Windows, Android and iOS each draw it differently and the
+ * harness renders whichever the build machine has (AGENTS.md, "The web render
+ * is a proxy, not proof").
+ */
+export function Header({ onAction }: { onAction?: (key: string) => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Image
+        source={FACES[0]}
+        style={{ width: HEADER_AVATAR, height: HEADER_AVATAR, borderRadius: radius.full }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+
+      <View style={{ flex: 1, marginLeft: 10 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+          <T variant="greetingMeta" color={fu.muted}>
+            {header.meta}
+          </T>
+          <Wave size={13} />
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+          <T variant="greeting" color={fu.ink}>
+            {header.name}
+          </T>
+          <Verified size={14} />
+        </View>
+      </View>
+
+      <View style={{ flexDirection: 'row', gap: 7 }}>
+        <Disc label="Leaderboard" onPress={() => onAction?.('rank')}>
+          <ChartColumnBig size={17} color={fu.ink} strokeWidth={1.9} />
+        </Disc>
+        <Disc label="Rewards" onPress={() => onAction?.('rewards')}>
+          <Gift size={17} color={fu.ink} strokeWidth={1.9} />
+        </Disc>
+        <Disc label="Alerts" onPress={() => onAction?.('alerts')}>
+          <Bell size={17} color={fu.ink} strokeWidth={1.9} />
+        </Disc>
+      </View>
+    </View>
+  );
+}
+
+function Disc({
+  label,
+  onPress,
+  children,
+}: {
+  label: string;
+  onPress?: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label}>
+      <View
+        style={{
+          width: HEADER_DISC,
+          height: HEADER_DISC,
+          borderRadius: radius.tile,
+          backgroundColor: fu.surface,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {children}
+      </View>
+    </Pressable>
+  );
+}
+
+/** The waving hand after "Welcome". */
+function Wave({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 16 16">
+      <Path
+        d="M4.4 9.6 L3 8.2 A1.1 1.1 0 0 1 4.6 6.6 L5.6 7.6 L3.8 4.4 A1.1 1.1 0 0 1 5.7 3.3 L7.3 6.1 L6.6 3 A1.1 1.1 0 0 1 8.8 2.6 L9.5 5.8 L10 4.2 A1.1 1.1 0 0 1 12.1 4.9 L11.2 9.3 C10.8 11.4 9.1 12.8 7.2 12.5 C6.1 12.3 5.1 11.5 4.4 9.6 Z"
+        fill="#f0b400"
+      />
+    </Svg>
+  );
+}
+
+/** The verified tick beside the name. */
+function Verified({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 20 20">
+      <Path
+        d="M10 0.6 L12.4 2.6 L15.5 2.3 L16.4 5.3 L19 7 L18 10 L19 13 L16.4 14.7 L15.5 17.7 L12.4 17.4 L10 19.4 L7.6 17.4 L4.5 17.7 L3.6 14.7 L1 13 L2 10 L1 7 L3.6 5.3 L4.5 2.3 L7.6 2.6 Z"
+        fill={fu.verified}
+      />
+      <Path
+        d="M6.2 10.1 L8.8 12.6 L13.8 7.2"
+        stroke="#ffffff"
+        strokeWidth={1.9}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </Svg>
+  );
+}

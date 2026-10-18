@@ -1,0 +1,113 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/weavestart/index.tsx",
+    "@/features/weavestart/components/tag-cluster"
+   ],
+   "label": "the throw of tags"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/weavestart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/weavestart/components/tag-cluster.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the brand, dropped on top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/weavestart/components/tag-cluster.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the things you plan"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/weavestart/components/tag-cluster.tsx",
+    [
+     "// MISTAKE 1.05",
+     "paddingVertical: 14,"
+    ]
+   ],
+   "label": "the tags came in squeezed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/weavestart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/weavestart/index.tsx",
+    "@/features/weavestart/components/sign-in-button"
+   ],
+   "label": "the two ways in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/weavestart/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "under the headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/weavestart/components/sign-in-button.tsx",
+    "STEP 1.09"
+   ],
+   "label": "whose account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/weavestart/components/sign-in-button.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and what it says"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/weavestart/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and one for newcomers"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "sign-in-button",
+     "src/features/weavestart/components/sign-in-button.tsx"
+    ],
+    [
+     "start-screen",
+     "src/app/weavestart/index.tsx"
+    ],
+    [
+     "tag-cluster",
+     "src/features/weavestart/components/tag-cluster.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

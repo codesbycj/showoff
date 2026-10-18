@@ -1,0 +1,101 @@
+import { StatusBar } from 'expo-status-bar';
+import ArrowRight from 'lucide-react-native/icons/arrow-right';
+import { useState } from 'react';
+import { Pressable, useWindowDimensions, View } from 'react-native';
+
+import { HeroPhoto } from '@/features/happnintro/components/hero-photo';
+import { T } from '@/features/happnintro/components/text';
+import { intro } from '@/features/happnintro/data/intro';
+import {
+  BODY_TOP,
+  BUTTON_BOTTOM,
+  BUTTON_DISC,
+  BUTTON_HEIGHT,
+  BUTTON_TOP,
+  MARGIN,
+  SHEET_TOP,
+} from '@/features/happnintro/layout';
+import { hp, radius } from '@/features/happnintro/theme';
+import { useInsets } from '@/features/happnintro/use-insets';
+
+/**
+ * We Crossed Paths — the intro.
+ *
+ * Assembly only: the photograph with the brand over it, then the sheet that
+ * says what the app is and the one thing it asks.
+ *
+ * The photograph is sized as a share of the window rather than given the
+ * leftover space, because the sheet overlaps it: the sheet's rounded top has
+ * to sit *on* the picture, which it cannot do if the picture stops where the
+ * sheet starts.
+ */
+export default function HappnIntro() {
+  const insets = useInsets();
+  const { height } = useWindowDimensions();
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: hp.sheet }}>
+      <StatusBar style="light" />
+
+      <HeroPhoto height={height * 0.66} topInset={insets.top} />
+
+      <View
+        style={{
+          flex: 1,
+          marginTop: -SHEET_TOP,
+          backgroundColor: hp.sheet,
+          borderTopLeftRadius: radius.sheet,
+          borderTopRightRadius: radius.sheet,
+          paddingTop: 26,
+          paddingHorizontal: MARGIN,
+          paddingBottom: insets.bottom + BUTTON_BOTTOM,
+        }}
+      >
+        <T variant="headline" color={hp.ink} style={{ textAlign: 'center' }}>
+          {intro.headline}
+        </T>
+        <T variant="body" color={hp.muted} style={{ marginTop: BODY_TOP, textAlign: 'center' }}>
+          {intro.body}
+        </T>
+
+        <Pressable
+          onPressIn={() => setHeld(true)}
+          onPressOut={() => setHeld(false)}
+          accessibilityRole="button"
+          accessibilityLabel={intro.cta}
+          style={{ marginTop: BUTTON_TOP }}
+        >
+          <View
+            style={{
+              height: BUTTON_HEIGHT,
+              borderRadius: radius.pill,
+              backgroundColor: hp.action,
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: held ? 0.86 : 1,
+            }}
+          >
+            <T variant="button" color={hp.onAction}>
+              {intro.cta}
+            </T>
+            <View
+              style={{
+                position: 'absolute',
+                left: (BUTTON_HEIGHT - BUTTON_DISC) / 2,
+                width: BUTTON_DISC,
+                height: BUTTON_DISC,
+                borderRadius: radius.full,
+                backgroundColor: hp.onAction,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <ArrowRight size={19} color={hp.action} strokeWidth={2.2} />
+            </View>
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

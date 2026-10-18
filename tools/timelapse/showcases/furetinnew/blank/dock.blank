@@ -1,0 +1,79 @@
+import CreditCard from 'lucide-react-native/icons/credit-card';
+import Gift from 'lucide-react-native/icons/gift';
+import User from 'lucide-react-native/icons/user';
+import Wallet from 'lucide-react-native/icons/wallet';
+import { Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { dock, selectedDock } from '../data/wallet';
+import { DOCK_DISC, DOCK_HEIGHT } from '../layout';
+import { fu, radius } from '../theme';
+
+const ICONS = {
+  wallet: Wallet,
+  gift: Gift,
+  card: CreditCard,
+  user: User,
+} as const;
+
+type Tab = (typeof dock)[number];
+
+/**
+ * The floating dock: a black pill of discs, with the brand mark lit.
+ *
+ * The selected item carries the brand glyph rather than an icon from the set,
+ * which is what the reference does — and a wordmark is drawing range.
+ */
+export function Dock({ onSelect }: { onSelect?: (t: Tab) => void }) {
+  return (
+    <View
+      style={{
+        height: DOCK_HEIGHT,
+        borderRadius: radius.pill,
+        backgroundColor: fu.dock,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 8,
+      }}
+    >
+      {/* STEP 1.29 the five places to be
+      {dock.map((t) => {
+        const on = t.key === selectedDock;
+        const Icon = t.icon === 'home' ? null : ICONS[t.icon as keyof typeof ICONS];
+        return (
+          <Pressable
+            key={t.key}
+            onPress={() => onSelect?.(t)}
+            accessibilityRole="button"
+            accessibilityLabel={t.key}
+          >
+            <View
+              style={{
+                width: DOCK_DISC,
+                height: DOCK_DISC,
+                borderRadius: radius.full,
+                backgroundColor: on ? fu.dockOn : fu.dockWell,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {Icon ? <Icon size={20} color={fu.onDock} strokeWidth={1.8} /> : <Mark size={22} />}
+            </View>
+          </Pressable>
+        );
+      })}
+      */}
+    </View>
+  );
+}
+
+/** The brand glyph: an F cut from a disc. */
+function Mark({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path d="M7 3 H18 V7 H11.5 V10.4 H17 V14.2 H11.5 V21 H7 Z" fill={fu.dock} />
+      <Path d="M14.6 17.2 h3.6 v3.6 h-3.6 Z" fill={fu.dock} />
+    </Svg>
+  );
+}

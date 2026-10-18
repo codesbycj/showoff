@@ -81,6 +81,7 @@ export function CalorieGauge({
           </LinearGradient>
         </Defs>
 
+        {/* STEP 1.07 the whole day, unspent
         <Path
           d={arcPath(c, c, r, -half, half)}
           stroke={nr.track}
@@ -88,6 +89,8 @@ export function CalorieGauge({
           strokeLinecap="round"
           fill="none"
         />
+        */}
+        {/* STEP 1.08 and how much of it is gone
         <Path
           d={arcPath(c, c, r, -half, -half + filled)}
           stroke={`url(#${id})`}
@@ -95,13 +98,17 @@ export function CalorieGauge({
           strokeLinecap="round"
           fill="none"
         />
+        */}
       </Svg>
 
+      {/* STEP 1.09 the number, inside the arc
       <View
         style={{
           position: 'absolute',
           left: 0,
           right: 0,
+          // MISTAKE 1.10 the figure came in sitting low
+          paddingTop: 24,
           top: c - size * 0.21,
           alignItems: 'center',
         }}
@@ -113,6 +120,7 @@ export function CalorieGauge({
           {label}
         </T>
       </View>
+      */}
     </View>
   );
 }

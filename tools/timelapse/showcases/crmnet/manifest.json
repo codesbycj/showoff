@@ -1,0 +1,7 @@
+{
+ "net-screen": "src/app/crmnet/index.tsx",
+ "app-bar": "src/features/crmnet/components/app-bar.tsx",
+ "filter-row": "src/features/crmnet/components/filter-row.tsx",
+ "customer-card": "src/features/crmnet/components/customer-card.tsx",
+ "float-bar": "src/features/crmnet/components/float-bar.tsx"
+}

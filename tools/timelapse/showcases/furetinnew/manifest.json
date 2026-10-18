@@ -1,0 +1,10 @@
+{
+ "new-screen": "src/app/furetinnew/index.tsx",
+ "header": "src/features/furetinnew/components/header.tsx",
+ "balance-card": "src/features/furetinnew/components/balance-card.tsx",
+ "action-row": "src/features/furetinnew/components/action-row.tsx",
+ "service-panel": "src/features/furetinnew/components/service-panel.tsx",
+ "promo-banner": "src/features/furetinnew/components/promo-banner.tsx",
+ "empty-state": "src/features/furetinnew/components/empty-state.tsx",
+ "dock": "src/features/furetinnew/components/dock.tsx"
+}

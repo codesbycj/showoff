@@ -1,0 +1,285 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/header"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "their picture"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "with what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/balance-card"
+   ],
+   "label": "what is in the wallet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/balance-card.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the pattern in the card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/balance-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what the number is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/balance-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the number, and its currency"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/action-row"
+   ],
+   "label": "the three things to do with it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "under the card, not in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/action-row.tsx",
+    "STEP 1.13"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/service-panel"
+   ],
+   "label": "what else it does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "four across"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/service-panel.tsx",
+    "STEP 1.16"
+   ],
+   "label": "four of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/promo-banner"
+   ],
+   "label": "what the partner is offering"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "in the middle of the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/promo-banner.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the brand, big and behind"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/promo-banner.tsx",
+    "STEP 1.20"
+   ],
+   "label": "the person in front of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/promo-banner.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and what it is selling"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "which of them this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "what happened lately"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/empty-state"
+   ],
+   "label": "which is nothing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and says so"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "@/features/furetinnew/components/dock"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/furetinnew/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "floating at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/empty-state.tsx",
+    "STEP 1.28"
+   ],
+   "label": "the mark that says so"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/furetinnew/components/dock.tsx",
+    "STEP 1.29"
+   ],
+   "label": "the five places to be"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/furetinnew/components/action-row.tsx",
+    [
+     "// MISTAKE 1.30",
+     "paddingVertical: 10,"
+    ]
+   ],
+   "label": "the actions came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "action-row",
+     "src/features/furetinnew/components/action-row.tsx"
+    ],
+    [
+     "balance-card",
+     "src/features/furetinnew/components/balance-card.tsx"
+    ],
+    [
+     "dock",
+     "src/features/furetinnew/components/dock.tsx"
+    ],
+    [
+     "empty-state",
+     "src/features/furetinnew/components/empty-state.tsx"
+    ],
+    [
+     "header",
+     "src/features/furetinnew/components/header.tsx"
+    ],
+    [
+     "new-screen",
+     "src/app/furetinnew/index.tsx"
+    ],
+    [
+     "promo-banner",
+     "src/features/furetinnew/components/promo-banner.tsx"
+    ],
+    [
+     "service-panel",
+     "src/features/furetinnew/components/service-panel.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

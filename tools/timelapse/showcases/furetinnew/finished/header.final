@@ -1,0 +1,86 @@
+import Bell from 'lucide-react-native/icons/bell';
+import Gift from 'lucide-react-native/icons/gift';
+import MessageCircle from 'lucide-react-native/icons/message-circle';
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { header } from '../data/wallet';
+import { HEADER_AVATAR } from '../layout';
+import { fu, radius } from '../theme';
+import { FACES } from './faces';
+import { T } from './text';
+
+/**
+ * Who is signed in, and the three things waiting for them.
+ *
+ * The redraw drops the tile behind each control, which is why these are bare
+ * icons rather than the discs on the other phone.
+ */
+export function Header({ onAction }: { onAction?: (key: string) => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <Image
+        source={FACES[0]}
+        style={{ width: HEADER_AVATAR, height: HEADER_AVATAR, borderRadius: radius.full }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+
+      <View style={{ flex: 1, marginLeft: 10 }}>
+        <T variant="greetingMeta" color={fu.muted}>
+          {header.meta}
+        </T>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+          <T variant="greeting" color={fu.ink}>
+            {header.name}
+          </T>
+          <Verified size={14} />
+        </View>
+      </View>
+
+      <View style={{ flexDirection: 'row', gap: 16 }}>
+        <Pressable
+          onPress={() => onAction?.('alerts')}
+          accessibilityRole="button"
+          accessibilityLabel="Alerts"
+        >
+          <Bell size={21} color={fu.ink} strokeWidth={1.9} />
+        </Pressable>
+        <Pressable
+          onPress={() => onAction?.('rewards')}
+          accessibilityRole="button"
+          accessibilityLabel="Rewards"
+        >
+          <Gift size={21} color={fu.ink} strokeWidth={1.9} />
+        </Pressable>
+        <Pressable
+          onPress={() => onAction?.('chat')}
+          accessibilityRole="button"
+          accessibilityLabel="Support"
+        >
+          <MessageCircle size={21} color={fu.ink} strokeWidth={1.9} />
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+/** The verified tick beside the name. */
+function Verified({ size }: { size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 20 20">
+      <Path
+        d="M10 0.6 L12.4 2.6 L15.5 2.3 L16.4 5.3 L19 7 L18 10 L19 13 L16.4 14.7 L15.5 17.7 L12.4 17.4 L10 19.4 L7.6 17.4 L4.5 17.7 L3.6 14.7 L1 13 L2 10 L1 7 L3.6 5.3 L4.5 2.3 L7.6 2.6 Z"
+        fill={fu.verified}
+      />
+      <Path
+        d="M6.2 10.1 L8.8 12.6 L13.8 7.2"
+        stroke="#ffffff"
+        strokeWidth={1.9}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </Svg>
+  );
+}

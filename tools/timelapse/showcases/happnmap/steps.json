@@ -1,0 +1,221 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "@/features/happnmap/components/header"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "@/features/happnmap/components/filter-row"
+   ],
+   "label": "how to narrow it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/filter-row.tsx",
+    "STEP 1.08"
+   ],
+   "label": "four ways to narrow it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "@/features/happnmap/components/radar"
+   ],
+   "label": "the field itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "as wide as the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/radar.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and everyone on it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "@/features/happnmap/components/profile-row"
+   ],
+   "label": "who it is pointing at"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "under the radar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/profile-row.tsx",
+    "STEP 1.14"
+   ],
+   "label": "their picture"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/profile-row.tsx",
+    "STEP 1.15"
+   ],
+   "label": "who they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/profile-row.tsx",
+    "STEP 1.16"
+   ],
+   "label": "whether you like them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/profile-row.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and why they are here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "what they say"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "about themselves"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "@/features/happnmap/components/tab-dock"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnmap/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "floating at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnmap/components/tab-dock.tsx",
+    "STEP 1.22"
+   ],
+   "label": "the five places to be"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/happnmap/components/filter-row.tsx",
+    [
+     "// MISTAKE 1.23",
+     "marginTop: 14,"
+    ]
+   ],
+   "label": "the pills came in dropped"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "filter-row",
+     "src/features/happnmap/components/filter-row.tsx"
+    ],
+    [
+     "header",
+     "src/features/happnmap/components/header.tsx"
+    ],
+    [
+     "map-screen",
+     "src/app/happnmap/index.tsx"
+    ],
+    [
+     "profile-row",
+     "src/features/happnmap/components/profile-row.tsx"
+    ],
+    [
+     "radar",
+     "src/features/happnmap/components/radar.tsx"
+    ],
+    [
+     "tab-dock",
+     "src/features/happnmap/components/tab-dock.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

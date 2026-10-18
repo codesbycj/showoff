@@ -1,0 +1,4 @@
+{
+ "intro-screen": "src/app/happnintro/index.tsx",
+ "hero-photo": "src/features/happnintro/components/hero-photo.tsx"
+}

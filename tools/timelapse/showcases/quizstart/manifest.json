@@ -1,0 +1,5 @@
+{
+ "start-screen": "src/app/quizstart/index.tsx",
+ "trophy": "src/features/quizstart/components/trophy.tsx",
+ "hero-stage": "src/features/quizstart/components/hero-stage.tsx"
+}

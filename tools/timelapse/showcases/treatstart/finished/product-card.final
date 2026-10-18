@@ -1,0 +1,139 @@
+import { useState } from 'react';
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { products } from '../data/intro';
+import { CARD_PAD, CARD_W, PHOTO_H } from '../layout';
+import { labels } from '../data/intro';
+import { radius, shadow, tr } from '../theme';
+import { T } from './text';
+
+const ART = {
+  violet: require('../../../../assets/images/treatstart/pack-violet.jpg'),
+  sky: require('../../../../assets/images/treatstart/pack-sky.jpg'),
+} as const;
+
+type Product = (typeof products)[number];
+
+/**
+ * One product, on a card thrown onto the page.
+ *
+ * The photograph is a real pack shot, duotoned into the card's colour by
+ * `tools/bake/treats.py`. A snack pack is a specific manufactured object and
+ * AGENTS.md puts it outside drawing range; the only thing drawn here is the
+ * heart, which is a glyph.
+ *
+ * The card is not rotated here. A card that turns itself cannot be laid out
+ * against its neighbours, because React Native lays out the untransformed box
+ * and then turns it — so the throw belongs to the stack that places them.
+ */
+export function ProductCard({
+  product,
+  showName,
+  onAdd,
+}: {
+  product: Product;
+  showName?: boolean;
+  onAdd?: () => void;
+}) {
+  const [held, setHeld] = useState(false);
+
+  return (
+    <View
+      style={{
+        width: CARD_W,
+        padding: CARD_PAD,
+        borderRadius: radius.card,
+        backgroundColor: tr.card,
+        ...shadow.card,
+      }}
+    >
+      <View>
+        <Image
+          source={ART[product.art]}
+          style={{ width: '100%', height: PHOTO_H, borderRadius: radius.photo }}
+          resizeMode="cover"
+          accessibilityIgnoresInvertColors
+        />
+
+        {showName ? (
+          <View style={{ position: 'absolute', left: 12, top: 10, width: 86 }}>
+            <T variant="product" color={tr.ink}>
+              {product.name}
+            </T>
+          </View>
+        ) : null}
+
+        <View
+          style={{
+            position: 'absolute',
+            right: 9,
+            top: 9,
+            width: 28,
+            height: 28,
+            borderRadius: radius.full,
+            backgroundColor: tr.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Heart size={13} />
+        </View>
+      </View>
+
+      <View
+        style={{
+          marginTop: 10,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <View>
+          <T variant="priceLabel" color={tr.muted}>
+            {labels.price}
+          </T>
+          <T variant="price" color={tr.ink}>
+            {product.price}
+          </T>
+        </View>
+
+        <Pressable
+          onPress={onAdd}
+          onPressIn={() => setHeld(true)}
+          onPressOut={() => setHeld(false)}
+          accessibilityRole="button"
+          accessibilityLabel={`${labels.addToCart}, ${product.name}`}
+        >
+          <View
+            style={{
+              height: 34,
+              paddingHorizontal: 16,
+              borderRadius: radius.pill,
+              backgroundColor: tr.action,
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: held ? 0.86 : 1,
+            }}
+          >
+            <T variant="cardAction" color={tr.onAction}>
+              {labels.addToCart}
+            </T>
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}
+
+/** The favourite mark. Drawn, because an emoji heart differs per platform. */
+export function Heart({ size, color = tr.ink }: { size: number; color?: string }) {
+  return (
+    <Svg width={size} height={size * 0.9} viewBox="0 0 20 18">
+      <Path
+        d="M10 17 C2 11.6 0 8.3 0 5.4 C0 2.4 2.2 0.4 5 0.4 C7 0.4 8.9 1.6 10 3.4 C11.1 1.6 13 0.4 15 0.4 C17.8 0.4 20 2.4 20 5.4 C20 8.3 18 11.6 10 17 Z"
+        fill={color}
+      />
+    </Svg>
+  );
+}

@@ -1,0 +1,185 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "@/features/happnswipe/components/header"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the other way of looking"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "@/features/happnswipe/components/category-row"
+   ],
+   "label": "how to narrow it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/category-row.tsx",
+    "STEP 1.08"
+   ],
+   "label": "five ways to filter"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "@/features/happnswipe/components/profile-card"
+   ],
+   "label": "and who is on offer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "filling what is left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/profile-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/profile-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "how new and how close"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/profile-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "every way of answering"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/profile-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "something to read against"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/profile-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and who they are"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/happnswipe/components/profile-card.tsx",
+    [
+     "// MISTAKE 1.16",
+     "paddingVertical: 8,"
+    ]
+   ],
+   "label": "the chips came in squeezed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "@/features/happnswipe/components/tab-dock"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/happnswipe/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "floating at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/happnswipe/components/tab-dock.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the five places to be"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "category-row",
+     "src/features/happnswipe/components/category-row.tsx"
+    ],
+    [
+     "header",
+     "src/features/happnswipe/components/header.tsx"
+    ],
+    [
+     "profile-card",
+     "src/features/happnswipe/components/profile-card.tsx"
+    ],
+    [
+     "swipe-screen",
+     "src/app/happnswipe/index.tsx"
+    ],
+    [
+     "tab-dock",
+     "src/features/happnswipe/components/tab-dock.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

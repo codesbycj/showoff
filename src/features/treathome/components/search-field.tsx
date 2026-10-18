@@ -1,0 +1,44 @@
+import Search from 'lucide-react-native/icons/search';
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/home';
+import { SEARCH_HEIGHT } from '../layout';
+import { radius, tr } from '../theme';
+import { T } from './text';
+
+/**
+ * The search field.
+ *
+ * A `Pressable` rather than a `TextInput`: nothing on this screen reads what
+ * is typed, and a real input would blink a caret through the whole recording.
+ */
+export function SearchField({ onPress }: { onPress?: () => void }) {
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={header.searchPlaceholder}
+    >
+      <View
+        style={{
+          height: SEARCH_HEIGHT,
+          borderRadius: radius.pill,
+          backgroundColor: tr.well,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 18,
+          gap: 10,
+        }}
+      >
+        {/* STEP 1.08 the magnifier
+        <Search size={17} color={tr.muted} strokeWidth={1.9} />
+        */}
+        {/* STEP 1.09 and what it asks for
+        <T variant="search" color={tr.muted}>
+          {header.searchPlaceholder}
+        </T>
+        */}
+      </View>
+    </Pressable>
+  );
+}
