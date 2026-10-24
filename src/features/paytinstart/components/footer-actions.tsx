@@ -32,6 +32,7 @@ export function FooterActions({
 
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      {/* STEP 1.23 a way past all this
       <Pressable
         onPress={onSkip}
         onPressIn={() => setHeldSkip(true)}
@@ -45,9 +46,11 @@ export function FooterActions({
           {skip}
         </T>
       </Pressable>
+      */}
 
       <View style={{ flex: 1 }} />
 
+      {/* STEP 1.24 and the way on
       <Pressable
         onPress={onStart}
         onPressIn={() => setHeldStart(true)}
@@ -67,6 +70,8 @@ export function FooterActions({
               backgroundColor: pt.ink,
               alignItems: 'center',
               justifyContent: 'center',
+              // MISTAKE 1.25 the button came in faded
+              opacity: 0.4,
               marginLeft: START_GAP,
               ...shadow.start,
             }}
@@ -75,6 +80,7 @@ export function FooterActions({
           </View>
         </View>
       </Pressable>
+      */}
     </View>
   );
 }

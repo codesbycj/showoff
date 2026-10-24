@@ -1,0 +1,1856 @@
+/*
+ * The after: a rebuild of the reference's home page, declaration for
+ * declaration (rule 0).
+ *
+ * The reference is a WordPress block theme, so it ships its whole stylesheet in
+ * the document. Everything below was read out of that stylesheet rather than
+ * measured off a screenshot: the rem values, the breakpoints, the easings and
+ * the keyframes are its own. `body .wp-site-blocks` becomes `.q` here, because
+ * both designs are mounted at once and the after may not style the page.
+ *
+ * Three things are *not* copied, and each is in Declared departures:
+ *   - the three commercial typefaces (substituted; see styles/index.css);
+ *   - the icon webfont (the same glyphs, as path data, in Icons.tsx);
+ *   - the brand marks (invented; rule 10).
+ */
+
+.q {
+  --ink: #2c111d; /* brown-700 / base */
+  --plum: #543945; /* brown-400 */
+  --plum-deep: #402531; /* brown-500 */
+  --mauve: #a48995; /* brown-200 */
+  --pink: #ffbbe4; /* pink-400 */
+  --pink-deep: #f2a8d0; /* pink-500 */
+  --yellow: #ffff6b; /* yellow-400 */
+  --orange: #f96926;
+  --green: #69e691;
+  --purple: #d4b5f6;
+  --sky: #7acaff; /* blue-500 */
+  --cream: #faf8ef; /* cream-500 */
+  --cream-2: #f8f6ef; /* cream-600 */
+  --cream-3: #f0ebe2; /* cream-700 */
+  --cream-4: #eae2d9; /* cream-800 */
+  --white: #fff;
+
+  --announcement-bar-height: 42px;
+  --header-fixed-top: 42px;
+
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.45;
+  /*
+   * The reference sets `overflow: hidden` on `body`, where it keeps the hero
+   * carousel from widening the page. Copied literally onto a div it would be a
+   * different thing: an `overflow: hidden` element is a scroll container, and
+   * every `position: sticky` inside it -- the subnav, the rooms sidebar, the
+   * infopoint heading, the apply form -- would resolve against a box that
+   * never scrolls and so never stick. `overflow-x: clip` clips without
+   * becoming one.
+   */
+  overflow-x: clip;
+}
+
+.q.-bar-closed {
+  --announcement-bar-height: 0px;
+  --header-fixed-top: 0px;
+}
+
+/* ------------------------------------------------------------------- type */
+
+/*
+ * `:where()` on the scope, so these base rules keep the specificity the
+ * reference's own have -- a bare `h1 {}` and a bare `p {}`. Written as
+ * `.q h3 {}` they would be (0,1,1) and would beat every block's own
+ * `.q-tile__heading { margin-bottom: 0.5rem }`, which is exactly what happened:
+ * four tile headings, a location address and the apply standfirst all lost
+ * their bottom margin and the page came up 8px short a block.
+ */
+:where(.q) :is(h1, h2, h3, h4) {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  margin: 0;
+}
+
+:where(.q) h1 {
+  font-size: 3.25rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+:where(.q) h2 {
+  font-size: 1.625rem;
+  line-height: 1.3;
+}
+
+:where(.q) h3 {
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
+:where(.q) :is(p, ul, a, button, input, select, textarea) {
+  font-family: var(--font-sans);
+}
+
+:where(.q) p {
+  margin: 0;
+}
+
+:where(.q) ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  :where(.q) h1 {
+    font-size: 5.625rem;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
+  :where(.q) h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  :where(.q) h3 {
+    font-size: 1.375rem;
+    line-height: 1.3;
+  }
+}
+
+/* -------------------------------------------------------------- the shell */
+
+/*
+ * The 24px between every top-level block. The reference gets it from
+ * WordPress's own `--wp--style--block-gap`, whose rule is written at
+ * `:root :where(...)` and so loses to any class that sets its own margin --
+ * the subnav's 1.75rem, the infopoint's 6rem. `:where()` here keeps that
+ * ordering: nothing below contributes specificity, so a block with its own
+ * margin still wins.
+ */
+:where(.q main) > * {
+  margin-top: 24px;
+}
+
+:where(.q main) > :first-child {
+  margin-top: 0;
+}
+
+.q__container {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .q__container {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+/* ---------------------------------------------------------- the one button */
+
+/*
+ * One button shape for the whole page, and its hover is the page's signature:
+ * the radius goes from 0.5rem to 1.75rem over 200ms, so a rectangle becomes a
+ * pill under the pointer and nothing else moves.
+ */
+.q-btn {
+  align-items: center;
+  appearance: none;
+  background-color: var(--ink);
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 600;
+  gap: 0.5rem;
+  height: 3.375rem;
+  justify-content: center;
+  line-height: 1.45;
+  padding: 0 1.375rem;
+  text-decoration: none;
+  transition: border-radius 0.2s ease-in-out;
+  width: 100%;
+}
+
+.q-btn:hover,
+.q-btn:focus-visible {
+  border-radius: 1.75rem;
+  color: var(--white);
+}
+
+.q-btn__icon {
+  font-size: 1.25rem;
+  flex: none;
+}
+
+.q-btn.-alt {
+  background-color: transparent;
+  border: 0.0625rem solid var(--plum);
+  color: var(--plum-deep);
+}
+
+@media (min-width: 768px) {
+  .q-btn.-fit {
+    max-width: max-content;
+  }
+}
+
+/* -------------------------------------------------------- announcement bar */
+
+.q-announcement {
+  align-items: center;
+  background-color: var(--pink);
+  color: var(--plum-deep);
+  display: flex;
+  justify-content: center;
+  max-height: 120px;
+  min-height: 62px;
+  overflow: hidden;
+  padding: 10px 44px 10px 20px;
+  position: relative;
+  transition:
+    max-height 0.35s,
+    opacity 0.35s,
+    padding-top 0.35s,
+    padding-bottom 0.35s;
+  width: 100%;
+  z-index: 102;
+}
+
+.q-announcement__text {
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  margin: 0;
+  text-align: center;
+}
+
+.q-announcement__close {
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 28px;
+  justify-content: center;
+  padding: 6px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s;
+  width: 28px;
+}
+
+.q-announcement__close:hover {
+  background-color: rgb(64 37 49 / 0.1);
+}
+
+.q-announcement__close:focus-visible {
+  outline: 2px solid var(--plum-deep);
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .q-announcement {
+    min-height: 42px;
+    padding: 8px 48px;
+  }
+
+  .q-announcement__text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+}
+
+/* ------------------------------------------------------------- the header */
+
+.q-header {
+  left: 0;
+  position: absolute;
+  top: var(--announcement-bar-height, 0);
+  width: 100%;
+  z-index: 101;
+}
+
+.q-header__container {
+  align-items: center;
+  display: flex;
+  height: 4.25rem;
+}
+
+.q-header__logo {
+  display: block;
+  color: var(--ink);
+}
+
+.q-header__logo svg {
+  display: block;
+  font-family: var(--font-display);
+  height: auto;
+  width: 5.375rem;
+}
+
+/*
+ * The in-flow twin of the floating CTA. It is invisible and unreachable, and
+ * it exists only to hold the gap the fixed one sits in -- without it the nav
+ * runs under the button. The reference ships the same pair.
+ */
+.q-header__cta-spacer {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .q-header__cta-spacer {
+    display: flex;
+    margin-left: 2.25rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.q-header__nav {
+  display: none;
+}
+
+.q-header__nav-list {
+  align-items: center;
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.q-header__nav-list a {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.q-header__lang {
+  display: none;
+}
+
+.q-header__lang li {
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.q-header__lang a {
+  color: var(--ink);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/*
+ * The CTA is fixed, not in the flow: it rides the viewport and hides itself
+ * once the apply block is on screen (there is a form there already, so a
+ * floating "Apply now" over it is a second ask for the same thing).
+ */
+.q-header__cta {
+  bottom: 1.5rem;
+  position: fixed;
+  right: 1.25rem;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    top 0.2s;
+  width: calc(100% - 2.5rem);
+  z-index: 101;
+}
+
+.q-header__cta.-scroll-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.q-header__toggler {
+  align-items: center;
+  appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  height: 1.5rem;
+  justify-content: center;
+  margin-left: auto;
+  width: 1.5rem;
+  z-index: 2;
+}
+
+.q-header__toggler-line {
+  background-color: var(--plum-deep);
+  display: block;
+  height: 0.0625rem;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  width: 1.125rem;
+}
+
+.q-header__toggler.-active .q-header__toggler-line:first-child {
+  transform: translateY(0.375rem) rotate(45deg);
+}
+
+.q-header__toggler.-active .q-header__toggler-line:nth-child(2) {
+  opacity: 0;
+}
+
+.q-header__toggler.-active .q-header__toggler-line:nth-child(3) {
+  transform: translateY(-0.375rem) rotate(-45deg);
+}
+
+/* The sheet the burger opens, which grows its own ground down the screen. */
+.q-header__overlay {
+  height: calc(100dvh - var(--header-fixed-top, 0px));
+  left: 0;
+  padding: 4.25rem 1.25rem 5.375rem;
+  position: fixed;
+  top: var(--header-fixed-top, 0);
+  transition: visibility 0.1s 0.5s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 100;
+}
+
+.q-header__overlay::before {
+  background-color: var(--cream-4);
+  content: '';
+  left: 0;
+  min-height: 0;
+  position: absolute;
+  top: 0;
+  transition: min-height 0.5s cubic-bezier(0.47, 0.12, 0.5, 0.9) 0.1s;
+  width: 100%;
+  z-index: -1;
+}
+
+.q-header__overlay.-active {
+  transition-delay: 0s;
+  visibility: visible;
+}
+
+.q-header__overlay.-active::before {
+  min-height: 100%;
+}
+
+.q-header__overlay-nav,
+.q-header__overlay-lang,
+.q-header__overlay-social {
+  opacity: 0;
+  transition:
+    opacity 0.5s,
+    visibility 0.5s;
+  visibility: hidden;
+}
+
+.q-header__overlay.-active .q-header__overlay-nav,
+.q-header__overlay.-active .q-header__overlay-lang,
+.q-header__overlay.-active .q-header__overlay-social {
+  opacity: 1;
+  transition-delay: 0.5s;
+  visibility: visible;
+}
+
+.q-header__overlay-nav {
+  margin-bottom: 3rem;
+}
+
+.q-header__overlay-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.q-header__overlay-nav-list li {
+  position: relative;
+}
+
+.q-header__overlay-nav-list li::before,
+.q-header__overlay-nav-list li::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.q-header__overlay-nav-list li::before {
+  background-color: var(--cream-3);
+  border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  height: 100%;
+  width: calc(100% - 2.5rem);
+}
+
+/* The right end of each row is a cut shape, not a rounded corner. */
+.q-header__overlay-nav-list li::after {
+  background: url('@/assets/img/shapes/nav-shape-cream.svg') 100% center / auto 100% no-repeat;
+  height: 100%;
+  left: unset;
+  right: 0;
+  width: 2.5rem;
+}
+
+.q-header__overlay-nav-list li:nth-child(1).-current::before {
+  background-color: var(--yellow);
+}
+.q-header__overlay-nav-list li:nth-child(1).-current::after {
+  background-image: url('@/assets/img/shapes/nav-shape-yellow.svg');
+}
+.q-header__overlay-nav-list li:nth-child(2).-current::before {
+  background-color: var(--pink);
+}
+.q-header__overlay-nav-list li:nth-child(2).-current::after {
+  background-image: url('@/assets/img/shapes/nav-shape-pink.svg');
+}
+.q-header__overlay-nav-list li:nth-child(3).-current::before {
+  background-color: var(--sky);
+}
+.q-header__overlay-nav-list li:nth-child(3).-current::after {
+  background-image: url('@/assets/img/shapes/nav-shape-blue.svg');
+}
+.q-header__overlay-nav-list li:nth-child(4).-current::before {
+  background-color: var(--green);
+}
+.q-header__overlay-nav-list li:nth-child(4).-current::after {
+  background-image: url('@/assets/img/shapes/nav-shape-green.svg');
+}
+
+.q-header__overlay-nav-list a {
+  align-items: center;
+  color: var(--plum-deep);
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 600;
+  height: 4.6875rem;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1.75rem;
+  text-decoration: none;
+}
+
+.q-header__overlay-nav-list a span {
+  align-items: center;
+  background-color: rgb(84 57 69 / 0.08);
+  border-radius: 50%;
+  display: flex;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.q-header__overlay-lang {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0 0 3rem;
+}
+
+.q-header__overlay-lang li.-current {
+  border-bottom: 0.125rem solid rgb(84 57 69 / 0.698);
+}
+
+.q-header__overlay-lang a {
+  color: var(--plum-deep);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.q-header__overlay-social-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.q-header__overlay-social-list li {
+  text-align: center;
+  width: 100%;
+}
+
+.q-header__overlay-social-list a {
+  color: var(--plum);
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .q-header__container {
+    height: 5.125rem;
+  }
+
+  .q-header__logo svg {
+    width: 7rem;
+  }
+
+  .q-header__toggler,
+  .q-header__overlay {
+    display: none;
+  }
+
+  .q-header__nav {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .q-header__lang {
+    align-items: center;
+    border-left: 0.0625rem solid rgb(84 57 69 / 0.698);
+    display: flex;
+    height: 1.75rem;
+    justify-content: center;
+    margin: 0 0 0 1.5rem;
+    padding: 0 0 0 1.5rem;
+  }
+
+  .q-header__cta {
+    bottom: unset;
+    right: 1.25rem;
+    top: calc(var(--header-fixed-top, 0px) + 1rem);
+    width: unset;
+  }
+}
+
+@media (min-width: 992px) {
+  .q-header__cta {
+    right: 3.5rem;
+  }
+}
+
+/* --------------------------------------------------------------- the hero */
+
+.q-hero {
+  background-color: var(--yellow);
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  height: 100svh;
+  padding-bottom: 7.125rem;
+  padding-top: 4.25rem;
+}
+
+.q-hero__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.q-hero__heading {
+  margin: 0;
+  max-width: 20.9375rem;
+  min-height: 11.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+/*
+ * The typed word is the one place the page uses its serif at display size, and
+ * it is set as its own block so the line below never reflows while a word is
+ * being typed out and deleted.
+ */
+.q-hero__words {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.q-hero__description {
+  font-size: 1.125rem;
+  line-height: 1.35;
+  margin: auto 0 0;
+  max-width: 19.125rem;
+}
+
+.q-hero__carousel {
+  display: flex;
+  height: 24.125rem;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  max-height: calc(100dvh - 28rem);
+  overflow: hidden;
+  position: relative;
+  width: calc(100% + 2.5rem);
+}
+
+/*
+ * Two identical groups side by side, the pair translated a full group's width
+ * over 25s. Each item also rocks 12deg and back on its own clock, so the
+ * procession never falls into step with itself.
+ */
+.q-hero__carousel-group {
+  align-items: center;
+  animation: q-carousel 25s linear infinite;
+  display: flex;
+  flex: 0 0 100%;
+  height: 100%;
+  width: max-content;
+}
+
+.q-hero__carousel-item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.q-hero__carousel-item.-shape-1 {
+  animation: q-item-rotate 10s linear infinite;
+  background: url('@/assets/img/shapes/hero-shape-1.svg') 50% center / contain no-repeat;
+  height: 10.0625rem;
+  margin-left: 1.25rem;
+  margin-right: 2.375rem;
+  width: 10.9375rem;
+}
+
+.q-hero__carousel-item.-shape-2,
+.q-hero__carousel-item.-shape-4 {
+  animation: q-item-rotate 10s linear infinite;
+  background: url('@/assets/img/shapes/hero-shape-2.svg') 50% center / contain no-repeat;
+  height: 11.125rem;
+  width: 10.75rem;
+}
+
+.q-hero__carousel-item.-shape-2 {
+  margin-right: 3.625rem;
+}
+
+.q-hero__carousel-item.-shape-4 {
+  margin-right: 0;
+}
+
+.q-hero__carousel-item.-shape-3 {
+  animation: q-item-rotate 8s linear infinite;
+  background: url('@/assets/img/shapes/hero-shape-3.svg') 50% center / contain no-repeat;
+  height: 9.4375rem;
+  margin-right: -2.125rem;
+  width: 8.1875rem;
+  z-index: 2;
+}
+
+.q-hero__carousel-item.-media-1,
+.q-hero__carousel-item.-media-2,
+.q-hero__carousel-item.-media-3,
+.q-hero__carousel-item.-media-4 {
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.q-hero__carousel-item.-media-1 {
+  height: 19.25rem;
+  margin-right: 6.125rem;
+  mask-image: url('@/assets/img/shapes/hero-mask-1.svg');
+  width: 17.5rem;
+}
+
+.q-hero__carousel-item.-media-2 {
+  height: 19.25rem;
+  margin-right: 10.875rem;
+  mask-image: url('@/assets/img/shapes/hero-mask-2.svg');
+  width: 17.1875rem;
+}
+
+.q-hero__carousel-item.-media-3 {
+  height: 18.9375rem;
+  margin-right: 9.125rem;
+  mask-image: url('@/assets/img/shapes/hero-mask-3.svg');
+  mask-position: left center;
+  width: 16.625rem;
+}
+
+.q-hero__carousel-item.-media-4 {
+  height: 19.25rem;
+  margin-right: 6.125rem;
+  mask-image: url('@/assets/img/shapes/hero-mask-5.svg');
+  mask-position: left center;
+  width: 17.5rem;
+}
+
+.q-hero__carousel-item img,
+.q-hero__carousel-item video {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.q-hero__carousel-item.-media-4 video {
+  object-position: left center;
+}
+
+@keyframes q-carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes q-item-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .q-hero__carousel-group,
+  .q-hero__carousel-item {
+    animation: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .q-hero {
+    padding-bottom: 3.875rem;
+    padding-top: 5rem;
+  }
+
+  .q-hero__heading {
+    max-width: unset;
+    min-height: 17.75rem;
+  }
+
+  .q-hero__description {
+    font-size: 1.375rem;
+    line-height: 1.3;
+    max-width: 29.75rem;
+  }
+
+  .q-hero__carousel {
+    margin-top: -1.25rem;
+    max-height: unset;
+  }
+
+  .q-hero__carousel-item.-shape-1 {
+    height: 14.5rem;
+    margin-left: 3.5rem;
+    margin-right: 3.75rem;
+    width: 15.75rem;
+  }
+
+  .q-hero__carousel-item.-shape-2,
+  .q-hero__carousel-item.-shape-4 {
+    height: 15.4375rem;
+    width: 14.875rem;
+  }
+
+  .q-hero__carousel-item.-shape-2 {
+    margin-right: 5.9375rem;
+  }
+
+  .q-hero__carousel-item.-shape-3 {
+    height: 15.125rem;
+    margin-right: -3rem;
+    width: 16.25rem;
+  }
+
+  .q-hero__carousel-item.-media-1 {
+    height: 23.6875rem;
+    margin-right: 16.25rem;
+    width: 21.375rem;
+  }
+
+  .q-hero__carousel-item.-media-2 {
+    height: 23.875rem;
+    margin-right: 22.5rem;
+    width: 21.25rem;
+  }
+
+  .q-hero__carousel-item.-media-3 {
+    height: 23.5rem;
+    margin-right: 14.375rem;
+    width: 20.8125rem;
+  }
+
+  .q-hero__carousel-item.-media-4 {
+    height: 23.6875rem;
+    margin-right: 16.25rem;
+    width: 21.375rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .q-hero__heading {
+    min-height: 13.125rem;
+  }
+
+  .q-hero__carousel {
+    margin-left: -3.5rem;
+    margin-right: -3.5rem;
+    width: calc(100% + 7rem);
+  }
+}
+
+@media (min-width: 1600px) {
+  .q-hero__carousel-item {
+    max-height: 94%;
+  }
+}
+
+/* ------------------------------------------------------------- the subnav */
+
+.q-subnav {
+  left: 0;
+  margin-top: 3.5rem;
+  position: sticky;
+  top: 0.75rem;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s,
+    transform 0.3s;
+  z-index: 10;
+}
+
+.q-subnav.-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.q-subnav__slider {
+  height: 3rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.q-subnav__list {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: max-content;
+}
+
+.q-subnav__item {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 0.25rem 0.125rem;
+  width: max-content;
+}
+
+.q-subnav__item:first-child {
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding-left: 0.3125rem;
+}
+
+.q-subnav__item:last-child {
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  padding-right: 0.3125rem;
+}
+
+.q-subnav__link {
+  align-items: center;
+  border-radius: 0.375rem;
+  color: var(--plum);
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 2.5rem;
+  justify-content: center;
+  line-height: 1;
+  padding: 0 0.625rem;
+  text-decoration: none;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+.q-subnav__item.-active .q-subnav__link {
+  background-color: var(--plum);
+  color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .q-subnav {
+    margin-top: 1.75rem;
+  }
+
+  .q-subnav__slider {
+    height: 4.1875rem;
+  }
+
+  .q-subnav__list {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+  }
+
+  .q-subnav__item {
+    padding: 0.375rem 0.25rem;
+  }
+
+  .q-subnav__item:first-child {
+    padding-left: 0.375rem;
+  }
+
+  .q-subnav__item:last-child {
+    padding-right: 0.375rem;
+  }
+
+  .q-subnav__link {
+    font-size: 1rem;
+    height: 3.4375rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .q-subnav__link:hover {
+    background-color: rgb(84 57 69 / 0.05);
+  }
+}
+
+/* ------------------------------------------------------- the section head */
+
+.q-section-header__label {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
+.q-section-header__heading {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .q-section-header__label {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+}
+
+/* ------------------------------------------------------------- the slogan */
+
+.q-slogan {
+  padding-top: 4.6875rem;
+}
+
+.q-slogan__items {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 77.6875rem;
+}
+
+.q-slogan__word {
+  color: var(--plum-deep);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/*
+ * Labil Grotesk sets one letter a line in a wonky alternate. Geist has no such
+ * alternate, so the same letter is set in the italic instead -- the same joke,
+ * made with what a free family has.
+ */
+.q-slogan__word em {
+  font-style: italic;
+}
+
+.q-slogan__shape,
+.q-slogan__image {
+  scale: 0;
+}
+
+.q-slogan__image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.q-slogan__image img {
+  display: none;
+}
+
+.q-slogan__image.-image-1 {
+  background: url('@/assets/img/shapes/slogan-shape-mobile-1.svg') 50% center / contain no-repeat;
+  height: 2.875rem;
+  width: 2.4375rem;
+}
+
+.q-slogan__image.-image-2 {
+  background: url('@/assets/img/shapes/slogan-shape-mobile-5.svg') 50% center / contain no-repeat;
+  height: 2.625rem;
+  width: 3rem;
+}
+
+.q-slogan__shape {
+  display: block;
+}
+
+.q-slogan__shape.-shape-1 {
+  background: url('@/assets/img/shapes/slogan-shape-mobile-2.svg') 50% center / contain no-repeat;
+  height: 2.875rem;
+  width: 2.4375rem;
+}
+
+.q-slogan__shape.-shape-2 {
+  background: url('@/assets/img/shapes/slogan-shape-mobile-3.svg') 50% center / contain no-repeat;
+  height: 3rem;
+  width: 2.625rem;
+}
+
+.q-slogan__shape.-shape-3 {
+  background: url('@/assets/img/shapes/slogan-shape-mobile-4.svg') 50% center / contain no-repeat;
+  height: 2.5rem;
+  width: 3rem;
+}
+
+@media (min-width: 768px) {
+  .q-slogan {
+    padding-top: 6rem;
+  }
+
+  .q-slogan__items {
+    column-gap: 1rem;
+  }
+
+  /*
+   * -0.015em rather than the reference's -0.01em. Geist runs about 1% wider
+   * than Labil Grotesk at this size, and at 1440 that was enough -- three
+   * pixels of 1,256 -- to push the third line of the slogan onto a row of its
+   * own and add 125px to the block. The composition is the thing here, so the
+   * tracking gives way and the wrap is kept. Declared.
+   */
+  .q-slogan__word {
+    font-family: var(--font-display);
+    font-size: 3.9375rem;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  .q-slogan__image {
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+
+  .q-slogan__image img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .q-slogan__image.-image-1 {
+    background: unset;
+    height: 9.4375rem;
+    mask-image: url('@/assets/img/shapes/slogan-mask-1.svg');
+    width: 7.8125rem;
+  }
+
+  .q-slogan__image.-image-2 {
+    background: unset;
+    height: 7.9375rem;
+    mask-image: url('@/assets/img/shapes/slogan-mask-2.svg');
+    width: 9.125rem;
+  }
+
+  .q-slogan__shape.-shape-1 {
+    background-image: url('@/assets/img/shapes/slogan-shape-1.svg');
+    height: 9.4375rem;
+    width: 7.8125rem;
+  }
+
+  .q-slogan__shape.-shape-2 {
+    background-image: url('@/assets/img/shapes/slogan-shape-2.svg');
+    height: 9rem;
+    width: 7.8125rem;
+  }
+
+  .q-slogan__shape.-shape-3 {
+    background-image: url('@/assets/img/shapes/slogan-shape-3.svg');
+    height: 7.875rem;
+    width: 9.4375rem;
+  }
+}
+
+/* -------------------------------------------------------------- the tiles */
+
+.q-tiles {
+  padding-top: 5rem;
+}
+
+.q-tiles__header {
+  margin-bottom: 2.125rem;
+}
+
+.q-tiles__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.q-tile {
+  background-color: var(--cream-3);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  padding: 0.75rem 0.75rem 1.1875rem;
+  position: relative;
+}
+
+/* On a phone the four tiles are four colours; on a desktop they are one. */
+@media (max-width: 991.98px) {
+  .q-tiles__items > .q-tile:nth-child(1) {
+    background-color: var(--yellow);
+  }
+  .q-tiles__items > .q-tile:nth-child(2) {
+    background-color: var(--pink);
+  }
+  .q-tiles__items > .q-tile:nth-child(4) {
+    background-color: var(--green);
+  }
+}
+
+.q-tile__photos {
+  border-radius: 1rem;
+  height: 12.9375rem;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.q-tile__content {
+  overflow: hidden;
+  padding: 0 0.25rem;
+}
+
+.q-tile__heading {
+  color: var(--plum-deep);
+  margin: 0 0 0.5rem;
+}
+
+.q-tile__description {
+  color: var(--plum);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .q-tiles {
+    padding-top: 9rem;
+  }
+
+  .q-tiles__header {
+    margin-bottom: 3rem;
+  }
+
+  .q-tiles__items {
+    display: grid;
+    gap: 1.375rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .q-tile {
+    border-radius: 1.5rem;
+    padding-bottom: 1.375rem;
+  }
+
+  .q-tile__content {
+    padding: 0 0.75rem;
+  }
+
+  .q-tile__description {
+    font-size: 1rem;
+  }
+}
+
+/*
+ * The row's hover, which is the page's best trick: the four tiles are one flex
+ * row, the one under the pointer takes a third of it and the other three share
+ * what is left. The copy is only painted in the wide one -- it fades in a
+ * quarter-second behind the width, so the words arrive after the box has
+ * finished moving rather than reflowing inside it.
+ */
+@media (min-width: 992px) {
+  .q-tiles__items {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .q-tile {
+    transition:
+      width 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+    width: calc(25% - 1.03125rem);
+  }
+
+  .q-tiles__items:has(.q-tile:hover) .q-tile:not(:hover) {
+    width: calc(22.222% - 1.03125rem);
+  }
+
+  .q-tile.-active,
+  .q-tile:hover:not(.-active) {
+    background-color: var(--cream-4);
+    width: calc(33.333% - 1.03125rem);
+  }
+
+  .q-tile.-active .q-tile__description,
+  .q-tile:hover:not(.-active) .q-tile__description {
+    opacity: 1;
+    transition-delay: 0.25s;
+  }
+
+  .q-tile.-active .q-gallery__pagination,
+  .q-tile:hover:not(.-active) .q-gallery__pagination {
+    opacity: 1;
+  }
+
+  .q-tile.-active .q-gallery__nav,
+  .q-tile:hover:not(.-active) .q-gallery__nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .q-tile__photos {
+    height: 14.1875rem;
+  }
+
+  .q-tile__description {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: calc(-8.03125rem + 33vw);
+  }
+}
+
+/* ------------------------------------------- a gallery inside a card/tile */
+
+.q-gallery {
+  height: 100%;
+  width: 100%;
+}
+
+.q-gallery .swiper-slide {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.q-gallery img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.q-gallery__pagination {
+  align-items: center;
+  background-color: rgb(255 255 255 / 0.85);
+  border-radius: 0.625rem;
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.375rem;
+  left: 50%;
+  padding: 0.375rem;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/*
+ * The dots are the reference's 8px, and 8px is not a tap target. The dot keeps
+ * its size and gains a transparent 24px box around it through a pseudo
+ * element, which changes nothing on screen and takes the smallest control on
+ * the page from 8px to 24. Noted as an improvement, not a copy.
+ */
+.q-gallery__pagination .swiper-pagination-bullet,
+.q-rooms__gallery-pagination .swiper-pagination-bullet {
+  background-color: var(--mauve);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  height: 0.5rem;
+  opacity: 1;
+  padding: 0;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+  width: 0.5rem;
+}
+
+.q-gallery__pagination .swiper-pagination-bullet::after,
+.q-rooms__gallery-pagination .swiper-pagination-bullet::after {
+  content: '';
+  inset: -0.5rem;
+  position: absolute;
+}
+
+.q-gallery__pagination .swiper-pagination-bullet-active {
+  background-color: var(--ink);
+}
+
+.q-gallery__nav {
+  display: none;
+}
+
+.q-gallery__nav button {
+  align-items: center;
+  appearance: none;
+  background-color: var(--cream);
+  border: 0;
+  border-radius: 50%;
+  color: var(--plum-deep);
+  cursor: pointer;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 2.5rem;
+}
+
+.q-gallery__nav button:hover {
+  transform: scale(1.2);
+}
+
+.q-gallery__nav button:last-child svg {
+  transform: rotate(180deg) translateY(0.0625rem);
+}
+
+@media (min-width: 992px) {
+  .q-gallery__pagination {
+    background-color: unset;
+    gap: 0.5rem;
+    opacity: 0;
+    padding: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .q-gallery__pagination .swiper-pagination-bullet {
+    background-color: rgb(255 255 255 / 0.5);
+  }
+
+  .q-gallery__pagination .swiper-pagination-bullet-active {
+    background-color: var(--white);
+  }
+
+  .q-gallery__nav {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    left: 0;
+    opacity: 0;
+    padding: 0 0.75rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+/* --------------------------------------------------------- the card rails */
+
+.q-rail {
+  padding-top: 5rem;
+}
+
+.q-rail__header {
+  margin-bottom: 2.125rem;
+}
+
+.q-rail__items {
+  overflow: hidden;
+}
+
+.q-rail__nav {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.q-rail__nav button {
+  align-items: center;
+  appearance: none;
+  background-color: var(--cream-3);
+  border: 0;
+  border-radius: 50%;
+  color: var(--plum);
+  cursor: pointer;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  width: 2.5rem;
+}
+
+.q-rail__nav button svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.q-rail__nav button:first-child:hover svg {
+  transform: translateY(0.0625rem);
+}
+
+.q-rail__nav button:last-child svg {
+  transform: rotate(180deg) translateY(0.0625rem);
+}
+
+.q-rail__item {
+  background-color: var(--cream-3);
+  border-radius: 1.25rem;
+  height: auto;
+  overflow: hidden;
+  padding: 0.75rem 0.75rem 1.1875rem;
+  position: relative;
+}
+
+.q-rail__item-photos {
+  border-radius: 1rem;
+  height: 12.9375rem;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.q-rail__item-content {
+  overflow: hidden;
+  padding: 0 0.25rem;
+}
+
+.q-rail__item-heading {
+  color: var(--plum-deep);
+  margin: 0 0 0.5rem;
+}
+
+.q-rail__item-description {
+  color: var(--plum);
+  margin: 0;
+  max-width: 25.75rem;
+}
+
+/* The FREE flag, cut to the same shape the marquee uses. */
+.q-rail__item-badge {
+  align-items: center;
+  background-color: var(--sky);
+  color: var(--white);
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  height: 3.5rem;
+  justify-content: center;
+  line-height: 1.1;
+  mask: url('@/assets/img/shapes/tiles-slogan-shape-1.svg') center top / contain no-repeat;
+  padding-bottom: 0.75rem;
+  position: absolute;
+  right: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  top: 0;
+  width: 3rem;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .q-rail {
+    padding-top: 9rem;
+  }
+
+  .q-rail__header {
+    margin-bottom: 3rem;
+  }
+
+  .q-rail__items {
+    margin-left: -3.5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    width: calc(100% + 7rem);
+  }
+
+  .q-rail__nav {
+    gap: 1rem;
+    margin-top: 1.75rem;
+    padding-bottom: 0.375rem;
+  }
+
+  .q-rail__nav button {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .q-rail__nav button:hover {
+    background-color: var(--cream-4);
+    transform: scale(1.2);
+  }
+
+  .q-rail__item {
+    border-radius: 1.5rem;
+    margin-right: 1.25rem;
+    padding-bottom: 1.375rem;
+    width: 28.75rem;
+  }
+
+  .q-rail__item-content {
+    padding: 0 0.75rem;
+  }
+
+  .q-rail__item-description {
+    font-size: 1rem;
+  }
+
+  .q-rail__item-badge {
+    font-size: 0.8125rem;
+    height: 4.0625rem;
+    padding-bottom: 0.875rem;
+    width: 3.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .q-rail__item {
+    transition:
+      width 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+  }
+
+  .q-rail__item:hover {
+    background-color: var(--cream-4);
+    width: 33.875rem;
+  }
+
+  .q-rail__item:hover .q-gallery__pagination {
+    opacity: 1;
+  }
+
+  .q-rail__item:hover .q-gallery__nav {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .q-rail__item-photos {
+    height: 18.1875rem;
+  }
+}
+
+/* ------------------------------------------------------------ the marquee */
+
+.q-marquee {
+  margin-left: -1.25rem;
+  overflow: hidden;
+  padding-top: 6rem;
+  position: relative;
+  width: calc(100% + 2.5rem);
+}
+
+.q-marquee__track {
+  align-items: center;
+  animation: q-marquee-scroll 20s linear infinite;
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+}
+
+.q-marquee__run {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.q-marquee__item {
+  flex-shrink: 0;
+}
+
+.q-marquee__item.-text {
+  color: var(--plum-deep);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.q-marquee__item.-shape-1 {
+  background: url('@/assets/img/shapes/tiles-slogan-shape-1.svg') 50% center / contain no-repeat;
+  display: block;
+  height: 4.75rem;
+  width: 4.1875rem;
+}
+
+.q-marquee__item.-shape-2 {
+  background: url('@/assets/img/shapes/tiles-slogan-shape-2.svg') 50% center / contain no-repeat;
+  display: block;
+  height: 4rem;
+  width: 4.9375rem;
+}
+
+.q-marquee__item.-image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.q-marquee__item.-image-1 {
+  height: 5rem;
+  mask-image: url('@/assets/img/shapes/slogan-mask-1.svg');
+  width: 4.1875rem;
+}
+
+.q-marquee__item.-image-2 {
+  height: 4.125rem;
+  mask-image: url('@/assets/img/shapes/slogan-mask-2.svg');
+  width: 5rem;
+}
+
+.q-marquee__item.-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+@keyframes q-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .q-marquee__track {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .q-marquee {
+    margin-left: -3.5rem;
+    padding-top: 7.75rem;
+    width: calc(100% + 7rem);
+  }
+
+  .q-marquee__track,
+  .q-marquee__run {
+    gap: 1.75rem;
+  }
+
+  .q-marquee__run {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .q-marquee__item.-text {
+    font-size: 4.5rem;
+    line-height: 1.1;
+  }
+
+  .q-marquee__item.-shape-1 {
+    height: 9.4375rem;
+    width: 8.1875rem;
+  }
+
+  .q-marquee__item.-shape-2 {
+    height: 8.1875rem;
+    width: 9.8125rem;
+  }
+
+  .q-marquee__item.-image-1 {
+    height: 9.4375rem;
+    width: 7.8125rem;
+  }
+
+  .q-marquee__item.-image-2 {
+    height: 8.4375rem;
+    width: 9.75rem;
+  }
+}
+
+/* --------------------------------------------------- the word-rise entrance */
+
+/*
+ * Every heading and eyebrow on the page arrives a word at a time: 1s, up 100px,
+ * out of nothing, 0.05s apart, triggered when the block's top passes 80% of the
+ * viewport. The reference does it with GSAP SplitText and a masked line; this
+ * does it with one span a word and the same numbers.
+ */
+.q-rise {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.q-rise__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    transform 1s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.-in .q-rise__word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .q-rise__word {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

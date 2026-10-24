@@ -20,6 +20,7 @@ export function Stage() {
 
   return (
     <View style={{ width: art, height: art, alignItems: 'center', justifyContent: 'center' }}>
+      {/* STEP 1.05 the disc it stands on
       <View
         style={{
           position: 'absolute',
@@ -29,7 +30,10 @@ export function Stage() {
           backgroundColor: pt.limeDeep,
         }}
       />
+      */}
+      {/* STEP 1.06 and the drawing over it
       <HeroArt size={art} />
+      */}
     </View>
   );
 }

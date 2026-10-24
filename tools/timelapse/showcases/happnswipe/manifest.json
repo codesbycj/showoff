@@ -1,7 +1,0 @@
-{
- "swipe-screen": "src/app/happnswipe/index.tsx",
- "header": "src/features/happnswipe/components/header.tsx",
- "category-row": "src/features/happnswipe/components/category-row.tsx",
- "profile-card": "src/features/happnswipe/components/profile-card.tsx",
- "tab-dock": "src/features/happnswipe/components/tab-dock.tsx"
-}

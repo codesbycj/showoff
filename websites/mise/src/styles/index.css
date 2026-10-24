@@ -1,0 +1,214 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/archivo';
+@import '@fontsource-variable/inter';
+
+/*
+ * Episode 6's after is a **pixel-perfect rebuild** of the reference's home page
+ * (rule 0). Every number below was read off its DOM dump.
+ */
+
+@theme {
+  /*
+   * The reference runs two commercial faces: **Sharp Grotesk 20** for display
+   * and **Graphik** for everything that is read. Neither can be licensed for a
+   * study.
+   *
+   *   Sharp Grotesk 20 -> Archivo Variable. A tight grotesque with squared
+   *                       bowls and a short descender, which is the part of
+   *                       Sharp Grotesk that shows at 72px.
+   *   Graphik          -> Inter Variable. The standard free stand-in for
+   *                       Graphik, and the closest in x-height and width.
+   */
+  --font-display: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Read off the DOM dump, ordered by painted area. */
+  --color-ink: #140018; /* the hero, the AI band and the footer */
+  --color-bone: #f3f0e8; /* the page ground, and type on ink */
+  --color-lime: #d3fd74; /* the results band */
+  --color-violet: #5326d9; /* the customer band */
+  --color-peri: #b0b0fe; /* the two highlighted words in the headline */
+  --color-off: #fbfaf9;
+  --color-mute: #796f7b; /* the platform list's inactive items */
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-bone text-ink font-sans;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  /* 1440 viewport, content from x162 to x1278: a 1116px measure. */
+  .u {
+    width: 100%;
+    max-width: 1116px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    .u {
+      padding-inline: 0;
+    }
+  }
+
+  /* ------------------------------------------------------------------ type */
+
+  /*
+   * Sharp Grotesk 20 at weight 400 reads heavier than Archivo at 400 — its
+   * stems are thicker at the same optical size — so the substitute is set at
+   * **500** and tracked a little tighter to land on the same colour and the
+   * same measure. Matched against the reference's own headline at 72px.
+   */
+  .t-72 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(42px, 4.8vw, 69px);
+    line-height: 1.02;
+    letter-spacing: -0.032em;
+  }
+
+  .t-48 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(34px, 3.4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  .t-40 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(30px, 2.9vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -0.018em;
+  }
+
+  .t-28 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.16;
+    letter-spacing: -0.012em;
+  }
+
+  /* Graphik at 48px is the platform list — text face, display size. */
+  .t-list {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: clamp(32px, 3.4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+  }
+
+  .t-20 {
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.008em;
+  }
+
+  .t-16 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .t-14 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .t-14n {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .t-12 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --------------------------------------------------------------- buttons */
+
+  /*
+   * A pill, 44px tall, 100px radius. Two fills and a ghost, and the only hover
+   * is a colour change — the reference moves nothing anywhere on the page.
+   */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    padding-inline: 20px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  /* ---------------------------------------------------------------- motion */
+
+  @keyframes mise-rail {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* The entrance: 24px up and in, once, 0.6s. */
+  .rise {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .rise.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .btn {
+      transition: none;
+    }
+
+    [data-rail] {
+      animation: none !important;
+    }
+
+    video {
+      display: none;
+    }
+  }
+}

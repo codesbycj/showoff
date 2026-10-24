@@ -1,8 +1,0 @@
-{
- "map-screen": "src/app/happnmap/index.tsx",
- "header": "src/features/happnmap/components/header.tsx",
- "filter-row": "src/features/happnmap/components/filter-row.tsx",
- "radar": "src/features/happnmap/components/radar.tsx",
- "profile-row": "src/features/happnmap/components/profile-row.tsx",
- "tab-dock": "src/features/happnmap/components/tab-dock.tsx"
-}

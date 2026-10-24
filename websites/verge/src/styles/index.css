@@ -1,0 +1,319 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/bricolage-grotesque';
+@import '@fontsource-variable/public-sans';
+
+@theme {
+  /*
+   * Two faces, because this design has two jobs: a display face with enough
+   * character to carry a headline over a photograph, and a text face that
+   * disappears in a table of numbers.
+   *
+   * Bricolage Grotesque is the display: a grotesque with slightly odd
+   * proportions and a real optical-size axis, which is what lets the hero line
+   * sit at 92px without looking like a system font scaled up. Public Sans is
+   * the text face -- a plain, open, legible grotesque designed for government
+   * forms, which is exactly the right register for "what this costs and how it
+   * works".
+   *
+   * Neither is episode 1's Geist or episode 2's Inter Tight.
+   */
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /*
+   * verge's palette, invented for this episode.
+   *
+   * The reference owns a forest green and an acid lime, which is the standard
+   * sustainability pairing and the first thing a rebuild reaches for. This
+   * goes the other way: a cold ink navy for ground, bone for paper, and
+   * **hi-vis orange** as the single accent -- the colour of actually being
+   * seen on a road, which is a more honest signal for a cycling scheme than
+   * another green.
+   */
+  --color-ink: #121a26;
+  --color-slate: #4a5666;
+  --color-bone: #f5f2ea;
+  --color-mist: #dde4e3;
+  --color-hivis: #ff5c28;
+  --color-dusk: #1d2a3a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-bone text-ink font-sans;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  /* The page's measure: 1320 of content inside a 1440 viewport. */
+  .cc {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 992px) {
+    .cc {
+      padding-inline: 32px;
+    }
+  }
+
+  .t-display {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6.4vw, 92px);
+    font-weight: 700;
+    line-height: 92%;
+    letter-spacing: -0.035em;
+  }
+
+  .t-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.6vw, 54px);
+    font-weight: 600;
+    line-height: 98%;
+    letter-spacing: -0.03em;
+  }
+
+  .t-h3 {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-weight: 600;
+    line-height: 108%;
+    letter-spacing: -0.02em;
+  }
+
+  .t-lead {
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 150%;
+  }
+
+  .t-body {
+    font-size: 16px;
+    line-height: 158%;
+  }
+
+  .t-small {
+    font-size: 13.5px;
+    line-height: 145%;
+  }
+
+  .t-label {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /*
+   * A link that carries its underline at rest and retracts it to the right on
+   * hover.
+   *
+   * This is the reference's best small idea and it is worth saying why it
+   * works: the usual wipe-in underline tells you something is a link only
+   * *after* you have found it, which is backwards. Here the link is visibly a
+   * link in the resting page, and the hover is a response -- the rule gets out
+   * of the way as the cursor arrives.
+   *
+   * `transform-origin` flips between the two states so the line leaves by the
+   * same end it would have arrived from.
+   */
+  .u-link {
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .u-link:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.18em;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .u-link:hover:after {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+
+  /*
+   * Blocks arrive by uncovering rather than by fading: a clip-path inset that
+   * opens from the bottom edge over 1.2s.
+   *
+   * A fade says "this was always here, you just could not see it". A wipe says
+   * "this is arriving", which is the right reading for a page you are
+   * scrolling *into*. It costs nothing extra -- clip-path animates on the
+   * compositor like opacity does.
+   */
+  .wipe {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .wipe.is-in {
+    clip-path: inset(0 0 0 0);
+  }
+
+  /*
+   * The swoosh button.
+   *
+   * This is in CSS rather than in utility classes because the whole thing
+   * hangs on a per-layer `transition-delay` computed from a custom property,
+   * and because the second label is a pseudo-element. Both are things the
+   * stylesheet does cleanly and a class list does not.
+   *
+   * At rest the layers sit below the button, tilted; on hover they sweep up,
+   * staggered 64ms apart. The stagger is negative at rest, so leaving unwinds
+   * them in the opposite order to the one they arrived in.
+   */
+  .swoosh__layer {
+    transform-origin: 100% 0;
+    rotate: -12deg;
+    translate: -10% 100%;
+    width: 120%;
+    transition:
+      translate 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+      rotate 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+    transition-delay: calc(var(--i) * -42ms);
+  }
+
+  .swoosh__bg {
+    transition:
+      scale 0.45s cubic-bezier(0.32, 0.72, 0, 1),
+      background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .swoosh__label,
+  .swoosh__label-in {
+    transition:
+      translate 0.75s
+        linear(
+          0,
+          0.5737 7.6%,
+          0.8382 11.87%,
+          0.9463 14.19%,
+          1.0292 16.54%,
+          1.0886 18.97%,
+          1.1258 21.53%,
+          1.137 22.97%,
+          1.1424 24.48%,
+          1.1423 26.1%,
+          1.1366 27.86%,
+          1.1165 31.01%,
+          1.0507 38.62%,
+          1.0219 42.57%,
+          0.9995 46.99%,
+          0.9872 51.63%,
+          0.9842 58.77%,
+          1.0011 81.26%,
+          1
+        ),
+      rotate 0.5s cubic-bezier(0.32, 0.72, 0, 1),
+      opacity 0.2s ease-out,
+      color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .swoosh__label {
+    transform-origin: 0 0;
+  }
+
+  .swoosh__label-in {
+    transform-origin: top right;
+    rotate: -30deg;
+    translate: 0 2em;
+    opacity: 0;
+    transition-delay: 0.1s;
+  }
+
+  @media (hover: hover) and (pointer: fine) and (min-width: 992px) {
+    .swoosh:hover .swoosh__layer {
+      translate: -10% 0;
+      rotate: 0deg;
+      transition-delay: calc(var(--i) * 64ms);
+    }
+
+    .swoosh:hover .swoosh__bg {
+      scale: 1.065 1.095;
+    }
+
+    .swoosh:hover .swoosh__label {
+      opacity: 0;
+      rotate: -60deg;
+      translate: 0 -2em;
+    }
+
+    .swoosh:hover .swoosh__label-in {
+      opacity: 1;
+      rotate: 0deg;
+      translate: 0 0;
+    }
+  }
+
+  /*
+   * The hero's two load animations.
+   *
+   * The wedge draws itself open from its own bottom edge and the lines come up
+   * from behind theirs, overlapping by design: the first line starts while the
+   * wedge is still opening, so the hero arrives as one movement rather than as
+   * a sequence of two.
+   */
+  @keyframes verge-wedge {
+    from {
+      clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%);
+    }
+    to {
+      clip-path: polygon(0 100%, 0 56%, 100% 26%, 100% 100%);
+    }
+  }
+
+  @keyframes verge-line {
+    from {
+      transform: translateY(105%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* The trusted-by band: one copy of the row translated by exactly half. */
+  @keyframes verge-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wipe {
+      clip-path: none;
+      transition: none;
+    }
+
+    .u-link:after {
+      transition: none;
+    }
+
+    .swoosh__layer,
+    .swoosh__bg,
+    .swoosh__label,
+    .swoosh__label-in {
+      transition: none;
+    }
+  }
+}

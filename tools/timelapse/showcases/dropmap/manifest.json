@@ -1,7 +1,0 @@
-{
- "map-screen": "src/app/dropmap/index.tsx",
- "map-art": "src/features/dropmap/components/map-art.tsx",
- "search-bar": "src/features/dropmap/components/search-bar.tsx",
- "chip-row": "src/features/dropmap/components/chip-row.tsx",
- "route-sheet": "src/features/dropmap/components/route-sheet.tsx"
-}

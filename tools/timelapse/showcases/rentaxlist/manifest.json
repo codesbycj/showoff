@@ -1,9 +1,0 @@
-{
- "browse-screen": "src/app/rentaxlist/index.tsx",
- "top-bar": "src/features/rentaxlist/components/top-bar.tsx",
- "segment-tabs": "src/features/rentaxlist/components/segment-tabs.tsx",
- "date-row": "src/features/rentaxlist/components/date-row.tsx",
- "car-card": "src/features/rentaxlist/components/car-card.tsx",
- "car-art": "src/features/rentaxlist/components/car-art.tsx",
- "floating-dock": "src/features/rentaxlist/components/floating-dock.tsx"
-}

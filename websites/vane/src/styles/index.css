@@ -1,0 +1,260 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/figtree';
+@import '@fontsource-variable/caveat';
+
+@import '../before/before.css';
+
+/*
+ * Episode 9's after is a **pixel-perfect rebuild** of the reference's home page
+ * (rule 0).
+ *
+ * The reference is a Next.js site built on **Tailwind 4**, which makes this the
+ * most literal rebuild in the series so far: its utility classes *are* its
+ * design specification, and they are in the HTML. The `@theme` below is its own
+ * `--color-*` scale, read out of its stylesheet; the component classes under it
+ * are its own `.h1`, `.p-medium`, `.container-x` and the rest, copied
+ * declaration for declaration. Nothing here was measured off a screenshot.
+ *
+ * ---------------------------------------------------------------- the type
+ *
+ * Two of its three faces are free and are used as-is:
+ *
+ *   Inter    ->  Inter Variable      body, UI, every label (OFL, the same face)
+ *   Caveat   ->  Caveat Variable     the handwritten accents (OFL, the same)
+ *   Pangea   ->  Figtree Variable    every heading and every figure
+ *
+ * Pangea (Atipo) is commercial. Figtree is the closest free match: the same
+ * geometric-humanist skeleton, the same tall x-height, the same tailless `a`.
+ * It runs about 2% wider at matched cap height, which is inside the tolerance
+ * of every heading box on the page.
+ *
+ * The reference serves French by geolocation. This build is in English, which
+ * is a copy change (rule 0) and is the one thing that moves a measurement: see
+ * Declared departures in the README for the arithmetic.
+ */
+
+@theme {
+  /* The reference's own scale, from its stylesheet. */
+  --color-primary-1: #2fce65; /* the green */
+  --color-primary-2: #031f18; /* near-black green: body text and dark grounds */
+  --color-primary-3: #ffffff;
+  --color-primary-4: #07503e;
+  --color-primary-5: #52d67e;
+  --color-primary-6: #0e0e0e; /* the header's dark button */
+  --color-primary-7: #2b3b37;
+  --color-primary-8: #c7d1ce;
+  --color-primary-9: #d4ddda;
+  --color-primary-10: #1e9b48; /* the figures */
+  --color-primary-11: #192e29;
+  --color-primary-12: #26a551;
+
+  --color-greyscale-1: #434649;
+  --color-greyscale-2: #455451; /* body copy */
+  --color-greyscale-3: #f4f4f5;
+  --color-greyscale-4: #f4f6f5;
+  --color-greyscale-5: #f9fbfa;
+  --color-greyscale-6: #8b9c99;
+  --color-greyscale-7: #a7b4b1;
+  --color-greyscale-8: #5e6e6b; /* labels and eyebrows */
+  --color-greyscale-9: #e8edeb; /* every rule on the page */
+
+  --color-greentint-2: #eafaf0;
+  --color-heliotrope-4: #f3eefd;
+
+  --font-inter: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-pangea: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-caveat: 'Caveat Variable', ui-serif, cursive;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/*
+ * These are the reference's own component classes, and they go in the
+ * `components` layer rather than `utilities` for a reason that was a real bug:
+ * `.h2 { color: var(--color-primary-2) }` written in `@layer utilities` lands
+ * *after* Tailwind's generated `.text-white`, so every heading on a dark
+ * section came out near-black on near-black -- a contrast ratio of 1.00, which
+ * is how the probe found it. In `components` any utility beats them, which is
+ * the order the reference's own build produces.
+ */
+@layer components {
+  /*
+   * The page's whole measure. `max-width: 1248px` with a 16px gutter, which is
+   * why every rule on the page lands at x=88 and x=1336 at 1440.
+   */
+  .container-x {
+    width: 100%;
+    max-width: 1248px;
+    margin-inline: auto;
+    padding-inline: calc(var(--spacing) * 4);
+  }
+
+  /*
+   * The display scale. All four sizes are one family at one weight — the
+   * reference never sets a heading bold, it sets it in Pangea Medium and lets
+   * the size carry it.
+   */
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5 {
+    font-family: var(--font-pangea);
+    font-weight: 500;
+    line-height: 120%;
+    color: var(--color-primary-2);
+  }
+
+  .h1 {
+    font-size: 32px;
+  }
+  .h2 {
+    font-size: 26px;
+  }
+  .h3 {
+    font-size: 22px;
+  }
+  .h4 {
+    font-size: 20px;
+  }
+  .h5 {
+    font-size: 18px;
+  }
+
+  @media (min-width: 700px) {
+    .h1 {
+      font-size: 48px;
+    }
+    .h2 {
+      font-size: 34px;
+    }
+    .h3 {
+      font-size: 26px;
+    }
+  }
+
+  .p-medium,
+  .p-small,
+  .p-big,
+  .p-compact {
+    font-family: var(--font-inter);
+    color: var(--color-greyscale-2);
+    line-height: 150%;
+  }
+
+  .p-big {
+    font-size: 18px;
+  }
+  .p-medium {
+    font-size: 16px;
+  }
+  .p-small {
+    font-size: 14px;
+  }
+  .p-compact {
+    font-size: 12px;
+    line-height: 136%;
+  }
+
+  .font-inter {
+    font-family: var(--font-inter);
+    font-weight: 400;
+  }
+  .font-inter-medium {
+    font-family: var(--font-inter);
+    font-weight: 500;
+  }
+  .font-inter-semibold {
+    font-family: var(--font-inter);
+    font-weight: 600;
+  }
+  .font-inter-bold {
+    font-family: var(--font-inter);
+    font-weight: 700;
+  }
+  .font-pangea {
+    font-family: var(--font-pangea);
+    font-weight: 400;
+  }
+  .font-pangea-medium {
+    font-family: var(--font-pangea);
+    font-weight: 500;
+  }
+  .font-pangea-semibold {
+    font-family: var(--font-pangea);
+    font-weight: 600;
+  }
+  .font-caveat {
+    font-family: var(--font-caveat);
+  }
+
+  /* Below 1200 the reference drops the hard line breaks in its headings. */
+  @media not all and (min-width: 1200px) {
+    .remove-br > br {
+      display: none;
+    }
+  }
+}
+
+/*
+ * The word-rise entrance, which the reference runs on every heading marked
+ * with per-word spans. 0.6s, 24px, 40ms apart, once — measured off its own
+ * inline transition on `.v-word` (see motion.ts).
+ */
+@layer utilities {
+  .v-split {
+    display: inline;
+  }
+
+  .v-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .-in .v-word {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .v-word {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/*
+ * The awards strip. Inferred, not read (see motion.ts): the reference ships
+ * its five items twice in a row that overflows, which is how a marquee is
+ * built and is not how anything else is -- but the transform is attached by a
+ * script this build did not fetch, so the 30s is matched to the capture.
+ *
+ * It stops with the toggle, because the hidden pane may not keep an animation
+ * running (rule 7), and it stops under reduced motion.
+ */
+@keyframes vane-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+[data-pane='after'] [data-active='false'] [class*='vane-marquee'] {
+  animation-play-state: paused;
+}

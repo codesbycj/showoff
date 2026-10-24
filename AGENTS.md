@@ -61,8 +61,8 @@ dropped in, sometimes tilted — is a *picture of an idea*, not a spec:
   bottom edge. A build that stops at 78% and leaves a band of empty canvas under the last
   block looks unfinished, whatever the blocks themselves look like. Scale up rather than
   pad: make the hero bigger, open the rhythm out, let a sheet or a list run to the bottom,
-  add the row the reference crops. Look at the last shot of every screen for dead space
-  before calling it done — if the eye finds a gap at the foot, it is not done.
+  add the row the reference crops. **This is measured, not eyeballed** — see "Dead space
+  at the foot" below. It applies to every showcase, not only to design-shot ones.
 - **Say which calls were yours.** The handover lists every place the build departs from
   the shot and why.
 
@@ -70,12 +70,35 @@ A 3D render in the shot (a wallet, a floating card, a coin) cannot be recreated 
 not be traced badly. Either stand in free-licensed stock for it, or rebuild the *idea* of
 it in-app — a real card component, posed and shadowed. Say which.
 
-**Know what is in drawing range.** Small objects are: a wallet, a parcel, a banknote, a
-shopfront, a coin, a card, a chip, a flag disc, a stylised map, an abstract solid, a
-wordmark, any icon. Those come out well and should be drawn. **A large, specific subject
-does not** — a car, a face, a plate of food, a packet of crisps, a landscape. Vectoring
-one produces a cartoon of the thing where the design had a photograph of it, and the
-screen reads as a toy. Drawing a whole Porsche was the lesson.
+**Know what is in drawing range. The test is what the real app ships.** Every app draws
+its *interface* as vectors and ships its *pictures* as bitmaps. Match that split and the
+question answers itself:
+
+- **Draw the interface.** A chevron, a bell, a filter glyph, a tab bar, a badge, a
+  progress ring, a wordmark, a flag disc, a card, a chip, an abstract solid. These are
+  vectors in the real app and they must be vectors here.
+- **Photograph the picture.** Food, people, places, products, vehicles, interiors,
+  landscapes — anything that is a picture *of* something. These are bitmaps in the real
+  app. Use free-licensed stock and bundle it.
+
+**A category tile is a picture, not an icon.** A row of round tiles reading Burgers /
+Mexican / Indian under a delivery app's search bar is six photographs — in every real
+one of those apps it is six photographs — and drawing a burger, a taco and a bowl of
+curry in SVG produces a row of cartoons where the design had food. It is the "plate of
+food" rule arriving in a disguise: small on screen does not mean small as a subject.
+Shipped this once already, and it is the thing that most makes a screen read as a toy.
+
+**A map is not in drawing range either**, whatever this file used to say. Drawing one is
+the clearest case of the real failure underneath all of this: a map has no idea to
+interpret, so vectoring it is tracing the reference path by path. That is not inspiration
+and it is not a rebuild — it is copying with extra steps, at twenty times the cost of
+either honest route. Use a static tile from a free-licensed source, or build the map
+*idea* — a route line, a pin, a radius ring — over a flat ground, and say which.
+
+The underlying test: **if drawing it means reproducing a specific arrangement rather than
+expressing an idea, it is out of range.** A chevron is an idea. A burger is a photograph
+of a burger. A map is a picture of a place. Drawing a whole Porsche was the first lesson
+of this kind; a drawn burger row and a hand-vectored map are the same lesson.
 
 When the subject is out of drawing range, do not fall back to drawing it anyway. Find
 another route: free-licensed stock of the same subject, or **a different subject that
@@ -202,6 +225,37 @@ What measuring catches, every time:
   with something above it rather than with the screen — card finish swatches start under
   the centre of the card, not the centre of the phone.
 
+### Dead space at the foot
+
+**The last block has to reach the bottom of the screen.** This has now been shipped
+twice: a screen whose content stops around 78% and leaves a band of empty canvas above
+the home indicator. It looks unfinished however good the blocks above it are, and it is
+invisible while building because the simulator window is taller than the phone.
+
+Measure it. Do not look for it:
+
+```bash
+node tools/preview/shoot.js <slug>/<screen> shot.png
+python tools/preview/foot.py shot.png            # dp of dead canvas at the foot
+```
+
+`foot.py` finds the last row of pixels that differs from the background and reports the
+gap to the bottom of the **safe area** — the gap to the screen edge, less the 34dp the
+home indicator owns. Measuring from the safe area rather than the edge is the whole
+trick: calibrated on finished screens, a floating tab bar reads 38dp from the edge and a
+primary button 44dp, and both are correct because they are clearing the indicator, while
+the product list that actually stopped early reads 84dp. Against the edge those are
+indistinguishable; against the safe area they are 4, 10 and 50.
+
+**Over 24dp fails**, and the fix is never padding:
+make the hero bigger, open the rhythm out, add the row the reference crops, or let the
+list run under the edge. A scrolling screen is measured at its resting scroll position —
+the first frame is the one that gets recorded.
+
+The one legitimate exception is a screen whose design ends on a floating bar or a sheet
+that deliberately floats clear of the edge. Say so in the handover; everything else is a
+defect.
+
 ### The web render is a proxy, not proof
 
 The harness renders the web export. That verifies layout, spacing and type — it cannot see
@@ -305,6 +359,24 @@ Real brand marks, substituted photography:
   image. Low deviation means a seamless backdrop that will cut cleanly. Remove the
   background with a flood fill from the edge plus an alpha ramp, so edges stay soft and
   shadows fade instead of leaving a grey halo.
+  `tools/bake/cutout.py` does this: `--tol` is the colour distance from the border the
+  fill may cross, `--close N` seals the gaps a dark shadow inside the subject leaks
+  through (a spacesuit lit against black needs 15), `--crop-bottom` drops the studio
+  floor before the fill so the figure is not left standing on a strip of wall, and
+  `--gray` desaturates. **Judge the tolerance by looking at the result on the page's own
+  colour, not by the border statistics** — a seamless sweep reads as a low deviation, but
+  a *flat colour* backdrop reads as a high one and cuts perfectly anyway.
+- **A product shot with no cut-out: duotone the whole frame.** A white pouch on a pale
+  grey sweep is the one contrast a flood fill cannot find. Map the frame's own luminance
+  range onto a two-colour ramp instead (`tools/bake/treats.py`, `eco.py`) and the backdrop
+  becomes the card's tint while the object keeps its folds — the card *is* the
+  photograph, and the brand's own name goes on it as drawn type. Stretch the range by
+  percentile first; a fixed window puts the pack and the backdrop on the same tint.
+- **Composite when the subject and its setting cannot be had together.** A person against
+  an open sky is scarce as stock; a studio portrait on a white sweep and a sky are both
+  everywhere. Cut one, lay it on the other (`tools/bake/happn.py`). Check the result for
+  what the fill kept — a light stand behind the figure survives the cut and reads as a
+  smear.
 - **Bundle assets locally, never hotlink.** Recording must not depend on the network.
 - **Draw small brand glyphs rather than relying on emoji** where the platform differs —
   flags in particular.
@@ -463,6 +535,8 @@ An app is not finished until all of these pass, with the dev server stopped:
    back to blank; one pass over all screens would not exercise that.
 5. Screenshot the blank state of every screen. It is the first frame of every recording and
    nothing else checks it renders.
+5b. `python tools/preview/foot.py` over the **finished** shot of every screen, with no
+   screen over 24dp of dead canvas at the foot. See "Dead space at the foot".
 6. `run.py <slug> lock` — record the baseline preflight will check against. Then break one
    unstaged file on purpose and confirm preflight reports `DRIFT` and exits 1.
 7. Leave it in blank state.

@@ -1,0 +1,4 @@
+{
+ "cam-screen": "src/app/hookcam/index.tsx",
+ "sticker-badge": "src/features/hookcam/components/sticker-badge.tsx"
+}

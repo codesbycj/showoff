@@ -47,15 +47,20 @@ export function HeroArt({ size }: { size: number }) {
   return (
     <View style={{ width: size, height: size }}>
       <Svg width={size} height={size} viewBox="0 0 200 200">
+        {/* STEP 1.07 an arm, pointing up
         <G fill="none" strokeLinecap="round">
           <Path d="M78 150 C86 118 104 96 128 72" stroke={pt.ink} strokeWidth={27} />
           <Path d="M78 150 C86 118 104 96 128 72" stroke={pt.paper} strokeWidth={21} />
           <Path d="M133 62 V36" stroke={pt.ink} strokeWidth={17} />
           <Path d="M133 62 V38" stroke={pt.paper} strokeWidth={11} />
         </G>
+        */}
 
+        {/* STEP 1.08 a fist on the end of it
         <Circle cx={131} cy={68} r={15} fill={pt.paper} {...outline} />
+        */}
 
+        {/* STEP 1.09 a head, with its hair up
         <G>
           <Circle cx={74} cy={80} r={21} fill={pt.paper} {...outline} />
           <Path
@@ -66,12 +71,16 @@ export function HeroArt({ size }: { size: number }) {
           <Circle cx={80} cy={82} r={2.4} fill={pt.ink} />
           <Path d="M76 91 C79 94 84 94 87 91" fill="none" {...outline} strokeWidth={2.2} />
         </G>
+        */}
 
+        {/* STEP 1.10 a card on its way out
         <G transform="rotate(-13 108 118)">
           <Rect x={70} y={92} width={82} height={50} rx={7} fill={pt.paper} {...outline} />
           <Path d="M70 107 H152" {...outline} fill="none" strokeWidth={2.2} />
         </G>
+        */}
 
+        {/* STEP 1.11 and the wallet it all came from
         <G strokeLinejoin="round">
           <Rect x={26} y={126} width={118} height={62} rx={11} fill={pt.paper} {...outline} />
           <Path
@@ -98,6 +107,7 @@ export function HeroArt({ size }: { size: number }) {
             strokeLinecap="round"
           />
         </G>
+        */}
       </Svg>
     </View>
   );

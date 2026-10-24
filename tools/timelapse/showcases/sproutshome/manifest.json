@@ -1,0 +1,5 @@
+{
+ "home-screen": "src/app/sproutshome/index.tsx",
+ "feature-card": "src/features/sproutshome/components/feature-card.tsx",
+ "chip-row": "src/features/sproutshome/components/chip-row.tsx"
+}

@@ -1,0 +1,5 @@
+{
+ "item-screen": "src/app/sproutsitem/index.tsx",
+ "product-stage": "src/features/sproutsitem/components/product-stage.tsx",
+ "stat-row": "src/features/sproutsitem/components/stat-row.tsx"
+}

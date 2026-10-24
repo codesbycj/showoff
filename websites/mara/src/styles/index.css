@@ -1,0 +1,240 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+
+/*
+ * Episode 5's after is a **pixel-perfect rebuild** of the reference's home page
+ * (rule 0). Every number below was read off its DOM dump, not chosen.
+ *
+ * This is the one episode so far that needs no type substitute: the reference
+ * runs **Clash Display**, which Indian Type Foundry gives away under the ITF
+ * Free Font License, and **Inter**, which is OFL. Both are bundled — so the
+ * build's letterforms are not "close to" the reference's, they are the same
+ * ones. See `src/assets/fonts/`.
+ */
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/src/assets/fonts/ClashDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('/src/assets/fonts/ClashDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: 'Clash Display', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Read off the DOM dump. Five greens and a brown, which is the whole palette. */
+  --color-lime: #c3e794; /* the marquee ground, Paradis, every accent on dark */
+  --color-forest: #486e46; /* the collage section */
+  --color-sage: #d7e2c1; /* the third split panel, and Brands */
+  --color-pale: #f0f7ed; /* Featured Products */
+  --color-bone: #f7f5ed; /* the second split panel */
+  --color-bark: #483f36; /* section labels, and the brand meta */
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  /*
+   * The reference's gutter is 32px at 1440, and almost nothing is centred in a
+   * container — headings, labels and the wordmark all start at x32 and run to
+   * x1408. That full-width measure is most of why the page feels like a poster.
+   */
+  .gut {
+    padding-inline: 32px;
+  }
+
+  /* ------------------------------------------------------------------ type */
+
+  /*
+   * The wordmark: 195.6px / 234.7px at weight 400.
+   *
+   * That is not a chosen size — Framer fits the text to the container, so the
+   * number falls out of "twelve characters across 1376px". Rebuilt with
+   * `cqi` units against the same box so it solves the same way at any width
+   * instead of being pinned to one viewport.
+   */
+  .t-wordmark {
+    font-weight: 400;
+    font-size: 14.2cqi;
+    line-height: 1.2;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+
+  .t-48 {
+    font-weight: 500;
+    font-size: clamp(30px, 3.4vw, 48px);
+    line-height: 1.4;
+  }
+
+  .t-40 {
+    font-weight: 500;
+    font-size: clamp(28px, 2.9vw, 40px);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .t-32 {
+    font-weight: 500;
+    font-size: clamp(24px, 2.3vw, 32px);
+    line-height: 1.4;
+  }
+
+  .t-24 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .t-16 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .t-16n {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .t-14 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .t-14n {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Inter Light italic: the only thing on the page that is not Clash Display. */
+  .t-it-32 {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(20px, 2.3vw, 32px);
+    line-height: 1.4;
+    text-transform: none;
+  }
+
+  .t-it-16 {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.4;
+    text-transform: none;
+  }
+
+  /* ---------------------------------------------------------------- motion */
+
+  @keyframes mara-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-25%);
+    }
+  }
+
+  /*
+   * Framer's scroll entrance, which this page uses on almost every block:
+   * opacity 0 -> 1 with a 40px rise, 0.6s on an ease-out. Framer fires it from
+   * an intersection observer with `once`, and so does this.
+   */
+  .rise {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.6s cubic-bezier(0.44, 0, 0.56, 1),
+      transform 0.6s cubic-bezier(0.44, 0, 0.56, 1);
+  }
+
+  .rise.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /*
+   * The image hover: a slow scale inside a frame that does not move, so the
+   * crop shifts and the grid stays still. 0.8s is long for a hover and right
+   * for a page whose every photograph is a still life.
+   */
+  .frame {
+    overflow: hidden;
+  }
+
+  .frame img {
+    transition: transform 0.8s cubic-bezier(0.44, 0, 0.56, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .ul:hover .ul__line {
+      transform: scaleX(1);
+    }
+  }
+
+  .ul__line {
+    display: block;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.4s cubic-bezier(0.44, 0, 0.56, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .frame img,
+    .ul__line {
+      transition: none;
+    }
+
+    .frame:hover img {
+      transform: none;
+    }
+
+    [data-marquee] {
+      animation: none !important;
+    }
+  }
+}

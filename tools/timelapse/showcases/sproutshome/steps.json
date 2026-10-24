@@ -1,0 +1,129 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and whose basket this is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "@/features/sproutshome/components/feature-card"
+   ],
+   "label": "what is featured"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "filling the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutshome/components/feature-card.tsx",
+    "STEP 1.05"
+   ],
+   "label": "whose favourite it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutshome/components/feature-card.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutshome/components/feature-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "and what it costs"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "@/features/sproutshome/components/chip-row"
+   ],
+   "label": "the aisles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "under the card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutshome/components/chip-row.tsx",
+    "STEP 1.10"
+   ],
+   "label": "all of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and what is cooking"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutshome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the way around"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sproutshome/components/feature-card.tsx",
+    [
+     "// MISTAKE 1.13",
+     "marginHorizontal: 26,"
+    ]
+   ],
+   "label": "the card came in narrow"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "chip-row",
+     "src/features/sproutshome/components/chip-row.tsx"
+    ],
+    [
+     "feature-card",
+     "src/features/sproutshome/components/feature-card.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/sproutshome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

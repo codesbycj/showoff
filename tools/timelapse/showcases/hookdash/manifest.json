@@ -1,0 +1,8 @@
+{
+ "dash-screen": "src/app/hookdash/index.tsx",
+ "profile-tile": "src/features/hookdash/components/profile-tile.tsx",
+ "find-tile": "src/features/hookdash/components/find-tile.tsx",
+ "leaderboard-card": "src/features/hookdash/components/leaderboard-card.tsx",
+ "activity-card": "src/features/hookdash/components/activity-card.tsx",
+ "memories-card": "src/features/hookdash/components/memories-card.tsx"
+}

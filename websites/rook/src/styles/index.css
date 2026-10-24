@@ -1,0 +1,212 @@
+@import 'tailwindcss';
+
+/*
+ * Episode 2's after is a **pixel-perfect rebuild** of the reference's home page
+ * (rule 0). Every number below was read off its DOM dump.
+ *
+ * Like episodes 5 and 7, this one needs no type substitute: the reference runs
+ * **Switzer**, which Indian Type Foundry gives away under the ITF Free Font
+ * License. Four weights are bundled with the licence in `src/assets/fonts/`.
+ */
+
+@font-face {
+  font-family: Switzer;
+  src: url('/src/assets/fonts/Switzer-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Switzer;
+  src: url('/src/assets/fonts/Switzer-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Switzer;
+  src: url('/src/assets/fonts/Switzer-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Switzer;
+  src: url('/src/assets/fonts/Switzer-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: Switzer, ui-sans-serif, system-ui, sans-serif;
+
+  /*
+   * One ground and four tints. The reference paints 14,538px of page in a
+   * single warm grey and does all of its colour in the photography — which is
+   * why a grid of yellow, lilac and olive product shots reads as the palette
+   * even though the page has none.
+   */
+  --color-paper: #f1eee9;
+  --color-stone: #d7d1c7;
+  --color-ink: #1c1b19;
+  --color-mute: #6f6a62;
+  --color-line: #c9c3b8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  /* 1440 viewport, 30px gutters: everything runs x30 to x1410. */
+  .u {
+    width: 100%;
+    padding-inline: 30px;
+  }
+
+  /* ------------------------------------------------------------------ type */
+
+  /*
+   * The whole page is **four sizes**: 60 / 30 / 19 / 14, at two weights. No
+   * display face, no caps, no tracking. A furniture brand whose type does
+   * nothing is making the photographs do everything, and this one can afford
+   * to.
+   */
+  .t-60 {
+    font-size: clamp(34px, 4.2vw, 60px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .t-30 {
+    font-size: clamp(24px, 2.1vw, 30px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+
+  .t-19 {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .t-19b {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .t-14 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .t-14b {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .t-11 {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* --------------------------------------------------------------- buttons */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding-inline: 18px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  /* ---------------------------------------------------------------- motion */
+
+  @keyframes noho-rail {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .rise {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .rise.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /*
+   * Every photograph on the page scales inside a frame that does not move, and
+   * the two "about us" portraits swap to a second frame entirely — the
+   * reference ships `noho-about-1.webp` and `noho-about-1-hovered.webp` as a
+   * pair, which is a whole second photoshoot for a hover.
+   */
+  .frame {
+    overflow: hidden;
+  }
+
+  .frame img {
+    transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .frame:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .frame img,
+    .btn {
+      transition: none;
+    }
+
+    .frame:hover img {
+      transform: none;
+    }
+
+    [data-rail] {
+      animation: none !important;
+    }
+  }
+}

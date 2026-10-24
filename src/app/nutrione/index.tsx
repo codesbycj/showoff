@@ -1,0 +1,103 @@
+import { StatusBar } from 'expo-status-bar';
+import { Image, useWindowDimensions, View } from 'react-native';
+
+import { Masthead, StartBar, Steps } from '@/features/nutrione/components/onboarding-chrome';
+import { T } from '@/features/nutrione/components/text';
+// STEP 1.08 the picture it stands on
+// import { VegStage } from '@/features/nutrione/components/veg-stage';
+import { intro } from '@/features/nutrione/data/intro';
+import { BAR_BOTTOM, DISPLAY_TOP, HEADER_TOP, MARGIN, STEPS_TOP } from '@/features/nutrione/layout';
+import { nl, radius } from '@/features/nutrione/theme';
+import { useInsets } from '@/features/nutrione/use-insets';
+
+const BOWL = require('../../../assets/images/nutrione/bowl.jpg');
+
+/**
+ * Nutrilens — onboarding, one of four.
+ *
+ * Assembly only: the brand, how far through this is, what the app is, and the
+ * photograph it stands on.
+ *
+ * The welcome pill is absolutely placed over the headline rather than set in
+ * the run of text. The reference's overlaps two lines at once, which no inline
+ * element can do — and an inline one would also re-flow the headline when the
+ * pill's words changed.
+ */
+export default function NutriOne() {
+  const insets = useInsets();
+  const { width, height } = useWindowDimensions();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: nl.canvas }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
+        {/* STEP 1.01 the brand
+        <Masthead />
+        */}
+        <View style={{ marginTop: STEPS_TOP }}>
+          {/* STEP 1.02 how far through this is
+          <Steps />
+          */}
+        </View>
+      </View>
+
+      <View style={{ marginTop: DISPLAY_TOP, paddingHorizontal: MARGIN }}>
+        {/* STEP 1.06 what the app is
+        <T variant="display" color={nl.ink}>
+          {intro.display}
+        </T>
+        */}
+
+        {/* STEP 1.07 and a welcome on top of it
+        <View
+          style={{
+            position: 'absolute',
+            right: MARGIN - 8,
+            top: 96,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 8,
+            paddingLeft: 6,
+            paddingRight: 16,
+            paddingVertical: 6,
+            borderRadius: radius.pill,
+            backgroundColor: nl.glass,
+          }}
+        >
+          <Image
+            source={BOWL}
+            style={{ width: 30, height: 30, borderRadius: radius.full }}
+            resizeMode="cover"
+            accessibilityIgnoresInvertColors
+          />
+          <T variant="pill" color={nl.surface}>
+            {intro.pill}
+          </T>
+        </View>
+        */}
+      </View>
+
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+        {/* STEP 1.09 filling the foot
+        <VegStage width={width} height={height * 0.52} />
+        */}
+      </View>
+
+      {/* Over the photograph, not under it — the reference's bar floats on the
+          picture and the picture runs to the bottom edge behind it. */}
+      <View
+        style={{
+          position: 'absolute',
+          left: MARGIN,
+          right: MARGIN,
+          bottom: insets.bottom + BAR_BOTTOM,
+        }}
+      >
+        {/* STEP 1.12 and the one thing it asks
+        <StartBar label={intro.cta} />
+        */}
+      </View>
+    </View>
+  );
+}

@@ -1,0 +1,687 @@
+/*
+ * The congested directory.
+ *
+ * Episode 2's before is not a dated brochure -- episode 1 did that one. This
+ * is the other thing that happens to a small manufacturer's website: it starts
+ * selling online, every month somebody adds one more module to the page
+ * because it "converts", nobody is ever allowed to remove one, and after five
+ * years the homepage is a directory with a shop inside it.
+ *
+ * Everything here is scoped under `.b`, so the two designs cannot touch each
+ * other and the browser's defaults come back inside it -- underlined links,
+ * collapsing table borders, inline images.
+ *
+ * The rules of the form, kept honestly:
+ *
+ *   * ONE WIDTH, 1000px, and `min-width` on the root so a phone pans sideways.
+ *     There is not one media query in this file.
+ *   * THREE COLUMNS, 190 / 560 / 210 inside it, built with floats. Both
+ *     sidebars are full of modules that were each somebody's idea.
+ *   * 11px VERDANA at 1.3, which is the size this kind of page always settles
+ *     on, because the alternative is admitting something has to come off.
+ *   * EVERYTHING IS A BOX with a 1px border and a gradient title bar, so no
+ *     module can be told apart from any other module at a glance.
+ *   * BLUE UNDERLINED LINKS, red prices, yellow highlights, and a navy that
+ *     was picked in 2011 and has been the brand colour ever since.
+ *
+ * It is crowded on purpose and it is not a joke: every one of these modules
+ * ships on real furniture sites today, and the page works. It is simply doing
+ * nine things at once in a space that can only do two.
+ */
+
+.b {
+  min-width: 1000px;
+  margin: 0;
+  background: #ffffff;
+  font-family: Verdana, Geneva, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.3;
+  color: #333333;
+  text-align: left;
+}
+
+.b * {
+  box-sizing: content-box;
+}
+
+.b p {
+  margin: 0 0 8px;
+}
+
+.b img {
+  display: inline;
+  border: 0;
+}
+
+.b ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.b a {
+  color: #0044aa;
+  text-decoration: underline;
+}
+
+.b a:visited {
+  color: #663399;
+}
+
+.b a:hover {
+  color: #cc0000;
+}
+
+.b h1 {
+  margin: 0 0 6px;
+  font-size: 17px;
+  line-height: 1.2;
+  color: #003366;
+}
+
+.b h2 {
+  margin: 0 0 5px;
+  font-size: 13px;
+  color: #003366;
+}
+
+.b h3 {
+  margin: 0 0 4px;
+  font-size: 11px;
+  color: #003366;
+}
+
+.b-cf:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.b-wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------- utility bar */
+
+.b-util {
+  background: #003366;
+  color: #cfe0f0;
+  font-size: 10px;
+}
+
+.b-util-in {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 4px 0;
+}
+
+.b-util a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.b-util a:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+.b-util-l {
+  float: left;
+}
+
+.b-util-r {
+  float: right;
+}
+
+.b-util span.sep {
+  color: #335c85;
+  padding: 0 6px;
+}
+
+/* ---------------------------------------------------------------- masthead */
+
+.b-mast {
+  border-bottom: 3px solid #003366;
+  background: #ffffff;
+}
+
+.b-mast-in {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0 8px;
+}
+
+.b-logo {
+  float: left;
+  width: 230px;
+}
+
+.b-logo-name {
+  font-family:
+    Arial Black,
+    Arial,
+    sans-serif;
+  font-size: 27px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: #003366;
+}
+
+.b-logo-name em {
+  color: #cc0000;
+  font-style: normal;
+}
+
+.b-logo-tag {
+  font-size: 10px;
+  color: #777777;
+  padding-top: 2px;
+}
+
+.b-search {
+  float: left;
+  width: 430px;
+  padding: 9px 0 0 20px;
+}
+
+.b-search select,
+.b-search input {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 11px;
+  vertical-align: middle;
+  border: 1px solid #999999;
+  padding: 3px;
+}
+
+.b-search input[type='text'] {
+  width: 200px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.b-mast-r {
+  float: right;
+  width: 290px;
+  text-align: right;
+  padding-top: 4px;
+}
+
+.b-phone {
+  font-family:
+    Arial Black,
+    Arial,
+    sans-serif;
+  font-size: 19px;
+  color: #cc0000;
+  line-height: 1.1;
+}
+
+.b-basket {
+  margin-top: 4px;
+  padding: 3px 6px;
+  background: #f4f4f4;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  font-size: 10px;
+}
+
+/* --------------------------------------------------------------- nav bars */
+
+.b-nav {
+  background: #003366;
+  background-image: linear-gradient(#0a4f8f, #003366);
+  border-bottom: 1px solid #00223f;
+}
+
+.b-nav-in {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.b-nav li {
+  float: left;
+  border-right: 1px solid #0a4f8f;
+}
+
+.b-nav a {
+  display: block;
+  padding: 7px 11px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.b-nav a:hover {
+  background: #ffcc00;
+  color: #003366;
+}
+
+.b-nav2 {
+  background: #ffcc00;
+  border-bottom: 1px solid #d8ab00;
+}
+
+.b-nav2-in {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 4px 0;
+  font-size: 10px;
+  color: #6b5500;
+}
+
+.b-nav2 a {
+  color: #8a1f1f;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 7px;
+  border-right: 1px solid #e0b800;
+}
+
+.b-nav2 a:hover {
+  text-decoration: underline;
+}
+
+.b-ticker {
+  background: #fff8dd;
+  border-bottom: 1px solid #e8d79a;
+  font-size: 10px;
+  color: #7a5c00;
+  overflow: hidden;
+}
+
+.b-ticker-in {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 3px 0;
+  white-space: nowrap;
+}
+
+.b-ticker-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: b-marquee 26s linear infinite;
+}
+
+@keyframes b-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.b-blink {
+  color: #cc0000;
+  font-weight: bold;
+  animation: b-blink 1.1s steps(1) infinite;
+}
+
+@keyframes b-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ----------------------------------------------------------- the three columns */
+
+.b-body {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 8px 0 0;
+}
+
+.b-left {
+  float: left;
+  width: 190px;
+}
+
+.b-mid {
+  float: left;
+  width: 580px;
+  padding: 0 10px;
+}
+
+.b-right {
+  float: right;
+  width: 210px;
+}
+
+/* ------------------------------------------------------------------ modules */
+
+.b-box {
+  margin: 0 0 8px;
+  border: 1px solid #b8c4d0;
+  background: #ffffff;
+}
+
+.b-box-h {
+  padding: 4px 7px;
+  background: #003366;
+  background-image: linear-gradient(#0a4f8f, #003366);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.b-box-h.alt {
+  background-image: linear-gradient(#d83a3a, #a60000);
+}
+
+.b-box-b {
+  padding: 6px 7px;
+}
+
+.b-cats li a {
+  display: block;
+  padding: 2px 0 2px 9px;
+  border-bottom: 1px dotted #dddddd;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='7'%3E%3Cpath d='M0 0l4 3.5L0 7z' fill='%23999'/%3E%3C/svg%3E")
+    no-repeat 0 6px;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.b-cats li a:hover {
+  background-color: #eef4fa;
+  text-decoration: underline;
+}
+
+.b-cats .sub a {
+  padding-left: 18px;
+  background-position: 9px 6px;
+  color: #555555;
+}
+
+.b-swatches li {
+  float: left;
+  margin: 0 3px 3px 0;
+}
+
+.b-swatch {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #888888;
+}
+
+.b-check {
+  font-size: 10px;
+  padding: 1px 0;
+}
+
+/* --------------------------------------------------------------- the grid */
+
+.b-crumbs {
+  font-size: 10px;
+  color: #777777;
+  padding: 0 0 6px;
+}
+
+.b-sort {
+  background: #f1f1f1;
+  border: 1px solid #cccccc;
+  padding: 3px 6px;
+  font-size: 10px;
+  margin: 0 0 8px;
+}
+
+.b-grid li {
+  float: left;
+  /* 168 + 12 padding + 2 border = 182; three of those plus two 11px gutters is
+     568, which fits the 580 column. At 178 it came to 598 and the third tile
+     dropped to the next row -- a float that overflows by 18px does not
+     squeeze, it wraps, and a two-up grid looks like a decision. */
+  width: 168px;
+  margin: 0 11px 11px 0;
+  border: 1px solid #cccccc;
+  padding: 6px;
+  text-align: center;
+  position: relative;
+}
+
+.b-grid li.last {
+  margin-right: 0;
+}
+
+.b-grid li:hover {
+  border-color: #003366;
+  background: #fafcff;
+}
+
+.b-thumb {
+  display: block;
+  width: 168px;
+  height: 126px;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.b-grid h3 {
+  font-size: 11px;
+  min-height: 26px;
+  margin-bottom: 2px;
+}
+
+.b-grid h3 a {
+  text-decoration: none;
+}
+
+.b-price {
+  font-family:
+    Arial Black,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  color: #cc0000;
+  line-height: 1.1;
+}
+
+.b-was {
+  font-size: 10px;
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.b-stars {
+  color: #ff9900;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.b-flag {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: #cc0000;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 1px 4px;
+}
+
+.b-flag.green {
+  background: #2d7a2d;
+}
+
+.b-btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 9px;
+  background: #ffcc00;
+  background-image: linear-gradient(#ffe066, #f0b800);
+  border: 1px solid #c79b00;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  color: #4d3b00 !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.b-btn:hover {
+  background-image: linear-gradient(#ffffff, #ffd633);
+}
+
+.b-btn.buy {
+  background-image: linear-gradient(#5aa5e8, #1f6fc4);
+  border-color: #17549a;
+  color: #ffffff !important;
+  text-shadow: 0 1px 0 #17549a;
+}
+
+.b-pager {
+  font-size: 10px;
+  padding: 4px 0 10px;
+}
+
+.b-pager a,
+.b-pager strong {
+  display: inline-block;
+  padding: 2px 6px;
+  border: 1px solid #cccccc;
+  margin-right: 2px;
+  text-decoration: none;
+}
+
+.b-pager strong {
+  background: #003366;
+  color: #ffffff;
+  border-color: #003366;
+}
+
+/* ------------------------------------------------------------- dense text */
+
+.b-seo {
+  font-size: 10px;
+  line-height: 1.45;
+  color: #555555;
+  text-align: justify;
+  border-top: 1px solid #dddddd;
+  padding-top: 8px;
+}
+
+.b-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  margin: 0 0 10px;
+}
+
+.b-table th {
+  background: #e8eef4;
+  border: 1px solid #c0ccd8;
+  padding: 3px 5px;
+  text-align: left;
+  color: #003366;
+}
+
+.b-table td {
+  border: 1px solid #dddddd;
+  padding: 3px 5px;
+}
+
+.b-table tr:nth-child(even) td {
+  background: #f7f9fb;
+}
+
+/* ------------------------------------------------------------- right rail */
+
+.b-deal {
+  text-align: center;
+}
+
+.b-countdown {
+  background: #000000;
+  color: #ff4444;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 0;
+  letter-spacing: 1px;
+}
+
+.b-mini li {
+  border-bottom: 1px dotted #dddddd;
+  padding: 4px 0;
+  font-size: 10px;
+}
+
+.b-mini img {
+  float: left;
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  margin-right: 5px;
+  border: 1px solid #cccccc;
+}
+
+.b-counter {
+  background: #000000;
+  color: #33ff33;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 2px 4px;
+  display: inline-block;
+}
+
+.b-badge {
+  display: inline-block;
+  margin: 0 3px 3px 0;
+  padding: 2px 4px;
+  border: 1px solid #cccccc;
+  background: #f4f4f4;
+  font-size: 9px;
+  color: #666666;
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.b-foot {
+  margin-top: 10px;
+  border-top: 3px solid #003366;
+  background: #f4f6f8;
+}
+
+.b-foot-in {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.b-foot-col {
+  float: left;
+  width: 150px;
+  margin-right: 20px;
+}
+
+.b-foot-col.last {
+  margin-right: 0;
+}
+
+.b-foot h4 {
+  margin: 0 0 4px;
+  font-size: 10px;
+  color: #003366;
+  text-transform: uppercase;
+}
+
+.b-foot li {
+  font-size: 10px;
+  padding: 1px 0;
+}
+
+.b-legal {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 8px 0 20px;
+  border-top: 1px solid #d8dde2;
+  font-size: 9px;
+  color: #888888;
+  text-align: center;
+}

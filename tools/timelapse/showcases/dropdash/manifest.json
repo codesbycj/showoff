@@ -1,9 +1,0 @@
-{
- "dash-screen": "src/app/dropdash/index.tsx",
- "top-bar": "src/features/dropdash/components/top-bar.tsx",
- "search-field": "src/features/dropdash/components/search-field.tsx",
- "stat-tile": "src/features/dropdash/components/stat-tile.tsx",
- "stock-bar": "src/features/dropdash/components/stock-bar.tsx",
- "delivery-row": "src/features/dropdash/components/delivery-row.tsx",
- "tab-bar": "src/features/dropdash/components/tab-bar.tsx"
-}

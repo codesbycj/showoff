@@ -1,0 +1,181 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "how far through this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/onboarding-chrome.tsx",
+    "STEP 1.03"
+   ],
+   "label": "whose app this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/onboarding-chrome.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the way past it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/onboarding-chrome.tsx",
+    "STEP 1.05"
+   ],
+   "label": "four steps, two done"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what the screen promises"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "with the streak in the middle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the end of the line"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "@/features/nutritwo/components/week-card"
+   ],
+   "label": "the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "under the headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/week-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "which month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/week-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and which day"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "@/features/nutritwo/components/stats-card"
+   ],
+   "label": "and the day"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "under the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/stats-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the goal"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/stats-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "how far round it you are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutritwo/components/stats-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and what that was made of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutritwo/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nutritwo/components/week-card.tsx",
+    [
+     "// MISTAKE 1.19",
+     "paddingHorizontal: 2,"
+    ]
+   ],
+   "label": "the days came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "onboarding-chrome",
+     "src/features/nutritwo/components/onboarding-chrome.tsx"
+    ],
+    [
+     "stats-card",
+     "src/features/nutritwo/components/stats-card.tsx"
+    ],
+    [
+     "two-screen",
+     "src/app/nutritwo/index.tsx"
+    ],
+    [
+     "week-card",
+     "src/features/nutritwo/components/week-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

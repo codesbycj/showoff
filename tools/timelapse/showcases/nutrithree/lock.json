@@ -1,0 +1,22 @@
+{
+ "assets/images/nutrithree/CREDITS.md": "092da13fb284ba93355f25e21e789b9de26823ba5ee47cef497a5df68cef7a21",
+ "assets/images/nutrithree/plate.jpg": "865c733f4d4b7cb9d7a3ad48265c22877e847596d2abf671a9174930efad9641",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "be271086e6ba4b04dafbfe87c428b524106df1acb16a61ea9ad915c4d250e696",
+ "src/app/nutrithree/index.tsx": "27a8ce967efa2ec0f9b631c026988abd9f7355f95890ec48b778c1041127cef9",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/nutrithree/components/onboarding-chrome.tsx": "3f5ba92b19bde9b6121e319581fc3a2b6673d1d0cae03652b36980c0d8e200cb",
+ "src/features/nutrithree/components/plan-stage.tsx": "00bfefa608820b3d271853a9d76eb1aa9d92d623a722f8f1dbee4f4cdef59a89",
+ "src/features/nutrithree/components/stepper-row.tsx": "571a965d3f939b3956de2cbe4afa7e8146e1add02e1a33f9ee088f6e84845bf0",
+ "src/features/nutrithree/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/nutrithree/data/plan.ts": "717461538b45c90357570a135be2d970dd7c88e698077ddfa5acdf100cf45338",
+ "src/features/nutrithree/layout.ts": "2b996c1930f0e7dfc14f474df86c227ad8fde610e3a2a3070558879fe3f22b8d",
+ "src/features/nutrithree/theme.ts": "685d6c32801e567512a9223f9baf1505963c90796c5acd7f4c6f7de2ca619fa5",
+ "src/features/nutrithree/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

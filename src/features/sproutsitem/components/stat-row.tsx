@@ -16,11 +16,14 @@ import { T } from './text';
 export function StatRow() {
   return (
     <View style={{ flexDirection: 'row', gap: STAT_GAP }}>
+      {/* STEP 1.11 both boxes
       {stats.map((s) => (
         <View
           key={s.key}
           style={{
             flex: 1,
+            // MISTAKE 1.14 the boxes came in squeezed
+            paddingVertical: 14,
             height: STAT_H,
             borderRadius: radius.tile,
             backgroundColor: sp.sheetWell,
@@ -39,6 +42,7 @@ export function StatRow() {
           </T>
         </View>
       ))}
+      */}
     </View>
   );
 }

@@ -31,11 +31,14 @@ export function ProductStage({
   return (
     <View style={{ height, backgroundColor: sp.panel, overflow: 'hidden' }}>
       <View style={{ position: 'absolute', left: 0, right: 0, top: height * 0.1 }}>
+        {/* STEP 1.03 the name, big and behind
         <T variant="ghost" color={sp.ghost} style={{ textAlign: 'center' }}>
           {panel.ghost}
         </T>
+        */}
       </View>
 
+      {/* STEP 1.04 the dish in front of it
       <Image
         source={BOWL}
         style={{
@@ -49,8 +52,10 @@ export function ProductStage({
         resizeMode="cover"
         accessibilityIgnoresInvertColors
       />
+      */}
 
       <View style={{ marginTop: topInset + HEADER_TOP, paddingHorizontal: MARGIN }}>
+        {/* STEP 1.05 and the way back
         <Pressable onPress={onBack} accessibilityRole="button" accessibilityLabel="Back">
           <View
             style={{
@@ -65,6 +70,7 @@ export function ProductStage({
             <ArrowLeft size={18} color={sp.onDark} strokeWidth={2.1} />
           </View>
         </Pressable>
+        */}
       </View>
     </View>
   );

@@ -20,10 +20,13 @@ import { T } from './text';
 export function Headline({ one, two, three }: { one: string; two: string; three: string }) {
   return (
     <View accessibilityRole="header">
+      {/* STEP 1.14 the first line
       <T variant="display" color={pt.ink}>
         {one}
       </T>
+      */}
 
+      {/* STEP 1.15 the second, with its pill
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <T variant="display" color={pt.ink}>
           {two}
@@ -32,6 +35,8 @@ export function Headline({ one, two, three }: { one: string; two: string; three:
           style={{
             width: PILL_WIDTH,
             height: PILL_HEIGHT,
+            // MISTAKE 1.16 the pill came in sitting low
+            marginTop: 14,
             borderRadius: radius.pill,
             backgroundColor: pt.ink,
             alignItems: 'center',
@@ -42,10 +47,19 @@ export function Headline({ one, two, three }: { one: string; two: string; three:
           <ArrowGlyph size={18} color={pt.onInk} />
         </View>
       </View>
+      */}
 
+      {/* STEP 1.17 and the third
       <T variant="display" color={pt.ink}>
         {three}
       </T>
+      */}
+      {/* STEP 1.18 and one more, for emphasis | FIX 1.19 three lines is the design
+      <T variant="display" color={pt.inkSoft}>
+        {three}
+      </T>
+      */}
+
     </View>
   );
 }

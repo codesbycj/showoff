@@ -1,7 +1,0 @@
-{
- "onboarding-screen": "src/app/elite/index.tsx",
- "hero": "src/features/elite/components/hero.tsx",
- "service-cluster": "src/features/elite/components/service-cluster.tsx",
- "intro-copy": "src/features/elite/components/intro-copy.tsx",
- "primary-button": "src/features/elite/components/primary-button.tsx"
-}

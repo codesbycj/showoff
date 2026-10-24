@@ -1,7 +1,0 @@
-{
- "detail-screen": "src/app/rentaxcar/index.tsx",
- "stage-header": "src/features/rentaxcar/components/stage-header.tsx",
- "car-front": "src/features/rentaxcar/components/car-front.tsx",
- "detail-sheet": "src/features/rentaxcar/components/detail-sheet.tsx",
- "book-bar": "src/features/rentaxcar/components/book-bar.tsx"
-}

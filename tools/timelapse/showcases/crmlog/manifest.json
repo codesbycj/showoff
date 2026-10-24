@@ -1,6 +1,0 @@
-{
- "log-screen": "src/app/crmlog/index.tsx",
- "app-bar": "src/features/crmlog/components/app-bar.tsx",
- "deal-card": "src/features/crmlog/components/deal-card.tsx",
- "face-stack": "src/features/crmlog/components/face-stack.tsx"
-}

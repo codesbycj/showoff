@@ -1,0 +1,377 @@
+/*
+ * The abandoned refresh.
+ *
+ * Episode 1 was a dated brochure, 2 a congested catalogue, 3 a bought theme,
+ * 4 a builder page. This is the fifth and the most quietly damaging, because
+ * from the top of the page it looks like the company has its act together.
+ *
+ * Somebody started a redesign. The hero got rebuilt — big type, lots of air,
+ * the new typeface — and then the budget ran out, or the designer left, or the
+ * one person who understood the new system went on parental leave. Eighteen
+ * months later the site is two websites stacked on top of each other:
+ *
+ *   * THE HERO IS THE NEW DESIGN and it is genuinely good.
+ *   * EVERYTHING BELOW IT IS THE OLD ONE: Lato, teal buttons, bootstrap-era
+ *     cards with 4px radii and box shadows, icons in circles.
+ *   * THE TYPEFACES FIGHT. The new face loads and is applied to the hero; the
+ *     old stylesheet still sets Lato on `h2`, so every heading below the fold
+ *     is in the previous brand's type.
+ *   * A PLACEHOLDER BLOCK was never filled in and still says so.
+ *   * A SEASONAL BANNER is eighteen months stale, with the year left off so
+ *     nobody notices.
+ *   * IMAGES ARE SQUASHED where the new templates expect 4:5 and the old CMS
+ *     field crops 16:9.
+ *   * A "NEW SITE COMING SOON" NOTICE sits in the footer, dated.
+ *
+ * Every one of these is real and none is laziness. It is what a half-finished
+ * migration looks like from the outside, and the reason it is worth building
+ * honestly is that the *good* half makes the broken half more obvious, not
+ * less.
+ *
+ * Scoped under `.b`.
+ */
+
+.b {
+  background: #ffffff;
+  font-family: 'Lato', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+.b * {
+  box-sizing: border-box;
+}
+
+.b p {
+  margin: 0 0 16px;
+}
+
+.b img {
+  max-width: 100%;
+  display: block;
+}
+
+.b ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.b a {
+  color: #16a3a3;
+  text-decoration: none;
+}
+
+.b a:hover {
+  text-decoration: underline;
+}
+
+.b-wrap {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.b-row:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---------------------------------------------------- the stale notice bar */
+
+.b-notice {
+  background: #fff4d6;
+  border-bottom: 1px solid #f0dca8;
+  color: #8a6d1f;
+  font-size: 13px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* ------------------------------------------------ the half-finished header */
+
+.b-head {
+  border-bottom: 1px solid #ededed;
+  padding: 18px 0;
+}
+
+/*
+ * The new design's wordmark, left in place when the rest was rolled back.
+ * It is the only element above the fold still using the new typeface.
+ */
+.b-logo-new {
+  float: left;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 30px;
+  line-height: 1;
+  color: #2b1f2e;
+  letter-spacing: -0.01em;
+}
+
+.b-nav {
+  float: right;
+  padding-top: 8px;
+}
+
+.b-nav li {
+  display: inline-block;
+  margin-left: 22px;
+}
+
+.b-nav a {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.b-nav .b-btn-old {
+  margin-left: 22px;
+}
+
+/* ------------------------------------------------------ the new hero (good) */
+
+.b-hero-new {
+  padding: 70px 0 60px;
+  text-align: center;
+}
+
+.b-hero-new h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 68px;
+  line-height: 1.02;
+  color: #2b1f2e;
+  margin: 0 0 18px;
+  font-weight: 400;
+}
+
+.b-hero-new p {
+  font-family: 'Instrument Sans', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  max-width: 620px;
+  margin: 0 auto 26px;
+  color: #6b6069;
+}
+
+.b-btn-new {
+  display: inline-block;
+  background: #2b1f2e;
+  color: #ffffff !important;
+  border-radius: 100px;
+  padding: 15px 30px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 15px;
+  text-decoration: none !important;
+}
+
+/* --------------------------------------------- everything below: the old one */
+
+.b-sec {
+  padding: 55px 0;
+}
+
+.b-sec--grey {
+  background: #f7f8f9;
+  padding: 55px 0;
+}
+
+/* The old stylesheet still owns h2, so every heading below the fold is Lato. */
+.b sec h2,
+.b-sec h2,
+.b-sec--grey h2 {
+  font-family: 'Lato', 'Segoe UI', sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: #3f4650;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.b-sub {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 36px;
+  font-size: 15px;
+}
+
+.b-col3 {
+  float: left;
+  width: 33.333%;
+  padding: 0 15px;
+}
+
+.b-col4 {
+  float: left;
+  width: 25%;
+  padding: 0 12px;
+}
+
+.b-card-old {
+  background: #ffffff;
+  border: 1px solid #e6e8ea;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.b-card-old .b-card-b {
+  padding: 18px;
+}
+
+/*
+ * The squashed images: the new product shots are 4:5, the old card template
+ * forces 16:9 with no object-fit, so every bottle is compressed.
+ */
+.b-card-old img {
+  width: 100%;
+  height: 170px;
+  object-fit: fill;
+}
+
+.b-icon-old {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #e8f6f6;
+  border: 2px solid #16a3a3;
+  color: #16a3a3;
+  font-size: 26px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.b-btn-old {
+  display: inline-block;
+  background: #16a3a3;
+  color: #ffffff !important;
+  border: 0;
+  border-radius: 3px;
+  padding: 11px 22px;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.b-btn-old:hover {
+  background: #128a8a;
+}
+
+.b-price-old {
+  font-family: 'Lato', sans-serif;
+  font-size: 22px;
+  color: #3f4650;
+  font-weight: 300;
+}
+
+/* The placeholder nobody filled in. */
+.b-placeholder {
+  border: 2px dashed #d7dbdf;
+  background: #fbfcfc;
+  border-radius: 4px;
+  padding: 26px;
+  color: #9aa3ab;
+  font-style: italic;
+  text-align: center;
+}
+
+/* The seasonal banner, stale. */
+.b-sale {
+  background: #16a3a3;
+  color: #ffffff;
+  text-align: center;
+  padding: 26px 0;
+}
+
+.b-sale h2 {
+  color: #ffffff !important;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+.b-table-old {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.b-table-old th,
+.b-table-old td {
+  border: 1px solid #e6e8ea;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+.b-table-old th {
+  background: #f2f4f5;
+  font-weight: 700;
+  color: #3f4650;
+}
+
+/*
+ * The breakpoint that was never finished: between 900 and 1100 the old
+ * three-column grid and the new container fight, and the cards overlap their
+ * gutters. Left in deliberately — it is the single most common symptom of a
+ * migration that stopped.
+ */
+@media (max-width: 1100px) and (min-width: 900px) {
+  .b-col3 {
+    width: 50%;
+  }
+  .b-col4 {
+    width: 50%;
+  }
+  .b-card-old .b-card-b {
+    padding: 12px 10px;
+  }
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.b-foot {
+  background: #3f4650;
+  color: #a8b0b8;
+  padding: 40px 0 0;
+  font-size: 13px;
+}
+
+.b-foot h4 {
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+}
+
+.b-foot a {
+  color: #a8b0b8;
+}
+
+.b-foot li {
+  padding: 3px 0;
+}
+
+/* The new design's footer snippet, pasted above the old footer and never merged. */
+.b-foot-new {
+  background: #2b1f2e;
+  color: #e9e2ea;
+  padding: 26px 0;
+  text-align: center;
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+.b-foot-bar {
+  margin-top: 30px;
+  border-top: 1px solid #4c5461;
+  padding: 14px 0;
+  font-size: 12px;
+  color: #889199;
+}

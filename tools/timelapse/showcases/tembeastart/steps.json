@@ -1,0 +1,125 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "@/features/tembeastart/components/back-button"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "dropped on the panel"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "@/features/tembeastart/components/headline"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "three lines of it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "@/features/tembeastart/components/tag-cluster"
+   ],
+   "label": "the throw of places"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "scattered on its floor"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/features/tembeastart/components/place-tag.tsx",
+    "react-native"
+   ],
+   "label": "a picture of each place"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tembeastart/components/place-tag.tsx",
+    "STEP 1.08"
+   ],
+   "label": "on every tag"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "@/features/tembeastart/components/sign-in-button"
+   ],
+   "label": "the three ways in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "stacked under the panel"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    [
+     "// MISTAKE 1.11",
+     "paddingTop: 26,"
+    ]
+   ],
+   "label": "the stack starts too far down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "@/features/tembeastart/components/foot-note"
+   ],
+   "label": "the line at the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tembeastart/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "for people who have been here"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "place-tag",
+     "src/features/tembeastart/components/place-tag.tsx"
+    ],
+    [
+     "start-screen",
+     "src/app/tembeastart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

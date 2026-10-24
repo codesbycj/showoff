@@ -1,0 +1,932 @@
+/*
+ * The 2012 stylesheet.
+ *
+ * Everything here is scoped under `.b`, for two reasons. The obvious one is
+ * that both designs are mounted at once and this one must not touch the other.
+ * The useful one is that it keeps the period inside a box: unlayered rules beat
+ * Tailwind's layered preflight whatever order they load in, so the 2012 page
+ * gets browser-default behaviour back -- inline images, underlined links,
+ * collapsing table borders -- without the modern page losing any of its reset.
+ *
+ * The rules of the era, kept honestly:
+ *
+ *   * ONE WIDTH. 960px, centred, `min-width` on the root so a phone pans
+ *     sideways instead of reflowing. There is not a single media query in this
+ *     file and that is the single biggest difference between the two designs.
+ *   * FLOATS, not flex. Two columns are `float: left` and `float: right` with a
+ *     clearfix under them, because that is what you had. Flexbox shipped
+ *     unprefixed in 2012 but nobody building a small-business site used it.
+ *   * WEB-SAFE FACES. Arial for text, Trebuchet MS for headings, Georgia
+ *     italic for testimonials, Arial Black for the offer sticker. No webfont,
+ *     because @font-face in 2012 meant four files and a licence you did not
+ *     have -- and no Comic Sans, which is the line between a dated design and a
+ *     joke about one.
+ *   * BEVELS. A button is a vertical gradient with a 1px dark border, a 1px
+ *     inset white highlight and a white text-shadow. A box is a 1px grey
+ *     border with a gradient title bar. Nothing is flat.
+ *   * 12px BODY TEXT, justified, in 620px columns -- about 105 characters a
+ *     line. It is genuinely hard to read, and it was everywhere.
+ *   * BLUE UNDERLINED LINKS with a purple visited state, which is the one thing
+ *     the era got right and the modern page quietly drops.
+ */
+
+.b {
+  min-width: 960px;
+  margin: 0;
+  padding: 0 0 0 0;
+  background-color: #e8e4d8;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.012) 0,
+      rgba(0, 0, 0, 0.012) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333333;
+  text-align: left;
+}
+
+.b * {
+  box-sizing: content-box;
+}
+
+.b p {
+  margin: 0 0 11px;
+}
+
+.b img {
+  display: inline;
+  border: 0;
+}
+
+.b ul,
+.b ol {
+  margin: 0 0 11px;
+  padding-left: 22px;
+  list-style: disc outside;
+}
+
+.b li {
+  margin: 0 0 3px;
+}
+
+.b h1,
+.b h2,
+.b h3,
+.b h4 {
+  margin: 0 0 9px;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #7b2d2d;
+}
+
+.b h1 {
+  font-size: 23px;
+  padding-bottom: 6px;
+  border-bottom: 1px dotted #c3b9a5;
+}
+
+.b h2 {
+  font-size: 17px;
+}
+
+.b h3 {
+  font-size: 13px;
+  color: #4d0e0e;
+}
+
+.b a {
+  color: #0033cc;
+  text-decoration: underline;
+}
+
+.b a:visited {
+  color: #551a8b;
+}
+
+.b a:hover {
+  color: #cc0000;
+  text-decoration: underline;
+}
+
+.b hr {
+  height: 0;
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px solid #cfc7b6;
+  border-bottom: 1px solid #ffffff;
+}
+
+.b-cf:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ------------------------------------------------------------- the top strip */
+
+.b-top {
+  background: #4d0e0e;
+  border-bottom: 2px solid #2d0808;
+  color: #d8c3c3;
+  font-size: 11px;
+}
+
+.b-top-in {
+  width: 960px;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.b-top a {
+  color: #ffd9d9;
+  text-decoration: none;
+}
+
+.b-top a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.b-top-phone {
+  float: left;
+  font-weight: bold;
+}
+
+.b-top-links {
+  float: right;
+}
+
+.b-top-links span {
+  color: #8a5050;
+  padding: 0 5px;
+}
+
+/* ---------------------------------------------------------------- the header */
+
+.b-head {
+  background: #8b1a1a;
+  background-image: linear-gradient(#a62424, #731313 52%, #5e0f0f);
+  border-bottom: 3px solid #e8c766;
+}
+
+.b-head-in {
+  width: 960px;
+  margin: 0 auto;
+  padding: 16px 0 14px;
+}
+
+.b-logo {
+  float: left;
+}
+
+.b-logo-name {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 31px;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  text-shadow:
+    1px 1px 0 #4d0e0e,
+    2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.b-logo-name em {
+  color: #f6d173;
+  font-style: normal;
+}
+
+.b-logo-tag {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 12px;
+  color: #f0d2d2;
+  text-shadow: 1px 1px 0 #5e0f0f;
+}
+
+.b-head-right {
+  float: right;
+  text-align: right;
+  padding-top: 4px;
+}
+
+.b-head-cta {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+  color: #f6d173;
+  text-shadow: 1px 1px 0 #5e0f0f;
+}
+
+.b-head-sub {
+  font-size: 11px;
+  color: #e8c3c3;
+}
+
+/* ------------------------------------------------------------------- the nav */
+
+.b-nav {
+  background: #d9d2c2;
+  background-image: linear-gradient(#fbf8ef, #ddd5c3 50%, #c9c0ab);
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #a89f8a;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.b-nav-in {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.b-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.b-nav li {
+  float: left;
+  margin: 0;
+  border-right: 1px solid #b3aa95;
+}
+
+.b-nav li:first-child {
+  border-left: 1px solid #b3aa95;
+}
+
+.b-nav a {
+  display: block;
+  padding: 9px 17px 8px;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #5e3030;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #ffffff;
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.b-nav a:hover {
+  background-image: linear-gradient(#ffffff, #efe9da);
+  color: #8b1a1a;
+  text-decoration: none;
+}
+
+.b-nav a.is-on {
+  background: #8b1a1a;
+  background-image: linear-gradient(#731313, #8b1a1a);
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #4d0e0e;
+}
+
+.b-nav-search {
+  float: right;
+  padding: 5px 0;
+}
+
+/* -------------------------------------------------------------- the ticker */
+
+.b-ticker {
+  background: #f6d173;
+  background-image: linear-gradient(#fbe6ac, #f0c552);
+  border-bottom: 1px solid #c9a63f;
+  overflow: hidden;
+}
+
+.b-ticker-in {
+  width: 960px;
+  margin: 0 auto;
+  padding: 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.b-ticker-tag {
+  float: left;
+  margin-right: 9px;
+  padding: 1px 6px;
+  background: #cc0000;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.b-ticker-track {
+  display: inline-block;
+  padding-left: 100%;
+  font-size: 11px;
+  font-weight: bold;
+  color: #5e4a12;
+  animation: b-marquee 22s linear infinite;
+}
+
+@keyframes b-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.b-blink {
+  color: #cc0000;
+  font-weight: bold;
+  animation: b-blink 1s steps(1) infinite;
+}
+
+@keyframes b-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ----------------------------------------------------------------- the shell */
+
+.b-shell {
+  width: 960px;
+  margin: 14px auto 0;
+  background: #ffffff;
+  border: 1px solid #b5ad99;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+}
+
+.b-pad {
+  padding: 14px;
+}
+
+.b-crumbs {
+  padding: 6px 14px;
+  background: #f4f1e8;
+  border-bottom: 1px solid #e0dacb;
+  font-size: 11px;
+  color: #8a8270;
+}
+
+.b-main {
+  float: left;
+  width: 620px;
+}
+
+.b-side {
+  float: right;
+  width: 290px;
+}
+
+.b-lede {
+  text-align: justify;
+}
+
+/* ---------------------------------------------------------------- the slider */
+
+.b-slider {
+  position: relative;
+  width: 930px;
+  height: 300px;
+  margin: 0 0 14px;
+  background: #2a1010;
+  border: 1px solid #6e5a5a;
+  overflow: hidden;
+}
+
+.b-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 930px;
+  height: 300px;
+  transition: opacity 600ms linear;
+}
+
+.b-slide img {
+  display: block;
+  width: 930px;
+  height: 300px;
+  /*
+   * `object-fit` did not exist in 2012 -- the designer would have cropped the
+   * JPEG in Photoshop and uploaded it at 930x300. Using it here is that crop,
+   * done in CSS because the photographs are shared with the modern page and
+   * cannot be cut to a letterbox for one of them. Stretching them instead
+   * would be the caricature: a competent site of this decade had correctly
+   * proportioned photographs in it.
+   */
+  object-fit: cover;
+}
+
+.b-slide-veil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 930px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.b-slide-txt {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  width: 930px;
+  text-align: center;
+}
+
+.b-slide-txt strong {
+  display: block;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  line-height: 1.15;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 0 #000000,
+    0 0 12px rgba(0, 0, 0, 0.9);
+}
+
+.b-slide-txt span {
+  display: block;
+  margin-top: 7px;
+  font-size: 13px;
+  color: #ffe9b8;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.b-slide-btn {
+  margin-top: 13px;
+}
+
+.b-arrow {
+  position: absolute;
+  top: 132px;
+  width: 26px;
+  height: 36px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.b-arrow-l {
+  left: 8px;
+}
+
+.b-arrow-r {
+  right: 8px;
+}
+
+.b-pager {
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+}
+
+.b-pager button {
+  width: 17px;
+  height: 17px;
+  margin-left: 4px;
+  padding: 0;
+  background: #ffffff;
+  background-image: linear-gradient(#ffffff, #d6d0c0);
+  border: 1px solid #5e0f0f;
+  color: #5e0f0f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 15px;
+  cursor: pointer;
+}
+
+.b-pager button.is-on {
+  background-image: linear-gradient(#cc0000, #8b1a1a);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------- the columns */
+
+.b-col3 {
+  float: left;
+  /* 194*3 + 18*2 = 618 in a 620px column. At 196 it was 624 and the third one
+     wrapped under the first -- a float overflowing by 4px does not squeeze, it
+     drops, and that is the single most common way a fixed layout of this era
+     broke. */
+  width: 194px;
+  margin-right: 18px;
+  text-align: center;
+}
+
+.b-col3-last {
+  margin-right: 0;
+}
+
+.b-disc {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 7px;
+  background-image: radial-gradient(circle at 34% 28%, #ffffff, #e8c766 46%, #a6761a);
+  border: 2px solid #ffffff;
+  border-radius: 36px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  line-height: 70px;
+  color: #5e0f0f;
+  text-shadow: 1px 1px 0 #ffffff;
+}
+
+/* (72 - 34) / 2 = 19. Centred with auto margins rather than with flexbox,
+   which is what this stylesheet would have had to do. */
+.b-disc svg {
+  display: block;
+  margin: 19px auto 0;
+}
+
+.b-more {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* ----------------------------------------------------------------- the boxes */
+
+.b-box {
+  margin: 0 0 13px;
+  background: #fbfaf5;
+  border: 1px solid #b5ad99;
+}
+
+.b-box-h {
+  padding: 5px 8px;
+  background: #8b1a1a;
+  background-image: linear-gradient(#a62424, #731313);
+  border-bottom: 1px solid #5e0f0f;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #4d0e0e;
+}
+
+.b-box-b {
+  padding: 8px;
+}
+
+.b-box-b p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------- the buttons */
+
+.b-btn {
+  display: inline-block;
+  padding: 4px 13px 5px;
+  background: #e8c766;
+  background-image: linear-gradient(#fbe6ac, #e8c766 52%, #cfa63d);
+  border: 1px solid #a6821f;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    0 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #5e3b06 !important;
+  text-decoration: none !important;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.b-btn:hover {
+  background-image: linear-gradient(#ffffff, #f0d78f 52%, #d9b14a);
+  color: #4d2f04 !important;
+}
+
+.b-btn-sm {
+  padding: 2px 8px 3px;
+  font-size: 11px;
+}
+
+/* --------------------------------------------------------------- the images */
+
+.b-thumb {
+  object-fit: cover;
+  padding: 3px;
+  background: #ffffff;
+  border: 1px solid #9a9279;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.b-thumb-l {
+  float: left;
+  margin: 2px 11px 7px 0;
+}
+
+/* ----------------------------------------------------------------- the table */
+
+.b-table {
+  width: 100%;
+  margin: 0 0 13px;
+  border-collapse: collapse;
+  border: 1px solid #b5ad99;
+  font-size: 11px;
+}
+
+.b-table th {
+  padding: 5px 7px;
+  background: #d9d2c2;
+  background-image: linear-gradient(#f1ece0, #cfc7b2);
+  border: 1px solid #b5ad99;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #4d0e0e;
+  text-align: left;
+  text-shadow: 1px 1px 0 #ffffff;
+}
+
+.b-table td {
+  padding: 5px 7px;
+  border: 1px solid #ddd7c8;
+  vertical-align: top;
+}
+
+.b-table tr:nth-child(even) td {
+  background: #f6f4ec;
+}
+
+.b-table tr:hover td {
+  background: #fdf6e0;
+}
+
+.b-price {
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #cc0000;
+  white-space: nowrap;
+}
+
+.b-was {
+  color: #8a8270;
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+/* ------------------------------------------------------------ the offer flag */
+
+.b-offer {
+  position: relative;
+  margin: 0 0 13px;
+  padding: 11px 14px 11px 104px;
+  background: #fff8e1;
+  background-image: linear-gradient(#fffdf4, #ffeeba);
+  border: 2px dashed #cc0000;
+}
+
+.b-starburst {
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  width: 80px;
+  height: 80px;
+  background: #cc0000;
+  background-image: linear-gradient(#e03a3a, #a80000);
+  border-radius: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: 'Arial Black', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 1px 1px 0 #6e0000;
+  transform: rotate(-11deg);
+}
+
+.b-starburst span {
+  display: block;
+  padding-top: 20px;
+}
+
+.b-starburst em {
+  display: block;
+  font-size: 19px;
+  font-style: normal;
+}
+
+.b-offer h3 {
+  margin-bottom: 4px;
+  font-family: 'Arial Black', 'Trebuchet MS', Arial, sans-serif;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+  color: #cc0000;
+}
+
+/* ----------------------------------------------------------- the testimonial */
+
+.b-quote {
+  position: relative;
+  margin: 0 0 11px;
+  padding: 9px 11px 9px 42px;
+  background: #f6f4ec;
+  border: 1px solid #ddd7c8;
+}
+
+.b-quote:before {
+  content: '\201C';
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 46px;
+  line-height: 1;
+  color: #c3b9a5;
+}
+
+.b-quote p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #4a4335;
+}
+
+.b-quote cite {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: bold;
+  color: #7b2d2d;
+}
+
+/* ------------------------------------------------------------ the accordion */
+
+.b-acc {
+  margin: 0 0 13px;
+  border: 1px solid #b5ad99;
+  border-bottom: 0;
+}
+
+.b-acc-q {
+  /*
+   * No `width: 100%` here. Everything in this stylesheet is `content-box` --
+   * the CSS default, and what a 2012 stylesheet worked in -- so a 100% width
+   * plus 18px of padding overflows its column by 18px. A block-level button
+   * with auto width fills the content box exactly, which is the fix that
+   * stylesheet would have reached for too.
+   */
+  display: block;
+  margin: 0;
+  padding: 6px 9px;
+  background: #f4f1e8;
+  background-image: linear-gradient(#fbf9f2, #ebe6d8);
+  border: 0;
+  border-bottom: 1px solid #b5ad99;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4d0e0e;
+  text-align: left;
+  text-shadow: 1px 1px 0 #ffffff;
+  cursor: pointer;
+}
+
+.b-acc-q:hover {
+  background-image: linear-gradient(#ffffff, #f2eee2);
+  color: #8b1a1a;
+}
+
+.b-acc-q b {
+  display: inline-block;
+  width: 13px;
+  color: #cc0000;
+}
+
+.b-acc-a {
+  overflow: hidden;
+  border-bottom: 1px solid #b5ad99;
+  /* jQuery's slideToggle, which is 400ms of linear height and nothing else. */
+  transition: height 400ms linear;
+}
+
+.b-acc-a-in {
+  padding: 8px 9px 9px 22px;
+  background: #ffffff;
+  text-align: justify;
+}
+
+/* ------------------------------------------------------------------ the form */
+
+.b-field {
+  width: 168px;
+  padding: 3px 4px;
+  background: #ffffff;
+  border: 1px solid #8a8270;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.18);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+}
+
+.b-counter {
+  padding: 3px 5px;
+  background: #000000;
+  border: 1px solid #555555;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #33ff33;
+}
+
+.b-badge {
+  margin: 0 4px 4px 0;
+  padding: 2px 5px;
+  background: #eeeae0;
+  border: 1px solid #b5ad99;
+  font-size: 9px;
+  font-weight: bold;
+  color: #6b6353;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------------- the footer */
+
+.b-foot {
+  margin-top: 14px;
+  background: #4d0e0e;
+  background-image: linear-gradient(#5e1212, #3a0a0a);
+  border-top: 3px solid #e8c766;
+  color: #c9b3b3;
+}
+
+.b-foot-in {
+  width: 960px;
+  margin: 0 auto;
+  padding: 16px 0 10px;
+}
+
+.b-foot h4 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #f6d173;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.b-foot-col {
+  float: left;
+  width: 300px;
+  margin-right: 30px;
+}
+
+.b-foot-col-last {
+  margin-right: 0;
+}
+
+.b-foot ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+}
+
+.b-foot a {
+  color: #e8c3c3;
+  text-decoration: none;
+}
+
+.b-foot a:visited {
+  color: #e8c3c3;
+}
+
+.b-foot a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.b-legal {
+  width: 960px;
+  margin: 0 auto;
+  padding: 9px 0 18px;
+  border-top: 1px solid #6e2020;
+  font-size: 10px;
+  color: #a08a8a;
+  text-align: center;
+}
+
+.b-legal p {
+  margin: 0 0 3px;
+}

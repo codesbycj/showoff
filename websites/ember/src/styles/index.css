@@ -1,0 +1,170 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/geist';
+@import '@fontsource/ibm-plex-mono/400.css';
+
+@theme {
+  /*
+   * The reference sets everything in Saans, which is a trial font on its own
+   * site and cannot be licensed for a rebuild. Geist is the nearest free
+   * neo-grotesque: same large x-height, same flat terminals, same unfussy
+   * digits. Its mono is IBM Plex Mono, which *is* free, so that one matches
+   * exactly rather than approximately.
+   */
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Every one of these is a custom property on the reference's `:root`. */
+  --color-paper: #fcf8f1;
+  --color-sand: #f2ece2;
+  --color-ink: #000000;
+  --color-stroke: #ddd9d9;
+  --color-wine: #431616;
+
+  /* Its seven brand reds, in its own order. br-1 is the one that carries. */
+  --color-br-1: #ff443a;
+  --color-br-2: #ff5860;
+  --color-br-3: #ff6e8f;
+  --color-br-4: #ff9ae7;
+  --color-br-5: #ff93a5;
+  --color-br-6: #ff8958;
+  --color-br-7: #f6633c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  /*
+   * The page's one scroll animation, and the only one it has.
+   *
+   * Read off the reference as a computed style rather than guessed:
+   * `opacity: 0; filter: blur(10px)` with 800ms cubic-bezier(.4,0,.2,1) on
+   * both, cleared by `.is-act`. **No translate.** Blocks do not rise into
+   * place here, they resolve — which is why the page feels calm at a scroll
+   * speed that would make a slide-up look frantic.
+   */
+  .reveal {
+    opacity: 0;
+    filter: blur(10px);
+    transition:
+      opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal.is-act {
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  /* The page's measure. 1380px of content inside a 1440 viewport = 30 each side. */
+  .cc {
+    width: 100%;
+    max-width: 1380px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  /* The type scale, in the reference's own steps. */
+  .t-h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+  }
+
+  .t-h2 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+  }
+
+  /* The section heading: 24px/28.8 at -0.24px. Every "..." heading on the page
+     is this, including the ones a rebuild instinctively sets at 36. */
+  .t-h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+  }
+
+  .t-body {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .t-small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  /*
+   * The eyebrow over a section heading. Measured off the reference rather than
+   * assumed: 13.5px/130% at weight 500 in black 30%, in the page's own sans.
+   *
+   * It is NOT monospaced, which is the reflex to resist here -- the reference
+   * does use IBM Plex Mono, but only at 8px on the readout plates inside the
+   * benefit photographs, never for a section label. A mono eyebrow is a 2024
+   * tic and it would be the one thing on the page that is mine rather than
+   * measured.
+   */
+  .t-eyebrow {
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 130%;
+    color: rgb(0 0 0 / 0.3);
+  }
+
+  @media (max-width: 991px) {
+    .t-h1 {
+      font-size: 40px;
+    }
+    .t-h2 {
+      font-size: 36px;
+    }
+    .t-h3 {
+      font-size: 28px;
+      line-height: 140%;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .t-h1 {
+      font-size: 32px;
+      line-height: 110%;
+    }
+    .t-h2 {
+      font-size: 28px;
+      line-height: 120%;
+    }
+    .t-h3 {
+      font-size: 24px;
+      line-height: 120%;
+    }
+    .t-body {
+      font-size: 15px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      filter: none;
+      transition: none;
+    }
+  }
+}

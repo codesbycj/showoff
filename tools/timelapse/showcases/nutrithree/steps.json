@@ -1,0 +1,165 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "how far through this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/onboarding-chrome.tsx",
+    "STEP 1.03"
+   ],
+   "label": "whose app this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/onboarding-chrome.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the way past it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/onboarding-chrome.tsx",
+    "STEP 1.05"
+   ],
+   "label": "four steps, three done"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "@/features/nutrithree/components/plan-stage"
+   ],
+   "label": "the plan"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "under the header"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/plan-stage.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what it buys"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/plan-stage.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what it is called"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/plan-stage.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and what is in it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "@/features/nutrithree/components/stepper-row"
+   ],
+   "label": "the two numbers behind it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "side by side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nutrithree/components/stepper-row.tsx",
+    "STEP 1.13"
+   ],
+   "label": "both of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what it all comes to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nutrithree/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and a line for people who are back"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nutrithree/components/stepper-row.tsx",
+    [
+     "// MISTAKE 1.17",
+     "marginTop: 20,"
+    ]
+   ],
+   "label": "the cards came in dropped"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "onboarding-chrome",
+     "src/features/nutrithree/components/onboarding-chrome.tsx"
+    ],
+    [
+     "plan-stage",
+     "src/features/nutrithree/components/plan-stage.tsx"
+    ],
+    [
+     "stepper-row",
+     "src/features/nutrithree/components/stepper-row.tsx"
+    ],
+    [
+     "three-screen",
+     "src/app/nutrithree/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

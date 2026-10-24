@@ -29,7 +29,7 @@
  "src/features/nourish/theme.ts": "583401459e4a4cec0ad809e965734670733a231ca8ca79128c317207f7ee7e0c",
  "src/features/nourish/use-insets.ts": "832c4209ee9496ae5cbbf428130141d247b29f0848f33eb2c9ab9f3fdcfee2f8",
  "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
- "src/theme/fonts.ts": "73c8acf5d6ba31568e6649ec790361eea285cec11b1f7fdf8bc67b7d2b71450c",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
  "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
  "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
 }

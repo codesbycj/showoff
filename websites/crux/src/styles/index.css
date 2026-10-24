@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/archivo';
+@import '@fontsource-variable/gabarito';
+
+@import '../before/before.css';
+
+/*
+ * Episode 10's after is a **pixel-perfect rebuild** of the reference's home
+ * page (rule 0).
+ *
+ * The reference is a Next.js site on Tailwind 4 and — for once — **nothing has
+ * to be substituted**. Both of its faces, Archivo and Gabarito, are OFL and on
+ * fontsource, so the letterforms here are not close to the reference's, they
+ * are the same ones. Its palette, radii and sizes are in its own class strings
+ * and are copied verbatim.
+ *
+ * The shape of the page is one idea repeated: a white gutter of 16px, and
+ * inside it a stack of 32px-radius coloured panels, each either 760, 560, 498
+ * or 372px tall. There is no container and no column grid — the panels are the
+ * grid.
+ */
+
+@theme {
+  /* The reference's own hexes, read off its markup. */
+  --color-ink: #181d1f; /* every heading */
+  --color-body: #424647; /* every paragraph */
+  --color-sky-1: #15aeea; /* the hero gradient, top */
+  --color-sky-2: #73cef2; /* the hero gradient, foot */
+  --color-sky-ink: #037bb5; /* the hero eyebrow and its gradient fill */
+
+  --color-peach: #fddbce; /* why */
+  --color-sand: #eae4dc; /* features left, what's inside */
+  --color-lilac: #d7cef0; /* features right */
+  --color-mist: #dbe5f0; /* lessons left */
+  --color-sage: #d5e2da; /* lessons right */
+  --color-blush: #f4e1e1; /* made by humans */
+  --color-butter: #f6e7cf; /* misinformation */
+  --color-moss: #e4eed2; /* testimonials */
+  --color-pool: #dceeef; /* faq */
+  --color-tangerine: #fd956d; /* the circle behind the phone */
+
+  --font-archivo: 'Archivo Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-gabarito: 'Gabarito Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    background: #fff;
+    color: var(--color-ink);
+    font-family: var(--font-archivo);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-archivo {
+    font-family: var(--font-archivo);
+  }
+
+  .font-gabarito {
+    font-family: var(--font-gabarito);
+  }
+
+  /*
+   * The hero headline is filled with a gradient rather than a colour:
+   * `background: linear-gradient(169.245deg, …) text` with a transparent fill.
+   * The 169.245° is the reference's own figure, to three decimal places.
+   */
+  .hero-title-gradient {
+    background: linear-gradient(
+        169.245deg,
+        rgba(3, 123, 181, 0.85) 20.481%,
+        rgba(3, 120, 176, 0.9) 73.8%
+      )
+      text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  /*
+   * The per-word entrance. The reference marks every heading and paragraph in
+   * its panels with one `<span class="feat-word">` a word and animates them
+   * from a bundle this build did not fetch, so the numbers below are inferred
+   * from the capture rather than read. Declared in the README.
+   */
+  .feat-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .-in .feat-word {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* The seven objects in the "why" panel spin in from nothing. */
+  .why-image {
+    opacity: 0;
+    transform: scale(0.75);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .-in .why-image {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* The clouds drift sideways, forever, 12px and back. */
+  @keyframes cloud-drift {
+    0%,
+    100% {
+      transform: translate(-50%) translate(0);
+    }
+    25% {
+      transform: translate(-50%) translate(12px);
+    }
+    50% {
+      transform: translate(-50%) translate(-10px);
+    }
+    75% {
+      transform: translate(-50%) translate(6px);
+    }
+  }
+
+  @keyframes crux-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/*
+ * The reference's own reduced-motion rule, copied as written. It is a blunt
+ * instrument — a blanket `0.01ms` on every transition and animation on the page
+ * rather than a decision per effect — and it is what the reference ships.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .k *,
+  .k *::before,
+  .k *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* The hidden pane may not keep an animation running (rule 7). */
+.motion-paused [style*='animation'],
+.motion-paused [class*='animate'] {
+  animation-play-state: paused !important;
+}

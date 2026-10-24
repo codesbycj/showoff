@@ -1,0 +1,345 @@
+/*
+ * The before: tare's website as it was, and this episode's angle is
+ * **the whole page is a JPEG**.
+ *
+ * A small professional-services site, built once in about 2009 by a local
+ * agency, and never touched since except to change the phone number. It was
+ * not cheap and it was not careless. It is the work of a print designer who
+ * had been given a web page and solved it the way a print designer does: the
+ * headings are set in the brand face, the intro is set in the brand face, the
+ * fee table is set in the brand face — and because none of that was possible
+ * in a browser in 2009, all of it is **exported as images**.
+ *
+ * That one decision is the whole episode. Everything downstream of it follows:
+ *
+ *   * nothing in a heading, in the intro, in the hero or in the fee table can
+ *     be selected, searched, copied, translated, resized or read aloud;
+ *   * none of it reflows, so the page has a fixed 960px body and pans
+ *     sideways on a phone;
+ *   * every image carries its own baked cream background, so the wordmark
+ *     sits on the navy header band as a pale rectangle — which nobody noticed,
+ *     because on the day it was made the header band was cream;
+ *   * the images are JPEGs at quality 55, so the type rings; and they are 1x,
+ *     so on any modern screen they are soft while the body copy beside them is
+ *     sharp. That mismatch is the tell.
+ *
+ * The rest is period furniture: 12px Georgia, justified, a table-based
+ * two-column layout, a left sidebar of fifteen links, bevelled gradient
+ * buttons, a visitor counter, "best viewed at 1024x768", and a fee schedule
+ * offered as a PDF because the table on the page is a picture of a table.
+ *
+ * No webfont is loaded for the HTML, deliberately: in 2009 there was not one,
+ * and Georgia and Arial are what this page would have been set in. That is why
+ * the before's type is sharp and its headings are not.
+ */
+
+.b {
+  --b-cream: #f6f3ec;
+  --b-page: #e9e5d9;
+  --b-navy: #1f3a57;
+  --b-navy-d: #16293d;
+  --b-gold: #967a3d;
+  --b-ink: #333;
+  --b-line: #d0c8b8;
+  --b-link: #1d4f8b;
+
+  background: var(--b-page);
+  color: var(--b-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  line-height: 1.55;
+  /*
+   * The fixed body. Not `max-width` -- `width` -- so the page pans sideways on
+   * anything under 960px rather than reflowing, which is what a layout built
+   * out of images has to do.
+   */
+  padding-bottom: 30px;
+}
+
+.b * {
+  box-sizing: border-box;
+}
+
+.b img {
+  border: 0;
+}
+
+.b p {
+  margin: 0 0 11px;
+}
+
+.b a {
+  color: var(--b-link);
+  text-decoration: underline;
+}
+
+.b a:hover {
+  color: #c0392b;
+}
+
+.b-page {
+  width: 960px;
+  margin: 0 auto;
+  background: var(--b-cream);
+  border: 1px solid var(--b-line);
+  border-top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+}
+
+/* ------------------------------------------------------------------ header */
+
+.b-top {
+  background: var(--b-navy);
+  background: linear-gradient(180deg, #274566, #1a3049);
+  color: #cfd8e2;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+}
+
+.b-top .b-in {
+  width: 960px;
+  margin: 0 auto;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.b-top a {
+  color: #cfd8e2;
+}
+
+.b-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 12px 10px;
+  /* The header band the wordmark JPEG was made for, before it was changed. */
+  background: var(--b-navy);
+}
+
+/*
+ * The wordmark and the strapline, each a JPEG with its own cream ground baked
+ * in, sitting on navy. In 2009 this band was cream and they were invisible;
+ * the band was changed in about 2014 and the images were not remade, because
+ * remaking them meant emailing the agency.
+ */
+.b-head img {
+  display: block;
+}
+
+.b-nav {
+  background: var(--b-navy-d);
+  border-top: 2px solid var(--b-gold);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.b-nav ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.b-nav li {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.b-nav a {
+  display: block;
+  padding: 9px 15px;
+  color: #e4e9ef;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.b-nav a:hover {
+  background: #2b4d72;
+  color: #fff;
+}
+
+/* ------------------------------------------------------------------- body */
+
+/*
+ * The two-column layout, as a table. Not because a table was the only way in
+ * 2009 -- floats existed -- but because the agency's template was a table and
+ * nobody rewrites a working template.
+ */
+.b-cols {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.b-main {
+  width: 660px;
+  padding: 18px 14px 26px 18px;
+  vertical-align: top;
+}
+
+.b-side {
+  width: 300px;
+  padding: 18px 18px 26px 10px;
+  vertical-align: top;
+  border-left: 1px solid var(--b-line);
+  background: #f1eee5;
+}
+
+.b-main p,
+.b-side p {
+  text-align: justify;
+}
+
+.b-sec {
+  margin-bottom: 26px;
+}
+
+/* Every heading on the page. All of them images. */
+.b-h {
+  display: block;
+  margin: 0 0 10px -14px;
+}
+
+.b-side h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--b-navy);
+  margin: 0 0 7px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--b-line);
+}
+
+.b-side ul {
+  margin: 0 0 18px;
+  padding: 0 0 0 16px;
+}
+
+.b-side li {
+  margin-bottom: 3px;
+}
+
+.b-small {
+  font-size: 11px;
+  color: #6b6b6b;
+}
+
+.b-tiny {
+  font-size: 10px;
+  color: #7a7a7a;
+}
+
+/* The bevelled gradient button, in two sizes, exactly as the theme shipped. */
+.b-btn {
+  display: inline-block;
+  padding: 7px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff !important;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #16293d;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #3b6391, #1f3a57);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+
+.b-btn:hover {
+  background: linear-gradient(180deg, #4a76a8, #27456e);
+}
+
+.b-btn-gold {
+  border-color: #6f5a2c;
+  background: linear-gradient(180deg, #b79549, #8a6f33);
+}
+
+.b-btn-gold:hover {
+  background: linear-gradient(180deg, #c9a757, #9b7d39);
+}
+
+/* The dense tables: the calendar, and the client list. */
+.b-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.b-table th {
+  background: var(--b-navy);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 5px 7px;
+}
+
+.b-table td {
+  border-bottom: 1px solid var(--b-line);
+  padding: 4px 7px;
+  vertical-align: top;
+}
+
+.b-table tr:nth-child(even) td {
+  background: #efece2;
+}
+
+.b-quote {
+  font-style: italic;
+  border-left: 3px solid var(--b-gold);
+  padding-left: 10px;
+  margin: 0 0 12px;
+}
+
+/* A fee table that is a picture of a table, with a PDF offered beside it. */
+.b-fees-img {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------------------ footer */
+
+.b-foot {
+  background: var(--b-navy);
+  color: #b9c6d4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding: 14px 12px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.b-foot a {
+  color: #b9c6d4;
+}
+
+.b-counter {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 5px;
+  background: #000;
+  color: #3dff3d;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  border: 1px solid #444;
+}
+
+/*
+ * Reduced motion.
+ *
+ * There is nothing to turn off. Not a single thing on this page moves, which
+ * is the one respect in which it is kinder than the modern web, and worth
+ * saying out loud in an episode whose previous instalment had eleven infinite
+ * animations running at rest.
+ */

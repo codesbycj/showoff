@@ -1,0 +1,245 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the way out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "@/features/hookdash/components/profile-tile"
+   ],
+   "label": "who this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "top left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/profile-tile.tsx",
+    "STEP 1.04"
+   ],
+   "label": "their picture"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/profile-tile.tsx",
+    "STEP 1.05"
+   ],
+   "label": "their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/profile-tile.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and how many friends"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "@/features/hookdash/components/find-tile"
+   ],
+   "label": "and how to meet people"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "beside it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/find-tile.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what it offers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/find-tile.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and two of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "@/features/hookdash/components/leaderboard-card"
+   ],
+   "label": "where they stand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "under the two tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/leaderboard-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the brand behind it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/leaderboard-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what the card is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/leaderboard-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what was earned"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/leaderboard-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and where that puts them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "@/features/hookdash/components/activity-card"
+   ],
+   "label": "what has been happening"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "under the board"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/activity-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what the card is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/activity-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "who has been reacting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/activity-card.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and the latest of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "@/features/hookdash/components/memories-card"
+   ],
+   "label": "and a picture from last year"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/hookdash/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "running off the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/memories-card.tsx",
+    "STEP 1.24"
+   ],
+   "label": "the picture"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/hookdash/components/memories-card.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and when it was"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/hookdash/components/find-tile.tsx",
+    [
+     "// MISTAKE 1.26",
+     "paddingVertical: 24,"
+    ]
+   ],
+   "label": "the tile came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "activity-card",
+     "src/features/hookdash/components/activity-card.tsx"
+    ],
+    [
+     "dash-screen",
+     "src/app/hookdash/index.tsx"
+    ],
+    [
+     "find-tile",
+     "src/features/hookdash/components/find-tile.tsx"
+    ],
+    [
+     "leaderboard-card",
+     "src/features/hookdash/components/leaderboard-card.tsx"
+    ],
+    [
+     "memories-card",
+     "src/features/hookdash/components/memories-card.tsx"
+    ],
+    [
+     "profile-tile",
+     "src/features/hookdash/components/profile-tile.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

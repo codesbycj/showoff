@@ -1,0 +1,753 @@
+/*
+ * The before: quay's own site, as nine intakes of students left it.
+ *
+ * Angle: **the content-managed sprawl** (rule 3). Nothing here is a joke and
+ * nothing is lorem. It is a real WordPress theme from about 2014 that has been
+ * edited by eleven people who never had permission to delete anything, so
+ * every campaign, every navigation and every "temporary" notice is still on
+ * the page, underneath the next one.
+ *
+ * Everything is in **px**. Both designs share one `html`, and the after copies
+ * the reference's fluid root (`min(1.12vw, 20px)`), so a before written in rem
+ * would quietly scale with it and stop being its own design.
+ */
+
+.b {
+  background: #ffffff;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  /*
+   * The 980px canvas does not fit a phone and never did. Letting the before
+   * scroll sideways inside itself keeps that failure honest and reachable --
+   * the stack above it is `overflow: clip`, so without this the right-hand
+   * 590px of every row would simply be gone rather than merely off to the
+   * side. The document still never scrolls horizontally.
+   */
+  overflow-x: auto;
+}
+
+.b * {
+  box-sizing: border-box;
+}
+
+.b a {
+  color: #0b5ea8;
+}
+
+.b a:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+.b h1,
+.b h2,
+.b h3,
+.b h4,
+.b h5 {
+  margin: 0 0 8px;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2a4b6b;
+}
+
+.b h1 {
+  font-size: 26px;
+}
+.b h2 {
+  font-size: 20px;
+}
+.b h3 {
+  font-size: 16px;
+}
+.b h4 {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+.b h5 {
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+}
+
+.b p {
+  margin: 0 0 10px;
+}
+
+.b ul,
+.b ol {
+  margin: 0 0 10px;
+  padding-left: 22px;
+}
+
+.b img {
+  max-width: 100%;
+  border: 0;
+}
+
+/* The fixed 980px canvas, which is the whole accessibility story. */
+.b__wrap {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* ------------------------------------------------------- navigation, 1 of 4 */
+
+.b__utility {
+  background: #e8e8e8;
+  border-bottom: 1px solid #c8c8c8;
+  font-size: 11px;
+  color: #555;
+}
+
+.b__utility .b__wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 26px;
+}
+
+.b__utility a {
+  color: #444;
+  text-decoration: none;
+}
+
+.b__utility .b__spacer {
+  flex: 1;
+}
+
+.b__textsize button {
+  background: #fff;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0 4px;
+}
+
+.b__utility select {
+  font-size: 11px;
+  font-family: inherit;
+}
+
+/* ------------------------------------------------------------- the masthead */
+
+.b__masthead {
+  background: #fff;
+  border-bottom: 3px solid #2a4b6b;
+}
+
+.b__masthead .b__wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.b__logo {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2a4b6b;
+  text-shadow: 1px 1px 0 #cfd9e2;
+  letter-spacing: -1px;
+}
+
+.b__logo span {
+  color: #c0392b;
+}
+
+.b__strap {
+  font-size: 11px;
+  font-style: italic;
+  color: #777;
+}
+
+.b__mast-right {
+  margin-left: auto;
+  text-align: right;
+  font-size: 11px;
+  color: #444;
+}
+
+.b__phone {
+  font-size: 19px;
+  font-weight: bold;
+  color: #c0392b;
+  font-family: Georgia, serif;
+}
+
+.b__badges {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.b__badge {
+  border: 1px solid #bbb;
+  background: linear-gradient(#fff, #e4e4e4);
+  padding: 2px 5px;
+  font-size: 9px;
+  text-transform: uppercase;
+  color: #666;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------- navigation, 2 and 3 of 4 */
+
+.b__nav {
+  background: linear-gradient(#4a749c, #2a4b6b);
+  border-bottom: 1px solid #1b3550;
+}
+
+.b__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.b__nav li {
+  border-right: 1px solid #5c82a8;
+}
+
+.b__nav a {
+  display: block;
+  padding: 7px 11px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #1b3550;
+}
+
+.b__nav a:hover {
+  background: #1b3550;
+  color: #ffd;
+}
+
+.b__nav .-on a {
+  background: #1b3550;
+}
+
+.b__quick {
+  background: #f4efdc;
+  border-bottom: 1px solid #ded6bb;
+  font-size: 11px;
+}
+
+.b__quick .b__wrap {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.b__quick strong {
+  color: #8a6d1f;
+}
+
+.b__crumbs {
+  font-size: 11px;
+  color: #777;
+  padding: 6px 0;
+}
+
+/* --------------------------------------------------------------- the banner */
+
+.b__banner {
+  position: relative;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #ddd;
+  height: 190px;
+  overflow: hidden;
+}
+
+.b__banner img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.b__banner-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 7px 10px;
+  font-size: 13px;
+}
+
+.b__flag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #c0392b;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 7px;
+  text-transform: uppercase;
+}
+
+.b__flag.-green {
+  background: #2e7d32;
+  left: auto;
+  right: 8px;
+}
+
+.b__shout {
+  color: #c0392b;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.b__shout em {
+  color: #2e7d32;
+}
+
+/* ------------------------------------------------------------- the two columns */
+
+.b__cols {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+}
+
+.b__main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* --------------------------------------------- navigation, 4 of 4, plus widgets */
+
+.b__side {
+  width: 212px;
+  flex: 0 0 212px;
+  font-size: 11px;
+}
+
+.b__box {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.b__box h4 {
+  margin: 0;
+  padding: 5px 8px;
+  background: linear-gradient(#f3f3f3, #e2e2e2);
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  color: #2a4b6b;
+}
+
+.b__box-body {
+  padding: 7px 8px;
+}
+
+.b__box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.b__box li {
+  border-bottom: 1px dotted #ddd;
+}
+
+.b__box li a {
+  display: block;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.b__box li a::before {
+  content: '» ';
+  color: #999;
+}
+
+.b__news li {
+  padding: 5px 8px;
+}
+
+.b__news .b__date {
+  color: #999;
+  font-size: 10px;
+  display: block;
+}
+
+.b__counter {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  letter-spacing: 2px;
+  background: #111;
+  color: #4ade4a;
+  padding: 4px;
+  margin-top: 4px;
+}
+
+.b__fbfeed {
+  height: 140px;
+  background: #f0f2f5
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40"%3E%3Ctext x="4" y="28" font-size="26" fill="%231877f2" font-family="Georgia"%3Ef%3C/text%3E%3C/svg%3E')
+    no-repeat center;
+  border: 1px solid #dfe3e8;
+  color: #888;
+  font-size: 10px;
+  padding: 6px;
+}
+
+/* ------------------------------------------------------------ main content */
+
+.b__sect {
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.b__sect > h2 {
+  margin: 0;
+  padding: 6px 10px;
+  background: linear-gradient(#eef3f8, #dce7f1);
+  border-bottom: 1px solid #c8d8e6;
+  font-size: 17px;
+}
+
+.b__sect-body {
+  padding: 10px;
+}
+
+/* The same content as the after, four times as dense. */
+.b__welcome {
+  display: flex;
+  gap: 8px;
+}
+
+.b__welcome > div {
+  width: 25%;
+}
+
+.b__welcome img {
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.b__welcome h4 {
+  margin: 5px 0 3px;
+}
+
+.b__welcome p {
+  font-size: 11px;
+  margin: 0;
+}
+
+.b__table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.b__table th,
+.b__table td {
+  border: 1px solid #c8c8c8;
+  padding: 3px 5px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.b__table th {
+  background: #dce7f1;
+  color: #2a4b6b;
+}
+
+.b__table tr:nth-child(even) td {
+  background: #f7f7f7;
+}
+
+.b__table .b__price {
+  white-space: nowrap;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+.b__acc {
+  border: 1px solid #ccc;
+  margin-bottom: 4px;
+}
+
+.b__acc > button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(#fafafa, #ededed);
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2a4b6b;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.b__acc > button::before {
+  content: '[+] ';
+  font-family: 'Courier New', monospace;
+}
+
+.b__acc.-open > button::before {
+  content: '[-] ';
+}
+
+.b__acc-body {
+  display: none;
+  padding: 8px;
+  font-size: 11px;
+}
+
+.b__acc.-open .b__acc-body {
+  display: block;
+}
+
+.b__acc-body img {
+  width: 110px;
+  height: 74px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  float: left;
+  margin: 0 8px 4px 0;
+}
+
+.b__spaces {
+  columns: 2;
+  column-gap: 14px;
+  font-size: 11px;
+}
+
+.b__spaces li {
+  break-inside: avoid;
+  margin-bottom: 6px;
+}
+
+.b__thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.b__thumbs img {
+  width: 76px;
+  height: 52px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.b__two {
+  display: flex;
+  gap: 10px;
+}
+
+.b__two > * {
+  flex: 1;
+}
+
+.b__faq dt {
+  font-weight: bold;
+  color: #2a4b6b;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.b__faq dd {
+  margin: 2px 0 0;
+  font-size: 11px;
+}
+
+.b__extras li {
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.b__free {
+  background: #ffff00;
+  color: #c0392b;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 0 3px;
+  border: 1px solid #c0392b;
+}
+
+/* The five calls to action, in five styles, none of them primary. */
+.b__cta-a {
+  background: linear-gradient(#f7b733, #e08b1a);
+  border: 1px solid #b06f10;
+  color: #4a2c00;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 5px 14px;
+  cursor: pointer;
+  font-family: inherit;
+  text-shadow: 0 1px 0 #ffd27f;
+}
+
+.b__cta-b {
+  background: #2a4b6b;
+  border: 1px solid #1b3550;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.b__cta-c {
+  background: #fff;
+  border: 1px solid #999;
+  color: #0b5ea8;
+  font-size: 11px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+}
+
+.b__cta-d {
+  background: #c0392b;
+  border: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  border-radius: 14px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+.b__cta-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.b__small {
+  font-size: 10px;
+  color: #888;
+}
+
+/* ----------------------------------------------------------------- the form */
+
+.b__form table {
+  font-size: 11px;
+}
+
+.b__form input[type='text'],
+.b__form input[type='email'],
+.b__form input[type='tel'],
+.b__form select,
+.b__form textarea {
+  font-family: inherit;
+  font-size: 11px;
+  border: 1px solid #999;
+  padding: 2px 3px;
+  width: 190px;
+}
+
+.b__form textarea {
+  width: 330px;
+  height: 56px;
+}
+
+.b__req {
+  color: #c0392b;
+}
+
+/* ------------------------------------------------------------- the footer */
+
+.b__footer {
+  background: #2a4b6b;
+  color: #cfd9e2;
+  border-top: 4px solid #1b3550;
+  font-size: 11px;
+  padding: 12px 0;
+}
+
+.b__footer a {
+  color: #cfe3f7;
+  text-decoration: none;
+}
+
+.b__footer-cols {
+  display: flex;
+  gap: 14px;
+}
+
+.b__footer-cols > div {
+  flex: 1;
+}
+
+.b__footer h5 {
+  color: #fff;
+  font-size: 12px;
+  border-bottom: 1px solid #456d95;
+  padding-bottom: 3px;
+  margin-bottom: 5px;
+}
+
+.b__footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.b__legal {
+  border-top: 1px solid #456d95;
+  margin-top: 12px;
+  padding-top: 8px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.b__chat {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: #2e7d32;
+  color: #fff;
+  border: 1px solid #1b5e20;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.b__cookie {
+  background: #333;
+  color: #eee;
+  font-size: 11px;
+  padding: 7px 0;
+}
+
+.b__cookie .b__wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

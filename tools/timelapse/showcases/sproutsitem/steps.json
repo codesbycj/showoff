@@ -1,0 +1,137 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "@/features/sproutsitem/components/product-stage"
+   ],
+   "label": "the dish"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "on its panel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutsitem/components/product-stage.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the name, big and behind"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutsitem/components/product-stage.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the dish in front of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutsitem/components/product-stage.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "whose it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "what it is, and what it costs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "by weight"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "@/features/sproutsitem/components/stat-row"
+   ],
+   "label": "what people think of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and what is in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sproutsitem/components/stat-row.tsx",
+    "STEP 1.11"
+   ],
+   "label": "both boxes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the whole story"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sproutsitem/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the way to buy it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sproutsitem/components/stat-row.tsx",
+    [
+     "// MISTAKE 1.14",
+     "paddingVertical: 14,"
+    ]
+   ],
+   "label": "the boxes came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "item-screen",
+     "src/app/sproutsitem/index.tsx"
+    ],
+    [
+     "product-stage",
+     "src/features/sproutsitem/components/product-stage.tsx"
+    ],
+    [
+     "stat-row",
+     "src/features/sproutsitem/components/stat-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

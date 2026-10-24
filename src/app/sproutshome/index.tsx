@@ -6,8 +6,10 @@ import ShoppingBasket from 'lucide-react-native/icons/shopping-basket';
 import Tag from 'lucide-react-native/icons/tag';
 import { Image, Pressable, ScrollView, useWindowDimensions, View } from 'react-native';
 
-import { ChipRow } from '@/features/sproutshome/components/chip-row';
-import { FeatureCard } from '@/features/sproutshome/components/feature-card';
+// STEP 1.08 the aisles
+// import { ChipRow } from '@/features/sproutshome/components/chip-row';
+// STEP 1.03 what is featured
+// import { FeatureCard } from '@/features/sproutshome/components/feature-card';
 import { T } from '@/features/sproutshome/components/text';
 import { dishes, dock, header, selectedDock } from '@/features/sproutshome/data/home';
 import {
@@ -64,27 +66,36 @@ export default function SproutsHome() {
             <Menu size={22} color={sp.onDark} strokeWidth={2.2} />
           </Pressable>
           <View style={{ flex: 1, alignItems: 'center' }}>
+            {/* STEP 1.01 the brand
             <T variant="wordmark" color={sp.onDark}>
               {header.wordmark}
             </T>
+            */}
           </View>
+          {/* STEP 1.02 and whose basket this is
           <Image
             source={MARK}
             style={{ width: HEADER_DISC, height: HEADER_DISC, borderRadius: radius.full }}
             resizeMode="cover"
             accessibilityIgnoresInvertColors
           />
+          */}
         </View>
 
         <View style={{ marginTop: FEATURE_TOP }}>
+          {/* STEP 1.04 filling the page
           <FeatureCard height={height * 0.52} />
+          */}
         </View>
 
         <View style={{ marginTop: CHIP_TOP }}>
+          {/* STEP 1.09 under the card
           <ChipRow />
+          */}
         </View>
 
         <View style={{ marginTop: DISH_TOP, flexDirection: 'row', gap: DISH_GAP }}>
+          {/* STEP 1.11 and what is cooking
           {dishes.map((d) => (
             <Image
               key={d.key}
@@ -94,6 +105,7 @@ export default function SproutsHome() {
               accessibilityIgnoresInvertColors
             />
           ))}
+          */}
         </View>
       </ScrollView>
 
@@ -113,6 +125,7 @@ export default function SproutsHome() {
           paddingHorizontal: 7,
         }}
       >
+        {/* STEP 1.12 the way around
         {dock.map((t) => {
           const Icon = DOCK_ICONS[t.icon];
           const on = t.key === selectedDock;
@@ -138,6 +151,7 @@ export default function SproutsHome() {
             </Pressable>
           );
         })}
+        */}
       </View>
     </View>
   );

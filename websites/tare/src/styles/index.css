@@ -1,0 +1,174 @@
+@import 'tailwindcss';
+
+@import '@fontsource/anton';
+@import '@fontsource-variable/inter';
+
+/*
+ * Episode 7's after is a **pixel-perfect rebuild** of the reference's home page
+ * (rule 0). Every number below was read off its DOM dump.
+ *
+ * Like episode 5, this one needs no type substitute: the reference runs
+ * **Anton** and **Inter**, both OFL, both on fontsource. So the letterforms are
+ * not close to the reference's — they are the same ones.
+ */
+
+@theme {
+  --font-display: Anton, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Read off the DOM dump and sampled from the capture. */
+  --color-forest: #082620; /* the two dark bands and the footer */
+  --color-mint: #9dffc8; /* the closing CTA */
+  --color-mint-pale: #e2ffef; /* the hero panel and step 2 */
+  --color-pink: #ffebf1; /* steps 3, and the odd card */
+  --color-cream: #fef9f2; /* the page ground, steps 1 and 4 */
+  --color-sky: #a8dde4; /* the right-edge tab */
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-white font-sans;
+    margin: 0;
+    color: #082620;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+}
+
+@layer components {
+  /* 1440 viewport, content from x112 to x1328: a 1216px measure. */
+  .u {
+    width: 100%;
+    max-width: 1216px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    .u {
+      padding-inline: 0;
+    }
+  }
+
+  /* ------------------------------------------------------------------ type */
+
+  /*
+   * Anton has one weight and no italic, so the whole display scale is one face
+   * at six sizes. That is the page's voice: 128px and 18px are the same
+   * letterforms, and the 18px labels read as small headlines rather than as
+   * captions — which is why the page can carry a label above every section
+   * without any of them looking like UI chrome.
+   */
+  .t-128 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8.9vw, 128px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  .t-72 {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 72px);
+    line-height: 0.96;
+    text-transform: uppercase;
+  }
+
+  .t-48 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.4vw, 48px);
+    line-height: 1.04;
+    text-transform: uppercase;
+  }
+
+  .t-36 {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 2.5vw, 36px);
+    line-height: 1.08;
+    text-transform: uppercase;
+  }
+
+  .t-24 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+
+  .t-18 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
+  .t-15 {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .t-14 {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* --------------------------------------------------------------- buttons */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    padding-inline: 22px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 2px;
+    transition:
+      background-color 0.18s ease,
+      color 0.18s ease,
+      border-color 0.18s ease;
+  }
+
+  /* ---------------------------------------------------------------- motion */
+
+  .rise {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .rise.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /*
+   * The Tax Man swap. The reference cross-fades between thirteen drawings on a
+   * click, which is quick enough to feel like a flick-book and slow enough to
+   * read as a change of disguise rather than a glitch.
+   */
+  .mug {
+    transition: opacity 0.14s linear;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .btn,
+    .mug {
+      transition: none;
+    }
+  }
+}

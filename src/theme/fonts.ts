@@ -46,8 +46,6 @@ import { Inter_400Regular } from '@expo-google-fonts/inter/400Regular';
 import { Inter_500Medium } from '@expo-google-fonts/inter/500Medium';
 import { Inter_600SemiBold } from '@expo-google-fonts/inter/600SemiBold';
 import { Inter_700Bold } from '@expo-google-fonts/inter/700Bold';
-import { Oswald_600SemiBold } from '@expo-google-fonts/oswald/600SemiBold';
-import { Oswald_700Bold } from '@expo-google-fonts/oswald/700Bold';
 import { PlusJakartaSans_400Regular } from '@expo-google-fonts/plus-jakarta-sans/400Regular';
 import { PlusJakartaSans_500Medium } from '@expo-google-fonts/plus-jakarta-sans/500Medium';
 import { PlusJakartaSans_600SemiBold } from '@expo-google-fonts/plus-jakarta-sans/600SemiBold';
@@ -57,7 +55,6 @@ import { Poppins_400Regular } from '@expo-google-fonts/poppins/400Regular';
 import { Poppins_500Medium } from '@expo-google-fonts/poppins/500Medium';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins/600SemiBold';
 import { Poppins_700Bold } from '@expo-google-fonts/poppins/700Bold';
-import { SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk/700Bold';
 
 export const fontMap = {
   Inter_400Regular,
@@ -67,50 +64,23 @@ export const fontMap = {
   Caveat_600SemiBold,
   IBMPlexMono_400Regular,
 
-  // deltrack — the reference's display face is a geometric sans with a
-  // single-storey `a` and `g`; Poppins matches its width-to-cap ratio to
-  // within 2% (Outfit, the other candidate, runs 12% narrow for its height).
+  // The geometric-sans voice: a single-storey `a` and `g`, which Poppins
+  // matches to within 2% of its width-to-cap ratio (Outfit, the other
+  // candidate, runs 12% narrow for its height). Most of the current board
+  // uses it.
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_600SemiBold,
   Poppins_700Bold,
 
-  // pulsefit and apexpay - both designs name Plus Jakarta Sans outright, so
-  // there is no substitute to fit. Pulsefit never sets the 400 its `body-md`
-  // token describes; apexpay sets it throughout, which is what 400Regular is
-  // here for.
+  // Plus Jakarta Sans, named outright by several of these designs, so there
+  // is no substitute to fit. The quiz board sets all five of these weights;
+  // 800 is what its wordmark and its section headings are.
   PlusJakartaSans_400Regular,
   PlusJakartaSans_500Medium,
   PlusJakartaSans_600SemiBold,
   PlusJakartaSans_700Bold,
   PlusJakartaSans_800ExtraBold,
-
-  // apexpay - Space Grotesk, also named outright, and only ever used for the
-  // two balance figures and the active card's VISA. The design asks that VISA
-  // for `font-black`; Space Grotesk stops at 700 and the browser synthesises
-  // the rest, which React Native will not do. See `theme.ts`.
-  SpaceGrotesk_700Bold,
-
-  // pulsefit's icon subset - 17 glyphs out of Material Symbols Outlined, cut
-  // by tools/subset-symbols.py, which also rewrote the family name inside the
-  // file so it cannot collide with another showcase's cut.
-  PulsefitSymbols_400Regular: require('../../assets/fonts/pulsefit-symbols/PulsefitSymbols_400Regular.ttf'),
-
-  // apexpay's icon subset - 13 glyphs, 944KB down to 2.8KB, with its own
-  // internal family name so it cannot collide with pulsefit's cut.
-  ApexpaySymbols_400Regular: require('../../assets/fonts/apexpay-symbols/ApexpaySymbols_400Regular.ttf'),
-
-  // botanic - Oswald for the condensed display voice, named outright by the
-  // design, so there is no substitute to fit. Only two of its six weights are
-  // used: 600 for the product title and the bar's heading, 700 for the price
-  // and the editorial watermark behind the dish. Its body face is Plus Jakarta
-  // Sans, already above.
-  Oswald_600SemiBold,
-  Oswald_700Bold,
-
-  // botanic's icon subset - 11 glyphs, 944KB down to 2.8KB, with its own
-  // internal family name so it cannot collide with the other two cuts.
-  BotanicSymbols_400Regular: require('../../assets/fonts/botanic-symbols/BotanicSymbols_400Regular.ttf'),
 
   // nourish - Instrument Serif for the one serif line on its home screen,
   // "Great job today". The reference sets that greeting in a high-contrast

@@ -1,0 +1,617 @@
+/*
+ * The template clash.
+ *
+ * Episode 1's before was a dated brochure; episode 2's was a congested
+ * catalogue. This is the third way a real company's site goes wrong, and it is
+ * the most common of all in B2B: somebody bought a theme.
+ *
+ * Nothing here is old. Every section is a current, competent, well-built
+ * component — the kind that ships in a £59 multipurpose theme with forty demo
+ * layouts. The failure is that eleven of them are on one page and none of them
+ * were drawn for this company:
+ *
+ *   * THREE TYPEFACES. Georgia for headings, because the theme's "corporate"
+ *     demo used it. Trebuchet for body. Arial Black for stat counters. Each
+ *     was a default somewhere.
+ *   * FIVE BUTTON STYLES, because each section shipped with its own: a blue
+ *     solid, a green rounded, an orange square, a ghost outline, and a text
+ *     link with an arrow. Four of them appear above the fold.
+ *   * FOUR ACCENT COLOURS, none of which is the logo's.
+ *   * CENTRED EVERYTHING, because a demo layout centres everything — it is the
+ *     only arrangement that survives the client replacing all the copy.
+ *   * SECTION PADDING THAT NEVER REPEATS: 80, 60, 100, 45, 90. Each block
+ *     brought its own.
+ *   * STOCK PHOTOGRAPHY THAT DOES NOT MATCH ITSELF. A handshake, a boardroom,
+ *     a skyline. None of them is of the product and no two were lit the same
+ *     way.
+ *
+ * Everything is scoped under `.b`, so the two designs cannot touch, and the
+ * browser's defaults come back inside it.
+ */
+
+.b {
+  background: #ffffff;
+  font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #5a6472;
+  text-align: left;
+}
+
+.b * {
+  box-sizing: border-box;
+}
+
+.b h1,
+.b h2,
+.b h3,
+.b h4 {
+  margin: 0 0 14px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: normal;
+  line-height: 1.25;
+  color: #2c3e50;
+}
+
+.b h1 {
+  font-size: 44px;
+}
+.b h2 {
+  font-size: 34px;
+}
+.b h3 {
+  font-size: 20px;
+}
+.b h4 {
+  font-size: 16px;
+}
+
+.b p {
+  margin: 0 0 16px;
+}
+
+.b a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.b a:hover {
+  color: #1f6ea5;
+  text-decoration: underline;
+}
+
+.b img {
+  max-width: 100%;
+  display: block;
+}
+
+.b ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.b-wrap {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.b-center {
+  text-align: center;
+}
+
+.b-row:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ------------------------------------------------- the five button styles */
+
+.b-btn {
+  display: inline-block;
+  font-family: 'Trebuchet MS', Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+/* 1. The theme's primary. */
+.b-btn--blue {
+  background: #2980b9;
+  color: #ffffff !important;
+  padding: 14px 28px;
+  border: 0;
+  border-radius: 3px;
+}
+.b-btn--blue:hover {
+  background: #1f6ea5;
+}
+
+/* 2. From the "startup" demo. */
+.b-btn--green {
+  background: #27ae60;
+  color: #ffffff !important;
+  padding: 15px 34px;
+  border: 0;
+  border-radius: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+.b-btn--green:hover {
+  background: #1e8f4e;
+}
+
+/* 3. From the "agency" demo. */
+.b-btn--orange {
+  background: #e67e22;
+  color: #ffffff !important;
+  padding: 16px 30px;
+  border: 0;
+  border-radius: 0;
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.b-btn--orange:hover {
+  background: #cf6d14;
+}
+
+/* 4. The hero's secondary, which is the only ghost on the page. */
+.b-btn--ghost {
+  background: transparent;
+  color: #ffffff !important;
+  padding: 13px 27px;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+}
+.b-btn--ghost:hover {
+  background: #ffffff;
+  color: #2c3e50 !important;
+}
+
+/* 5. A text link with an arrow, from the blog demo. */
+.b-btn--text {
+  color: #2980b9 !important;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-weight: bold;
+}
+.b-btn--text:hover {
+  text-decoration: underline !important;
+}
+
+/* ----------------------------------------------------------------- header */
+
+.b-top {
+  background: #2c3e50;
+  color: #a7b4c2;
+  font-size: 12px;
+  padding: 7px 0;
+}
+
+.b-top a {
+  color: #d6dee6;
+}
+
+.b-head {
+  background: #ffffff;
+  border-bottom: 1px solid #e6eaee;
+  padding: 18px 0;
+}
+
+.b-logo {
+  float: left;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  color: #2c3e50;
+  line-height: 1.1;
+}
+
+.b-logo span {
+  color: #27ae60;
+}
+
+.b-logo small {
+  display: block;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #95a5a6;
+}
+
+.b-nav {
+  float: right;
+  padding-top: 10px;
+}
+
+.b-nav li {
+  display: inline-block;
+  margin-left: 24px;
+  position: relative;
+}
+
+.b-nav a {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5a6472;
+  font-weight: bold;
+}
+
+.b-nav a:hover {
+  color: #27ae60;
+  text-decoration: none;
+}
+
+.b-nav .b-btn {
+  margin-left: 24px;
+}
+
+/* ------------------------------------------------------------------- hero */
+
+.b-hero {
+  position: relative;
+  padding: 120px 0;
+  background-size: cover;
+  background-position: center 35%;
+  text-align: center;
+  color: #ffffff;
+}
+
+.b-hero:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 62, 80, 0.62);
+}
+
+.b-hero-in {
+  position: relative;
+}
+
+.b-hero h1 {
+  color: #ffffff;
+  font-size: 46px;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.b-hero p {
+  font-size: 18px;
+  max-width: 680px;
+  margin: 0 auto 28px;
+  color: #eef2f5;
+}
+
+.b-hero .b-btn {
+  margin: 0 7px;
+}
+
+/* ------------------------------------------------------------ logos strip */
+
+.b-logos {
+  background: #f7f9fa;
+  padding: 36px 0;
+  border-bottom: 1px solid #e6eaee;
+}
+
+.b-logos li {
+  display: inline-block;
+  margin: 0 12px 10px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1px solid #e0e6ea;
+  border-radius: 3px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: #9aa7b4;
+  filter: grayscale(100%);
+}
+
+/* ---------------------------------------------------------------- sections */
+
+.b-sec {
+  padding: 80px 0;
+}
+.b-sec--tight {
+  padding: 45px 0;
+}
+.b-sec--loose {
+  padding: 100px 0;
+}
+.b-sec--alt {
+  background: #f7f9fa;
+  padding: 60px 0;
+}
+.b-sec--dark {
+  background: #2c3e50;
+  color: #b9c4d0;
+  padding: 90px 0;
+}
+.b-sec--dark h2 {
+  color: #ffffff;
+}
+
+.b-lead {
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* -------------------------------------------------------------- icon grid */
+
+.b-col3 {
+  float: left;
+  width: 33.333%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.b-col4 {
+  float: left;
+  width: 25%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.b-icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #eaf6ef;
+  border: 2px solid #27ae60;
+  color: #27ae60;
+  font-size: 34px;
+  line-height: 82px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.b-col3:hover .b-icon {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------- parallax */
+
+.b-parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 110px 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.b-parallax:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 174, 96, 0.78);
+}
+
+.b-parallax-in {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.b-parallax p {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* ----------------------------------------------------------------- counters */
+
+.b-counter {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 46px;
+  line-height: 1;
+  color: #e67e22;
+}
+
+.b-counter-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #95a5a6;
+  margin-top: 8px;
+}
+
+/* ------------------------------------------------------------------ cards */
+
+.b-card {
+  background: #ffffff;
+  border: 1px solid #e6eaee;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.b-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.b-card-b {
+  padding: 22px;
+}
+
+.b-price-box {
+  text-align: center;
+  padding-bottom: 26px;
+}
+
+.b-price-box--pop {
+  border-color: #27ae60;
+  position: relative;
+}
+
+.b-ribbon {
+  background: #27ae60;
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 0;
+}
+
+.b-price {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 40px;
+  color: #2c3e50;
+  line-height: 1;
+  margin: 18px 0 4px;
+}
+
+.b-price-per {
+  font-size: 12px;
+  color: #95a5a6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.b-price-list li {
+  padding: 8px 20px;
+  border-top: 1px solid #f0f3f5;
+  font-size: 14px;
+}
+
+/* ------------------------------------------------------------ testimonial */
+
+.b-quote {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.b-quote-mark {
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 1;
+  color: #27ae60;
+}
+
+.b-quote p {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #5a6472;
+}
+
+.b-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto 8px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.b-dots {
+  margin-top: 18px;
+}
+
+.b-dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0 4px;
+  border: 0;
+  border-radius: 50%;
+  background: #cfd8dd;
+  cursor: pointer;
+}
+
+.b-dots button.on {
+  background: #27ae60;
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.b-foot {
+  background: #22313f;
+  color: #8fa0b0;
+  padding: 55px 0 0;
+  font-size: 14px;
+}
+
+.b-foot h4 {
+  color: #ffffff;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.b-foot a {
+  color: #8fa0b0;
+}
+
+.b-foot a:hover {
+  color: #27ae60;
+}
+
+.b-foot li {
+  padding: 4px 0;
+}
+
+.b-foot-bar {
+  margin-top: 40px;
+  border-top: 1px solid #2d4152;
+  padding: 18px 0;
+  font-size: 12px;
+  color: #6b7f90;
+}
+
+.b-newsletter {
+  background: #e67e22;
+  color: #ffffff;
+  padding: 45px 0;
+  text-align: center;
+}
+
+.b-newsletter h3 {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.b-newsletter input {
+  padding: 13px 14px;
+  border: 0;
+  border-radius: 3px 0 0 3px;
+  width: 300px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.b-newsletter button {
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 0 3px 3px 0;
+  background: #2c3e50;
+  color: #ffffff;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+}

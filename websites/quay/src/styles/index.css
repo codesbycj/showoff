@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/onest';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/newsreader';
+
+@import '../after/after.css';
+@import '../after/after-blocks.css';
+@import '../before/before.css';
+
+/*
+ * Episode 8's after is a **pixel-perfect rebuild** of the reference's home page
+ * (rule 0). Every value in `after.css` was read off its own stylesheet, which
+ * this page's dump carries whole -- a WordPress block theme ships its CSS in
+ * the document, so nothing below is measured off a screenshot.
+ *
+ * ---------------------------------------------------------------- the type
+ *
+ * The reference runs three commercial faces, so all three are substituted and
+ * named here (rule 10):
+ *
+ *   Stabil Grotesk  ->  Onest Variable       body, headings, nav, buttons
+ *   Labil Grotesk   ->  Geist Variable       the slogan lines and the wordmark
+ *   ABC Gaisyr      ->  Newsreader Variable  section eyebrows and the typed word
+ *
+ * Stabil and Labil are sibling faces in the reference -- same skeleton, one
+ * stable and one with wonky alternates -- which is why the substitutes are two
+ * neutral grotesks rather than two faces chosen to look different. What *is*
+ * lost is Labil's alternate glyphs; the slogan gets one italic letter a line in
+ * their place, which is the same joke made with the tools a free family has.
+ *
+ * ------------------------------------------------------------- the root size
+ *
+ * The reference scales its whole page off the viewport:
+ *
+ *     html { font-size: 16px }
+ *     @media (min-width: 768px) { html { font-size: min(1.12vw, 20px) } }
+ *
+ * At 1440 that is 16.128px, which is where every .008 in the dump comes from,
+ * and it caps at 20px past 1785. Copied verbatim, because it is not a detail --
+ * it is why a rem value lifted from the reference lands in the right place.
+ *
+ * The *before* is written entirely in px for that reason: both pages are
+ * mounted at once and share one `html`, so a before built in rem would quietly
+ * inherit the after's fluid scale and stop being its own design.
+ */
+
+@theme {
+  /* The reference's palette, off its own custom properties -- not sampled. */
+  --color-ink: #2c111d; /* brown-700, the body colour */
+  --color-plum: #543945; /* brown-400 */
+  --color-plum-deep: #402531; /* brown-500 */
+  --color-mauve: #a48995; /* brown-200 */
+  --color-pink: #ffbbe4; /* pink-400, the announcement bar */
+  --color-pink-deep: #f2a8d0; /* pink-500 */
+  --color-yellow: #ffff6b; /* yellow-400, the hero and the apply block */
+  --color-orange: #f96926;
+  --color-green: #69e691;
+  --color-purple: #d4b5f6;
+  --color-sky: #7acaff; /* blue-500 */
+  --color-cream: #faf8ef; /* cream-500, the page ground */
+  --color-cream-2: #f8f6ef; /* cream-600 */
+  --color-cream-3: #f0ebe2; /* cream-700, every card */
+  --color-cream-4: #eae2d9; /* cream-800, the card under the pointer */
+
+  --font-sans: 'Onest Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Newsreader Variable', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: auto;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: min(1.12vw, 20px);
+    }
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 500;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+{
+ "assets/images/nutrione/CREDITS.md": "cec0a983bf3653a2b698f38ca7be659f46fc1ae8de5897da9ac6716283dc79d2",
+ "assets/images/nutrione/bowl.jpg": "844b4d235ecb15c2921b9dd15b8b3d335ba1f647153cd69e2b8bb5e46a371734",
+ "assets/images/nutrione/veg.jpg": "67b9ce82d528f42e1f4d1afc003ed1f88aac2e9e8c5fdeeb32cde037da465222",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "78fa99419b3be899ceafe8a4b57a6b2361eef425a10b1b01097024d9baedc7fa",
+ "src/app/nutrione/index.tsx": "780ebc499697f53c8f308266adf201d4d93b08fc9e58f025c1a625c7e97370d6",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/nutrione/components/onboarding-chrome.tsx": "c3acdb079fa7d484253c955cbcfb764a4475943c79dc9ebe15e510cf6061c07e",
+ "src/features/nutrione/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/nutrione/components/veg-stage.tsx": "a4ab7ef0bd40d0ea5e42ce248ce5f02e41bd59bc9fcc51d0b62eaab42dd15307",
+ "src/features/nutrione/data/intro.ts": "22b4515833b87797eb0a8d8dd9ac0fda59eec5837786762e48cb13422c04ac9b",
+ "src/features/nutrione/layout.ts": "0efb8f750b97af8e26b0bbf787171e796d0d5da1d1a1e141f2b50c35d8a7bbc3",
+ "src/features/nutrione/theme.ts": "872d57b7f0b5fe789b65a3f06e05075478eb600be5e948bea7657bdfcbc83994",
+ "src/features/nutrione/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

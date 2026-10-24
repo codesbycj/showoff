@@ -1,0 +1,2629 @@
+/*
+ * The second half of the rebuild: rooms, services, location, infopoint, apply
+ * and the footer. Split from `after.css` only because one file of 3,000 lines
+ * is harder to find anything in; the two are read as one stylesheet.
+ */
+
+/* -------------------------------------------------------------- the rooms */
+
+.q-rooms {
+  padding-top: 5rem;
+}
+
+.q-rooms__header {
+  margin-bottom: 2.125rem;
+}
+
+.q-rooms__aside-inner {
+  position: sticky;
+  top: 3.75rem;
+}
+
+.q-rooms__nav {
+  display: none;
+}
+
+.q-rooms__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/*
+ * Every tab, accordion header and pill on this page is cut off at the right by
+ * the same chamfer -- a flag rather than a rectangle. The reference does it
+ * with a 60-point clip-path; this is that path, unchanged.
+ */
+.q-flag {
+  clip-path: polygon(
+    92.809% 0px,
+    92.809% 0px,
+    93.101% 0.076%,
+    93.387% 0.301%,
+    93.665% 0.668%,
+    93.933% 1.173%,
+    94.188% 1.809%,
+    94.43% 2.571%,
+    94.655% 3.455%,
+    94.862% 4.453%,
+    95.049% 5.561%,
+    95.214% 6.772%,
+    99.577% 42.655%,
+    99.577% 42.655%,
+    99.725% 44.04%,
+    99.84% 45.482%,
+    99.922% 46.965%,
+    99.971% 48.475%,
+    99.988% 50%,
+    99.971% 51.525%,
+    99.922% 53.035%,
+    99.84% 54.518%,
+    99.725% 55.96%,
+    99.577% 57.346%,
+    95.214% 93.228%,
+    95.214% 93.228%,
+    95.049% 94.439%,
+    94.862% 95.547%,
+    94.655% 96.545%,
+    94.43% 97.429%,
+    94.188% 98.191%,
+    93.933% 98.827%,
+    93.665% 99.332%,
+    93.387% 99.699%,
+    93.101% 99.924%,
+    92.809% 100%,
+    2.817% 100%,
+    2.817% 100%,
+    2.36% 99.815%,
+    1.927% 99.28%,
+    1.522% 98.424%,
+    1.153% 97.276%,
+    0.825% 95.865%,
+    0.543% 94.22%,
+    0.314% 92.37%,
+    0.144% 90.345%,
+    0.037% 88.172%,
+    0px 85.882%,
+    0px 14.118%,
+    0px 14.118%,
+    0.037% 11.828%,
+    0.144% 9.655%,
+    0.314% 7.63%,
+    0.543% 5.78%,
+    0.825% 4.135%,
+    1.153% 2.724%,
+    1.522% 1.576%,
+    1.927% 0.72%,
+    2.36% 0.185%,
+    2.817% 0px,
+    92.809% 0px
+  );
+}
+
+.q-rooms__nav-button {
+  align-items: center;
+  appearance: none;
+  background-color: var(--cream-3);
+  border: 0;
+  color: var(--plum-deep);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 5.3125rem;
+  justify-content: space-between;
+  line-height: 1.3;
+  padding: 0 2rem 0 1.5625rem;
+  width: 100%;
+}
+
+.q-rooms__nav-button:hover {
+  background-color: var(--cream-4);
+}
+
+.q-rooms__nav-button.-active,
+.q-rooms__nav-button.-active:hover {
+  background-color: var(--plum-deep);
+  color: var(--white);
+}
+
+.q-rooms__nav-price {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.q-rooms__item:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+/* Below 768 the four room types are an accordion instead of a sidebar. */
+.q-rooms__item-toggler {
+  align-items: flex-start;
+  appearance: none;
+  background-color: var(--cream-3);
+  border: 0;
+  color: var(--plum-deep);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  font-weight: 600;
+  height: 4.6875rem;
+  justify-content: center;
+  line-height: 1.35;
+  padding: 0 1.75rem 0 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.q-rooms__item-toggler.-active {
+  background-color: var(--plum-deep);
+  color: var(--white);
+}
+
+.q-rooms__item-toggler-price {
+  color: var(--plum);
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin-top: 0.25rem;
+  transition: color 0.3s;
+}
+
+.q-rooms__item-toggler.-active .q-rooms__item-toggler-price {
+  color: var(--white);
+}
+
+.q-rooms__item-toggler-icon {
+  align-items: center;
+  background-color: rgb(84 57 69 / 0.08);
+  border-radius: 50%;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  position: absolute;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s;
+  width: 2.5rem;
+}
+
+.q-rooms__item-toggler.-active .q-rooms__item-toggler-icon {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+/* The plus that becomes a minus, as two lines and one rotation. */
+.q-plus {
+  background-color: var(--plum);
+  height: 0.0625rem;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  width: 1rem;
+}
+
+.q-plus.-v {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.q-rooms__item-toggler.-active .q-plus,
+.q-services__item.-active .q-plus {
+  background-color: var(--white);
+}
+
+.q-rooms__item-toggler.-active .q-plus.-v,
+.q-services__item.-active .q-plus.-v,
+.q-faq__item.-active .q-plus.-v {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.q-rooms__item-main {
+  display: none;
+}
+
+.q-rooms__item-main.-active {
+  display: block;
+  margin-bottom: 3.5rem;
+  margin-top: 0.75rem;
+}
+
+.q-rooms__subtab {
+  display: none;
+}
+
+.q-rooms__subtab.-active {
+  display: block;
+}
+
+.q-rooms__gallery {
+  cursor: pointer;
+  height: 13.9375rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.q-rooms__gallery .swiper-slide {
+  max-width: 100%;
+  width: 100%;
+}
+
+.q-rooms__gallery img {
+  border-radius: 1.25rem;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.q-rooms__gallery-pagination {
+  align-items: center;
+  background-color: rgb(255 255 255 / 0.85);
+  border-radius: 0.625rem;
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.375rem;
+  left: 50%;
+  padding: 0.375rem;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.q-rooms__gallery-pagination .swiper-pagination-bullet {
+  background-color: var(--mauve);
+  border-radius: 50%;
+  display: block;
+  height: 0.5rem;
+  opacity: 1;
+  transition: background-color 0.3s ease-in-out;
+  width: 0.5rem;
+}
+
+.q-rooms__gallery-pagination .swiper-pagination-bullet-active {
+  background-color: var(--ink);
+}
+
+.q-rooms__gallery-nav {
+  display: none;
+}
+
+.q-rooms__gallery-nav button {
+  align-items: center;
+  appearance: none;
+  background-color: var(--white);
+  border: 0;
+  border-radius: 50%;
+  color: var(--plum);
+  cursor: pointer;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 3rem;
+}
+
+.q-rooms__gallery-nav button:hover {
+  transform: scale(1.2);
+}
+
+.q-rooms__gallery-nav button:last-child svg {
+  transform: rotate(180deg) translateY(0.0625rem);
+}
+
+.q-rooms__title {
+  display: none;
+}
+
+.q-rooms__floors {
+  margin-bottom: 1.75rem;
+  margin-top: 1.75rem;
+}
+
+.q-rooms__floors-list {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.q-rooms__floor-button {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.375rem;
+  color: rgb(84 57 69 / 0.85);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 500;
+  height: 2.3125rem;
+  justify-content: center;
+  padding: 0 0.625rem;
+  transition:
+    color 0.3s,
+    border-color 0.3s,
+    background-color 0.3s;
+}
+
+.q-rooms__floor-button.-active {
+  border-color: var(--plum);
+  color: var(--plum-deep);
+}
+
+.q-rooms__floor-button:hover,
+.q-rooms__floor-button:focus-visible {
+  background-color: rgb(84 57 69 / 0.05);
+  color: var(--plum-deep);
+}
+
+.q-rooms__description {
+  max-height: 9.5rem;
+  overflow: hidden;
+}
+
+.q-rooms__description.-active {
+  max-height: unset;
+}
+
+.q-rooms__description p {
+  color: var(--plum);
+}
+
+.q-rooms__description p:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.q-rooms__description-toggler,
+.q-rooms__features-toggler {
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: var(--plum);
+  cursor: pointer;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0.625rem 0 0;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+  transition: text-decoration-color 0.3s;
+}
+
+.q-rooms__features-toggler:hover {
+  text-decoration-color: transparent;
+}
+
+.q-rooms__item-aside {
+  margin-top: 2rem;
+}
+
+/* The gallery is a rail of auto-width photographs, so its track fills it. */
+.q-rooms__gallery-track,
+.q-rooms__gallery-track > div {
+  height: 100%;
+}
+
+.q-rooms__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.q-rooms__features-item {
+  align-items: center;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 2.875rem 1fr;
+}
+
+.q-rooms__features-item:nth-child(n + 5) {
+  display: none;
+}
+
+.q-rooms__features.-active .q-rooms__features-item:nth-child(n + 5) {
+  display: grid;
+}
+
+/* The six-colour cycle under the feature icons, in the reference's order. */
+.q-rooms__features-item:nth-child(6n + 1) .q-rooms__features-icon {
+  background-color: var(--sky);
+}
+.q-rooms__features-item:nth-child(6n + 2) .q-rooms__features-icon {
+  background-color: var(--yellow);
+}
+.q-rooms__features-item:nth-child(6n + 3) .q-rooms__features-icon {
+  background-color: var(--purple);
+}
+.q-rooms__features-item:nth-child(6n + 4) .q-rooms__features-icon {
+  background-color: var(--orange);
+}
+.q-rooms__features-item:nth-child(6n + 5) .q-rooms__features-icon {
+  background-color: var(--green);
+}
+.q-rooms__features-item:nth-child(6n + 6) .q-rooms__features-icon {
+  background-color: var(--pink-deep);
+}
+
+.q-rooms__features-icon {
+  align-items: center;
+  color: var(--plum-deep);
+  display: flex;
+  height: 2.375rem;
+  mask-image: url('@/assets/img/shapes/feature-item-mask.svg');
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  padding-left: 0.5rem;
+}
+
+.q-rooms__features-icon svg {
+  font-size: 1.5rem;
+}
+
+.q-rooms__features-text {
+  color: var(--plum);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 8.75rem;
+}
+
+.q-rooms__features-text sup {
+  font-size: 60%;
+}
+
+.q-rooms__buttons {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.q-rooms__buttons .q-btn {
+  height: 3rem;
+  line-height: 1.45;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: auto;
+}
+
+.q-rooms__buttons .-apply {
+  display: none;
+}
+
+/* A gallery or a floor plan, blown up over the page. */
+.q-lightbox {
+  align-items: center;
+  background-color: var(--cream-4);
+  display: flex;
+  height: 100dvh;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1001;
+}
+
+.q-lightbox.-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.q-lightbox img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.q-lightbox__close {
+  align-items: center;
+  appearance: none;
+  background-color: var(--white);
+  border: 0;
+  border-radius: 50%;
+  color: var(--plum);
+  cursor: pointer;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  position: absolute;
+  right: 1.25rem;
+  top: 0.625rem;
+  transition: transform 0.3s ease-in-out;
+  width: 2.5rem;
+  z-index: 2;
+}
+
+.q-lightbox__close:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 768px) {
+  .q-rooms {
+    padding-top: 9rem;
+  }
+
+  .q-rooms__container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 26.5625rem minmax(0px, 1fr);
+  }
+
+  .q-rooms__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .q-rooms__nav {
+    display: block;
+  }
+
+  .q-rooms__item-toggler {
+    display: none;
+  }
+
+  .q-rooms__item {
+    display: none;
+  }
+
+  .q-rooms__item.-active {
+    display: block;
+  }
+
+  .q-rooms__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  /*
+   * The 0.75rem/3.5rem on `-active` belong to the accordion, which only
+   * exists below 768. Up here the panel is a tab and sits flush, and leaving
+   * those margins on put 69px of nothing under the rooms block.
+   */
+  .q-rooms__item-main,
+  .q-rooms__item-main.-active {
+    display: block;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .q-rooms__subtab.-active {
+    display: grid;
+    gap: 2.5rem 7rem;
+    grid-template-columns: 1fr 14.0625rem;
+  }
+
+  .q-rooms__gallery {
+    border-radius: 1.5rem;
+    grid-area: 1 / 1 / 2 / 3;
+    height: 30.875rem;
+  }
+
+  .q-rooms__gallery .swiper-slide {
+    margin-right: 1.25rem;
+    width: max-content;
+  }
+
+  .q-rooms__gallery img {
+    border-radius: 1.5rem;
+    width: auto;
+  }
+
+  .q-rooms__title {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .q-rooms__floors {
+    border-bottom: 0.0625rem solid rgb(84 57 69 / 0.698);
+    margin-bottom: 1.5rem;
+    margin-top: 1.25rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .q-rooms__floor-button {
+    border-radius: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    height: 3.125rem;
+    padding: 0 1.375rem;
+  }
+
+  .q-rooms__description {
+    max-height: unset;
+  }
+
+  .q-rooms__description p:not(:last-child) {
+    margin-bottom: 0.625rem;
+  }
+
+  .q-rooms__description-toggler {
+    display: none;
+  }
+
+  .q-rooms__item-aside {
+    margin-top: 3.125rem;
+  }
+
+  .q-rooms__features {
+    gap: 0.5rem;
+  }
+
+  .q-rooms__features-text {
+    font-size: 1rem;
+    max-width: unset;
+  }
+
+  .q-rooms__features-toggler {
+    font-size: 0.875rem;
+    margin-top: 1.25rem;
+  }
+
+  .q-rooms__buttons {
+    margin-top: 1.5rem;
+  }
+
+  .q-rooms__buttons .q-btn {
+    height: 3.375rem;
+    padding-left: 1.375rem;
+    padding-right: 1.375rem;
+  }
+
+  .q-rooms__buttons .-apply {
+    display: inline-flex;
+  }
+
+  .q-lightbox__close {
+    height: 3.5rem;
+    right: 9.125rem;
+    top: 1.625rem;
+    width: 3.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .q-rooms__gallery-pagination {
+    background-color: unset;
+    bottom: 1.5rem;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .q-rooms__gallery-pagination .swiper-pagination-bullet {
+    background-color: rgb(255 255 255 / 0.5);
+  }
+
+  .q-rooms__gallery-pagination .swiper-pagination-bullet-active {
+    background-color: var(--white);
+  }
+
+  .q-rooms__gallery-nav {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    left: 0;
+    opacity: 0;
+    padding: 0 1.25rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .q-rooms__gallery:hover .q-rooms__gallery-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ----------------------------------------------------------- the services */
+
+.q-services {
+  padding-top: 4.5rem;
+}
+
+.q-services__header {
+  margin-bottom: 1.5rem;
+}
+
+.q-services__header .q-section-header__heading {
+  color: var(--plum-deep);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.q-services__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.q-services__photo {
+  align-items: center;
+  border-radius: 1.25rem;
+  display: none;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s;
+  width: 100%;
+}
+
+.q-services__photo img {
+  border-radius: 1.25rem;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.q-services__item.-active .q-services__photo {
+  display: flex;
+  margin-bottom: 0.5rem;
+  max-height: 12.9375rem;
+}
+
+/*
+ * Both of these rows paint their colour with a `z-index: -1` pseudo element,
+ * and a negative-z child paints below the *in-flow backgrounds* of its
+ * stacking context -- which, with two pages stacked and each pane carrying an
+ * opacity and a z-index, is the page's own cream. `z-index: 0` makes the row
+ * its own context, so the fill lands between the row and its text where it
+ * belongs. The reference does not need this; it has only one page.
+ */
+.q-services__item,
+.q-faq__item,
+.q-header__overlay-nav-list li {
+  isolation: isolate;
+}
+
+.q-services__toggler {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  color: var(--plum-deep);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  height: 3.75rem;
+  justify-content: space-between;
+  line-height: 1;
+  padding: 0 1.25rem 0 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.q-services__toggler::before,
+.q-services__toggler::after {
+  background-color: var(--cream-3);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 0.3s;
+  z-index: -1;
+}
+
+.q-services__toggler::before {
+  border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  width: calc(100% - 2.5rem);
+}
+
+.q-services__toggler::after {
+  left: unset;
+  mask-image: url('@/assets/img/shapes/nav-shape-blue.svg');
+  mask-position: right center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  right: 0;
+  width: 5rem;
+}
+
+.q-services__toggler:hover::before,
+.q-services__toggler:hover::after {
+  background-color: var(--cream-4);
+}
+
+.q-services__item.-active .q-services__toggler {
+  color: var(--white);
+}
+
+.q-services__item.-active .q-services__toggler::before,
+.q-services__item.-active .q-services__toggler::after {
+  background-color: var(--plum-deep);
+}
+
+.q-services__toggler-inner {
+  text-align: left;
+}
+
+.q-services__toggler-icon {
+  align-items: center;
+  background-color: rgb(84 57 69 / 0.08);
+  border-radius: 50%;
+  display: flex;
+  height: 2.5rem;
+  justify-content: center;
+  position: relative;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  width: 2.5rem;
+}
+
+.q-services__item.-active .q-services__toggler-icon {
+  background-color: rgb(255 255 255 / 0.1);
+  transform: rotate(180deg);
+}
+
+.q-services__main {
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  display: none;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  padding: 0.75rem 1rem;
+  transition: 0.3s;
+}
+
+.q-services__item.-active .q-services__main {
+  display: block;
+}
+
+.q-services__content li {
+  color: var(--plum);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.q-services__content li:not(:last-child) {
+  margin-bottom: 0.375rem;
+}
+
+.q-services__button {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .q-services {
+    padding-top: 10.5rem;
+  }
+
+  .q-services__header {
+    margin-bottom: 1.25rem;
+  }
+
+  .q-services__header .q-section-header__heading {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+  .q-services__item {
+    width: 33.875rem;
+  }
+
+  .q-services__photo {
+    border-radius: 1.5rem;
+    display: flex;
+    height: 26.9375rem;
+    max-height: unset;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.3s;
+    width: calc(100% - 35.125rem);
+  }
+
+  .q-services__photo img {
+    border-radius: 1.5rem;
+  }
+
+  .q-services__item.-active .q-services__photo {
+    margin-bottom: 0;
+    max-height: unset;
+    opacity: 1;
+  }
+
+  .q-services__toggler {
+    font-size: 1.375rem;
+    height: 4.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .q-services__main {
+    border-radius: 1.5rem;
+    margin-top: 0.5rem;
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* ----------------------------------------------------------- the location */
+
+.q-location {
+  padding-top: 5rem;
+}
+
+.q-location__header {
+  margin-bottom: 3rem;
+}
+
+.q-location__items {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4.75rem;
+}
+
+.q-location__item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 8;
+}
+
+.q-location__item:nth-of-type(2n) {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.q-location__item:nth-of-type(2n) .q-location__item-description::after {
+  left: unset;
+  right: 0;
+}
+
+.q-location__item:first-of-type {
+  padding-top: 1.875rem;
+}
+
+.q-location__item-heading,
+.q-location__item-description {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition:
+    opacity 0.5s cubic-bezier(0.47, 0.12, 0.5, 0.9),
+    transform 0.5s cubic-bezier(0.47, 0.12, 0.5, 0.9);
+}
+
+.q-location__item.-active .q-location__item-heading,
+.q-location__item.-active .q-location__item-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.q-location__item-heading {
+  color: var(--plum-deep);
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.q-location__item-description {
+  color: var(--plum);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 8.4375rem;
+  padding-bottom: 0.625rem;
+  position: relative;
+  text-wrap: balance;
+}
+
+.q-location__item-description::after {
+  background-color: rgb(84 57 69 / 0.698);
+  bottom: 0;
+  content: '';
+  height: 0.0625rem;
+  left: 0;
+  position: absolute;
+  width: calc(50vw - 1.25rem);
+}
+
+/*
+ * The bar is the thing. Each row's coloured bar grows out of nothing on a
+ * 0.75s cubic-bezier, staggered 0.2s a row, with its pointed end carried along
+ * by a translate so the point arrives with the bar rather than sitting there
+ * waiting for it.
+ */
+.q-location__item-bar {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  color: var(--purple);
+  height: 8.4375rem;
+  left: calc(50% - 1.5rem);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 3rem;
+}
+
+.q-location__item-bar::before,
+.q-location__item-bar::after {
+  background-color: currentcolor;
+  content: '';
+  height: 100%;
+  left: 0;
+  max-height: 0;
+  position: absolute;
+  top: 0;
+  transition: max-height 0.5s cubic-bezier(0.47, 0.12, 0.5, 0.9);
+  width: 100%;
+}
+
+.q-location__item-bar::after {
+  bottom: 0;
+  height: 3.75rem;
+  mask-image: url('@/assets/img/shapes/bar-location-mask.svg');
+  mask-position: center bottom;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  max-height: unset;
+  top: unset;
+  transition: transform 0.5s cubic-bezier(0.47, 0.12, 0.5, 0.9);
+}
+
+.q-location__item.-active .q-location__item-bar::before {
+  max-height: calc(100% - 2.5rem);
+}
+
+.q-location__item.-active .q-location__item-bar::after {
+  transform: translateY(0);
+}
+
+.q-location__item:first-of-type .q-location__item-bar::after {
+  transform: translateY(-6.25rem);
+}
+
+.q-location__item:nth-of-type(2) {
+  z-index: 7;
+}
+.q-location__item:nth-of-type(2) .q-location__item-bar {
+  color: var(--yellow);
+  height: 6.625rem;
+}
+.q-location__item:nth-of-type(2) .q-location__item-bar::after {
+  transform: translateY(-6.625rem);
+}
+
+.q-location__item:nth-of-type(3) {
+  z-index: 6;
+}
+.q-location__item:nth-of-type(3) .q-location__item-bar {
+  color: var(--plum-deep);
+  height: 6.625rem;
+}
+.q-location__item:nth-of-type(3) .q-location__item-bar::after {
+  transform: translateY(-6.625rem);
+}
+
+.q-location__item:nth-of-type(4) {
+  margin-top: -1.5rem;
+  z-index: 5;
+}
+.q-location__item:nth-of-type(4) .q-location__item-bar {
+  color: var(--sky);
+  height: 7.875rem;
+}
+.q-location__item:nth-of-type(4) .q-location__item-bar::after {
+  transform: translateY(-7.875rem);
+}
+
+.q-location__item:nth-of-type(5) {
+  z-index: 4;
+}
+.q-location__item:nth-of-type(5) .q-location__item-bar {
+  color: var(--orange);
+  height: 6.375rem;
+}
+.q-location__item:nth-of-type(5) .q-location__item-bar::after {
+  transform: translateY(-6.375rem);
+}
+
+.q-location__item:nth-of-type(6) {
+  margin-top: 2rem;
+  z-index: 3;
+}
+.q-location__item:nth-of-type(6) .q-location__item-bar {
+  color: var(--green);
+  height: 9.75rem;
+  top: -2rem;
+}
+.q-location__item:nth-of-type(6) .q-location__item-bar::after {
+  transform: translateY(-9.75rem);
+}
+
+.q-location__item:nth-of-type(7) {
+  z-index: 2;
+}
+.q-location__item:nth-of-type(7) .q-location__item-bar {
+  color: var(--cream-4);
+  height: 6.625rem;
+}
+.q-location__item:nth-of-type(7) .q-location__item-bar::after {
+  transform: translateY(-6.625rem);
+}
+
+.q-location__item:nth-of-type(8) {
+  margin-top: 3.25rem;
+  z-index: 1;
+}
+.q-location__item:nth-of-type(8) .q-location__item-bar {
+  color: var(--pink-deep);
+  height: 10rem;
+  top: -3.25rem;
+}
+.q-location__item:nth-of-type(8) .q-location__item-bar::after {
+  transform: translateY(-10rem);
+}
+
+.q-location__mask-fixer {
+  display: none;
+}
+
+.q-location__address {
+  color: var(--plum);
+  font-size: 0.875rem;
+  margin-top: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .q-location {
+    padding-top: 9rem;
+  }
+
+  .q-location__header {
+    margin-bottom: 5rem;
+  }
+
+  .q-location__items {
+    display: block;
+    height: 24.125rem;
+    margin-bottom: 2.25rem;
+    position: relative;
+  }
+
+  .q-location__items::before,
+  .q-location__items::after {
+    background-color: var(--white);
+    content: '';
+    height: 5.3125rem;
+    position: absolute;
+    top: calc(50% - 2.625rem);
+  }
+
+  .q-location__items::before {
+    border-bottom-left-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
+    left: 0;
+    width: calc(100% - 3.75rem);
+  }
+
+  .q-location__items::after {
+    mask-image: url('@/assets/img/shapes/bar-location-mask-desktop.svg');
+    mask-position: right center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    right: 0;
+    width: 5rem;
+  }
+
+  .q-location__mask-fixer {
+    background: url('@/assets/img/shapes/border-location.svg') 50% center / contain no-repeat;
+    bottom: calc(50% - 2.71875rem);
+    display: block;
+    height: 0.875rem;
+    left: -0.0625rem;
+    position: absolute;
+    width: 0.875rem;
+    z-index: 9;
+  }
+
+  .q-location__item {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    transition: transform 0.45s cubic-bezier(0.47, 0.12, 0.5, 0.9);
+    width: max-content;
+  }
+
+  .q-location__item:nth-of-type(2n) {
+    align-items: unset;
+    text-align: left;
+  }
+
+  .q-location__item:nth-of-type(2n) .q-location__item-heading {
+    margin-top: auto;
+  }
+
+  .q-location__item:nth-of-type(2n) .q-location__item-description::after {
+    bottom: 0;
+    left: -0.75rem;
+    right: unset;
+    top: unset;
+  }
+
+  .q-location__item-heading {
+    font-size: 2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .q-location__item-description {
+    font-size: 1rem;
+    max-width: 11.5625rem;
+    padding-bottom: 0;
+  }
+
+  .q-location__item-description::after {
+    height: 9.375rem;
+    left: -0.75rem;
+    top: -2.525rem;
+    width: 0.0625rem;
+  }
+
+  .q-location__item-bar {
+    border-bottom-left-radius: 0.75rem;
+    border-top-right-radius: unset;
+    cursor: pointer;
+    height: 6.5625rem !important;
+    left: 0;
+    pointer-events: all;
+    top: calc(50% - 2.625rem);
+    width: 11.625rem;
+  }
+
+  .q-location__item-bar::before,
+  .q-location__item-bar::after {
+    border-bottom-left-radius: 0.75rem;
+    height: 5.3125rem;
+    max-height: unset !important;
+    max-width: 0;
+    transition: max-width 0.75s cubic-bezier(0.47, 0.12, 0.5, 0.9);
+  }
+
+  .q-location__item-bar::after {
+    height: 5.3125rem;
+    mask-image: url('@/assets/img/shapes/bar-location-mask-desktop.svg');
+    mask-position: right center;
+    max-width: unset;
+    right: 0;
+    top: 0;
+    transition-duration: 0.75s;
+  }
+
+  .q-location__item.-active .q-location__item-bar::before {
+    max-height: unset;
+    max-width: calc(100% - 3.75rem);
+  }
+
+  .q-location__item.-active .q-location__item-bar::after {
+    transform: translateX(0);
+  }
+
+  /* Hovering a bar lifts its row out of the stack by 20px, up or down. */
+  .q-location__item:has(.q-location__item-bar:hover) {
+    transform: translateY(-1.25rem);
+  }
+
+  .q-location__item:nth-of-type(2n):has(.q-location__item-bar:hover) {
+    transform: translateY(1.25rem);
+  }
+
+  .q-location__item:nth-of-type(1) {
+    left: 10.125rem;
+    padding-top: 0;
+  }
+  .q-location__item:nth-of-type(1) .q-location__item-bar {
+    left: -10.125rem;
+  }
+  .q-location__item:nth-of-type(1) .q-location__item-bar::after {
+    transform: translateX(-7.5rem);
+  }
+
+  .q-location__item:nth-of-type(2) {
+    left: 17.125rem;
+  }
+  .q-location__item:nth-of-type(2) .q-location__item-bar {
+    left: -17.125rem;
+    width: 18.5rem;
+  }
+  .q-location__item:nth-of-type(2) .q-location__item-bar::after {
+    transform: translateX(-15rem);
+  }
+
+  .q-location__item:nth-of-type(3) {
+    left: 23.875rem;
+  }
+  .q-location__item:nth-of-type(3) .q-location__item-bar {
+    left: -23.875rem;
+    width: 25.375rem;
+  }
+  .q-location__item:nth-of-type(3) .q-location__item-bar::after {
+    transform: translateX(-22.5rem);
+  }
+
+  .q-location__item:nth-of-type(4) {
+    left: 30.8125rem;
+    margin-top: 0;
+  }
+  .q-location__item:nth-of-type(4) .q-location__item-bar {
+    left: -30.8125rem;
+    width: 32.25rem;
+  }
+  .q-location__item:nth-of-type(4) .q-location__item-bar::after {
+    transform: translateX(-30rem);
+  }
+
+  .q-location__item:nth-of-type(5) {
+    left: 37.6875rem;
+  }
+  .q-location__item:nth-of-type(5) .q-location__item-bar {
+    left: -37.6875rem;
+    width: 39.125rem;
+  }
+  .q-location__item:nth-of-type(5) .q-location__item-bar::after {
+    transform: translateX(-37.5rem);
+  }
+
+  .q-location__item:nth-of-type(6) {
+    left: 51.125rem;
+    margin-top: 0;
+  }
+  .q-location__item:nth-of-type(6) .q-location__item-bar {
+    left: -51.125rem;
+    top: calc(50% - 2.625rem);
+    width: 52.5rem;
+  }
+  .q-location__item:nth-of-type(6) .q-location__item-bar::after {
+    transform: translateX(-51.25rem);
+  }
+
+  .q-location__item:nth-of-type(7) {
+    left: 57.875rem;
+  }
+  .q-location__item:nth-of-type(7) .q-location__item-bar {
+    left: -57.875rem;
+    width: 59.375rem;
+  }
+  .q-location__item:nth-of-type(7) .q-location__item-bar::after {
+    transform: translateX(-62.5rem);
+  }
+
+  .q-location__item:nth-of-type(8) {
+    left: 71.5rem;
+    margin-top: 0;
+  }
+  .q-location__item:nth-of-type(8) .q-location__item-bar {
+    left: -71.5rem;
+    top: calc(50% - 2.625rem);
+    width: 72.875rem;
+  }
+  .q-location__item:nth-of-type(8) .q-location__item-bar::after {
+    transform: translateX(-70rem);
+  }
+
+  .q-location__item:nth-of-type(1) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(1) .q-location__item-bar::after {
+    transition-delay: 0.2s;
+  }
+  .q-location__item:nth-of-type(2) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(2) .q-location__item-bar::after {
+    transition-delay: 0.4s;
+  }
+  .q-location__item:nth-of-type(3) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(3) .q-location__item-bar::after {
+    transition-delay: 0.6s;
+  }
+  .q-location__item:nth-of-type(4) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(4) .q-location__item-bar::after {
+    transition-delay: 0.8s;
+  }
+  .q-location__item:nth-of-type(5) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(5) .q-location__item-bar::after {
+    transition-delay: 1s;
+  }
+  .q-location__item:nth-of-type(6) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(6) .q-location__item-bar::after {
+    transition-delay: 1.2s;
+  }
+  .q-location__item:nth-of-type(7) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(7) .q-location__item-bar::after {
+    transition-delay: 1.4s;
+  }
+  .q-location__item:nth-of-type(8) .q-location__item-bar::before,
+  .q-location__item:nth-of-type(8) .q-location__item-bar::after {
+    transition-delay: 1.6s;
+  }
+}
+
+/* The map, opened over the page. */
+.q-location__modal {
+  background-color: var(--cream-4);
+  height: 100dvh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1001;
+}
+
+.q-location__modal.-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.q-location__modal-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.q-location__modal-map {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.q-location__modal-map img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.q-location__modal-info {
+  background-color: var(--yellow);
+  border-radius: 1.25rem;
+  bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  left: 1.25rem;
+  padding: 1rem 1rem 1.25rem;
+  position: absolute;
+  right: 1.25rem;
+}
+
+.q-location__modal-info-image {
+  border-radius: 1.25rem;
+  display: none;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.q-location__modal-info-image img {
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.q-location__modal-info-content {
+  flex: 1;
+}
+
+.q-location__modal-info-title {
+  color: var(--plum-deep);
+  font-family: var(--font-sans);
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.75rem;
+}
+
+.q-location__modal-info-subtitle {
+  color: var(--plum-deep);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 0.25rem;
+}
+
+.q-location__modal-info-description {
+  color: var(--plum);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .q-location__modal-inner {
+    flex-direction: row;
+  }
+
+  .q-location__modal-info {
+    border-radius: 1.5rem;
+    bottom: 3.125rem;
+    left: 3.5rem;
+    padding: 0.75rem 0.75rem 1.25rem;
+    right: auto;
+    width: 19.75rem;
+  }
+
+  .q-location__modal-info-image {
+    display: block;
+  }
+
+  .q-location__modal-info-content {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .q-location__modal-info-title {
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ---------------------------------------------------------- the infopoint */
+
+.q-faq {
+  margin-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.q-faq__header-wrapper {
+  margin-bottom: 2.25rem;
+}
+
+.q-faq__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.q-faq__toggler {
+  align-items: center;
+  appearance: none;
+  background-color: var(--purple);
+  border: 0;
+  border-radius: 0.75rem;
+  color: var(--plum-deep);
+  cursor: pointer;
+  display: grid;
+  font-size: 1.125rem;
+  font-weight: 600;
+  gap: 1.75rem;
+  grid-template-columns: 1fr 2.25rem;
+  line-height: 1.45;
+  margin: 0;
+  min-height: 3.75rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.q-faq__item:nth-child(2) .q-faq__toggler {
+  background-color: var(--yellow);
+}
+.q-faq__item:nth-child(3) .q-faq__toggler {
+  background-color: var(--sky);
+}
+.q-faq__item:nth-child(4) .q-faq__toggler {
+  background-color: var(--orange);
+}
+.q-faq__item:nth-child(5) .q-faq__toggler {
+  background-color: var(--green);
+}
+.q-faq__item:nth-child(6) .q-faq__toggler {
+  background-color: var(--pink-deep);
+}
+
+.q-faq__toggler-icon {
+  align-items: center;
+  background-color: rgb(84 57 69 / 0.08);
+  border-radius: 50%;
+  display: flex;
+  height: 2.25rem;
+  justify-content: center;
+  position: relative;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  width: 2.25rem;
+}
+
+.q-faq__content {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s cubic-bezier(0.47, 0.12, 0.5, 0.9);
+}
+
+.q-faq__item.-active .q-faq__content {
+  max-height: 18.75rem;
+}
+
+.q-faq__content-inner {
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  margin-top: 0.25rem;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.q-faq__content-text {
+  color: var(--plum);
+}
+
+.q-faq__content-text p + p,
+.q-faq__content-text ul {
+  margin-top: 0.5rem;
+}
+
+.q-faq__content-text li {
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+
+.q-faq__button {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .q-faq {
+    margin-bottom: 6rem;
+    padding-top: 9rem;
+  }
+
+  .q-faq__container {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .q-faq__header-wrapper {
+    margin-bottom: 0;
+  }
+
+  .q-faq__header {
+    position: sticky;
+    top: 6.25rem;
+  }
+
+  .q-faq__items {
+    gap: 0.75rem;
+  }
+
+  /*
+   * Above 768 the coloured fill is not the button -- it is two pseudo elements
+   * behind it, one a rounded slab and one the chamfered point, and hovering
+   * slides the point 1rem to the right so the flag stretches. That is why the
+   * button's own background is cleared here.
+   */
+  .q-faq__toggler {
+    background-color: transparent !important;
+    font-size: 1.375rem;
+    grid-template-columns: 1fr 3rem;
+    height: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    position: relative;
+  }
+
+  .q-faq__toggler::before,
+  .q-faq__toggler::after {
+    background-color: var(--purple);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform 0.3s;
+    width: 0;
+    z-index: -1;
+  }
+
+  .q-faq__toggler::before {
+    border-bottom-left-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
+    width: calc(100% - 1.875rem);
+  }
+
+  .q-faq__toggler::after {
+    left: unset;
+    mask-image: url('@/assets/img/shapes/nav-shape-blue.svg');
+    mask-position: right center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    right: 0;
+    width: 5rem;
+  }
+
+  .q-faq__item:nth-child(2) .q-faq__toggler::before,
+  .q-faq__item:nth-child(2) .q-faq__toggler::after {
+    background-color: var(--yellow);
+  }
+  .q-faq__item:nth-child(3) .q-faq__toggler::before,
+  .q-faq__item:nth-child(3) .q-faq__toggler::after {
+    background-color: var(--sky);
+  }
+  .q-faq__item:nth-child(4) .q-faq__toggler::before,
+  .q-faq__item:nth-child(4) .q-faq__toggler::after {
+    background-color: var(--orange);
+  }
+  .q-faq__item:nth-child(5) .q-faq__toggler::before,
+  .q-faq__item:nth-child(5) .q-faq__toggler::after {
+    background-color: var(--green);
+  }
+  .q-faq__item:nth-child(6) .q-faq__toggler::before,
+  .q-faq__item:nth-child(6) .q-faq__toggler::after {
+    background-color: var(--pink-deep);
+  }
+
+  .q-faq__toggler:hover::after {
+    transform: translateX(1rem);
+  }
+
+  .q-faq__toggler:hover .q-faq__toggler-icon {
+    background-color: rgb(84 57 69 / 0.05);
+    transform: translateX(0.625rem) rotate(90deg);
+  }
+
+  .q-faq__item.-active .q-faq__toggler:hover .q-faq__toggler-icon {
+    transform: translateX(0.625rem) rotate(0deg);
+  }
+
+  .q-faq__toggler-icon {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .q-faq__content-inner {
+    margin-top: 0.5rem;
+    padding: 1rem 1.75rem 1.25rem;
+  }
+
+  .q-faq__button {
+    margin-top: 2rem;
+  }
+}
+
+/* -------------------------------------------------------------- the apply */
+
+.q-apply {
+  --form-checked-color: var(--yellow);
+
+  background-color: var(--yellow);
+  border-radius: 1.5rem;
+  padding-bottom: 5rem;
+  padding-top: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.q-apply__header {
+  margin-bottom: 1.5rem;
+}
+
+/*
+ * The student is cut to a blob and the three stamps are pinned to it at fixed
+ * angles. They scale in from nothing when the block reaches the middle of the
+ * viewport, and then drift upward with the scroll at a speed each one picks
+ * for itself.
+ */
+.q-apply__photo {
+  height: 18.5625rem;
+  margin-bottom: 2.625rem;
+  padding-left: 3.125rem;
+  position: relative;
+  width: 19.5rem;
+}
+
+.q-apply__photo img {
+  background-color: var(--sky);
+  height: 18.5625rem;
+  mask-image: url('@/assets/img/shapes/apply-now-mask.svg');
+  mask-position: center center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  object-fit: cover;
+  width: auto;
+}
+
+.q-apply__photo-label {
+  align-items: center;
+  background-color: var(--pink-deep);
+  border-radius: 0.5rem;
+  color: var(--plum);
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  height: 2.1875rem;
+  line-height: 1;
+  padding: 0 0.625rem;
+  position: absolute;
+}
+
+.q-apply__photo-label:nth-of-type(1) {
+  left: 0;
+  top: 6.375rem;
+  transform: rotate(-15deg);
+}
+
+.q-apply__photo-label:nth-of-type(2) {
+  background-color: var(--orange);
+  color: var(--yellow);
+  right: -1.5rem;
+  top: 3.5rem;
+  transform: rotate(7deg);
+}
+
+.q-apply__photo-label:nth-of-type(3) {
+  background-color: var(--sky);
+  bottom: 0.875rem;
+  left: 6.6875rem;
+  transform: rotate(7deg);
+}
+
+.q-apply__description {
+  color: var(--plum);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  margin-bottom: 2rem;
+}
+
+.q-form__row {
+  display: flex;
+  flex-direction: column;
+}
+
+.q-form__field {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.q-form__row.-type-toggler .q-form__field {
+  margin-bottom: 0.75rem;
+}
+
+.q-form__label {
+  color: var(--plum);
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 0.25rem;
+}
+
+.q-form input[type='text'],
+.q-form input[type='email'],
+.q-form input[type='tel'],
+.q-form select,
+.q-form textarea {
+  appearance: none;
+  background-color: transparent;
+  border: 0.0625rem solid var(--plum);
+  border-radius: 0.75rem;
+  color: var(--plum);
+  font-size: 1rem;
+  font-weight: 500;
+  height: 2.75rem;
+  padding: 0.625rem 1rem;
+  width: 100%;
+}
+
+.q-form input::placeholder,
+.q-form textarea::placeholder {
+  color: var(--plum);
+}
+
+.q-form select {
+  background: url('@/assets/img/shapes/icon-arrow-select.svg') calc(100% - 0.75rem) center / 1.5rem
+    100% no-repeat;
+  padding-left: 0.75rem;
+}
+
+.q-form textarea {
+  height: 7.5rem;
+  padding-top: 0.75rem;
+}
+
+/* The Student / Parent switch: one pill, two halves, no visible radio. */
+.q-form__toggler {
+  align-items: center;
+  background-color: rgb(84 57 69 / 0.08);
+  border-radius: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 3rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  width: 100%;
+}
+
+.q-form__toggler label {
+  align-items: center;
+  border-radius: 1.25rem;
+  color: var(--plum);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: 500;
+  height: 2.5rem;
+  justify-content: center;
+  line-height: 1.45;
+  position: relative;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+  width: 100%;
+}
+
+.q-form__toggler label:has(input:checked) {
+  background-color: var(--plum-deep);
+  color: var(--form-checked-color);
+}
+
+.q-form__toggler label input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.q-form__acceptance label {
+  cursor: pointer;
+  display: flex;
+  gap: 0.625rem;
+  position: relative;
+}
+
+.q-form__acceptance input[type='checkbox'] {
+  appearance: none;
+  background-color: transparent;
+  border: 0.0625rem solid var(--plum);
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+  height: 1.0625rem;
+  margin: 0;
+  transition: background-color 0.3s;
+  width: 1.0625rem;
+}
+
+.q-form__acceptance input[type='checkbox']:checked {
+  background-color: var(--plum);
+}
+
+.q-form__acceptance span {
+  color: var(--plum);
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.q-form__acceptance a {
+  color: inherit;
+}
+
+.q-form__submit {
+  margin-top: 1.875rem;
+}
+
+.q-form__submit .q-btn {
+  color: var(--form-checked-color);
+}
+
+.q-apply__thanks {
+  border-top: 0.0625rem solid rgb(84 57 69 / 0.698);
+  display: none;
+  padding-top: 1.25rem;
+}
+
+.q-apply__thanks.-active {
+  display: block;
+}
+
+.q-apply__thanks h3 {
+  color: var(--plum-deep);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+}
+
+.q-apply__thanks p {
+  color: var(--plum);
+  font-size: 1rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.q-apply__form.-hide {
+  display: none;
+}
+
+.q-apply__banner-wrapper {
+  margin: 5rem 1.25rem 0;
+  position: relative;
+}
+
+.q-apply__banner-shape {
+  display: none;
+  scale: 0;
+}
+
+@media (min-width: 768px) {
+  .q-apply {
+    padding-bottom: 11.5625rem;
+    padding-top: 4.375rem;
+  }
+
+  .q-apply__cols {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .q-apply__column.-right {
+    max-width: 33.875rem;
+  }
+
+  .q-apply__column-inner {
+    position: sticky;
+    top: 7.5rem;
+  }
+
+  .q-apply__header {
+    margin-bottom: 4rem;
+  }
+
+  .q-apply__photo {
+    height: 27.125rem;
+    padding-left: 5rem;
+    width: 29rem;
+  }
+
+  .q-apply__photo img {
+    height: 27.125rem;
+  }
+
+  .q-apply__photo-label {
+    font-size: 1.25rem;
+    height: 2.9375rem;
+    padding: 0 0.8125rem;
+  }
+
+  .q-apply__photo-label:nth-of-type(1) {
+    top: 8.875rem;
+  }
+
+  .q-apply__photo-label:nth-of-type(2) {
+    top: 4.75rem;
+  }
+
+  .q-apply__photo-label:nth-of-type(3) {
+    bottom: 1.25rem;
+    left: 10.25rem;
+  }
+
+  .q-form__row.-two-cols {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .q-form__field {
+    margin-bottom: 0.75rem;
+  }
+
+  .q-form__row.-type-toggler .q-form__field {
+    margin-bottom: 1rem;
+  }
+
+  .q-form__toggler label {
+    font-size: 1rem;
+  }
+
+  .q-apply__thanks p {
+    font-size: 1.125rem;
+  }
+
+  .q-apply__banner-wrapper {
+    margin: 12.25rem 2.1875rem 0;
+  }
+
+  .q-apply__banner-shape {
+    background-position: 50% center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+  }
+
+  .q-apply__banner-shape.-shape-1 {
+    background-image: url('@/assets/img/shapes/apply-banner-shape-1.svg');
+    height: 8.375rem;
+    left: 35.125rem;
+    top: -4.1875rem;
+    width: 7.75rem;
+  }
+
+  .q-apply__banner-shape.-shape-2 {
+    background-image: url('@/assets/img/shapes/apply-banner-shape-2.svg');
+    bottom: -4.375rem;
+    height: 7.625rem;
+    right: 30.25rem;
+    width: 6.5625rem;
+    z-index: 2;
+  }
+
+  .q-apply__banner-shape.-shape-3 {
+    background-image: url('@/assets/img/shapes/apply-banner-shape-3.svg');
+    bottom: -5.75rem;
+    height: 7.625rem;
+    right: 23.75rem;
+    width: 7rem;
+  }
+}
+
+/* ------------------------------------------------------------- the banner */
+
+.q-banner {
+  background-color: var(--cream);
+  border-radius: 1.5625rem;
+  container: banner / inline-size;
+  display: block;
+}
+
+.q-banner__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.q-banner__content {
+  padding: 0.75rem 0.25rem;
+}
+
+.q-banner__heading {
+  color: var(--plum-deep);
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+}
+
+.q-banner__description {
+  color: var(--plum);
+  margin: 0;
+}
+
+.q-banner__photo {
+  align-items: center;
+  border-bottom-left-radius: 1.375rem;
+  border-bottom-right-radius: 1.375rem;
+  display: flex;
+  height: 23.375rem;
+  mask-image: url('@/assets/img/shapes/banner-mask-mobile.svg');
+  mask-position: center top;
+  mask-repeat: no-repeat;
+  mask-size: 100% auto;
+  position: relative;
+  width: 100%;
+}
+
+.q-banner__photo img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+@container banner (width > 768px) {
+  .q-banner__inner {
+    align-items: center;
+    border-radius: 2rem;
+    display: grid;
+    gap: 6rem;
+    grid-template-columns: 1fr 28.4375rem;
+  }
+
+  .q-banner__content {
+    padding: 2.25rem 0 2.25rem 2.75rem;
+  }
+
+  .q-banner__heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .q-banner__description {
+    color: var(--plum-deep);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .q-banner__photo {
+    border-radius: 0 1.375rem 1.375rem 0;
+    height: 23.5625rem;
+    mask-image: url('@/assets/img/shapes/banner-mask-desktop.svg');
+    mask-position: left center;
+  }
+}
+
+/* ------------------------------------------------------------- the footer */
+
+/*
+ * The footer slides 32px under the apply block, which is why the apply block
+ * is `position: relative; z-index: 1` with a 1.5rem radius: the yellow panel
+ * sits on top of the cream and its rounded foot is cut into the footer rather
+ * than into the page. Without the negative margin the radius has nothing to
+ * sit against and the page is 32px taller than the reference.
+ */
+.q-footer {
+  background-color: var(--cream);
+  margin-top: -2rem;
+  padding: 5rem 0 1.5rem;
+}
+
+.q-footer__container {
+  position: relative;
+}
+
+.q-footer__top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  padding-top: 10.8125rem;
+  position: relative;
+}
+
+.q-footer__columns {
+  display: grid;
+  gap: 2rem 0.875rem;
+  grid-template-columns: repeat(2, 1fr);
+  order: 2;
+}
+
+.q-footer__column:nth-child(1) {
+  order: 6;
+}
+.q-footer__column:nth-child(2) {
+  order: 2;
+}
+.q-footer__column:nth-child(3) {
+  order: 3;
+}
+.q-footer__column:nth-child(4) {
+  order: 4;
+}
+.q-footer__column:nth-child(5) {
+  order: 5;
+}
+
+.q-footer__column-title {
+  color: var(--plum-deep);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0 0 0.75rem;
+}
+
+.q-footer__column-content p {
+  color: var(--plum);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.q-footer__column-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.q-footer__column-list a {
+  color: var(--plum);
+  font-size: 1rem;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.q-footer__column-list a:hover {
+  text-decoration: underline 0.0625rem;
+  text-underline-offset: 0.25rem;
+}
+
+/* The wordmark, a full page wide. The reference's is an SVG of its own logo;
+   this one is quay's, set in the display face at the same size and place. */
+.q-footer__middle {
+  text-align: center;
+}
+
+.q-footer__logo {
+  color: var(--ink);
+  display: inline-block;
+  font-family: var(--font-display);
+  width: 100%;
+}
+
+.q-footer__up-button {
+  align-items: center;
+  background-color: var(--green);
+  border: 0;
+  border-radius: 50%;
+  bottom: -8rem;
+  color: var(--plum);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 600;
+  height: 4rem;
+  justify-content: center;
+  line-height: 1.45;
+  position: absolute;
+  right: 0;
+  text-transform: capitalize;
+  transition: transform 0.3s ease-in-out;
+  width: 4rem;
+  z-index: 99;
+}
+
+.q-footer__up-button:hover {
+  transform: scale(1.1);
+}
+
+.q-footer__bottom {
+  padding-top: 0;
+}
+
+.q-footer__bottom-mobile {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.q-footer__bottom-desktop {
+  display: none;
+}
+
+.q-footer__bottom-left {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.q-footer__copyright {
+  color: var(--plum);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.q-footer__bottom-mobile .q-footer__copyright {
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.q-footer__legal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: left;
+}
+
+.q-footer__legal-list a {
+  color: var(--plum);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.q-footer__legal-list a:hover {
+  text-decoration: underline 0.0625rem;
+  text-underline-offset: 0.25rem;
+}
+
+.q-footer__operator {
+  color: var(--plum);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.q-footer__bottom-mobile .q-footer__operator {
+  margin-top: 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .q-footer__column:nth-child(1) .q-footer__column-title {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .q-footer__logo {
+    left: 50%;
+    margin-bottom: 5rem;
+    max-width: 23.25rem;
+    padding: 0 1.25rem;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 10;
+  }
+}
+
+@media (min-width: 768px) {
+  .q-footer__top {
+    display: block;
+    margin-bottom: 4.375rem;
+    padding-top: 0;
+  }
+
+  .q-footer__columns {
+    gap: 1.5rem;
+    grid-template-columns: repeat(6, 1fr);
+    order: unset;
+  }
+
+  .q-footer__column:nth-child(1),
+  .q-footer__column:nth-child(2),
+  .q-footer__column:nth-child(3),
+  .q-footer__column:nth-child(4) {
+    order: unset;
+  }
+
+  .q-footer__column:nth-child(5) {
+    display: none;
+  }
+
+  .q-footer__column-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .q-footer__column-content p {
+    font-family: var(--font-sans);
+    line-height: 1.65;
+  }
+
+  .q-footer__column-list {
+    gap: 0.25rem;
+  }
+
+  .q-footer__up-button {
+    bottom: auto;
+    font-size: 1.375rem;
+    height: 6.25rem;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    right: 0;
+    top: 0;
+    width: 6.25rem;
+  }
+
+  .q-footer__bottom {
+    padding-top: 4.375rem;
+  }
+
+  .q-footer__bottom-mobile {
+    display: none;
+  }
+
+  .q-footer__bottom-desktop {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .q-footer__bottom-left {
+    flex: 0 0 auto;
+    flex-direction: row;
+  }
+
+  .q-footer__bottom-center {
+    flex: 1;
+    text-align: left;
+  }
+
+  .q-footer__bottom-right {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+
+  .q-footer__legal-list {
+    gap: 2rem;
+  }
+
+  .q-footer__legal-list a {
+    font-size: 0.875rem;
+  }
+}
+
+/* ---------------------------------------------------- reduced motion, part 2 */
+
+/*
+ * Rule 8: reduced motion is not a shorter duration, it is off. The carousel,
+ * the marquee and the word-rise are switched off where they are declared; the
+ * rest of the entrances are inline transitions written by the components that
+ * own them, so they are stopped here instead -- `!important` because a
+ * stylesheet only beats an inline style that way.
+ *
+ * What is *not* switched off: the hovers. A pointer that is already on a
+ * control is not motion the visitor did not ask for, and the tiles row with
+ * its width transition removed still tells you which tile you are on.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .q-slogan__shape,
+  .q-slogan__image,
+  .q-apply__photo-label,
+  .q-apply__banner-shape {
+    transition: none !important;
+  }
+
+  .q-location__item-bar::before,
+  .q-location__item-bar::after,
+  .q-location__item-heading,
+  .q-location__item-description,
+  .q-faq__content,
+  .q-services__photo {
+    transition: none !important;
+  }
+}

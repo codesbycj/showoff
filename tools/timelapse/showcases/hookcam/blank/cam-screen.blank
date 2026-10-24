@@ -1,0 +1,158 @@
+import { StatusBar } from 'expo-status-bar';
+import { Image, Pressable, View } from 'react-native';
+
+import { FACES } from '@/features/hookcam/components/faces';
+import { GridMark, Heart, Send, StickerBadge } from '@/features/hookcam/components/sticker-badge';
+import { T } from '@/features/hookcam/components/text';
+import { post } from '@/features/hookcam/data/cam';
+import {
+  BAR_AVATAR,
+  BAR_BOTTOM,
+  CAPTION_BOTTOM,
+  GRID,
+  GRID_TOP,
+  MARGIN,
+  SEND,
+  STICKER_TOP,
+} from '@/features/hookcam/layout';
+import { hk, radius } from '@/features/hookcam/theme';
+import { useInsets } from '@/features/hookcam/use-insets';
+
+const HERO = require('../../../assets/images/hookcam/hero.jpg');
+
+/**
+ * Hook — the camera.
+ *
+ * Assembly only: the picture, the brand's promo, what was said, and who said
+ * it.
+ *
+ * Everything floats on one full-bleed photograph, so the layout is a column of
+ * absolutely nothing — the picture fills the screen and the controls are laid
+ * over it with `position: 'absolute'`, which is the only arrangement that
+ * keeps the caption at the foot whatever the phone's height.
+ */
+export default function HookCam() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: hk.canvas }}>
+      <StatusBar style="light" />
+
+      {/* STEP 1.01 the picture
+      <Image
+        source={HERO}
+        style={{ position: 'absolute', width: '100%', height: '100%' }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+      */}
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: insets.top + GRID_TOP,
+          alignItems: 'center',
+        }}
+      >
+        {/* STEP 1.02 the way back to the grid
+        <Pressable accessibilityRole="button" accessibilityLabel="Grid">
+          <GridMark size={GRID} />
+        </Pressable>
+        */}
+      </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          right: MARGIN,
+          top: insets.top + STICKER_TOP,
+        }}
+      >
+        {/* STEP 1.03 what the brand is pushing
+        <Pressable accessibilityRole="button" accessibilityLabel="Hook a bro">
+          <StickerBadge />
+        </Pressable>
+        */}
+      </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: MARGIN,
+          right: MARGIN,
+          bottom: insets.bottom + BAR_BOTTOM + SEND + CAPTION_BOTTOM,
+        }}
+      >
+        {/* STEP 1.06 what was said
+        <T variant="caption" color={hk.ink} style={{ textAlign: 'center' }}>
+          {post.caption}
+        </T>
+        */}
+      </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: MARGIN,
+          right: MARGIN,
+          bottom: insets.bottom + BAR_BOTTOM,
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        {/* STEP 1.07 whether you liked it
+        <Pressable accessibilityRole="button" accessibilityLabel="Like">
+          <Heart size={28} />
+        </Pressable>
+        */}
+
+        {/* STEP 1.08 who said it
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 9,
+          }}
+        >
+          <Image
+            source={FACES[0]}
+            style={{
+              width: BAR_AVATAR,
+              height: BAR_AVATAR,
+              borderRadius: radius.full,
+              borderWidth: 2,
+              borderColor: hk.ink,
+            }}
+            resizeMode="cover"
+            accessibilityIgnoresInvertColors
+          />
+          <T variant="author" color={hk.ink}>
+            {post.author}
+          </T>
+        </View>
+        */}
+
+        {/* STEP 1.09 and the way to pass it on
+        <Pressable accessibilityRole="button" accessibilityLabel="Send">
+          <View
+            style={{
+              width: SEND,
+              height: SEND,
+              borderRadius: radius.full,
+              backgroundColor: hk.glass,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Send size={24} />
+          </View>
+        </Pressable>
+        */}
+      </View>
+    </View>
+  );
+}

@@ -1,6 +1,0 @@
-{
- "start-screen": "src/app/finansstart/index.tsx",
- "collage": "src/features/finansstart/components/collage.tsx",
- "balance-card": "src/features/finansstart/components/balance-card.tsx",
- "primary-button": "src/features/finansstart/components/primary-button.tsx"
-}

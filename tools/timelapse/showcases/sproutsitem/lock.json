@@ -1,0 +1,21 @@
+{
+ "assets/images/sproutsitem/CREDITS.md": "9e78c127025c32eca81f3e3d1b3985bba3af5e0dcbc6d25ea1e82e5509305a9d",
+ "assets/images/sproutsitem/bowl.jpg": "1ffa9d8859132f3d7ee986a2415e2914acb7370cf43f6dbb4ea8d0206b44b041",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "612e194f41ed4d3e929ed9a7e7544b1c2dd5db5b069bc089f6098ff2da9ab1cf",
+ "src/app/sproutsitem/index.tsx": "c25945f8c9216066766b5ec239a452bff3d658ac47b97ffee877b1fd2459baf0",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/sproutsitem/components/product-stage.tsx": "aa00a118abe47807db712e83c40437ee89296431756ff080a7e96266fdf61496",
+ "src/features/sproutsitem/components/stat-row.tsx": "d614802083442bcca9c65b432ada64584a3dd8c7f53123a738d368de852d6c4b",
+ "src/features/sproutsitem/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/sproutsitem/data/product.ts": "e2b0e8986adaffa5a1aa8116d2e5da1cc4147a70744ae8af3b03ae26c88b1917",
+ "src/features/sproutsitem/layout.ts": "b91e578685308d460762368f36443e746e7be7a8010129a6f3d880790a3bc4d2",
+ "src/features/sproutsitem/theme.ts": "67ab8011f7f628fe8a60873bd55282ce171a97a770aa61b2833786dc0070bf10",
+ "src/features/sproutsitem/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}
