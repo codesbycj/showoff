@@ -14,7 +14,7 @@
     "src/app/treatexplore/index.tsx",
     "STEP 1.02"
    ],
-   "label": "and the way to search it"
+   "label": "and a way to search it"
   },
   {
    "op": "imp",
@@ -22,7 +22,7 @@
     "src/app/treatexplore/index.tsx",
     "@/features/treatexplore/components/filter-row"
    ],
-   "label": "how to narrow it"
+   "label": "what to filter by"
   },
   {
    "op": "jsx",
@@ -30,34 +30,7 @@
     "src/app/treatexplore/index.tsx",
     "STEP 1.04"
    ],
-   "label": "under the title"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/features/treatexplore/components/filter-row.tsx",
-    "STEP 1.05"
-   ],
-   "label": "every filter"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/features/treatexplore/components/filter-row.tsx",
-    "STEP 1.06"
-   ],
-   "label": "and what tapping it does"
-  },
-  {
-   "op": "cutfirst",
-   "args": [
-    "src/features/treatexplore/components/filter-row.tsx",
-    [
-     "// MISTAKE 1.07",
-     "paddingVertical: 12,"
-    ]
-   ],
-   "label": "the pills came in squeezed"
+   "label": "a rail of filters"
   },
   {
    "op": "imp",
@@ -71,33 +44,20 @@
    "op": "jsx",
    "args": [
     "src/app/treatexplore/index.tsx",
-    "STEP 1.09"
+    "STEP 1.06"
    ],
-   "label": "one card each"
+   "label": "card by card"
   },
   {
-   "op": "jsx",
+   "op": "cutfirst",
    "args": [
-    "src/features/treatexplore/components/collection-card.tsx",
-    "STEP 1.10"
+    "src/app/treatexplore/index.tsx",
+    [
+     "// MISTAKE 1.07",
+     "opacity: 0.4,"
+    ]
    ],
-   "label": "the pack"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/features/treatexplore/components/collection-card.tsx",
-    "STEP 1.11"
-   ],
-   "label": "and what is in it"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/features/treatexplore/components/collection-card.tsx",
-    "STEP 1.12"
-   ],
-   "label": "what it is called"
+   "label": "the cards came in half-faded"
   },
   {
    "op": "imp",
@@ -105,34 +65,106 @@
     "src/app/treatexplore/index.tsx",
     "@/features/treatexplore/components/tab-bar"
    ],
-   "label": "the way around"
+   "label": "and where else it goes"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/treatexplore/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/filter-row.tsx",
+    "STEP 1.10"
+   ],
+   "label": "pill by pill"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/filter-row.tsx",
+    "STEP 1.11"
+   ],
+   "label": "what it filters"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/filter-row.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and whether it is on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the first photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
     "STEP 1.14"
    ],
-   "label": "along the bottom"
+   "label": "and the second"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/collection-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and how much of it"
   },
   {
    "op": "jsx",
    "args": [
     "src/features/treatexplore/components/tab-bar.tsx",
-    "STEP 1.15"
+    "STEP 1.17"
    ],
-   "label": "the four places to be"
+   "label": "tab by tab"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/tab-bar.tsx",
+    "STEP 1.18"
+   ],
+   "label": "each with its mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatexplore/components/tab-bar.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and its name"
   },
   {
    "op": "cutfirst",
    "args": [
-    "src/features/treatexplore/components/tab-bar.tsx",
+    "src/app/treatexplore/index.tsx",
     [
-     "// MISTAKE 1.16",
-     "paddingTop: 20,"
+     "// MISTAKE 1.20",
+     "paddingHorizontal: 34,"
     ]
    ],
-   "label": "the bar came in top-heavy"
+   "label": "the dock came in inset"
   },
   {
    "op": "final",

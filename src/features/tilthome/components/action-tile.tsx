@@ -43,12 +43,15 @@ export function ActionTile({
           justifyContent: 'space-between',
         }}
       >
+{/* STEP 1.16 its mark
         <View style={{ alignItems: 'flex-end' }}>
           <View style={{ transform: [{ rotate: violet ? '0deg' : '180deg' }] }}>
             <Glyph name="arrow" size={46} tint={mark} />
           </View>
         </View>
+*/}
 
+{/* STEP 1.20 and what it does
         <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
           <View style={{ flex: 1 }}>
             {label.map((l) => (
@@ -70,6 +73,7 @@ export function ActionTile({
             <Glyph name="chevron" size={15} tint={violet ? tl.ink : tl.onNavy} />
           </View>
         </View>
+*/}
       </View>
     </Pressable>
   );

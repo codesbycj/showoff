@@ -24,11 +24,11 @@ export function FilterRow({ onSelect }: { onSelect?: (f: Filter) => void }) {
       style={{ marginHorizontal: -MARGIN }}
       contentContainerStyle={{ paddingHorizontal: MARGIN, gap: FILTER_GAP }}
     >
-      {/* STEP 1.05 every filter
+{/* STEP 1.10 pill by pill
       {filters.map((f) => (
         <Pill key={f.key} filter={f} onPress={() => onSelect?.(f)} />
       ))}
-      */}
+*/}
     </ScrollView>
   );
 }
@@ -41,8 +41,6 @@ function Pill({ filter, onPress }: { filter: Filter; onPress?: () => void }) {
       <View
         style={{
           height: FILTER_HEIGHT,
-          // MISTAKE 1.07 the pills came in squeezed
-          paddingVertical: 12,
           paddingLeft: 20,
           paddingRight: 7,
           borderRadius: radius.pill,
@@ -52,10 +50,12 @@ function Pill({ filter, onPress }: { filter: Filter; onPress?: () => void }) {
           gap: 10,
         }}
       >
+{/* STEP 1.11 what it filters
         <T variant="filter" color={tr.ink}>
           {filter.label}
         </T>
-        {/* STEP 1.06 and what tapping it does
+*/}
+{/* STEP 1.12 and whether it is on
         <View
           style={{
             width: FILTER_BADGE,
@@ -68,7 +68,7 @@ function Pill({ filter, onPress }: { filter: Filter; onPress?: () => void }) {
         >
           {on ? <Tick /> : <Plus />}
         </View>
-        */}
+*/}
       </View>
     </Pressable>
   );

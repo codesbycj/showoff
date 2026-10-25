@@ -6,7 +6,7 @@
     "src/app/tempocal/index.tsx",
     "@/features/tempocal/components/top-bar"
    ],
-   "label": "the menu and the month"
+   "label": "the top of the month"
   },
   {
    "op": "jsx",
@@ -14,7 +14,23 @@
     "src/app/tempocal/index.tsx",
     "STEP 1.02"
    ],
-   "label": "in place"
+   "label": "the menu and the month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the menu"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and which month"
   },
   {
    "op": "imp",
@@ -22,23 +38,7 @@
     "src/app/tempocal/index.tsx",
     "@/features/tempocal/components/month-grid"
    ],
-   "label": "February itself"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/app/tempocal/index.tsx",
-    "STEP 1.04"
-   ],
-   "label": "five weeks of it"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tempocal/index.tsx",
-    "@/features/tempocal/components/section-head"
-   ],
-   "label": "what is due today"
+   "label": "the month itself"
   },
   {
    "op": "jsx",
@@ -46,42 +46,42 @@
     "src/app/tempocal/index.tsx",
     "STEP 1.06"
    ],
-   "label": "and the way to the rest"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tempocal/index.tsx",
-    "@/features/tempocal/components/task-card"
-   ],
-   "label": "the work on it"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/app/tempocal/index.tsx",
-    "STEP 1.08"
-   ],
-   "label": "stacked down the page"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tempocal/index.tsx",
-    "@/features/tempocal/components/tab-bar"
-   ],
-   "label": "the dock over the lot"
+   "label": "a grid of days"
   },
   {
    "op": "cutfirst",
    "args": [
     "src/app/tempocal/index.tsx",
     [
-     "// MISTAKE 1.10",
-     "opacity: 0.4,"
+     "// MISTAKE 1.07",
+     "paddingHorizontal: 26,"
     ]
    ],
-   "label": "the cards came in washed out"
+   "label": "the grid came in inset"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/month-grid.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the weekdays"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/month-grid.tsx",
+    "STEP 1.09"
+   ],
+   "label": "week by week"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/section-head"
+   ],
+   "label": "what is on"
   },
   {
    "op": "jsx",
@@ -89,7 +89,103 @@
     "src/app/tempocal/index.tsx",
     "STEP 1.11"
    ],
-   "label": "floating over the list"
+   "label": "the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/section-head.tsx",
+    "STEP 1.12"
+   ],
+   "label": "what the list is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/section-head.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the way to all of it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/task-card"
+   ],
+   "label": "the tasks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "card by card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/task-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "its title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/task-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "what it is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/task-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "who is on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/task-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and how far through"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/tab-bar"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/tab-bar.tsx",
+    "STEP 1.22"
+   ],
+   "label": "three tabs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempocal/components/tab-bar.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and the way to add one"
   },
   {
    "op": "final",
@@ -97,6 +193,26 @@
     [
      "cal-screen",
      "src/app/tempocal/index.tsx"
+    ],
+    [
+     "month-grid",
+     "src/features/tempocal/components/month-grid.tsx"
+    ],
+    [
+     "section-head",
+     "src/features/tempocal/components/section-head.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/tempocal/components/tab-bar.tsx"
+    ],
+    [
+     "task-card",
+     "src/features/tempocal/components/task-card.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/tempocal/components/top-bar.tsx"
     ]
    ],
    "label": "tidy up"

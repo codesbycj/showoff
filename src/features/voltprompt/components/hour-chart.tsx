@@ -22,9 +22,12 @@ export function HourChart() {
   return (
     <View>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+{/* STEP 1.14 the rise
         <T variant="headline" color={vt.onCanvas} style={{ height: type.headline.line }}>
           {rise}
         </T>
+*/}
+{/* STEP 1.15 what drove it
         <View
           style={{
             marginLeft: 10,
@@ -45,8 +48,10 @@ export function HourChart() {
             {salesNote}
           </T>
         </View>
+*/}
       </View>
 
+{/* STEP 1.16 hour by hour
       <View
         style={{ flexDirection: 'row', alignItems: 'flex-end', height: PLOT_HEIGHT, marginTop: 16 }}
       >
@@ -79,7 +84,9 @@ export function HourChart() {
           </View>
         ))}
       </View>
+*/}
 
+{/* STEP 1.17 and the hours
       <View style={{ flexDirection: 'row', marginTop: 8 }}>
         {hours.map((h) => (
           <View key={h.id} style={{ flex: 1, alignItems: 'center' }}>
@@ -89,6 +96,7 @@ export function HourChart() {
           </View>
         ))}
       </View>
+*/}
     </View>
   );
 }

@@ -1,3 +1,8 @@
 {
- "task-screen": "src/app/tempotask/index.tsx"
+ "task-screen": "src/app/tempotask/index.tsx",
+ "top-bar": "src/features/tempotask/components/top-bar.tsx",
+ "progress-card": "src/features/tempotask/components/progress-card.tsx",
+ "card-head": "src/features/tempotask/components/card-head.tsx",
+ "notice-pill": "src/features/tempotask/components/notice-pill.tsx",
+ "timeline-card": "src/features/tempotask/components/timeline-card.tsx"
 }

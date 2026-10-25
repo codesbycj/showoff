@@ -16,6 +16,7 @@ import { T } from './text';
 export function Dock() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+{/* STEP 1.20 three tabs
       {dock.map((d) => (
         <Pressable key={d} accessibilityRole="tab" accessibilityLabel={d}>
           <View
@@ -32,7 +33,9 @@ export function Dock() {
           </View>
         </Pressable>
       ))}
+*/}
 
+{/* STEP 1.21 and the way to ask
       <Pressable style={{ flex: 1 }} accessibilityRole="button" accessibilityLabel={copy.chat}>
         <View
           style={{
@@ -52,6 +55,7 @@ export function Dock() {
           </View>
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

@@ -16,6 +16,9 @@ import { T } from './text';
  * `overflow: 'hidden'` and `elevation` are never on the same `View` here: the
  * combination is unreliable on Android, and nothing on this bar needs
  * clipping. The button's shadow lives on the button.
+ *
+ * The middle of the row belongs to the add button, so the four tabs sit
+ * two and two with a gap between them.
  */
 export function TabBar({ active = 'home', bottom }: { active?: string; bottom: number }) {
   return (
@@ -37,12 +40,11 @@ export function TabBar({ active = 'home', bottom }: { active?: string; bottom: n
           paddingHorizontal: 10,
         }}
       >
+{/* STEP 1.28 four tabs
         {tabs.map((t, i) => {
           const on = t.id === active;
           return (
             <View key={t.id} style={{ flex: 1, alignItems: 'center' }}>
-              {/* The middle of the row belongs to the button, so the four
-                  tabs are two and two with a gap between them. */}
               {i === 2 ? <View style={{ width: FAB_SIZE + 18 }} /> : null}
               <Pressable accessibilityRole="tab" accessibilityLabel={t.label} hitSlop={8}>
                 <View style={{ alignItems: 'center', paddingVertical: 4 }}>
@@ -59,8 +61,10 @@ export function TabBar({ active = 'home', bottom }: { active?: string; bottom: n
             </View>
           );
         })}
+*/}
       </View>
 
+{/* STEP 1.29 and the way to add one
       <View
         style={{
           position: 'absolute',
@@ -86,6 +90,7 @@ export function TabBar({ active = 'home', bottom }: { active?: string; bottom: n
           </View>
         </Pressable>
       </View>
+*/}
     </View>
   );
 }

@@ -2,11 +2,11 @@ import Search from 'lucide-react-native/icons/search';
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, ScrollView, View } from 'react-native';
 
-// STEP 1.08 the collections
+// STEP 1.05 the collections
 // import { CollectionCard } from '@/features/treatexplore/components/collection-card';
-// STEP 1.03 how to narrow it
+// STEP 1.03 what to filter by
 // import { FilterRow } from '@/features/treatexplore/components/filter-row';
-// STEP 1.13 the way around
+// STEP 1.08 and where else it goes
 // import { TabBar } from '@/features/treatexplore/components/tab-bar';
 import { T } from '@/features/treatexplore/components/text';
 import { collections, header } from '@/features/treatexplore/data/explore';
@@ -48,13 +48,13 @@ export default function TreatExplore() {
         }}
       >
         <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-          {/* STEP 1.01 what the screen is
+{/* STEP 1.01 what the screen is
           <T variant="title" color={tr.ink} style={{ flex: 1 }}>
             {header.title}
           </T>
-          */}
+*/}
+{/* STEP 1.02 and a way to search it
           <Pressable accessibilityRole="button" accessibilityLabel="Search">
-            {/* STEP 1.02 and the way to search it
             <View
               style={{
                 width: SEARCH_DISC,
@@ -67,30 +67,43 @@ export default function TreatExplore() {
             >
               <Search size={19} color={tr.muted} strokeWidth={1.9} />
             </View>
-            */}
           </Pressable>
+*/}
         </View>
 
+{/* STEP 1.04 a rail of filters
         <View style={{ marginTop: FILTER_TOP }}>
-          {/* STEP 1.04 under the title
           <FilterRow />
-          */}
         </View>
+*/}
 
-        <View style={{ marginTop: CARD_TOP, gap: CARD_GAP }}>
-          {/* STEP 1.09 one card each
+{/* STEP 1.06 card by card
+        <View
+          style={{
+            marginTop: CARD_TOP,
+            gap: CARD_GAP,
+            // MISTAKE 1.07 the cards came in half-faded
+            opacity: 0.4,
+          }}
+        >
           {collections.map((c) => (
             <CollectionCard key={c.key} collection={c} />
           ))}
-          */}
         </View>
+*/}
       </ScrollView>
 
-      <View style={{ paddingBottom: insets.bottom }}>
-        {/* STEP 1.14 along the bottom
+{/* STEP 1.09 the dock
+      <View
+        style={{
+          paddingBottom: insets.bottom,
+          // MISTAKE 1.20 the dock came in inset
+          paddingHorizontal: 34,
+        }}
+      >
         <TabBar />
-        */}
       </View>
+*/}
     </View>
   );
 }

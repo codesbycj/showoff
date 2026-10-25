@@ -34,6 +34,11 @@ import { useInsets } from '@/features/voltchat/use-insets';
  * The black sheet runs off the bottom edge rather than stopping above it: it
  * is the conversation, and one that ends in a band of paper looks finished
  * when it is not. The input sits inside the sheet, above the home indicator.
+ *
+ * The sheet's black is painted by an absolutely-filled child rather than by
+ * the container's own `backgroundColor`, so that it can be staged. A
+ * container that carries its own fill is visible from step one, and the
+ * reveal then opens on a black bar instead of on an empty page.
  */
 export default function VoltchatScreen() {
   const insets = useInsets();
@@ -85,10 +90,22 @@ export default function VoltchatScreen() {
           marginHorizontal: MARGIN,
           borderTopLeftRadius: 28,
           borderTopRightRadius: 28,
-          backgroundColor: vt.sheet,
           padding: SHEET_PAD,
         }}
       >
+        <View
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            borderTopLeftRadius: 28,
+            borderTopRightRadius: 28,
+            backgroundColor: vt.sheet,
+          }}
+        />
+
         <View style={{ alignItems: 'center', marginTop: BOLT_TOP }}>
           <View
             style={{

@@ -27,6 +27,7 @@ export function AskBar({ onSend }: { onSend?: () => void }) {
         paddingHorizontal: 6,
       }}
     >
+{/* STEP 1.19 dictate it
       <Pressable accessibilityRole="button" accessibilityLabel="Dictate">
         <View
           style={{
@@ -41,7 +42,9 @@ export function AskBar({ onSend }: { onSend?: () => void }) {
           <Glyph name="mic" size={18} tint={vt.acid} />
         </View>
       </Pressable>
+*/}
 
+{/* STEP 1.20 what you typed
       <T
         variant="input"
         color={vt.onCard}
@@ -49,7 +52,9 @@ export function AskBar({ onSend }: { onSend?: () => void }) {
       >
         {copy.draft}
       </T>
+*/}
 
+{/* STEP 1.21 and send
       <Pressable onPress={onSend} accessibilityRole="button" accessibilityLabel="Send">
         <View
           style={{
@@ -64,6 +69,7 @@ export function AskBar({ onSend }: { onSend?: () => void }) {
           <Glyph name="send" size={17} tint={vt.acid} />
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

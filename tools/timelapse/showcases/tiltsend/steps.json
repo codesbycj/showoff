@@ -6,7 +6,7 @@
     "src/app/tiltsend/index.tsx",
     "@/features/tiltsend/components/top-bar"
    ],
-   "label": "the brand and who is signed in"
+   "label": "the brand and the account"
   },
   {
    "op": "jsx",
@@ -14,7 +14,39 @@
     "src/app/tiltsend/index.tsx",
     "STEP 1.02"
    ],
-   "label": "in place"
+   "label": "along the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "whose account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/top-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and a way to add one"
   },
   {
    "op": "imp",
@@ -22,39 +54,7 @@
     "src/app/tiltsend/index.tsx",
     "@/features/tiltsend/components/amount-head"
    ],
-   "label": "how much is going"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/app/tiltsend/index.tsx",
-    "STEP 1.04"
-   ],
-   "label": "to the cent"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tiltsend/index.tsx",
-    "@/features/tiltsend/components/contact-rail"
-   ],
-   "label": "who it is going to"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/app/tiltsend/index.tsx",
-    "STEP 1.06"
-   ],
-   "label": "four of them"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tiltsend/index.tsx",
-    "@/features/tiltsend/components/card-stack"
-   ],
-   "label": "which card it comes from"
+   "label": "what you are sending"
   },
   {
    "op": "jsx",
@@ -62,7 +62,90 @@
     "src/app/tiltsend/index.tsx",
     "STEP 1.08"
    ],
-   "label": "and the two behind it"
+   "label": "centred on the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/amount-head.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/amount-head.tsx",
+    "STEP 1.10"
+   ],
+   "label": "how much"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/amount-head.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and what is left"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/contact-rail"
+   ],
+   "label": "who to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "a rail of people"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    [
+     "// MISTAKE 1.14",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the rail came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/contact-rail.tsx",
+    "STEP 1.15"
+   ],
+   "label": "face by face"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/card-stack"
+   ],
+   "label": "and from which card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "a stack of cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/card-stack.tsx",
+    "STEP 1.18"
+   ],
+   "label": "card by card"
   },
   {
    "op": "imp",
@@ -70,33 +153,50 @@
     "src/app/tiltsend/index.tsx",
     "@/features/tiltsend/components/dock"
    ],
-   "label": "the dock over the lot"
-  },
-  {
-   "op": "cutfirst",
-   "args": [
-    "src/app/tiltsend/index.tsx",
-    [
-     "// MISTAKE 1.10",
-     "marginLeft: 26,"
-    ]
-   ],
-   "label": "the wallet came in shifted off the margin"
+   "label": "where else it goes"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tiltsend/index.tsx",
-    "STEP 1.11"
+    "STEP 1.20"
    ],
-   "label": "floating over the lot"
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tiltsend/components/dock.tsx",
+    "STEP 1.21"
+   ],
+   "label": "tab by tab"
   },
   {
    "op": "final",
    "args": [
     [
+     "amount-head",
+     "src/features/tiltsend/components/amount-head.tsx"
+    ],
+    [
+     "card-stack",
+     "src/features/tiltsend/components/card-stack.tsx"
+    ],
+    [
+     "contact-rail",
+     "src/features/tiltsend/components/contact-rail.tsx"
+    ],
+    [
+     "dock",
+     "src/features/tiltsend/components/dock.tsx"
+    ],
+    [
      "send-screen",
      "src/app/tiltsend/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/tiltsend/components/top-bar.tsx"
     ]
    ],
    "label": "tidy up"

@@ -4,9 +4,9 @@
    "op": "imp",
    "args": [
     "src/app/treatstart/index.tsx",
-    "@/features/treatstart/components/hero-stack"
+    "expo-linear-gradient"
    ],
-   "label": "the throw of cards"
+   "label": "the wash"
   },
   {
    "op": "jsx",
@@ -14,66 +14,66 @@
     "src/app/treatstart/index.tsx",
     "STEP 1.02"
    ],
-   "label": "filling the page"
+   "label": "lilac into white"
   },
   {
-   "op": "jsx",
+   "op": "imp",
    "args": [
-    "src/features/treatstart/components/hero-stack.tsx",
-    "STEP 1.03"
+    "src/app/treatstart/index.tsx",
+    "@/features/treatstart/components/hero-stack"
    ],
-   "label": "the first card"
+   "label": "the stack of cards"
   },
   {
    "op": "jsx",
    "args": [
-    "src/features/treatstart/components/hero-stack.tsx",
+    "src/app/treatstart/index.tsx",
     "STEP 1.04"
    ],
-   "label": "and the second, thrown over it"
+   "label": "posed on the page"
   },
   {
    "op": "jsx",
    "args": [
-    "src/features/treatstart/components/product-card.tsx",
+    "src/app/treatstart/index.tsx",
     "STEP 1.05"
    ],
-   "label": "the pack"
+   "label": "what the app is for"
   },
   {
    "op": "jsx",
    "args": [
-    "src/features/treatstart/components/product-card.tsx",
+    "src/app/treatstart/index.tsx",
     "STEP 1.06"
    ],
-   "label": "whether you like it"
+   "label": "and why"
   },
   {
    "op": "jsx",
    "args": [
-    "src/features/treatstart/components/product-card.tsx",
+    "src/app/treatstart/index.tsx",
     "STEP 1.07"
    ],
-   "label": "what it costs, and the way to buy it"
+   "label": "the way on"
   },
   {
    "op": "cutfirst",
    "args": [
-    "src/features/treatstart/components/product-card.tsx",
+    "src/app/treatstart/index.tsx",
     [
      "// MISTAKE 1.08",
-     "alignItems: 'center',"
+     "opacity: 0.4,"
     ]
    ],
-   "label": "the cards came in centred"
+   "label": "the copy came in half-faded"
   },
   {
-   "op": "jsx",
+   "op": "imp",
    "args": [
     "src/features/treatstart/components/hero-stack.tsx",
-    "STEP 1.09"
+    "./product-card"
    ],
-   "label": "the basket it goes to"
+   "label": "each card"
   },
   {
    "op": "jsx",
@@ -81,7 +81,7 @@
     "src/features/treatstart/components/hero-stack.tsx",
     "STEP 1.10"
    ],
-   "label": "and the list it comes from"
+   "label": "the first card"
   },
   {
    "op": "jsx",
@@ -89,7 +89,7 @@
     "src/features/treatstart/components/hero-stack.tsx",
     "STEP 1.11"
    ],
-   "label": "joined up"
+   "label": "and the second"
   },
   {
    "op": "jsx",
@@ -97,31 +97,82 @@
     "src/features/treatstart/components/hero-stack.tsx",
     "STEP 1.12"
    ],
-   "label": "both ways"
+   "label": "a chip"
   },
   {
    "op": "jsx",
    "args": [
-    "src/app/treatstart/index.tsx",
+    "src/features/treatstart/components/hero-stack.tsx",
     "STEP 1.13"
    ],
-   "label": "what the app is"
+   "label": "and another"
   },
   {
    "op": "jsx",
    "args": [
-    "src/app/treatstart/index.tsx",
+    "src/features/treatstart/components/hero-stack.tsx",
     "STEP 1.14"
    ],
-   "label": "and how it works"
+   "label": "an arrow"
   },
   {
    "op": "jsx",
    "args": [
-    "src/app/treatstart/index.tsx",
+    "src/features/treatstart/components/hero-stack.tsx",
     "STEP 1.15"
    ],
-   "label": "the one thing it asks"
+   "label": "and its answer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the control on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "what the figure is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the way to buy it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/treatstart/components/product-card.tsx",
+    [
+     "// MISTAKE 1.21",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the price row came in half-faded"
   },
   {
    "op": "final",

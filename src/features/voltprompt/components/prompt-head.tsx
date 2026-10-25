@@ -26,6 +26,7 @@ export function PromptHead({ label }: { label: string }) {
 
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+{/* STEP 1.09 what it asks
       <View
         style={{
           height: CHIP_HEIGHT,
@@ -41,19 +42,24 @@ export function PromptHead({ label }: { label: string }) {
           {label}
         </T>
       </View>
+*/}
 
       <View style={{ flex: 1 }} />
 
+{/* STEP 1.10 a way to drop it
       <Pressable accessibilityRole="button" accessibilityLabel={`Delete "${label}"`}>
         <View style={tool}>
           <Glyph name="trash" size={16} tint={vt.onCanvas} />
         </View>
       </Pressable>
+*/}
+{/* STEP 1.11 and a way to rename it
       <Pressable accessibilityRole="button" accessibilityLabel={`Edit "${label}"`}>
         <View style={[tool, { marginLeft: 8 }]}>
           <Glyph name="edit" size={16} tint={vt.onCanvas} />
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

@@ -11,15 +11,71 @@ import { wv } from '../theme';
  * `x` is a fraction of the page width and `y` a fraction of the cluster's own
  * height, so the throw keeps its shape on any phone.
  */
-export const brand = { name: 'fitplan', x: 0.42, y: 0.02, angle: -8 } as const;
+export const brand = {
+  name: 'fitplan',
+  label: 'fitplan',
+  from: 'left' as const,
+  x: 0.3,
+  y: 0.03,
+  angle: -8,
+};
 
+/**
+ * The throw.
+ *
+ * `from` is which edge the pill hangs off. Every pill used to be placed by a
+ * `left` fraction, which bunched them down the left edge and let a long label
+ * on a right-hand pill run off the screen - a pill is as wide as its words and
+ * nothing knows that in advance. Alternating the side down an even vertical
+ * rhythm is what makes it read as a scatter rather than a list.
+ */
 export const tags = [
-  { key: 'shopping', label: 'Shopping', color: wv.tags.shopping, x: 0.02, y: 0.26, angle: -7 },
-  { key: 'birthday', label: 'Birthday', color: wv.tags.birthday, x: 0.52, y: 0.33, angle: 9 },
-  { key: 'meeting', label: 'Meeting', color: wv.tags.meeting, x: 0.0, y: 0.58, angle: 0 },
-  { key: 'holiday', label: 'Holiday', color: wv.tags.holiday, x: 0.0, y: 0.86, angle: -4 },
-  { key: 'todo', label: 'To do List', color: wv.tags.todo, x: 0.42, y: 0.86, angle: 3 },
-] as const;
+  {
+    key: 'shopping',
+    label: 'Shopping',
+    color: wv.tags.shopping,
+    from: 'left' as const,
+    x: 0.03,
+    y: 0.22,
+    angle: -7,
+  },
+  {
+    key: 'birthday',
+    label: 'Birthday',
+    color: wv.tags.birthday,
+    from: 'right' as const,
+    x: 0.02,
+    y: 0.36,
+    angle: 9,
+  },
+  {
+    key: 'meeting',
+    label: 'Meeting',
+    color: wv.tags.meeting,
+    from: 'left' as const,
+    x: 0.08,
+    y: 0.5,
+    angle: -3,
+  },
+  {
+    key: 'holiday',
+    label: 'Holiday',
+    color: wv.tags.holiday,
+    from: 'right' as const,
+    x: 0.06,
+    y: 0.65,
+    angle: 5,
+  },
+  {
+    key: 'todo',
+    label: 'To do List',
+    color: wv.tags.todo,
+    from: 'left' as const,
+    x: 0.01,
+    y: 0.8,
+    angle: -5,
+  },
+];
 
 export const copy = {
   headline: ['Weave Your', 'Time, Design', 'Your Destiny.'],

@@ -25,6 +25,7 @@ export function BalanceCard({ onSeeAll }: { onSeeAll?: () => void }) {
         justifyContent: 'space-between',
       }}
     >
+{/* STEP 1.12 what it is, and in what
       <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
         <T variant="cardLabel" color={tl.ink} style={{ flex: 1, height: type.cardLabel.line }}>
           {copy.balanceLabel}
@@ -48,7 +49,9 @@ export function BalanceCard({ onSeeAll }: { onSeeAll?: () => void }) {
           </View>
         </Pressable>
       </View>
+*/}
 
+{/* STEP 1.15 and how much
       <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
         <T variant="amount" color={tl.ink} style={{ height: type.amount.line }}>
           {balance.major}
@@ -57,6 +60,7 @@ export function BalanceCard({ onSeeAll }: { onSeeAll?: () => void }) {
           {balance.minor}
         </T>
       </View>
+*/}
 
       <Pressable onPress={onSeeAll} accessibilityRole="button" accessibilityLabel={copy.seeAll}>
         <View

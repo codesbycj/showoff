@@ -1,6 +1,0 @@
-{
- "three-screen": "src/app/nutrithree/index.tsx",
- "onboarding-chrome": "src/features/nutrithree/components/onboarding-chrome.tsx",
- "plan-stage": "src/features/nutrithree/components/plan-stage.tsx",
- "stepper-row": "src/features/nutrithree/components/stepper-row.tsx"
-}

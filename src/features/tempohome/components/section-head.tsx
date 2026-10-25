@@ -16,9 +16,12 @@ import { T } from './text';
 export function SectionHead({ onSeeAll }: { onSeeAll?: () => void }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+{/* STEP 1.20 the list is named
       <T variant="section" color={tp.ink} style={{ height: type.section.line }}>
         {copy.section}
       </T>
+*/}
+{/* STEP 1.21 and the way to all of it
       <Pressable
         onPress={onSeeAll}
         accessibilityRole="link"
@@ -30,6 +33,7 @@ export function SectionHead({ onSeeAll }: { onSeeAll?: () => void }) {
         </T>
         <Glyph name="chevron" size={15} tint={tp.body} />
       </Pressable>
+*/}
     </View>
   );
 }

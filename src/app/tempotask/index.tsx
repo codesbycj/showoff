@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-// STEP 1.05 a word about it
+// STEP 1.11 one notice
 // import { NoticePill } from '@/features/tempotask/components/notice-pill';
-// STEP 1.03 how the week went
+// STEP 1.05 how the week went
 // import { ProgressCard } from '@/features/tempotask/components/progress-card';
-// STEP 1.07 and what ran when
+// STEP 1.16 and the day itself
 // import { TimelineCard } from '@/features/tempotask/components/timeline-card';
-// STEP 1.01 the way back and what this is
+// STEP 1.01 the way back
 // import { TopBar } from '@/features/tempotask/components/top-bar';
 import {
   HEADER_TOP,
@@ -45,32 +45,30 @@ export default function TempotaskScreen() {
     >
       <StatusBar style="dark" />
 
-{/* STEP 1.02 in place
+{/* STEP 1.02 and what this is
       <TopBar />
 */}
 
-{/* STEP 1.04 six days of it
+{/* STEP 1.06 on a card
       <View style={{ marginTop: PROGRESS_TOP }}>
         <ProgressCard />
       </View>
 */}
 
-{/* STEP 1.06 said once, in the dark
-      <View style={{ marginTop: NOTICE_TOP }}>
+{/* STEP 1.12 waiting on you
+      <View
+        style={{
+          marginTop: NOTICE_TOP,
+          // MISTAKE 1.13 the notice came in inset
+          paddingHorizontal: 34,
+        }}
+      >
         <NoticePill />
       </View>
 */}
 
-{/* STEP 1.08 on the same scale
-      <View
-        style={{
-          flex: 1,
-          marginTop: TIMELINE_TOP,
-          marginBottom: 2,
-          // MISTAKE 1.09 the timeline came in squeezed
-          maxHeight: 150,
-        }}
-      >
+{/* STEP 1.17 hour by hour
+      <View style={{ flex: 1, marginTop: TIMELINE_TOP, marginBottom: 2 }}>
         <TimelineCard />
       </View>
 */}

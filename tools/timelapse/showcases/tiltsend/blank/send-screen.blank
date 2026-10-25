@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-// STEP 1.03 how much is going
+// STEP 1.07 what you are sending
 // import { AmountHead } from '@/features/tiltsend/components/amount-head';
-// STEP 1.07 which card it comes from
+// STEP 1.16 and from which card
 // import { CardStack } from '@/features/tiltsend/components/card-stack';
-// STEP 1.05 who it is going to
+// STEP 1.12 who to
 // import { ContactRail } from '@/features/tiltsend/components/contact-rail';
-// STEP 1.09 the dock over the lot
+// STEP 1.19 where else it goes
 // import { Dock } from '@/features/tiltsend/components/dock';
-// STEP 1.01 the brand and who is signed in
+// STEP 1.01 the brand and the account
 // import { TopBar } from '@/features/tiltsend/components/top-bar';
 import { DISPLAY_TOP, HEADER_TOP, MARGIN, RAIL_TOP, STACK_TOP } from '@/features/tiltsend/layout';
 import { tl } from '@/features/tiltsend/theme';
@@ -33,36 +33,36 @@ export default function TiltsendScreen() {
       <StatusBar style="dark" />
 
       <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
-{/* STEP 1.02 in place
+{/* STEP 1.02 along the top
         <TopBar />
 */}
 
-{/* STEP 1.04 to the cent
+{/* STEP 1.08 centred on the page
         <View style={{ marginTop: DISPLAY_TOP }}>
           <AmountHead />
         </View>
 */}
 
-{/* STEP 1.06 four of them
-        <View style={{ marginTop: RAIL_TOP }}>
+{/* STEP 1.13 a rail of people
+        <View
+          style={{
+            marginTop: RAIL_TOP,
+            // MISTAKE 1.14 the rail came in half-faded
+            opacity: 0.4,
+          }}
+        >
           <ContactRail />
         </View>
 */}
 
-{/* STEP 1.08 and the two behind it
-        <View
-          style={{
-            marginTop: STACK_TOP,
-            // MISTAKE 1.10 the wallet came in shifted off the margin
-            marginLeft: 26,
-          }}
-        >
+{/* STEP 1.17 a stack of cards
+        <View style={{ marginTop: STACK_TOP }}>
           <CardStack />
         </View>
 */}
       </View>
 
-{/* STEP 1.11 floating over the lot
+{/* STEP 1.20 floating
       <Dock bottom={insets.bottom} />
 */}
     </View>

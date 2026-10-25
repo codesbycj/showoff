@@ -21,6 +21,7 @@ export function ChipRail() {
       style={{ marginHorizontal: -SHEET_PAD }}
       contentContainerStyle={{ paddingHorizontal: SHEET_PAD }}
     >
+{/* STEP 1.16 chip by chip
       {chips.map((c, i) => (
         <View
           key={c.id}
@@ -43,6 +44,7 @@ export function ChipRail() {
           </View>
         </View>
       ))}
+*/}
     </ScrollView>
   );
 }

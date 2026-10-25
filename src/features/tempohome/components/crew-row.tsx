@@ -30,6 +30,7 @@ export function CrewRow() {
         ...shadow.card,
       }}
     >
+{/* STEP 1.10 face by face
       <View style={{ flexDirection: 'row' }}>
         {crew.map((p, i) => (
           <View key={p.id} style={{ marginLeft: i === 0 ? 0 : -CREW_OVERLAP }}>
@@ -59,7 +60,9 @@ export function CrewRow() {
           </View>
         ))}
       </View>
+*/}
 
+{/* STEP 1.13 and how many
       <View
         style={{
           width: CREW_FACE,
@@ -75,6 +78,7 @@ export function CrewRow() {
           {crewMore}
         </T>
       </View>
+*/}
     </View>
   );
 }

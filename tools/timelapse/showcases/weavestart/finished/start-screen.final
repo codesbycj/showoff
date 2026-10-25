@@ -30,6 +30,14 @@ import { useInsets } from '@/features/weavestart/use-insets';
  *
  * Every handler is empty on purpose — the rest of this design is not in scope,
  * and what matters is that the destination is decided here.
+ *
+ * The three display lines are written out rather than mapped, so the reveal
+ * can set them one at a time - on a screen with four elements that is most
+ * of the build.
+ *
+ * The cluster takes the whole of what is left rather than a fixed height:
+ * at 280 the throw finished a third of the way down and left a band of
+ * empty page between it and the headline.
  */
 export default function WeaveStart() {
   const insets = useInsets();
@@ -46,22 +54,20 @@ export default function WeaveStart() {
           paddingHorizontal: MARGIN,
         }}
       >
-        {/*
-          The cluster takes the whole of what is left rather than a fixed 280:
-          at 280 the throw finished a third of the way down and left a band of
-          empty page between it and the headline, which is the one thing a
-          design shot never has.
-        */}
         <View style={{ flex: 1 }}>
           <TagCluster height="100%" />
         </View>
 
         <View style={{ marginTop: DISPLAY_TOP }}>
-          {copy.headline.map((line) => (
-            <T key={line} variant="display" color={wv.ink}>
-              {line}
-            </T>
-          ))}
+          <T variant="display" color={wv.ink}>
+            {copy.headline[0]}
+          </T>
+          <T variant="display" color={wv.ink}>
+            {copy.headline[1]}
+          </T>
+          <T variant="display" color={wv.ink}>
+            {copy.headline[2]}
+          </T>
         </View>
 
         <View style={{ marginTop: BUTTONS_TOP, gap: BUTTON_GAP }}>

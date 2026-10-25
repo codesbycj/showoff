@@ -6,7 +6,7 @@
     "src/app/tempohome/index.tsx",
     "@/features/tempohome/components/top-bar"
    ],
-   "label": "the controls across the top"
+   "label": "the controls"
   },
   {
    "op": "jsx",
@@ -14,7 +14,7 @@
     "src/app/tempohome/index.tsx",
     "STEP 1.02"
    ],
-   "label": "in place"
+   "label": "along the top"
   },
   {
    "op": "imp",
@@ -22,7 +22,7 @@
     "src/app/tempohome/index.tsx",
     "@/features/tempohome/components/headline"
    ],
-   "label": "what the day is for"
+   "label": "what the screen is"
   },
   {
    "op": "jsx",
@@ -30,7 +30,23 @@
     "src/app/tempohome/index.tsx",
     "STEP 1.04"
    ],
-   "label": "two lines and a gesture"
+   "label": "in two lines"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/headline.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the first line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/headline.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and the second"
   },
   {
    "op": "imp",
@@ -38,15 +54,34 @@
     "src/app/tempohome/index.tsx",
     "@/features/tempohome/components/crew-row"
    ],
-   "label": "who is about"
+   "label": "who is on"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tempohome/index.tsx",
-    "STEP 1.06"
+    "STEP 1.08"
    ],
-   "label": "on their own card"
+   "label": "the crew"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    [
+     "// MISTAKE 1.09",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the crew came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/crew-row.tsx",
+    "STEP 1.10"
+   ],
+   "label": "face by face"
   },
   {
    "op": "imp",
@@ -54,23 +89,7 @@
     "src/app/tempohome/index.tsx",
     "@/features/tempohome/components/notice-pill"
    ],
-   "label": "how much is waiting"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/app/tempohome/index.tsx",
-    "STEP 1.10"
-   ],
-   "label": "said once, in the dark"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tempohome/index.tsx",
-    "@/features/tempohome/components/section-head"
-   ],
-   "label": "today's work"
+   "label": "what is waiting"
   },
   {
    "op": "jsx",
@@ -78,7 +97,47 @@
     "src/app/tempohome/index.tsx",
     "STEP 1.12"
    ],
-   "label": "and the way to the rest"
+   "label": "one notice"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/crew-row.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and how many"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/notice-pill.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what it says"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/section-head"
+   ],
+   "label": "the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "what is on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/notice-pill.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and the way to it"
   },
   {
    "op": "imp",
@@ -86,26 +145,47 @@
     "src/app/tempohome/index.tsx",
     "@/features/tempohome/components/task-card"
    ],
-   "label": "the first of them"
+   "label": "the tasks"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tempohome/index.tsx",
-    "STEP 1.14"
+    "STEP 1.19"
    ],
-   "label": "stacked down the page"
+   "label": "card by card"
   },
   {
-   "op": "cutfirst",
+   "op": "jsx",
    "args": [
-    "src/app/tempohome/index.tsx",
-    [
-     "// MISTAKE 1.15",
-     "opacity: 0.45,"
-    ]
+    "src/features/tempohome/components/section-head.tsx",
+    "STEP 1.20"
    ],
-   "label": "the cards came in washed out"
+   "label": "the list is named"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/section-head.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and the way to all of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/task-card.tsx",
+    "STEP 1.22"
+   ],
+   "label": "its title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/task-card.tsx",
+    "STEP 1.23"
+   ],
+   "label": "what it is for"
   },
   {
    "op": "imp",
@@ -113,22 +193,78 @@
     "src/app/tempohome/index.tsx",
     "@/features/tempohome/components/tab-bar"
    ],
-   "label": "the dock over the lot"
+   "label": "and where else it goes"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tempohome/index.tsx",
-    "STEP 1.18"
+    "STEP 1.25"
    ],
-   "label": "floating over the list"
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/task-card.tsx",
+    "STEP 1.26"
+   ],
+   "label": "who is on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/task-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and how far through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/tab-bar.tsx",
+    "STEP 1.28"
+   ],
+   "label": "four tabs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempohome/components/tab-bar.tsx",
+    "STEP 1.29"
+   ],
+   "label": "and the way to add one"
   },
   {
    "op": "final",
    "args": [
     [
+     "crew-row",
+     "src/features/tempohome/components/crew-row.tsx"
+    ],
+    [
+     "headline",
+     "src/features/tempohome/components/headline.tsx"
+    ],
+    [
      "home-screen",
      "src/app/tempohome/index.tsx"
+    ],
+    [
+     "notice-pill",
+     "src/features/tempohome/components/notice-pill.tsx"
+    ],
+    [
+     "section-head",
+     "src/features/tempohome/components/section-head.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/tempohome/components/tab-bar.tsx"
+    ],
+    [
+     "task-card",
+     "src/features/tempohome/components/task-card.tsx"
     ]
    ],
    "label": "tidy up"

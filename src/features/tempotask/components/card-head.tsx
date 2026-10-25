@@ -8,6 +8,7 @@ import { T } from './text';
 export function CardHead({ title }: { title: string }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+{/* STEP 1.08 its mark
       <View
         style={{
           width: 30,
@@ -20,6 +21,8 @@ export function CardHead({ title }: { title: string }) {
       >
         <Glyph name="board" size={17} tint={tp.ink} />
       </View>
+*/}
+{/* STEP 1.09 and its name
       <T
         variant="display"
         color={tp.ink}
@@ -27,6 +30,7 @@ export function CardHead({ title }: { title: string }) {
       >
         {title}
       </T>
+*/}
       <Pressable accessibilityRole="button" accessibilityLabel="More" hitSlop={10}>
         <View
           style={{

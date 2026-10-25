@@ -1,4 +1,0 @@
-{
- "start-screen": "src/app/tembeastart/index.tsx",
- "place-tag": "src/features/tembeastart/components/place-tag.tsx"
-}

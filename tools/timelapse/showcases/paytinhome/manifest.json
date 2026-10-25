@@ -1,8 +1,0 @@
-{
- "home-screen": "src/app/paytinhome/index.tsx",
- "top-bar": "src/features/paytinhome/components/top-bar.tsx",
- "balance-card": "src/features/paytinhome/components/balance-card.tsx",
- "action-tile": "src/features/paytinhome/components/action-tile.tsx",
- "activity-row": "src/features/paytinhome/components/activity-row.tsx",
- "floating-dock": "src/features/paytinhome/components/floating-dock.tsx"
-}

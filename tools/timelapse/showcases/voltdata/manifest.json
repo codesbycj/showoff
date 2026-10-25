@@ -1,3 +1,7 @@
 {
- "data-screen": "src/app/voltdata/index.tsx"
+ "data-screen": "src/app/voltdata/index.tsx",
+ "top-bar": "src/features/voltdata/components/top-bar.tsx",
+ "source-row": "src/features/voltdata/components/source-row.tsx",
+ "result-card": "src/features/voltdata/components/result-card.tsx",
+ "dock": "src/features/voltdata/components/dock.tsx"
 }

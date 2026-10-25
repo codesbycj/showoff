@@ -38,17 +38,22 @@ export function TaskCard({
           ...shadow.card,
         }}
       >
+{/* STEP 1.16 its title
         <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
           <T variant="cardTitle" color={tp.ink} style={{ flex: 1, height: type.cardTitle.line }}>
             {title}
           </T>
           <Glyph name="dots" size={18} tint={tp.muted} />
         </View>
+*/}
 
+{/* STEP 1.17 what it is for
         <T variant="cardBody" color={tp.body} style={{ marginTop: 6 }}>
           {body}
         </T>
+*/}
 
+{/* STEP 1.18 who is on it
         <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14 }}>
           {faces.map((f, i) => (
             <Image
@@ -72,7 +77,9 @@ export function TaskCard({
             {more}
           </T>
         </View>
+*/}
 
+{/* STEP 1.19 and how far through
         <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 12 }}>
           <View
             style={{
@@ -95,6 +102,7 @@ export function TaskCard({
             {Math.round(progress * 100)}%
           </T>
         </View>
+*/}
       </View>
     </Pressable>
   );

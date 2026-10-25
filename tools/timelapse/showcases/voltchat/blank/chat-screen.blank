@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, View } from 'react-native';
 
-// STEP 1.09 and what you are about to ask
+// STEP 1.17 and what you will ask
 // import { AskBar } from '@/features/voltchat/components/ask-bar';
-// STEP 1.07 what it offers next
+// STEP 1.13 what it offers next
 // import { ChipRail } from '@/features/voltchat/components/chip-rail';
-import { Glyph } from '@/features/voltchat/components/glyph';
-// STEP 1.05 the figures it has to hand
+// STEP 1.01 the icon set
+// import { Glyph } from '@/features/voltchat/components/glyph';
+// STEP 1.08 the figures it has
 // import { ReadingRow } from '@/features/voltchat/components/reading-row';
 import { T } from '@/features/voltchat/components/text';
 import { copy, readings } from '@/features/voltchat/data/data';
@@ -37,6 +38,11 @@ import { useInsets } from '@/features/voltchat/use-insets';
  * The black sheet runs off the bottom edge rather than stopping above it: it
  * is the conversation, and one that ends in a band of paper looks finished
  * when it is not. The input sits inside the sheet, above the home indicator.
+ *
+ * The sheet's black is painted by an absolutely-filled child rather than by
+ * the container's own `backgroundColor`, so that it can be staged. A
+ * container that carries its own fill is visible from step one, and the
+ * reveal then opens on a black bar instead of on an empty page.
  */
 export default function VoltchatScreen() {
   const insets = useInsets();
@@ -54,7 +60,6 @@ export default function VoltchatScreen() {
     <View style={{ flex: 1, backgroundColor: vt.canvas }}>
       <StatusBar style="dark" />
 
-{/* STEP 1.01 the way back and what this is
       <View
         style={{
           flexDirection: 'row',
@@ -63,11 +68,14 @@ export default function VoltchatScreen() {
           paddingHorizontal: MARGIN,
         }}
       >
+{/* STEP 1.02 the way back
         <Pressable accessibilityRole="button" accessibilityLabel="Go back">
           <View style={disc}>
             <Glyph name="back" size={19} tint={vt.onCanvas} />
           </View>
         </Pressable>
+*/}
+{/* STEP 1.03 what this is
         <T
           variant="section"
           color={vt.onCanvas}
@@ -75,13 +83,15 @@ export default function VoltchatScreen() {
         >
           {copy.title}
         </T>
+*/}
+{/* STEP 1.04 and the inbox
         <Pressable accessibilityRole="button" accessibilityLabel="Messages">
           <View style={disc}>
             <Glyph name="inbox" size={19} tint={vt.onCanvas} />
           </View>
         </Pressable>
+*/}
       </View>
-      */}
 
       <View
         style={{
@@ -90,12 +100,26 @@ export default function VoltchatScreen() {
           marginHorizontal: MARGIN,
           borderTopLeftRadius: 28,
           borderTopRightRadius: 28,
-          backgroundColor: vt.sheet,
           padding: SHEET_PAD,
         }}
       >
-{/* STEP 1.03 the bolt and the question
+{/* STEP 1.05 the sheet arrives
+        <View
+          style={{
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            borderTopLeftRadius: 28,
+            borderTopRightRadius: 28,
+            backgroundColor: vt.sheet,
+          }}
+        />
+*/}
+
         <View style={{ alignItems: 'center', marginTop: BOLT_TOP }}>
+{/* STEP 1.06 the bolt
           <View
             style={{
               width: BOLT_SIZE,
@@ -108,23 +132,18 @@ export default function VoltchatScreen() {
           >
             <Glyph name="bolt" size={28} tint={vt.onAcid} />
           </View>
+*/}
+{/* STEP 1.07 and the question
           <T variant="ask" color={vt.ink} style={{ marginTop: ASK_TOP, height: type.ask.line }}>
             {copy.ask}
           </T>
-        </View>
 */}
+        </View>
 
-{/* STEP 1.06 three of them
         <View style={{ marginTop: ROWS_TOP }}>
+{/* STEP 1.09 three readings
           {readings.map((r, i) => (
-            <View
-              key={r.id}
-              style={{
-                marginTop: i === 0 ? 0 : ROW_GAP,
-                // MISTAKE 1.10 the rows came in half-faded
-                opacity: 0.4,
-              }}
-            >
+            <View key={r.id} style={{ marginTop: i === 0 ? 0 : ROW_GAP }}>
               <ReadingRow
                 label={r.label}
                 value={r.value}
@@ -134,18 +153,24 @@ export default function VoltchatScreen() {
               />
             </View>
           ))}
-        </View>
 */}
+        </View>
 
         <View style={{ flex: 1 }} />
 
-{/* STEP 1.08 as a rail you push
-        <View style={{ marginTop: CHIPS_TOP }}>
+{/* STEP 1.14 a rail of next moves
+        <View
+          style={{
+            marginTop: CHIPS_TOP,
+            // MISTAKE 1.15 the rail came in inset
+            paddingHorizontal: 30,
+          }}
+        >
           <ChipRail />
         </View>
 */}
 
-{/* STEP 1.11 across the foot
+{/* STEP 1.18 and the box for the next one
         <View style={{ marginTop: INPUT_TOP, marginBottom: insets.bottom }}>
           <AskBar />
         </View>

@@ -16,6 +16,7 @@ import { T } from './text';
 export function TopBar({ onBack }: { onBack?: () => void }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+{/* STEP 1.03 the way back
       <Pressable onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">
         <View
           style={{
@@ -30,6 +31,8 @@ export function TopBar({ onBack }: { onBack?: () => void }) {
           <Glyph name="back" size={19} tint={tp.ink} />
         </View>
       </Pressable>
+*/}
+{/* STEP 1.04 and the title
       <T
         variant="display"
         color={tp.ink}
@@ -37,6 +40,7 @@ export function TopBar({ onBack }: { onBack?: () => void }) {
       >
         {copy.title}
       </T>
+*/}
       <View style={{ width: HEADER_SIZE }} />
     </View>
   );

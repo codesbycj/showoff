@@ -18,6 +18,7 @@ export function ToolRail() {
 
   return (
     <View style={{ position: 'absolute', right: -6, top: 10 }}>
+{/* STEP 1.20 stacked on the edge
       {tools.map((t, i) => (
         <Pressable key={t} accessibilityRole="button" accessibilityLabel={t}>
           <View
@@ -35,6 +36,7 @@ export function ToolRail() {
           </View>
         </Pressable>
       ))}
+*/}
     </View>
   );
 }

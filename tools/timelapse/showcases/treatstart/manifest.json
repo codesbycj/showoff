@@ -1,5 +1,5 @@
 {
  "start-screen": "src/app/treatstart/index.tsx",
- "product-card": "src/features/treatstart/components/product-card.tsx",
- "hero-stack": "src/features/treatstart/components/hero-stack.tsx"
+ "hero-stack": "src/features/treatstart/components/hero-stack.tsx",
+ "product-card": "src/features/treatstart/components/product-card.tsx"
 }

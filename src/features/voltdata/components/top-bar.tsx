@@ -24,16 +24,21 @@ export function TopBar() {
 
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+{/* STEP 1.03 the assistant
       <Pressable accessibilityRole="button" accessibilityLabel="Assistant">
         <View style={disc(vt.slab)}>
           <Glyph name="bolt" size={20} tint={vt.acid} />
         </View>
       </Pressable>
+*/}
+{/* STEP 1.04 the shortcuts
       <Pressable accessibilityRole="button" accessibilityLabel="Shortcuts">
         <View style={disc(vt.slab)}>
           <Glyph name="command" size={19} tint={vt.ink} />
         </View>
       </Pressable>
+*/}
+{/* STEP 1.05 and the alerts
       <Pressable accessibilityRole="button" accessibilityLabel="Alerts">
         <View style={disc(vt.slab)}>
           <Glyph name="bell" size={19} tint={vt.ink} />
@@ -52,6 +57,7 @@ export function TopBar() {
           />
         </View>
       </Pressable>
+*/}
       <View style={{ flex: 1 }} />
       <Pressable accessibilityRole="button" accessibilityLabel="Your account">
         <Image

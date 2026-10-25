@@ -1,3 +1,8 @@
 {
- "cal-screen": "src/app/tempocal/index.tsx"
+ "cal-screen": "src/app/tempocal/index.tsx",
+ "top-bar": "src/features/tempocal/components/top-bar.tsx",
+ "month-grid": "src/features/tempocal/components/month-grid.tsx",
+ "section-head": "src/features/tempocal/components/section-head.tsx",
+ "task-card": "src/features/tempocal/components/task-card.tsx",
+ "tab-bar": "src/features/tempocal/components/tab-bar.tsx"
 }

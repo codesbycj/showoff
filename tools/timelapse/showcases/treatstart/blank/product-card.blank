@@ -42,8 +42,6 @@ export function ProductCard({
     <View
       style={{
         width: CARD_W,
-        // MISTAKE 1.08 the cards came in centred
-        alignItems: 'center',
         padding: CARD_PAD,
         borderRadius: radius.card,
         backgroundColor: tr.card,
@@ -51,14 +49,14 @@ export function ProductCard({
       }}
     >
       <View>
-        {/* STEP 1.05 the pack
+{/* STEP 1.16 the photograph
         <Image
           source={ART[product.art]}
           style={{ width: '100%', height: PHOTO_H, borderRadius: radius.photo }}
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
-        */}
+*/}
 
         {showName ? (
           <View style={{ position: 'absolute', left: 12, top: 10, width: 86 }}>
@@ -68,7 +66,7 @@ export function ProductCard({
           </View>
         ) : null}
 
-        {/* STEP 1.06 whether you like it
+{/* STEP 1.17 the control on it
         <View
           style={{
             position: 'absolute',
@@ -84,27 +82,33 @@ export function ProductCard({
         >
           <Heart size={13} />
         </View>
-        */}
+*/}
       </View>
 
-      {/* STEP 1.07 what it costs, and the way to buy it
       <View
         style={{
           marginTop: 10,
+          // MISTAKE 1.21 the price row came in half-faded
+          opacity: 0.4,
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >
         <View>
+{/* STEP 1.18 what the figure is
           <T variant="priceLabel" color={tr.muted}>
             {labels.price}
           </T>
+*/}
+{/* STEP 1.19 and the figure
           <T variant="price" color={tr.ink}>
             {product.price}
           </T>
+*/}
         </View>
 
+{/* STEP 1.20 and the way to buy it
         <Pressable
           onPress={onAdd}
           onPressIn={() => setHeld(true)}
@@ -128,8 +132,8 @@ export function ProductCard({
             </T>
           </View>
         </Pressable>
+*/}
       </View>
-      */}
     </View>
   );
 }

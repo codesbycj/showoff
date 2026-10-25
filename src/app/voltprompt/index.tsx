@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, ScrollView, View } from 'react-native';
 
-// STEP 1.09 and the box for the next one
+// STEP 1.24 the next question
 // import { AskBar } from '@/features/voltprompt/components/ask-bar';
-import { Glyph } from '@/features/voltprompt/components/glyph';
-// STEP 1.05 its answer, hour by hour
+// STEP 1.01 the icon set
+// import { Glyph } from '@/features/voltprompt/components/glyph';
+// STEP 1.12 its answer
 // import { HourChart } from '@/features/voltprompt/components/hour-chart';
-// STEP 1.03 the first saved prompt
+// STEP 1.07 a saved prompt
 // import { PromptHead } from '@/features/voltprompt/components/prompt-head';
 import { T } from '@/features/voltprompt/components/text';
-// STEP 1.07 how to read it
+// STEP 1.18 how to read it
 // import { ToolRail } from '@/features/voltprompt/components/tool-rail';
 import { copy, leads, prompts, savedCount } from '@/features/voltprompt/data/data';
 import {
@@ -50,11 +51,14 @@ export default function VoltpromptScreen() {
       <StatusBar style="dark" />
 
       <View style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: MARGIN }}>
+{/* STEP 1.02 the way back
         <Pressable accessibilityRole="button" accessibilityLabel="Go back">
           <View style={disc}>
             <Glyph name="back" size={19} tint={vt.onCanvas} />
           </View>
         </Pressable>
+*/}
+{/* STEP 1.03 what the screen is
         <T
           variant="section"
           color={vt.onCanvas}
@@ -62,14 +66,16 @@ export default function VoltpromptScreen() {
         >
           {copy.title}
         </T>
+*/}
+{/* STEP 1.04 and the inbox
         <Pressable accessibilityRole="button" accessibilityLabel="Messages">
           <View style={disc}>
             <Glyph name="inbox" size={19} tint={vt.onCanvas} />
           </View>
         </Pressable>
+*/}
       </View>
 
-{/* STEP 1.01 how many there are
       <View
         style={{
           flexDirection: 'row',
@@ -78,9 +84,12 @@ export default function VoltpromptScreen() {
           paddingHorizontal: MARGIN,
         }}
       >
+{/* STEP 1.05 how many prompts
         <T variant="rowTitle" color={vt.onCanvas} style={{ flex: 1, height: type.rowTitle.line }}>
           {copy.prompts}
         </T>
+*/}
+{/* STEP 1.06 counted, not typed
         <View
           style={{
             width: COUNT_SIZE,
@@ -95,33 +104,40 @@ export default function VoltpromptScreen() {
             {String(savedCount)}
           </T>
         </View>
+*/}
       </View>
-      */}
 
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: MARGIN, paddingBottom: 12 }}
       >
-{/* STEP 1.06 with its chart under it
         <View style={{ marginTop: PROMPT_TOP }}>
+{/* STEP 1.08 the first one
           <PromptHead label={prompts[0].label} />
+*/}
           <View style={{ marginTop: 14 }}>
+{/* STEP 1.13 on the page
             <HourChart />
+*/}
+{/* STEP 1.19 four ways
             <ToolRail />
+*/}
           </View>
         </View>
-*/}
 
-{/* STEP 1.08 and the second
-        <View
-          style={{
-            marginTop: PROMPT_TOP + 8,
-            // MISTAKE 1.10 the second prompt came in half-faded
-            opacity: 0.4,
-          }}
-        >
+        <View style={{ marginTop: PROMPT_TOP + 8 }}>
+{/* STEP 1.21 the second prompt
           <PromptHead label={prompts[1].label} />
-          <View style={{ flexDirection: 'row', marginTop: 16 }}>
+*/}
+{/* STEP 1.22 three figures
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 16,
+              // MISTAKE 1.23 the figures came in half-faded
+              opacity: 0.4,
+            }}
+          >
             {leads.map((l) => (
               <View key={l.id} style={{ flex: 1 }}>
                 <T variant="figure" color={vt.onCanvas} style={{ height: type.figure.line }}>
@@ -133,11 +149,10 @@ export default function VoltpromptScreen() {
               </View>
             ))}
           </View>
-        </View>
 */}
+        </View>
       </ScrollView>
 
-{/* STEP 1.11 across the foot
       <View
         style={{
           marginTop: INPUT_TOP,
@@ -145,9 +160,10 @@ export default function VoltpromptScreen() {
           marginBottom: insets.bottom + 8,
         }}
       >
+{/* STEP 1.25 pinned to the foot
         <AskBar />
-      </View>
 */}
+      </View>
     </View>
   );
 }

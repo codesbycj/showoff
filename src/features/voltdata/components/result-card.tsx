@@ -40,13 +40,18 @@ export function ResultCard({
       }}
     >
       <View style={{ flex: 1, justifyContent: 'space-between' }}>
+{/* STEP 1.15 the figure
         <T variant="figure" color={ink} style={{ height: type.figure.line }}>
           {figure}
         </T>
+*/}
+{/* STEP 1.16 what it means
         <T variant="caption" color={sub} style={{ maxWidth: 190 }}>
           {caption}
         </T>
+*/}
       </View>
+{/* STEP 1.17 and its mark
       <View
         style={{
           width: 40,
@@ -59,6 +64,7 @@ export function ResultCard({
       >
         <Glyph name={mark} size={19} tint={discInk} />
       </View>
+*/}
     </View>
   );
 }

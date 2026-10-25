@@ -1,9 +1,0 @@
-{
- "brands-screen": "src/app/milesbrands/index.tsx",
- "header": "src/features/milesbrands/components/header.tsx",
- "search-field": "src/features/milesbrands/components/search-field.tsx",
- "stage": "src/features/milesbrands/components/stage.tsx",
- "filter-row": "src/features/milesbrands/components/filter-row.tsx",
- "promo-card": "src/features/milesbrands/components/promo-card.tsx",
- "tab-bar": "src/features/milesbrands/components/tab-bar.tsx"
-}

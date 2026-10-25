@@ -1,7 +1,0 @@
-{
- "case-screen": "src/app/sugarcase/index.tsx",
- "app-bar": "src/features/sugarcase/components/app-bar.tsx",
- "flow-node": "src/features/sugarcase/components/flow-node.tsx",
- "tool-rail": "src/features/sugarcase/components/tool-rail.tsx",
- "chrome-bar": "src/features/sugarcase/components/chrome-bar.tsx"
-}

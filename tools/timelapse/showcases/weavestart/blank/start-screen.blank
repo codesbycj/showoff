@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, View } from 'react-native';
 
-// STEP 1.07 the two ways in
+// STEP 1.13 the ways in
 // import { SignInButton } from '@/features/weavestart/components/sign-in-button';
-// STEP 1.01 the throw of tags
+// STEP 1.01 the throw
 // import { TagCluster } from '@/features/weavestart/components/tag-cluster';
 import { T } from '@/features/weavestart/components/text';
 import { copy } from '@/features/weavestart/data/signin';
@@ -32,6 +32,14 @@ import { useInsets } from '@/features/weavestart/use-insets';
  *
  * Every handler is empty on purpose — the rest of this design is not in scope,
  * and what matters is that the destination is decided here.
+ *
+ * The three display lines are written out rather than mapped, so the reveal
+ * can set them one at a time - on a screen with four elements that is most
+ * of the build.
+ *
+ * The cluster takes the whole of what is left rather than a fixed height:
+ * at 280 the throw finished a third of the way down and left a band of
+ * empty page between it and the headline.
  */
 export default function WeaveStart() {
   const insets = useInsets();
@@ -48,39 +56,51 @@ export default function WeaveStart() {
           paddingHorizontal: MARGIN,
         }}
       >
-        {/*
-          The cluster takes the whole of what is left rather than a fixed 280:
-          at 280 the throw finished a third of the way down and left a band of
-          empty page between it and the headline, which is the one thing a
-          design shot never has.
-        */}
-        <View style={{ flex: 1 }}>
-          {/* STEP 1.02 across the top
+{/* STEP 1.02 onto the page
+        <View
+          style={{
+            flex: 1,
+            // MISTAKE 1.09 the throw came in half-faded
+            opacity: 0.45,
+          }}
+        >
           <TagCluster height="100%" />
-          */}
         </View>
+*/}
 
-        {/* STEP 1.06 what the app is for
         <View style={{ marginTop: DISPLAY_TOP }}>
-          {copy.headline.map((line) => (
-            <T key={line} variant="display" color={wv.ink}>
-              {line}
-            </T>
-          ))}
+{/* STEP 1.10 the first line
+          <T variant="display" color={wv.ink}>
+            {copy.headline[0]}
+          </T>
+*/}
+{/* STEP 1.11 the second
+          <T variant="display" color={wv.ink}>
+            {copy.headline[1]}
+          </T>
+*/}
+{/* STEP 1.12 and the third
+          <T variant="display" color={wv.ink}>
+            {copy.headline[2]}
+          </T>
+*/}
         </View>
-        */}
 
-        {/* STEP 1.08 under the headline
         <View style={{ marginTop: BUTTONS_TOP, gap: BUTTON_GAP }}>
+{/* STEP 1.14 one way in
           <SignInButton label={copy.google} glyph="google" tone="light" />
+*/}
+{/* STEP 1.15 and another
           <SignInButton label={copy.apple} glyph="apple" tone="dark" />
+*/}
         </View>
-        */}
 
-        {/* STEP 1.11 and one for newcomers
+{/* STEP 1.18 and the way to join
         <View
           style={{
             marginTop: FOOT_TOP,
+            // MISTAKE 1.19 the foot came in inset
+            paddingHorizontal: 40,
             flexDirection: 'row',
             justifyContent: 'center',
             gap: 5,
@@ -95,7 +115,7 @@ export default function WeaveStart() {
             </T>
           </Pressable>
         </View>
-        */}
+*/}
       </View>
     </View>
   );

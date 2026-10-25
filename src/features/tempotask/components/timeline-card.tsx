@@ -21,6 +21,9 @@ import { T } from './text';
  * is fixed, so whatever rounding the header and the gaps actually come to, the
  * last card absorbs it and the screen still reaches its own bottom edge —
  * which a fixed height got wrong by 56dp on the first pass.
+ *
+ * The day the card is about is painted behind the bars rather than
+ * between them, so the bars keep an even rhythm.
  */
 export function TimelineCard() {
   const tone = (t: string) => (t === 'orange' ? tp.orange : t === 'green' ? tp.green : tp.blue);
@@ -36,11 +39,13 @@ export function TimelineCard() {
         ...shadow.card,
       }}
     >
+{/* STEP 1.18 the card names itself
       <CardHead title={copy.timeline} />
+*/}
 
       <View style={{ flex: 1, marginTop: 16 }}>
+{/* STEP 1.19 the bars
         <View style={{ flex: 1 }}>
-          {/* the day the card is about, behind the bars */}
           <View
             style={{
               position: 'absolute',
@@ -94,7 +99,9 @@ export function TimelineCard() {
             </View>
           ))}
         </View>
+*/}
 
+{/* STEP 1.20 and the hours
         <View style={{ flexDirection: 'row', marginTop: 8 }}>
           {days.map((d) => (
             <View key={d.day} style={{ flex: 1, alignItems: 'center' }}>
@@ -108,6 +115,7 @@ export function TimelineCard() {
             </View>
           ))}
         </View>
+*/}
       </View>
     </View>
   );

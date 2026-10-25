@@ -6,7 +6,7 @@
     "src/app/voltdata/index.tsx",
     "@/features/voltdata/components/top-bar"
    ],
-   "label": "the assistant and who is here"
+   "label": "the controls"
   },
   {
    "op": "jsx",
@@ -14,23 +14,31 @@
     "src/app/voltdata/index.tsx",
     "STEP 1.02"
    ],
-   "label": "in place"
+   "label": "along the top"
   },
   {
    "op": "jsx",
    "args": [
-    "src/app/voltdata/index.tsx",
+    "src/features/voltdata/components/top-bar.tsx",
     "STEP 1.03"
    ],
-   "label": "what the block is"
+   "label": "the assistant"
   },
   {
-   "op": "imp",
+   "op": "jsx",
    "args": [
-    "src/app/voltdata/index.tsx",
-    "@/features/voltdata/components/source-row"
+    "src/features/voltdata/components/top-bar.tsx",
+    "STEP 1.04"
    ],
-   "label": "where they come from"
+   "label": "the shortcuts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltdata/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the alerts"
   },
   {
    "op": "jsx",
@@ -38,15 +46,15 @@
     "src/app/voltdata/index.tsx",
     "STEP 1.06"
    ],
-   "label": "three of them, and one more"
+   "label": "what to connect"
   },
   {
    "op": "imp",
    "args": [
     "src/app/voltdata/index.tsx",
-    "@/features/voltdata/components/result-card"
+    "@/features/voltdata/components/source-row"
    ],
-   "label": "what they add up to"
+   "label": "what it reads from"
   },
   {
    "op": "jsx",
@@ -54,26 +62,23 @@
     "src/app/voltdata/index.tsx",
     "STEP 1.08"
    ],
-   "label": "three lines of the sum"
+   "label": "the sources"
   },
   {
-   "op": "imp",
+   "op": "jsx",
    "args": [
-    "src/app/voltdata/index.tsx",
-    "@/features/voltdata/components/dock"
+    "src/features/voltdata/components/source-row.tsx",
+    "STEP 1.09"
    ],
-   "label": "the dock at the foot"
+   "label": "one disc each"
   },
   {
-   "op": "cutfirst",
+   "op": "jsx",
    "args": [
-    "src/app/voltdata/index.tsx",
-    [
-     "// MISTAKE 1.10",
-     "marginBottom: -34,"
-    ]
+    "src/features/voltdata/components/source-row.tsx",
+    "STEP 1.10"
    ],
-   "label": "the cards came in crushed together"
+   "label": "and a way to add one"
   },
   {
    "op": "jsx",
@@ -81,7 +86,90 @@
     "src/app/voltdata/index.tsx",
     "STEP 1.11"
    ],
-   "label": "across the foot"
+   "label": "what it is worth"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "@/features/voltdata/components/result-card"
+   ],
+   "label": "what it found"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "card by card"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    [
+     "// MISTAKE 1.14",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the cards came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltdata/components/result-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltdata/components/result-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "what it means"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltdata/components/result-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and its mark"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "@/features/voltdata/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltdata/components/dock.tsx",
+    "STEP 1.20"
+   ],
+   "label": "three tabs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltdata/components/dock.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and the way to ask"
   },
   {
    "op": "final",
@@ -89,6 +177,22 @@
     [
      "data-screen",
      "src/app/voltdata/index.tsx"
+    ],
+    [
+     "dock",
+     "src/features/voltdata/components/dock.tsx"
+    ],
+    [
+     "result-card",
+     "src/features/voltdata/components/result-card.tsx"
+    ],
+    [
+     "source-row",
+     "src/features/voltdata/components/source-row.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/voltdata/components/top-bar.tsx"
     ]
    ],
    "label": "tidy up"

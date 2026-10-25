@@ -27,6 +27,7 @@ export function NoticePill({ onDismiss }: { onDismiss?: () => void }) {
       }}
     >
       <Glyph name="bubble" size={24} tint={tp.green} />
+{/* STEP 1.14 what it says
       <T
         variant="notice"
         color={tp.onDark}
@@ -34,6 +35,8 @@ export function NoticePill({ onDismiss }: { onDismiss?: () => void }) {
       >
         {copy.notice}
       </T>
+*/}
+{/* STEP 1.17 and the way to it
       <Pressable
         onPress={onDismiss}
         accessibilityRole="button"
@@ -53,6 +56,7 @@ export function NoticePill({ onDismiss }: { onDismiss?: () => void }) {
           <Glyph name="close" size={15} tint={tp.onDark} />
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

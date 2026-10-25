@@ -1,6 +1,0 @@
-{
- "board-screen": "src/app/quizboard/index.tsx",
- "header": "src/features/quizboard/components/header.tsx",
- "podium": "src/features/quizboard/components/podium.tsx",
- "rank-list": "src/features/quizboard/components/rank-list.tsx"
-}

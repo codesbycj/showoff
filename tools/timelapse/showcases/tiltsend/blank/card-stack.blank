@@ -1,0 +1,121 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path, Rect } from 'react-native-svg';
+
+import { cards } from '../data/home';
+import { CARD_HEIGHT, CARD_PAD, CARD_PEEK } from '../layout';
+import { radius, tl, type } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+/**
+ * The wallet: the card you are paying with, and the ones under it.
+ *
+ * **The scheme mark is invented.** The reference prints VISA on two of its
+ * cards and Mastercard's interlocking discs on the third; those are other
+ * companies' trademarks and this page is branded as an app that is not
+ * theirs, so the cards carry a mark of this project's instead — two offset
+ * bars, drawn, in the same corner at the same size.
+ *
+ * **The cards behind are strips, not full cards pulled up.** The first attempt
+ * rendered three full cards and pulled each one up over the last, which puts
+ * the *later* siblings on top — React Native paints in document order, so the
+ * card you are paying with ended up underneath the two behind it and lost its
+ * expiry, its holder and its button. A card that is not the front one is only
+ * ever its own top edge, so it is drawn as exactly that.
+ *
+ * `overflow: 'hidden'` and `elevation` are kept off the same `View`, which is
+ * unreliable on Android.
+ */
+function SchemeMark({ tint }: { tint: string }) {
+  return (
+    <Svg width={46} height={16} viewBox="0 0 46 16">
+      <Rect x={0} y={3} width={20} height={10} rx={5} fill={tint} />
+      <Path d="M24 13 32 3h4l-8 10Z" fill={tint} />
+      <Rect x={36} y={3} width={10} height={10} rx={5} fill={tint} opacity={0.75} />
+    </Svg>
+  );
+}
+
+export function CardStack() {
+  const fill = (tone: string) =>
+    tone === 'violet' ? tl.violet : tone === 'coral' ? tl.coral : tl.lime;
+  const ink = (tone: string) => (tone === 'lime' ? tl.ink : tl.onNavy);
+
+  return (
+    <View>
+{/* STEP 1.18 card by card
+      {cards.map((c, i) => {
+        const front = i === 0;
+        return (
+          <Pressable
+            key={c.id}
+            accessibilityRole="button"
+            accessibilityLabel={`Card ending ${c.pan.slice(-4)}`}
+            style={{ marginTop: front ? 0 : 0 }}
+          >
+            <View
+              style={{
+                height: front ? CARD_HEIGHT : CARD_PEEK,
+                borderRadius: radius.card,
+                backgroundColor: fill(c.tone),
+                paddingHorizontal: CARD_PAD,
+                paddingTop: front ? 22 : 18,
+              }}
+            >
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <T variant="pan" color={ink(c.tone)} style={{ flex: 1, height: type.pan.line }}>
+                  {c.pan}
+                </T>
+                <SchemeMark tint={ink(c.tone)} />
+              </View>
+
+              {front ? (
+                <>
+                  <View style={{ flexDirection: 'row', marginTop: 18 }}>
+                    <T
+                      variant="cardMeta"
+                      color={ink(c.tone)}
+                      style={{ height: type.cardMeta.line }}
+                    >
+                      {c.expiry}
+                    </T>
+                    <T
+                      variant="cardMeta"
+                      color={ink(c.tone)}
+                      style={{ marginLeft: 26, height: type.cardMeta.line }}
+                    >
+                      {c.cvv}
+                    </T>
+                  </View>
+
+                  <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
+                    <T
+                      variant="cardName"
+                      color={ink(c.tone)}
+                      style={{ flex: 1, height: type.cardName.line }}
+                    >
+                      {c.holder}
+                    </T>
+                    <View
+                      style={{
+                        width: 32,
+                        height: 32,
+                        borderRadius: radius.control,
+                        backgroundColor: tl.lime,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Glyph name="chevron" size={16} tint={tl.ink} />
+                    </View>
+                  </View>
+                </>
+              ) : null}
+            </View>
+          </Pressable>
+        );
+      })}
+*/}
+    </View>
+  );
+}

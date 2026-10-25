@@ -15,6 +15,7 @@ import { Glyph } from './glyph';
 export function SourceRow({ onAdd }: { onAdd?: () => void }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+{/* STEP 1.09 one disc each
       {sources.map((s, i) => (
         <Pressable key={s.id} accessibilityRole="button" accessibilityLabel="A connected source">
           <View
@@ -32,7 +33,9 @@ export function SourceRow({ onAdd }: { onAdd?: () => void }) {
           </View>
         </Pressable>
       ))}
+*/}
 
+{/* STEP 1.10 and a way to add one
       <Pressable
         onPress={onAdd}
         style={{ flex: 1 }}
@@ -52,6 +55,7 @@ export function SourceRow({ onAdd }: { onAdd?: () => void }) {
           <Glyph name="plus" size={22} tint={vt.onAcid} />
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

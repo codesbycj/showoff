@@ -32,6 +32,7 @@ export function Dock({ active = 'home', bottom }: { active?: string; bottom: num
         ...shadow.dock,
       }}
     >
+{/* STEP 1.25 tab by tab
       {dock.map((d) => (
         <View key={d} style={{ flex: 1, alignItems: 'center' }}>
           <Pressable accessibilityRole="tab" accessibilityLabel={d} hitSlop={12}>
@@ -54,6 +55,7 @@ export function Dock({ active = 'home', bottom }: { active?: string; bottom: num
           </Pressable>
         </View>
       ))}
+*/}
     </View>
   );
 }

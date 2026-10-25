@@ -6,7 +6,7 @@
     "src/app/tempotask/index.tsx",
     "@/features/tempotask/components/top-bar"
    ],
-   "label": "the way back and what this is"
+   "label": "the way back"
   },
   {
    "op": "jsx",
@@ -14,7 +14,23 @@
     "src/app/tempotask/index.tsx",
     "STEP 1.02"
    ],
-   "label": "in place"
+   "label": "and what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the title"
   },
   {
    "op": "imp",
@@ -28,9 +44,41 @@
    "op": "jsx",
    "args": [
     "src/app/tempotask/index.tsx",
-    "STEP 1.04"
+    "STEP 1.06"
    ],
-   "label": "six days of it"
+   "label": "on a card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/progress-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the card names itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/card-head.tsx",
+    "STEP 1.08"
+   ],
+   "label": "its mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/card-head.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and its name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/progress-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "day by day"
   },
   {
    "op": "imp",
@@ -38,15 +86,42 @@
     "src/app/tempotask/index.tsx",
     "@/features/tempotask/components/notice-pill"
    ],
-   "label": "a word about it"
+   "label": "one notice"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tempotask/index.tsx",
-    "STEP 1.06"
+    "STEP 1.12"
    ],
-   "label": "said once, in the dark"
+   "label": "waiting on you"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    [
+     "// MISTAKE 1.13",
+     "paddingHorizontal: 34,"
+    ]
+   ],
+   "label": "the notice came in inset"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/notice-pill.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what it says"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/notice-pill.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and the way to act on it"
   },
   {
    "op": "imp",
@@ -54,33 +129,66 @@
     "src/app/tempotask/index.tsx",
     "@/features/tempotask/components/timeline-card"
    ],
-   "label": "and what ran when"
+   "label": "and the day itself"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tempotask/index.tsx",
-    "STEP 1.08"
+    "STEP 1.17"
    ],
-   "label": "on the same scale"
+   "label": "hour by hour"
   },
   {
-   "op": "cutfirst",
+   "op": "jsx",
    "args": [
-    "src/app/tempotask/index.tsx",
-    [
-     "// MISTAKE 1.09",
-     "maxHeight: 150,"
-    ]
+    "src/features/tempotask/components/timeline-card.tsx",
+    "STEP 1.18"
    ],
-   "label": "the timeline came in squeezed"
+   "label": "the card names itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/timeline-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the bars"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tempotask/components/timeline-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the hours"
   },
   {
    "op": "final",
    "args": [
     [
+     "card-head",
+     "src/features/tempotask/components/card-head.tsx"
+    ],
+    [
+     "notice-pill",
+     "src/features/tempotask/components/notice-pill.tsx"
+    ],
+    [
+     "progress-card",
+     "src/features/tempotask/components/progress-card.tsx"
+    ],
+    [
      "task-screen",
      "src/app/tempotask/index.tsx"
+    ],
+    [
+     "timeline-card",
+     "src/features/tempotask/components/timeline-card.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/tempotask/components/top-bar.tsx"
     ]
    ],
    "label": "tidy up"

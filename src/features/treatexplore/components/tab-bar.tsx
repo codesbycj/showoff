@@ -23,8 +23,6 @@ export function TabBar({ onSelect }: { onSelect?: (t: Tab) => void }) {
   return (
     <View
       style={{
-        // MISTAKE 1.16 the bar came in top-heavy
-        paddingTop: 20,
         height: TAB_HEIGHT,
         flexDirection: 'row',
         alignItems: 'center',
@@ -33,11 +31,11 @@ export function TabBar({ onSelect }: { onSelect?: (t: Tab) => void }) {
         backgroundColor: tr.canvas,
       }}
     >
-      {/* STEP 1.15 the four places to be
+{/* STEP 1.17 tab by tab
       {tabs.map((t) => (
         <Tab key={t.key} tab={t} onPress={() => onSelect?.(t)} />
       ))}
-      */}
+*/}
     </View>
   );
 }
@@ -54,15 +52,19 @@ function Tab({ tab, onPress }: { tab: Tab; onPress?: () => void }) {
       style={{ flex: 1 }}
     >
       <View style={{ alignItems: 'center', gap: 3 }}>
+{/* STEP 1.18 each with its mark
         <Icon
           size={20}
           color={on ? tr.ink : tr.muted}
           strokeWidth={on ? 2.2 : 1.7}
           fill={on && tab.solid ? tr.ink : 'none'}
         />
+*/}
+{/* STEP 1.19 and its name
         <T variant="tab" color={on ? tr.ink : tr.muted}>
           {tab.label}
         </T>
+*/}
       </View>
     </Pressable>
   );

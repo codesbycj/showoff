@@ -1,8 +1,0 @@
-{
- "home-screen": "src/app/quizhome/index.tsx",
- "header": "src/features/quizhome/components/header.tsx",
- "daily-challenge": "src/features/quizhome/components/daily-challenge.tsx",
- "category-row": "src/features/quizhome/components/category-row.tsx",
- "trend-card": "src/features/quizhome/components/trend-card.tsx",
- "tab-dock": "src/features/quizhome/components/tab-dock.tsx"
-}

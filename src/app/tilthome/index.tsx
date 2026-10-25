@@ -1,17 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 
-// STEP 1.07 what you can do with it
+// STEP 1.13 the two things it does
 // import { ActionTile } from '@/features/tilthome/components/action-tile';
-// STEP 1.05 what you have
+// STEP 1.08 what is in the account
 // import { BalanceCard } from '@/features/tilthome/components/balance-card';
-// STEP 1.11 the dock over the lot
+// STEP 1.22 and where else it goes
 // import { Dock } from '@/features/tilthome/components/dock';
-// STEP 1.03 what the app is for
+// STEP 1.05 what the screen is
 // import { Headline } from '@/features/tilthome/components/headline';
-// STEP 1.09 where it has been going
+// STEP 1.18 who you paid
 // import { PaymentRow } from '@/features/tilthome/components/payment-row';
-// STEP 1.01 the brand and who is signed in
+// STEP 1.01 the brand and the account
 // import { TopBar } from '@/features/tilthome/components/top-bar';
 import { copy, payments, tiles } from '@/features/tilthome/data/home';
 import { T } from '@/features/tilthome/components/text';
@@ -56,23 +56,29 @@ export default function TilthomeScreen() {
           paddingBottom: insets.bottom + DOCK_HEIGHT + 26,
         }}
       >
-{/* STEP 1.02 in place
+{/* STEP 1.02 along the top
         <TopBar />
 */}
 
-{/* STEP 1.04 two lines and a star
+{/* STEP 1.06 in two lines
         <View style={{ marginTop: DISPLAY_TOP }}>
           <Headline />
         </View>
 */}
 
-{/* STEP 1.06 to the penny
-        <View style={{ marginTop: BALANCE_TOP }}>
+{/* STEP 1.09 on its own card
+        <View
+          style={{
+            marginTop: BALANCE_TOP,
+            // MISTAKE 1.10 the card came in inset
+            paddingHorizontal: 28,
+          }}
+        >
           <BalanceCard />
         </View>
 */}
 
-{/* STEP 1.08 out and in
+{/* STEP 1.14 side by side
         <View style={{ flexDirection: 'row', gap: TILE_GAP, marginTop: TILES_TOP }}>
           {tiles.map((t) => (
             <ActionTile key={t.id} label={t.label} tone={t.tone} />
@@ -80,6 +86,7 @@ export default function TilthomeScreen() {
         </View>
 */}
 
+{/* STEP 1.17 what came lately
         <T
           variant="cardLabel"
           color={tl.ink}
@@ -87,24 +94,18 @@ export default function TilthomeScreen() {
         >
           {copy.recent}
         </T>
+*/}
 
-{/* STEP 1.10 three of them
+{/* STEP 1.19 row by row
         {payments.map((p, i) => (
-          <View
-            key={p.id}
-            style={{
-              marginTop: i === 0 ? 4 : ROW_GAP,
-              // MISTAKE 1.12 the rows came in crushed together
-              marginBottom: -14,
-            }}
-          >
+          <View key={p.id} style={{ marginTop: i === 0 ? 4 : ROW_GAP }}>
             <PaymentRow who={p.who} note={p.note} amount={p.amount} src={p.src} out={p.out} />
           </View>
         ))}
 */}
       </ScrollView>
 
-{/* STEP 1.13 floating over the list
+{/* STEP 1.23 floating
       <Dock bottom={insets.bottom} />
 */}
     </View>

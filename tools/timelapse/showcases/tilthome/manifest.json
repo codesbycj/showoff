@@ -1,3 +1,9 @@
 {
- "home-screen": "src/app/tilthome/index.tsx"
+ "home-screen": "src/app/tilthome/index.tsx",
+ "top-bar": "src/features/tilthome/components/top-bar.tsx",
+ "headline": "src/features/tilthome/components/headline.tsx",
+ "balance-card": "src/features/tilthome/components/balance-card.tsx",
+ "action-tile": "src/features/tilthome/components/action-tile.tsx",
+ "payment-row": "src/features/tilthome/components/payment-row.tsx",
+ "dock": "src/features/tilthome/components/dock.tsx"
 }

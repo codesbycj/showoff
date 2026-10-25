@@ -17,13 +17,16 @@ import { T } from './text';
 export function TopBar() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+{/* STEP 1.03 the brand
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <BrandMark size={24} tint={tl.ink} />
         <T variant="brand" color={tl.ink} style={{ marginLeft: 7, height: type.brand.line }}>
           {copy.brand}
         </T>
       </View>
+*/}
 
+{/* STEP 1.04 and the account
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Pressable accessibilityRole="button" accessibilityLabel="Your account">
           <Image
@@ -55,6 +58,7 @@ export function TopBar() {
           </View>
         </Pressable>
       </View>
+*/}
     </View>
   );
 }

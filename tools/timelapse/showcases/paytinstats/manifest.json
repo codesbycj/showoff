@@ -1,9 +1,0 @@
-{
- "stats-screen": "src/app/paytinstats/index.tsx",
- "app-bar": "src/features/paytinstats/components/app-bar.tsx",
- "period-pills": "src/features/paytinstats/components/period-pills.tsx",
- "earning-card": "src/features/paytinstats/components/earning-card.tsx",
- "spending-card": "src/features/paytinstats/components/spending-card.tsx",
- "overview-card": "src/features/paytinstats/components/overview-card.tsx",
- "block-chart": "src/features/paytinstats/components/block-chart.tsx"
-}

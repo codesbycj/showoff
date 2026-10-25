@@ -1,28 +1,44 @@
 {
  "1": [
   {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/glyph"
+   ],
+   "label": "the icon set"
+  },
+  {
    "op": "jsx",
    "args": [
     "src/app/voltprompt/index.tsx",
-    "STEP 1.01"
+    "STEP 1.02"
    ],
-   "label": "how many there are"
+   "label": "the way back"
   },
   {
-   "op": "imp",
+   "op": "jsx",
    "args": [
     "src/app/voltprompt/index.tsx",
-    "@/features/voltprompt/components/prompt-head"
+    "STEP 1.03"
    ],
-   "label": "the first saved prompt"
+   "label": "what the screen is"
   },
   {
-   "op": "imp",
+   "op": "jsx",
    "args": [
     "src/app/voltprompt/index.tsx",
-    "@/features/voltprompt/components/hour-chart"
+    "STEP 1.04"
    ],
-   "label": "its answer, hour by hour"
+   "label": "and the inbox"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "how many prompts"
   },
   {
    "op": "jsx",
@@ -30,7 +46,95 @@
     "src/app/voltprompt/index.tsx",
     "STEP 1.06"
    ],
-   "label": "with its chart under it"
+   "label": "counted, not typed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/prompt-head"
+   ],
+   "label": "a saved prompt"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the first one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/prompt-head.tsx",
+    "STEP 1.09"
+   ],
+   "label": "what it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/prompt-head.tsx",
+    "STEP 1.10"
+   ],
+   "label": "a way to drop it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/prompt-head.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and a way to rename it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/hour-chart"
+   ],
+   "label": "its answer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "on the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/hour-chart.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the rise"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/hour-chart.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what drove it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/hour-chart.tsx",
+    "STEP 1.16"
+   ],
+   "label": "hour by hour"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/hour-chart.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and the hours"
   },
   {
    "op": "imp",
@@ -44,9 +148,44 @@
    "op": "jsx",
    "args": [
     "src/app/voltprompt/index.tsx",
-    "STEP 1.08"
+    "STEP 1.19"
    ],
-   "label": "and the second"
+   "label": "four ways"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/tool-rail.tsx",
+    "STEP 1.20"
+   ],
+   "label": "stacked on the edge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "the second prompt"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "three figures"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    [
+     "// MISTAKE 1.23",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the figures came in half-faded"
   },
   {
    "op": "imp",
@@ -54,33 +193,62 @@
     "src/app/voltprompt/index.tsx",
     "@/features/voltprompt/components/ask-bar"
    ],
-   "label": "and the box for the next one"
-  },
-  {
-   "op": "cutfirst",
-   "args": [
-    "src/app/voltprompt/index.tsx",
-    [
-     "// MISTAKE 1.10",
-     "opacity: 0.4,"
-    ]
-   ],
-   "label": "the second prompt came in half-faded"
+   "label": "the next question"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/voltprompt/index.tsx",
-    "STEP 1.11"
+    "STEP 1.25"
    ],
-   "label": "across the foot"
+   "label": "pinned to the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/ask-bar.tsx",
+    "STEP 1.26"
+   ],
+   "label": "dictate it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/ask-bar.tsx",
+    "STEP 1.27"
+   ],
+   "label": "what you typed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/voltprompt/components/ask-bar.tsx",
+    "STEP 1.28"
+   ],
+   "label": "and send"
   },
   {
    "op": "final",
    "args": [
     [
+     "ask-bar",
+     "src/features/voltprompt/components/ask-bar.tsx"
+    ],
+    [
+     "hour-chart",
+     "src/features/voltprompt/components/hour-chart.tsx"
+    ],
+    [
+     "prompt-head",
+     "src/features/voltprompt/components/prompt-head.tsx"
+    ],
+    [
      "prompt-screen",
      "src/app/voltprompt/index.tsx"
+    ],
+    [
+     "tool-rail",
+     "src/features/voltprompt/components/tool-rail.tsx"
     ]
    ],
    "label": "tidy up"

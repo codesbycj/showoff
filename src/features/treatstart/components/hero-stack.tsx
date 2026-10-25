@@ -4,7 +4,8 @@ import Svg, { Path } from 'react-native-svg';
 import { products } from '../data/intro';
 import { CARD_DROP, CARD_W, CHIP, STACK_H, TILT_BOTTOM, TILT_TOP } from '../layout';
 import { radius, tr } from '../theme';
-import { Heart, ProductCard } from './product-card';
+// STEP 1.09 each card
+// import { Heart, ProductCard } from './product-card';
 
 /**
  * The two product cards, thrown onto the page with the controls that act on
@@ -25,7 +26,7 @@ export function HeroStack({ width }: { width: number }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center' }}>
       <View style={{ height: STACK_H }}>
-        {/* STEP 1.03 the first card
+{/* STEP 1.10 the first card
         <View
           style={{
             position: 'absolute',
@@ -36,9 +37,9 @@ export function HeroStack({ width }: { width: number }) {
         >
           <ProductCard product={products[0]} showName />
         </View>
-        */}
+*/}
 
-        {/* STEP 1.04 and the second, thrown over it
+{/* STEP 1.11 and the second
         <View
           style={{
             position: 'absolute',
@@ -49,29 +50,29 @@ export function HeroStack({ width }: { width: number }) {
         >
           <ProductCard product={products[1]} />
         </View>
-        */}
+*/}
 
-        {/* STEP 1.09 the basket it goes to
+{/* STEP 1.12 a chip
         <Chip tone="violet" style={{ right: 0, top: 112 }}>
           <Cart size={17} />
         </Chip>
-        */}
-        {/* STEP 1.10 and the list it comes from
+*/}
+{/* STEP 1.13 and another
         <Chip tone="sky" style={{ left: 0, top: 322 }}>
           <Heart size={15} />
         </Chip>
-        */}
+*/}
 
-        {/* STEP 1.11 joined up
+{/* STEP 1.14 an arrow
         <View style={{ position: 'absolute', right: 26, top: 46 }}>
           <Arrow color={tr.arrowViolet} flip />
         </View>
-        */}
-        {/* STEP 1.12 both ways
+*/}
+{/* STEP 1.15 and its answer
         <View style={{ position: 'absolute', left: 22, top: 268 }}>
           <Arrow color={tr.arrowSky} />
         </View>
-        */}
+*/}
       </View>
     </View>
   );

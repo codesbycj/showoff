@@ -16,9 +16,12 @@ import { T } from './text';
 export function Headline() {
   return (
     <View>
+{/* STEP 1.05 the first line
       <T variant="display" color={tp.ink} style={{ height: type.display.line }}>
         {copy.display[0]}
       </T>
+*/}
+{/* STEP 1.06 and the second
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <T variant="display" color={tp.ink} style={{ height: type.display.line }}>
           {copy.display[1]}
@@ -27,6 +30,7 @@ export function Headline() {
           <PeaceHand size={27} />
         </View>
       </View>
+*/}
     </View>
   );
 }

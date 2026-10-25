@@ -1,5 +1,0 @@
-{
- "one-screen": "src/app/nutrione/index.tsx",
- "onboarding-chrome": "src/features/nutrione/components/onboarding-chrome.tsx",
- "veg-stage": "src/features/nutrione/components/veg-stage.tsx"
-}

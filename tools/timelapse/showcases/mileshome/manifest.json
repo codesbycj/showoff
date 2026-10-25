@@ -1,7 +1,0 @@
-{
- "home-screen": "src/app/mileshome/index.tsx",
- "header": "src/features/mileshome/components/header.tsx",
- "dining-card": "src/features/mileshome/components/dining-card.tsx",
- "scatter": "src/features/mileshome/components/scatter.tsx",
- "tab-bar": "src/features/mileshome/components/tab-bar.tsx"
-}

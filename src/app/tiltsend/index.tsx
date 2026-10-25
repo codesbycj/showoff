@@ -1,16 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-// STEP 1.03 how much is going
-// import { AmountHead } from '@/features/tiltsend/components/amount-head';
-// STEP 1.07 which card it comes from
-// import { CardStack } from '@/features/tiltsend/components/card-stack';
-// STEP 1.05 who it is going to
-// import { ContactRail } from '@/features/tiltsend/components/contact-rail';
-// STEP 1.09 the dock over the lot
-// import { Dock } from '@/features/tiltsend/components/dock';
-// STEP 1.01 the brand and who is signed in
-// import { TopBar } from '@/features/tiltsend/components/top-bar';
+import { AmountHead } from '@/features/tiltsend/components/amount-head';
+import { CardStack } from '@/features/tiltsend/components/card-stack';
+import { ContactRail } from '@/features/tiltsend/components/contact-rail';
+import { Dock } from '@/features/tiltsend/components/dock';
+import { TopBar } from '@/features/tiltsend/components/top-bar';
 import { DISPLAY_TOP, HEADER_TOP, MARGIN, RAIL_TOP, STACK_TOP } from '@/features/tiltsend/layout';
 import { tl } from '@/features/tiltsend/theme';
 import { useInsets } from '@/features/tiltsend/use-insets';
@@ -33,38 +28,22 @@ export default function TiltsendScreen() {
       <StatusBar style="dark" />
 
       <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
-{/* STEP 1.02 in place
         <TopBar />
-*/}
 
-{/* STEP 1.04 to the cent
         <View style={{ marginTop: DISPLAY_TOP }}>
           <AmountHead />
         </View>
-*/}
 
-{/* STEP 1.06 four of them
         <View style={{ marginTop: RAIL_TOP }}>
           <ContactRail />
         </View>
-*/}
 
-{/* STEP 1.08 and the two behind it
-        <View
-          style={{
-            marginTop: STACK_TOP,
-            // MISTAKE 1.10 the wallet came in shifted off the margin
-            marginLeft: 26,
-          }}
-        >
+        <View style={{ marginTop: STACK_TOP }}>
           <CardStack />
         </View>
-*/}
       </View>
 
-{/* STEP 1.11 floating over the lot
       <Dock bottom={insets.bottom} />
-*/}
     </View>
   );
 }

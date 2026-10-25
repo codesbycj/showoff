@@ -36,6 +36,7 @@ export function MonthGrid() {
         ...shadow.card,
       }}
     >
+{/* STEP 1.08 the weekdays
       <View style={{ flexDirection: 'row' }}>
         {weekdays.map((d, i) => (
           <View key={i} style={{ flex: 1, alignItems: 'center' }}>
@@ -45,7 +46,9 @@ export function MonthGrid() {
           </View>
         ))}
       </View>
+*/}
 
+{/* STEP 1.09 week by week
       {month.map((week, wi) => (
         <View key={wi} style={{ flexDirection: 'row', marginTop: 10 }}>
           {week.map((cell, ci) => (
@@ -85,6 +88,7 @@ export function MonthGrid() {
           ))}
         </View>
       ))}
+*/}
     </View>
   );
 }

@@ -27,6 +27,9 @@ import { useInsets } from '@/features/treatstart/use-insets';
  * the artwork gives first on a short phone rather than pushing the button off
  * the page — and on a tall one the cards simply sit in more air instead of
  * leaving a band of empty canvas at the foot.
+ *
+ * The lilac wash is a vertical gradient, not a diagonal one: a diagonal
+ * comes out mirrored on web (AGENTS.md).
  */
 export default function TreatStart() {
   const insets = useInsets();
@@ -37,8 +40,6 @@ export default function TreatStart() {
     <View style={{ flex: 1, backgroundColor: tr.canvas }}>
       <StatusBar style="dark" />
 
-      {/* The lilac wash the board's first phone sits in. Vertical, so it is
-          not the diagonal case that comes out mirrored on web. */}
       <LinearGradient
         colors={[tr.canvasTop, tr.canvas]}
         locations={[0, 0.62]}

@@ -1,9 +1,10 @@
-import { LinearGradient } from 'expo-linear-gradient';
+// STEP 1.01 the wash
+// import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Pressable, useWindowDimensions, View } from 'react-native';
 
-// STEP 1.01 the throw of cards
+// STEP 1.03 the stack of cards
 // import { HeroStack } from '@/features/treatstart/components/hero-stack';
 import { T } from '@/features/treatstart/components/text';
 import { intro } from '@/features/treatstart/data/intro';
@@ -28,6 +29,9 @@ import { useInsets } from '@/features/treatstart/use-insets';
  * the artwork gives first on a short phone rather than pushing the button off
  * the page — and on a tall one the cards simply sit in more air instead of
  * leaving a band of empty canvas at the foot.
+ *
+ * The lilac wash is a vertical gradient, not a diagonal one: a diagonal
+ * comes out mirrored on web (AGENTS.md).
  */
 export default function TreatStart() {
   const insets = useInsets();
@@ -38,13 +42,13 @@ export default function TreatStart() {
     <View style={{ flex: 1, backgroundColor: tr.canvas }}>
       <StatusBar style="dark" />
 
-      {/* The lilac wash the board's first phone sits in. Vertical, so it is
-          not the diagonal case that comes out mirrored on web. */}
+{/* STEP 1.02 lilac into white
       <LinearGradient
         colors={[tr.canvasTop, tr.canvas]}
         locations={[0, 0.62]}
         style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0 }}
       />
+*/}
 
       <View
         style={{
@@ -54,27 +58,32 @@ export default function TreatStart() {
           paddingHorizontal: MARGIN,
         }}
       >
-        {/* STEP 1.02 filling the page
+{/* STEP 1.04 posed on the page
         <HeroStack width={width - MARGIN * 2} />
-        */}
+*/}
 
-        <View style={{ marginTop: COPY_TOP }}>
-          {/* STEP 1.13 what the app is
+        <View
+          style={{
+            marginTop: COPY_TOP,
+            // MISTAKE 1.08 the copy came in half-faded
+            opacity: 0.4,
+          }}
+        >
+{/* STEP 1.05 what the app is for
           <T variant="display" color={tr.ink}>
             {intro.headlineBold}
             <T variant="displaySoft" color={tr.inkSoft}>
               {intro.headlineSoft}
             </T>
           </T>
-          */}
-          {/* STEP 1.14 and how it works
+*/}
+{/* STEP 1.06 and why
           <T variant="body" color={tr.muted} style={{ marginTop: BODY_TOP }}>
             {intro.body}
           </T>
-          */}
+*/}
         </View>
 
-        {/* STEP 1.15 the one thing it asks
         <Pressable
           onPressIn={() => setHeld(true)}
           onPressOut={() => setHeld(false)}
@@ -82,6 +91,7 @@ export default function TreatStart() {
           accessibilityLabel={intro.cta}
           style={{ marginTop: BUTTON_TOP }}
         >
+{/* STEP 1.07 the way on
           <View
             style={{
               height: BUTTON_HEIGHT,
@@ -96,8 +106,8 @@ export default function TreatStart() {
               {intro.cta}
             </T>
           </View>
+*/}
         </Pressable>
-        */}
       </View>
     </View>
   );

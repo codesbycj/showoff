@@ -18,6 +18,9 @@ import { T } from './text';
  * The chips sit at a `lift` given per day, as a share of the plot. That keeps
  * the scatter the reference has without putting a dp offset in a component,
  * and it still holds when the card is a different width.
+ *
+ * The selected day's chip is lifted off its own column and positioned
+ * absolutely, so it can overhang the bar without widening the row.
  */
 export function ProgressCard() {
   const chipTone = (tone: string) =>
@@ -33,13 +36,15 @@ export function ProgressCard() {
         ...shadow.card,
       }}
     >
+{/* STEP 1.07 the card names itself
       <CardHead title={copy.progress} />
+*/}
 
+{/* STEP 1.10 day by day
       <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', marginTop: 14 }}>
         {days.map((d) => (
           <View key={d.day} style={{ flex: 1, alignItems: 'center' }}>
             <View style={{ height: PLOT_HEIGHT, justifyContent: 'flex-end' }}>
-              {/* the chip for this day, lifted off its own column */}
               <View
                 style={{
                   position: 'absolute',
@@ -100,6 +105,7 @@ export function ProgressCard() {
           </View>
         ))}
       </View>
+*/}
     </View>
   );
 }

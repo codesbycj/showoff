@@ -3,7 +3,7 @@
  "assets/images/voltchat/face-1.jpg": "ed9eb34a8a03771e992220abae3a3df89cba39b41d640052ea75e90926f81f5e",
  "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
  "src/app/index.tsx": "483d7a75b5e47b4f73275c8c05d5d9c33be2d84329fa2d3567e0d334b3a99c3f",
- "src/app/voltchat/index.tsx": "1907f7100694d9887c5cd92576b17709993d5fd77b2883d52b5ea7c17c6c8f79",
+ "src/app/voltchat/index.tsx": "1c9f608517c0fd75af3a62e06018904c83a567ce7dbef0c4e2acd9a52e534ac8",
  "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
  "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
  "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",

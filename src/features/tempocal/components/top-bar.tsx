@@ -16,6 +16,7 @@ import { T } from './text';
 export function TopBar({ onMenu, onPick }: { onMenu?: () => void; onPick?: () => void }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+{/* STEP 1.03 the menu
       <Pressable onPress={onMenu} accessibilityRole="button" accessibilityLabel="Menu">
         <View
           style={{
@@ -30,7 +31,9 @@ export function TopBar({ onMenu, onPick }: { onMenu?: () => void; onPick?: () =>
           <Glyph name="menu" size={21} tint={tp.ink} />
         </View>
       </Pressable>
+*/}
 
+{/* STEP 1.04 and which month
       <Pressable
         onPress={onPick}
         accessibilityRole="button"
@@ -57,6 +60,7 @@ export function TopBar({ onMenu, onPick }: { onMenu?: () => void; onPick?: () =>
           <Glyph name="caret" size={15} tint={tp.ink} />
         </View>
       </Pressable>
+*/}
     </View>
   );
 }

@@ -16,6 +16,7 @@ import { T } from './text';
 export function Headline() {
   return (
     <View>
+{/* STEP 1.07 the first line
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <T variant="display" color={tl.ink} style={{ height: type.display.line }}>
           {copy.display[0]}
@@ -24,9 +25,12 @@ export function Headline() {
           <Sparkle size={34} tint={tl.violet} />
         </View>
       </View>
+*/}
+{/* STEP 1.11 and the second
       <T variant="display" color={tl.ink} style={{ height: type.display.line }}>
         {copy.display[1]}
       </T>
+*/}
     </View>
   );
 }

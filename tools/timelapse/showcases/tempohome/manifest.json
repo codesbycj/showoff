@@ -1,3 +1,9 @@
 {
- "home-screen": "src/app/tempohome/index.tsx"
+ "home-screen": "src/app/tempohome/index.tsx",
+ "headline": "src/features/tempohome/components/headline.tsx",
+ "crew-row": "src/features/tempohome/components/crew-row.tsx",
+ "notice-pill": "src/features/tempohome/components/notice-pill.tsx",
+ "section-head": "src/features/tempohome/components/section-head.tsx",
+ "task-card": "src/features/tempohome/components/task-card.tsx",
+ "tab-bar": "src/features/tempohome/components/tab-bar.tsx"
 }

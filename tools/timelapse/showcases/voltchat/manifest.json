@@ -1,3 +1,6 @@
 {
- "chat-screen": "src/app/voltchat/index.tsx"
+ "chat-screen": "src/app/voltchat/index.tsx",
+ "reading-row": "src/features/voltchat/components/reading-row.tsx",
+ "chip-rail": "src/features/voltchat/components/chip-rail.tsx",
+ "ask-bar": "src/features/voltchat/components/ask-bar.tsx"
 }

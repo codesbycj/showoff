@@ -27,6 +27,7 @@ export function PaymentRow({
   return (
     <View style={{ height: ROW_HEIGHT, flexDirection: 'row', alignItems: 'center' }}>
       <Image source={src} style={{ width: 40, height: 40, borderRadius: radius.control }} />
+{/* STEP 1.21 who, and what for
       <View style={{ flex: 1, marginLeft: 12 }}>
         <T variant="rowTitle" color={tl.ink} style={{ height: type.rowTitle.line }}>
           {who}
@@ -35,6 +36,8 @@ export function PaymentRow({
           {note}
         </T>
       </View>
+*/}
+{/* STEP 1.24 and how much
       <T
         variant="rowAmount"
         color={out ? tl.ink : tl.violet}
@@ -42,6 +45,7 @@ export function PaymentRow({
       >
         {amount}
       </T>
+*/}
     </View>
   );
 }

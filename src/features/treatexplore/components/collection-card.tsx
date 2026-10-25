@@ -52,7 +52,7 @@ export function CollectionCard({
           overflow: 'hidden',
         }}
       >
-        {/* STEP 1.10 the pack
+{/* STEP 1.13 the first photograph
         <Image
           source={PACKS[collection.pack]}
           style={{
@@ -65,9 +65,9 @@ export function CollectionCard({
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
-        */}
+*/}
 
-        {/* STEP 1.11 and what is in it
+{/* STEP 1.14 and the second
         <Image
           source={SNACKS[collection.snack - 1]}
           style={{
@@ -81,18 +81,20 @@ export function CollectionCard({
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
-        */}
+*/}
 
-        {/* STEP 1.12 what it is called
         <View style={{ padding: 18, width: '58%' }}>
+{/* STEP 1.15 what it is
           <T variant="collection" color={tr.ink}>
             {collection.title}
           </T>
+*/}
+{/* STEP 1.16 and how much of it
           <T variant="collectionMeta" color={tr.muted} style={{ marginTop: 2 }}>
             {collection.meta}
           </T>
+*/}
         </View>
-        */}
       </View>
     </Pressable>
   );

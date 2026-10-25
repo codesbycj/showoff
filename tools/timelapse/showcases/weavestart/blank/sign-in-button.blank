@@ -3,7 +3,8 @@ import { Pressable, View } from 'react-native';
 
 import { BUTTON_HEIGHT } from '../layout';
 import { radius, wv } from '../theme';
-import { BrandGlyph } from './brand-glyph';
+// STEP 1.16 its mark
+// import { BrandGlyph } from './brand-glyph';
 import { T } from './text';
 
 /**
@@ -53,14 +54,14 @@ export function SignInButton({
           opacity: held ? 0.86 : 1,
         }}
       >
-        {/* STEP 1.09 whose account
+{/* STEP 1.17 drawn, not borrowed
         <BrandGlyph name={glyph} size={19} />
-        */}
-        {/* STEP 1.10 and what it says
+*/}
+{/* STEP 1.20 and what it says
         <T variant="button" color={light ? wv.onLight : wv.ink}>
           {label}
         </T>
-        */}
+*/}
       </View>
     </Pressable>
   );

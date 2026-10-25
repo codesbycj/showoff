@@ -6,7 +6,7 @@
     "src/app/tilthome/index.tsx",
     "@/features/tilthome/components/top-bar"
    ],
-   "label": "the brand and who is signed in"
+   "label": "the brand and the account"
   },
   {
    "op": "jsx",
@@ -14,7 +14,23 @@
     "src/app/tilthome/index.tsx",
     "STEP 1.02"
    ],
-   "label": "in place"
+   "label": "along the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the account"
   },
   {
    "op": "imp",
@@ -22,23 +38,7 @@
     "src/app/tilthome/index.tsx",
     "@/features/tilthome/components/headline"
    ],
-   "label": "what the app is for"
-  },
-  {
-   "op": "jsx",
-   "args": [
-    "src/app/tilthome/index.tsx",
-    "STEP 1.04"
-   ],
-   "label": "two lines and a star"
-  },
-  {
-   "op": "imp",
-   "args": [
-    "src/app/tilthome/index.tsx",
-    "@/features/tilthome/components/balance-card"
-   ],
-   "label": "what you have"
+   "label": "what the screen is"
   },
   {
    "op": "jsx",
@@ -46,7 +46,58 @@
     "src/app/tilthome/index.tsx",
     "STEP 1.06"
    ],
-   "label": "to the penny"
+   "label": "in two lines"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/headline.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the first line"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/balance-card"
+   ],
+   "label": "what is in the account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "on its own card"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    [
+     "// MISTAKE 1.10",
+     "paddingHorizontal: 28,"
+    ]
+   ],
+   "label": "the card came in inset"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/headline.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and the second"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/balance-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "what it is, and in what"
   },
   {
    "op": "imp",
@@ -54,15 +105,39 @@
     "src/app/tilthome/index.tsx",
     "@/features/tilthome/components/action-tile"
    ],
-   "label": "what you can do with it"
+   "label": "the two things it does"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tilthome/index.tsx",
-    "STEP 1.08"
+    "STEP 1.14"
    ],
-   "label": "out and in"
+   "label": "side by side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/balance-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and how much"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/action-tile.tsx",
+    "STEP 1.16"
+   ],
+   "label": "its mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "what came lately"
   },
   {
    "op": "imp",
@@ -70,15 +145,31 @@
     "src/app/tilthome/index.tsx",
     "@/features/tilthome/components/payment-row"
    ],
-   "label": "where it has been going"
+   "label": "who you paid"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tilthome/index.tsx",
-    "STEP 1.10"
+    "STEP 1.19"
    ],
-   "label": "three of them"
+   "label": "row by row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/action-tile.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and what it does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/payment-row.tsx",
+    "STEP 1.21"
+   ],
+   "label": "who, and what for"
   },
   {
    "op": "imp",
@@ -86,33 +177,62 @@
     "src/app/tilthome/index.tsx",
     "@/features/tilthome/components/dock"
    ],
-   "label": "the dock over the lot"
-  },
-  {
-   "op": "cutfirst",
-   "args": [
-    "src/app/tilthome/index.tsx",
-    [
-     "// MISTAKE 1.12",
-     "marginBottom: -14,"
-    ]
-   ],
-   "label": "the rows came in crushed together"
+   "label": "and where else it goes"
   },
   {
    "op": "jsx",
    "args": [
     "src/app/tilthome/index.tsx",
-    "STEP 1.13"
+    "STEP 1.23"
    ],
-   "label": "floating over the list"
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/payment-row.tsx",
+    "STEP 1.24"
+   ],
+   "label": "and how much"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tilthome/components/dock.tsx",
+    "STEP 1.25"
+   ],
+   "label": "tab by tab"
   },
   {
    "op": "final",
    "args": [
     [
+     "action-tile",
+     "src/features/tilthome/components/action-tile.tsx"
+    ],
+    [
+     "balance-card",
+     "src/features/tilthome/components/balance-card.tsx"
+    ],
+    [
+     "dock",
+     "src/features/tilthome/components/dock.tsx"
+    ],
+    [
+     "headline",
+     "src/features/tilthome/components/headline.tsx"
+    ],
+    [
      "home-screen",
      "src/app/tilthome/index.tsx"
+    ],
+    [
+     "payment-row",
+     "src/features/tilthome/components/payment-row.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/tilthome/components/top-bar.tsx"
     ]
    ],
    "label": "tidy up"

@@ -1,19 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 
-// STEP 1.05 who is about
+// STEP 1.07 who is on
 // import { CrewRow } from '@/features/tempohome/components/crew-row';
-// STEP 1.03 what the day is for
+// STEP 1.03 what the screen is
 // import { Headline } from '@/features/tempohome/components/headline';
-// STEP 1.09 how much is waiting
+// STEP 1.11 what is waiting
 // import { NoticePill } from '@/features/tempohome/components/notice-pill';
-// STEP 1.11 today's work
+// STEP 1.15 the heading
 // import { SectionHead } from '@/features/tempohome/components/section-head';
-// STEP 1.17 the dock over the lot
+// STEP 1.24 and where else it goes
 // import { TabBar } from '@/features/tempohome/components/tab-bar';
-// STEP 1.13 the first of them
+// STEP 1.18 the tasks
 // import { TaskCard } from '@/features/tempohome/components/task-card';
-// STEP 1.01 the controls across the top
+// STEP 1.01 the controls
 // import { TopBar } from '@/features/tempohome/components/top-bar';
 import { tasks } from '@/features/tempohome/data/home';
 import {
@@ -58,44 +58,43 @@ export default function TempohomeScreen() {
           paddingBottom: insets.bottom + TAB_HEIGHT + 20,
         }}
       >
-{/* STEP 1.02 in place
+{/* STEP 1.02 along the top
         <TopBar />
 */}
 
-{/* STEP 1.04 two lines and a gesture
+{/* STEP 1.04 in two lines
         <View style={{ marginTop: DISPLAY_TOP }}>
           <Headline />
         </View>
 */}
 
-{/* STEP 1.06 on their own card
-        <View style={{ marginTop: CREW_TOP }}>
+{/* STEP 1.08 the crew
+        <View
+          style={{
+            marginTop: CREW_TOP,
+            // MISTAKE 1.09 the crew came in half-faded
+            opacity: 0.4,
+          }}
+        >
           <CrewRow />
         </View>
 */}
 
-{/* STEP 1.10 said once, in the dark
+{/* STEP 1.12 one notice
         <View style={{ marginTop: NOTICE_TOP }}>
           <NoticePill />
         </View>
 */}
 
-{/* STEP 1.12 and the way to the rest
+{/* STEP 1.16 what is on
         <View style={{ marginTop: SECTION_TOP }}>
           <SectionHead />
         </View>
 */}
 
-{/* STEP 1.14 stacked down the page
+{/* STEP 1.19 card by card
         {tasks.map((t, i) => (
-          <View
-            key={t.id}
-            style={{
-              marginTop: i === 0 ? CARD_TOP : CARD_GAP,
-              // MISTAKE 1.15 the cards came in washed out
-              opacity: 0.45,
-            }}
-          >
+          <View key={t.id} style={{ marginTop: i === 0 ? CARD_TOP : CARD_GAP }}>
             <TaskCard
               title={t.title}
               body={t.body}
@@ -108,7 +107,7 @@ export default function TempohomeScreen() {
 */}
       </ScrollView>
 
-{/* STEP 1.18 floating over the list
+{/* STEP 1.25 floating
       <TabBar bottom={insets.bottom} />
 */}
     </View>

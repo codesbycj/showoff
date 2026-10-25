@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 
-// STEP 1.03 February itself
+// STEP 1.05 the month itself
 // import { MonthGrid } from '@/features/tempocal/components/month-grid';
-// STEP 1.05 what is due today
+// STEP 1.10 what is on
 // import { SectionHead } from '@/features/tempocal/components/section-head';
-// STEP 1.09 the dock over the lot
+// STEP 1.20 and where else it goes
 // import { TabBar } from '@/features/tempocal/components/tab-bar';
-// STEP 1.07 the work on it
+// STEP 1.14 the tasks
 // import { TaskCard } from '@/features/tempocal/components/task-card';
-// STEP 1.01 the menu and the month
+// STEP 1.01 the top of the month
 // import { TopBar } from '@/features/tempocal/components/top-bar';
 import { tasks } from '@/features/tempocal/data/home';
 import {
@@ -49,32 +49,31 @@ export default function TempocalScreen() {
           paddingBottom: insets.bottom + TAB_HEIGHT + 20,
         }}
       >
-{/* STEP 1.02 in place
+{/* STEP 1.02 the menu and the month
         <TopBar />
 */}
 
-{/* STEP 1.04 five weeks of it
-        <View style={{ marginTop: MONTH_TOP }}>
+{/* STEP 1.06 a grid of days
+        <View
+          style={{
+            marginTop: MONTH_TOP,
+            // MISTAKE 1.07 the grid came in inset
+            paddingHorizontal: 26,
+          }}
+        >
           <MonthGrid />
         </View>
 */}
 
-{/* STEP 1.06 and the way to the rest
+{/* STEP 1.11 the heading
         <View style={{ marginTop: SECTION_TOP }}>
           <SectionHead />
         </View>
 */}
 
-{/* STEP 1.08 stacked down the page
+{/* STEP 1.15 card by card
         {tasks.map((t, i) => (
-          <View
-            key={t.id}
-            style={{
-              marginTop: i === 0 ? CARD_TOP : CARD_GAP,
-              // MISTAKE 1.10 the cards came in washed out
-              opacity: 0.4,
-            }}
-          >
+          <View key={t.id} style={{ marginTop: i === 0 ? CARD_TOP : CARD_GAP }}>
             <TaskCard
               title={t.title}
               body={t.body}
@@ -87,7 +86,7 @@ export default function TempocalScreen() {
 */}
       </ScrollView>
 
-{/* STEP 1.11 floating over the list
+{/* STEP 1.21 floating
       <TabBar active="calendar" bottom={insets.bottom} />
 */}
     </View>

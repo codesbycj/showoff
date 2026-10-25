@@ -12,6 +12,19 @@ import { T } from './text';
  * keeps its shape on a 360dp phone as well as a 430dp one — a cluster laid out
  * in dp slides off the narrow one and leaves a hole on the wide one.
  *
+ * **Each pill anchors to a side rather than always to the left.** Placing
+ * every pill by a `left` fraction bunched the throw down the left edge and let
+ * a long label on a right-hand pill run off the screen, because a pill is as
+ * wide as its words and nothing knows that in advance. A right-anchored pill
+ * is positioned by `right`, so it cannot overflow whatever it says, and the
+ * two sides alternate down an even vertical rhythm — which is what makes it
+ * read as a scatter instead of a list.
+ *
+ * The pills are written out rather than mapped so the reveal can land them one
+ * at a time: on a screen with four elements, the throw arriving pill by pill
+ * is most of the build (AGENTS.md, "composite components are staged internally
+ * so a row fills in one item at a time").
+ *
  * Each pill is rotated about its own centre, which is the only pivot React
  * Native offers whatever `transformOrigin` says. That is the right pivot here:
  * a tag thrown onto a table turns about itself.
@@ -26,33 +39,60 @@ export function TagCluster({ height }: { height: number | `${number}%` }) {
   const span = width - MARGIN * 2;
   /** Percent heights cannot be multiplied, so the throw is placed against the
    *  window's own height when the caller hands the cluster the whole slot. */
-  const span_y = typeof height === 'number' ? height : screen * 0.46;
+  const spanY = typeof height === 'number' ? height : screen * 0.46;
+
+  const at = (t: { from: 'left' | 'right'; x: number; y: number; angle: number }) => ({
+    from: t.from,
+    offset: span * t.x,
+    top: spanY * t.y,
+    angle: t.angle,
+  });
 
   return (
     <View style={{ height }}>
       <Pill
-        label={brand.name}
+        label={brand.label}
         color={wv.brand}
         ink={wv.onBrand}
         variant="brand"
-        left={span * brand.x}
-        top={span_y * brand.y}
-        angle={brand.angle}
         raised
+        {...at(brand)}
       />
-
-      {tags.map((tag) => (
-        <Pill
-          key={tag.key}
-          label={tag.label}
-          color={tag.color}
-          ink={wv.onTag}
-          variant="tag"
-          left={span * tag.x}
-          top={span_y * tag.y}
-          angle={tag.angle}
-        />
-      ))}
+      <Pill
+        label={tags[0].label}
+        color={tags[0].color}
+        ink={wv.onTag}
+        variant="tag"
+        {...at(tags[0])}
+      />
+      <Pill
+        label={tags[1].label}
+        color={tags[1].color}
+        ink={wv.onTag}
+        variant="tag"
+        {...at(tags[1])}
+      />
+      <Pill
+        label={tags[2].label}
+        color={tags[2].color}
+        ink={wv.onTag}
+        variant="tag"
+        {...at(tags[2])}
+      />
+      <Pill
+        label={tags[3].label}
+        color={tags[3].color}
+        ink={wv.onTag}
+        variant="tag"
+        {...at(tags[3])}
+      />
+      <Pill
+        label={tags[4].label}
+        color={tags[4].color}
+        ink={wv.onTag}
+        variant="tag"
+        {...at(tags[4])}
+      />
     </View>
   );
 }
@@ -62,7 +102,8 @@ function Pill({
   color,
   ink,
   variant,
-  left,
+  from,
+  offset,
   top,
   angle,
   raised,
@@ -71,7 +112,8 @@ function Pill({
   color: string;
   ink: string;
   variant: 'brand' | 'tag';
-  left: number;
+  from: 'left' | 'right';
+  offset: number;
   top: number;
   angle: number;
   raised?: boolean;
@@ -80,7 +122,7 @@ function Pill({
     <View
       style={{
         position: 'absolute',
-        left,
+        ...(from === 'left' ? { left: offset } : { right: offset }),
         top,
         height: PILL_HEIGHT,
         paddingHorizontal: PILL_PAD,

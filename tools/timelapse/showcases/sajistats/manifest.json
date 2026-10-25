@@ -1,8 +1,0 @@
-{
- "stats-screen": "src/app/sajistats/index.tsx",
- "app-bar": "src/features/sajistats/components/app-bar.tsx",
- "period-tabs": "src/features/sajistats/components/period-tabs.tsx",
- "line-chart": "src/features/sajistats/components/line-chart.tsx",
- "history-sheet": "src/features/sajistats/components/history-sheet.tsx",
- "history-row": "src/features/sajistats/components/history-row.tsx"
-}

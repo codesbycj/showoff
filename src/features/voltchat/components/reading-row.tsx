@@ -39,9 +39,12 @@ export function ReadingRow({
       }}
     >
       <View style={{ flex: 1 }}>
+{/* STEP 1.10 what it is
         <T variant="rowTitle" color={vt.ink} style={{ height: type.rowTitle.line }}>
           {label}
         </T>
+*/}
+{/* STEP 1.11 the figure and the move
         <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 }}>
           <T variant="figure" color={vt.body} style={{ height: type.figure.line }}>
             {value}
@@ -60,8 +63,10 @@ export function ReadingRow({
             </T>
           </View>
         </View>
+*/}
       </View>
 
+{/* STEP 1.12 and its mark
       <View
         style={{
           width: 38,
@@ -74,6 +79,7 @@ export function ReadingRow({
       >
         <Glyph name={mark} size={18} tint={vt.body} />
       </View>
+*/}
     </View>
   );
 }

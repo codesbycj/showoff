@@ -1,6 +1,0 @@
-{
- "two-screen": "src/app/nutritwo/index.tsx",
- "onboarding-chrome": "src/features/nutritwo/components/onboarding-chrome.tsx",
- "week-card": "src/features/nutritwo/components/week-card.tsx",
- "stats-card": "src/features/nutritwo/components/stats-card.tsx"
-}

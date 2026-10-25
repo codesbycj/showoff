@@ -1,3 +1,8 @@
 {
- "send-screen": "src/app/tiltsend/index.tsx"
+ "send-screen": "src/app/tiltsend/index.tsx",
+ "top-bar": "src/features/tiltsend/components/top-bar.tsx",
+ "amount-head": "src/features/tiltsend/components/amount-head.tsx",
+ "contact-rail": "src/features/tiltsend/components/contact-rail.tsx",
+ "card-stack": "src/features/tiltsend/components/card-stack.tsx",
+ "dock": "src/features/tiltsend/components/dock.tsx"
 }
