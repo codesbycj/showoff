@@ -1,0 +1,97 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "@/features/voltdata/components/top-bar"
+   ],
+   "label": "the assistant and who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "in place"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "what the block is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "@/features/voltdata/components/source-row"
+   ],
+   "label": "where they come from"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "three of them, and one more"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "@/features/voltdata/components/result-card"
+   ],
+   "label": "what they add up to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "three lines of the sum"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "@/features/voltdata/components/dock"
+   ],
+   "label": "the dock at the foot"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    [
+     "// MISTAKE 1.10",
+     "marginBottom: -34,"
+    ]
+   ],
+   "label": "the cards came in crushed together"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltdata/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "across the foot"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-screen",
+     "src/app/voltdata/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

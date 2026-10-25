@@ -22,31 +22,25 @@ import { T } from './text';
 export function TopBar() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      {/* STEP 1.03 the product mark
       <Svg width={22} height={22} viewBox="0 0 24 24">
         <Path d="M12 2.6 L22 7.2 L12 11.8 L2 7.2 Z" fill={sg.ink} />
         <Path d="M12 11 L22 15.6 L12 20.2 L2 15.6 Z" fill={sg.ink} opacity={0.55} />
       </Svg>
-      */}
       <T variant="wordmark" color={sg.ink} style={{ marginLeft: 7, flex: 1 }}>
         {brand.name}
       </T>
 
-      {/* STEP 1.04 what is waiting
       <DotButton name="mail" label="Messages" />
-      */}
       <View style={{ width: HEADER_GAP }} />
       <DotButton name="bell" label="Notifications" />
       <View style={{ width: HEADER_GAP }} />
 
-      {/* STEP 1.05 and whose account it is
       <Image
         source={FACES[1]}
         style={{ width: HEADER_AVATAR, height: HEADER_AVATAR, borderRadius: radius.full }}
         resizeMode="cover"
         accessibilityIgnoresInvertColors
       />
-      */}
     </View>
   );
 }

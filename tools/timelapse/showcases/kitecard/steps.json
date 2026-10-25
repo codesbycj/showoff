@@ -1,0 +1,121 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "@/features/kitecard/components/panel-top"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and one more card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "@/features/kitecard/components/card"
+   ],
+   "label": "the card itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "name and number"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "@/features/kitecard/components/balance"
+   ],
+   "label": "what is left on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "to the penny"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "@/features/kitecard/components/action-row"
+   ],
+   "label": "what you do with it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "@/features/kitecard/components/charge-list"
+   ],
+   "label": "what it has been charged"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "row by row"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    [
+     "// MISTAKE 1.11",
+     "paddingTop: 34,"
+    ]
+   ],
+   "label": "the list came in pushed down"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "@/features/kitecard/components/tab-bar"
+   ],
+   "label": "and where else the app goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/kitecard/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "floating"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "card-screen",
+     "src/app/kitecard/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,227 @@
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
+
+import { T } from '@/features/stashfolders/components/text';
+import { copy, folders, progress } from '@/features/stashfolders/data/start';
+import {
+  BAR_HEIGHT,
+  BLURB_TOP,
+  CARD_PAD,
+  HEADER_SIZE,
+  HEADER_TOP,
+  MARGIN,
+  PROGRESS_HEIGHT,
+  PROGRESS_TOP,
+  SHEET_PAD,
+  SHEET_TOP,
+  TILE_GAP,
+  TILE_HEIGHT,
+  TITLE_TOP,
+} from '@/features/stashfolders/layout';
+import { radius, st, type } from '@/features/stashfolders/theme';
+import { useInsets } from '@/features/stashfolders/use-insets';
+
+/** A folder, drawn — a folder is a small flat object and squarely in range. */
+function FolderMark({ size = 26, tint }: { size?: number; tint: string }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path
+        d="M3.4 7a2 2 0 0 1 2-2h3.8l1.8 2.2h7.6a2 2 0 0 1 2 2v8.2a2 2 0 0 1-2 2H5.4a2 2 0 0 1-2-2Z"
+        fill={tint}
+      />
+    </Svg>
+  );
+}
+
+/**
+ * Stash — manage folders.
+ *
+ * Assembly only: the way back, what the screen is, how far through the tidy
+ * is, and the folders themselves on a sheet that runs off the bottom edge.
+ *
+ * The bar, the percentage and the sentence under it are one number. The
+ * reference prints "3 minutes of 10 hours" beside "63%", which is half a
+ * percent.
+ */
+export default function StashfoldersScreen() {
+  const insets = useInsets();
+
+  const disc = {
+    width: HEADER_SIZE,
+    height: HEADER_SIZE,
+    borderRadius: radius.control,
+    backgroundColor: st.card,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: st.canvas }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Go back">
+            <View style={disc}>
+              <Svg width={17} height={17} viewBox="0 0 24 24">
+                <Path
+                  d="M14.5 5.5 8 12l6.5 6.5"
+                  stroke={st.ink}
+                  strokeWidth={2.2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </Svg>
+            </View>
+          </Pressable>
+          <View style={{ flex: 1 }} />
+          <Pressable accessibilityRole="button" accessibilityLabel="More">
+            <View style={disc}>
+              <Svg width={17} height={17} viewBox="0 0 24 24">
+                <Circle cx={6} cy={12} r={1.6} fill={st.ink} />
+                <Circle cx={12} cy={12} r={1.6} fill={st.ink} />
+                <Circle cx={18} cy={12} r={1.6} fill={st.ink} />
+              </Svg>
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: TITLE_TOP }}>
+          <FolderMark size={22} tint={st.canvas === '#141414' ? '#F2E85C' : st.ink} />
+          <T variant="display" color={st.ink} style={{ marginLeft: 8, height: type.display.line }}>
+            {copy.title}
+          </T>
+        </View>
+        <T variant="blurb" color={st.body} style={{ marginTop: BLURB_TOP, maxWidth: 300 }}>
+          {copy.blurb}
+        </T>
+
+        <View
+          style={{
+            height: PROGRESS_HEIGHT,
+            marginTop: PROGRESS_TOP,
+            borderRadius: radius.card,
+            backgroundColor: st.card,
+            padding: CARD_PAD,
+            justifyContent: 'space-between',
+          }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <T variant="tile" color={st.ink} style={{ flex: 1, height: type.tile.line }}>
+              {copy.progress}
+            </T>
+            <View
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: radius.control,
+                backgroundColor: 'rgba(255,255,255,0.08)',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Svg width={12} height={12} viewBox="0 0 24 24">
+                <Path
+                  d="M7 17 17 7M9.4 7H17v7.6"
+                  stroke={st.ink}
+                  strokeWidth={2.4}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </Svg>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              height: BAR_HEIGHT,
+              borderRadius: radius.control,
+              overflow: 'hidden',
+              backgroundColor: 'rgba(255,255,255,0.1)',
+            }}
+          >
+            <View style={{ flex: progress.share, backgroundColor: '#F2E85C' }} />
+            <View style={{ flex: 1 - progress.share }} />
+          </View>
+
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <T variant="blurb" color={st.body} style={{ flex: 1, height: type.blurb.line }}>
+              {progress.sub}
+            </T>
+            <T variant="tile" color={st.ink} style={{ height: type.tile.line }}>
+              {progress.pct + ' %'}
+            </T>
+          </View>
+        </View>
+      </View>
+
+      <View
+        style={{
+          flex: 1,
+          marginTop: SHEET_TOP,
+          borderTopLeftRadius: 26,
+          borderTopRightRadius: 26,
+          backgroundColor: st.panel,
+          paddingHorizontal: SHEET_PAD,
+          paddingTop: 16,
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <T variant="tile" color={st.onPanel} style={{ flex: 1, height: type.tile.line }}>
+            {copy.all}
+          </T>
+          <View
+            style={{
+              width: 30,
+              height: 30,
+              borderRadius: radius.control,
+              backgroundColor: 'rgba(18,18,18,0.07)',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Svg width={14} height={14} viewBox="0 0 24 24">
+              {[5, 14].map((x) =>
+                [5, 14].map((y) => (
+                  <Circle key={`${x}-${y}`} cx={x + 2.5} cy={y + 2.5} r={2.5} fill={st.onPanel} />
+                )),
+              )}
+            </Svg>
+          </View>
+        </View>
+
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: TILE_GAP, marginTop: 14 }}>
+          {folders.map((f) => (
+            <Pressable
+              key={f.id}
+              style={{ width: '47.6%' }}
+              accessibilityRole="button"
+              accessibilityLabel={f.label}
+            >
+              <View
+                style={{
+                  height: TILE_HEIGHT,
+                  borderRadius: 18,
+                  backgroundColor: f.tone === 'yellow' ? '#F2E85C' : '#FFFFFF',
+                  borderWidth: 1,
+                  borderColor: 'rgba(18,18,18,0.08)',
+                  padding: 14,
+                  justifyContent: 'space-between',
+                }}
+              >
+                <FolderMark size={26} tint={st.onPanel} />
+                <T variant="tile" color={st.onPanel} style={{ height: type.tile.line }}>
+                  {f.label}
+                </T>
+              </View>
+            </Pressable>
+          ))}
+        </View>
+      </View>
+    </View>
+  );
+}

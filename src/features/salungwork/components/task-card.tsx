@@ -20,8 +20,6 @@ export function TaskCard({ task, onMore }: { task: Task; onMore?: () => void }) 
   return (
     <View
       style={{
-        // MISTAKE 1.26 the rows came in indented
-        marginLeft: 30,
         height: TASK_H,
         borderRadius: radius.card,
         backgroundColor: sl.surface,
@@ -31,7 +29,6 @@ export function TaskCard({ task, onMore }: { task: Task; onMore?: () => void }) 
         paddingRight: 12,
       }}
     >
-      {/* STEP 1.19 the marker
       <View
         style={{
           width: 3,
@@ -41,9 +38,7 @@ export function TaskCard({ task, onMore }: { task: Task; onMore?: () => void }) 
           marginRight: 11,
         }}
       />
-      */}
 
-      {/* STEP 1.20 what the task is, and who is on it
       <View style={{ flex: 1 }}>
         <T variant="task" color={sl.ink} numberOfLines={1}>
           {task.title}
@@ -71,9 +66,7 @@ export function TaskCard({ task, onMore }: { task: Task; onMore?: () => void }) 
           ))}
         </View>
       </View>
-      */}
 
-      {/* STEP 1.21 and when it is due
       <View style={{ alignItems: 'flex-end', justifyContent: 'space-between', height: 48 }}>
         <Pressable onPress={onMore} accessibilityRole="button" accessibilityLabel="More">
           <Ellipsis size={16} color={sl.muted} strokeWidth={2} />
@@ -82,7 +75,6 @@ export function TaskCard({ task, onMore }: { task: Task; onMore?: () => void }) 
           {task.when}
         </T>
       </View>
-      */}
     </View>
   );
 }

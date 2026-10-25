@@ -2,11 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Pressable, useWindowDimensions, View } from 'react-native';
 
-// STEP 1.07 the artwork
-// import { HeroStage } from '@/features/quizstart/components/hero-stage';
+import { HeroStage } from '@/features/quizstart/components/hero-stage';
 import { T } from '@/features/quizstart/components/text';
-// STEP 1.02 and what you are playing for
-// import { Trophy } from '@/features/quizstart/components/trophy';
+import { Trophy } from '@/features/quizstart/components/trophy';
 import { intro } from '@/features/quizstart/data/intro';
 import {
   BODY_TOP,
@@ -51,22 +49,16 @@ export default function QuizStart() {
       >
         <View style={{ alignItems: 'center' }}>
           <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-            {/* STEP 1.01 the name of the thing
             <T variant="wordmark" color={qz.ink}>
               {intro.wordmark}
             </T>
-            */}
-            {/* STEP 1.03 beside it
             <View style={{ marginLeft: 8, marginTop: 6 }}>
               <Trophy size={TROPHY} />
             </View>
-            */}
           </View>
-          {/* STEP 1.06 what it is
           <T variant="tagline" color={qz.muted}>
             {intro.tagline}
           </T>
-          */}
         </View>
 
         <View
@@ -79,25 +71,18 @@ export default function QuizStart() {
             justifyContent: 'center',
           }}
         >
-          {/* STEP 1.08 on its card
           <HeroStage size={width * 0.88} />
-          */}
         </View>
 
         <View style={{ marginTop: COPY_TOP, alignItems: 'center' }}>
-          {/* STEP 1.12 the pitch
           <T variant="headline" color={qz.ink}>
             {intro.headline}
           </T>
-          */}
-          {/* STEP 1.13 and the detail under it
           <T variant="body" color={qz.muted} style={{ marginTop: BODY_TOP, textAlign: 'center' }}>
             {intro.body}
           </T>
-          */}
         </View>
 
-        {/* STEP 1.14 the one thing it asks
         <Pressable
           onPressIn={() => setHeld(true)}
           onPressOut={() => setHeld(false)}
@@ -120,7 +105,6 @@ export default function QuizStart() {
             </T>
           </View>
         </Pressable>
-        */}
       </View>
     </View>
   );

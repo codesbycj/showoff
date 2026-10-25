@@ -1,0 +1,243 @@
+{
+  "url": "http://localhost:5316/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "range-open",
+      "click": "[data-select='range'] button",
+      "settle": 320
+    },
+    {
+      "name": "range-quarter",
+      "click": "[data-menu='range'] [data-option='quarter']",
+      "settle": 900
+    },
+    {
+      "name": "range-open-2",
+      "click": "[data-select='range'] button",
+      "settle": 320
+    },
+    {
+      "name": "range-year",
+      "click": "[data-menu='range'] [data-option='year']",
+      "settle": 900
+    },
+    {
+      "name": "range-open-3",
+      "click": "[data-select='range'] button",
+      "settle": 320
+    },
+    {
+      "name": "range-month",
+      "click": "[data-menu='range'] [data-option='month']",
+      "settle": 900
+    },
+    {
+      "name": "point-6",
+      "hover": "[data-hit='6']",
+      "against": "range-month",
+      "rest": true
+    },
+    {
+      "name": "point-12",
+      "hover": "[data-hit='12']",
+      "against": "point-6"
+    },
+    {
+      "name": "series-costs-off",
+      "click": "[data-series='costs']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "series-profit-off",
+      "click": "[data-series='profit']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "series-costs-on",
+      "click": "[data-series='costs']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "series-profit-on",
+      "click": "[data-series='profit']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "mode-bar",
+      "click": "[data-mode='bar']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "mode-line",
+      "click": "[data-mode='line']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "compare-on",
+      "click": "[data-compare]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "compare-off",
+      "click": "[data-compare]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "bal-hover",
+      "hover": "[data-bal-hit='4']",
+      "against": "compare-off"
+    },
+    {
+      "name": "bal-hover-2",
+      "hover": "[data-bal-hit='18']",
+      "against": "bal-hover"
+    },
+    {
+      "name": "cost-fuel",
+      "hover": "[data-cost='fuel']",
+      "against": "bal-hover-2",
+      "rest": true
+    },
+    {
+      "name": "cost-seg",
+      "hover": "[data-seg='salaries']",
+      "against": "cost-fuel"
+    },
+    {
+      "name": "inv-all",
+      "click": "[data-filter='all']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "inv-paid",
+      "click": "[data-filter='Paid']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "inv-unpaid",
+      "click": "[data-filter='Unpaid']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "pick-row",
+      "click": "[data-check='v1']",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "pick-all",
+      "click": "[data-check='all']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "pick-none",
+      "click": "[data-check='all']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "size-open",
+      "click": "[data-select='size'] button",
+      "settle": 320
+    },
+    {
+      "name": "size-10",
+      "click": "[data-menu='size'] [data-option='10']",
+      "settle": 800
+    },
+    {
+      "name": "page-next",
+      "click": "[data-page='next']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "page-prev",
+      "click": "[data-page='prev']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "inv-search",
+      "fill": [
+        "[data-search]",
+        "freight"
+      ],
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "inv-search-none",
+      "fill": [
+        "[data-search]",
+        "zzzz"
+      ],
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "inv-search-clear",
+      "click": "[data-search-clear]",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "report",
+      "click": "[data-report]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "report-undo",
+      "click": "[data-report]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "parked",
+      "rest": true,
+      "against": "report-undo"
+    },
+    {
+      "name": "inert-customers",
+      "comment": "Rule 1: four of the seven nav entries do nothing at all.",
+      "click": "[data-tab='customers']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    },
+    {
+      "name": "inert-reports",
+      "click": "[data-tab='reports']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-customers"
+    },
+    {
+      "name": "inert-employees",
+      "click": "[data-tab='employees']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-reports"
+    }
+  ]
+}

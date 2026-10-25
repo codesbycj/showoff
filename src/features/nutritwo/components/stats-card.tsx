@@ -41,15 +41,12 @@ export function StatsCard() {
         >
           <Target size={14} />
         </View>
-        {/* STEP 1.15 the goal
         <T variant="goal" color={nl.ink}>
           {stats.goal}
         </T>
-        */}
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
-        {/* STEP 1.16 how far round it you are
         <View style={{ width: RING, height: RING, alignItems: 'center', justifyContent: 'center' }}>
           <Svg width={RING} height={RING} style={{ position: 'absolute' }}>
             <Circle
@@ -82,10 +79,8 @@ export function StatsCard() {
             {stats.percent}
           </T>
         </View>
-        */}
 
         <View style={{ flex: 1, marginLeft: 14, gap: 20 }}>
-          {/* STEP 1.17 and what that was made of
           {stats.macros.map((m) => (
             <View key={m.key} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
               <View
@@ -110,7 +105,6 @@ export function StatsCard() {
               </View>
             </View>
           ))}
-          */}
         </View>
       </View>
     </View>

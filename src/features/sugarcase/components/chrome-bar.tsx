@@ -18,7 +18,6 @@ export function ChromeBar({ onSelect }: { onSelect?: (key: string) => void }) {
 
   return (
     <View style={{ flexDirection: 'row', gap: FOOT_GAP }}>
-      {/* STEP 1.17 three of them
       {foot.map((f) => (
         <Pressable
           key={f.key}
@@ -44,7 +43,6 @@ export function ChromeBar({ onSelect }: { onSelect?: (key: string) => void }) {
           </View>
         </Pressable>
       ))}
-      */}
     </View>
   );
 }

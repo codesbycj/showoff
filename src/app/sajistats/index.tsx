@@ -2,14 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { View } from 'react-native';
 
-// STEP 1.01 the header
-// import { AppBar } from '@/features/sajistats/components/app-bar';
-// STEP 1.16 and everything it was made of
-// import { HistorySheet } from '@/features/sajistats/components/history-sheet';
-// STEP 1.10 the shape of it
-// import { LineChart } from '@/features/sajistats/components/line-chart';
-// STEP 1.05 how far back to look
-// import { PeriodTabs } from '@/features/sajistats/components/period-tabs';
+import { AppBar } from '@/features/sajistats/components/app-bar';
+import { HistorySheet } from '@/features/sajistats/components/history-sheet';
+import { LineChart } from '@/features/sajistats/components/line-chart';
+import { PeriodTabs } from '@/features/sajistats/components/period-tabs';
 import { T } from '@/features/sajistats/components/text';
 import { periods, summary } from '@/features/sajistats/data/stats';
 import {
@@ -47,17 +43,12 @@ export default function SajiStats() {
       <StatusBar style="light" />
 
       <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
-        {/* STEP 1.02 across the top
         <AppBar title={summary.title} />
-        */}
 
-        {/* STEP 1.06 under the header
         <View style={{ marginTop: TABS_TOP }}>
           <PeriodTabs items={periods} active={period} onSelect={setPeriod} />
         </View>
-        */}
 
-        {/* STEP 1.09 what the period cost
         <View style={{ marginTop: TOTAL_TOP, alignItems: 'center' }}>
           <T variant="caption" color={sj.onDarkMuted}>
             {summary.caption}
@@ -66,19 +57,14 @@ export default function SajiStats() {
             {summary.total}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.11 under the figure
         <View style={{ marginTop: CHART_TOP }}>
           <LineChart />
         </View>
-        */}
       </View>
 
       <View style={{ flex: 1, marginTop: SHEET_TOP }}>
-        {/* STEP 1.17 in a sheet at the foot
         <HistorySheet />
-        */}
       </View>
     </View>
   );

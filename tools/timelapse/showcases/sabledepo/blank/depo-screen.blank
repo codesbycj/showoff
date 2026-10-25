@@ -1,0 +1,260 @@
+import { StatusBar } from 'expo-status-bar';
+import { Image, Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/sabledepo/components/glyph';
+import { T } from '@/features/sabledepo/components/text';
+import { copy, rows, tiles, who } from '@/features/sabledepo/data/dash';
+import {
+  AVATAR,
+  CARD_PAD,
+  HEADER_SIZE,
+  HEADER_TOP,
+  MARGIN,
+  ROW_FACE,
+  ROW_HEIGHT,
+  SHEET_PAD,
+  SHEET_TOP,
+  TILE_GAP,
+  TILE_HEIGHT,
+  TILES_TOP,
+  WHO_TOP,
+} from '@/features/sabledepo/layout';
+import { radius, sb, type } from '@/features/sabledepo/theme';
+import { useInsets } from '@/features/sabledepo/use-insets';
+
+/**
+ * Sable — deposit.
+ *
+ * Assembly only: the way back and what this is, who is being paid, the two
+ * ways to be paid, and what has come in.
+ *
+ * The transactions sheet runs off the bottom edge rather than stopping above
+ * it: it is a list, and a list that ends neatly inside the frame does not
+ * look like one. That is also what fills the screen.
+ */
+export default function SabledepoScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: sb.canvas }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
+{/* STEP 1.01 the way back and what this is
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Go back">
+            <View
+              style={{
+                width: HEADER_SIZE,
+                height: HEADER_SIZE,
+                borderRadius: radius.control,
+                backgroundColor: sb.slab,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="back" size={18} tint={sb.onDark} />
+            </View>
+          </Pressable>
+          <T
+            variant="display"
+            color={sb.onDark}
+            style={{ flex: 1, textAlign: 'center', height: type.display.line }}
+          >
+            {copy.title}
+          </T>
+          <Pressable accessibilityRole="button" accessibilityLabel="All accounts">
+            <View
+              style={{
+                width: HEADER_SIZE,
+                height: HEADER_SIZE,
+                borderRadius: radius.control,
+                backgroundColor: sb.slab,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="grid" size={19} tint={sb.onDark} />
+            </View>
+          </Pressable>
+        </View>
+*/}
+
+{/* STEP 1.02 who is being paid
+        <View style={{ alignItems: 'center', marginTop: WHO_TOP }}>
+          <View>
+            <Image
+              source={who.src}
+              style={{ width: AVATAR, height: AVATAR, borderRadius: radius.control }}
+            />
+            <View
+              style={{
+                position: 'absolute',
+                right: -2,
+                bottom: -2,
+                width: 34,
+                height: 34,
+                borderRadius: radius.control,
+                backgroundColor: sb.card,
+                borderWidth: 3,
+                borderColor: sb.canvas,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <View style={{ transform: [{ rotate: '180deg' }] }}>
+                <Glyph name="arrow" size={14} tint={sb.ink} />
+              </View>
+            </View>
+          </View>
+
+          <T variant="name" color={sb.onDark} style={{ marginTop: 12, height: type.name.line }}>
+            {who.name}
+          </T>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 }}>
+            <T variant="rowWhen" color={sb.muted} style={{ height: type.rowWhen.line }}>
+              {who.card}
+            </T>
+            <View style={{ marginLeft: 6 }}>
+              <Glyph name="plus" size={12} tint={sb.muted} />
+            </View>
+          </View>
+        </View>
+*/}
+
+{/* STEP 1.04 the two ways to be paid
+        <View
+          style={{
+            flexDirection: 'row',
+            gap: TILE_GAP,
+            marginTop: TILES_TOP,
+            // MISTAKE 1.03 the tiles came in half-faded
+            opacity: 0.4,
+          }}
+        >
+          {tiles.map((t) => {
+            const yellow = t.tone === 'yellow';
+            return (
+              <Pressable
+                key={t.id}
+                style={{ flex: 1 }}
+                accessibilityRole="button"
+                accessibilityLabel={t.label}
+              >
+                <View
+                  style={{
+                    height: TILE_HEIGHT,
+                    borderRadius: radius.card,
+                    backgroundColor: yellow ? sb.yellow : sb.card,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Glyph name={yellow ? 'qr' : 'link'} size={28} tint={sb.ink} />
+                  <T
+                    variant="tile"
+                    color={sb.ink}
+                    style={{ marginTop: 12, height: type.tile.line }}
+                  >
+                    {t.label}
+                  </T>
+                </View>
+              </Pressable>
+            );
+          })}
+        </View>
+*/}
+      </View>
+
+{/* STEP 1.05 and what has come in
+      <View
+        style={{
+          flex: 1,
+          marginTop: SHEET_TOP,
+          borderTopLeftRadius: 28,
+          borderTopRightRadius: 28,
+          backgroundColor: sb.slab,
+          paddingHorizontal: SHEET_PAD,
+          paddingTop: 10,
+        }}
+      >
+        <View style={{ alignItems: 'center' }}>
+          <View
+            style={{
+              width: 42,
+              height: 4,
+              borderRadius: radius.control,
+              backgroundColor: sb.muted,
+            }}
+          />
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14 }}>
+          <T variant="section" color={sb.onDark} style={{ flex: 1, height: type.section.line }}>
+            {copy.transactions}
+          </T>
+          <Pressable accessibilityRole="link" accessibilityLabel={copy.seeAll}>
+            <View style={{ paddingVertical: 10, paddingLeft: 10 }}>
+              <T variant="rowWhen" color={sb.muted} style={{ height: type.rowWhen.line }}>
+                {copy.seeAll}
+              </T>
+            </View>
+          </Pressable>
+        </View>
+
+        <T variant="rowWhen" color={sb.muted} style={{ height: type.rowWhen.line }}>
+          {copy.month}
+        </T>
+
+        {rows.map((r) => (
+          <View
+            key={r.id}
+            style={{ height: ROW_HEIGHT, flexDirection: 'row', alignItems: 'center' }}
+          >
+            <View>
+              <Image
+                source={r.src}
+                style={{ width: ROW_FACE, height: ROW_FACE, borderRadius: radius.control }}
+              />
+              <View
+                style={{
+                  position: 'absolute',
+                  right: -3,
+                  bottom: -3,
+                  width: 20,
+                  height: 20,
+                  borderRadius: radius.control,
+                  backgroundColor: r.in ? sb.card : sb.yellow,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <View style={{ transform: [{ rotate: r.in ? '180deg' : '0deg' }] }}>
+                  <Glyph name="arrow" size={10} tint={sb.ink} />
+                </View>
+              </View>
+            </View>
+
+            <View style={{ flex: 1, marginLeft: 12 }}>
+              <T variant="rowName" color={sb.onDark} style={{ height: type.rowName.line }}>
+                {r.name}
+              </T>
+              <T variant="rowWhen" color={sb.muted} style={{ height: type.rowWhen.line }}>
+                {r.when}
+              </T>
+            </View>
+
+            <T
+              variant="rowAmount"
+              color={r.in ? sb.card : sb.onDark}
+              style={{ height: type.rowAmount.line }}
+            >
+              {r.amount}
+            </T>
+          </View>
+        ))}
+      </View>
+*/}
+    </View>
+  );
+}

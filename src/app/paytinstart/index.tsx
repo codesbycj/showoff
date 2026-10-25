@@ -1,14 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-// STEP 1.21 the way out and the way on
-// import { FooterActions } from '@/features/paytinstart/components/footer-actions';
-// STEP 1.12 what the app is
-// import { Headline } from '@/features/paytinstart/components/headline';
-// STEP 1.01 the marks round the edge
-// import { Scatter } from '@/features/paytinstart/components/scatter';
-// STEP 1.03 the artwork
-// import { Stage } from '@/features/paytinstart/components/stage';
+import { FooterActions } from '@/features/paytinstart/components/footer-actions';
+import { Headline } from '@/features/paytinstart/components/headline';
+import { Scatter } from '@/features/paytinstart/components/scatter';
+import { Stage } from '@/features/paytinstart/components/stage';
 import { T } from '@/features/paytinstart/components/text';
 import { onboarding } from '@/features/paytinstart/data/onboarding';
 import {
@@ -54,9 +50,7 @@ export default function PaytinStart() {
         }}
         pointerEvents="none"
       >
-        {/* STEP 1.02 strewn over the top
         <Scatter height={GLYPH_BAND} />
-        */}
       </View>
 
       <View
@@ -68,32 +62,24 @@ export default function PaytinStart() {
         }}
       >
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          {/* STEP 1.04 in the middle of it
           <Stage />
-          */}
         </View>
 
-        {/* STEP 1.13 three lines of it
         <Headline
           one={onboarding.headline.one}
           two={onboarding.headline.two}
           three={onboarding.headline.three}
         />
-        */}
 
-        {/* STEP 1.20 and what it does
         <View style={{ marginTop: LEDE_TOP }}>
           <T variant="lede" color={pt.inkSoft}>
             {onboarding.lede}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.22 at the foot of the page
         <View style={{ marginTop: FOOTER_TOP }}>
           <FooterActions skip={onboarding.skip} start={onboarding.start} />
         </View>
-        */}
       </View>
     </View>
   );

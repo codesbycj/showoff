@@ -1,0 +1,132 @@
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+// STEP 1.07 when and in what
+// import { DetailCard } from '@/features/rovasearch/components/detail-card';
+import { Glyph } from '@/features/rovasearch/components/glyph';
+// STEP 1.05 where you are going
+// import { RouteCard } from '@/features/rovasearch/components/route-card';
+import { T } from '@/features/rovasearch/components/text';
+import { copy } from '@/features/rovasearch/data/search';
+import {
+  BLURB_TOP,
+  BUTTON_HEIGHT,
+  BUTTON_TOP,
+  DETAIL_TOP,
+  DISPLAY_TOP,
+  HEADER_SIZE,
+  HEADER_TOP,
+  MARGIN,
+  ROUTE_TOP,
+} from '@/features/rovasearch/layout';
+import { radius, rv, type } from '@/features/rovasearch/theme';
+import { useInsets } from '@/features/rovasearch/use-insets';
+
+/**
+ * Rova — the search screen.
+ *
+ * Assembly only: the brand and alerts, what the app is for, where you are
+ * going, when and in what, and the one thing the screen asks.
+ *
+ * The stack is sized so it reaches the bottom edge — built at the reference's
+ * squatter proportions it stops about 135dp short. See `layout.ts`.
+ */
+export default function RovasearchScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: rv.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+{/* STEP 1.01 the brand and alerts
+      <View style={{ flexDirection: 'row', alignItems: 'center', height: HEADER_SIZE }}>
+        <Glyph name="pin" size={18} tint={rv.green} />
+        <T
+          variant="brand"
+          color={rv.ink}
+          style={{ marginLeft: 6, flex: 1, height: type.brand.line }}
+        >
+          {copy.brand}
+        </T>
+        <Pressable accessibilityRole="button" accessibilityLabel="Alerts">
+          <View
+            style={{
+              width: HEADER_SIZE,
+              height: HEADER_SIZE,
+              borderRadius: radius.control,
+              backgroundColor: rv.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="bell" size={18} tint={rv.ink} />
+          </View>
+        </Pressable>
+      </View>
+*/}
+
+{/* STEP 1.02 what the app is for
+      <View style={{ marginTop: DISPLAY_TOP }}>
+        {copy.display.map((line) => (
+          <T key={line} variant="display" color={rv.ink} style={{ height: type.display.line }}>
+            {line}
+          </T>
+        ))}
+      </View>
+*/}
+
+{/* STEP 1.03 and why
+      <T variant="blurb" color={rv.body} style={{ marginTop: BLURB_TOP }}>
+        {copy.blurb}
+      </T>
+*/}
+
+{/* STEP 1.06 from here to there
+      <View style={{ marginTop: ROUTE_TOP }}>
+        <RouteCard />
+      </View>
+*/}
+
+{/* STEP 1.08 for how many
+      <View
+        style={{
+          marginTop: DETAIL_TOP,
+          // MISTAKE 1.09 the card came in pulled off the margin
+          marginLeft: 30,
+        }}
+      >
+        <DetailCard />
+      </View>
+*/}
+
+{/* STEP 1.10 and the one thing it asks
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={copy.action}>
+          <View
+            style={{
+              height: BUTTON_HEIGHT,
+              marginTop: BUTTON_TOP,
+              borderRadius: radius.pill,
+              backgroundColor: rv.green,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="action" color={rv.onGreen} style={{ height: type.action.line }}>
+              {copy.action}
+            </T>
+          </View>
+        </Pressable>
+      </View>
+*/}
+    </View>
+  );
+}

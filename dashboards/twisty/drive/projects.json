@@ -1,0 +1,120 @@
+{
+  "url": "http://localhost:5300/",
+  "w": 1440,
+  "h": 900,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "home"
+    },
+    {
+      "name": "open-projects",
+      "click": "[data-tab='projects']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "sort-open",
+      "click": "[data-select='sort'] button",
+      "settle": 300
+    },
+    {
+      "name": "sort-rate",
+      "click": "[data-menu='sort'] [data-option='rate']",
+      "settle": 800
+    },
+    {
+      "name": "sort-open-2",
+      "click": "[data-select='sort'] button",
+      "settle": 300
+    },
+    {
+      "name": "sort-recent",
+      "click": "[data-menu='sort'] [data-option='recent']",
+      "settle": 800
+    },
+    {
+      "name": "filter-unpaid",
+      "click": "[data-filter='unpaid']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "filter-paid",
+      "click": "[data-filter='paid']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "filter-all",
+      "click": "[data-filter='all']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "row-designsystem",
+      "click": "[data-row='designsystem']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "row-motionkit",
+      "click": "[data-row='motionkit']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "spark-day-3",
+      "hover": "[data-spark='3']",
+      "against": "row-motionkit"
+    },
+    {
+      "name": "spark-day-11",
+      "hover": "[data-spark='11']",
+      "against": "spark-day-3"
+    },
+    {
+      "name": "request",
+      "click": "[data-request]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "request-undo",
+      "click": "[data-request]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "search-oster",
+      "fill": [
+        "[data-search]",
+        "oster"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-empty",
+      "fill": [
+        "[data-search]",
+        "qqq"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-clear",
+      "click": "[data-search-clear]",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "inert-messages",
+      "click": "[data-tab='messages']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

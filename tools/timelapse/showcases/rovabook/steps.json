@@ -1,0 +1,81 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the brand and alerts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "what you are doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "how long the seats are held"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "@/features/rovabook/components/ticket-stack"
+   ],
+   "label": "the tickets themselves"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "a word about the city"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    [
+     "// MISTAKE 1.08",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the stack came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovabook/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the dock over the lot"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "book-screen",
+     "src/app/rovabook/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

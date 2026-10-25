@@ -1,0 +1,105 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/top-bar"
+   ],
+   "label": "the brand and who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "in place"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/amount-head"
+   ],
+   "label": "how much is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "to the cent"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/contact-rail"
+   ],
+   "label": "who it is going to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "four of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/card-stack"
+   ],
+   "label": "which card it comes from"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the two behind it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "@/features/tiltsend/components/dock"
+   ],
+   "label": "the dock over the lot"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    [
+     "// MISTAKE 1.10",
+     "marginLeft: 26,"
+    ]
+   ],
+   "label": "the wallet came in shifted off the margin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tiltsend/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "floating over the lot"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "send-screen",
+     "src/app/tiltsend/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

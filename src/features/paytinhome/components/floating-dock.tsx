@@ -29,8 +29,6 @@ export function FloatingDock({
         width: DOCK_WIDTH,
         height: DOCK_HEIGHT,
         borderRadius: radius.full,
-        // MISTAKE 1.38 the dock came in riding low
-        marginBottom: 22,
         backgroundColor: ph.ink,
         flexDirection: 'row',
         alignItems: 'center',
@@ -39,7 +37,6 @@ export function FloatingDock({
         ...shadow.dock,
       }}
     >
-      {/* STEP 1.37 three things in it
       {dock.map((d) => {
         const on = d.accent || d.key === active;
         return (
@@ -71,7 +68,6 @@ export function FloatingDock({
           </Pressable>
         );
       })}
-      */}
     </View>
   );
 }

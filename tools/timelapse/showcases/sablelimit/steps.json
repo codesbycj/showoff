@@ -1,0 +1,68 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sablelimit/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/sablelimit/index.tsx",
+    [
+     "// MISTAKE 1.02",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the gauge came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sablelimit/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "how much of the limit is used"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sablelimit/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the two balances behind it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/sablelimit/index.tsx",
+    [
+     "// MISTAKE 1.05",
+     "marginRight: 34,"
+    ]
+   ],
+   "label": "the promo came in pulled off the margin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sablelimit/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and the offer to raise it"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "limit-screen",
+     "src/app/sablelimit/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

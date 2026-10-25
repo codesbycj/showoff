@@ -1,0 +1,68 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.07 and the month itself
+// import { MonthGrid } from '@/features/focalplan/components/month-grid';
+// STEP 1.01 which day is open
+// import { PlanHead } from '@/features/focalplan/components/plan-head';
+// STEP 1.05 the figures above it
+// import { StatStrip } from '@/features/focalplan/components/stat-strip';
+// STEP 1.03 what it pulls from
+// import { SyncRow } from '@/features/focalplan/components/sync-row';
+import { MARGIN } from '@/features/focalplan/layout';
+import { fc } from '@/features/focalplan/theme';
+import { useInsets } from '@/features/focalplan/use-insets';
+
+/**
+ * Focal — the schedule.
+ *
+ * Assembly only: which day is open, what the schedule pulls from, the
+ * figures above it, and the month itself.
+ *
+ * The statistics strip is outside the padded column so a tile can scroll off
+ * the right edge; it carries the margin itself. The calendar takes the
+ * slack, so the legend sits on the bottom inset at any screen height.
+ */
+export default function FocalplanScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: fc.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <View style={{ paddingHorizontal: MARGIN }}>
+{/* STEP 1.02 and what the screen is
+        <PlanHead onBack={() => router.back()} />
+*/}
+{/* STEP 1.04 two services
+        <SyncRow />
+*/}
+      </View>
+
+{/* STEP 1.06 running off the screen
+      <StatStrip />
+*/}
+
+{/* STEP 1.08 runs joined into pills
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: MARGIN,
+          // MISTAKE 1.09 the calendar came in pushed down
+          paddingTop: 54,
+        }}
+      >
+        <MonthGrid />
+      </View>
+*/}
+    </View>
+  );
+}

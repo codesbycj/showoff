@@ -1,0 +1,143 @@
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/spokenav/components/glyph';
+import { RoadView } from '@/features/spokenav/components/road-view';
+import { T } from '@/features/spokenav/components/text';
+import { hint, ride, stats } from '@/features/spokenav/data/bikes';
+import {
+  ADDRESS_TOP,
+  CARD_PAD,
+  CARD_TOP,
+  HINT_TOP,
+  SHEET_PAD,
+  SHEET_RADIUS,
+  STATS_TOP,
+} from '@/features/spokenav/layout';
+import { radius, shadow, sp, type } from '@/features/spokenav/theme';
+import { useInsets } from '@/features/spokenav/use-insets';
+
+/**
+ * Spoke — the ride.
+ *
+ * Assembly only: the road ahead with the route on it, where you are, what to
+ * do next, how the ride is going, and the way to see more.
+ *
+ * The road fills the top 56% and the sheet takes the rest, so the two always
+ * meet and the screen is full at any height. The distance in the instruction
+ * is set heavier than the words around it because it is the only part of the
+ * sentence you read at speed.
+ */
+export default function SpokenavScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: sp.canvas }}>
+      <StatusBar style="light" />
+
+      <RoadView />
+
+      <View
+        style={{
+          flex: 1,
+          marginTop: -SHEET_RADIUS,
+          borderTopLeftRadius: SHEET_RADIUS,
+          borderTopRightRadius: SHEET_RADIUS,
+          backgroundColor: sp.canvas,
+          paddingHorizontal: SHEET_PAD,
+          paddingBottom: insets.bottom,
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: ADDRESS_TOP }}>
+          <View
+            style={{
+              width: 42,
+              height: 42,
+              borderRadius: radius.control,
+              backgroundColor: sp.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="pin" size={18} tint={sp.ink} />
+          </View>
+          <T variant="blurb" color={sp.body} style={{ flex: 1, marginHorizontal: 12 }}>
+            {ride.address}
+          </T>
+          <Pressable accessibilityRole="button" accessibilityLabel="Re-centre the map">
+            <View
+              style={{
+                width: 42,
+                height: 42,
+                borderRadius: radius.control,
+                backgroundColor: sp.dark,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="crosshair" size={18} tint={sp.onDark} />
+            </View>
+          </Pressable>
+        </View>
+
+        <View
+          style={{
+            marginTop: CARD_TOP,
+            borderRadius: radius.card,
+            backgroundColor: sp.cardEdge,
+            padding: CARD_PAD,
+            flexDirection: 'row',
+            alignItems: 'center',
+            ...shadow.card,
+          }}
+        >
+          <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}>
+            <T variant="display" color={sp.ink} style={{ height: type.display.line }}>
+              {ride.instruction.lead}
+            </T>
+            <T variant="displayStrong" color={sp.ink} style={{ height: type.displayStrong.line }}>
+              {ride.instruction.distance}
+            </T>
+            <T variant="display" color={sp.ink} style={{ height: type.display.line }}>
+              {ride.instruction.rest}
+            </T>
+          </View>
+          <View
+            style={{
+              width: 56,
+              height: 56,
+              borderRadius: radius.control,
+              backgroundColor: sp.lime,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="turn" size={26} tint={sp.ink} />
+          </View>
+        </View>
+
+        <View style={{ flexDirection: 'row', marginTop: STATS_TOP }}>
+          {stats.map((s) => (
+            <View key={s.id} style={{ flex: 1, alignItems: 'center' }}>
+              <T variant="hint" color={sp.muted} style={{ height: type.hint.line }}>
+                {s.label}
+              </T>
+              <T variant="seg" color={sp.ink} style={{ marginTop: 3, height: type.seg.line }}>
+                {s.value}
+              </T>
+            </View>
+          ))}
+        </View>
+
+        <View style={{ flex: 1 }} />
+
+        <View style={{ alignItems: 'center', marginBottom: HINT_TOP }}>
+          <Glyph name="caret" size={18} tint={sp.muted} />
+          <T variant="hint" color={sp.muted} style={{ height: type.hint.line }}>
+            {hint}
+          </T>
+        </View>
+      </View>
+    </View>
+  );
+}

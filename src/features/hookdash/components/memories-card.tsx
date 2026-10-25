@@ -29,13 +29,16 @@ export function MemoriesCard({ onPress }: { onPress?: () => void }) {
           overflow: 'hidden',
         }}
       >
+        {/* STEP 1.24 the picture
         <Image
           source={MEMORIES}
           style={{ position: 'absolute', right: 0, top: 0, width: '62%', height: MEMORIES_H }}
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
+        */}
 
+        {/* STEP 1.25 and when it was
         <View style={{ padding: 14 }}>
           <T variant="section" color={hk.ink}>
             {memories.title}
@@ -44,6 +47,7 @@ export function MemoriesCard({ onPress }: { onPress?: () => void }) {
             {memories.date}
           </T>
         </View>
+        */}
       </View>
     </Pressable>
   );

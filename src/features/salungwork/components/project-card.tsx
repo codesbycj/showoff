@@ -26,23 +26,16 @@ export function ProjectCard({ project }: { project: Project }) {
         padding: 12,
       }}
     >
-      {/* STEP 1.12 the chart
       <View style={{ flex: 1 }}>{project.chart === 'line' ? <LineChart /> : <IconChart />}</View>
-      */}
 
-      {/* STEP 1.13 what the project is
       <T variant="card" color={sl.ink} style={{ marginTop: 8 }}>
         {project.title}
       </T>
-      */}
-      {/* STEP 1.14 what it covers
       <T variant="cardMeta" color={sl.muted} numberOfLines={2}>
         {project.meta}
       </T>
-      */}
 
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 8 }}>
-        {/* STEP 1.15 and how far along
         <View
           style={{
             flex: 1,
@@ -61,7 +54,6 @@ export function ProjectCard({ project }: { project: Project }) {
             }}
           />
         </View>
-        */}
         <T variant="figure" color={sl.muted}>
           {project.figure}
         </T>

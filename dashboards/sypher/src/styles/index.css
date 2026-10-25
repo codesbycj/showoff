@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+
+/*
+ * Sypher.
+ *
+ * The reference is a posed board — a white panel with a hairline border on a
+ * pale sage ground — so this is an inspo brief and the backdrop goes.
+ *
+ * refscan read `#ffffff` and `#e5e8e5` as 92% of the frame between them, which
+ * is right: this design is almost entirely white cards on one grey, with colour
+ * used only by the charts. Its accents are the greens it found at a tenth of a
+ * per cent — `#13b040`, `#14c14e`, `#80f09c`.
+ *
+ * `static`, because the series colours below reach the charts as inline
+ * `var(--color-series-costs)` and Tailwind tree-shakes theme variables that no
+ * utility class references.
+ */
+@theme static {
+  --color-ground: #e9ebe9; /* behind the cards */
+  --color-surface: #ffffff; /* every card */
+  --color-sunken: #f4f5f4; /* table stripes, inert chips */
+  --color-sunken-deep: #e4e7e4;
+
+  --color-ink: #14171a; /* headings and figures */
+  --color-body: #3e4348;
+  /* 5.35:1 on white, 4.90:1 on the ground. */
+  --color-muted: #64696f;
+  --color-line: #e3e6e3;
+
+  --color-accent: #13a63f; /* the brand green */
+  --color-accent-soft: #e4f6e9;
+  --color-accent-deep: #0b6c29; /* accent text on the soft tint */
+
+  --color-warn: #e0a008;
+  --color-warn-soft: #fbf2da;
+  --color-danger: #c62f42; /* 5.40:1 on white; #d93f52 was 4.39:1 */
+  --color-danger-soft: #fce9eb;
+
+  /* The three lines on the revenue chart, and the cost categories under it. */
+  --color-series-revenue: #13a63f;
+  --color-series-profit: #14171a;
+  --color-series-costs: #e5566d;
+
+  --color-cat-fuel: #13a63f;
+  --color-cat-salaries: #4cc45f;
+  --color-cat-maintenance: #8ad84f;
+  --color-cat-warehousing: #c7e24a;
+  --color-cat-insurance: #e8d84a;
+  --color-cat-tech: #c9cdc9;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(20 23 26 / 0.05);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-feature-settings: 'tnum' 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

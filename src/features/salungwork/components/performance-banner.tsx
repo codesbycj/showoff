@@ -29,7 +29,6 @@ export function PerformanceBanner({ onCheck }: { onCheck?: () => void }) {
         gap: 12,
       }}
     >
-      {/* STEP 1.06 what it offers
       <View style={{ width: 108 }}>
         <T variant="banner" color={sl.ink}>
           {banner.title}
@@ -60,10 +59,8 @@ export function PerformanceBanner({ onCheck }: { onCheck?: () => void }) {
           </View>
         </Pressable>
       </View>
-      */}
 
       <View style={{ flex: 1 }}>
-        {/* STEP 1.07 how much it has moved
         <View style={{ alignSelf: 'flex-end', marginBottom: 5 }}>
           <View
             style={{
@@ -82,10 +79,8 @@ export function PerformanceBanner({ onCheck }: { onCheck?: () => void }) {
             </T>
           </View>
         </View>
-        */}
 
         <View style={{ gap: 2 }}>
-          {/* STEP 1.08 and the shape of it
           {banner.cells.map((row, r) => (
             <View key={r} style={{ flexDirection: 'row', gap: 2 }}>
               {row.map((on, c) => (
@@ -101,7 +96,6 @@ export function PerformanceBanner({ onCheck }: { onCheck?: () => void }) {
               ))}
             </View>
           ))}
-          */}
         </View>
       </View>
     </View>

@@ -1,0 +1,18 @@
+{
+ "assets/images/stashfolders/CREDITS.md": "6b3d816ee6e67437dbfde3f6bdaacd0eee566a52af7f8113d9bccdedfcf5c457",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "c7274a5448d9ae4578d239af452d90ecc2836e42af48b7c2125bcd13caea7e25",
+ "src/app/stashfolders/index.tsx": "4b49762a01709cf79db54081f5058a01e0e7e9206b8f92170c313f3f53472a9d",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/stashfolders/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/stashfolders/data/start.ts": "f25985046ab1d9d636ad7f88c08c96cf52a6b25df293dcae8a6459eca46d38c2",
+ "src/features/stashfolders/layout.ts": "4141e5d4313d822f3fc6f122b06ba9c50eef16a592fb4526e7e4415219889788",
+ "src/features/stashfolders/theme.ts": "1d148a370d99bf4d6f8b6f62ac7567661aad7e0a6f533a2cc4fada9252403322",
+ "src/features/stashfolders/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

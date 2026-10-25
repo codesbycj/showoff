@@ -1,0 +1,36 @@
+{
+  "url": "http://localhost:5320/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "overview" },
+    { "name": "open-activity", "click": "[data-tab='activity']", "settle": 900, "rest": true },
+
+    { "name": "filter-open", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-completed", "click": "[data-menu='filter'] [data-option='Completed']", "settle": 850 },
+    { "name": "filter-open-2", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-failed", "click": "[data-menu='filter'] [data-option='Failed']", "settle": 850 },
+    { "name": "filter-open-3", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-all", "click": "[data-menu='filter'] [data-option='all']", "settle": 850 },
+
+    { "name": "pick-row", "click": "[data-check='INV_000074']", "settle": 550, "rest": true },
+    { "name": "pick-all", "click": "[data-check='all']", "settle": 650, "rest": true },
+    { "name": "pick-none", "click": "[data-check='all']", "settle": 650, "rest": true },
+
+    { "name": "scrolled", "wheel": ["[data-scroller='activities']", 320], "rest": true },
+    { "name": "top", "wheel": ["[data-scroller='activities']", -320], "rest": true },
+
+    { "name": "search-flight", "fill": ["[data-search]", "flight"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-account",
+      "click": "[data-tab='account']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

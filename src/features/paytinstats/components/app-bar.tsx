@@ -25,7 +25,6 @@ export function AppBar({
     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
       <IconButton name="back" onPress={onBack} accessibilityLabel="Go back" />
 
-      {/* STEP 1.03 the title, centred on the screen
       <View
         style={{ position: 'absolute', left: 0, right: 0, alignItems: 'center' }}
         pointerEvents="none"
@@ -34,11 +33,8 @@ export function AppBar({
           {title}
         </T>
       </View>
-      */}
 
-      {/* STEP 1.04 and everything else
       <IconButton name="more" onPress={onMore} accessibilityLabel="More options" />
-      */}
     </View>
   );
 }

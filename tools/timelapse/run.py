@@ -399,7 +399,33 @@ def drift(slug):
     return out
 
 
+def is_staged(slug):
+    """Whether a showcase has a staging folder at all.
+
+    A slug can exist as a route and a feature folder with nothing staged
+    behind it — `showcase.js new` scaffolds those, and a batch of them gets
+    scaffolded at once so Metro only has to be restarted the one time. Asking
+    such a slug to preflight used to print "no lock.json", carry on into
+    `apply_mode` anyway and die on a `CalledProcessError`, which reads like a
+    broken tool rather than like a showcase nobody has built yet.
+    """
+    d = sdir(slug)
+    if has_steps(slug):
+        return True
+    # `showcase.js new` creates empty blank/ and finished/ folders, so their
+    # existence proves nothing. Files in them do.
+    for sub in ('blank', 'finished'):
+        p = os.path.join(d, sub)
+        if os.path.isdir(p) and os.listdir(p):
+            return True
+    return False
+
+
 def preflight(slug):
+    if not is_staged(slug):
+        print('preflight: "%s" is scaffolded but not built - nothing is staged '
+              'for it yet, so there is nothing to reset or check.' % slug)
+        return 1
     problems = drift(slug)
     for rel, why in problems:
         print('DRIFT  %-8s %s' % (why, rel))

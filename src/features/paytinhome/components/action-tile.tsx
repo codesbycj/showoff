@@ -42,8 +42,6 @@ export function ActionTile({
       <View
         style={{
           height: TILE_HEIGHT,
-          // MISTAKE 1.23 the tiles came in sitting low
-          marginTop: 12,
           borderRadius: radius.tile,
           backgroundColor: accent ? ph.lime : ph.surface,
           alignItems: 'center',
@@ -52,16 +50,12 @@ export function ActionTile({
           ...shadow.soft,
         }}
       >
-        {/* STEP 1.21 a mark for it
         <View style={{ height: TILE_GLYPH, justifyContent: 'center' }}>
           <Icon name={name === 'more' ? 'more' : name} size={19} color={ph.text} />
         </View>
-        */}
-        {/* STEP 1.22 and what it does
         <T variant="tile" color={ph.text}>
           {label}
         </T>
-        */}
       </View>
     </Pressable>
   );

@@ -17,11 +17,9 @@ export function Masthead({ onSkip }: { onSkip?: () => void }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
       <View style={{ flexDirection: 'row', alignItems: 'flex-start', flex: 1 }}>
-        {/* STEP 1.03 whose app this is
         <T variant="wordmark" color={nl.ink}>
           {header.wordmark}
         </T>
-        */}
         <View style={{ marginTop: 1, marginLeft: 1 }}>
           <T variant="wordmarkSup" color={nl.ink}>
             {header.sup}
@@ -29,13 +27,11 @@ export function Masthead({ onSkip }: { onSkip?: () => void }) {
         </View>
       </View>
 
-      {/* STEP 1.04 and the way past it
       <Pressable onPress={onSkip} accessibilityRole="button" accessibilityLabel={header.skip}>
         <T variant="skip" color={nl.muted}>
           {header.skip}
         </T>
       </Pressable>
-      */}
     </View>
   );
 }
@@ -44,7 +40,6 @@ export function Masthead({ onSkip }: { onSkip?: () => void }) {
 export function Steps() {
   return (
     <View style={{ flexDirection: 'row', gap: STEP_GAP }}>
-      {/* STEP 1.05 four steps, three done
       {Array.from({ length: STEPS }, (_, i) => (
         <View
           key={i}
@@ -56,7 +51,6 @@ export function Steps() {
           }}
         />
       ))}
-      */}
     </View>
   );
 }

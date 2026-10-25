@@ -36,32 +36,25 @@ export function FlowNode({
     <View
       style={{
         borderRadius: radius.card,
-        // MISTAKE 1.11 the steps came in inset
-        marginLeft: 22,
         backgroundColor: dark ? sc.active : sc.surface,
         padding: NODE_PAD,
         ...shadow.card,
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        {/* STEP 1.07 who has it
         <Image
           source={FACES[face % FACES.length]}
           style={{ width: NODE_AVATAR, height: NODE_AVATAR, borderRadius: radius.full }}
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
-        */}
 
         <View style={{ flex: 1 }} />
 
         {done ? (
           <>
-            {/* STEP 1.08 whether it is done
             <Icon name="check" size={17} color={sc.done} strokeWidth={2.6} />
-            */}
             <View style={{ width: 10 }} />
-            {/* STEP 1.09 and when
             <View
               style={{
                 width: NODE_CHIP,
@@ -74,14 +67,12 @@ export function FlowNode({
             >
               <Icon name="calendar" size={15} color={sc.ink} />
             </View>
-            */}
           </>
         ) : (
           <Icon name="more" size={18} color={dark ? sc.onActive : sc.faint} strokeWidth={2.4} />
         )}
       </View>
 
-      {/* STEP 1.10 then what the step is
       <T
         variant={dark ? 'stepOn' : 'step'}
         color={dark ? sc.onActive : sc.ink}
@@ -89,7 +80,6 @@ export function FlowNode({
       >
         {text}
       </T>
-      */}
     </View>
   );
 }

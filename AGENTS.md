@@ -3,6 +3,13 @@
 A gallery of app UI designs rebuilt from reference screenshots in React Native
 (Expo SDK 57) + NativeWind, recorded as speed-build videos on an Android Studio emulator.
 
+> **This repository holds three series, and this file is the rules for one of them.**
+> The **apps** series is below. The **websites** before/after series is closed and has its
+> own rules in [websites/README.md](websites/README.md). The **dashboards** series is the
+> current one and has its own rules in [dashboards/README.md](dashboards/README.md) — read
+> that file, not this one, before touching anything under `dashboards/`. Nothing in this
+> file about staging, timelapse or the Android export applies there.
+
 Each app design is a **showcase** with its own slug. These rules apply to every set of
 screens, whichever app it is.
 
@@ -493,6 +500,46 @@ node tools/showcase.js use <slug>        # repoint the boot redirect for recordi
 node tools/showcase.js list              # what exists, and which one boots
 node tools/showcase.js wipe --yes        # delete every showcase (weekly reset)
 ```
+
+**A take is four commands, so there is one that runs all four:**
+
+```bash
+node tools/record.js <slug>                  # use -> preflight -> expo start -> ask -> reveal
+node tools/record.js <slug> --no-reveal      # server only, no prompt
+node tools/record.js <slug> --no-start       # stop after preflight
+node tools/record.js <slug> --screen 2 --delay 2
+node tools/record.js <slug> --port 8082 -c   # extra args pass through to expo start
+npm run record -- <slug>                     # same thing through npm
+```
+
+The four still work on their own; this only saves typing them.
+
+**The reveal runs while the server is up, not after it.** `expo start` never
+finishes on its own, and the reveal needs the server alive anyway - every step
+is a file write Fast Refresh has to redraw. So the server is spawned as a child
+and left running, and once its ready line appears the script asks before driving
+the reveal against it. Answering anything but `y` leaves the server up and
+prints the `run.py` line to fire by hand; Ctrl-C stops the server either way.
+
+The cost of being able to ask: `expo start` does not get stdin, so its
+interactive keys (`r`, `j`, `m`) are off. A take does not use them.
+`--no-reveal` gives the server back in the foreground.
+
+**It re-points the boot redirect again just before the reveal.** Minutes pass
+between step 1 and step 4, and `src/app/index.tsx` is a derived file that an
+editor will happily write back from a stale tab. `run.py` hashes it in its own
+preflight, so a mismatch aborts the take after the server is up and the
+emulator is posed - which is exactly when it is most expensive. `use` is
+idempotent, so the window is closed rather than diagnosed; the script says so
+when it had to re-point.
+
+Step 1 before step 2 is the other reason this exists. `lock` hashes
+`src/app/index.tsx`, so preflight run *before* `use` reports
+`DRIFT changed src/app/index.tsx` on every showcase that is not the one
+currently booting - which reads as a broken showcase and is not one. And
+preflight is a gate: if it fails the server is never started, because a take
+that begins on a drifted tree records the wrong thing and nothing notices until
+afterwards.
 
 Showcases coexist until the wipe. Two consequences worth holding in mind:
 expo-router evaluates every route file at startup, so a broken file in one app red-screens

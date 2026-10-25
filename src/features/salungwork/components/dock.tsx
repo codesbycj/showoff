@@ -39,7 +39,6 @@ export function Dock({ onSelect, onAdd }: { onSelect?: (t: Tab) => void; onAdd?:
           ...shadow.float,
         }}
       >
-        {/* STEP 1.24 the four places to be
         {dock.map((t) => {
           const Icon = ICONS[t.icon];
           const on = t.key === selectedDock;
@@ -60,10 +59,8 @@ export function Dock({ onSelect, onAdd }: { onSelect?: (t: Tab) => void; onAdd?:
             </Pressable>
           );
         })}
-        */}
       </View>
 
-      {/* STEP 1.25 and the way to add one
       <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel="Add">
         <View
           style={{
@@ -79,7 +76,6 @@ export function Dock({ onSelect, onAdd }: { onSelect?: (t: Tab) => void; onAdd?:
           <Plus size={23} color={sl.onDark} strokeWidth={2.3} />
         </View>
       </Pressable>
-      */}
     </View>
   );
 }

@@ -31,7 +31,6 @@ export function HistorySheet({ onSelect }: { onSelect?: (key: string) => void })
       }}
     >
       <View style={{ alignItems: 'center' }}>
-        {/* STEP 1.18 a sheet you can pull up
         <View
           style={{
             width: GRABBER_W,
@@ -40,10 +39,8 @@ export function HistorySheet({ onSelect }: { onSelect?: (key: string) => void })
             backgroundColor: sj.rule,
           }}
         />
-        */}
       </View>
 
-      {/* STEP 1.19 name it
       <View
         style={{
           marginTop: 12,
@@ -65,13 +62,11 @@ export function HistorySheet({ onSelect }: { onSelect?: (key: string) => void })
           </View>
         </Pressable>
       </View>
-      */}
 
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: SHEET_PAD, paddingBottom: 16 }}
       >
-        {/* STEP 1.20 then the days
         {history.groups.map((group) => (
           <View key={group.key}>
             <T variant="dayLabel" color={sj.muted} style={{ marginTop: 12 }}>
@@ -93,7 +88,6 @@ export function HistorySheet({ onSelect }: { onSelect?: (key: string) => void })
             ))}
           </View>
         ))}
-        */}
       </ScrollView>
     </View>
   );

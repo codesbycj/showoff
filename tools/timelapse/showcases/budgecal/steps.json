@@ -1,0 +1,65 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgecal/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the way out and the month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgecal/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "the month itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgecal/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the open day"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/budgecal/index.tsx",
+    [
+     "// MISTAKE 1.04",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the bars came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgecal/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "what it went on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgecal/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and the bar that sums it"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "cal-screen",
+     "src/app/budgecal/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

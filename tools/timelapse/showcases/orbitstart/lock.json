@@ -1,0 +1,20 @@
+{
+ "assets/images/orbitstart/CREDITS.md": "0c4ac5e8113cd1a59d2228c2f7a546192e63cab466e79ada49f1990d5ffe2660",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "ec0b444da2aa3c9976f1169f0a52a91f9cedc97911ca40eab08555d493802ce9",
+ "src/app/orbitstart/index.tsx": "af91b6e22c2b5342db9cfa37130ec7f820558f87ae186ffe9bba779255cc0323",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/orbitstart/components/actions.tsx": "3f46610b4f0346fe5ecd1b97c068a85e417ea6edbeacdc7eb4c6e86cf2dcbb1e",
+ "src/features/orbitstart/components/holo.tsx": "5b66045c315ea5f7f320a48afd2506566e3b746756158b78aad2292ec1f9d035",
+ "src/features/orbitstart/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/orbitstart/data/start.ts": "0b6fde6b6ac150c8d78ff497385f28ac436779fbc3c549405e8995dadcf1b6f3",
+ "src/features/orbitstart/layout.ts": "0467c26f7df6ad5f5bb8951d4e1d5d403c122c41968f2f5b0ce056f6481fdfe6",
+ "src/features/orbitstart/theme.ts": "0f5d0aadee2a44ab0ab7866bac26c0691881623d99f88cf85da22c8db9029a2b",
+ "src/features/orbitstart/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

@@ -22,21 +22,26 @@ export function ProfileTile({ onPress }: { onPress?: () => void }) {
   return (
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={profile.name}>
       <View style={{ height: TILE_H, borderRadius: radius.card, overflow: 'hidden' }}>
+        {/* STEP 1.04 their picture
         <Image
           source={PROFILE}
           style={{ position: 'absolute', width: '100%', height: TILE_H }}
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
+        */}
 
+        {/* STEP 1.05 their name
         <View style={{ padding: 12 }}>
           <T variant="cardTitle" color={hk.ink}>
             {profile.name}
           </T>
         </View>
+        */}
 
         <View style={{ flex: 1 }} />
 
+        {/* STEP 1.06 and how many friends
         <View
           style={{
             flexDirection: 'row',
@@ -66,6 +71,7 @@ export function ProfileTile({ onPress }: { onPress?: () => void }) {
             </T>
           </View>
         </View>
+        */}
       </View>
     </Pressable>
   );

@@ -1,0 +1,89 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the way back and what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the bolt and the question"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "@/features/voltchat/components/reading-row"
+   ],
+   "label": "the figures it has to hand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "@/features/voltchat/components/chip-rail"
+   ],
+   "label": "what it offers next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "as a rail you push"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "@/features/voltchat/components/ask-bar"
+   ],
+   "label": "and what you are about to ask"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    [
+     "// MISTAKE 1.10",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the rows came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltchat/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "across the foot"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "chat-screen",
+     "src/app/voltchat/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

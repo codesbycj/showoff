@@ -1,0 +1,233 @@
+import { StatusBar } from 'expo-status-bar';
+import { Image, Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/budgecal/components/glyph';
+import { T } from '@/features/budgecal/components/text';
+import {
+  change,
+  copy,
+  me,
+  splits,
+  summary,
+  weekdays,
+  weeks,
+} from '@/features/budgecal/data/budget';
+import {
+  BAR_HEIGHT,
+  CARD_PAD,
+  CELL,
+  DAY_TOP,
+  GRID_TOP,
+  HEADER_SIZE,
+  HEADER_TOP,
+  MARGIN,
+  ROW_GAP,
+  SPLIT_HEIGHT,
+  SPLIT_TOP,
+  SUMMARY_HEIGHT,
+  SUMMARY_TOP,
+} from '@/features/budgecal/layout';
+import { bg, radius, type } from '@/features/budgecal/theme';
+import { useInsets } from '@/features/budgecal/use-insets';
+
+/**
+ * Budge — the month.
+ *
+ * Assembly only: the way out and the month, the month itself, what the open
+ * day cost, and a bar at the foot summing it.
+ *
+ * Each split's bar is its own spend over its own budget. The reference puts
+ * the same sentence — "$424 of $920 spent" — under two bars of different
+ * lengths.
+ */
+export default function BudgecalScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: bg.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel="Close">
+          <View
+            style={{
+              width: HEADER_SIZE,
+              height: HEADER_SIZE,
+              borderRadius: radius.control,
+              backgroundColor: bg.dark,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={17} tint={bg.onDark} />
+          </View>
+        </Pressable>
+        <View style={{ flex: 1 }} />
+        <Pressable accessibilityRole="button" accessibilityLabel={'Month: ' + copy.month}>
+          <View
+            style={{
+              height: HEADER_SIZE,
+              paddingLeft: 18,
+              paddingRight: 10,
+              borderRadius: radius.pill,
+              borderWidth: 1,
+              borderColor: bg.hair,
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <T variant="chip" color={bg.ink} style={{ height: type.chip.line }}>
+              {copy.month}
+            </T>
+            <Glyph name="caret" size={15} tint={bg.ink} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ marginTop: GRID_TOP }}>
+        <View style={{ flexDirection: 'row' }}>
+          {weekdays.map((d, i) => (
+            <View key={i} style={{ flex: 1, alignItems: 'center' }}>
+              <T variant="weekday" color={bg.muted} style={{ height: type.weekday.line }}>
+                {d}
+              </T>
+            </View>
+          ))}
+        </View>
+
+        {weeks.map((week, wi) => (
+          <View key={wi} style={{ flexDirection: 'row', marginTop: ROW_GAP }}>
+            {week.map((cell, ci) => {
+              const pad = 'pad' in cell && cell.pad;
+              const today = 'today' in cell && cell.today;
+              const on = 'on' in cell && cell.on;
+              const fill = today ? bg.dark : on ? bg.green : pad ? bg.hair : 'transparent';
+              const ink = today ? bg.onDark : pad ? bg.muted : bg.ink;
+              return (
+                <View key={ci} style={{ flex: 1, alignItems: 'center' }}>
+                  <View
+                    style={{
+                      width: CELL,
+                      height: CELL,
+                      borderRadius: radius.control,
+                      backgroundColor: fill,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <T variant="date" color={ink} style={{ height: type.date.line }}>
+                      {String(cell.d)}
+                    </T>
+                  </View>
+                </View>
+              );
+            })}
+          </View>
+        ))}
+      </View>
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: DAY_TOP }}>
+        <T variant="figure" color={bg.ink} style={{ height: type.figure.line }}>
+          {copy.day}
+        </T>
+        <View
+          style={{
+            marginLeft: 10,
+            paddingHorizontal: 9,
+            paddingVertical: 4,
+            borderRadius: radius.pill,
+            backgroundColor: bg.green,
+          }}
+        >
+          <T variant="meta" color={bg.onGreen} style={{ height: type.meta.line }}>
+            {change}
+          </T>
+        </View>
+        <View style={{ flex: 1 }} />
+        <Glyph name="dots" size={18} tint={bg.muted} />
+      </View>
+
+      {splits.map((s) => (
+        <View key={s.id} style={{ height: SPLIT_HEIGHT, marginTop: SPLIT_TOP }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <T variant="title" color={bg.ink} style={{ flex: 1, height: type.title.line }}>
+              {s.label}
+            </T>
+            <T variant="small" color={bg.muted} style={{ height: type.small.line }}>
+              {s.right}
+            </T>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              height: BAR_HEIGHT,
+              marginTop: 8,
+              borderRadius: radius.pill,
+              overflow: 'hidden',
+              backgroundColor: bg.track,
+            }}
+          >
+            <View style={{ flex: s.share, backgroundColor: bg.dark }} />
+            <View style={{ flex: 1 - s.share }} />
+          </View>
+        </View>
+      ))}
+
+      <View style={{ flex: 1 }} />
+
+      <View
+        style={{
+          height: SUMMARY_HEIGHT,
+          marginTop: SUMMARY_TOP,
+          borderRadius: radius.card,
+          backgroundColor: bg.dark,
+          padding: CARD_PAD,
+          justifyContent: 'space-between',
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Image source={me} style={{ width: 28, height: 28, borderRadius: radius.control }} />
+          <View style={{ flex: 1, marginLeft: 10 }}>
+            <T variant="title" color={bg.onDark} style={{ height: type.title.line }}>
+              {copy.day}
+            </T>
+            <T variant="small" color={bg.muted} style={{ height: type.small.line }}>
+              {copy.sub}
+            </T>
+          </View>
+          <Pressable accessibilityRole="button" accessibilityLabel="Share">
+            <View style={{ padding: 6 }}>
+              <Glyph name="share" size={16} tint={bg.onDark} />
+            </View>
+          </Pressable>
+          <Pressable accessibilityRole="button" accessibilityLabel="More">
+            <View style={{ padding: 6 }}>
+              <Glyph name="dots" size={16} tint={bg.onDark} />
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ flexDirection: 'row' }}>
+          {summary.map((s) => (
+            <View key={s.id} style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end' }}>
+              <T variant="cardTitle" color={bg.onDark} style={{ height: type.cardTitle.line }}>
+                {s.major}
+              </T>
+              <T variant="small" color={bg.muted} style={{ height: type.small.line }}>
+                {s.minor}
+              </T>
+            </View>
+          ))}
+        </View>
+      </View>
+    </View>
+  );
+}

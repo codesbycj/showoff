@@ -25,7 +25,6 @@ export function PeriodPills({
 }) {
   return (
     <View style={{ flexDirection: 'row', gap: PILL_GAP }}>
-      {/* STEP 1.08 one pill each
       {items.map((item) => {
         const on = item === active;
         return (
@@ -39,8 +38,6 @@ export function PeriodPills({
             <View
               style={{
                 height: PILL_HEIGHT,
-                // MISTAKE 1.09 the pills came in sitting low
-                marginTop: 10,
                 borderRadius: radius.pill,
                 backgroundColor: on ? ps.lime : ps.surface,
                 alignItems: 'center',
@@ -55,7 +52,6 @@ export function PeriodPills({
           </Pressable>
         );
       })}
-      */}
     </View>
   );
 }

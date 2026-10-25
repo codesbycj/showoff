@@ -23,7 +23,6 @@ export function ChipRow({ onSelect }: { onSelect?: (c: Chip) => void }) {
       style={{ marginHorizontal: -MARGIN }}
       contentContainerStyle={{ paddingHorizontal: MARGIN, gap: CHIP_GAP }}
     >
-      {/* STEP 1.10 all of them
       {chips.map((c) => (
         <Pressable
           key={c.key}
@@ -61,7 +60,6 @@ export function ChipRow({ onSelect }: { onSelect?: (c: Chip) => void }) {
           </View>
         </Pressable>
       ))}
-      */}
     </ScrollView>
   );
 }

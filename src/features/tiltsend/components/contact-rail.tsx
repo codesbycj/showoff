@@ -1,0 +1,76 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { people } from '../data/home';
+import { FACE, FACE_ON } from '../layout';
+import { radius, tl, type } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+/**
+ * Who you are sending to.
+ *
+ * The chosen one is bigger, ringed in the brand's violet and carries a lime
+ * caret under it — three signals, not one. A ring colour on its own is the
+ * kind of selected state that disappears for anyone who cannot separate the
+ * two hues, and this is a screen about moving money.
+ *
+ * The faces are photographs (AGENTS.md, "Faces are photographs"). The rail is
+ * a row of fixed sizes inside a horizontal scroller, so a fifth person pushes
+ * off the edge rather than squeezing the other four.
+ */
+export function ContactRail() {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+      {people.map((p) => {
+        const size = p.picked ? FACE_ON : FACE;
+        return (
+          <Pressable key={p.id} accessibilityRole="button" accessibilityLabel={`Send to ${p.name}`}>
+            <View style={{ alignItems: 'center' }}>
+              <T variant="name" color={tl.body} style={{ marginBottom: 7, height: type.name.line }}>
+                {p.name}
+              </T>
+              <View>
+                <Image
+                  source={p.src}
+                  style={{
+                    width: size,
+                    height: size,
+                    borderRadius: radius.control,
+                    borderWidth: 3,
+                    borderColor: p.picked ? tl.violet : tl.lime,
+                  }}
+                />
+                {p.picked ? (
+                  <View
+                    style={{
+                      position: 'absolute',
+                      bottom: -4,
+                      left: 0,
+                      right: 0,
+                      alignItems: 'center',
+                    }}
+                  >
+                    <View
+                      style={{
+                        width: 26,
+                        height: 18,
+                        borderRadius: radius.pill,
+                        backgroundColor: tl.violet,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <View style={{ transform: [{ rotate: '180deg' }] }}>
+                        <Glyph name="caret" size={13} tint={tl.lime} />
+                      </View>
+                    </View>
+                  </View>
+                ) : null}
+              </View>
+            </View>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}

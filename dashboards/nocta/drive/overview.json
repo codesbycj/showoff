@@ -1,0 +1,200 @@
+{
+  "url": "http://localhost:5308/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "hover-nov",
+      "hover": "[data-hit='4']",
+      "against": "rest",
+      "rest": true
+    },
+    {
+      "name": "hover-may",
+      "hover": "[data-hit='10']",
+      "against": "hover-nov"
+    },
+    {
+      "name": "select-may",
+      "click": "[data-hit='10']",
+      "against": "rest",
+      "rest": true
+    },
+    {
+      "name": "span-weekly",
+      "click": "[data-segment='weekly']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "span-monthly",
+      "click": "[data-segment='monthly']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "span-range",
+      "click": "[data-segment='range']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "span-yearly",
+      "click": "[data-segment='yearly']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "month-next",
+      "click": "[aria-label='Next month']",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "month-back",
+      "click": "[aria-label='Previous month']",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "day-19",
+      "click": "[data-day='19']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "day-3",
+      "click": "[data-day='3']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "day-quiet",
+      "click": "[data-day='8']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "prompt-pick",
+      "click": "[data-prompt='Forecast next month']",
+      "settle": 600,
+      "rest": true,
+      "against": "day-quiet"
+    },
+    {
+      "name": "ask",
+      "fill": [
+        "[data-ask]",
+        "What drove November?"
+      ],
+      "settle": 500
+    },
+    {
+      "name": "send",
+      "click": "[data-send]",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "read-more",
+      "click": "[data-readmore]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "window-90",
+      "click": "[data-select='window'] button",
+      "settle": 320
+    },
+    {
+      "name": "window-90-pick",
+      "click": "[data-menu='window'] [data-option='90']",
+      "settle": 850
+    },
+    {
+      "name": "window-year",
+      "click": "[data-select='window'] button",
+      "settle": 320
+    },
+    {
+      "name": "window-year-pick",
+      "click": "[data-menu='window'] [data-option='365']",
+      "settle": 850
+    },
+    {
+      "name": "window-30",
+      "click": "[data-select='window'] button",
+      "settle": 320
+    },
+    {
+      "name": "window-30-pick",
+      "click": "[data-menu='window'] [data-option='30']",
+      "settle": 850
+    },
+    {
+      "name": "slice-meals",
+      "hover": "[data-mark='slice-meals']",
+      "against": "window-30-pick",
+      "rest": true
+    },
+    {
+      "name": "slice-rewards",
+      "hover": "[data-mark='slice-rewards']",
+      "against": "slice-meals"
+    },
+    {
+      "name": "legend-internet",
+      "click": "[data-legend='internet']",
+      "settle": 600
+    },
+    {
+      "name": "legend-internet-off",
+      "click": "[data-legend='internet']",
+      "settle": 600
+    },
+    {
+      "name": "bell",
+      "click": "header [aria-label^='Notifications']",
+      "settle": 500
+    },
+    {
+      "name": "parked",
+      "rest": true,
+      "against": "bell"
+    },
+    {
+      "name": "inert-analytics",
+      "comment": "Rule 1: five of the eight rail entries do nothing at all.",
+      "click": "[data-tab='analytics']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    },
+    {
+      "name": "inert-apps",
+      "click": "[data-tab='apps']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-analytics"
+    },
+    {
+      "name": "view-all-invoices",
+      "comment": "The card reports upward and the pane routes it: this is the only in-app navigation on the Overview.",
+      "click": "[data-viewall]",
+      "settle": 900,
+      "rest": true,
+      "against": "inert-apps"
+    },
+    {
+      "name": "back-to-overview",
+      "click": "[data-tab='overview']",
+      "settle": 900,
+      "rest": true
+    }
+  ]
+}

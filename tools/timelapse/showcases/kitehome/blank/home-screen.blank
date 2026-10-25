@@ -1,0 +1,88 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.05 what it does
+// import { ActionRow } from '@/features/kitehome/components/action-row';
+// STEP 1.03 what is in the wallet
+// import { Balance } from '@/features/kitehome/components/balance';
+// STEP 1.07 in and out
+// import { FlowCards } from '@/features/kitehome/components/flow-cards';
+// STEP 1.09 what it has been doing
+// import { HistoryList } from '@/features/kitehome/components/history-list';
+// STEP 1.01 who is signed in
+// import { PanelHeader } from '@/features/kitehome/components/panel-header';
+// STEP 1.12 and where else it goes
+// import { TabBar } from '@/features/kitehome/components/tab-bar';
+import { HISTORY_TOP, MARGIN, PANEL_PAD, TABBAR_GAP } from '@/features/kitehome/layout';
+import { kt, radius } from '@/features/kitehome/theme';
+import { useInsets } from '@/features/kitehome/use-insets';
+
+/**
+ * Kite — the wallet.
+ *
+ * Assembly only: the charcoal panel carrying who is signed in, what is in the
+ * wallet, the three things it does and the two flows; then what it has been
+ * doing; then where else the app goes.
+ *
+ * The list sits in a `flex: 1` block between the panel and the floating tab
+ * bar, so the bar rides the bottom inset at any screen height and the rows
+ * take whatever is left rather than leaving a band of canvas under them.
+ */
+export default function KitehomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: kt.canvas,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <View
+        style={{
+          borderRadius: radius.panel,
+          backgroundColor: kt.panel,
+          padding: PANEL_PAD,
+        }}
+      >
+{/* STEP 1.02 and their photograph
+        <PanelHeader />
+*/}
+{/* STEP 1.04 to the penny
+        <Balance />
+*/}
+{/* STEP 1.06 three of them
+        <ActionRow onSend={() => router.push('/kitecard')} />
+*/}
+{/* STEP 1.08 both counted from the list
+        <FlowCards />
+*/}
+      </View>
+
+{/* STEP 1.10 row by row
+      <View
+        style={{
+          flex: 1,
+          marginTop: HISTORY_TOP,
+          // MISTAKE 1.11 the list came in inset
+          paddingHorizontal: 22,
+        }}
+      >
+        <HistoryList />
+      </View>
+*/}
+
+{/* STEP 1.13 floating
+      <View style={{ marginTop: TABBAR_GAP }}>
+        <TabBar active="home" onSelect={(id) => id === 'cards' && router.push('/kitecard')} />
+      </View>
+*/}
+    </View>
+  );
+}

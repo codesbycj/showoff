@@ -1,6 +1,9 @@
 # Batch — 17 design shots, 16 to build
 
-The shots are `ref/batch/<n>.png`, numbered as they were given. Each is an **inspo
+The shots are `ref/batch/<family>.png`, named after the showcase family they became —
+`brisk.png` is the board that became `briskhome` and `briskcase`. They arrived
+numbered 25-41 and the Shot column keeps those numbers, because the skip note and the
+build order refer to them. Each is an **inspo
 brief** (AGENTS.md, "Three kinds of reference"): match the spirit, build at real 393dp
 sizes, fill the screen, fix the reference's mistakes, and say which calls were mine.
 
@@ -11,30 +14,30 @@ not one showcase with three routes.
 
 | Shot | Why | Already built as |
 |---|---|---|
-| **26** | Same board as shot **5**, given earlier in this session — fitplan, "Weave Your Time, Design Your Destiny." | `weavestart` (screen 1 only; screens 2 and 3 of that board were never built) |
+| **26** (no image here) | Same board as shot **5**, given earlier in this session — fitplan, "Weave Your Time, Design Your Destiny." | `weavestart` (screen 1 only; screens 2 and 3 of that board were never built) |
 
 ## The worklist
 
 Status: `todo` → `built` → `staged` (blank/final registered) → `done` (gate passed).
 
-| Shot | What it is | Screens | Slugs | Status |
-|---|---|---|---|---|
-| 25 | Travel onboarding, acid green, a throw of photo tags | 1 | `tembeastart` | **done** |
-| 27 | Productivity, white + green/orange | 3 | `tempohome` · `tempotask` · `tempocal` | todo |
-| 28 | Payments, cream + violet/lime, dark dock | 2 | `tilthome` · `tiltsend` | todo |
-| 29 | Investing, black + acid green | 3 | `stakquiz` · `stakstock` · `stakrate` | todo |
-| 30 | AI assistant / analytics, dark + yellow-green | 3 | `voltdata` · `voltchat` · `voltprompt` | todo |
-| 31 | Bike rental, light grey + lime | 3 | `spokecats` · `spokebike` · `spokenav` | todo |
-| 32 | Coach travel booking, black + green | 3 | `rovasearch` · `rovabook` · `rovaseat` | todo |
-| 33 | Calorie tracking, white + blue/lime | 2 | `morselhome` · `morselweek` | todo |
-| 34 | Budget planner, white + green/red | 3 | `budgehome` · `budgeplan` · `budgecal` | todo |
-| 35 | Financial dashboard, yellow + green/black | 3 | `sabledash` · `sablelimit` · `sabledepo` | todo |
-| 36 | File storage, grey + yellow/black | 4 | `stashstart` · `stashhome` · `stashfolders` · `stashlock` | todo |
-| 37 | Cards, black + holographic gradient | 3 | `orbitstart` · `orbithome` · `orbitover` | todo |
-| 38 | Wallet, light grey + charcoal cards | 2 | `kitehome` · `kitecard` | todo |
-| 39 | Projects, black and white, wave graphics | 2 | `onyxhome` · `onyxday` | todo |
-| 40 | Tasks, white + blue/lime | 2 | `briskhome` · `briskcase` | todo |
-| 41 | Focus/productivity, white + blue/violet/lime | 3 | `focalhome` · `focalstart` · `focalplan` | todo |
+| Shot | Image | What it is | Screens | Slugs | Status |
+|---|---|---|---|---|---|
+| 25 | `tembea.png` | Travel onboarding, acid green, a throw of photo tags | 1 | `tembeastart` | **done** |
+| 27 | `tempo.png` | Productivity, white + green/orange | 3 | `tempohome` · `tempotask` · `tempocal` | **done** |
+| 28 | `tilt.png` | Payments, cream + violet/lime, dark dock | 2 | `tilthome` · `tiltsend` | **done** |
+| 29 | `stak.png` | Investing, black + acid green | 3 | `stakquiz` · `stakstock` · `stakrate` | **done** |
+| 30 | `volt.png` | AI assistant / analytics, dark + yellow-green | 3 | `voltdata` · `voltchat` · `voltprompt` | **done** |
+| 31 | `spoke.png` | Bike rental, light grey + lime | 3 | `spokecats` · `spokebike` · `spokenav` | **done** |
+| 32 | `rova.png` | Coach travel booking, black + green | 3 | `rovasearch` · `rovabook` · `rovaseat` | **done** |
+| 33 | `morsel.png` | Calorie tracking, white + blue/lime | 2 | `morselhome` · `morselweek` | **done** |
+| 34 | `budge.png` | Budget planner, white + green/red | 3 | `budgehome` · `budgeplan` · `budgecal` | **done** |
+| 35 | `sable.png` | Financial dashboard, yellow + green/black | 3 | `sabledash` · `sablelimit` · `sabledepo` | **done** |
+| 36 | `stash.png` | File storage, grey + yellow/black | 4 | `stashstart` · `stashhome` · `stashfolders` · `stashlock` | **done** |
+| 37 | `orbit.png` | Cards, black + holographic gradient | 3 | `orbitstart` · `orbithome` · `orbitover` | **done** |
+| 38 | `kite.png` | Wallet, light grey + charcoal cards | 2 | `kitehome` · `kitecard` | **done** |
+| 39 | `onyx.png` | Projects, black and white, wave graphics | 2 | `onyxhome` · `onyxday` | **done** |
+| 40 | `brisk.png` | Tasks, white + blue/lime | 2 | `briskhome` · `briskcase` | **done** |
+| 41 | `focal.png` | Focus/productivity, white + blue/violet/lime | 3 | `focalhome` · `focalstart` · `focalplan` | **done** |
 
 **42 showcases.** Every brand name is invented; none of the references' own marks are
 copied (AGENTS.md, "Sourcing assets").

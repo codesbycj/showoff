@@ -1,0 +1,86 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.07 what came with it
+// import { AttachmentsCard } from '@/features/briskcase/components/attachments-card';
+// STEP 1.01 what the task is
+// import { CaseHead } from '@/features/briskcase/components/case-head';
+// STEP 1.09 the subtasks
+// import { ChecklistCard } from '@/features/briskcase/components/checklist-card';
+// STEP 1.12 and the one thing it is for
+// import { CompleteButton } from '@/features/briskcase/components/complete-button';
+// STEP 1.03 and where today sits
+// import { DateRail } from '@/features/briskcase/components/date-rail';
+// STEP 1.05 what it asks for
+// import { DescriptionCard } from '@/features/briskcase/components/description-card';
+import { BUTTON_TOP, CARD_TOP, MARGIN } from '@/features/briskcase/layout';
+import { br } from '@/features/briskcase/theme';
+import { useInsets } from '@/features/briskcase/use-insets';
+
+/**
+ * Brisk — the task detail.
+ *
+ * Assembly only: what the task is and how long it has taken, where today sits
+ * between its dates, what it asks for, what came with it, the subtasks, and
+ * the one thing the screen is for.
+ *
+ * The checklist takes the slack, so the button rides the bottom inset at any
+ * screen height instead of leaving a band of canvas under it.
+ */
+export default function BriskcaseScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: br.canvas,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+{/* STEP 1.02 and how long it has taken
+      <CaseHead />
+*/}
+
+{/* STEP 1.04 between its two dates
+      <DateRail />
+*/}
+
+{/* STEP 1.06 in its own words
+      <View style={{ marginTop: CARD_TOP }}>
+        <DescriptionCard />
+      </View>
+*/}
+
+{/* STEP 1.08 two files
+      <View style={{ marginTop: CARD_TOP }}>
+        <AttachmentsCard />
+      </View>
+*/}
+
+{/* STEP 1.10 one of them done
+      <View
+        style={{
+          flex: 1,
+          marginTop: CARD_TOP,
+          // MISTAKE 1.11 the checklist came in half-faded
+          opacity: 0.45,
+        }}
+      >
+        <ChecklistCard />
+      </View>
+*/}
+
+{/* STEP 1.13 full width
+      <View style={{ marginTop: BUTTON_TOP }}>
+        <CompleteButton onPress={() => router.back()} />
+      </View>
+*/}
+    </View>
+  );
+}

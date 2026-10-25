@@ -1,12 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-// STEP 1.01 what the screen is
-// import { Header } from '@/features/quizboard/components/header';
-// STEP 1.05 the top three
-// import { Podium } from '@/features/quizboard/components/podium';
-// STEP 1.13 and everyone behind them
-// import { RankList } from '@/features/quizboard/components/rank-list';
+import { Header } from '@/features/quizboard/components/header';
+import { Podium } from '@/features/quizboard/components/podium';
+import { RankList } from '@/features/quizboard/components/rank-list';
 import { HEADER_TOP, MARGIN, PODIUM_BOTTOM, PODIUM_TOP } from '@/features/quizboard/layout';
 import { qz } from '@/features/quizboard/theme';
 import { useInsets } from '@/features/quizboard/use-insets';
@@ -29,22 +26,16 @@ export default function QuizBoard() {
       <StatusBar style="dark" />
 
       <View style={{ paddingTop: insets.top + HEADER_TOP, paddingHorizontal: MARGIN }}>
-        {/* STEP 1.02 across the top
         <Header />
-        */}
       </View>
 
       <View
         style={{ marginTop: PODIUM_TOP, marginBottom: PODIUM_BOTTOM, paddingHorizontal: MARGIN }}
       >
-        {/* STEP 1.06 under the title
         <Podium />
-        */}
       </View>
 
-      {/* STEP 1.14 on a sheet to the bottom edge
       <RankList />
-      */}
     </View>
   );
 }

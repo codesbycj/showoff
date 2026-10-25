@@ -18,7 +18,6 @@ import { T } from './text';
 export function Header({ onBack, onAccount }: { onBack?: () => void; onAccount?: () => void }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      {/* STEP 1.03 the way back
       <Pressable onPress={onBack} accessibilityRole="button" accessibilityLabel="Back">
         <View
           style={{
@@ -33,10 +32,8 @@ export function Header({ onBack, onAccount }: { onBack?: () => void; onAccount?:
           <ArrowLeft size={18} color={ml.onCanvas} strokeWidth={2.1} />
         </View>
       </Pressable>
-      */}
 
       <View style={{ flex: 1, alignItems: 'center' }}>
-        {/* STEP 1.04 and whose account
         <Pressable onPress={onAccount} accessibilityRole="button" accessibilityLabel={header.name}>
           <View
             style={{
@@ -63,7 +60,6 @@ export function Header({ onBack, onAccount }: { onBack?: () => void; onAccount?:
             <ChevronDown size={15} color={ml.ink} strokeWidth={2.2} />
           </View>
         </Pressable>
-        */}
       </View>
 
       <View style={{ width: HEADER_HEIGHT }} />

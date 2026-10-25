@@ -41,23 +41,18 @@ export function TabDock({
   return (
     <View style={{ backgroundColor: nr.dock, paddingBottom: bottomInset }}>
       <View style={{ height: DOCK_HEIGHT, flexDirection: 'row', alignItems: 'center' }}>
-        {/* STEP 1.43 two on the left
         {tabs.slice(0, 2).map((t) => (
           <Cell key={t.key} tab={t} active={active} onSelect={onSelect} />
         ))}
-        */}
 
         {/* The column the add button stands in. */}
         <View style={{ flex: 1 }} />
 
-        {/* STEP 1.44 two on the right
         {tabs.slice(2).map((t) => (
           <Cell key={t.key} tab={t} active={active} onSelect={onSelect} />
         ))}
-        */}
       </View>
 
-      {/* STEP 1.45 and the one thing the app is for
       <View
         style={{
           position: 'absolute',
@@ -79,8 +74,6 @@ export function TabDock({
             style={{
               width: FAB_SIZE,
               height: FAB_SIZE,
-              // MISTAKE 1.46 the button came in sunk into the dock
-              marginTop: 34,
               borderRadius: radius.full,
               backgroundColor: nr.fab,
               alignItems: 'center',
@@ -100,7 +93,6 @@ export function TabDock({
           </View>
         </Pressable>
       </View>
-      */}
     </View>
   );
 }

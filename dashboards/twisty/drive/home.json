@@ -1,0 +1,64 @@
+{
+  "url": "http://localhost:5300/",
+  "w": 1440,
+  "h": 900,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "hover-friday", "hover": "[data-hit='5']", "against": "rest", "rest": true },
+    { "name": "select-friday", "click": "[data-hit='5']", "against": "rest" },
+    { "name": "chip-monday", "click": "[data-chip='1']", "against": "select-friday" },
+
+    { "name": "range-open", "click": "[data-select='range'] button", "against": "chip-monday" },
+    { "name": "range-month", "click": "[data-menu='range'] [data-option='month']", "settle": 900 },
+    { "name": "range-year", "click": "[data-select='range'] button", "settle": 300 },
+    { "name": "range-year-pick", "click": "[data-menu='range'] [data-option='year']", "settle": 900 },
+    { "name": "range-back-open", "click": "[data-select='range'] button", "settle": 300 },
+    { "name": "range-week", "click": "[data-menu='range'] [data-option='week']", "settle": 900 },
+
+    { "name": "expand-copyright", "click": "[data-expand='copyright']", "against": "range-week" },
+    { "name": "projects-scrolled", "wheel": ["[data-scroller='projects']", 420] },
+    { "name": "projects-top", "wheel": ["[data-scroller='projects']", -420] },
+
+    { "name": "connect-randy", "click": "[data-connect='randy']", "against": "projects-top" },
+    { "name": "connect-undo", "click": "[data-connect='randy']", "against": "connect-randy" },
+    { "name": "connect-scrolled", "wheel": ["[data-scroller='connect']", 260] },
+
+    { "name": "premium-open", "click": "[data-upgrade]", "against": "connect-scrolled" },
+    { "name": "premium-close", "click": "[data-upgrade]", "against": "premium-open" },
+
+    { "name": "stat-interviews", "hover": "[data-stat='interviews']", "against": "premium-close" },
+    { "name": "stat-hires", "hover": "[data-stat='hires']", "against": "stat-interviews" },
+    { "name": "period-open", "click": "[data-select='period'] button", "settle": 300 },
+    { "name": "period-march", "click": "[data-menu='period'] [data-option='mar']", "settle": 800 },
+
+    { "name": "search-design", "fill": ["[data-search]", "design"], "settle": 800 },
+    { "name": "search-none", "fill": ["[data-search]", "zzz"], "settle": 800 },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 800 },
+
+    { "name": "bell", "click": "header [aria-label^='Notifications']" },
+
+    {
+      "name": "parked",
+      "comment": "The pointer leaves the bell and its hover fades. Without this frame the inert-tab beat diffs against a hover state and reports a change that is the cursor, not the tab.",
+      "rest": true,
+      "against": "bell"
+    },
+    {
+      "name": "inert-messages",
+      "comment": "Rule 1: the two unbuilt tabs do nothing at all.",
+      "click": "[data-tab='messages']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    },
+    {
+      "name": "inert-discover",
+      "click": "[data-tab='discover']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-messages"
+    }
+  ]
+}

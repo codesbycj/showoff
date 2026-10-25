@@ -33,7 +33,6 @@ export function ActivityRow({
       accessibilityLabel={`${title} ${amount}`}
     >
       <View style={{ height: ROW_HEIGHT, flexDirection: 'row', alignItems: 'center' }}>
-        {/* STEP 1.31 a mark for the merchant
         <View
           style={{
             width: ROW_GLYPH,
@@ -46,9 +45,7 @@ export function ActivityRow({
         >
           <Icon name={glyph} size={17} color={ph.onInk} />
         </View>
-        */}
 
-        {/* STEP 1.32 what it was, and when
         <View style={{ flex: 1, marginLeft: ROW_GAP }}>
           <T variant="rowTitle" color={ph.text} numberOfLines={1}>
             {title}
@@ -57,13 +54,10 @@ export function ActivityRow({
             {date}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.33 and what it cost
         <T variant="rowAmount" color={ph.text}>
           {amount}
         </T>
-        */}
       </View>
     </Pressable>
   );

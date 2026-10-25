@@ -1,0 +1,65 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/spokenav/index.tsx",
+    "@/features/spokenav/components/road-view"
+   ],
+   "label": "the road ahead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokenav/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "with the route on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokenav/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "where you are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokenav/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "what to do next"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/spokenav/index.tsx",
+    [
+     "// MISTAKE 1.05",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the figures came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokenav/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "how the ride is going"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "nav-screen",
+     "src/app/spokenav/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

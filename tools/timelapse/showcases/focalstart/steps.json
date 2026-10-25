@@ -1,0 +1,89 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "@/features/focalstart/components/brand-row"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and the way past it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "@/features/focalstart/components/hero-copy"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "in two weights"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "@/features/focalstart/components/stat-pair"
+   ],
+   "label": "and the proof"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "two cards of it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    [
+     "// MISTAKE 1.07",
+     "paddingHorizontal: 40,"
+    ]
+   ],
+   "label": "the cards came in squeezed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "@/features/focalstart/components/start-button"
+   ],
+   "label": "the way on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalstart/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and the way back in"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "start-screen",
+     "src/app/focalstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+  "url": "http://localhost:5316/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "dashboard" },
+    { "name": "open-fleet", "click": "[data-tab='fleet']", "settle": 900, "rest": true },
+
+    { "name": "state-route", "click": "[data-filter='On route']", "settle": 800, "rest": true },
+    { "name": "state-maintenance", "click": "[data-filter='Maintenance']", "settle": 800, "rest": true },
+    { "name": "state-idle", "click": "[data-filter='Idle']", "settle": 800, "rest": true },
+    { "name": "state-all", "click": "[data-filter='all']", "settle": 800, "rest": true },
+
+    { "name": "sort-open", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-miles", "click": "[data-menu='sort'] [data-option='miles']", "settle": 800 },
+    { "name": "sort-open-2", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-driver", "click": "[data-menu='sort'] [data-option='driver']", "settle": 800 },
+    { "name": "sort-open-3", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-util", "click": "[data-menu='sort'] [data-option='utilisation']", "settle": 800 },
+
+    { "name": "row-pick", "click": "[data-row='veh-5']", "settle": 700, "rest": true },
+    { "name": "row-pick-2", "click": "[data-row='veh-11']", "settle": 700, "rest": true },
+
+    { "name": "fleet-scrolled", "wheel": ["[data-scroller='fleet']", 300], "rest": true },
+    { "name": "fleet-top", "wheel": ["[data-scroller='fleet']", -300], "rest": true },
+
+    { "name": "search-dover", "fill": ["[data-search]", "dover"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-insights",
+      "click": "[data-tab='insights']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

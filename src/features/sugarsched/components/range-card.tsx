@@ -32,14 +32,11 @@ export function RangeCard() {
     <View
       style={{
         borderRadius: radius.sheet,
-        // MISTAKE 1.17 the card came in inset
-        marginHorizontal: 16,
         backgroundColor: ss.sheet,
         padding: SHEET_PAD,
         ...shadow.sheet,
       }}
     >
-      {/* STEP 1.12 what is being scheduled
       <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
         <T variant="sheetTitle" color={ss.onSheet} style={{ flex: 1, marginRight: 12 }}>
           {picker.title}
@@ -51,21 +48,17 @@ export function RangeCard() {
           accessibilityIgnoresInvertColors
         />
       </View>
-      */}
 
       <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 16 }}>
-        {/* STEP 1.13 which month
         <T variant="month" color={ss.onSheet} style={{ flex: 1 }}>
           {picker.month}
         </T>
-        */}
         <T variant="month" color={ss.onSheetMuted}>
           {picker.nextMonth}
         </T>
       </View>
 
       <View style={{ marginTop: 10, gap: DAY_GAP }}>
-        {/* STEP 1.14 every day of it
         {weeks.map((week, i) => (
           <View key={i} style={{ flexDirection: 'row', gap: DAY_GAP }}>
             {week.map((day, k) => (
@@ -78,10 +71,8 @@ export function RangeCard() {
               : null}
           </View>
         ))}
-        */}
       </View>
 
-      {/* STEP 1.15 and the range you picked
       <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginTop: 16 }}>
         <View style={{ flex: 1 }}>
           <T variant="fieldLabel" color={ss.onSheetMuted}>
@@ -114,7 +105,6 @@ export function RangeCard() {
           <Icon name="check" size={22} color={ss.onConfirm} strokeWidth={2.4} />
         </View>
       </View>
-      */}
     </View>
   );
 }

@@ -1,0 +1,57 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgeplan/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "how much of the plan is used"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgeplan/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "what has gone out"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/budgeplan/index.tsx",
+    [
+     "// MISTAKE 1.03",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the rows came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgeplan/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "two of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgeplan/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and two places to put more"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "plan-screen",
+     "src/app/budgeplan/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

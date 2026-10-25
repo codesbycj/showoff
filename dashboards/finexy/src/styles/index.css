@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/figtree';
+
+/*
+ * Finexy.
+ *
+ * A posed board — white cards on a flat `#eaeaea` with a drop shadow under the
+ * panel — so this is an inspo brief and the backdrop goes.
+ *
+ * refscan read `#ffffff` and `#eaeaea` as 88% of the frame and found the orange
+ * at just over one per cent: `#ec5329`, with `#ef633f` and `#f77543` as its
+ * lighter steps. The ink it found is `#1e1e16`, which is a warm near-black
+ * rather than a grey — kept, because it is what makes this design feel like
+ * paper rather than like a screen.
+ *
+ * `static`, because the wallet and card tints reach components as inline
+ * `var(--color-...)` and Tailwind tree-shakes theme variables no utility uses.
+ */
+@theme static {
+  --color-ground: #eceae7; /* behind the cards */
+  --color-surface: #ffffff; /* every card */
+  --color-sunken: #f4f2ef; /* chips, rails, inert controls */
+  --color-sunken-deep: #e3e0db;
+
+  --color-ink: #1e1e16; /* headings, the filled controls */
+  --color-fill: #1e1e16; /* a filled surface and the text on it */
+  --color-fill-fg: #ffffff;
+  --color-body: #44443c;
+  /* 5.23:1 on white, 4.87:1 on the ground. */
+  --color-muted: #68675d;
+  --color-line: #e6e3de;
+
+  --color-accent: #ec5329; /* the brand orange: bars, dots, thin marks */
+  /*
+   * The orange that carries text.
+   *
+   * White on #ec5329 is 3.60:1 — the lead figure tile, the orange card and
+   * every label on them. Three steps deeper is 4.68:1 and still unmistakably
+   * the same orange; the brand colour stays exactly as it is everywhere it is
+   * a mark rather than a surface.
+   */
+  --color-accent-strong: #cf440f;
+  --color-accent-soft: #fdeee7;
+  --color-accent-deep: #b03508; /* accent text on the soft tint: 5.1:1 */
+
+  --color-positive: #156b3f; /* 5.71:1 on its tint; #1a7f4b was 4.38:1 */
+  --color-positive-soft: #e4f3eb;
+  --color-danger: #b02c23; /* 5.57:1 on its tint; #c63a30 was 4.46:1 */
+  --color-danger-soft: #fceae8;
+  --color-warn: #a86a05;
+  --color-info: #2f6fd0;
+  --color-info-soft: #e7eefb;
+
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 18px;
+  --shadow-card: 0 1px 2px rgb(30 30 22 / 0.04), 0 10px 26px -20px rgb(30 30 22 / 0.2);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+/*
+ * Dark. The reference puts a sun/moon pair at the top of the rail, so the build
+ * owes a real second theme (rule 5). `fill` is separate from `ink` because ink
+ * inverts and a filled control would otherwise be white with white text on it.
+ */
+[data-theme='dark'] {
+  --color-ground: #15150f;
+  --color-surface: #1d1d16;
+  --color-sunken: #26261e;
+  --color-sunken-deep: #333329;
+
+  --color-ink: #f5f4ef;
+  --color-fill: #f0efe8;
+  --color-fill-fg: #1a1a13;
+  --color-body: #cbc9c0;
+  --color-muted: #9b998e; /* 6.4:1 on the surface */
+  --color-line: #2e2e25;
+
+  --color-accent: #f2683f;
+  --color-accent-strong: #f2683f;
+  --color-accent-soft: #35170d;
+  --color-accent-deep: #ffa585;
+
+  --color-positive: #44bd80;
+  --color-positive-soft: #11291d;
+  --color-danger: #ef6b60;
+  --color-danger-soft: #2f1512;
+  --color-warn: #e0a84a;
+  --color-info: #6b9df0;
+  --color-info-soft: #131f33;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.55), 0 10px 26px -20px rgb(0 0 0 / 0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

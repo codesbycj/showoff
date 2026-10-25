@@ -1,0 +1,105 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "@/features/focalhome/components/greet-row"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and their photograph"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "@/features/focalhome/components/create-button"
+   ],
+   "label": "the one thing it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "full width"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "@/features/focalhome/components/chip-row"
+   ],
+   "label": "which day to show"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "running off the screen"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "@/features/focalhome/components/stat-cards"
+   ],
+   "label": "how much is done"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "one figure and two tiles"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "@/features/focalhome/components/project-list"
+   ],
+   "label": "and the projects"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "each with its own cast"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/focalhome/index.tsx",
+    [
+     "// MISTAKE 1.11",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the projects came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-screen",
+     "src/app/focalhome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

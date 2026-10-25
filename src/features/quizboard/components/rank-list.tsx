@@ -26,11 +26,9 @@ export function RankList({ onSelect }: { onSelect?: (e: Entry) => void }) {
         paddingHorizontal: SHEET_PAD,
       }}
     >
-      {/* STEP 1.15 a row each
       {ranking.map((e, i) => (
         <RankRow key={e.key} entry={e} first={i === 0} onPress={() => onSelect?.(e)} />
       ))}
-      */}
     </View>
   );
 }
@@ -48,8 +46,6 @@ function RankRow({
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={entry.name}>
       <View
         style={{
-          // MISTAKE 1.20 every row came in indented
-          paddingLeft: 36,
           height: ROW_HEIGHT,
           flexDirection: 'row',
           alignItems: 'center',
@@ -57,7 +53,6 @@ function RankRow({
           borderTopColor: qz.rule,
         }}
       >
-        {/* STEP 1.16 the placing
         <View
           style={{
             width: RANK_WELL,
@@ -72,9 +67,7 @@ function RankRow({
             {String(entry.rank)}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.17 the face
         <Image
           source={FACES[entry.face]}
           style={{
@@ -86,9 +79,7 @@ function RankRow({
           resizeMode="cover"
           accessibilityIgnoresInvertColors
         />
-        */}
 
-        {/* STEP 1.18 the name and the points
         <View style={{ flex: 1, marginLeft: 12 }}>
           <T variant="name" color={qz.ink}>
             {entry.name}
@@ -97,9 +88,7 @@ function RankRow({
             {entry.points}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.19 and the score
         <View
           style={{
             width: SCORE_DISC,
@@ -114,7 +103,6 @@ function RankRow({
             {entry.score}
           </T>
         </View>
-        */}
       </View>
     </Pressable>
   );

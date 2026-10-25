@@ -18,7 +18,6 @@ import { Icon } from './icon';
 export function ToolRail() {
   return (
     <View style={{ gap: RAIL_GAP }} pointerEvents="box-none">
-      {/* STEP 1.14 six of them
       {rail.map((key) => (
         <View
           key={key}
@@ -35,7 +34,6 @@ export function ToolRail() {
           <Icon name={key} size={17} color={sc.ink} />
         </View>
       ))}
-      */}
     </View>
   );
 }

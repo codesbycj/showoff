@@ -26,7 +26,6 @@ const ART = {
 export function Stage({ width, height }: { width: number; height: number | `${number}%` }) {
   return (
     <View style={{ width, height }} pointerEvents="none">
-      {/* STEP 1.10 three of them, thrown
       {stage.map((s) => (
         <Image
           key={s.key}
@@ -47,7 +46,6 @@ export function Stage({ width, height }: { width: number; height: number | `${nu
           accessibilityIgnoresInvertColors
         />
       ))}
-      */}
     </View>
   );
 }

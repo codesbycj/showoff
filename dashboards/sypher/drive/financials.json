@@ -1,0 +1,96 @@
+{
+  "url": "http://localhost:5316/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "dashboard"
+    },
+    {
+      "name": "open-financials",
+      "click": "[data-tab='financials']",
+      "settle": 900,
+      "rest": true
+    },
+    {
+      "name": "range-open",
+      "click": "[data-select='range'] button",
+      "settle": 320
+    },
+    {
+      "name": "range-year",
+      "click": "[data-menu='range'] [data-option='year']",
+      "settle": 900
+    },
+    {
+      "name": "range-open-2",
+      "click": "[data-select='range'] button",
+      "settle": 320
+    },
+    {
+      "name": "range-month",
+      "click": "[data-menu='range'] [data-option='month']",
+      "settle": 900
+    },
+    {
+      "name": "point-3",
+      "hover": "[data-hit='3']",
+      "against": "range-month",
+      "rest": true
+    },
+    {
+      "name": "point-9",
+      "hover": "[data-hit='9']",
+      "against": "point-3"
+    },
+    {
+      "name": "mode-bar",
+      "click": "[data-mode='bar']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "mode-line",
+      "click": "[data-mode='line']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "series-revenue-off",
+      "click": "[data-series='revenue']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "series-revenue-on",
+      "click": "[data-series='revenue']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "cost-row",
+      "hover": "[data-cost='warehousing']",
+      "against": "series-revenue-on"
+    },
+    {
+      "name": "cost-click",
+      "click": "[data-cost='insurance']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "parked",
+      "rest": true,
+      "against": "cost-click"
+    },
+    {
+      "name": "inert-reports",
+      "click": "[data-tab='reports']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    }
+  ]
+}

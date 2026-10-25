@@ -1,0 +1,89 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "how many there are"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/prompt-head"
+   ],
+   "label": "the first saved prompt"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/hour-chart"
+   ],
+   "label": "its answer, hour by hour"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "with its chart under it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/tool-rail"
+   ],
+   "label": "how to read it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the second"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "@/features/voltprompt/components/ask-bar"
+   ],
+   "label": "and the box for the next one"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    [
+     "// MISTAKE 1.10",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the second prompt came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/voltprompt/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "across the foot"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "prompt-screen",
+     "src/app/voltprompt/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

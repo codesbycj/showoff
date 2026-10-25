@@ -1,0 +1,39 @@
+{
+  "url": "http://localhost:5320/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "overview" },
+    { "name": "open-manage", "click": "[data-tab='manage']", "settle": 900, "rest": true },
+
+    { "name": "currency-open", "click": "[data-select='currency'] button", "settle": 320 },
+    { "name": "currency-usd", "click": "[data-menu='currency'] [data-option='USD']", "settle": 800 },
+    { "name": "currency-open-2", "click": "[data-select='currency'] button", "settle": 320 },
+    { "name": "currency-all", "click": "[data-menu='currency'] [data-option='ALL']", "settle": 800 },
+
+    { "name": "wallet-gbp", "click": "[data-wallet='gbp']", "settle": 650, "rest": true },
+    { "name": "wallet-gbp-off", "click": "[data-wallet='gbp']", "settle": 650, "rest": true },
+
+    { "name": "transfer", "click": "[data-transfer]", "settle": 700, "rest": true },
+
+    { "name": "period-quarters", "click": "[data-segment='quarters']", "settle": 850, "rest": true },
+    { "name": "pl-hover", "hover": "[data-hit='1']", "against": "period-quarters" },
+    { "name": "period-months", "click": "[data-segment='months']", "settle": 850, "rest": true },
+
+    { "name": "card-reveal", "click": "[data-card-art='c2']", "settle": 650, "rest": true },
+    { "name": "card-hide", "click": "[data-card-art='c2']", "settle": 650, "rest": true },
+
+    { "name": "theme-dark", "click": "[data-theme-btn='dark']", "settle": 850, "rest": true },
+    { "name": "theme-light", "click": "[data-theme-btn='light']", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-rail-settings",
+      "click": "[data-rail='r-settings']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "theme-light"
+    }
+  ]
+}

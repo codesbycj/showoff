@@ -1,0 +1,89 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "@/features/tempotask/components/top-bar"
+   ],
+   "label": "the way back and what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "in place"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "@/features/tempotask/components/progress-card"
+   ],
+   "label": "how the week went"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "six days of it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "@/features/tempotask/components/notice-pill"
+   ],
+   "label": "a word about it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "said once, in the dark"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "@/features/tempotask/components/timeline-card"
+   ],
+   "label": "and what ran when"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "on the same scale"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tempotask/index.tsx",
+    [
+     "// MISTAKE 1.09",
+     "maxHeight: 150,"
+    ]
+   ],
+   "label": "the timeline came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "task-screen",
+     "src/app/tempotask/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

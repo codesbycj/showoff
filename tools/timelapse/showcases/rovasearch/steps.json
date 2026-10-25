@@ -1,0 +1,89 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the brand and alerts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "and why"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "@/features/rovasearch/components/route-card"
+   ],
+   "label": "where you are going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "from here to there"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "@/features/rovasearch/components/detail-card"
+   ],
+   "label": "when and in what"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "for how many"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    [
+     "// MISTAKE 1.09",
+     "marginLeft: 30,"
+    ]
+   ],
+   "label": "the card came in pulled off the margin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/rovasearch/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and the one thing it asks"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "search-screen",
+     "src/app/rovasearch/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

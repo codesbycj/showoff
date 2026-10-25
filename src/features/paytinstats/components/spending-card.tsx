@@ -38,12 +38,9 @@ export function SpendingCard({ height }: { height: number }) {
           {spending.kind}
         </T>
         <View style={{ flex: 1 }} />
-        {/* STEP 1.20 a way into this one too
         <CardBadge fill={ps.lime} ink={ps.text} />
-        */}
       </View>
 
-      {/* STEP 1.21 what the month cost
       <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
         <T variant="cardMoney" color={ps.onInk}>
           {spending.amount}
@@ -52,16 +49,12 @@ export function SpendingCard({ height }: { height: number }) {
           {spending.cents}
         </T>
       </View>
-      */}
 
       <View style={{ alignItems: 'center' }}>
-        {/* STEP 1.22 the shape of it
         <PrismArt size={76} shades={ps.prism} />
-        */}
       </View>
 
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        {/* STEP 1.23 and which cards paid
         {spending.legend.map((label) => (
           <View key={label} style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
             <View
@@ -77,7 +70,6 @@ export function SpendingCard({ height }: { height: number }) {
             </T>
           </View>
         ))}
-        */}
       </View>
     </View>
   );

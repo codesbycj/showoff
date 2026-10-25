@@ -11,7 +11,6 @@ type Stepper = (typeof steppers)[number];
 export function StepperRow({ onStep }: { onStep?: (s: Stepper, dir: -1 | 1) => void }) {
   return (
     <View style={{ flexDirection: 'row', gap: 12 }}>
-      {/* STEP 1.13 both of them
       {steppers.map((s) => (
         <View
           key={s.key}
@@ -19,8 +18,6 @@ export function StepperRow({ onStep }: { onStep?: (s: Stepper, dir: -1 | 1) => v
             flex: 1,
             borderRadius: 20,
             backgroundColor: nl.surface,
-            // MISTAKE 1.17 the cards came in dropped
-            marginTop: 20,
             padding: 24,
           }}
         >
@@ -58,7 +55,6 @@ export function StepperRow({ onStep }: { onStep?: (s: Stepper, dir: -1 | 1) => v
           </View>
         </View>
       ))}
-      */}
     </View>
   );
 }

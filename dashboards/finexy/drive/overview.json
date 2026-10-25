@@ -1,0 +1,84 @@
+{
+  "url": "http://localhost:5320/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "currency-open", "click": "[data-select='currency'] button", "settle": 320 },
+    { "name": "currency-eur", "click": "[data-menu='currency'] [data-option='EUR']", "settle": 800 },
+    { "name": "currency-open-2", "click": "[data-select='currency'] button", "settle": 320 },
+    { "name": "currency-gbp", "click": "[data-menu='currency'] [data-option='GBP']", "settle": 800 },
+    { "name": "currency-open-3", "click": "[data-select='currency'] button", "settle": 320 },
+    { "name": "currency-all", "click": "[data-menu='currency'] [data-option='ALL']", "settle": 800 },
+
+    { "name": "wallet-usd", "click": "[data-wallet='usd']", "settle": 600, "rest": true },
+    { "name": "wallet-eur", "click": "[data-wallet='eur']", "settle": 600, "rest": true },
+    { "name": "wallets-scrolled", "wheel": ["[data-scroller='wallets']", 120], "rest": true },
+
+    { "name": "transfer", "click": "[data-transfer]", "settle": 700, "rest": true },
+
+    { "name": "pl-hover-mar", "hover": "[data-hit='2']", "against": "transfer" },
+    { "name": "pl-hover-aug", "hover": "[data-hit='7']", "against": "pl-hover-mar" },
+    { "name": "period-quarters", "click": "[data-segment='quarters']", "settle": 850, "rest": true },
+    { "name": "period-months", "click": "[data-segment='months']", "settle": 850, "rest": true },
+
+    { "name": "card-reveal", "click": "[data-card-art='c1']", "settle": 650, "rest": true },
+    { "name": "card-reveal-2", "click": "[data-card-art='c2']", "settle": 650, "rest": true },
+    { "name": "card-hide", "click": "[data-card-art='c2']", "settle": 650, "rest": true },
+
+    { "name": "filter-open", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-pending", "click": "[data-menu='filter'] [data-option='Pending']", "settle": 850 },
+    { "name": "filter-open-2", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-all", "click": "[data-menu='filter'] [data-option='all']", "settle": 850 },
+
+    { "name": "pick-row", "click": "[data-check='INV_000076']", "settle": 550, "rest": true },
+    { "name": "pick-all", "click": "[data-check='all']", "settle": 650, "rest": true },
+    { "name": "pick-none", "click": "[data-check='all']", "settle": 650, "rest": true },
+    { "name": "activities-scrolled", "wheel": ["[data-scroller='activities']", 240], "rest": true },
+
+    { "name": "search-hotel", "fill": ["[data-search]", "hotel"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    { "name": "theme-dark", "click": "[data-theme-btn='dark']", "settle": 850, "rest": true },
+    { "name": "theme-light", "click": "[data-theme-btn='light']", "settle": 850, "rest": true },
+
+    { "name": "bell", "click": "[data-bell]", "settle": 500 },
+    { "name": "parked", "rest": true, "against": "bell" },
+
+    {
+      "name": "inert-program",
+      "comment": "Rule 1: three of the six nav entries, and six of the nine rail icons, do nothing at all.",
+      "click": "[data-tab='program']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    },
+    {
+      "name": "inert-reports",
+      "click": "[data-tab='reports']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-program"
+    },
+    {
+      "name": "inert-rail-mail",
+      "click": "[data-rail='r-mail']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-reports"
+    },
+    {
+      "name": "rail-manage",
+      "comment": "The rail is a second presentation of the same destinations: this one is live and switches the pane.",
+      "click": "[data-rail='r-manage']",
+      "settle": 900,
+      "rest": true,
+      "against": "inert-rail-mail"
+    },
+    { "name": "rail-back", "click": "[data-rail='r-overview']", "settle": 900, "rest": true }
+  ]
+}

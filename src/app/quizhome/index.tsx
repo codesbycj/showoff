@@ -1,18 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 
-// STEP 1.17 the subjects
-// import { CategoryRow } from '@/features/quizhome/components/category-row';
-// STEP 1.06 the challenge of the day
-// import { DailyChallenge } from '@/features/quizhome/components/daily-challenge';
-// STEP 1.01 who is here
-// import { Header } from '@/features/quizhome/components/header';
-// STEP 1.30 and the way around
-// import { TabDock } from '@/features/quizhome/components/tab-dock';
-// STEP 1.15 what the sections are called
-// import { SectionHead } from '@/features/quizhome/components/section-head';
-// STEP 1.22 what people are playing
-// import { TrendCard } from '@/features/quizhome/components/trend-card';
+import { CategoryRow } from '@/features/quizhome/components/category-row';
+import { DailyChallenge } from '@/features/quizhome/components/daily-challenge';
+import { Header } from '@/features/quizhome/components/header';
+import { TabDock } from '@/features/quizhome/components/tab-dock';
+import { SectionHead } from '@/features/quizhome/components/section-head';
+import { TrendCard } from '@/features/quizhome/components/trend-card';
 import { sections, trending } from '@/features/quizhome/data/home';
 import {
   HEADER_TOP,
@@ -52,43 +46,30 @@ export default function QuizHome() {
           paddingHorizontal: MARGIN,
         }}
       >
-        {/* STEP 1.02 at the top of the page
         <Header />
-        */}
 
-        {/* STEP 1.07 under the header
         <View style={{ marginTop: HERO_TOP }}>
           <DailyChallenge />
         </View>
-        */}
 
         <View style={{ marginTop: SECTION_TOP }}>
-          {/* STEP 1.16 the first of them
           <SectionHead title={sections.categories} />
-          */}
         </View>
         <View style={{ marginTop: SECTION_GAP }}>
-          {/* STEP 1.18 in a row that runs off the edge
           <CategoryRow />
-          */}
         </View>
 
         <View style={{ marginTop: SECTION_TOP }}>
-          {/* STEP 1.21 the second section
           <SectionHead title={sections.trending} />
-          */}
         </View>
         <View style={{ marginTop: SECTION_GAP, gap: TREND_GAP }}>
-          {/* STEP 1.23 one card each
           {trending.map((t) => (
             <TrendCard key={t.key} trend={t} />
           ))}
-          */}
         </View>
       </ScrollView>
 
       {/* Outside the scroll, so the cards run under it rather than push it. */}
-      {/* STEP 1.31 floating over the scroll
       <View
         style={{
           position: 'absolute',
@@ -99,7 +80,6 @@ export default function QuizHome() {
       >
         <TabDock />
       </View>
-      */}
     </View>
   );
 }

@@ -1,0 +1,105 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "@/features/orbithome/components/header"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and their photograph"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "@/features/orbithome/components/balance"
+   ],
+   "label": "what is in the account"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "to the penny"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "@/features/orbithome/components/quick-row"
+   ],
+   "label": "the two things you do most"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "on one white bar"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    [
+     "// MISTAKE 1.07",
+     "paddingHorizontal: 30,"
+    ]
+   ],
+   "label": "the bar came in narrowed"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "@/features/orbithome/components/cards-row"
+   ],
+   "label": "what it gives back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and who you paid"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "@/features/orbithome/components/spend-chart"
+   ],
+   "label": "and where the month went"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "day by day"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-screen",
+     "src/app/orbithome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

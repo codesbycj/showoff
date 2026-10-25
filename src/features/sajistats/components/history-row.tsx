@@ -39,11 +39,8 @@ export function HistoryRow({
       accessibilityLabel={`${name} ${amount}`}
     >
       <View style={{ height: ROW_HEIGHT, flexDirection: 'row', alignItems: 'center' }}>
-        {/* STEP 1.21 who it was with
         <BrandMark label={mark} color={color} face={face} />
-        */}
 
-        {/* STEP 1.22 and when
         <View style={{ flex: 1, marginLeft: 11 }}>
           <T variant="rowTitle" color={sj.ink} numberOfLines={1}>
             {name}
@@ -52,9 +49,7 @@ export function HistoryRow({
             {time}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.23 then what it cost
         <View style={{ alignItems: 'flex-end' }}>
           <T variant="rowAmount" color={credit ? sj.credit : sj.ink}>
             {amount}
@@ -63,7 +58,6 @@ export function HistoryRow({
             {kind}
           </T>
         </View>
-        */}
       </View>
     </Pressable>
   );

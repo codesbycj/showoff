@@ -3,8 +3,7 @@ import { Pressable, View } from 'react-native';
 
 import { AVATAR, BELL } from '../layout';
 import { ph, radius, shadow } from '../theme';
-// STEP 1.03 a face for the account
-// import { Avatar } from './avatar';
+import { Avatar } from './avatar';
 import { Icon } from './icon';
 import { T } from './text';
 import { WaveGlyph } from './wave-glyph';
@@ -30,11 +29,8 @@ export function TopBar({
 
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      {/* STEP 1.04 on the left
       <Avatar face={0} size={AVATAR} />
-      */}
 
-      {/* STEP 1.05 the name and the greeting
       <View style={{ flex: 1, marginLeft: 12 }}>
         <T variant="eyebrow" color={ph.muted}>
           {name}
@@ -48,9 +44,7 @@ export function TopBar({
           </View>
         </View>
       </View>
-      */}
 
-      {/* STEP 1.06 and anything waiting
       <Pressable
         onPress={onBell}
         onPressIn={() => setHeld(true)}
@@ -63,8 +57,6 @@ export function TopBar({
             width: BELL,
             height: BELL,
             borderRadius: radius.full,
-            // MISTAKE 1.07 the bell came in sitting low
-            marginTop: 10,
             backgroundColor: ph.surface,
             alignItems: 'center',
             justifyContent: 'center',
@@ -75,7 +67,6 @@ export function TopBar({
           <Icon name="bell" size={18} color={ph.text} />
         </View>
       </Pressable>
-      */}
 
       <View
         style={{
@@ -89,10 +80,6 @@ export function TopBar({
         }}
         pointerEvents="none"
       />
-      {/* STEP 1.08 one more unread | FIX 1.09 one bell, one dot
-      <View style={{ position: 'absolute', right: 30, top: 4, width: 8, height: 8, borderRadius: radius.full, backgroundColor: ph.alert }} />
-      */}
-
     </View>
   );
 }

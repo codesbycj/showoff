@@ -1,0 +1,105 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/top-bar"
+   ],
+   "label": "the menu and the month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "in place"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/month-grid"
+   ],
+   "label": "February itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "five weeks of it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/section-head"
+   ],
+   "label": "what is due today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and the way to the rest"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/task-card"
+   ],
+   "label": "the work on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "stacked down the page"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "@/features/tempocal/components/tab-bar"
+   ],
+   "label": "the dock over the lot"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    [
+     "// MISTAKE 1.10",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the cards came in washed out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempocal/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "floating over the list"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "cal-screen",
+     "src/app/tempocal/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

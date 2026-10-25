@@ -5,14 +5,10 @@ import ListFilter from 'lucide-react-native/icons/list-filter';
 import Search from 'lucide-react-native/icons/search';
 import { Pressable, ScrollView, View } from 'react-native';
 
-// STEP 1.22 the way around
-// import { Dock } from '@/features/salungwork/components/dock';
-// STEP 1.04 how they are doing
-// import { PerformanceBanner } from '@/features/salungwork/components/performance-banner';
-// STEP 1.10 one card each
-// import { ProjectCard } from '@/features/salungwork/components/project-card';
-// STEP 1.17 one row each
-// import { TaskCard } from '@/features/salungwork/components/task-card';
+import { Dock } from '@/features/salungwork/components/dock';
+import { PerformanceBanner } from '@/features/salungwork/components/performance-banner';
+import { ProjectCard } from '@/features/salungwork/components/project-card';
+import { TaskCard } from '@/features/salungwork/components/task-card';
 import { T } from '@/features/salungwork/components/text';
 import { header, projects, sections, tasks } from '@/features/salungwork/data/work';
 import {
@@ -59,12 +55,9 @@ export default function SalungWork() {
         }}
       >
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          {/* STEP 1.01 who is here
           <T variant="title" color={sl.ink} style={{ flex: 1 }}>
             {header.title}
           </T>
-          */}
-          {/* STEP 1.02 and what is waiting
           <View style={{ flexDirection: 'row', gap: 8 }}>
             <Disc label="Alerts">
               <Bell size={17} color={sl.ink} strokeWidth={1.8} />
@@ -73,10 +66,8 @@ export default function SalungWork() {
               <CalendarDays size={17} color={sl.ink} strokeWidth={1.8} />
             </Disc>
           </View>
-          */}
         </View>
 
-        {/* STEP 1.03 what they can look for
         <View
           style={{
             marginTop: SEARCH_TOP,
@@ -95,25 +86,18 @@ export default function SalungWork() {
           </T>
           <ListFilter size={16} color={sl.ink} strokeWidth={1.9} />
         </View>
-        */}
 
         <View style={{ marginTop: BANNER_TOP }}>
-          {/* STEP 1.05 under the search
           <PerformanceBanner />
-          */}
         </View>
 
-        {/* STEP 1.09 what they are working on
         <T variant="section" color={sl.ink} style={{ marginTop: SECTION_TOP }}>
           {sections.projects}
         </T>
-        */}
         <View style={{ marginTop: SECTION_GAP, flexDirection: 'row', gap: PROJECT_GAP }}>
-          {/* STEP 1.11 side by side
           {projects.map((p) => (
             <ProjectCard key={p.key} project={p} />
           ))}
-          */}
         </View>
 
         <View
@@ -124,11 +108,9 @@ export default function SalungWork() {
             justifyContent: 'space-between',
           }}
         >
-          {/* STEP 1.16 and what is due
           <T variant="section" color={sl.ink}>
             {sections.tasks}
           </T>
-          */}
           <Pressable accessibilityRole="button" accessibilityLabel={sections.more}>
             <T variant="more" color={sl.muted}>
               {sections.more}
@@ -136,11 +118,9 @@ export default function SalungWork() {
           </Pressable>
         </View>
         <View style={{ marginTop: SECTION_GAP, gap: TASK_GAP }}>
-          {/* STEP 1.18 down the page
           {tasks.map((t) => (
             <TaskCard key={t.key} task={t} />
           ))}
-          */}
         </View>
       </ScrollView>
 
@@ -153,9 +133,7 @@ export default function SalungWork() {
           bottom: insets.bottom + DOCK_BOTTOM,
         }}
       >
-        {/* STEP 1.23 floating at the foot
         <Dock />
-        */}
       </View>
     </View>
   );

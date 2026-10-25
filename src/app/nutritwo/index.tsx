@@ -3,11 +3,9 @@ import { View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
 import { Masthead, StartBar, Steps } from '@/features/nutritwo/components/onboarding-chrome';
-// STEP 1.13 and the day
-// import { StatsCard } from '@/features/nutritwo/components/stats-card';
+import { StatsCard } from '@/features/nutritwo/components/stats-card';
 import { T } from '@/features/nutritwo/components/text';
-// STEP 1.09 the week
-// import { WeekCard } from '@/features/nutritwo/components/week-card';
+import { WeekCard } from '@/features/nutritwo/components/week-card';
 import { intro } from '@/features/nutritwo/data/plan';
 import { BAR_BOTTOM, DISPLAY_TOP, HEADER_TOP, MARGIN, STEPS_TOP } from '@/features/nutritwo/layout';
 import { nl, radius } from '@/features/nutritwo/theme';
@@ -32,22 +30,15 @@ export default function NutriTwo() {
       <StatusBar style="dark" />
 
       <View style={{ flex: 1, paddingHorizontal: MARGIN, paddingTop: insets.top + HEADER_TOP }}>
-        {/* STEP 1.01 the brand
         <Masthead />
-        */}
         <View style={{ marginTop: STEPS_TOP }}>
-          {/* STEP 1.02 how far through this is
           <Steps />
-          */}
         </View>
 
         <View style={{ marginTop: DISPLAY_TOP }}>
-          {/* STEP 1.06 what the screen promises
           <T variant="display" color={nl.ink}>
             {intro.displayTop}
           </T>
-          */}
-          {/* STEP 1.07 with the streak in the middle
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
             <T variant="display" color={nl.ink}>
               {intro.displayMid[0]}
@@ -68,32 +59,23 @@ export default function NutriTwo() {
               {intro.displayMid[1]}
             </T>
           </View>
-          */}
-          {/* STEP 1.08 and the end of the line
           <T variant="display" color={nl.ink}>
             {intro.displayBottom}
           </T>
-          */}
         </View>
 
         <View style={{ marginTop: 18 }}>
-          {/* STEP 1.10 under the headline
           <WeekCard />
-          */}
         </View>
 
         <View style={{ marginTop: 12 }}>
-          {/* STEP 1.14 under the week
           <StatsCard />
-          */}
         </View>
 
         <View style={{ flex: 1 }} />
 
         <View style={{ marginBottom: insets.bottom + BAR_BOTTOM }}>
-          {/* STEP 1.18 the one thing it asks
           <StartBar tone="dark" label={intro.cta} />
-          */}
         </View>
       </View>
     </View>

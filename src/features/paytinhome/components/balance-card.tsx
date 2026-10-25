@@ -53,7 +53,6 @@ export function BalanceCard({
       }}
       accessibilityLabel={`${brand} card, balance ${balance}`}
     >
-      {/* STEP 1.12 the block let into its side
       <View
         style={{
           position: 'absolute',
@@ -69,17 +68,13 @@ export function BalanceCard({
       >
         <Contactless size={22} color={ph.text} />
       </View>
-      */}
 
-      {/* STEP 1.13 the scheme, and a sparkle
       <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
         <VisaMark color={ph.onInk} />
         <View style={{ flex: 1 }} />
         <Sparkle size={16} />
       </View>
-      */}
 
-      {/* STEP 1.14 the balance
       <View style={{ paddingRight: CARD_BLOCK_W + 14 }}>
         <T variant="cardLabel" color={ph.onInkMuted}>
           {balanceLabel}
@@ -88,15 +83,11 @@ export function BalanceCard({
           {balance}
         </T>
       </View>
-      */}
 
-      {/* STEP 1.15 the number
       <T variant="cardNumber" color={ph.onInk}>
         {number}
       </T>
-      */}
 
-      {/* STEP 1.16 and whose it is
       <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
         <T variant="cardName" color={ph.onInk}>
           {name}
@@ -106,7 +97,6 @@ export function BalanceCard({
           {`${expiryLabel} ${expiry}`}
         </T>
       </View>
-      */}
     </View>
   );
 }

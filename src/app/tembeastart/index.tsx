@@ -1,16 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-// STEP 1.01 the way back
-// import { BackButton } from '@/features/tembeastart/components/back-button';
-// STEP 1.12 the line at the foot
-// import { FootNote } from '@/features/tembeastart/components/foot-note';
-// STEP 1.03 what the app is for
-// import { Headline } from '@/features/tembeastart/components/headline';
-// STEP 1.09 the three ways in
-// import { SignInButton } from '@/features/tembeastart/components/sign-in-button';
-// STEP 1.05 the throw of places
-// import { TagCluster } from '@/features/tembeastart/components/tag-cluster';
+import { BackButton } from '@/features/tembeastart/components/back-button';
+import { FootNote } from '@/features/tembeastart/components/foot-note';
+import { Headline } from '@/features/tembeastart/components/headline';
+import { SignInButton } from '@/features/tembeastart/components/sign-in-button';
+import { TagCluster } from '@/features/tembeastart/components/tag-cluster';
 import { buttons } from '@/features/tembeastart/data/signin';
 import {
   BUTTON_GAP,
@@ -58,17 +53,12 @@ export default function TembeastartScreen() {
           overflow: 'hidden',
         }}
       >
-        {/* STEP 1.02 dropped on the panel
         <BackButton />
-        */}
 
-        {/* STEP 1.04 three lines of it
         <View style={{ marginTop: DISPLAY_TOP }}>
           <Headline />
         </View>
-        */}
 
-        {/* STEP 1.06 scattered on its floor
         <View
           style={{
             flex: 1,
@@ -79,31 +69,19 @@ export default function TembeastartScreen() {
         >
           <TagCluster />
         </View>
-        */}
       </View>
 
-      {/* STEP 1.10 stacked under the panel
-      <View
-        style={{
-          marginTop: BUTTONS_TOP,
-          marginHorizontal: MARGIN,
-          // MISTAKE 1.11 the stack starts too far down
-          paddingTop: 26,
-        }}
-      >
+      <View style={{ marginTop: BUTTONS_TOP, marginHorizontal: MARGIN }}>
         {buttons.map((b, i) => (
           <View key={b.id} style={{ marginTop: i === 0 ? 0 : BUTTON_GAP }}>
             <SignInButton label={b.label} glyph={b.id} tone={b.tone} />
           </View>
         ))}
       </View>
-      */}
 
-      {/* STEP 1.13 for people who have been here
       <View style={{ marginTop: FOOT_TOP - 14, marginBottom: insets.bottom + FOOT_BOTTOM - 14 }}>
         <FootNote />
       </View>
-      */}
     </View>
   );
 }

@@ -25,23 +25,18 @@ export function FeatureCard({ height, onAdd }: { height: number; onAdd?: () => v
     <View
       style={{
         height,
-        // MISTAKE 1.13 the card came in narrow
-        marginHorizontal: 26,
         borderRadius: radius.card,
         backgroundColor: sp.feature,
         overflow: 'hidden',
       }}
     >
-      {/* STEP 1.05 whose favourite it is
       <Image
         source={CAROL}
         style={{ position: 'absolute', left: 0, bottom: 0, width: '100%', height: height * 0.62 }}
         resizeMode="cover"
         accessibilityIgnoresInvertColors
       />
-      */}
 
-      {/* STEP 1.06 what it is
       <View style={{ padding: FEATURE_PAD, alignItems: 'center' }}>
         <T variant="kicker" color={sp.featureInk}>
           {feature.kicker}
@@ -50,11 +45,9 @@ export function FeatureCard({ height, onAdd }: { height: number; onAdd?: () => v
           {feature.display}
         </T>
       </View>
-      */}
 
       <View style={{ flex: 1 }} />
 
-      {/* STEP 1.07 and what it costs
       <View
         style={{
           flexDirection: 'row',
@@ -98,7 +91,6 @@ export function FeatureCard({ height, onAdd }: { height: number; onAdd?: () => v
           </View>
         </Pressable>
       </View>
-      */}
     </View>
   );
 }

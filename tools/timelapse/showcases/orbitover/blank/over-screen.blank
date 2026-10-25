@@ -1,0 +1,65 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.03 which card it was
+// import { CardRow } from '@/features/orbitover/components/card-row';
+// STEP 1.08 and the day itself
+// import { DaySheet } from '@/features/orbitover/components/day-sheet';
+// STEP 1.06 the months behind it
+// import { StatCard } from '@/features/orbitover/components/stat-card';
+// STEP 1.01 what the month came to
+// import { Summary } from '@/features/orbitover/components/summary';
+import { CARDROW_TOP, MARGIN, SHEET_TOP, STAT_TOP } from '@/features/orbitover/layout';
+import { ob } from '@/features/orbitover/theme';
+import { useInsets } from '@/features/orbitover/use-insets';
+
+/**
+ * Orbit — the overview.
+ *
+ * Assembly only: the way back and what the month came to, which card it was,
+ * the seven months behind it, and the day the sheet opens on.
+ *
+ * The sheet is outside the padded column so it can run to both edges and off
+ * the bottom of the screen, which is what a list of a day's transactions
+ * does.
+ */
+export default function OrbitoverScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ob.canvas, paddingTop: insets.top }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingHorizontal: MARGIN }}>
+{/* STEP 1.02 to the penny
+        <Summary onBack={() => router.back()} />
+*/}
+
+{/* STEP 1.04 and the others behind it
+        <View
+          style={{
+            marginTop: CARDROW_TOP,
+            // MISTAKE 1.05 the card row came in inset
+            marginHorizontal: 24,
+          }}
+        >
+          <CardRow />
+        </View>
+*/}
+
+{/* STEP 1.07 seven of them
+        <View style={{ marginTop: STAT_TOP }}>
+          <StatCard />
+        </View>
+*/}
+      </View>
+
+{/* STEP 1.09 row by row
+      <View style={{ flex: 1, marginTop: SHEET_TOP }}>
+        <DaySheet />
+      </View>
+*/}
+    </View>
+  );
+}

@@ -1,0 +1,255 @@
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/budgeplan/components/glyph';
+import { T } from '@/features/budgeplan/components/text';
+import { copy, history, plan, tiles } from '@/features/budgeplan/data/budget';
+import {
+  BAR_HEIGHT,
+  CARD_PAD,
+  HEADER_SIZE,
+  HEADER_TOP,
+  HISTORY_TOP,
+  MARGIN,
+  PANEL_HEIGHT,
+  PANEL_TOP,
+  ROW_HEIGHT,
+  TILE_GAP,
+  TILE_HEIGHT,
+  TILES_TOP,
+} from '@/features/budgeplan/layout';
+import { bg, radius, type } from '@/features/budgeplan/theme';
+import { useInsets } from '@/features/budgeplan/use-insets';
+
+/**
+ * Budge — plan expenses.
+ *
+ * Assembly only: the way back, how much of the plan is used, what has gone
+ * out, and the two places to put more.
+ *
+ * The bar's fill *is* the percentage printed above it — `flex: pct` against
+ * `flex: 100 - pct`. The reference draws a bar at about two thirds beside the
+ * figure 84.
+ */
+export default function BudgeplanScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: bg.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+{/* STEP 1.01 how much of the plan is used
+      <View
+        style={{
+          // The panel takes the slack rather than a spacer above the tiles:
+          // at a fixed height the screen had 150dp of black in its middle.
+          flex: 1,
+          minHeight: PANEL_HEIGHT,
+          marginTop: PANEL_TOP,
+          borderRadius: radius.card,
+          backgroundColor: bg.green,
+          padding: CARD_PAD,
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Go back">
+            <View
+              style={{
+                height: HEADER_SIZE,
+                paddingLeft: 6,
+                paddingRight: 16,
+                borderRadius: radius.pill,
+                backgroundColor: bg.onPanel,
+                flexDirection: 'row',
+                alignItems: 'center',
+              }}
+            >
+              <View
+                style={{
+                  width: HEADER_SIZE - 12,
+                  height: HEADER_SIZE - 12,
+                  borderRadius: radius.control,
+                  backgroundColor: 'rgba(255,255,255,0.14)',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Glyph name="back" size={15} tint={bg.ink} />
+              </View>
+              <T variant="chip" color={bg.ink} style={{ marginLeft: 8, height: type.chip.line }}>
+                {copy.back}
+              </T>
+            </View>
+          </Pressable>
+          <View style={{ flex: 1 }} />
+          <Pressable accessibilityRole="button" accessibilityLabel="More">
+            <View
+              style={{
+                width: HEADER_SIZE,
+                height: HEADER_SIZE,
+                borderRadius: radius.control,
+                backgroundColor: bg.onPanel,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="dots" size={17} tint={bg.ink} />
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+            <T variant="figure" color={bg.onPanel} style={{ height: type.figure.line }}>
+              {plan.pct + ' %'}
+            </T>
+            <View style={{ flex: 1 }} />
+            <T
+              variant="caption"
+              color={bg.onPanel}
+              style={{ marginBottom: 10, height: type.caption.line }}
+            >
+              {plan.label}
+            </T>
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              height: BAR_HEIGHT,
+              marginTop: 10,
+              borderRadius: radius.pill,
+              overflow: 'hidden',
+              backgroundColor: 'rgba(14, 15, 17, 0.12)',
+            }}
+          >
+            <View style={{ flex: plan.pct, backgroundColor: bg.onPanel }} />
+            <View style={{ flex: 100 - plan.pct }} />
+          </View>
+        </View>
+      </View>
+*/}
+
+{/* STEP 1.02 what has gone out
+      <T variant="title" color={bg.ink} style={{ marginTop: HISTORY_TOP, height: type.title.line }}>
+        {copy.history}
+      </T>
+*/}
+
+{/* STEP 1.04 two of them
+      {history.map((h) => (
+        <View
+          key={h.id}
+          style={{
+            height: ROW_HEIGHT,
+            justifyContent: 'center',
+            // MISTAKE 1.03 the rows came in half-faded
+            opacity: 0.4,
+          }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end', flex: 1 }}>
+              <T variant="figure" color={bg.ink} style={{ height: type.figure.line }}>
+                {h.major}
+              </T>
+              <T variant="figureMinor" color={bg.muted} style={{ height: type.figureMinor.line }}>
+                {h.minor}
+              </T>
+            </View>
+            <Pressable accessibilityRole="button" accessibilityLabel="Share">
+              <View style={{ padding: 7 }}>
+                <Glyph name="share" size={15} tint={bg.muted} />
+              </View>
+            </Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel="Open">
+              <View style={{ padding: 7 }}>
+                <Glyph name="next" size={15} tint={bg.muted} />
+              </View>
+            </Pressable>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 2 }}>
+            <View
+              style={{
+                width: 7,
+                height: 7,
+                borderRadius: radius.control,
+                backgroundColor: h.dot,
+              }}
+            />
+            <T
+              variant="rowLabel"
+              color={bg.body}
+              style={{ marginLeft: 7, flex: 1, height: type.rowLabel.line }}
+            >
+              {h.label}
+            </T>
+            <T variant="rowLabel" color={bg.muted} style={{ height: type.rowLabel.line }}>
+              {h.when}
+            </T>
+          </View>
+        </View>
+      ))}
+*/}
+
+{/* STEP 1.05 and two places to put more
+      <View style={{ flexDirection: 'row', gap: TILE_GAP, marginTop: TILES_TOP }}>
+        {tiles.map((t) => {
+          const coral = t.tone === 'coral';
+          return (
+            <View
+              key={t.id}
+              style={{
+                flex: 1,
+                height: TILE_HEIGHT,
+                borderRadius: radius.card,
+                backgroundColor: coral ? bg.coral : '#1A1C1F',
+                padding: 14,
+                justifyContent: 'space-between',
+              }}
+            >
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View
+                  style={{
+                    width: 30,
+                    height: 30,
+                    borderRadius: radius.control,
+                    backgroundColor: 'rgba(255,255,255,0.14)',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Glyph name="dollar" size={15} tint={bg.ink} />
+                </View>
+                <View style={{ flex: 1 }} />
+                <View
+                  style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: radius.control,
+                    backgroundColor: coral ? bg.onPanel : 'rgba(255,255,255,0.14)',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Glyph name="next" size={14} tint={coral ? bg.ink : bg.ink} />
+                </View>
+              </View>
+              <T variant="cardTitle" color={bg.ink} style={{ height: type.cardTitle.line }}>
+                {t.label}
+              </T>
+            </View>
+          );
+        })}
+      </View>
+*/}
+    </View>
+  );
+}

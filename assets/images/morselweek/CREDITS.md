@@ -1,4 +1,4 @@
-# morselweek imagery
+# morselhome imagery
 
 Brand photography is not redistributable; these stand in for it.
 

@@ -1,0 +1,136 @@
+{
+  "url": "http://localhost:5324/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "quick-discount",
+      "click": "[data-quick='discount']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "quick-bundle",
+      "click": "[data-quick='bundle']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "quick-off",
+      "click": "[data-quick='bundle']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "span-daily",
+      "click": "[data-segment='daily']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "span-weekly",
+      "click": "[data-segment='weekly']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "span-monthly",
+      "click": "[data-segment='monthly']",
+      "settle": 850,
+      "rest": true
+    },
+    {
+      "name": "bar-apr",
+      "hover": "[data-hit='3']",
+      "against": "span-monthly",
+      "rest": true
+    },
+    {
+      "name": "bar-oct",
+      "hover": "[data-hit='9']",
+      "against": "bar-apr"
+    },
+    {
+      "name": "promo-pause",
+      "click": "[data-promo='p1']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "promo-resume",
+      "click": "[data-promo='p1']",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "new-order",
+      "click": "[data-new-order]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "new-order-undo",
+      "click": "[data-new-order]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "add-product",
+      "click": "[data-add-product]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "add-product-undo",
+      "click": "[data-add-product]",
+      "settle": 650,
+      "rest": true
+    },
+    {
+      "name": "bell",
+      "click": "[data-bell]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "see-all-customers",
+      "comment": "The card reports upward and the pane routes it; this is the Dashboard's only in-app navigation.",
+      "click": "[data-open-customers]",
+      "settle": 900,
+      "rest": true
+    },
+    {
+      "name": "back-to-dashboard",
+      "click": "[data-tab='dashboard']",
+      "settle": 900,
+      "rest": true
+    },
+    {
+      "name": "inert-products",
+      "comment": "Rule 1: seven of the ten menu entries do nothing at all.",
+      "click": "[data-tab='products']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "back-to-dashboard"
+    },
+    {
+      "name": "inert-reviews",
+      "click": "[data-tab='reviews']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-products"
+    },
+    {
+      "name": "inert-settings",
+      "click": "[data-tab='settings']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-reviews"
+    }
+  ]
+}

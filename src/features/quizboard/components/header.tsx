@@ -10,13 +10,10 @@ import { T } from './text';
 export function Header() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      {/* STEP 1.03 the name of it
       <T variant="title" color={qz.ink} style={{ flex: 1 }}>
         {header.title}
       </T>
-      */}
 
-      {/* STEP 1.04 and what there is to spend
       <View
         style={{
           height: GEM_HEIGHT,
@@ -33,7 +30,6 @@ export function Header() {
           {header.gems}
         </T>
       </View>
-      */}
     </View>
   );
 }

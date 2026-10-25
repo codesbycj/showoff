@@ -1,0 +1,81 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the way back, and one more"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "what the screen wants"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "three ways to give it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the field, masked"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    [
+     "// MISTAKE 1.05",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the field came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "it listens"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "and the mic in the middle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stashlock/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "or type it instead"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "lock-screen",
+     "src/app/stashlock/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

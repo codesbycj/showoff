@@ -1,6 +1,4 @@
-import { View } from 'react-native';
-// STEP 1.07 a picture of each place
-// import { Image } from 'react-native';
+import { Image, View } from 'react-native';
 
 import { TAG_HEIGHT, TAG_PAD, TAG_THUMB } from '../layout';
 import { radius, shadow, tb, type } from '../theme';
@@ -47,13 +45,11 @@ export function PlaceTag({
         ...shadow.tag,
       }}
     >
-      {/* STEP 1.08 on every tag
       <Image
         source={src}
         style={{ width: TAG_THUMB, height: TAG_THUMB, borderRadius: radius.thumb }}
         accessibilityLabel={place}
       />
-      */}
       <View style={{ marginLeft: 8 }}>
         <T variant="tag" color={ink} style={{ height: type.tag.line }}>
           {place}

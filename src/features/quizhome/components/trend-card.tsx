@@ -45,7 +45,6 @@ export function TrendCard({ trend, onPlay }: { trend: Trend; onPlay?: () => void
         overflow: 'hidden',
       }}
     >
-      {/* STEP 1.27 the artwork behind
       <View style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '46%' }}>
         {trend.art === 'astro' ? (
           <Blobs />
@@ -53,9 +52,7 @@ export function TrendCard({ trend, onPlay }: { trend: Trend; onPlay?: () => void
           <Confetti width={176} height={TREND_HEIGHT * 0.6} density={0.7} />
         )}
       </View>
-      */}
 
-      {/* STEP 1.28 standing on it
       <Image
         source={art}
         style={{
@@ -68,30 +65,22 @@ export function TrendCard({ trend, onPlay }: { trend: Trend; onPlay?: () => void
         resizeMode="contain"
         accessibilityIgnoresInvertColors
       />
-      */}
 
       <View style={{ padding: 16, width: '58%', justifyContent: 'space-between', flex: 1 }}>
-        {/* STEP 1.24 what the quiz is
         <T variant="cardTitle" color={qz.onColor}>
           {trend.title}
         </T>
-        */}
-        {/* STEP 1.25 what it covers
         <T variant="cardBody" color={qz.onColorMuted}>
           {trend.body}
         </T>
-        */}
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
           <FileText size={14} color={qz.onColorMuted} strokeWidth={1.8} />
-          {/* STEP 1.26 and how long it runs
           <T variant="meta" color={qz.onColorMuted}>
             {trend.meta}
           </T>
-          */}
         </View>
       </View>
 
-      {/* STEP 1.29 and the way to start
       <Pressable
         onPress={onPlay}
         onPressIn={() => setHeld(true)}
@@ -116,7 +105,6 @@ export function TrendCard({ trend, onPlay }: { trend: Trend; onPlay?: () => void
           </Svg>
         </View>
       </Pressable>
-      */}
     </View>
   );
 }

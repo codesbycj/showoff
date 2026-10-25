@@ -1,0 +1,136 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/geist';
+
+/*
+ * Nocta.
+ *
+ * The reference is a dark panel on a near-black board with a faint embossed
+ * pattern behind it. refscan called it a flat UI export on its edge ramp, but
+ * the panel has a rounded border, a drop shadow and board showing on all four
+ * sides — it is a posed board, so this is an inspo brief and the backdrop goes.
+ *
+ * Its palette scan is the useful part and these are its hexes: #111113 ground,
+ * #1f1f1f surface, #303030/#404040 for the bar fills, and the three accents it
+ * found at under half a per cent of the frame — #67a0f5, #fe832f, #48c783.
+ *
+ * Dark-first, and there is no light theme: the reference has no sun/moon pair
+ * and a second palette nobody asked for is a second palette to keep honest.
+ */
+/*
+ * `static`, not a bare @theme.
+ *
+ * Tailwind 4 tree-shakes theme variables that no utility class references, and
+ * a colour passed to a chart as an inline `fill="var(--color-cat-meals)"` is
+ * not a reference it can see. The spending donut rendered with five of its six
+ * segments black because of exactly this: the only category that survived was
+ * the one a `bg-cat-office` class happened to use. `static` emits them all.
+ */
+@theme static {
+  --color-ground: #0d0d0f; /* behind the panels */
+  --color-surface: #18181b; /* every card */
+  --color-raised: #1f1f22; /* a tile inside a card */
+  --color-sunken: #242428; /* bar fills, inert chips */
+  --color-sunken-deep: #313137;
+
+  --color-ink: #f4f4f6; /* headings and figures */
+  --color-body: #c3c3c9; /* paragraphs: 11.4:1 on the surface */
+  --color-muted: #90909a; /* labels and meta: 5.9:1 on the surface */
+  --color-line: #27272b;
+
+  --color-accent: #67a0f5; /* the selected bar, the selected day */
+  --color-accent-soft: #15213a;
+  --color-accent-deep: #a8c8ff; /* accent text on the soft tint */
+
+  --color-positive: #48c783;
+  --color-positive-soft: #10281c;
+  --color-warn: #fe832f;
+  --color-warn-soft: #2c1a0a;
+  --color-danger: #f2555a;
+  --color-danger-soft: #2d1216;
+
+  /* The spending donut, in the reference's own order. */
+  --color-cat-activity: #fe832f;
+  --color-cat-meals: #48c783;
+  --color-cat-office: #f2c744;
+  --color-cat-rewards: #67a0f5;
+  --color-cat-internet: #a07cf0;
+  --color-cat-other: #5a5a63;
+
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 18px;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.6), 0 12px 30px -20px rgb(0 0 0 / 0.9);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* The board shows no focus state anywhere. Every control here has one. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

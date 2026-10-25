@@ -1,0 +1,176 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/manrope';
+
+/*
+ * Teknova Store.
+ *
+ * The reference is a posed board -- white panel on a peach-to-mint gradient --
+ * so this is an inspo brief (series rule 2) and the backdrop is gone: at real
+ * size the panel is the viewport.
+ *
+ * refscan read the board's own gradient as the top of the palette, which is why
+ * the tokens below are the panel's colours rather than the scan's first rows.
+ * Its accent read (#07060b) is the dark logo disc, not the brand green.
+ */
+/*
+ * `static`, not a bare @theme.
+ *
+ * Tailwind 4 tree-shakes theme variables that no utility class references, and
+ * a colour passed to a chart as an inline `fill="var(--color-cat-meals)"` is
+ * not a reference it can see. The spending donut rendered with five of its six
+ * segments black because of exactly this: the only category that survived was
+ * the one a `bg-cat-office` class happened to use. `static` emits them all.
+ */
+@theme static {
+  --color-ground: #f5f7f9; /* behind the cards */
+  --color-surface: #ffffff; /* cards and the sidebar */
+  --color-sunken: #f1f3f6; /* chips, hatched bars, inert controls */
+  --color-sunken-deep: #e4e8ee;
+
+  --color-ink: #15171c; /* headings and body text */
+  /*
+   * A filled, high-contrast surface and the text on it: the active menu pill,
+   * Export, Invite, the toast, the selected bar, the lead product tile.
+   *
+   * Deliberately NOT --color-ink. `ink` is the text colour and it inverts in
+   * dark, so using it as a surface made every filled control white with white
+   * text on it. Caught by shooting the dark theme, invisible in light.
+   */
+  --color-fill: #15171c;
+  --color-fill-fg: #ffffff;
+  --color-body: #41454e;
+  /* 5.44:1 on white, 5.00:1 on the ground, 5.18:1 on a sunken chip. */
+  --color-muted: #646a75;
+  --color-line: #e8eaee;
+
+  --color-accent: #1fb467; /* the gauge, every rising figure */
+  --color-accent-soft: #e2f5ea;
+  --color-accent-deep: #0d7a45; /* accent text on the soft tint: 4.93:1 */
+
+  --color-warn: #f2542d; /* falling figures, Cancelled */
+  --color-warn-soft: #fdeae3;
+  --color-warn-deep: #b8350f; /* 5.19:1 on the soft tint */
+
+  --color-info: #3b82f6; /* Pending */
+  --color-info-soft: #e6eefd;
+  --color-info-deep: #1b4fc4;
+
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 20px;
+  --shadow-card: 0 1px 2px rgb(21 23 28 / 0.04), 0 10px 26px -18px rgb(21 23 28 / 0.22);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* The board shows no focus state. Every control here has one. */
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/*
+ * Dark.
+ *
+ * The reference puts a sun/moon pair in the top bar, so the build owes a real
+ * second theme rather than a control that does nothing (rule 5). Because every
+ * component reads tokens and never a hex, the whole app re-themes from this one
+ * block — and both themes get their own probe run, which is what caught the
+ * muted grey here at 3.9:1 before it shipped.
+ *
+ * Tailwind 4 emits the @theme tokens on :root as custom properties, and every
+ * utility resolves them through var(), so overriding them under an attribute
+ * selector is all a theme switch needs.
+ */
+[data-theme='dark'] {
+  --color-ground: #0e1015;
+  --color-surface: #161920;
+  --color-sunken: #1e222b;
+  --color-sunken-deep: #2a3038;
+
+  --color-ink: #f2f4f8;
+  --color-fill: #eef1f6; /* light-on-dark: the filled control inverts with the theme */
+  --color-fill-fg: #12161b;
+  --color-body: #c6ccd6;
+  --color-muted: #99a1ae; /* 6.9:1 on the surface, 7.6:1 on the ground */
+  --color-line: #272c36;
+
+  --color-accent: #28c276;
+  --color-accent-soft: #102a1e;
+  --color-accent-deep: #5fe3a0;
+
+  --color-warn: #f2542d;
+  --color-warn-soft: #2d1510;
+  --color-warn-deep: #ff9d7d;
+
+  --color-info: #4b8cf8;
+  --color-info-soft: #101d33;
+  --color-info-deep: #8fb8ff;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.5), 0 10px 26px -18px rgb(0 0 0 / 0.8);
+}

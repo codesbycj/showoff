@@ -1,0 +1,92 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.05 which kind to show
+// import { FilterRow } from '@/features/briskhome/components/filter-row';
+// STEP 1.03 what the screen is
+// import { Headline } from '@/features/briskhome/components/headline';
+// STEP 1.11 the week, and the upsell
+// import { Panels } from '@/features/briskhome/components/panels';
+// STEP 1.01 who is signed in
+// import { ProfileRow } from '@/features/briskhome/components/profile-row';
+// STEP 1.13 and where else it goes
+// import { TabBar } from '@/features/briskhome/components/tab-bar';
+// STEP 1.07 the tasks themselves
+// import { TaskCard } from '@/features/briskhome/components/task-card';
+// STEP 1.08 two of them
+// import { cards } from '@/features/briskhome/data/start';
+import { MARGIN, PANELS_TOP, TABBAR_TOP, TASK_TOP } from '@/features/briskhome/layout';
+import { br } from '@/features/briskhome/theme';
+import { useInsets } from '@/features/briskhome/use-insets';
+
+/**
+ * Brisk — the activity overview.
+ *
+ * Assembly only: who is signed in, what the screen is, which kind of activity
+ * to show, the one task it is about, the week and the upsell, and where else
+ * the app goes.
+ *
+ * The filter row is outside the padded column so a chip can scroll off the
+ * right edge; it carries the margin itself. The task card takes the slack, so
+ * the tab bar rides the bottom inset at any screen height.
+ */
+export default function BriskhomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: br.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <View style={{ paddingHorizontal: MARGIN }}>
+{/* STEP 1.02 and how much is on
+        <ProfileRow onAdd={() => router.push('/briskcase')} />
+*/}
+{/* STEP 1.04 in two weights
+        <Headline />
+*/}
+      </View>
+
+{/* STEP 1.06 running off the screen
+      <FilterRow />
+*/}
+
+{/* STEP 1.09 sharing the slack
+      <View
+        style={{
+          flex: 1,
+          marginTop: TASK_TOP,
+          paddingHorizontal: MARGIN,
+          // MISTAKE 1.10 the cards came in tilted
+          transform: [{ rotate: '-2deg' }],
+        }}
+      >
+        {cards.map((c, i) => (
+          <View key={c.id} style={{ flex: 1, marginTop: i === 0 ? 0 : TASK_TOP }}>
+            <TaskCard item={c} onDetails={() => router.push('/briskcase')} />
+          </View>
+        ))}
+      </View>
+*/}
+
+{/* STEP 1.12 side by side
+      <View style={{ marginTop: PANELS_TOP, paddingHorizontal: MARGIN }}>
+        <Panels />
+      </View>
+*/}
+
+{/* STEP 1.14 on a navy pill
+      <View style={{ marginTop: TABBAR_TOP, paddingHorizontal: MARGIN }}>
+        <TabBar active="Home" onSelect={(id) => id === 'Schedule' && router.push('/briskcase')} />
+      </View>
+*/}
+    </View>
+  );
+}

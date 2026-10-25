@@ -2,18 +2,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import { useWindowDimensions, View } from 'react-native';
 
-// STEP 1.11 how to narrow it
-// import { FilterRow } from '@/features/milesbrands/components/filter-row';
-// STEP 1.01 whose miles these are
-// import { Header } from '@/features/milesbrands/components/header';
-// STEP 1.14 the offer being pushed
-// import { PromoCard } from '@/features/milesbrands/components/promo-card';
-// STEP 1.06 how to look through it
-// import { SearchField } from '@/features/milesbrands/components/search-field';
-// STEP 1.08 and what is in it
-// import { Stage } from '@/features/milesbrands/components/stage';
-// STEP 1.18 the way around
-// import { TabBar } from '@/features/milesbrands/components/tab-bar';
+import { FilterRow } from '@/features/milesbrands/components/filter-row';
+import { Header } from '@/features/milesbrands/components/header';
+import { PromoCard } from '@/features/milesbrands/components/promo-card';
+import { SearchField } from '@/features/milesbrands/components/search-field';
+import { Stage } from '@/features/milesbrands/components/stage';
+import { TabBar } from '@/features/milesbrands/components/tab-bar';
 import { T } from '@/features/milesbrands/components/text';
 import { header } from '@/features/milesbrands/data/brands';
 import {
@@ -64,11 +58,8 @@ export default function MilesBrands() {
           paddingHorizontal: MARGIN,
         }}
       >
-        {/* STEP 1.02 across the top
         <Header />
-        */}
 
-        {/* STEP 1.05 what the screen is
         <View style={{ marginTop: TITLE_TOP, alignItems: 'center' }}>
           <T variant="kicker" color={ml.onCanvasSoft}>
             {header.kicker}
@@ -77,36 +68,25 @@ export default function MilesBrands() {
             {header.title}
           </T>
         </View>
-        */}
 
         <View style={{ marginTop: SEARCH_TOP }}>
-          {/* STEP 1.07 under the title
           <SearchField />
-          */}
         </View>
 
         <View style={{ flex: 1, marginTop: STAGE_TOP }}>
-          {/* STEP 1.09 filling the page
           <Stage width={width - MARGIN * 2} height="100%" />
-          */}
         </View>
 
         <View style={{ marginTop: FILTER_TOP }}>
-          {/* STEP 1.12 in a row off the edge
           <FilterRow />
-          */}
         </View>
 
         <View style={{ marginTop: PROMO_TOP }}>
-          {/* STEP 1.15 above the bar
           <PromoCard />
-          */}
         </View>
 
         <View style={{ marginTop: TAB_TOP }}>
-          {/* STEP 1.19 along the bottom
           <TabBar />
-          */}
         </View>
       </View>
     </View>

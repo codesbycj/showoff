@@ -1,0 +1,73 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "which stock this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "what the desks think"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    "@/features/stakrate/components/rating-bar"
+   ],
+   "label": "the split three ways"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "buy, hold and sell"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    "@/features/stakrate/components/note-rail"
+   ],
+   "label": "what they actually wrote"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    [
+     "// MISTAKE 1.08",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the bars came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/stakrate/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "as a rail you push"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "rate-screen",
+     "src/app/stakrate/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

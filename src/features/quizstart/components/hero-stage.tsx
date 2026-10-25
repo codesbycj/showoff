@@ -26,30 +26,22 @@ import { FACES } from './faces';
 export function HeroStage({ size }: { size: number }) {
   return (
     <View style={{ width: size, height: size, alignItems: 'center', justifyContent: 'center' }}>
-      {/* STEP 1.09 the shapes behind
       <Blobs size={size} />
-      */}
 
-      {/* STEP 1.10 the person
       <Image
         source={FACES[0]}
         style={{
           width: size * 0.56,
           height: size * 0.56,
           borderRadius: radius.full,
-          // MISTAKE 1.15 the portrait came in washed out
-          opacity: 0.4,
           borderWidth: 5,
           borderColor: qz.stage,
         }}
         resizeMode="cover"
         accessibilityIgnoresInvertColors
       />
-      */}
 
-      {/* STEP 1.11 and the scribbles round them
       <Doodles size={size} />
-      */}
     </View>
   );
 }

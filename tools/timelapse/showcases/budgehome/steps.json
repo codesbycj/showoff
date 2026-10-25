@@ -1,0 +1,81 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "the month and alerts"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "what is left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "and what has gone"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "@/features/budgehome/components/planner-card"
+   ],
+   "label": "the planner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "with its gauge"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the statistics line"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    [
+     "// MISTAKE 1.08",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the planner came in half-faded"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/budgehome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and the limit you set"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-screen",
+     "src/app/budgehome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

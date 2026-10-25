@@ -1,0 +1,38 @@
+{
+  "url": "http://localhost:5324/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "dashboard" },
+    { "name": "open-orders", "click": "[data-tab='orders']", "settle": 900, "rest": true },
+
+    { "name": "filter-open", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-processing", "click": "[data-menu='filter'] [data-option='Processing']", "settle": 850 },
+    { "name": "filter-open-2", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-refunded", "click": "[data-menu='filter'] [data-option='Refunded']", "settle": 850 },
+    { "name": "filter-open-3", "click": "[data-select='filter'] button", "settle": 320 },
+    { "name": "filter-all", "click": "[data-menu='filter'] [data-option='all']", "settle": 850 },
+
+    { "name": "sort-open", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-total", "click": "[data-menu='sort'] [data-option='total']", "settle": 850 },
+    { "name": "sort-open-2", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-recent", "click": "[data-menu='sort'] [data-option='recent']", "settle": 850 },
+
+    { "name": "scrolled", "wheel": ["[data-scroller='orders']", 300], "rest": true },
+    { "name": "top", "wheel": ["[data-scroller='orders']", -300], "rest": true },
+
+    { "name": "search-online", "fill": ["[data-search]", "online"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-analytics",
+      "click": "[data-tab='analytics']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

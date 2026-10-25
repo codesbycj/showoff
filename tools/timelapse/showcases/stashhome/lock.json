@@ -1,0 +1,19 @@
+{
+ "assets/images/stashhome/CREDITS.md": "153e0333b1821737e820d1aebecf935f9acfd7bbe99e50311ada6f4a389fa639",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "9d6160cab7eec93f23e72b52926714f87ec2cb1d49129f0c6bb2d4a2f6f4ce6c",
+ "src/app/stashhome/index.tsx": "a0596065fbf8804d82231e02eee73efd9f5a3c107e5c5fdc32c7856ea6163f08",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/stashhome/components/memory-card.tsx": "ef28bf7b2cead15d2428b2b160d889dce1a7794d7df605506f9b12304cf60449",
+ "src/features/stashhome/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/stashhome/data/start.ts": "edd23f8d597e292401a6d677944a5677afeac7cbfbb413846de5e3a7bda332ac",
+ "src/features/stashhome/layout.ts": "8289918875279674a954bd9c19c2265882be1aec2c684e35540a31b89151776e",
+ "src/features/stashhome/theme.ts": "fb9f37105dc1b7f6663da50b32998401c5e5bad9b340cdc30e59b5fcfae89e04",
+ "src/features/stashhome/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

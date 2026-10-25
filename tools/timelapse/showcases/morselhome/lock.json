@@ -1,0 +1,21 @@
+{
+ "assets/images/morselhome/CREDITS.md": "591871ac9e0cc7719b6f81842b46ad9799ed7995d1f77a96519c75791e4c2d50",
+ "assets/images/morselhome/face-1.jpg": "ed9eb34a8a03771e992220abae3a3df89cba39b41d640052ea75e90926f81f5e",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "78a70c391c4a3251cb6918f7e2f0f55937c52cb41b127cf3804fcb1da5080cfd",
+ "src/app/morselhome/index.tsx": "641259e25dd1459403c2c2b58d6158ef4656c7bce6ad7fbdc558a3e7e1d5ddb3",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/morselhome/components/cards.tsx": "55ca69348dec71933b4beb1c284678db1cb106402a55d1544b0185acdd4e3480",
+ "src/features/morselhome/components/glyph.tsx": "7fd25659073a364b9189ddae5840c0844ffc31445d70c928520a9f3f5324fd08",
+ "src/features/morselhome/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/morselhome/data/day.ts": "881c88262164e9af44cc7a5412cb1d6bbd7fd6cdc1b9c7eb07123dca38cc42be",
+ "src/features/morselhome/layout.ts": "faf29d181bbbdd85e0e06b1b442d0a9a99150457810382439082f9da4d532147",
+ "src/features/morselhome/theme.ts": "d1cbc8bfc1251ba3b7e8f1031b2f80a4c9a64a97fc4bb8d5388f0f49b4ea8fca",
+ "src/features/morselhome/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

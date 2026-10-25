@@ -32,7 +32,6 @@ export function BlockChart() {
   return (
     <View>
       <View style={{ flexDirection: 'row' }}>
-        {/* STEP 1.30 something to read against
         <View
           style={{
             width: AXIS_WIDTH,
@@ -46,10 +45,8 @@ export function BlockChart() {
             </T>
           ))}
         </View>
-        */}
 
         <View style={{ flex: 1 }}>
-          {/* STEP 1.31 a stack a month
           <View style={{ height: PLOT_HEIGHT, flexDirection: 'row', alignItems: 'flex-end' }}>
             {overview.months.map((m) => (
               <View key={m.key} style={{ flex: 1, alignItems: 'center', gap: BLOCK_GAP }}>
@@ -62,9 +59,7 @@ export function BlockChart() {
               </View>
             ))}
           </View>
-          */}
 
-          {/* STEP 1.32 which month each is
           <View style={{ flexDirection: 'row', marginTop: MONTH_TOP }}>
             {overview.months.map((m) => (
               <View key={m.key} style={{ flex: 1, alignItems: 'center' }}>
@@ -74,11 +69,9 @@ export function BlockChart() {
               </View>
             ))}
           </View>
-          */}
         </View>
       </View>
 
-      {/* STEP 1.33 and call out the big one
       <View
         style={{ position: 'absolute', left: AXIS_WIDTH, right: 0, top: 0, flexDirection: 'row' }}
         pointerEvents="none"
@@ -104,7 +97,6 @@ export function BlockChart() {
           </View>
         ))}
       </View>
-      */}
     </View>
   );
 }
@@ -116,8 +108,6 @@ function Block({ color }: { color: string }) {
     <View
       style={{
         width: '72%',
-        // MISTAKE 1.34 the blocks came in washed out
-        opacity: 0.45,
         height: BLOCK_HEIGHT,
         borderRadius: radius.block,
         backgroundColor: color,

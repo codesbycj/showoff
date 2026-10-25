@@ -1,0 +1,82 @@
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Dock } from '@/features/voltdata/components/dock';
+import { ResultCard } from '@/features/voltdata/components/result-card';
+import { SourceRow } from '@/features/voltdata/components/source-row';
+import { T } from '@/features/voltdata/components/text';
+import { TopBar } from '@/features/voltdata/components/top-bar';
+import { copy, results } from '@/features/voltdata/data/data';
+import {
+  CARD_GAP,
+  CARDS_TOP,
+  DOCK_TOP,
+  HEADER_TOP,
+  MARGIN,
+  SECTION_TOP,
+  SOURCES_TOP,
+} from '@/features/voltdata/layout';
+import { vt, type } from '@/features/voltdata/theme';
+import { useInsets } from '@/features/voltdata/use-insets';
+
+/**
+ * Volt — connect data.
+ *
+ * Assembly only: the assistant and who is signed in, where the numbers come
+ * from, what they add up to, and the dock at the foot.
+ *
+ * The result cards are taller than the reference's. Built at its proportions
+ * the stack ends about 120dp above the dock and leaves a band of black;
+ * opening the rhythm out is the fix rather than padding the gap.
+ */
+export default function VoltdataScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: vt.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <TopBar />
+
+      <T
+        variant="section"
+        color={vt.ink}
+        style={{ marginTop: SECTION_TOP, height: type.section.line }}
+      >
+        {copy.connect}
+      </T>
+
+      <View style={{ marginTop: SOURCES_TOP }}>
+        <SourceRow />
+      </View>
+
+      <T
+        variant="section"
+        color={vt.ink}
+        style={{ marginTop: SECTION_TOP, height: type.section.line }}
+      >
+        {copy.roi}
+      </T>
+
+      <View style={{ marginTop: CARDS_TOP }}>
+        {results.map((r, i) => (
+          <View key={r.id} style={{ marginTop: i === 0 ? 0 : CARD_GAP }}>
+            <ResultCard figure={r.figure} caption={r.caption} tone={r.tone} mark={r.mark} />
+          </View>
+        ))}
+      </View>
+
+      <View style={{ flex: 1, justifyContent: 'flex-end', paddingBottom: DOCK_TOP }}>
+        <Dock />
+      </View>
+    </View>
+  );
+}

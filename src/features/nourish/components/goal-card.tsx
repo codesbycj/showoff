@@ -34,8 +34,6 @@ export function GoalCard({
         style={{
           width: CARD_WIDTH,
           height: CARD_HEIGHT,
-          // MISTAKE 1.31 the cards came in tinted
-          backgroundColor: nr.washCool,
           borderRadius: radius.card,
           borderWidth: 1,
           borderColor: nr.rule,
@@ -43,7 +41,6 @@ export function GoalCard({
           justifyContent: 'space-between',
         }}
       >
-        {/* STEP 1.30 the goal, and its mark
         <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
           <T variant="cardTitle" color={nr.ink} numberOfLines={2} style={{ flex: 1 }}>
             {title}
@@ -52,13 +49,10 @@ export function GoalCard({
             <GoalGlyph name={glyph} />
           </View>
         </View>
-        */}
 
-        {/* STEP 1.32 and where it comes from
         <T variant="cardMeta" color={nr.muted} numberOfLines={1}>
           {meta}
         </T>
-        */}
       </View>
     </Pressable>
   );

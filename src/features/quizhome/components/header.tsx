@@ -18,19 +18,14 @@ export function Header() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
       <View style={{ flex: 1 }}>
-        {/* STEP 1.03 the greeting
         <T variant="greeting" color={qz.muted}>
           {header.greeting}
         </T>
-        */}
-        {/* STEP 1.04 and the question
         <T variant="display" color={qz.ink} style={{ marginTop: DISPLAY_TOP }}>
           {header.display}
         </T>
-        */}
       </View>
 
-      {/* STEP 1.05 what there is to spend
       <View
         style={{
           height: GEM_HEIGHT,
@@ -48,7 +43,6 @@ export function Header() {
           {header.gems}
         </T>
       </View>
-      */}
     </View>
   );
 }

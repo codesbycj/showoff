@@ -47,11 +47,9 @@ export function TabDock({ onSelect }: { onSelect?: (t: Tab) => void }) {
         elevation: 10,
       }}
     >
-      {/* STEP 1.32 the four places to be
       {dock.map((t) => (
         <DockItem key={t.key} tab={t} onPress={() => onSelect?.(t)} />
       ))}
-      */}
     </View>
   );
 }
@@ -69,8 +67,6 @@ function DockItem({ tab, onPress }: { tab: Tab; onPress?: () => void }) {
           borderRadius: radius.pill,
           flexDirection: 'row',
           alignItems: 'center',
-          // MISTAKE 1.33 the dock came in squeezed
-          paddingVertical: 10,
           gap: 9,
           paddingHorizontal: selected ? 15 : 0,
           width: selected ? undefined : size,

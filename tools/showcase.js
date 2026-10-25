@@ -84,8 +84,17 @@ const [, , cmd, arg] = process.argv;
 if (cmd === 'list') {
   const boot = bootSlug();
   const staged = fs.existsSync(showcases) ? fs.readdirSync(showcases) : [];
+  // Three states, not two. `new` creates both the components folder and the
+  // staging folder, so neither of those existing means anything — a slug can
+  // sit here as an empty route with an empty staging folder behind it, which
+  // is what a batch scaffold leaves, and it used to report "staged". The
+  // signals that actually mean something are a component on disk and a
+  // generated `steps.json`.
+  const hasFiles = (p) => fs.existsSync(p) && fs.readdirSync(p).length > 0;
   for (const s of existing()) {
-    const marks = [staged.includes(s) ? 'staged' : 'not staged'];
+    const built = hasFiles(path.join(root, `src/features/${s}/components`));
+    const hasSteps = fs.existsSync(path.join(showcases, s, 'steps.json'));
+    const marks = [hasSteps ? 'staged' : built ? 'built, not staged' : 'SCAFFOLD ONLY'];
     if (s === boot) marks.push('BOOTS');
     console.log(`${s.padEnd(16)} ${marks.join(', ')}`);
   }

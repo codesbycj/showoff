@@ -17,9 +17,7 @@ export function AppBar({ onBack }: { onBack?: () => void }) {
     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
       <RoundButton name="back" onPress={onBack} label="Go back" />
       <View style={{ flex: 1 }} />
-      {/* STEP 1.03 and the three ways on
       <RoundButton name="plus" label="Add" />
-      */}
       <View style={{ width: HEADER_GAP }} />
       <RoundButton name="share" label="Share" />
       <View style={{ width: HEADER_GAP }} />

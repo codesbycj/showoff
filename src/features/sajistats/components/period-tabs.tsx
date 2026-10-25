@@ -25,15 +25,12 @@ export function PeriodTabs({
       style={{
         height: TABS_HEIGHT,
         borderRadius: radius.pill,
-        // MISTAKE 1.08 the track came in half the page
-        width: 180,
         backgroundColor: sj.raised,
         flexDirection: 'row',
         alignItems: 'center',
         padding: TABS_INSET,
       }}
     >
-      {/* STEP 1.07 one tab each
       {items.map((item) => {
         const on = item === active;
         return (
@@ -60,7 +57,6 @@ export function PeriodTabs({
           </Pressable>
         );
       })}
-      */}
     </View>
   );
 }

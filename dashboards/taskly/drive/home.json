@@ -1,0 +1,16 @@
+{
+  "url": "http://localhost:5312/",
+  "w": 1440,
+  "h": 900,
+  "settle": 600,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "inert-tab",
+      "click": "[data-tab][data-live=false]",
+      "expectUnchanged": true
+    }
+  ]
+}

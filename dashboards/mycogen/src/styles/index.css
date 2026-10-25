@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+
+/*
+ * Mycogen.
+ *
+ * A posed board: a white panel on a pastel wash of pink, blue and cream.
+ * refscan found exactly that — `#ffffff`, `#f3f6fb`, `#c5d5e4`, `#eadede` and
+ * `#f5e7e6` are most of the frame between them.
+ *
+ * The backdrop is **kept here**, as the page's own ground rather than as board.
+ * Every other episode drops the surround because it is a presentation effect;
+ * this design's identity is the wash, and a flat grey behind these cards is a
+ * different design rather than the same one at a different size. It is a
+ * judgement call and it is in Declared departures.
+ *
+ * `static`, because the quick-action tints reach components as inline
+ * `var(--color-quick-...)` and Tailwind tree-shakes unreferenced theme vars.
+ */
+@theme static {
+  --color-ground: #f3f3f6;
+  --color-surface: #ffffff;
+  --color-sunken: #f5f5f8;
+  --color-sunken-deep: #e6e6ec;
+
+  --color-ink: #16161c; /* headings, the active menu pill */
+  --color-fill: #16161c; /* a filled surface and the text on it */
+  --color-fill-fg: #ffffff;
+  --color-body: #40404a;
+  /* 5.29:1 on white, 5.00:1 on the ground. */
+  --color-muted: #65656f;
+  --color-line: #e8e8ee;
+
+  --color-accent: #e0a52a; /* the sales bars and the brand's amber */
+  --color-accent-soft: #fdf3dd;
+  --color-accent-deep: #8a5c00; /* accent text on the soft tint: 5.4:1 */
+
+  --color-positive: #157a4b;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #b8322c;
+  --color-danger-soft: #fbe9e8;
+  --color-info: #2b63c4;
+  --color-info-soft: #e7eefb;
+
+  /* The four quick actions, in the reference's own order. */
+  --color-quick-discount: #fbf0d4;
+  --color-quick-email: #f6efe3;
+  --color-quick-banner: #e4f2e4;
+  --color-quick-bundle: #ebe6fa;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(22 22 28 / 0.04), 0 10px 26px -20px rgb(22 22 28 / 0.18);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    /*
+     * The pastel wash, rebuilt as a gradient rather than lifted as a bitmap:
+     * it stays sharp at any viewport and costs nothing.
+     */
+    background:
+      radial-gradient(90rem 50rem at 8% -10%, #fbe9ec 0%, transparent 55%),
+      radial-gradient(70rem 45rem at 95% 0%, #e3edfb 0%, transparent 50%),
+      radial-gradient(80rem 60rem at 70% 110%, #f6efe6 0%, transparent 55%), var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

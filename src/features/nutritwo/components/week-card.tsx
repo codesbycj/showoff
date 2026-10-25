@@ -18,11 +18,9 @@ export function WeekCard({ onStep }: { onStep?: (dir: -1 | 1) => void }) {
   return (
     <View style={{ borderRadius: 22, backgroundColor: nl.surface, padding: 26 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        {/* STEP 1.11 which month
         <T variant="month" color={nl.ink} style={{ flex: 1 }}>
           {calendar.month}
         </T>
-        */}
         <View style={{ flexDirection: 'row', gap: 8 }}>
           <Step label="Previous month" onPress={() => onStep?.(-1)}>
             <ArrowLeft size={16} color={nl.ink} strokeWidth={1.9} />
@@ -34,15 +32,12 @@ export function WeekCard({ onStep }: { onStep?: (dir: -1 | 1) => void }) {
       </View>
 
       <View style={{ flexDirection: 'row', marginTop: 14 }}>
-        {/* STEP 1.12 and which day
         {calendar.days.map((d) => {
           const on = d.key === calendar.selected;
           return (
             <View key={d.key} style={{ flex: 1, alignItems: 'center' }}>
               <View
                 style={{
-                  // MISTAKE 1.19 the days came in squeezed
-                  paddingHorizontal: 2,
                   paddingVertical: 11,
                   paddingHorizontal: 11,
                   borderRadius: radius.pill,
@@ -61,7 +56,6 @@ export function WeekCard({ onStep }: { onStep?: (dir: -1 | 1) => void }) {
             </View>
           );
         })}
-        */}
       </View>
     </View>
   );

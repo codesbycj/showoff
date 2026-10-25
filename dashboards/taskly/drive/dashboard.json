@@ -1,0 +1,85 @@
+{
+  "url": "http://localhost:5312/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "col-progress", "click": "[data-column='progress']", "settle": 800, "rest": true },
+    { "name": "col-review", "click": "[data-column='review']", "settle": 800, "rest": true },
+    { "name": "col-done", "click": "[data-column='done']", "settle": 800, "rest": true },
+    { "name": "col-todo", "click": "[data-column='todo']", "settle": 800, "rest": true },
+
+    { "name": "card-actions", "click": "[data-task='sidebar'] [aria-label^='Actions']", "settle": 600, "rest": true },
+    { "name": "card-actions-close", "click": "[data-task='sidebar'] [aria-label^='Actions']", "settle": 600, "rest": true },
+    { "name": "check-tick", "click": "[data-check='sidebar']", "settle": 500, "rest": true },
+    { "name": "check-tick-2", "click": "[data-check='sidebar']", "settle": 500, "rest": true },
+
+    { "name": "day-16", "click": "[data-day='16']", "settle": 600, "rest": true },
+    { "name": "day-26", "click": "[data-day='26']", "settle": 600, "rest": true },
+    { "name": "month-open", "click": "[data-select='month'] button", "settle": 320 },
+    { "name": "month-oct", "click": "[data-menu='month'] [data-option='Oct']", "settle": 800 },
+    { "name": "month-open-2", "click": "[data-select='month'] button", "settle": 320 },
+    { "name": "month-sep", "click": "[data-menu='month'] [data-option='Sep']", "settle": 800 },
+
+    { "name": "mic-off", "click": "[data-meet-toggle='mic']", "settle": 550, "rest": true },
+    { "name": "cam-off", "click": "[data-meet-toggle='video']", "settle": 650, "rest": true },
+    { "name": "cam-on", "click": "[data-meet-toggle='video']", "settle": 650, "rest": true },
+    { "name": "join", "click": "[data-join]", "settle": 650, "rest": true },
+
+    { "name": "chat-type", "fill": ["[data-chat-input]", "On my way to the scrum"], "settle": 500 },
+    { "name": "chat-send", "click": "[data-chat-send]", "settle": 800, "rest": true },
+
+    { "name": "timer-start", "click": "[data-timer-toggle]", "settle": 500, "rest": true },
+    { "name": "timer-stop", "click": "[data-timer-toggle]", "settle": 500, "rest": true },
+
+    { "name": "note-done", "click": "[data-note-done]", "settle": 600, "rest": true },
+    { "name": "note-undo", "click": "[data-note-done]", "settle": 600, "rest": true },
+
+    {
+      "name": "project-neura",
+      "comment": "The sidebar tree is a real selector: the heading, the counts and the cards all change.",
+      "click": "[data-project='neura']",
+      "settle": 900,
+      "rest": true
+    },
+    { "name": "project-taskly", "click": "[data-project='taskly']", "settle": 900, "rest": true },
+    { "name": "tree-collapse", "click": "[data-tree-toggle]", "settle": 650, "rest": true },
+    { "name": "tree-expand", "click": "[data-tree-toggle]", "settle": 650, "rest": true },
+
+    { "name": "search-flow", "fill": ["[data-search]", "flow"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    { "name": "theme-dark", "click": "[data-theme-btn='dark']", "settle": 850, "rest": true },
+    { "name": "theme-light", "click": "[data-theme-btn='light']", "settle": 850, "rest": true },
+
+    { "name": "bell", "click": "header [aria-label^='Notifications']", "settle": 500 },
+    { "name": "parked", "rest": true, "against": "bell" },
+
+    {
+      "name": "inert-team",
+      "comment": "Rule 1: three of the six menu entries do nothing at all.",
+      "click": "[data-tab='team']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    },
+    {
+      "name": "inert-report",
+      "click": "[data-tab='report']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-team"
+    },
+    {
+      "name": "inert-settings",
+      "click": "[data-tab='settings']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-report"
+    }
+  ]
+}

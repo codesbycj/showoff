@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5324/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "dashboard" },
+    { "name": "open-customers", "click": "[data-tab='customers']", "settle": 900, "rest": true },
+
+    { "name": "segment-vip", "click": "[data-segment='VIP']", "settle": 800, "rest": true },
+    { "name": "segment-new", "click": "[data-segment='New']", "settle": 800, "rest": true },
+    { "name": "segment-returning", "click": "[data-segment='Returning']", "settle": 800, "rest": true },
+    { "name": "segment-all", "click": "[data-segment='all']", "settle": 800, "rest": true },
+
+    { "name": "row-maria", "click": "[data-row='c3']", "settle": 800, "rest": true },
+    { "name": "row-ethan", "click": "[data-row='c10']", "settle": 800, "rest": true },
+    { "name": "row-alice", "click": "[data-row='c1']", "settle": 800, "rest": true },
+
+    { "name": "scrolled", "wheel": ["[data-scroller='customers']", 260], "rest": true },
+    { "name": "top", "wheel": ["[data-scroller='customers']", -260], "rest": true },
+
+    { "name": "search-smith", "fill": ["[data-search]", "smith"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-marketing",
+      "click": "[data-tab='marketing']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

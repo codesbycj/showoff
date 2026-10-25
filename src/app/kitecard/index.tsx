@@ -1,11 +1,63 @@
+import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 
-/** Screen 1 — built component by component. */
+import { ActionRow } from '@/features/kitecard/components/action-row';
+import { Balance } from '@/features/kitecard/components/balance';
+import { KiteCard } from '@/features/kitecard/components/card';
+import { ChargeList } from '@/features/kitecard/components/charge-list';
+import { PanelTop } from '@/features/kitecard/components/panel-top';
+import { TabBar } from '@/features/kitecard/components/tab-bar';
+import { HISTORY_TOP, MARGIN, PANEL_PAD, TABBAR_GAP } from '@/features/kitecard/layout';
+import { kt, radius } from '@/features/kitecard/theme';
+import { useInsets } from '@/features/kitecard/use-insets';
+
+/**
+ * Kite — the card.
+ *
+ * Assembly only: the charcoal panel carrying the way back, the card itself,
+ * what is left on it and the three things you do with it; then what it has
+ * been charged; then where else the app goes.
+ *
+ * The list sits in a `flex: 1` block between the panel and the floating tab
+ * bar and its rows share that space, so the bar rides the bottom inset at any
+ * screen height and nothing is left standing on empty canvas.
+ */
 export default function KitecardScreen() {
+  const insets = useInsets();
+
   return (
-    <View className="flex-1 bg-white">
-      <StatusBar style="dark" />
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: kt.canvas,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <View
+        style={{
+          borderRadius: radius.panel,
+          backgroundColor: kt.panel,
+          padding: PANEL_PAD,
+        }}
+      >
+        <PanelTop onBack={() => router.back()} />
+        <KiteCard />
+        <Balance />
+        <ActionRow />
+      </View>
+
+      <View style={{ flex: 1, marginTop: HISTORY_TOP }}>
+        <ChargeList />
+      </View>
+
+      <View style={{ marginTop: TABBAR_GAP }}>
+        <TabBar active="cards" onSelect={(id) => id === 'home' && router.push('/kitehome')} />
+      </View>
     </View>
   );
 }

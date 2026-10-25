@@ -25,7 +25,6 @@ export function OverviewCard() {
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-        {/* STEP 1.28 the balance it is all measured against
         <View style={{ flex: 1 }}>
           <T variant="chartLabel" color={ps.muted}>
             {overview.label}
@@ -34,10 +33,8 @@ export function OverviewCard() {
             {overview.total}
           </T>
         </View>
-        */}
 
         <View style={{ gap: 5 }}>
-          {/* STEP 1.29 and a key
           {overview.keys.map((label, i) => (
             <View key={label} style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
               <T variant="chartKey" color={ps.muted}>
@@ -53,7 +50,6 @@ export function OverviewCard() {
               />
             </View>
           ))}
-          */}
         </View>
       </View>
 

@@ -1,0 +1,120 @@
+{
+  "url": "http://localhost:5300/",
+  "w": 1440,
+  "h": 900,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "home"
+    },
+    {
+      "name": "open-wallet",
+      "click": "[data-tab='wallet']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "withdraw-open",
+      "click": "[data-withdraw]",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "withdraw-close",
+      "click": "[data-withdraw]",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "slice-dev",
+      "hover": "[data-mark='slice-dev']",
+      "against": "withdraw-close"
+    },
+    {
+      "name": "slice-design",
+      "hover": "[data-mark='slice-design']",
+      "against": "slice-dev"
+    },
+    {
+      "name": "slice-writing",
+      "hover": "[data-mark='slice-writing']",
+      "against": "slice-design"
+    },
+    {
+      "name": "legend-advisory",
+      "click": "[data-legend='advisory']",
+      "settle": 600
+    },
+    {
+      "name": "legend-advisory-off",
+      "click": "[data-legend='advisory']",
+      "settle": 600
+    },
+    {
+      "name": "month-dec",
+      "hover": "[data-mark='month-1']",
+      "against": "legend-advisory-off"
+    },
+    {
+      "name": "month-jan",
+      "hover": "[data-mark='month-2']",
+      "against": "month-dec"
+    },
+    {
+      "name": "payouts-pending",
+      "click": "[data-state='pending']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "payouts-cleared",
+      "click": "[data-state='cleared']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "payouts-all",
+      "click": "[data-state='all']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "payouts-scrolled",
+      "wheel": [
+        "[data-scroller='payouts']",
+        320
+      ],
+      "rest": true
+    },
+    {
+      "name": "payouts-top",
+      "wheel": [
+        "[data-scroller='payouts']",
+        -320
+      ],
+      "rest": true
+    },
+    {
+      "name": "search-wire",
+      "fill": [
+        "[data-search]",
+        "wire"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-clear",
+      "click": "[data-search-clear]",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "inert-discover",
+      "click": "[data-tab='discover']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

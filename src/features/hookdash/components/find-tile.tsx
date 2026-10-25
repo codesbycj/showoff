@@ -19,6 +19,8 @@ export function FindTile({ onPress }: { onPress?: () => void }) {
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel="Find friends">
       <View
         style={{
+          // MISTAKE 1.26 the tile came in squeezed
+          paddingVertical: 24,
           height: TILE_H,
           borderRadius: radius.card,
           backgroundColor: hk.card,
@@ -26,9 +28,11 @@ export function FindTile({ onPress }: { onPress?: () => void }) {
           justifyContent: 'space-between',
         }}
       >
+        {/* STEP 1.09 what it offers
         <T variant="cardTitle" color={hk.ink}>
           {findFriends.title}
         </T>
+        */}
 
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <View
@@ -43,6 +47,7 @@ export function FindTile({ onPress }: { onPress?: () => void }) {
           >
             <Plus size={20} />
           </View>
+          {/* STEP 1.10 and two of them
           {findFriends.faces.map((f, i) => (
             <Image
               key={f}
@@ -59,6 +64,7 @@ export function FindTile({ onPress }: { onPress?: () => void }) {
               accessibilityIgnoresInvertColors
             />
           ))}
+          */}
         </View>
       </View>
     </Pressable>

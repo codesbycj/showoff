@@ -2,15 +2,11 @@ import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, View } from 'react-native';
 
-// STEP 1.01 the header
-// import { AppBar } from '@/features/sugarcase/components/app-bar';
-// STEP 1.15 and three things to do
-// import { ChromeBar } from '@/features/sugarcase/components/chrome-bar';
-// STEP 1.05 the case, as steps
-// import { FlowNode } from '@/features/sugarcase/components/flow-node';
+import { AppBar } from '@/features/sugarcase/components/app-bar';
+import { ChromeBar } from '@/features/sugarcase/components/chrome-bar';
+import { FlowNode } from '@/features/sugarcase/components/flow-node';
 import { T } from '@/features/sugarcase/components/text';
-// STEP 1.12 the tools
-// import { ToolRail } from '@/features/sugarcase/components/tool-rail';
+import { ToolRail } from '@/features/sugarcase/components/tool-rail';
 import { Wire } from '@/features/sugarcase/components/wire';
 import { flow, header } from '@/features/sugarcase/data/flow';
 import {
@@ -54,11 +50,8 @@ export default function SugarCase() {
           paddingBottom: FOOT_BUTTON + FOOT_BOTTOM + insets.bottom + 16,
         }}
       >
-        {/* STEP 1.02 across the top
         <AppBar onBack={() => router.back()} />
-        */}
 
-        {/* STEP 1.04 what the screen is
         <View style={{ marginTop: TITLE_TOP }}>
           <T variant="title" color={sc.ink}>
             {header.one}
@@ -67,9 +60,7 @@ export default function SugarCase() {
             {header.two}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.06 down the page
         <View style={{ marginTop: FLOW_TOP, paddingRight: 56 }}>
           {flow.map((node, i) => (
             <View key={node.key}>
@@ -78,7 +69,6 @@ export default function SugarCase() {
             </View>
           ))}
         </View>
-        */}
       </ScrollView>
 
       <View
@@ -89,9 +79,7 @@ export default function SugarCase() {
         }}
         pointerEvents="box-none"
       >
-        {/* STEP 1.13 floating down the side
         <ToolRail />
-        */}
       </View>
 
       <View
@@ -104,9 +92,7 @@ export default function SugarCase() {
         }}
         pointerEvents="box-none"
       >
-        {/* STEP 1.16 at the foot
         <ChromeBar />
-        */}
       </View>
     </View>
   );

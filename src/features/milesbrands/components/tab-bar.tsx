@@ -31,11 +31,9 @@ export function TabBar({ onSelect }: { onSelect?: (t: Tab) => void }) {
         ...shadow.float,
       }}
     >
-      {/* STEP 1.20 the four places to be
       {tabs.map((t) => (
         <Item key={t.key} tab={t} onPress={() => onSelect?.(t)} />
       ))}
-      */}
     </View>
   );
 }

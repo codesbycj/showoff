@@ -1,0 +1,137 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/top-bar"
+   ],
+   "label": "the controls across the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "in place"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/headline"
+   ],
+   "label": "what the day is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "two lines and a gesture"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/crew-row"
+   ],
+   "label": "who is about"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "on their own card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/notice-pill"
+   ],
+   "label": "how much is waiting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "said once, in the dark"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/section-head"
+   ],
+   "label": "today's work"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and the way to the rest"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/task-card"
+   ],
+   "label": "the first of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "stacked down the page"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    [
+     "// MISTAKE 1.15",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the cards came in washed out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "@/features/tempohome/components/tab-bar"
+   ],
+   "label": "the dock over the lot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tempohome/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "floating over the list"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-screen",
+     "src/app/tempohome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

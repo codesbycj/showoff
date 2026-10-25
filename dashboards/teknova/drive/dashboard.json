@@ -1,0 +1,217 @@
+{
+  "url": "http://localhost:5304/",
+  "w": 1440,
+  "h": 900,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "hover-feb",
+      "hover": "[data-hit='1']",
+      "against": "rest",
+      "rest": true
+    },
+    {
+      "name": "hover-jun",
+      "hover": "[data-hit='5']",
+      "against": "hover-feb"
+    },
+    {
+      "name": "select-jun",
+      "click": "[data-hit='5']",
+      "against": "rest",
+      "rest": true
+    },
+    {
+      "name": "period-open",
+      "click": "[data-select='period'] button",
+      "settle": 320
+    },
+    {
+      "name": "period-quarter",
+      "click": "[data-menu='period'] [data-option='quarter']",
+      "settle": 900
+    },
+    {
+      "name": "period-open-2",
+      "click": "[data-select='period'] button",
+      "settle": 320
+    },
+    {
+      "name": "period-year",
+      "click": "[data-menu='period'] [data-option='year']",
+      "settle": 900
+    },
+    {
+      "name": "period-open-3",
+      "click": "[data-select='period'] button",
+      "settle": 320
+    },
+    {
+      "name": "period-month",
+      "click": "[data-menu='period'] [data-option='month']",
+      "settle": 900
+    },
+    {
+      "name": "toast-dismiss",
+      "click": "[data-toast-close]",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "category-open",
+      "click": "[data-select='category'] button",
+      "settle": 320
+    },
+    {
+      "name": "category-audio",
+      "click": "[data-menu='category'] [data-option='Audio']",
+      "settle": 800
+    },
+    {
+      "name": "category-open-2",
+      "click": "[data-select='category'] button",
+      "settle": 320
+    },
+    {
+      "name": "category-all",
+      "click": "[data-menu='category'] [data-option='all']",
+      "settle": 800
+    },
+    {
+      "name": "pick-row",
+      "click": "[data-pick='TK-98421']",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "pick-row-2",
+      "click": "[data-pick='TK-98422']",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "unpick-row",
+      "click": "[data-pick='TK-98421']",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "txns-scrolled",
+      "wheel": [
+        "[data-scroller='transactions']",
+        320
+      ],
+      "rest": true
+    },
+    {
+      "name": "txns-top",
+      "wheel": [
+        "[data-scroller='transactions']",
+        -320
+      ],
+      "rest": true
+    },
+    {
+      "name": "market-germany",
+      "hover": "[data-market='de']",
+      "against": "txns-top"
+    },
+    {
+      "name": "market-italy",
+      "hover": "[data-market='it']",
+      "against": "market-germany"
+    },
+    {
+      "name": "markets-scrolled",
+      "wheel": [
+        "[data-scroller='markets']",
+        160
+      ],
+      "rest": true
+    },
+    {
+      "name": "tile-hyper",
+      "click": "[data-tile='hyper']",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "tile-aero",
+      "click": "[data-tile='aero']",
+      "settle": 500,
+      "rest": true
+    },
+    {
+      "name": "search-nova",
+      "fill": [
+        "[data-search]",
+        "nova"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-none",
+      "fill": [
+        "[data-search]",
+        "zzzz"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-clear",
+      "click": "[data-search-clear]",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "theme-dark",
+      "click": "[data-theme-btn='dark']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "theme-light",
+      "click": "[data-theme-btn='light']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "bell",
+      "click": "header [aria-label^='Notifications']",
+      "settle": 500
+    },
+    {
+      "name": "parked",
+      "rest": true,
+      "against": "bell"
+    },
+    {
+      "name": "inert-analytics",
+      "comment": "Rule 1: seven of the ten menu entries do nothing at all.",
+      "click": "[data-tab='analytics']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "parked"
+    },
+    {
+      "name": "inert-settings",
+      "click": "[data-tab='settings']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-analytics"
+    },
+    {
+      "name": "inert-logout",
+      "click": "[data-tab='logout']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "inert-settings"
+    }
+  ],
+  "wait": 6500
+}

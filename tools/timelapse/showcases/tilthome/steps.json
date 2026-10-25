@@ -1,0 +1,121 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/top-bar"
+   ],
+   "label": "the brand and who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "in place"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/headline"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "two lines and a star"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/balance-card"
+   ],
+   "label": "what you have"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "to the penny"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/action-tile"
+   ],
+   "label": "what you can do with it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "out and in"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/payment-row"
+   ],
+   "label": "where it has been going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "@/features/tilthome/components/dock"
+   ],
+   "label": "the dock over the lot"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    [
+     "// MISTAKE 1.12",
+     "marginBottom: -14,"
+    ]
+   ],
+   "label": "the rows came in crushed together"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tilthome/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "floating over the list"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "home-screen",
+     "src/app/tilthome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

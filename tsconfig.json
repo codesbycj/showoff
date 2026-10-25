@@ -21,6 +21,7 @@
   "exclude": [
     "**/sida.tsx",
     "**/*.scratch.tsx",
-    "websites"
+    "websites",
+    "dashboards"
   ]
 }

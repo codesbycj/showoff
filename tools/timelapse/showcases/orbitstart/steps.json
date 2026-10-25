@@ -1,0 +1,73 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    "@/features/orbitstart/components/holo"
+   ],
+   "label": "the sweep and the card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "on the stage"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    [
+     "// MISTAKE 1.04",
+     "paddingLeft: 26,"
+    ]
+   ],
+   "label": "the headline came in indented"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    "@/features/orbitstart/components/actions"
+   ],
+   "label": "the ways in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitstart/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "and the way back in"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "start-screen",
+     "src/app/orbitstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

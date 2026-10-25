@@ -1,0 +1,142 @@
+{
+  "url": "http://localhost:5304/",
+  "w": 1440,
+  "h": 900,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "dashboard"
+    },
+    {
+      "name": "open-orders",
+      "click": "[data-tab='orders']",
+      "settle": 900,
+      "rest": true
+    },
+    {
+      "name": "tile-overdue",
+      "click": "[data-segment='Overdue']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "tile-paid",
+      "click": "[data-segment='Paid']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "tile-awaiting",
+      "click": "[data-segment='Awaiting']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "show-all",
+      "click": "[data-segment='all']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "sort-open",
+      "click": "[data-select='sort'] button",
+      "settle": 320
+    },
+    {
+      "name": "sort-total",
+      "click": "[data-menu='sort'] [data-option='total']",
+      "settle": 800
+    },
+    {
+      "name": "sort-open-2",
+      "click": "[data-select='sort'] button",
+      "settle": 320
+    },
+    {
+      "name": "sort-customer",
+      "click": "[data-menu='sort'] [data-option='customer']",
+      "settle": 800
+    },
+    {
+      "name": "sort-open-3",
+      "click": "[data-select='sort'] button",
+      "settle": 320
+    },
+    {
+      "name": "sort-recent",
+      "click": "[data-menu='sort'] [data-option='recent']",
+      "settle": 800
+    },
+    {
+      "name": "invoices-scrolled",
+      "wheel": [
+        "[data-scroller='invoices']",
+        300
+      ],
+      "rest": true
+    },
+    {
+      "name": "invoices-top",
+      "wheel": [
+        "[data-scroller='invoices']",
+        -300
+      ],
+      "rest": true
+    },
+    {
+      "name": "slice-card",
+      "hover": "[data-mark='slice-Card']",
+      "against": "invoices-top"
+    },
+    {
+      "name": "slice-transfer",
+      "hover": "[data-mark='slice-Transfer']",
+      "against": "slice-card"
+    },
+    {
+      "name": "legend-wallet",
+      "click": "[data-legend='Wallet']",
+      "settle": 600
+    },
+    {
+      "name": "legend-wallet-off",
+      "click": "[data-legend='Wallet']",
+      "settle": 600
+    },
+    {
+      "name": "search-clarke",
+      "fill": [
+        "[data-search]",
+        "clarke"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-clear",
+      "click": "[data-search-clear]",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "theme-dark",
+      "click": "[data-theme-btn='dark']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "theme-light",
+      "click": "[data-theme-btn='light']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "inert-reports",
+      "click": "[data-tab='reports']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "theme-light"
+    }
+  ],
+  "wait": 6500
+}

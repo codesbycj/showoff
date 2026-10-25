@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/plus-jakarta-sans';
+
+/*
+ * Taskly.
+ *
+ * The reference is a posed board — a white panel on a pale lavender ground with
+ * a drop shadow — so this is an inspo brief and the backdrop goes: at real size
+ * the panel is the viewport. refscan's palette is the panel's, and these are
+ * its hexes: #f7f6f9 ground, #ede9f1 and #e4ddeb for the sunken tints, and the
+ * four pastels it found at well under one per cent of the frame each —
+ * #c6a0f1, #d9bdf4, #f0a1bb, #f6c6d6.
+ *
+ * `static`, because the task-status tints below are handed to components as
+ * `var(--color-status-urgent)` and Tailwind tree-shakes theme variables that no
+ * utility class references.
+ */
+@theme static {
+  --color-ground: #f6f5f9; /* behind the cards */
+  --color-surface: #ffffff; /* every card */
+  --color-sunken: #f1eff6; /* chips, inert controls, the board column */
+  --color-sunken-deep: #e4dfec;
+
+  --color-ink: #17151d; /* headings, the active menu pill */
+  --color-body: #43404d;
+  /* 5.31:1 on white, 5.00:1 on the ground, 4.86:1 on a sunken chip. */
+  --color-muted: #676375;
+  --color-line: #e9e5f0;
+
+  --color-accent: #8b5cf6; /* the brand lilac */
+  --color-accent-soft: #f0e9fe;
+  --color-accent-deep: #6433d4; /* accent text on the soft tint: 6.0:1 */
+
+  --color-pink: #e85d8a;
+  --color-pink-soft: #fdeaf1;
+  --color-pink-deep: #b32c5b;
+
+  --color-amber: #d98324;
+  --color-amber-soft: #fdf0dd;
+  --color-amber-deep: #9a5a0c;
+
+  --color-positive: #0f7a4e; /* 4.74:1 on its own tint; the old #15935f was 3.45:1 */
+  --color-positive-soft: #e3f5ec;
+
+  /* The task priorities, as the reference colours them. */
+  --color-status-urgent: #f4733b;
+  --color-status-low: #f2c744;
+  --color-status-normal: #8b5cf6;
+
+  /* The two tinted cards at the foot of the board. */
+  --color-tile-timer: #ded0fb;
+  --color-tile-notes: #fbd3e3;
+
+  --font-sans:
+    'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 22px;
+  --shadow-card: 0 1px 2px rgb(23 21 29 / 0.04), 0 10px 28px -20px rgb(23 21 29 / 0.25);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+/*
+ * Dark.
+ *
+ * The reference puts a sun/moon pair in the top bar, so the build owes a real
+ * second theme rather than a control that does nothing (rule 5). `fill` is the
+ * filled-surface pair and is deliberately separate from `ink`, which is the
+ * text colour — using ink as a surface makes every filled control white with
+ * white text on it in dark, which is how episode 2 shipped its first dark pass.
+ */
+@theme static {
+  --color-fill: #17151d;
+  --color-fill-fg: #ffffff;
+}
+
+[data-theme='dark'] {
+  --color-ground: #121016;
+  --color-surface: #1a181f;
+  --color-sunken: #232029;
+  --color-sunken-deep: #2f2b38;
+
+  --color-ink: #f4f2f8;
+  --color-fill: #efecf6;
+  --color-fill-fg: #17151d;
+  --color-body: #cac5d4;
+  --color-muted: #9d97ab; /* 6.5:1 on the surface */
+  --color-line: #2b2733;
+
+  --color-accent: #a98bff;
+  --color-accent-soft: #241a3d;
+  --color-accent-deep: #cdbaff;
+
+  --color-pink: #f3799f;
+  --color-pink-soft: #351824;
+  --color-pink-deep: #ffa6c2;
+
+  --color-amber: #e9a23b;
+  --color-amber-soft: #33240f;
+  --color-amber-deep: #ffc670;
+
+  --color-positive: #3fc389;
+  --color-positive-soft: #11291f;
+
+  --color-tile-timer: #3a2f55;
+  --color-tile-notes: #43223a;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.5), 0 10px 28px -20px rgb(0 0 0 / 0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

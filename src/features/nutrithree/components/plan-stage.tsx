@@ -21,7 +21,6 @@ export function PlanStage({ width }: { width: number }) {
 
   return (
     <View>
-      {/* STEP 1.08 what it buys
       <Image
         source={PLATE}
         style={{
@@ -35,16 +34,12 @@ export function PlanStage({ width }: { width: number }) {
         resizeMode="cover"
         accessibilityIgnoresInvertColors
       />
-      */}
 
-      {/* STEP 1.09 what it is called
       <T variant="display" color={nl.ink}>
         {intro.display}
       </T>
-      */}
 
       <View style={{ marginTop: 24, gap: 26 }}>
-        {/* STEP 1.10 and what is in it
         {macros.map((m, i) => (
           <View key={m.key} style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
             <View
@@ -65,7 +60,6 @@ export function PlanStage({ width }: { width: number }) {
             </View>
           </View>
         ))}
-        */}
       </View>
     </View>
   );

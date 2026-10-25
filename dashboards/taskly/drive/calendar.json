@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:5312/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "dashboard" },
+    { "name": "open-calendar", "click": "[data-tab='calendar']", "settle": 900, "rest": true },
+
+    { "name": "day-14", "click": "[data-day='14']", "settle": 700, "rest": true },
+    { "name": "day-16", "click": "[data-day='16']", "settle": 700, "rest": true },
+    { "name": "day-quiet", "click": "[data-day='5']", "settle": 700, "rest": true },
+    { "name": "day-18", "click": "[data-day='18']", "settle": 700, "rest": true },
+
+    { "name": "project-neura", "click": "[data-project='neura']", "settle": 900, "rest": true },
+    { "name": "project-taskly", "click": "[data-project='taskly']", "settle": 900, "rest": true },
+
+    { "name": "search-sidebar", "fill": ["[data-search]", "sidebar"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-settings",
+      "click": "[data-tab='settings']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

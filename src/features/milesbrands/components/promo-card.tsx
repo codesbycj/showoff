@@ -21,14 +21,12 @@ export function PromoCard({ onPress }: { onPress?: () => void }) {
         }}
       >
         <View>
-          {/* STEP 1.16 what the offer is
           <T variant="promo" color={ml.onCanvas}>
             {promo.lead}
             <T variant="promo" color={ml.promoAccent}>
               {promo.brand}
             </T>
           </T>
-          */}
           <T variant="promoMeta" color={ml.onCanvasSoft}>
             {promo.meta}
           </T>
@@ -44,11 +42,9 @@ export function PromoCard({ onPress }: { onPress?: () => void }) {
             justifyContent: 'center',
           }}
         >
-          {/* STEP 1.17 and that it is featured
           <T variant="chip" color={ml.ink}>
             {promo.chip}
           </T>
-          */}
         </View>
       </View>
     </Pressable>

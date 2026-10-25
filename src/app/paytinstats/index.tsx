@@ -3,18 +3,12 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { ScrollView, useWindowDimensions, View } from 'react-native';
 
-// STEP 1.01 the header
-// import { AppBar } from '@/features/paytinstats/components/app-bar';
-// STEP 1.10 what came in
-// import { EarningCard } from '@/features/paytinstats/components/earning-card';
-// STEP 1.26 six months of it
-// import { OverviewCard } from '@/features/paytinstats/components/overview-card';
-// STEP 1.06 how far back to look
-// import { PeriodPills } from '@/features/paytinstats/components/period-pills';
-// STEP 1.24 name the rest
-// import { SectionHead } from '@/features/paytinstats/components/section-head';
-// STEP 1.18 and what went out
-// import { SpendingCard } from '@/features/paytinstats/components/spending-card';
+import { AppBar } from '@/features/paytinstats/components/app-bar';
+import { EarningCard } from '@/features/paytinstats/components/earning-card';
+import { OverviewCard } from '@/features/paytinstats/components/overview-card';
+import { PeriodPills } from '@/features/paytinstats/components/period-pills';
+import { SectionHead } from '@/features/paytinstats/components/section-head';
+import { SpendingCard } from '@/features/paytinstats/components/spending-card';
 import { periods } from '@/features/paytinstats/data/stats';
 import {
   BLOCK_TOP,
@@ -64,35 +58,23 @@ export default function PaytinStats() {
           paddingBottom: insets.bottom + 20,
         }}
       >
-        {/* STEP 1.02 across the top
         <AppBar title="Statistics" onBack={() => router.back()} />
-        */}
 
-        {/* STEP 1.07 under the header
         <View style={{ marginTop: PILLS_TOP }}>
           <PeriodPills items={periods} active={period} onSelect={setPeriod} />
         </View>
-        */}
 
         <View style={{ marginTop: CARDS_TOP, flexDirection: 'row', gap: CARD_GAP }}>
-          {/* STEP 1.11 on the left
           <EarningCard height={cardHeight} />
-          */}
-          {/* STEP 1.19 beside it
           <SpendingCard height={cardHeight} />
-          */}
         </View>
 
         <View style={{ marginTop: BLOCK_TOP }}>
-          {/* STEP 1.25 Overview
           <SectionHead title="Overview" />
-          */}
         </View>
 
         <View style={{ marginTop: HEAD_GAP }}>
-          {/* STEP 1.27 under the heading
           <OverviewCard />
-          */}
         </View>
       </ScrollView>
     </View>

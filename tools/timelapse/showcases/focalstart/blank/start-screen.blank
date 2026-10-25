@@ -1,0 +1,70 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.01 the brand
+// import { BrandRow } from '@/features/focalstart/components/brand-row';
+// STEP 1.03 what the app is for
+// import { HeroCopy } from '@/features/focalstart/components/hero-copy';
+// STEP 1.08 the way on
+// import { StartButton } from '@/features/focalstart/components/start-button';
+// STEP 1.05 and the proof
+// import { StatPair } from '@/features/focalstart/components/stat-pair';
+import { MARGIN } from '@/features/focalstart/layout';
+import { fc } from '@/features/focalstart/theme';
+import { useInsets } from '@/features/focalstart/use-insets';
+
+/**
+ * Focal — onboarding.
+ *
+ * Assembly only: the brand and the way past it, what the app is for, the two
+ * proof cards, and the way on.
+ *
+ * The cards take the slack between the blurb and the button, so the foot
+ * rides the bottom inset at any screen height instead of leaving a band of
+ * canvas under it.
+ */
+export default function FocalstartScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: fc.canvas,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+{/* STEP 1.02 and the way past it
+      <BrandRow onSkip={() => router.push('/focalhome')} />
+*/}
+
+{/* STEP 1.04 in two weights
+      <HeroCopy />
+*/}
+
+{/* STEP 1.06 two cards of it
+      <View
+        style={{
+          flex: 1,
+          // MISTAKE 1.07 the cards came in squeezed
+          paddingHorizontal: 40,
+        }}
+      >
+        <StatPair />
+      </View>
+*/}
+
+{/* STEP 1.09 and the way back in
+      <StartButton
+        onStart={() => router.push('/focalhome')}
+        onSignIn={() => router.push('/focalhome')}
+      />
+*/}
+    </View>
+  );
+}

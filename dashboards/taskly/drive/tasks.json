@@ -1,0 +1,38 @@
+{
+  "url": "http://localhost:5312/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "dashboard" },
+    { "name": "open-tasks", "click": "[data-tab='tasks']", "settle": 900, "rest": true },
+
+    { "name": "col-todo", "click": "[data-segment='todo']", "settle": 750, "rest": true },
+    { "name": "col-done", "click": "[data-segment='done']", "settle": 750, "rest": true },
+    { "name": "col-all", "click": "[data-segment='all']", "settle": 750, "rest": true },
+
+    { "name": "sort-open", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-priority", "click": "[data-menu='sort'] [data-option='priority']", "settle": 800 },
+    { "name": "sort-open-2", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-progress", "click": "[data-menu='sort'] [data-option='progress']", "settle": 800 },
+    { "name": "sort-open-3", "click": "[data-select='sort'] button", "settle": 320 },
+    { "name": "sort-due", "click": "[data-menu='sort'] [data-option='due']", "settle": 800 },
+
+    { "name": "row-open", "click": "[data-row='charts']", "settle": 700, "rest": true },
+    { "name": "row-close", "click": "[data-row='charts']", "settle": 700, "rest": true },
+    { "name": "row-other", "click": "[data-row='a11y']", "settle": 700, "rest": true },
+
+    { "name": "search-audit", "fill": ["[data-search]", "audit"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-team",
+      "click": "[data-tab='team']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

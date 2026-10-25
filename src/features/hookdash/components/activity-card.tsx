@@ -27,12 +27,15 @@ export function ActivityCard() {
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        {/* STEP 1.19 what the card is
         <T variant="section" color={hk.ink}>
           {activity.title}
         </T>
+        */}
         <Heart size={22} />
       </View>
 
+      {/* STEP 1.20 who has been reacting
       {activity.float.map((f) => (
         <Image
           key={f.key}
@@ -51,11 +54,13 @@ export function ActivityCard() {
           accessibilityIgnoresInvertColors
         />
       ))}
+      */}
 
       <View style={{ position: 'absolute', right: 12, top: ACTIVITY_H * 0.46 }}>
         <AddPerson size={26} />
       </View>
 
+      {/* STEP 1.21 and the latest of them
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 9 }}>
         <Image
           source={FACES[activity.latest.face]}
@@ -82,6 +87,7 @@ export function ActivityCard() {
           </View>
         </View>
       </View>
+      */}
     </View>
   );
 }

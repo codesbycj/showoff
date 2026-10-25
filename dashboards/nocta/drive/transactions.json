@@ -1,0 +1,43 @@
+{
+  "url": "http://localhost:5308/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "overview" },
+    { "name": "open-txns", "click": "[data-tab='transactions']", "settle": 900, "rest": true },
+
+    { "name": "dir-in", "click": "[data-segment='in']", "settle": 750, "rest": true },
+    { "name": "dir-out", "click": "[data-segment='out']", "settle": 750, "rest": true },
+    { "name": "dir-all", "click": "[data-segment='all']", "settle": 750, "rest": true },
+
+    { "name": "cat-open", "click": "[data-select='category'] button", "settle": 320 },
+    { "name": "cat-meals", "click": "[data-menu='category'] [data-option='meals']", "settle": 850 },
+    { "name": "cat-open-2", "click": "[data-select='category'] button", "settle": 320 },
+    { "name": "cat-office", "click": "[data-menu='category'] [data-option='office']", "settle": 850 },
+    { "name": "cat-open-3", "click": "[data-select='category'] button", "settle": 320 },
+    { "name": "cat-all", "click": "[data-menu='category'] [data-option='all']", "settle": 850 },
+
+    { "name": "row-retainer", "click": "[data-row='t2']", "settle": 800, "rest": true },
+    { "name": "row-fibre", "click": "[data-row='t5']", "settle": 800, "rest": true },
+
+    { "name": "flag", "click": "[data-flag]", "settle": 600, "rest": true },
+    { "name": "flag-undo", "click": "[data-flag]", "settle": 600, "rest": true },
+
+    { "name": "txns-scrolled", "wheel": ["[data-scroller='txns']", 320], "rest": true },
+    { "name": "txns-top", "wheel": ["[data-scroller='txns']", -320], "rest": true },
+
+    { "name": "search-card", "fill": ["[data-search]", "card"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-scheduled",
+      "click": "[data-tab='scheduled']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

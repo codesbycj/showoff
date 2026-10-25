@@ -22,11 +22,9 @@ export function FilterRow({ onSelect }: { onSelect?: (f: Filter) => void }) {
       style={{ marginHorizontal: -MARGIN }}
       contentContainerStyle={{ paddingHorizontal: MARGIN, gap: FILTER_GAP }}
     >
-      {/* STEP 1.13 every category
       {filters.map((f) => (
         <Pill key={f.key} filter={f} onPress={() => onSelect?.(f)} />
       ))}
-      */}
     </ScrollView>
   );
 }
@@ -38,8 +36,6 @@ function Pill({ filter, onPress }: { filter: Filter; onPress?: () => void }) {
     <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={filter.label}>
       <View
         style={{
-          // MISTAKE 1.21 the pills came in dropped
-          marginTop: 14,
           height: FILTER_HEIGHT,
           paddingHorizontal: 17,
           borderRadius: radius.pill,

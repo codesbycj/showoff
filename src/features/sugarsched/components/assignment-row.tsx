@@ -36,15 +36,12 @@ export function AssignmentRow({
         ...shadow.card,
       }}
     >
-      {/* STEP 1.09 something to drag
       <Icon name="grip" size={16} color={ss.faint} />
-      */}
 
       <T variant="row" color={ss.ink} style={{ marginLeft: 6 }} numberOfLines={1}>
         {title}
       </T>
 
-      {/* STEP 1.10 where it has got to
       <View
         style={{
           marginLeft: 10,
@@ -58,11 +55,9 @@ export function AssignmentRow({
           {status}
         </T>
       </View>
-      */}
 
       <View style={{ flex: 1 }} />
 
-      {/* STEP 1.11 when, and who
       <View
         style={{
           width: ROW_CHIP,
@@ -76,7 +71,6 @@ export function AssignmentRow({
       >
         <Icon name="calendar" size={15} color={ss.ink} />
       </View>
-      */}
 
       <Image
         source={FACES[face % FACES.length]}

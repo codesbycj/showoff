@@ -22,8 +22,6 @@ export function EarningCard({ height }: { height: number }) {
         flex: 1,
         height,
         borderRadius: radius.card,
-        // MISTAKE 1.17 the card came in the wrong way up
-        flexDirection: "row-reverse",
         backgroundColor: ps.lime,
         padding: CARD_PAD,
         justifyContent: 'space-between',
@@ -35,22 +33,16 @@ export function EarningCard({ height }: { height: number }) {
           {earning.kind}
         </T>
         <View style={{ flex: 1 }} />
-        {/* STEP 1.12 a way into it
         <CardBadge fill={ps.ink} ink={ps.lime} />
-        */}
       </View>
 
       <View>
-        {/* STEP 1.13 how much better than last month
         <T variant="cardFigure" color={ps.text}>
           {earning.figure}
         </T>
-        */}
-        {/* STEP 1.14 and why that matters
         <T variant="cardBody" color={ps.limeInk}>
           {earning.body}
         </T>
-        */}
       </View>
 
       <View>
@@ -59,16 +51,12 @@ export function EarningCard({ height }: { height: number }) {
             {earning.goalLabel}
           </T>
           <View style={{ flex: 1 }} />
-          {/* STEP 1.15 the goal
           <T variant="cardMeta" color={ps.text}>
             {earning.goal}
           </T>
-          */}
         </View>
         <View style={{ marginTop: 7 }}>
-          {/* STEP 1.16 and how far along it is
           <GoalDots count={earning.dots} fraction={earning.fraction} />
-          */}
         </View>
       </View>
     </View>

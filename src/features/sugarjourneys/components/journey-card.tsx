@@ -50,26 +50,21 @@ export function JourneyCard({
     <View
       style={{
         borderRadius: radius.card,
-        // MISTAKE 1.15 the cards came in inset
-        marginHorizontal: 18,
         backgroundColor: sg.surface,
         padding: CARD_PAD,
         ...shadow.card,
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        {/* STEP 1.09 which journey
         <T variant="cardTitle" color={sg.ink} style={{ flex: 1 }}>
           {title}
         </T>
-        */}
         <RoundChip name="edit" />
         <View style={{ width: 8 }} />
         <RoundChip name="calendar" />
       </View>
 
       <View style={{ flexDirection: 'row', marginTop: 14 }}>
-        {/* STEP 1.10 who is on it
         {team.map((m, i) => (
           <View
             key={`${m.face}-${i}`}
@@ -78,17 +73,13 @@ export function JourneyCard({
             <Avatar face={m.face} size={CARD_AVATAR} badge={m.badge} badgeColor={m.color} />
           </View>
         ))}
-        */}
       </View>
 
-      {/* STEP 1.11 name the split
       <T variant="cardLabel" color={sg.muted} style={{ marginTop: 12 }}>
         {labels.allocation}
       </T>
-      */}
 
       <View style={{ flexDirection: 'row', gap: BAR_GAP, marginTop: 7 }}>
-        {/* STEP 1.12 and show it
         {allocation.map((share, i) => (
           <View
             key={sg.bars[i]}
@@ -100,11 +91,9 @@ export function JourneyCard({
             }}
           />
         ))}
-        */}
       </View>
 
       <View style={{ flexDirection: 'row', marginTop: STATS_TOP, gap: STAT_GAP }}>
-        {/* STEP 1.13 what it has cost
         {stats.map((s) => (
           <View key={s.key} style={{ flex: 1 }}>
             <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 3 }}>
@@ -120,11 +109,9 @@ export function JourneyCard({
             </T>
           </View>
         ))}
-        */}
       </View>
 
       <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginTop: 14 }}>
-        {/* STEP 1.14 and how big it is
         {footer.map((f) => (
           <View key={f.key} style={{ flex: 1 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
@@ -138,7 +125,6 @@ export function JourneyCard({
             </T>
           </View>
         ))}
-        */}
 
         <View
           style={{

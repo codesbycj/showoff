@@ -35,15 +35,12 @@ export function DailyChallenge({ onPlay }: { onPlay?: () => void }) {
         overflow: 'hidden',
       }}
     >
-      {/* STEP 1.12 paper in the air
       <View
         style={{ position: 'absolute', right: 0, top: 0, width: HERO_PHOTO_W + 26, height: 96 }}
       >
         <Confetti width={HERO_PHOTO_W + 26} height={96} />
       </View>
-      */}
 
-      {/* STEP 1.13 and someone winning
       <Image
         source={CHEER}
         style={{
@@ -61,21 +58,15 @@ export function DailyChallenge({ onPlay }: { onPlay?: () => void }) {
         resizeMode="contain"
         accessibilityIgnoresInvertColors
       />
-      */}
 
       <View style={{ padding: HERO_PAD, width: '62%' }}>
-        {/* STEP 1.08 what the challenge is
         <T variant="cardTitle" color={qz.onColor}>
           {daily.title}
         </T>
-        */}
-        {/* STEP 1.09 what it pays
         <T variant="cardBody" color={qz.onColorMuted} style={{ marginTop: 7 }}>
           {daily.body}
         </T>
-        */}
 
-        {/* STEP 1.10 how far through it you are
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 9, marginTop: 14 }}>
           <View
             style={{
@@ -99,9 +90,7 @@ export function DailyChallenge({ onPlay }: { onPlay?: () => void }) {
             {`${daily.done}/${daily.total}`}
           </T>
         </View>
-        */}
 
-        {/* STEP 1.11 and the way in
         <Pressable
           onPress={onPlay}
           onPressIn={() => setHeld(true)}
@@ -113,8 +102,6 @@ export function DailyChallenge({ onPlay }: { onPlay?: () => void }) {
           <View
             style={{
               height: 38,
-              // MISTAKE 1.14 the button drifted off its edge
-              marginLeft: 64,
               paddingHorizontal: 24,
               borderRadius: radius.pill,
               backgroundColor: qz.ink,
@@ -128,7 +115,6 @@ export function DailyChallenge({ onPlay }: { onPlay?: () => void }) {
             </T>
           </View>
         </Pressable>
-        */}
       </View>
     </View>
   );

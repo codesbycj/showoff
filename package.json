@@ -47,6 +47,7 @@
   },
   "scripts": {
     "start": "expo start",
+    "record": "node tools/record.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -70,7 +71,21 @@
     "dev:vane": "npm --prefix websites/vane run dev",
     "build:vane": "npm --prefix websites/vane run build",
     "dev:crux": "npm --prefix websites/crux run dev",
-    "build:crux": "npm --prefix websites/crux run build"
+    "build:crux": "npm --prefix websites/crux run build",
+    "dev:twisty": "npm --prefix dashboards/twisty run dev",
+    "build:twisty": "npm --prefix dashboards/twisty run build",
+    "dev:teknova": "npm --prefix dashboards/teknova run dev",
+    "build:teknova": "npm --prefix dashboards/teknova run build",
+    "dev:nocta": "npm --prefix dashboards/nocta run dev",
+    "build:nocta": "npm --prefix dashboards/nocta run build",
+    "dev:taskly": "npm --prefix dashboards/taskly run dev",
+    "build:taskly": "npm --prefix dashboards/taskly run build",
+    "dev:sypher": "npm --prefix dashboards/sypher run dev",
+    "build:sypher": "npm --prefix dashboards/sypher run build",
+    "dev:finexy": "npm --prefix dashboards/finexy run dev",
+    "build:finexy": "npm --prefix dashboards/finexy run build",
+    "dev:mycogen": "npm --prefix dashboards/mycogen run dev",
+    "build:mycogen": "npm --prefix dashboards/mycogen run build"
   },
   "private": true
 }

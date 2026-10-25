@@ -1,0 +1,62 @@
+{
+ "1": [
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokebike/index.tsx",
+    "STEP 1.01"
+   ],
+   "label": "which bike this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokebike/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and what it is for"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/spokebike/index.tsx",
+    "@/features/spokebike/components/bike-stage"
+   ],
+   "label": "the bike itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokebike/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "with its charge beside it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokebike/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what it has done"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/spokebike/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the way to take it"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "bike-screen",
+     "src/app/spokebike/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

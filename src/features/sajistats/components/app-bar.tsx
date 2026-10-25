@@ -29,13 +29,9 @@ export function AppBar({
         {title}
       </T>
       <View style={{ flex: 1 }} />
-      {/* STEP 1.03 a way to search
       <RoundButton name="search" onPress={onSearch} label="Search" />
-      */}
       <View style={{ width: HEADER_GAP }} />
-      {/* STEP 1.04 and anything waiting
       <RoundButton name="bell" onPress={onBell} label="Notifications" />
-      */}
     </View>
   );
 }

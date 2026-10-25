@@ -33,7 +33,6 @@ export function LineChart() {
     <View style={{ width, height: height + BUBBLE_HEIGHT + BUBBLE_GAP }}>
       <View style={{ marginTop: BUBBLE_HEIGHT + BUBBLE_GAP }}>
         <Svg width={width} height={height}>
-          {/* STEP 1.14 a line down to the day
           <Path
             d={`M ${live.x} ${live.y} V ${height}`}
             stroke={sj.onDarkMuted}
@@ -41,8 +40,6 @@ export function LineChart() {
             strokeDasharray="3 4"
             fill="none"
           />
-          */}
-          {/* STEP 1.12 last period, behind
           <Path
             d={smoothPath(back)}
             stroke={sj.limeDeep}
@@ -50,8 +47,6 @@ export function LineChart() {
             strokeLinecap="round"
             fill="none"
           />
-          */}
-          {/* STEP 1.13 this one, in front
           <Path
             d={smoothPath(front)}
             stroke={sj.lime}
@@ -59,13 +54,11 @@ export function LineChart() {
             strokeLinecap="round"
             fill="none"
           />
-          */}
           <Circle cx={live.x} cy={live.y} r={MARKER / 2} fill={sj.onDark} />
           <Circle cx={live.x} cy={live.y} r={MARKER / 2 - 3} fill={sj.lime} />
         </Svg>
       </View>
 
-      {/* STEP 1.15 and what the day was worth
       <View
         style={{
           position: 'absolute',
@@ -99,7 +92,6 @@ export function LineChart() {
           }}
         />
       </View>
-      */}
     </View>
   );
 }

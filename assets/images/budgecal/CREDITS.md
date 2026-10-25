@@ -1,4 +1,4 @@
-# budgecal imagery
+# budgehome imagery
 
 Brand photography is not redistributable; these stand in for it.
 

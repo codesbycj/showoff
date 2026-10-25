@@ -35,11 +35,9 @@ export function CategoryRow({ onSelect }: { onSelect?: (c: Category) => void }) 
       style={{ marginHorizontal: -MARGIN }}
       contentContainerStyle={{ paddingHorizontal: MARGIN, gap: CATEGORY_GAP }}
     >
-      {/* STEP 1.19 the four subjects
       {categories.map((c) => (
         <CategoryCard key={c.key} category={c} onPress={() => onSelect?.(c)} />
       ))}
-      */}
     </ScrollView>
   );
 }
@@ -55,8 +53,6 @@ function CategoryCard({ category, onPress }: { category: Category; onPress?: () 
           height: CATEGORY_H,
           borderRadius: radius.category,
           backgroundColor: category.color,
-          // MISTAKE 1.20 every card came in centred
-          alignItems: 'center',
           padding: 12,
           justifyContent: 'space-between',
         }}

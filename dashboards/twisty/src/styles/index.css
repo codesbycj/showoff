@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/plus-jakarta-sans';
+
+/*
+ * TWISTY.
+ *
+ * The reference is a posed presentation board: one rounded panel floating on a
+ * slate-blue backdrop with a drop shadow under it. That makes it an inspo brief
+ * (rule 2), so these are the board's colours rebuilt at browser scale rather
+ * than sampled pixels -- and the backdrop itself is gone, because at real size
+ * the panel *is* the viewport. See "Declared departures" in the README.
+ *
+ * Named for what they do, not what colour they are.
+ */
+/*
+ * `static`, not a bare @theme.
+ *
+ * Tailwind 4 tree-shakes theme variables that no utility class references, and
+ * a colour passed to a chart as an inline `fill="var(--color-cat-meals)"` is
+ * not a reference it can see. The spending donut rendered with five of its six
+ * segments black because of exactly this: the only category that survived was
+ * the one a `bg-cat-office` class happened to use. `static` emits them all.
+ */
+@theme static {
+  --color-ground: #eceef2; /* the page behind the cards */
+  --color-surface: #ffffff; /* every card */
+  --color-sunken: #f3f4f7; /* chips, inert controls, the promo card */
+  --color-sunken-deep: #e6e9ef; /* the selected column behind a chart day */
+
+  --color-ink: #12161d; /* headings, the selected day, the Paid pill */
+  --color-body: #3f4652; /* paragraphs */
+  /*
+   * 5.34:1 on white, 4.60:1 on the page ground, 4.85:1 on a sunken chip.
+   *
+   * The reference's secondary grey is much lighter than this and fails AA on
+   * all three -- probe.js measured 3.21:1 against white across 37 nodes, which
+   * is most of the small print on the screen. Rule 2 says to correct the
+   * reference's mistakes rather than copy them, and contrast too low to read is
+   * named in it. Declared in the README.
+   */
+  --color-muted: #656b78; /* labels, meta, the inert tabs */
+  --color-line: #e7e9ee; /* hairlines and card borders */
+
+  --color-accent: #e8512a; /* the TWISTY mark, Senior, the live strip */
+  --color-accent-soft: #fdeae3;
+  /* White on the brand red is 3.72:1 -- under AA for the 12px Senior pill.
+     This is the same hue three steps down: 5.01:1. Used only where the accent
+     has text on it; the mark, the stems and the pending bar keep the brand red. */
+  --color-accent-deep: #c73f1c;
+  --color-spark: #6d8ed6; /* the dot on every income day */
+  --color-spark-soft: #ccd9f1;
+  /* 5.32:1 on its own soft green, 6.09:1 on white. The mid-green it replaced
+     was 2.95:1 behind every "Cleared" pill on the wallet. */
+  --color-positive: #15704a;
+
+  --font-sans:
+    'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 24px;
+  --shadow-card: 0 1px 2px rgb(18 22 29 / 0.04), 0 8px 24px -16px rgb(18 22 29 / 0.18);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  /*
+   * One visible focus ring for the whole app. The reference has none -- a
+   * presentation board never shows a focus state -- so this is one of the
+   * places the build is deliberately better than the picture (rule 2).
+   */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /*
+   * Not a shorter duration: entrances do not play at all. What is left has to
+   * stay usable -- the income chart still draws at its final height, the
+   * proposal strips are at their full length, and every tooltip still opens.
+   */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

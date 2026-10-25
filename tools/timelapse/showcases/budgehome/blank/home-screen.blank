@@ -1,0 +1,234 @@
+import { StatusBar } from 'expo-status-bar';
+import { Image, Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/budgehome/components/glyph';
+// STEP 1.05 the planner
+// import { PlannerCard } from '@/features/budgehome/components/planner-card';
+import { T } from '@/features/budgehome/components/text';
+import { balance, limit, month, spentLine } from '@/features/budgehome/data/budget';
+import {
+  BALANCE_TOP,
+  HEADER_SIZE,
+  HEADER_TOP,
+  LIMIT_HEIGHT,
+  MARGIN,
+  PLANNER_TOP,
+  SPENT_HEIGHT,
+  SPENT_TOP,
+  STATS_TOP,
+} from '@/features/budgehome/layout';
+import { bg, radius, type } from '@/features/budgehome/theme';
+import { useInsets } from '@/features/budgehome/use-insets';
+
+const face = require('../../../assets/images/budgehome/face-3.jpg');
+
+/**
+ * Budge — the home screen.
+ *
+ * Assembly only: the month and alerts, what is left, what has gone, the
+ * planner, and the limit you set yourself.
+ *
+ * Every figure on the screen comes from the same two numbers — the month's
+ * budget and the list of outgoings — so the balance, the gauge and the
+ * progress line cannot disagree. The reference's three do.
+ */
+export default function BudgehomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: bg.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+{/* STEP 1.01 the month and alerts
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={'Month: ' + month}>
+          <View
+            style={{
+              height: HEADER_SIZE,
+              paddingLeft: 16,
+              paddingRight: 10,
+              borderRadius: radius.pill,
+              borderWidth: 1,
+              borderColor: bg.hair,
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <T variant="chip" color={bg.ink} style={{ height: type.chip.line }}>
+              {month}
+            </T>
+            <Glyph name="caret" size={15} tint={bg.ink} />
+          </View>
+        </Pressable>
+
+        <View style={{ flex: 1 }} />
+
+        <Pressable accessibilityRole="button" accessibilityLabel="Alerts">
+          <View
+            style={{
+              width: HEADER_SIZE,
+              height: HEADER_SIZE,
+              borderRadius: radius.control,
+              borderWidth: 1,
+              borderColor: bg.hair,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="bell" size={18} tint={bg.ink} />
+          </View>
+        </Pressable>
+        <Image
+          source={face}
+          style={{
+            width: HEADER_SIZE,
+            height: HEADER_SIZE,
+            borderRadius: radius.control,
+            marginLeft: 10,
+          }}
+        />
+      </View>
+*/}
+
+{/* STEP 1.02 what is left
+      <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginTop: BALANCE_TOP }}>
+        <T variant="figure" color={bg.ink} style={{ height: type.figure.line }}>
+          {balance.major}
+        </T>
+        <T variant="figureMinor" color={bg.body} style={{ height: type.figureMinor.line }}>
+          {balance.minor}
+        </T>
+        <View style={{ flex: 1 }} />
+        <T variant="caption" color={bg.body} style={{ marginBottom: 8, height: type.caption.line }}>
+          {balance.caption}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.03 and what has gone
+      <View
+        style={{
+          height: SPENT_HEIGHT,
+          marginTop: SPENT_TOP,
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        <T variant="meta" color={bg.body} style={{ flex: 1, height: type.meta.line }}>
+          {spentLine.text}
+        </T>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 10,
+            paddingVertical: 5,
+            borderRadius: radius.pill,
+            backgroundColor: bg.green,
+          }}
+        >
+          <T variant="meta" color={bg.onGreen} style={{ height: type.meta.line }}>
+            {spentLine.pct}
+          </T>
+          <T variant="small" color={bg.onGreen} style={{ marginLeft: 5, height: type.small.line }}>
+            {spentLine.note}
+          </T>
+        </View>
+      </View>
+*/}
+
+{/* STEP 1.06 with its gauge
+      <View
+        style={{
+          flex: 1,
+          marginTop: PLANNER_TOP,
+          // MISTAKE 1.08 the planner came in half-faded
+          opacity: 0.4,
+        }}
+      >
+        <PlannerCard />
+      </View>
+*/}
+
+{/* STEP 1.07 the statistics line
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: STATS_TOP }}>
+        <T variant="section" color={bg.ink} style={{ flex: 1, height: type.section.line }}>
+          {limit.section}
+        </T>
+        <Pressable accessibilityRole="button" accessibilityLabel="Share">
+          <View style={{ padding: 8 }}>
+            <Glyph name="share" size={17} tint={bg.body} />
+          </View>
+        </Pressable>
+        <Pressable accessibilityRole="button" accessibilityLabel="More">
+          <View style={{ padding: 8 }}>
+            <Glyph name="dots" size={17} tint={bg.body} />
+          </View>
+        </Pressable>
+      </View>
+*/}
+
+{/* STEP 1.09 and the limit you set
+      <View
+        style={{
+          height: LIMIT_HEIGHT,
+          marginTop: 10,
+          borderRadius: radius.card,
+          borderWidth: 1,
+          borderColor: bg.hair,
+          padding: 16,
+          justifyContent: 'space-between',
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <T variant="cardTitle" color={bg.ink} style={{ flex: 1, height: type.cardTitle.line }}>
+            {limit.title}
+          </T>
+          <T variant="small" color={bg.body} style={{ height: type.small.line }}>
+            {limit.edit}
+          </T>
+          <View style={{ marginLeft: 6 }}>
+            <Glyph name="pencil" size={14} tint={bg.body} />
+          </View>
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View
+            style={{
+              width: 28,
+              height: 28,
+              borderRadius: radius.control,
+              borderWidth: 1,
+              borderColor: bg.hair,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="dollar" size={15} tint={bg.ink} />
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginLeft: 10 }}>
+            <T variant="cardTitle" color={bg.ink} style={{ height: type.cardTitle.line }}>
+              {limit.value}
+            </T>
+            <T variant="small" color={bg.body} style={{ height: type.small.line }}>
+              {limit.minor}
+            </T>
+          </View>
+          <View style={{ flex: 1 }} />
+          <T variant="small" color={bg.muted} style={{ height: type.small.line }}>
+            {limit.caption}
+          </T>
+        </View>
+      </View>
+*/}
+    </View>
+  );
+}

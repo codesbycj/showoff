@@ -1,11 +1,276 @@
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 
-/** Screen 1 — built component by component. */
+import { BrandMark, Glyph } from '@/features/sabledash/components/glyph';
+import { T } from '@/features/sabledash/components/text';
+import {
+  actions,
+  activeMonth,
+  balance,
+  card,
+  copy,
+  count,
+  crew,
+  crewMore,
+  months,
+  recent,
+} from '@/features/sabledash/data/dash';
+import {
+  ACTION_GAP,
+  ACTION_HEIGHT,
+  ACTIONS_TOP,
+  BALANCE_DISC,
+  BALANCE_TOP,
+  CARD_PAD,
+  DISPLAY_TOP,
+  FACE,
+  HEADER_SIZE,
+  HEADER_TOP,
+  MARGIN,
+  PANEL_MIN,
+  PANEL_TOP,
+} from '@/features/sabledash/layout';
+import { radius, sb, type } from '@/features/sabledash/theme';
+import { useInsets } from '@/features/sabledash/use-insets';
+
+/**
+ * Sable — the dashboard.
+ *
+ * Assembly only: the brand and the grid, what the app is, what you have, the
+ * two things you can do with it, and the month's activity.
+ *
+ * The transactions card takes `flex: 1`, so the stack reaches the bottom edge
+ * whatever the headline wraps to.
+ */
 export default function SabledashScreen() {
+  const insets = useInsets();
+
   return (
-    <View className="flex-1 bg-white">
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: sb.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
       <StatusBar style="dark" />
+
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <BrandMark size={26} tint={sb.ink} />
+        <View style={{ flex: 1 }} />
+        <Pressable accessibilityRole="button" accessibilityLabel="All accounts">
+          <View
+            style={{
+              width: HEADER_SIZE,
+              height: HEADER_SIZE,
+              borderRadius: radius.control,
+              backgroundColor: sb.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="grid" size={20} tint={sb.ink} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ marginTop: DISPLAY_TOP }}>
+        {copy.title.map((line) => (
+          <T key={line} variant="display" color={sb.ink} style={{ height: type.display.line }}>
+            {line}
+          </T>
+        ))}
+      </View>
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: BALANCE_TOP }}>
+        <View style={{ flex: 1 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+            <T variant="figure" color={sb.ink} style={{ height: type.figure.line }}>
+              {balance.major}
+            </T>
+            <T variant="figureUnit" color={sb.ink} style={{ height: type.figureUnit.line }}>
+              {balance.unit}
+            </T>
+          </View>
+          <T variant="caption" color={sb.body} style={{ height: type.caption.line }}>
+            {copy.balanceCaption}
+          </T>
+        </View>
+
+        <Pressable accessibilityRole="button" accessibilityLabel="Linked accounts">
+          <View
+            style={{
+              width: BALANCE_DISC,
+              height: BALANCE_DISC,
+              borderRadius: radius.control,
+              backgroundColor: sb.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="link" size={22} tint={sb.ink} />
+          </View>
+        </Pressable>
+        <Pressable accessibilityRole="button" accessibilityLabel="Statistics">
+          <View
+            style={{
+              width: BALANCE_DISC,
+              height: BALANCE_DISC,
+              borderRadius: radius.control,
+              backgroundColor: sb.dark,
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: -16,
+            }}
+          >
+            <Glyph name="chart" size={22} tint={sb.onDark} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ flexDirection: 'row', gap: ACTION_GAP, marginTop: ACTIONS_TOP }}>
+        {actions.map((a) => (
+          <Pressable
+            key={a.id}
+            style={{ flex: 1 }}
+            accessibilityRole="button"
+            accessibilityLabel={a.label}
+          >
+            <View
+              style={{
+                height: ACTION_HEIGHT,
+                borderRadius: radius.card,
+                backgroundColor: sb.card,
+                padding: CARD_PAD,
+                justifyContent: 'space-between',
+              }}
+            >
+              <View
+                style={{
+                  transform: [{ rotate: a.out ? '0deg' : '180deg' }],
+                  alignSelf: 'flex-start',
+                }}
+              >
+                <Glyph name="arrow" size={26} tint={sb.ink} />
+              </View>
+              <T variant="action" color={sb.ink} style={{ height: type.action.line }}>
+                {a.label}
+              </T>
+            </View>
+          </Pressable>
+        ))}
+      </View>
+
+      <View
+        style={{
+          flex: 1,
+          minHeight: PANEL_MIN,
+          marginTop: PANEL_TOP,
+          borderRadius: radius.card,
+          backgroundColor: sb.card,
+          padding: CARD_PAD,
+        }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          {months.map((m) => {
+            const on = m === activeMonth;
+            return (
+              <View key={m} style={{ flex: 1, alignItems: 'center' }}>
+                <T
+                  variant={on ? 'month' : 'monthOff'}
+                  color={on ? sb.ink : sb.hair}
+                  numberOfLines={1}
+                  style={{ height: type.month.line }}
+                >
+                  {m}
+                </T>
+              </View>
+            );
+          })}
+        </View>
+        <View style={{ alignItems: 'center', marginTop: 6 }}>
+          <Glyph name="dot" size={14} tint={sb.ink} />
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 14 }}>
+          <T variant="rowTitle" color={sb.ink} style={{ flex: 1, height: type.rowTitle.line }}>
+            {copy.transactions}
+          </T>
+          <T variant="pan" color={sb.ink} style={{ height: type.pan.line }}>
+            {card}
+          </T>
+        </View>
+
+        <View style={{ flex: 1, justifyContent: 'center' }}>
+          {recent.map((r) => (
+            <View
+              key={r.id}
+              style={{ flexDirection: 'row', alignItems: 'center', paddingVertical: 7 }}
+            >
+              <View style={{ flex: 1 }}>
+                <T variant="small" color={sb.ink} style={{ height: type.small.line }}>
+                  {r.who}
+                </T>
+                <T variant="chip" color={sb.muted} style={{ height: type.chip.line }}>
+                  {r.when}
+                </T>
+              </View>
+              <T
+                variant="small"
+                color={'in' in r && r.in ? sb.green : sb.ink}
+                style={{ height: type.small.line }}
+              >
+                {r.amount}
+              </T>
+            </View>
+          ))}
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <View style={{ flex: 1 }}>
+            <T variant="count" color={sb.ink} style={{ height: type.count.line }}>
+              {count}
+            </T>
+            <T variant="small" color={sb.body} style={{ height: type.small.line }}>
+              {copy.thisMonth}
+            </T>
+          </View>
+
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            {crew.map((f, i) => (
+              <Image
+                key={i}
+                source={f}
+                style={{
+                  width: FACE,
+                  height: FACE,
+                  borderRadius: radius.control,
+                  borderWidth: 2,
+                  borderColor: sb.card,
+                  marginLeft: i === 0 ? 0 : -12,
+                }}
+              />
+            ))}
+            <View
+              style={{
+                width: FACE,
+                height: FACE,
+                borderRadius: radius.control,
+                backgroundColor: sb.dark,
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginLeft: -12,
+              }}
+            >
+              <T variant="chip" color={sb.onDark} style={{ height: type.chip.line }}>
+                {crewMore}
+              </T>
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }

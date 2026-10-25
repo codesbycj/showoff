@@ -1,5 +1,12 @@
 # websites — the before / after series
 
+> **This series is closed at episode 10.** No new episodes: the slot has moved to
+> [`dashboards/`](../dashboards), which is one dashboard design per episode, built as a
+> working three-tab app and filmed by using it. Everything below still stands for the ten
+> episodes that exist — they build, they run, and rule 0 is still the reason six of them
+> had to be redone. Episode 3 remains unbuildable for the reason given below, and episode
+> 11's unused angle (the accessibility retrofit) is left on the table.
+
 One folder per **episode**. An episode is one business shown twice: the site as it was
 before CJ got to it, and the site after. A control crossfades between them. That is the
 whole format and there is nothing else in this directory.

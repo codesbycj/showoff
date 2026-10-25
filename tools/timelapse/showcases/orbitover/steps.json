@@ -1,0 +1,89 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "@/features/orbitover/components/summary"
+   ],
+   "label": "what the month came to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "to the penny"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "@/features/orbitover/components/card-row"
+   ],
+   "label": "which card it was"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the others behind it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    [
+     "// MISTAKE 1.05",
+     "marginHorizontal: 24,"
+    ]
+   ],
+   "label": "the card row came in inset"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "@/features/orbitover/components/stat-card"
+   ],
+   "label": "the months behind it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "seven of them"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "@/features/orbitover/components/day-sheet"
+   ],
+   "label": "and the day itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/orbitover/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "row by row"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "over-screen",
+     "src/app/orbitover/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

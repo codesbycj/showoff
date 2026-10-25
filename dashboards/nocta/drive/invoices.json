@@ -1,0 +1,50 @@
+{
+  "url": "http://localhost:5308/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "overview" },
+    { "name": "open-invoices", "click": "[data-tab='invoices']", "settle": 900, "rest": true },
+
+    { "name": "state-unpaid", "click": "[data-segment='Unpaid']", "settle": 800, "rest": true },
+    { "name": "state-pending", "click": "[data-segment='Pending']", "settle": 800, "rest": true },
+    { "name": "state-paid", "click": "[data-segment='Paid']", "settle": 800, "rest": true },
+    { "name": "state-all", "click": "[data-segment='all']", "settle": 800, "rest": true },
+
+    { "name": "row-anna", "click": "[data-row='i3']", "settle": 800, "rest": true },
+    { "name": "chase", "click": "[data-chase]", "settle": 650, "rest": true },
+    { "name": "chase-undo", "click": "[data-chase]", "settle": 650, "rest": true },
+
+    {
+      "name": "row-paid",
+      "comment": "A settled invoice cannot be chased, so the button is disabled.",
+      "click": "[data-row='i2']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "chase-disabled",
+      "click": "[data-chase]",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "row-paid"
+    },
+
+    { "name": "invoices-scrolled", "wheel": ["[data-scroller='invoice-table']", 300], "rest": true },
+    { "name": "invoices-top", "wheel": ["[data-scroller='invoice-table']", -300], "rest": true },
+
+    { "name": "search-kim", "fill": ["[data-search]", "kim"], "settle": 850, "rest": true },
+    { "name": "search-none", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-clear", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    {
+      "name": "inert-settings",
+      "click": "[data-tab='settings']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ]
+}

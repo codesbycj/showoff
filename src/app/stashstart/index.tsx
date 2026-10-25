@@ -1,11 +1,136 @@
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
-/** Screen 1 — built component by component. */
+// STEP 1.01 the brand and the artwork
+// import { BrandMark, StorageArt } from '@/features/stashstart/components/storage-art';
+import { T } from '@/features/stashstart/components/text';
+import { copy, pages } from '@/features/stashstart/data/start';
+import {
+  BRAND_TOP,
+  BUTTON_HEIGHT,
+  BUTTON_TOP,
+  CARD_PAD,
+  CARD_TOP,
+  DISPLAY_TOP,
+  DOTS_TOP,
+  MARGIN,
+} from '@/features/stashstart/layout';
+import { radius, st, type } from '@/features/stashstart/theme';
+import { useInsets } from '@/features/stashstart/use-insets';
+
+/**
+ * Stash — onboarding.
+ *
+ * Assembly only: the brand, the illustration, what the app is for, how far
+ * through this is, and the way on.
+ *
+ * The highlight on one word of the headline is a filled `View` behind the
+ * run rather than a background on the `Text`: a text background in React
+ * Native fills the whole line box including its leading, which on a 38dp
+ * line over 29dp type leaves a band of yellow above and below the word.
+ */
 export default function StashstartScreen() {
+  const insets = useInsets();
+
   return (
-    <View className="flex-1 bg-white">
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: st.canvas,
+        paddingTop: insets.top + CARD_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
       <StatusBar style="dark" />
+
+      <View
+        style={{
+          flex: 1,
+          borderRadius: radius.card,
+          backgroundColor: st.card,
+          padding: CARD_PAD,
+        }}
+      >
+{/* STEP 1.02 in place
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: BRAND_TOP }}>
+          <BrandMark size={22} tint={st.ink} />
+          <T variant="brand" color={st.ink} style={{ marginLeft: 8, height: type.brand.line }}>
+            {copy.brand}
+          </T>
+        </View>
+*/}
+
+{/* STEP 1.03 a folder and a disk
+        <StorageArt />
+*/}
+
+{/* STEP 1.04 what the app is for
+        <View
+          style={{
+            marginTop: DISPLAY_TOP,
+            // MISTAKE 1.05 the headline came in half-faded
+            opacity: 0.4,
+          }}
+        >
+          {copy.display.map((line) => (
+            <View key={line.text} style={{ alignSelf: 'flex-start' }}>
+              {line.mark ? (
+                <View
+                  style={{
+                    position: 'absolute',
+                    left: -4,
+                    right: -4,
+                    top: 6,
+                    bottom: 6,
+                    backgroundColor: st.yellow,
+                  }}
+                />
+              ) : null}
+              <T variant="display" color={st.ink} style={{ height: type.display.line }}>
+                {line.text}
+              </T>
+            </View>
+          ))}
+        </View>
+*/}
+
+{/* STEP 1.06 how far through
+        <View style={{ flexDirection: 'row', marginTop: DOTS_TOP }}>
+          {Array.from({ length: pages.total }, (_, i) => (
+            <View
+              key={i}
+              style={{
+                width: i === pages.at ? 18 : 7,
+                height: 7,
+                marginRight: 6,
+                borderRadius: radius.control,
+                backgroundColor: i === pages.at ? st.ink : st.muted,
+              }}
+            />
+          ))}
+        </View>
+*/}
+
+{/* STEP 1.07 and the way on
+        <Pressable accessibilityRole="button" accessibilityLabel={copy.action}>
+          <View
+            style={{
+              height: BUTTON_HEIGHT,
+              marginTop: BUTTON_TOP,
+              borderRadius: radius.pill,
+              backgroundColor: st.dark,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="action" color={st.onDark} style={{ height: type.action.line }}>
+              {copy.action}
+            </T>
+          </View>
+        </Pressable>
+*/}
+      </View>
     </View>
   );
 }

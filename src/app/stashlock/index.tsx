@@ -1,11 +1,265 @@
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Line, Path } from 'react-native-svg';
 
-/** Screen 1 — built component by component. */
+import { T } from '@/features/stashlock/components/text';
+import { copy, modes, password, spokes } from '@/features/stashlock/data/start';
+import {
+  CARD_PAD,
+  FIELD_HEIGHT,
+  FIELD_TOP,
+  FOOT_HEIGHT,
+  HEADER_SIZE,
+  HEADER_TOP,
+  HUB,
+  MARGIN,
+  MODE_SIZE,
+  MODES_TOP,
+  TITLE_TOP,
+  WAVE_MIN,
+} from '@/features/stashlock/layout';
+import { radius, st, type } from '@/features/stashlock/theme';
+import { useInsets } from '@/features/stashlock/use-insets';
+
+const YELLOW = '#F2E85C';
+
+/**
+ * Stash — the password.
+ *
+ * Assembly only: the way back, what the screen wants, the three ways to give
+ * it, the field itself, the microphone, and the way to type instead.
+ *
+ * **The password is masked.** The reference prints one in clear text —
+ * "lokskmB@!222" — under a label reading "Your password", which is the single
+ * thing a password field must never do. It is dots here, with a control to
+ * reveal it.
+ *
+ * The waveform is drawn from `spokes` in the box's own measured units rather
+ * than in a square viewBox: a 0–100 box stretched to a non-square area scales
+ * x and y differently and takes every stroke width with it.
+ */
 export default function StashlockScreen() {
+  const insets = useInsets();
+
+  const disc = {
+    width: HEADER_SIZE,
+    height: HEADER_SIZE,
+    borderRadius: radius.control,
+    backgroundColor: st.card,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  const size = WAVE_MIN;
+  const mid = size / 2;
+  const inner = HUB / 2 + 10;
+  const outer = mid - 6;
+
   return (
-    <View className="flex-1 bg-white">
-      <StatusBar style="dark" />
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: st.canvas,
+        paddingTop: insets.top + HEADER_TOP,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel="Go back">
+          <View style={disc}>
+            <Svg width={17} height={17} viewBox="0 0 24 24">
+              <Path
+                d="M14.5 5.5 8 12l6.5 6.5"
+                stroke={st.ink}
+                strokeWidth={2.2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </Svg>
+          </View>
+        </Pressable>
+        <View style={{ flex: 1 }} />
+        <Pressable accessibilityRole="button" accessibilityLabel="Add an account">
+          <View
+            style={{
+              height: HEADER_SIZE,
+              paddingHorizontal: 16,
+              borderRadius: radius.pill,
+              backgroundColor: st.card,
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <Svg width={13} height={13} viewBox="0 0 24 24">
+              <Path d="M12 6v12M6 12h12" stroke={st.ink} strokeWidth={2.4} strokeLinecap="round" />
+            </Svg>
+            <T variant="tile" color={st.ink} style={{ marginLeft: 6, height: type.tile.line }}>
+              {copy.add}
+            </T>
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: TITLE_TOP }}>
+        <Svg width={20} height={20} viewBox="0 0 24 24">
+          <Path
+            d="M3.4 7a2 2 0 0 1 2-2h3.8l1.8 2.2h7.6a2 2 0 0 1 2 2v8.2a2 2 0 0 1-2 2H5.4a2 2 0 0 1-2-2Z"
+            fill={YELLOW}
+          />
+        </Svg>
+        <T variant="display" color={st.ink} style={{ marginLeft: 8, height: type.display.line }}>
+          {copy.title}
+        </T>
+      </View>
+
+      <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: MODES_TOP }}>
+        {modes.map((m) => (
+          <Pressable key={m.id} accessibilityRole="button" accessibilityLabel={m.id}>
+            <View
+              style={{
+                width: MODE_SIZE,
+                height: MODE_SIZE,
+                marginHorizontal: 8,
+                borderRadius: radius.control,
+                backgroundColor: m.on ? YELLOW : st.card,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <View
+                style={{
+                  width: 16,
+                  height: 16,
+                  borderRadius: 5,
+                  backgroundColor: m.on ? st.canvas : st.body,
+                }}
+              />
+            </View>
+          </Pressable>
+        ))}
+      </View>
+
+      <View
+        style={{
+          height: FIELD_HEIGHT,
+          marginTop: FIELD_TOP,
+          borderRadius: radius.card,
+          backgroundColor: st.card,
+          paddingHorizontal: CARD_PAD,
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        <View style={{ flex: 1 }}>
+          <T variant="field" color={st.ink} style={{ height: type.field.line }}>
+            {password}
+          </T>
+          <T variant="blurb" color={st.muted} style={{ height: type.blurb.line }}>
+            {copy.field}
+          </T>
+        </View>
+        <Pressable accessibilityRole="button" accessibilityLabel="Show the password">
+          <View style={{ padding: 8 }}>
+            <Svg width={16} height={16} viewBox="0 0 24 24">
+              <Path
+                d="M2.6 12S6.4 5.6 12 5.6 21.4 12 21.4 12 17.6 18.4 12 18.4 2.6 12 2.6 12Z"
+                stroke={st.body}
+                strokeWidth={1.8}
+                fill="none"
+              />
+              <Circle cx={12} cy={12} r={2.8} stroke={st.body} strokeWidth={1.8} fill="none" />
+            </Svg>
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Svg width={size} height={size}>
+          {spokes.map((s, i) => {
+            const a = (i / spokes.length) * Math.PI * 2;
+            const r1 = inner;
+            const r2 = inner + (outer - inner) * s;
+            return (
+              <Line
+                key={i}
+                x1={mid + Math.cos(a) * r1}
+                y1={mid + Math.sin(a) * r1}
+                x2={mid + Math.cos(a) * r2}
+                y2={mid + Math.sin(a) * r2}
+                stroke={YELLOW}
+                strokeWidth={2.2}
+                strokeLinecap="round"
+                opacity={0.9}
+              />
+            );
+          })}
+        </Svg>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={copy.speak}
+          style={{ position: 'absolute' }}
+        >
+          <View
+            style={{
+              width: HUB,
+              height: HUB,
+              borderRadius: radius.control,
+              backgroundColor: YELLOW,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Svg width={20} height={20} viewBox="0 0 24 24">
+              <Path d="M9 6.4a3 3 0 0 1 6 0v5.2a3 3 0 0 1-6 0Z" fill={st.canvas} />
+              <Path
+                d="M5.8 11.4a6.2 6.2 0 0 0 12.4 0M12 17.6v2.6"
+                stroke={st.canvas}
+                strokeWidth={1.8}
+                strokeLinecap="round"
+                fill="none"
+              />
+            </Svg>
+            <T variant="blurb" color={st.canvas} style={{ marginTop: 4, height: type.blurb.line }}>
+              {copy.speak}
+            </T>
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+        <View
+          style={{
+            height: FOOT_HEIGHT,
+            paddingHorizontal: 22,
+            borderRadius: radius.pill,
+            backgroundColor: st.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="tile" color={st.ink} style={{ height: type.tile.line }}>
+            {copy.type}
+          </T>
+        </View>
+        <View
+          style={{
+            width: FOOT_HEIGHT,
+            height: FOOT_HEIGHT,
+            marginLeft: 10,
+            borderRadius: radius.control,
+            backgroundColor: YELLOW,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <View style={{ width: 16, height: 16, borderRadius: 5, backgroundColor: st.canvas }} />
+        </View>
+      </View>
     </View>
   );
 }

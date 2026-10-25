@@ -1,0 +1,147 @@
+{
+  "url": "http://localhost:5304/",
+  "w": 1440,
+  "h": 900,
+  "settle": 650,
+  "beats": [
+    {
+      "name": "dashboard"
+    },
+    {
+      "name": "open-products",
+      "click": "[data-tab='products']",
+      "settle": 900,
+      "rest": true
+    },
+    {
+      "name": "stock-low",
+      "click": "[data-segment='low']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "stock-out",
+      "click": "[data-segment='out']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "stock-all",
+      "click": "[data-segment='all']",
+      "settle": 700,
+      "rest": true
+    },
+    {
+      "name": "sort-open",
+      "click": "[data-select='sort'] button",
+      "settle": 320
+    },
+    {
+      "name": "sort-price",
+      "click": "[data-menu='sort'] [data-option='price']",
+      "settle": 800
+    },
+    {
+      "name": "sort-open-2",
+      "click": "[data-select='sort'] button",
+      "settle": 320
+    },
+    {
+      "name": "sort-rating",
+      "click": "[data-menu='sort'] [data-option='rating']",
+      "settle": 800
+    },
+    {
+      "name": "sort-open-3",
+      "click": "[data-select='sort'] button",
+      "settle": 320
+    },
+    {
+      "name": "sort-sold",
+      "click": "[data-menu='sort'] [data-option='sold']",
+      "settle": 800
+    },
+    {
+      "name": "row-tekkeys",
+      "click": "[data-row='tekkeys']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "row-novamini",
+      "click": "[data-row='novamini']",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "spark-day-4",
+      "hover": "[data-spark='4']",
+      "against": "row-novamini"
+    },
+    {
+      "name": "spark-day-12",
+      "hover": "[data-spark='12']",
+      "against": "spark-day-4"
+    },
+    {
+      "name": "restock",
+      "click": "[data-restock]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "restock-undo",
+      "click": "[data-restock]",
+      "settle": 600,
+      "rest": true
+    },
+    {
+      "name": "catalogue-scrolled",
+      "wheel": [
+        "[data-scroller='catalogue']",
+        300
+      ],
+      "rest": true
+    },
+    {
+      "name": "catalogue-top",
+      "wheel": [
+        "[data-scroller='catalogue']",
+        -300
+      ],
+      "rest": true
+    },
+    {
+      "name": "search-pro",
+      "fill": [
+        "[data-search]",
+        "pro"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-none",
+      "fill": [
+        "[data-search]",
+        "zzzz"
+      ],
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "search-clear",
+      "click": "[data-search-clear]",
+      "settle": 800,
+      "rest": true
+    },
+    {
+      "name": "inert-customers",
+      "click": "[data-tab='customers']",
+      "expectUnchanged": true,
+      "rest": true,
+      "against": "search-clear"
+    }
+  ],
+  "wait": 6500
+}

@@ -20,11 +20,9 @@ type Standing = (typeof podium)[number];
 export function Podium() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
-      {/* STEP 1.07 three of them, side by side
       {podium.map((p) => (
         <Standing key={p.key} standing={p} />
       ))}
-      */}
     </View>
   );
 }
@@ -41,15 +39,12 @@ function Standing({ standing }: { standing: Standing }) {
       </View>
 
       <View style={{ marginTop: 4, alignItems: 'center' }}>
-        {/* STEP 1.08 each in their colour
         <View
           style={{
             width: size,
             height: size,
             borderRadius: radius.full,
             borderWidth: 3,
-            // MISTAKE 1.12 the rings came in dashed
-            borderStyle: 'dashed',
             borderColor: ring,
             padding: 3,
           }}
@@ -61,25 +56,18 @@ function Standing({ standing }: { standing: Standing }) {
             accessibilityIgnoresInvertColors
           />
         </View>
-        */}
 
-        {/* STEP 1.09 with their placing hung off it
         <View style={{ marginTop: -ROSETTE / 2 }}>
           <Rosette place={standing.place} />
         </View>
-        */}
       </View>
 
-      {/* STEP 1.10 who they are
       <T variant="podium" color={qz.ink} style={{ marginTop: 7 }}>
         {standing.name}
       </T>
-      */}
-      {/* STEP 1.11 and what they scored
       <T variant="podiumMeta" color={qz.muted} style={{ marginTop: 2 }}>
         {standing.points}
       </T>
-      */}
     </View>
   );
 }

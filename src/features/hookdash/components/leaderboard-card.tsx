@@ -27,21 +27,29 @@ export function LeaderboardCard() {
       }}
     >
       <View style={{ position: 'absolute', right: -10, top: -14 }}>
+        {/* STEP 1.13 the brand behind it
         <Watermark size={150} />
+        */}
       </View>
 
+      {/* STEP 1.14 what the card is
       <T variant="section" color={hk.ink}>
         {leaderboard.title}
       </T>
+      */}
 
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        {/* STEP 1.15 what was earned
         <Stat label={leaderboard.hp.label} value={leaderboard.hp.value}>
           <Hp size={22} />
         </Stat>
+        */}
         <View style={{ width: 22 }} />
+        {/* STEP 1.16 and where that puts them
         <Stat label={leaderboard.position.label} value={leaderboard.position.value}>
           <Chevrons size={22} />
         </Stat>
+        */}
       </View>
     </View>
   );
