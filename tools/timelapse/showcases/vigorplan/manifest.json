@@ -1,0 +1,7 @@
+{
+ "plan-screen": "src/app/vigorplan/index.tsx",
+ "top-bar": "src/features/vigorplan/components/top-bar.tsx",
+ "plan-head": "src/features/vigorplan/components/plan-head.tsx",
+ "day-rail": "src/features/vigorplan/components/day-rail.tsx",
+ "plan-card": "src/features/vigorplan/components/plan-card.tsx"
+}

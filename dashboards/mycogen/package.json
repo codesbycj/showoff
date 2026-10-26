@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 7: Mycogen, a store manager dashboard.",
+  "description": "Dashboard episode 7: Mylora, a store manager dashboard.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

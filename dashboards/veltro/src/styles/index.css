@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/manrope';
+
+/*
+ * Selviq.
+ *
+ * A posed board: one rounded panel on a near-white ground. refscan read the
+ * palette off it — white cards on #e5e4e9, #fde9e0 and #fff8ef for the orange
+ * tints, #0d0e13 for the near-black. The board is dropped and the panel's own
+ * ground becomes the page.
+ *
+ * `static`, because the heatmap takes its cell fill as inline
+ * `var(--color-heat-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions — which paints every cell the same, silently.
+ */
+@theme static {
+  --color-ground: #f6f5f7;
+  --color-surface: #ffffff;
+  --color-sunken: #f7f6f8;
+  --color-sunken-deep: #eceaef;
+
+  --color-ink: #121318;
+  --color-body: #44464f;
+  /* 4.80:1 on the page ground. */
+  --color-muted: #656770;
+  --color-line: #e9e8ec;
+
+  /*
+   * Two oranges, and the split is measured. #f4601f is the brand's own and
+   * carries white at 3.3:1. So #f4601f is the *mark* colour (bars, bands, the
+   * active chip's fill, the gauge) and #c0400a is the one anything with text
+   * on it uses: Export, the active chip's label, the alert dot. 5.3:1.
+   */
+  --color-accent: #f4601f;
+  --color-accent-deep: #c0400a;
+  --color-accent-soft: #fbc3a9;
+  --color-accent-faint: #fde9e0;
+  --color-accent-tint: #fff8ef;
+
+  --color-ink-fill: #0d0e13; /* the Add Widget pill */
+  --color-ink-fg: #f6f6f7;
+
+  --color-positive: #1d7a3f;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The hourly heatmap, coldest to hottest. */
+  --color-heat-0: #f4f3f6;
+  --color-heat-1: #fde9e0;
+  --color-heat-2: #fbc3a9;
+  --color-heat-3: #f79468;
+  --color-heat-4: #f4601f;
+
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(18 19 24 / 0.04);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

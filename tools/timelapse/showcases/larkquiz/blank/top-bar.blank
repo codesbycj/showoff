@@ -1,0 +1,71 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { hearts } from '../data/start';
+import { BACK_SIZE, HEAD_TOP } from '../layout';
+import { lk, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * The way back, and how many lives are left.
+ *
+ * The heart is drawn rather than an emoji: the same glyph is a different
+ * shape and a different red on Windows, Android and iOS, and this one sits
+ * beside a number it has to match.
+ */
+export function TopBar({ onBack }: { onBack?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: HEAD_TOP }}>
+{/* STEP 1.03 a disc to go back
+      <Pressable onPress={onBack} accessibilityRole="button" accessibilityLabel="Go back">
+        <View
+          style={{
+            width: BACK_SIZE,
+            height: BACK_SIZE,
+            borderRadius: radius.pill,
+            backgroundColor: lk.pill,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={18} height={18} viewBox="0 0 24 24">
+            <Path
+              d="M14.4 5.6 8 12l6.4 6.4"
+              stroke={lk.ink}
+              strokeWidth={2.1}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+*/}
+
+      <View style={{ flex: 1 }} />
+
+{/* STEP 1.04 and the hearts
+      <View
+        style={{
+          height: 34,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 13,
+          borderRadius: radius.pill,
+          backgroundColor: lk.pill,
+        }}
+      >
+        <T variant="hearts" color={lk.ink} style={{ marginRight: 6, height: type.hearts.line }}>
+          {String(hearts)}
+        </T>
+        <Svg width={15} height={15} viewBox="0 0 24 24">
+          <Path
+            d="M12 20.4S3.6 15 3.6 9.3A4.7 4.7 0 0 1 12 6.5a4.7 4.7 0 0 1 8.4 2.8c0 5.7-8.4 11.1-8.4 11.1Z"
+            fill={lk.heart}
+          />
+        </Svg>
+      </View>
+*/}
+    </View>
+  );
+}

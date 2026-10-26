@@ -1,0 +1,181 @@
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { mealTotals } from '../data/start';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+type Item = { id: string; name: string; cal: number; photo: number };
+
+/**
+ * One thing eaten.
+ *
+ * The thumbnail is a photograph. A drawn bowl of oats is a cartoon of a bowl
+ * of oats, and a column of them is what makes a screen read as a toy
+ * (AGENTS.md, "Draw the interface, photograph the picture").
+ */
+function Row({ item, onToggle }: { item: Item; onToggle?: (id: string) => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 12 }}>
+      <Image source={item.photo} style={{ width: 40, height: 40, borderRadius: radius.tile - 4 }} />
+
+      <View style={{ flex: 1, marginLeft: 12 }}>
+        <T variant="itemName" color={sg.ink} style={{ height: type.itemName.line }}>
+          {item.name}
+        </T>
+        <T variant="itemCal" color={sg.muted} style={{ height: type.itemCal.line }}>
+          {`${item.cal} Cal`}
+        </T>
+      </View>
+
+      <Pressable
+        onPress={() => onToggle?.(item.id)}
+        accessibilityRole="checkbox"
+        accessibilityLabel={`Eaten: ${item.name}`}
+      >
+        <View
+          style={{
+            width: 26,
+            height: 26,
+            borderRadius: 8,
+            backgroundColor: sg.panel,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={14} height={14} viewBox="0 0 24 24">
+            <Path
+              d="m5 12.6 4.4 4.4L19 7"
+              stroke={sg.onPanel}
+              strokeWidth={2.4}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+    </View>
+  );
+}
+
+/**
+ * A meal, and what is in it.
+ *
+ * The header total is `mealTotals[id]`, summed from the rows below it. The
+ * reference prints "75.95 cal" over a single 63-calorie item — a figure with
+ * two decimals that does not add up is worse than no figure.
+ */
+export function MealCard({
+  id,
+  name,
+  items,
+  glyph = 'cup',
+  onAdd,
+  onToggle,
+}: {
+  id: string;
+  name: string;
+  items: readonly Item[];
+  glyph?: 'cup' | 'bowl';
+  onAdd?: (id: string) => void;
+  onToggle?: (id: string) => void;
+}) {
+  return (
+    <View
+      style={{
+        marginTop: 10,
+        borderRadius: radius.card,
+        borderWidth: 1,
+        borderColor: sg.hairline,
+        padding: 14,
+      }}
+    >
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        {/* A cup for the meal that comes with one, a bowl for the one that
+            does not. One glyph for both put a coffee cup beside "Lunch". */}
+        <Svg width={17} height={17} viewBox="0 0 24 24">
+          {glyph === 'cup' ? (
+            <>
+              <Path
+                d="M4.6 9.4h12.2v4.2a4.6 4.6 0 0 1-4.6 4.6H9.2a4.6 4.6 0 0 1-4.6-4.6Z"
+                stroke={sg.ink}
+                strokeWidth={1.7}
+                strokeLinejoin="round"
+                fill="none"
+              />
+              <Path
+                d="M16.8 10.6h1.6a2.2 2.2 0 0 1 0 4.4h-1.6"
+                stroke={sg.ink}
+                strokeWidth={1.7}
+                fill="none"
+              />
+              <Path
+                d="M8 6.6V5M11.6 6.6V5"
+                stroke={sg.ink}
+                strokeWidth={1.7}
+                strokeLinecap="round"
+              />
+            </>
+          ) : (
+            <>
+              <Path
+                d="M3.4 11.6h17.2a1 1 0 0 1 1 1.2 9.6 9.6 0 0 1-9.6 7.6 9.6 9.6 0 0 1-9.6-7.6 1 1 0 0 1 1-1.2Z"
+                stroke={sg.ink}
+                strokeWidth={1.7}
+                strokeLinejoin="round"
+                fill="none"
+              />
+              <Path
+                d="M9 8.6c0-1.8 2-2 2-3.8M13.4 8.6c0-1.8 2-2 2-3.8"
+                stroke={sg.ink}
+                strokeWidth={1.7}
+                strokeLinecap="round"
+                fill="none"
+              />
+            </>
+          )}
+        </Svg>
+
+        <T variant="mealName" color={sg.ink} style={{ marginLeft: 8, height: type.mealName.line }}>
+          {name}
+        </T>
+        <T variant="mealCal" color={sg.muted} style={{ marginLeft: 6, height: type.mealCal.line }}>
+          {`${mealTotals[id]} cal`}
+        </T>
+
+        <View style={{ flex: 1 }} />
+
+        <Pressable
+          onPress={() => onAdd?.(id)}
+          accessibilityRole="button"
+          accessibilityLabel={`Add to ${name}`}
+        >
+          <View
+            style={{
+              width: 28,
+              height: 28,
+              borderRadius: radius.pill,
+              backgroundColor: sg.well,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Svg width={14} height={14} viewBox="0 0 24 24">
+              <Path
+                d="M12 5.4v13.2M5.4 12h13.2"
+                stroke={sg.ink}
+                strokeWidth={2.2}
+                strokeLinecap="round"
+              />
+            </Svg>
+          </View>
+        </Pressable>
+      </View>
+
+      {items.map((item) => (
+        <Row key={item.id} item={item} onToggle={onToggle} />
+      ))}
+    </View>
+  );
+}

@@ -1,0 +1,9 @@
+{
+ "boards-screen": "src/app/nibbleboards/index.tsx",
+ "top-bar": "src/features/nibbleboards/components/top-bar.tsx",
+ "headline": "src/features/nibbleboards/components/headline.tsx",
+ "board-tiles": "src/features/nibbleboards/components/board-tiles.tsx",
+ "gauge-row": "src/features/nibbleboards/components/gauge-row.tsx",
+ "share-row": "src/features/nibbleboards/components/share-row.tsx",
+ "dock": "src/features/nibbleboards/components/dock.tsx"
+}

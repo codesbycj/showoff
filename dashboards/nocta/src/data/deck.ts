@@ -1,7 +1,7 @@
 /**
  * The content deck: every figure, invoice, transaction and category.
  *
- * All invented (rule 5). Nocta is not a company, nobody here was paid, and no
+ * All invented (rule 5). Nyxora is not a company, nobody here was paid, and no
  * figure on this screen was ever banked — which is what lets the build use
  * free-licensed photographs of real people for the avatars without the page
  * being able to pass as anyone's live product.
@@ -16,8 +16,8 @@ import face5 from '@/assets/img/face-5.jpg';
 import face6 from '@/assets/img/face-6.jpg';
 
 export const account = {
-  brand: 'Nocta',
-  user: { name: 'Emma Parson', email: 'emma.pars@gmail.com', face: face1 },
+  brand: 'Nyxora',
+  user: { name: 'Emma Parson', email: 'emma.pars@nyxora.co', face: face1 },
 };
 
 /* ---------- revenue ------------------------------------------------------ */

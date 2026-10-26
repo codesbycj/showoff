@@ -1,7 +1,7 @@
 /**
  * The content deck: every figure, order, customer and promotion.
  *
- * All invented (rule 5). Mycogen is not a shop, nobody here has bought
+ * All invented (rule 5). Mylora is not a shop, nobody here has bought
  * anything, and no figure on this screen was ever taken.
  */
 import type { IconName } from '@/components/Icon';
@@ -15,7 +15,7 @@ import face5 from '@/assets/img/face-5.jpg';
 import face6 from '@/assets/img/face-6.jpg';
 
 export const store = {
-  name: 'Mycogen',
+  name: 'Mylora',
   user: { name: 'Sarah Johnson', role: 'Store Manager', face: face1 },
   welcome: "Welcome back! Here's what's happening with your store today.",
 };

@@ -1,0 +1,33 @@
+{
+  "url": "http://localhost:5360/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-products", "click": "[data-tab='products']", "settle": 950, "rest": true },
+
+    { "name": "filter-cosmetics", "click": "[data-group='category'] [data-segment='Cosmetics']", "settle": 850, "rest": true },
+    { "name": "filter-houseware", "click": "[data-group='category'] [data-segment='Houseware']", "settle": 850, "rest": true },
+    { "name": "filter-apparel", "click": "[data-group='category'] [data-segment='Apparel']", "settle": 850, "rest": true },
+    { "name": "filter-all", "click": "[data-group='category'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "sort-units", "click": "[data-sort='units']", "settle": 750, "rest": true },
+    { "name": "sort-units-asc", "click": "[data-sort='units']", "settle": 750, "rest": true },
+    { "name": "sort-name", "click": "[data-sort='name']", "settle": 750, "rest": true },
+    { "name": "sort-stock", "click": "[data-sort='stock']", "settle": 750, "rest": true },
+    { "name": "sort-revenue", "click": "[data-sort='revenue']", "settle": 750, "rest": true },
+
+    { "name": "ring-cosmetics", "hover": "[data-card='mix'] [data-mark='Cosmetics']", "against": "sort-revenue" },
+    { "name": "ring-apparel", "hover": "[data-card='mix'] [data-mark='Apparel']", "against": "ring-cosmetics" },
+    { "name": "legend-houseware", "click": "[data-legend='Houseware']", "settle": 750, "rest": true },
+    { "name": "legend-off", "click": "[data-legend='Houseware']", "settle": 750, "rest": true },
+
+    { "name": "search-serum", "fill": ["[data-search]", "serum"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-chat", "click": "[data-tab='chat']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-members", "click": "[data-tab='members']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

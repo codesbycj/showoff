@@ -1,0 +1,52 @@
+{
+  "url": "http://localhost:5368/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "span-day", "click": "[data-group='span'] [data-segment='day']", "settle": 900, "rest": true },
+    { "name": "span-month", "click": "[data-group='span'] [data-segment='month']", "settle": 900, "rest": true },
+    { "name": "span-year", "click": "[data-group='span'] [data-segment='year']", "settle": 900, "rest": true },
+
+    { "name": "curve-peak", "hover": "[data-card='active'] [data-mark='pt-16']", "against": "span-year" },
+    { "name": "curve-late", "hover": "[data-card='active'] [data-mark='pt-27']", "against": "curve-peak" },
+
+    { "name": "heat-mon-noon", "hover": "[data-card='time-of-day'] [data-mark='cell-1-6']", "against": "curve-late" },
+    { "name": "heat-fri-evening", "hover": "[data-card='time-of-day'] [data-mark='cell-5-9']", "against": "heat-mon-noon" },
+
+    { "name": "ring-mobile", "hover": "[data-card='devices'] [data-mark='mobile']", "against": "heat-fri-evening" },
+    { "name": "ring-tablet", "hover": "[data-card='devices'] [data-mark='tablet']", "against": "ring-mobile" },
+
+    { "name": "legend-desktop", "click": "[data-legend='desktop']", "settle": 600, "rest": true },
+    { "name": "legend-cleared", "click": "[data-legend='desktop']", "settle": 600, "rest": true },
+
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 500, "rest": true },
+    { "name": "alerts-back", "click": "[data-action='alerts']", "settle": 500, "rest": true },
+
+    { "name": "find-sessions", "fill": ["[data-search]", "sessions"], "settle": 700, "rest": true },
+    { "name": "find-empty", "fill": ["[data-search]", "zzzz"], "settle": 700, "rest": true },
+    { "name": "find-cleared", "click": "[data-search-clear]", "settle": 700, "rest": true },
+
+    { "name": "find-live", "fill": ["[data-search]", "live"], "settle": 700, "rest": true },
+    { "name": "jump-realtime", "click": "[data-find='live-pages']", "settle": 1000, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+
+    { "name": "view-report", "click": "[data-action='view-report']", "settle": 1000, "rest": true },
+    { "name": "back-again", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+
+    { "name": "theme-dark", "click": "[data-theme-choice='dark']", "settle": 800, "rest": true },
+    { "name": "dark-curve", "hover": "[data-card='active'] [data-mark='pt-16']", "against": "theme-dark" },
+    { "name": "dark-ring", "hover": "[data-card='devices'] [data-mark='desktop']", "against": "dark-curve" },
+    { "name": "theme-light", "click": "[data-theme-choice='light']", "settle": 800, "rest": true },
+
+    { "name": "inert-customization", "click": "[data-tab='customization']", "against": "theme-light", "expectUnchanged": true },
+    { "name": "inert-audience", "click": "[data-tab='audience']", "against": "theme-light", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "theme-light", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "theme-light" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

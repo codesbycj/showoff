@@ -1,0 +1,137 @@
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
+
+import { copy, plans, progressOf } from '../data/start';
+import { CARD_GAP, CARD_PAD, PHOTO_H, PHOTO_W, RAIL_HEIGHT, START_HEIGHT } from '../layout';
+import { radius, type, vg } from '../theme';
+import { T } from './text';
+
+const TONES = { blue: vg.blue, purple: vg.purple, teal: vg.teal } as const;
+
+/**
+ * One programme.
+ *
+ * **The rail across the top is this card's own progress** — `done` over the
+ * plan's length — so it cannot be drawn at a width the figures do not
+ * support. The reference draws three rails at three arbitrary widths over
+ * three plans that carry no progress figure at all.
+ *
+ * The photograph is a photograph; the Start pill, the calendar and the clock
+ * are drawn. That is the split the reference itself uses on this screen.
+ */
+export function PlanCard({ i, onStart }: { i: number; onStart?: (id: string) => void }) {
+  const p = plans[i];
+  const share = progressOf(p);
+  const tint = TONES[p.tone];
+
+  return (
+    <View
+      style={{
+        marginBottom: CARD_GAP,
+        borderRadius: radius.card,
+        backgroundColor: vg.card,
+        padding: CARD_PAD,
+      }}
+    >
+      <View
+        style={{
+          height: RAIL_HEIGHT,
+          marginBottom: 12,
+          borderRadius: radius.pill,
+          backgroundColor: vg.hairline,
+          flexDirection: 'row',
+        }}
+      >
+        <View style={{ flex: share, borderRadius: radius.pill, backgroundColor: tint }} />
+        <View style={{ flex: 1 - share }} />
+      </View>
+
+      <View style={{ flexDirection: 'row' }}>
+        <View style={{ flex: 1, marginRight: 12, justifyContent: 'space-between' }}>
+          <View>
+            <T variant="cardTitle" color={vg.ink}>
+              {p.title}
+            </T>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6 }}>
+              <Svg width={14} height={14} viewBox="0 0 24 24">
+                {p.metaKind === 'days' ? (
+                  <>
+                    <Rect
+                      x={4}
+                      y={6}
+                      width={16}
+                      height={14}
+                      rx={3}
+                      stroke={vg.muted}
+                      strokeWidth={1.8}
+                      fill="none"
+                    />
+                    <Path
+                      d="M4 10.6h16M8.4 3.6v4M15.6 3.6v4"
+                      stroke={vg.muted}
+                      strokeWidth={1.8}
+                      strokeLinecap="round"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <Circle
+                      cx={12}
+                      cy={12}
+                      r={8.4}
+                      stroke={vg.muted}
+                      strokeWidth={1.8}
+                      fill="none"
+                    />
+                    <Path
+                      d="M12 7.2V12l3.4 2.4"
+                      stroke={vg.muted}
+                      strokeWidth={1.8}
+                      strokeLinecap="round"
+                      fill="none"
+                    />
+                  </>
+                )}
+              </Svg>
+
+              <T variant="meta" color={vg.muted} style={{ marginLeft: 7, height: type.meta.line }}>
+                {p.metaKind === 'days'
+                  ? `${p.metaValue} ${copy.dayWord}`
+                  : `${p.metaValue} ${copy.minutes}`}
+              </T>
+            </View>
+          </View>
+
+          <Pressable
+            onPress={() => onStart?.(p.id)}
+            accessibilityRole="button"
+            accessibilityLabel={`${copy.start}: ${p.title}`}
+            style={({ pressed }) => ({ alignSelf: 'flex-start', opacity: pressed ? 0.85 : 1 })}
+          >
+            <View
+              style={{
+                height: START_HEIGHT,
+                paddingHorizontal: 20,
+                marginTop: 12,
+                borderRadius: radius.pill,
+                backgroundColor: tint,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <T variant="start" color={vg.onOrange} style={{ height: type.start.line }}>
+                {copy.start}
+              </T>
+            </View>
+          </Pressable>
+        </View>
+
+        <Image
+          source={p.photo}
+          style={{ width: PHOTO_W, height: PHOTO_H, borderRadius: radius.photo }}
+        />
+      </View>
+    </View>
+  );
+}

@@ -1,0 +1,54 @@
+import { Pressable, View } from 'react-native';
+
+import { copy } from '../data/start';
+import { FIELD_HEIGHT, FIELD_TOP } from '../layout';
+import { cr, radius, type } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+/**
+ * Where a tracking number goes, and the scanner beside it.
+ *
+ * The scan button is its own 42dp target rather than a glyph tucked against
+ * the field's end: they do two different things, and a field that is one
+ * target sends every scan tap into the keyboard instead.
+ */
+export function SearchField({ onScan }: { onScan?: () => void }) {
+  return (
+    <View
+      style={{
+        height: FIELD_HEIGHT,
+        marginTop: FIELD_TOP,
+        borderRadius: radius.field,
+        backgroundColor: cr.surface,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingLeft: 14,
+        paddingRight: 7,
+      }}
+    >
+      <Glyph name="search" size={18} tint={cr.muted} />
+      <T
+        variant="field"
+        color={cr.faint}
+        style={{ flex: 1, marginLeft: 10, height: type.field.line }}
+      >
+        {copy.search}
+      </T>
+      <Pressable onPress={onScan} accessibilityRole="button" accessibilityLabel="Scan a parcel">
+        <View
+          style={{
+            width: 42,
+            height: 42,
+            borderRadius: 13,
+            backgroundColor: cr.panel,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="scan" size={19} tint={cr.onPanel} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

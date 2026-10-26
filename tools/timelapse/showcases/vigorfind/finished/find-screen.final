@@ -1,0 +1,53 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { ArticleRail } from '@/features/vigorfind/components/article-rail';
+import { FilterChips } from '@/features/vigorfind/components/filter-chips';
+import { Headline } from '@/features/vigorfind/components/headline';
+import { SearchLine } from '@/features/vigorfind/components/search-line';
+import { TopBar } from '@/features/vigorfind/components/top-bar';
+import { MARGIN } from '@/features/vigorfind/layout';
+import { vg } from '@/features/vigorfind/theme';
+import { useInsets } from '@/features/vigorfind/use-insets';
+
+/**
+ * Vigor — find a programme.
+ *
+ * Assembly only: who is here, what the app offers, a way to search it, which
+ * part of the catalogue, and the articles themselves.
+ *
+ * The page is full-bleed blue, so the background is on the outer View and
+ * only the horizontal padding is on the content — the two rails bleed back
+ * out past it on purpose, so a card is clipped by the right edge rather than
+ * stopping neatly inside it.
+ */
+export default function VigorfindScreen() {
+  const insets = useInsets();
+  const [picked, setPicked] = useState('prep');
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: vg.blue,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <TopBar />
+
+      <Headline />
+
+      <SearchLine onPress={() => router.push('/vigorplan')} />
+
+      <FilterChips picked={picked} onPick={setPicked} />
+
+      <ArticleRail onPress={() => router.push('/vigorplan')} />
+    </View>
+  );
+}

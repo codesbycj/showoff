@@ -1,0 +1,150 @@
+import { useState } from 'react';
+import { View } from 'react-native';
+import Svg, { Circle, Line, Path } from 'react-native-svg';
+
+import { markerCount, points, tagAt, tagText } from '../data/start';
+import { CHART_MIN, CHART_TOP, NODE } from '../layout';
+import { ne, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Six months of it.
+ *
+ * **The line is one path built from the points**, with the segment before
+ * the tagged month drawn in a dimmer colour and the rest in green — rather
+ * than two paths whose ends have to be kept in step by hand. The nodes are
+ * placed from the same array, so a point cannot end up off its own line.
+ *
+ * The curve is a cubic through each pair with horizontal control handles,
+ * which is what gives the reference's soft S between months without any
+ * smoothing library.
+ *
+ * The plot measures itself with `onLayout` and falls back to `CHART_MIN`, so
+ * there is no frame in which it is drawn at zero height.
+ */
+export function PerfChart() {
+  const [box, setBox] = useState({ w: 0, h: 0 });
+  const w = Math.max(240, box.w);
+  const h = Math.max(CHART_MIN, box.h) - type.month.line - 10;
+
+  const x = (i: number) => (i / (points.length - 1)) * (w - NODE) + NODE / 2;
+  const y = (v: number) => h - v * (h - NODE) - NODE / 2;
+
+  const seg = (i: number) => {
+    const x0 = x(i - 1);
+    const y0 = y(points[i - 1].value);
+    const x1 = x(i);
+    const y1 = y(points[i].value);
+    const cx = (x0 + x1) / 2;
+    return `M ${x0} ${y0} C ${cx} ${y0}, ${cx} ${y1}, ${x1} ${y1}`;
+  };
+
+  return (
+    <View
+      style={{ flex: 1, minHeight: CHART_MIN, marginTop: CHART_TOP }}
+      onLayout={(e) => setBox({ w: e.nativeEvent.layout.width, h: e.nativeEvent.layout.height })}
+    >
+      <Svg width="100%" height={h}>
+{/* STEP 1.10 the months it covers
+        {points.map((p, i) => (
+          <Line
+            key={p.month}
+            x1={x(i)}
+            y1={0}
+            x2={x(i)}
+            y2={h}
+            stroke={ne.hairline}
+            strokeWidth={1}
+            strokeDasharray="3 5"
+          />
+        ))}
+*/}
+
+{/* STEP 1.11 the line
+        {points.slice(1).map((p, k) => (
+          <Path
+            key={p.month}
+            d={seg(k + 1)}
+            stroke={k + 1 <= tagAt ? ne.faint : ne.greenDeep}
+            strokeWidth={4}
+            strokeLinecap="round"
+            fill="none"
+          />
+        ))}
+*/}
+
+{/* STEP 1.12 a ring at each month
+        {points.map((p, i) => (
+          <Circle
+            key={p.month}
+            cx={x(i)}
+            cy={y(p.value)}
+            r={NODE / 2}
+            fill={ne.canvas}
+            stroke={i <= tagAt ? ne.faint : ne.greenDeep}
+            strokeWidth={3}
+          />
+        ))}
+*/}
+{/* STEP 1.13 and a dot inside it
+        {points.map((p, i) => (
+          <Circle key={p.month + 'c'} cx={x(i)} cy={y(p.value)} r={3} fill={ne.ink} />
+        ))}
+*/}
+      </Svg>
+
+{/* STEP 1.14 what one month did
+      <View
+        style={{
+          position: 'absolute',
+          left: x(tagAt) - 34,
+          top: y(points[tagAt].value) - 34,
+          paddingHorizontal: 10,
+          paddingVertical: 4,
+          borderRadius: radius.pill,
+          backgroundColor: ne.green,
+        }}
+      >
+        <T variant="tag" color={ne.greenInk} style={{ height: type.tag.line }}>
+          {tagText}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.15 and how many moves it took
+      <View
+        style={{
+          position: 'absolute',
+          left: x(tagAt) + 10,
+          top: y(points[tagAt].value) + 2,
+          width: 22,
+          height: 22,
+          borderRadius: 7,
+          backgroundColor: ne.ink,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T variant="tag" color={ne.onDock} style={{ height: type.tag.line }}>
+          {String(markerCount)}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.16 the months along the foot
+      <View style={{ flexDirection: 'row', marginTop: 10 }}>
+        {points.map((p) => (
+          <T
+            key={p.month}
+            variant="month"
+            color={ne.faint}
+            style={{ flex: 1, textAlign: 'center', height: type.month.line }}
+          >
+            {p.month}
+          </T>
+        ))}
+      </View>
+*/}
+    </View>
+  );
+}

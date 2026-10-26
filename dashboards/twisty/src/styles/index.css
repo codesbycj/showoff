@@ -3,7 +3,7 @@
 @import '@fontsource-variable/plus-jakarta-sans';
 
 /*
- * TWISTY.
+ * ZELPA.
  *
  * The reference is a posed presentation board: one rounded panel floating on a
  * slate-blue backdrop with a drop shadow under it. That makes it an inspo brief
@@ -42,7 +42,7 @@
   --color-muted: #656b78; /* labels, meta, the inert tabs */
   --color-line: #e7e9ee; /* hairlines and card borders */
 
-  --color-accent: #e8512a; /* the TWISTY mark, Senior, the live strip */
+  --color-accent: #e8512a; /* the ZELPA mark, Senior, the live strip */
   --color-accent-soft: #fdeae3;
   /* White on the brand red is 3.72:1 -- under AA for the 12px Senior pill.
      This is the same hue three steps down: 5.01:1. Used only where the accent

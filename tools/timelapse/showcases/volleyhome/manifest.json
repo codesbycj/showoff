@@ -1,0 +1,9 @@
+{
+ "home-screen": "src/app/volleyhome/index.tsx",
+ "brand-head": "src/features/volleyhome/components/brand-head.tsx",
+ "hero-card": "src/features/volleyhome/components/hero-card.tsx",
+ "quick-tiles": "src/features/volleyhome/components/quick-tiles.tsx",
+ "book-bar": "src/features/volleyhome/components/book-bar.tsx",
+ "event-rail": "src/features/volleyhome/components/event-rail.tsx",
+ "dock": "src/features/volleyhome/components/dock.tsx"
+}

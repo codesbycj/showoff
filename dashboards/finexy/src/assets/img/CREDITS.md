@@ -26,5 +26,4 @@ something it had.
 
 Each row gets its own portrait. Reusing one across two rows reads as the same person twice.
 
-Everything else on these panes is drawn: the TWISTY mark, every icon, the income chart,
-the proposal strips, the premium card's halftone sphere and the wallet donut.
+Everything else on these panes is drawn: the Obolin mark, every icon, the wallet cards, the spend donut and the activity sparklines.

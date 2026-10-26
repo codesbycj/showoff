@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 6: Finexy, a multi-wallet money dashboard.",
+  "description": "Dashboard episode 6: Obolin, a multi-wallet money dashboard.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

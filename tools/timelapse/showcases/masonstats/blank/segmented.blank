@@ -1,0 +1,179 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path, Rect } from 'react-native-svg';
+
+import { copy } from '../data/start';
+import { CHIP_HEIGHT, CHIPS_TOP, SEG_HEIGHT, SEG_TOP } from '../layout';
+import { ms, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Which view of the project, and which chart within it.
+ *
+ * The segmented control is real state: the reference ships with "Progress"
+ * lit and nothing to tap, which is a picture of a control rather than one.
+ * Each half is a 50dp target.
+ */
+export function Segmented({
+  tab,
+  onTab,
+  chip,
+  onChip,
+}: {
+  tab: string;
+  onTab?: (id: string) => void;
+  chip: string;
+  onChip?: (id: string) => void;
+}) {
+  const half = (id: string, label: string) => {
+    const on = id === tab;
+    return (
+      <Pressable
+        onPress={() => onTab?.(id)}
+        style={{ flex: 1 }}
+        accessibilityRole="tab"
+        accessibilityState={{ selected: on }}
+        accessibilityLabel={label}
+      >
+        <View
+          style={{
+            height: SEG_HEIGHT - 8,
+            borderRadius: radius.chip,
+            backgroundColor: on ? ms.panel : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="seg" color={on ? ms.onPanel : ms.muted} style={{ height: type.seg.line }}>
+            {label}
+          </T>
+        </View>
+      </Pressable>
+    );
+  };
+
+  const pill = (id: string, label: string, glyph: 'chart' | 'areas') => {
+    const on = id === chip;
+    return (
+      <Pressable
+        onPress={() => onChip?.(id)}
+        style={{ flex: 1 }}
+        accessibilityRole="button"
+        accessibilityState={{ selected: on }}
+        accessibilityLabel={label}
+      >
+        <View
+          style={{
+            height: CHIP_HEIGHT,
+            borderRadius: radius.chip,
+            backgroundColor: ms.card,
+            borderWidth: 1,
+            borderColor: on ? ms.orange : ms.hairline,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={15} height={15} viewBox="0 0 24 24">
+            {glyph === 'chart' ? (
+              <Path
+                d="M4 17.4 9 9.6l4.2 4.6L20 6"
+                stroke={on ? ms.orange : ms.muted}
+                strokeWidth={1.9}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            ) : (
+              <>
+                <Rect
+                  x={3.6}
+                  y={4}
+                  width={7}
+                  height={7}
+                  rx={2}
+                  stroke={on ? ms.orange : ms.muted}
+                  strokeWidth={1.8}
+                  fill="none"
+                />
+                <Rect
+                  x={13.4}
+                  y={4}
+                  width={7}
+                  height={7}
+                  rx={2}
+                  stroke={on ? ms.orange : ms.muted}
+                  strokeWidth={1.8}
+                  fill="none"
+                />
+                <Rect
+                  x={3.6}
+                  y={13}
+                  width={7}
+                  height={7}
+                  rx={2}
+                  stroke={on ? ms.orange : ms.muted}
+                  strokeWidth={1.8}
+                  fill="none"
+                />
+                <Rect
+                  x={13.4}
+                  y={13}
+                  width={7}
+                  height={7}
+                  rx={2}
+                  stroke={on ? ms.orange : ms.muted}
+                  strokeWidth={1.8}
+                  fill="none"
+                />
+              </>
+            )}
+          </Svg>
+          <T
+            variant="viewChip"
+            color={on ? ms.orange : ms.muted}
+            style={{ marginLeft: 7, height: type.viewChip.line }}
+          >
+            {label}
+          </T>
+        </View>
+      </Pressable>
+    );
+  };
+
+  return (
+    <View>
+      <View
+        style={{
+          height: SEG_HEIGHT,
+          marginTop: SEG_TOP,
+          // MISTAKE 1.36 the control came in with a corner squared off
+          borderBottomLeftRadius: 0,
+          borderRadius: radius.chip,
+          backgroundColor: ms.card,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 4,
+          shadowColor: '#2A1B12',
+          shadowOpacity: 0.07,
+          shadowRadius: 14,
+          shadowOffset: { width: 0, height: 6 },
+          elevation: 3,
+        }}
+      >
+{/* STEP 1.09 where it is
+        {half('progress', copy.progress)}
+*/}
+{/* STEP 1.10 and when
+        {half('timeline', copy.timeline)}
+*/}
+      </View>
+
+{/* STEP 1.11 by day, or by area
+      <View style={{ flexDirection: 'row', gap: 10, marginTop: CHIPS_TOP }}>
+        {pill('daily', copy.dailyChart, 'chart')}
+        {pill('areas', copy.workAreas, 'areas')}
+      </View>
+*/}
+    </View>
+  );
+}

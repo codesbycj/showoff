@@ -1,0 +1,252 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "@/features/lensastats/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a way to switch chart"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the rest"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "@/features/lensastats/components/day-chart"
+   ],
+   "label": "eight days"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "a chart"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/day-chart.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the rules it is read off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/day-chart.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the days"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/day-chart.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and which day each one is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "@/features/lensastats/components/calories-card"
+   ],
+   "label": "what today came to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the headline card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what it was aiming at"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the track"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the scale under it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "and what the hatch means"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "@/features/lensastats/components/nutrition-card"
+   ],
+   "label": "and what it was made of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lensastats/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and the pies"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/nutrition-card.tsx",
+    "STEP 1.22"
+   ],
+   "label": "the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/nutrition-card.tsx",
+    "STEP 1.23"
+   ],
+   "label": "what the day should have been"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/lensastats/components/calories-card.tsx",
+    [
+     "// MISTAKE 1.24",
+     "borderBottomRightRadius: 0,"
+    ]
+   ],
+   "label": "the card came in with one corner squared off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/nutrition-card.tsx",
+    "STEP 1.25"
+   ],
+   "label": "a rule between them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/nutrition-card.tsx",
+    "STEP 1.26"
+   ],
+   "label": "what it actually was"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/lensastats/components/nutrition-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and what the colours mean"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/lensastats/components/nutrition-card.tsx",
+    [
+     "// MISTAKE 1.28",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the card came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "calories-card",
+     "src/features/lensastats/components/calories-card.tsx"
+    ],
+    [
+     "day-chart",
+     "src/features/lensastats/components/day-chart.tsx"
+    ],
+    [
+     "nutrition-card",
+     "src/features/lensastats/components/nutrition-card.tsx"
+    ],
+    [
+     "stats-screen",
+     "src/app/lensastats/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/lensastats/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+  "url": "http://localhost:5328/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "cur-idr", "click": "[data-group='currency'] [data-segment='idr']", "settle": 700, "rest": true },
+    { "name": "cur-myr", "click": "[data-group='currency'] [data-segment='myr']", "settle": 700, "rest": true },
+    { "name": "cur-usd", "click": "[data-group='currency'] [data-segment='usd']", "settle": 700, "rest": true },
+
+    { "name": "balance-hidden", "click": "[aria-label='Hide balance']", "settle": 600, "rest": true },
+    { "name": "balance-shown", "click": "[aria-label='Show balance']", "settle": 600, "rest": true },
+    { "name": "account-copied", "click": "[data-action='copy-account']", "settle": 600, "rest": true },
+
+    { "name": "transfer", "click": "[data-action='transfer']", "settle": 600, "rest": true },
+    { "name": "transfer-off", "click": "[data-action='transfer']", "settle": 600, "rest": true },
+    { "name": "request", "click": "[data-action='request']", "settle": 600, "rest": true },
+    { "name": "request-off", "click": "[data-action='request']", "settle": 600, "rest": true },
+
+    { "name": "points-hidden", "click": "[data-tile='points'] button", "settle": 600, "rest": true },
+    { "name": "points-shown", "click": "[data-tile='points'] button", "settle": 600, "rest": true },
+
+    { "name": "month-open", "click": "[data-select='month'] > button", "settle": 600, "rest": true },
+    { "name": "month-feb", "click": "[data-menu='month'] [data-option='feb']", "settle": 800, "rest": true },
+    { "name": "month-open-2", "click": "[data-select='month'] > button", "settle": 600, "rest": true },
+    { "name": "month-apr", "click": "[data-menu='month'] [data-option='apr']", "settle": 800, "rest": true },
+
+    { "name": "donut-rent", "hover": "[data-card='spending'] [data-mark='rent']", "against": "month-apr" },
+    { "name": "donut-food", "hover": "[data-card='spending'] [data-mark='food']", "against": "donut-rent" },
+
+    { "name": "legend-transport", "click": "[data-legend='transport']", "settle": 600, "rest": true },
+    { "name": "legend-off", "click": "[data-legend='transport']", "settle": 600, "rest": true },
+
+    { "name": "earn-quarter", "click": "[data-group='period'] [data-segment='quarter']", "settle": 800, "rest": true },
+    { "name": "earn-year", "click": "[data-group='period'] [data-segment='year']", "settle": 800, "rest": true },
+    { "name": "earn-month", "click": "[data-group='period'] [data-segment='month']", "settle": 800, "rest": true },
+
+    { "name": "earn-investment", "hover": "[data-card='earning'] [data-mark='investment']", "against": "earn-month" },
+    { "name": "earn-freelance", "hover": "[data-card='earning'] [data-mark='freelance']", "against": "earn-investment" },
+
+    { "name": "txn-open", "click": "[data-row='t-salary']", "settle": 600, "rest": true },
+    { "name": "txn-close", "click": "[data-row='t-salary']", "settle": 600, "rest": true },
+    { "name": "txns-scrolled", "wheel": ["[data-scroller='txns']", 240], "rest": true },
+    { "name": "txns-top", "wheel": ["[data-scroller='txns']", -240], "rest": true },
+
+    { "name": "approve", "click": "[aria-label='Approve payment']", "settle": 700, "rest": true },
+
+    { "name": "search-open", "click": "[aria-label='Search']", "settle": 600, "rest": true },
+    { "name": "search-tenter", "fill": ["[data-search]", "tenter"], "settle": 850, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 600, "rest": true },
+
+    { "name": "parked-c", "rest": true },
+    { "name": "inert-tools", "click": "[data-tab='tools']", "against": "parked-c", "expectUnchanged": true }
+  ]
+}

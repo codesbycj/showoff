@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/figtree';
+
+/*
+ * Caldrow.
+ *
+ * The reference is a macOS browser window posed on a pale ground — chrome and
+ * ground are both presentation furniture and both are dropped, so the app's
+ * own header starts at the window edge.
+ *
+ * refscan read the palette off it: a white page, `#daebf2` for the tinted
+ * profit card, `#258196` for the teal, with `#51bdca`, `#8fe8ee` and
+ * `#eeffff` as its lighter steps and `#1f6d7a` as its darker one.
+ *
+ * **The split, measured.** `#258196` carries white at 4.51:1 — over the line
+ * by a hundredth, which is not a margin to build a dashboard on. So the brand
+ * teal is the *mark* colour (the billable cells, the curve, the ring, a dot)
+ * and `#1a5c69` is the one anything with text on it uses: Export, View All,
+ * the active nav rule, a solid badge. 7.56:1.
+ *
+ * No dark theme, because the reference has none (rule 7).
+ *
+ * `static`, because the billable-hours cells take their fill as an inline
+ * `var(--color-bill-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #ffffff;
+  --color-surface: #ffffff;
+  --color-sunken: #f1f5f7;
+  --color-sunken-deep: #e3ebef;
+
+  /* The tinted card the reference puts the profit figure on. */
+  --color-tint: #daebf2;
+  --color-tint-soft: #eef6f9;
+
+  --color-ink: #10272c;
+  --color-body: #3d4c52;
+  /* 6.32:1 on white and 5.16:1 on the tint — it has to clear both, because
+     the same label appears on both surfaces. */
+  --color-muted: #53626a;
+  --color-line: #e4eaed;
+
+  --color-accent: #258196;
+  --color-accent-deep: #1a5c69;
+  --color-accent-bright: #51bdca;
+  --color-accent-pale: #8fe8ee;
+  --color-accent-faint: #e6f4f7;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #1f7a4d;
+  --color-positive-soft: #e4f3ea;
+  --color-danger: #b3312a;
+  --color-danger-soft: #fdecea;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* Billable hours, coldest to hottest. The last step carries white type, so
+     it is the deep teal rather than the brand one. */
+  --color-bill-0: #eff6f8;
+  --color-bill-1: #d8eef2;
+  --color-bill-2: #a9e2e9;
+  --color-bill-3: #6cc9d4;
+  --color-bill-4: #3d9fb0;
+  --color-bill-5: #1a5c69;
+
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(16 39 44 / 0.06);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The hatch the reference draws on the leading client's last cell. Two
+     steps of the same teal, so white type on it still clears 7:1. */
+  .hatched {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--color-accent-deep) 0 4px,
+      #1f6d7a 4px 8px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

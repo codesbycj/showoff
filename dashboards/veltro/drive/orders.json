@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5360/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-orders", "click": "[data-tab='orders']", "settle": 950, "rest": true },
+
+    { "name": "state-fulfilled", "click": "[data-group='state'] [data-segment='Fulfilled']", "settle": 850, "rest": true },
+    { "name": "state-packing", "click": "[data-group='state'] [data-segment='Packing']", "settle": 850, "rest": true },
+    { "name": "state-returned", "click": "[data-group='state'] [data-segment='Returned']", "settle": 850, "rest": true },
+    { "name": "state-all", "click": "[data-group='state'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "channel-store", "click": "[data-channel='Store']", "settle": 850, "rest": true },
+    { "name": "channel-wholesale", "click": "[data-channel='Wholesale']", "settle": 850, "rest": true },
+    { "name": "channel-cleared", "click": "[data-action='clear-channel']", "settle": 850, "rest": true },
+
+    { "name": "sort-value", "click": "[data-sort='value']", "settle": 750, "rest": true },
+    { "name": "sort-value-asc", "click": "[data-sort='value']", "settle": 750, "rest": true },
+    { "name": "sort-qty", "click": "[data-sort='qty']", "settle": 750, "rest": true },
+    { "name": "sort-ref", "click": "[data-sort='ref']", "settle": 750, "rest": true },
+    { "name": "sort-placed", "click": "[data-sort='stamp']", "settle": 750, "rest": true },
+
+    { "name": "orders-scrolled", "wheel": ["[data-scroller='orders']", 200], "rest": true },
+    { "name": "orders-top", "wheel": ["[data-scroller='orders']", -200], "rest": true },
+
+    { "name": "search-mug", "fill": ["[data-search]", "mug"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-email", "click": "[data-tab='email']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-integration", "click": "[data-tab='integration']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

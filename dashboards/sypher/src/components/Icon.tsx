@@ -83,7 +83,7 @@ export function Icon({
   );
 }
 
-/** The Sypher mark: a dark square with a routed path cut through it. Invented. */
+/** The Veloq mark: a dark square with a routed path cut through it. Invented. */
 export function Logo({ size = 26 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 28 28" aria-hidden="true" focusable="false">

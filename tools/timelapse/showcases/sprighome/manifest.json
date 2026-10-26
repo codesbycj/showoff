@@ -1,0 +1,12 @@
+{
+ "home-screen": "src/app/sprighome/index.tsx",
+ "greeting": "src/features/sprighome/components/greeting.tsx",
+ "range-toggle": "src/features/sprighome/components/range-toggle.tsx",
+ "day-card": "src/features/sprighome/components/day-card.tsx",
+ "day-strip": "src/features/sprighome/components/day-strip.tsx",
+ "calorie-gauge": "src/features/sprighome/components/calorie-gauge.tsx",
+ "macro-row": "src/features/sprighome/components/macro-row.tsx",
+ "generate-button": "src/features/sprighome/components/generate-button.tsx",
+ "meal-card": "src/features/sprighome/components/meal-card.tsx",
+ "dock": "src/features/sprighome/components/dock.tsx"
+}

@@ -1,0 +1,7 @@
+{
+ "pick-screen": "src/app/larkpick/index.tsx",
+ "top-bar": "src/features/larkpick/components/top-bar.tsx",
+ "headline": "src/features/larkpick/components/headline.tsx",
+ "language-row": "src/features/larkpick/components/language-row.tsx",
+ "continue-button": "src/features/larkpick/components/continue-button.tsx"
+}

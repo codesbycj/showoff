@@ -1,0 +1,208 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "@/features/larkhome/components/header"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "along the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "their photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/header.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the streak and the gems"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/header.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and the menu"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "@/features/larkhome/components/course-card"
+   ],
+   "label": "the courses"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the first one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/course-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "its name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/course-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "what it covers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/course-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and its drawing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and one that runs off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "@/features/larkhome/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkhome/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/dock.tsx",
+    "STEP 1.18"
+   ],
+   "label": "home"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/dock.tsx",
+    "STEP 1.19"
+   ],
+   "label": "settings"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkhome/components/dock.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and progress"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/larkhome/components/course-card.tsx",
+    [
+     "// MISTAKE 1.21",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the cards came in squared off"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/larkhome/components/dock.tsx",
+    [
+     "// MISTAKE 1.22",
+     "paddingRight: 70,"
+    ]
+   ],
+   "label": "the dock came in pushed left"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "course-card",
+     "src/features/larkhome/components/course-card.tsx"
+    ],
+    [
+     "dock",
+     "src/features/larkhome/components/dock.tsx"
+    ],
+    [
+     "header",
+     "src/features/larkhome/components/header.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/larkhome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

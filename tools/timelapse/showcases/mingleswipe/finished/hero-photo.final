@@ -1,0 +1,65 @@
+import { useId } from 'react';
+import { Image, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { hero } from '../data/start';
+import { mg } from '../theme';
+
+/**
+ * The photograph the whole screen is laid over.
+ *
+ * **The image is given all four insets *and* a size.** An Image with
+ * absolute insets but no width or height paints nothing at all on Android,
+ * silently — the layout is right and the pixels never arrive.
+ *
+ * The scrim is a gradient rather than a flat tint: the interface sits on the
+ * bottom third and the top, and a flat veil over the whole frame would dull
+ * the face in the middle, which is the one thing this screen is for.
+ *
+ * The foot runs to 0.88 and starts at 38%. A lighter one looked right over
+ * this frame's dark hair and left the bio sitting on a pale sweater at a
+ * contrast nobody could read — the scrim has to clear the *lightest* thing
+ * under the type, not the average.
+ */
+export function HeroPhoto() {
+  const top = useId();
+  const foot = useId();
+
+  return (
+    <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
+      <Image
+        source={hero}
+        resizeMode="cover"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100%',
+          height: '100%',
+        }}
+      />
+
+      <Svg
+        style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+        width="100%"
+        height="100%"
+      >
+        <Defs>
+          <LinearGradient id={top} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor={mg.scrim} stopOpacity="0.45" />
+            <Stop offset="1" stopColor={mg.scrim} stopOpacity="0" />
+          </LinearGradient>
+          <LinearGradient id={foot} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor={mg.scrim} stopOpacity="0" />
+            <Stop offset="1" stopColor={mg.scrim} stopOpacity="0.88" />
+          </LinearGradient>
+        </Defs>
+
+        <Rect x="0" y="0" width="100%" height="22%" fill={`url(#${top})`} />
+        <Rect x="0" y="38%" width="100%" height="62%" fill={`url(#${foot})`} />
+      </Svg>
+    </View>
+  );
+}

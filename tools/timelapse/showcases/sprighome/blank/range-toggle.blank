@@ -1,0 +1,63 @@
+import { Pressable, View } from 'react-native';
+
+import { copy } from '../data/start';
+import { SEG_HEIGHT, SEG_TOP } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Today, or the week.
+ *
+ * Real state rather than a picture of a control: the reference ships with
+ * "Today" lit and nothing to press. Each half is a 46dp target across half
+ * the screen, which is as large as a tap target gets.
+ */
+export function RangeToggle({ range, onRange }: { range: string; onRange?: (id: string) => void }) {
+  const half = (id: string, label: string) => {
+    const on = id === range;
+    return (
+      <Pressable
+        onPress={() => onRange?.(id)}
+        style={{ flex: 1 }}
+        accessibilityRole="tab"
+        accessibilityState={{ selected: on }}
+        accessibilityLabel={label}
+      >
+        <View
+          style={{
+            height: SEG_HEIGHT - 8,
+            borderRadius: radius.chip,
+            backgroundColor: on ? sg.panel : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="seg" color={on ? sg.onPanel : sg.muted} style={{ height: type.seg.line }}>
+            {label}
+          </T>
+        </View>
+      </Pressable>
+    );
+  };
+
+  return (
+    <View
+      style={{
+        height: SEG_HEIGHT,
+        marginTop: SEG_TOP,
+        // MISTAKE 1.41 the toggle came in square
+        borderTopRightRadius: 0,
+        borderRadius: radius.chip,
+        backgroundColor: sg.well,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 4,
+      }}
+    >
+{/* STEP 1.07 today, or the week
+      {half('today', copy.today)}
+      {half('weekly', copy.weekly)}
+*/}
+    </View>
+  );
+}

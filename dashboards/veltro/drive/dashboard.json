@@ -1,0 +1,50 @@
+{
+  "url": "http://localhost:5360/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "cat-houseware", "click": "[data-category='Houseware']", "settle": 850, "rest": true },
+    { "name": "cat-apparel", "click": "[data-category='Apparel']", "settle": 850, "rest": true },
+    { "name": "cat-all", "click": "[data-category='all']", "settle": 850, "rest": true },
+    { "name": "cat-cosmetics", "click": "[data-category='Cosmetics']", "settle": 850, "rest": true },
+
+    { "name": "period-open", "click": "[data-select='period'] > button", "settle": 600, "rest": true },
+    { "name": "period-quarter", "click": "[data-menu='period'] [data-option='quarter']", "settle": 850, "rest": true },
+    { "name": "period-open-2", "click": "[data-select='period'] > button", "settle": 600, "rest": true },
+    { "name": "period-month", "click": "[data-menu='period'] [data-option='month']", "settle": 850, "rest": true },
+
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-half", "click": "[data-menu='span'] [data-option='half']", "settle": 900, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-year", "click": "[data-menu='span'] [data-option='year']", "settle": 900, "rest": true },
+
+    { "name": "band-feb", "hover": "[data-card='analytics'] [data-mark='feb']", "against": "span-year" },
+    { "name": "band-jul", "hover": "[data-card='analytics'] [data-mark='jul']", "against": "band-feb" },
+
+    { "name": "heat-cell", "hover": "[data-card='visits'] [data-mark='cell-1-5']", "against": "band-jul" },
+    { "name": "heat-cell-2", "hover": "[data-card='visits'] [data-mark='cell-3-9']", "against": "heat-cell" },
+
+    { "name": "top-scrolled", "wheel": ["[data-scroller='top']", 160], "rest": true },
+    { "name": "top-top", "wheel": ["[data-scroller='top']", -160], "rest": true },
+
+    { "name": "widget-added", "click": "[data-action='add-widget']", "settle": 750, "rest": true },
+    { "name": "widget-undone", "click": "[data-action='add-widget']", "settle": 750, "rest": true },
+    { "name": "exported", "click": "[data-action='export']", "settle": 750, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 750, "rest": true },
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 650, "rest": true },
+
+    { "name": "search-mug", "fill": ["[data-search]", "mug"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-products", "click": "[data-action='products-details']", "settle": 950, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 950, "rest": true },
+
+    { "name": "inert-customers", "click": "[data-tab='customers']", "against": "back-dashboard", "expectUnchanged": true },
+    { "name": "inert-analytics", "click": "[data-tab='analytics']", "against": "back-dashboard", "expectUnchanged": true }
+  ]
+}

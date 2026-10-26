@@ -1,0 +1,213 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "@/features/volleyevent/components/event-hero"
+   ],
+   "label": "the court"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "full bleed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-hero.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the frame"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-hero.tsx",
+    "STEP 1.04"
+   ],
+   "label": "something to read on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-hero.tsx",
+    "STEP 1.05"
+   ],
+   "label": "a way out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-hero.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what kind of event"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-hero.tsx",
+    "STEP 1.07"
+   ],
+   "label": "what and when"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-hero.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and what it pays"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "how full it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.10"
+   ],
+   "label": "how many are in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and who they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "who runs it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and what it pays"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the champion"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.17"
+   ],
+   "label": "fair play"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the defender"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and the top scorer"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "@/features/volleyevent/components/join-button"
+   ],
+   "label": "and the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyevent/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "along the foot"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/volleyevent/components/event-body.tsx",
+    [
+     "// MISTAKE 1.22",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the badges came in squared off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyevent/components/join-button.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the green"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "event-body",
+     "src/features/volleyevent/components/event-body.tsx"
+    ],
+    [
+     "event-hero",
+     "src/features/volleyevent/components/event-hero.tsx"
+    ],
+    [
+     "event-screen",
+     "src/app/volleyevent/index.tsx"
+    ],
+    [
+     "join-button",
+     "src/features/volleyevent/components/join-button.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+{
+ "event-screen": "src/app/volleyevent/index.tsx",
+ "event-hero": "src/features/volleyevent/components/event-hero.tsx",
+ "event-body": "src/features/volleyevent/components/event-body.tsx",
+ "join-button": "src/features/volleyevent/components/join-button.tsx"
+}

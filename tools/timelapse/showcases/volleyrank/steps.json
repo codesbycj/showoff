@@ -1,0 +1,209 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "@/features/volleyrank/components/rank-head"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/rank-head.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/rank-head.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the three boards"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "@/features/volleyrank/components/podium"
+   ],
+   "label": "the top three"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "a podium"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/podium.tsx",
+    "STEP 1.07"
+   ],
+   "label": "second"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/podium.tsx",
+    "STEP 1.08"
+   ],
+   "label": "first, with the crown"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "@/features/volleyrank/components/rank-sheet"
+   ],
+   "label": "everyone below them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "a sheet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/rank-sheet.tsx",
+    "STEP 1.11"
+   ],
+   "label": "fourth"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/rank-sheet.tsx",
+    "STEP 1.12"
+   ],
+   "label": "fifth"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/rank-sheet.tsx",
+    "STEP 1.13"
+   ],
+   "label": "sixth"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/rank-sheet.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and where you stand"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "@/features/volleyrank/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyrank/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/dock.tsx",
+    "STEP 1.17"
+   ],
+   "label": "home"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/dock.tsx",
+    "STEP 1.18"
+   ],
+   "label": "bookings"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/dock.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the board"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/dock.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and you"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/volleyrank/components/dock.tsx",
+    [
+     "// MISTAKE 1.21",
+     "borderBottomRightRadius: 0,"
+    ]
+   ],
+   "label": "the lit tab came in squared off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyrank/components/podium.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and third"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dock",
+     "src/features/volleyrank/components/dock.tsx"
+    ],
+    [
+     "podium",
+     "src/features/volleyrank/components/podium.tsx"
+    ],
+    [
+     "rank-head",
+     "src/features/volleyrank/components/rank-head.tsx"
+    ],
+    [
+     "rank-screen",
+     "src/app/volleyrank/index.tsx"
+    ],
+    [
+     "rank-sheet",
+     "src/features/volleyrank/components/rank-sheet.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

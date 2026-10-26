@@ -1,0 +1,288 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "@/features/sprigdish/components/hero"
+   ],
+   "label": "the plate"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "on lime"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/hero.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the lime"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/hero.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the bowl"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/hero.tsx",
+    "STEP 1.05"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/hero.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and a way to keep it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "@/features/sprigdish/components/fact-row"
+   ],
+   "label": "what is in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the four figures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/fact-row.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the calories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/fact-row.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the carbs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/fact-row.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the protein"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/fact-row.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the fat"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "@/features/sprigdish/components/portion-fields"
+   ],
+   "label": "how much of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the portion"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/portion-fields.tsx",
+    "STEP 1.16"
+   ],
+   "label": "how many"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/portion-fields.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and how big"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "@/features/sprigdish/components/add-bar"
+   ],
+   "label": "a way to log it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the button"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/add-bar.tsx",
+    "STEP 1.20"
+   ],
+   "label": "add it to a meal"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/add-bar.tsx",
+    "STEP 1.21"
+   ],
+   "label": "or choose another"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "@/features/sprigdish/components/facts-list"
+   ],
+   "label": "and the full table"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and the table"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    "STEP 1.24"
+   ],
+   "label": "the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    "STEP 1.25"
+   ],
+   "label": "calories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    "STEP 1.26"
+   ],
+   "label": "carbohydrate"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    "STEP 1.27"
+   ],
+   "label": "protein"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    "STEP 1.28"
+   ],
+   "label": "fat"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    "STEP 1.29"
+   ],
+   "label": "fibre and sodium"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/app/sprigdish/index.tsx",
+    [
+     "// MISTAKE 1.30",
+     "marginTop: 22,"
+    ]
+   ],
+   "label": "the sheet came in sitting below the plate"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sprigdish/components/facts-list.tsx",
+    [
+     "// MISTAKE 1.31",
+     "maxHeight: 26,"
+    ]
+   ],
+   "label": "the table came in with its rows squashed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "add-bar",
+     "src/features/sprigdish/components/add-bar.tsx"
+    ],
+    [
+     "dish-screen",
+     "src/app/sprigdish/index.tsx"
+    ],
+    [
+     "fact-row",
+     "src/features/sprigdish/components/fact-row.tsx"
+    ],
+    [
+     "facts-list",
+     "src/features/sprigdish/components/facts-list.tsx"
+    ],
+    [
+     "hero",
+     "src/features/sprigdish/components/hero.tsx"
+    ],
+    [
+     "portion-fields",
+     "src/features/sprigdish/components/portion-fields.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

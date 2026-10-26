@@ -1,0 +1,46 @@
+{
+  "url": "http://localhost:5368/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "conversion", "click": "[data-tab='conversion']", "settle": 1000, "rest": true },
+
+    { "name": "segment-new", "click": "[data-group='segment'] [data-segment='new']", "settle": 900, "rest": true },
+    { "name": "segment-returning", "click": "[data-group='segment'] [data-segment='returning']", "settle": 900, "rest": true },
+    { "name": "segment-all", "click": "[data-group='segment'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "band-signup", "hover": "[data-card='funnel'] [data-mark='signup']", "against": "segment-all" },
+    { "name": "band-paid", "hover": "[data-card='funnel'] [data-mark='paid']", "against": "band-signup" },
+
+    { "name": "pick-trial", "click": "[data-card='funnel'] [data-mark='trial']", "settle": 800, "rest": true },
+    { "name": "pick-verify", "click": "[data-step='verify']", "settle": 800, "rest": true },
+    { "name": "pick-cleared", "click": "[data-step='verify']", "settle": 800, "rest": true },
+
+    { "name": "sort-open", "click": "[data-select='goal-sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-closest", "click": "[data-menu='goal-sort'] [data-option='share']", "settle": 900, "rest": true },
+    { "name": "sort-open-2", "click": "[data-select='goal-sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-value", "click": "[data-menu='goal-sort'] [data-option='value']", "settle": 900, "rest": true },
+
+    { "name": "goal-open", "click": "[data-card='goals'] [data-row='paid']", "settle": 800, "rest": true },
+    { "name": "goal-other", "click": "[data-card='goals'] [data-row='demo']", "settle": 800, "rest": true },
+    { "name": "goal-closed", "click": "[data-card='goals'] [data-row='demo']", "settle": 800, "rest": true },
+
+    { "name": "goals-down", "wheel": ["[data-scroller='goals']", 300], "settle": 500, "rest": true },
+    { "name": "goals-top", "wheel": ["[data-scroller='goals']", -300], "settle": 500, "rest": true },
+
+    { "name": "search-trial", "fill": ["[data-card='goals'] [data-search]", "trial"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-card='goals'] [data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-card='goals'] [data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "theme-dark", "click": "[data-theme-choice='dark']", "settle": 800, "rest": true },
+    { "name": "dark-band", "hover": "[data-card='funnel'] [data-mark='visit']", "against": "theme-dark" },
+    { "name": "dark-goal", "click": "[data-card='goals'] [data-row='signup']", "settle": 800, "rest": true },
+    { "name": "theme-light", "click": "[data-theme-choice='light']", "settle": 800, "rest": true },
+
+    { "name": "inert-audience", "click": "[data-tab='audience']", "against": "theme-light", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "theme-light", "expectUnchanged": true }
+  ]
+}

@@ -118,7 +118,7 @@ are identical on every reload.
 8. **A visible focus ring everywhere.** The board has none.
 9. **The delta triangles are drawn**, not the geometric-shape codepoints: Geist has no
    U+25B2, so they would fall back to whatever symbol font the platform has.
-10. **The Nocta mark is invented**, drawn in the board's idiom — two angular chevrons meeting
+10. **The Nyxora mark is invented**, drawn in the board's idiom — two angular chevrons meeting
     at a seam. The copy is invented, so the mark has to be.
 11. **The faces are free-licensed Pexels portraits**, credited in
     `src/assets/img/CREDITS.md`.

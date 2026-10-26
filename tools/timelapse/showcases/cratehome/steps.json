@@ -1,0 +1,273 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "@/features/cratehome/components/panel-head"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "the black panel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/panel-head.tsx",
+    "STEP 1.04"
+   ],
+   "label": "their photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/panel-head.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the bell"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "@/features/cratehome/components/greeting"
+   ],
+   "label": "who it is talking to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "by name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/greeting.tsx",
+    "STEP 1.08"
+   ],
+   "label": "hello"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/greeting.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and who to"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "@/features/cratehome/components/search-field"
+   ],
+   "label": "the tracking field"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and a scanner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/search-field.tsx",
+    "STEP 1.12"
+   ],
+   "label": "what it is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/search-field.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the scanner"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "@/features/cratehome/components/action-pills"
+   ],
+   "label": "the two actions"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "side by side"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/action-pills.tsx",
+    "STEP 1.16"
+   ],
+   "label": "send one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/action-pills.tsx",
+    "STEP 1.17"
+   ],
+   "label": "or track one"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "@/features/cratehome/components/delivery-card"
+   ],
+   "label": "the deliveries"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what is moving"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "the first parcel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/delivery-card.tsx",
+    "STEP 1.21"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/delivery-card.tsx",
+    "STEP 1.22"
+   ],
+   "label": "how far along"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/delivery-card.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and between where"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and one that runs off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "@/features/cratehome/components/tab-bar"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratehome/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the tab bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratehome/components/tab-bar.tsx",
+    "STEP 1.28"
+   ],
+   "label": "and the one thing it makes"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cratehome/components/delivery-card.tsx",
+    [
+     "// MISTAKE 1.29",
+     "borderTopRightRadius: 0,"
+    ]
+   ],
+   "label": "the cards came in square on one corner"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "action-pills",
+     "src/features/cratehome/components/action-pills.tsx"
+    ],
+    [
+     "delivery-card",
+     "src/features/cratehome/components/delivery-card.tsx"
+    ],
+    [
+     "greeting",
+     "src/features/cratehome/components/greeting.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/cratehome/index.tsx"
+    ],
+    [
+     "panel-head",
+     "src/features/cratehome/components/panel-head.tsx"
+    ],
+    [
+     "search-field",
+     "src/features/cratehome/components/search-field.tsx"
+    ],
+    [
+     "tab-bar",
+     "src/features/cratehome/components/tab-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

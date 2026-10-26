@@ -1,0 +1,336 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "@/features/masonstats/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a chevron"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "add one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/top-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "go home, and the rest"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "@/features/masonstats/components/segmented"
+   ],
+   "label": "which view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "progress, or the dates"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/segmented.tsx",
+    "STEP 1.09"
+   ],
+   "label": "where it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/segmented.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and when"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/segmented.tsx",
+    "STEP 1.11"
+   ],
+   "label": "by day, or by area"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "@/features/masonstats/components/completion-card"
+   ],
+   "label": "how far through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/completion-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what it measures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/completion-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/completion-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "what it is of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/completion-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and whether it is on time"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "@/features/masonstats/components/forecast-card"
+   ],
+   "label": "what it will do"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and the forecast"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "what the card is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.21"
+   ],
+   "label": "how far ahead, in words"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and in figures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.23"
+   ],
+   "label": "against the plan"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.24"
+   ],
+   "label": "planned"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.25"
+   ],
+   "label": "or actual"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.26"
+   ],
+   "label": "the scale"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the rules it is read off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.28"
+   ],
+   "label": "the weeks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    "STEP 1.29"
+   ],
+   "label": "and what this one did"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "@/features/masonstats/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonstats/index.tsx",
+    "STEP 1.31"
+   ],
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/dock.tsx",
+    "STEP 1.32"
+   ],
+   "label": "home"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/dock.tsx",
+    "STEP 1.33"
+   ],
+   "label": "the board"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/dock.tsx",
+    "STEP 1.34"
+   ],
+   "label": "the drawings"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonstats/components/dock.tsx",
+    "STEP 1.35"
+   ],
+   "label": "and the rest"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/masonstats/components/segmented.tsx",
+    [
+     "// MISTAKE 1.36",
+     "borderBottomLeftRadius: 0,"
+    ]
+   ],
+   "label": "the control came in with a corner squared off"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/masonstats/components/forecast-card.tsx",
+    [
+     "// MISTAKE 1.37",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the card came in with one corner squared off"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "completion-card",
+     "src/features/masonstats/components/completion-card.tsx"
+    ],
+    [
+     "dock",
+     "src/features/masonstats/components/dock.tsx"
+    ],
+    [
+     "forecast-card",
+     "src/features/masonstats/components/forecast-card.tsx"
+    ],
+    [
+     "segmented",
+     "src/features/masonstats/components/segmented.tsx"
+    ],
+    [
+     "stats-screen",
+     "src/app/masonstats/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/masonstats/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

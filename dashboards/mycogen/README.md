@@ -89,7 +89,7 @@ Every one is a beat in `drive/`, photographed and numerically diffed. The three 
    does not fill a 1440×900 shell and gives the scrollers nothing to scroll.
 6. **Promotions can be paused.** The board shows two with state pills and no way to act.
 7. **A visible focus ring everywhere.** The board has none.
-8. **The Mycogen wordmark is drawn type**, not a logo — the reference sets its name in
+8. **The Mylora wordmark is drawn type**, not a logo — the reference sets its name in
    plain type with no mark at all, which is unusual enough to be the design, so this is the
    word with a single amber counter in the O. Invented, like the copy around it.
 9. **No light/dark switch.** The reference has no sun/moon pair, and a second palette

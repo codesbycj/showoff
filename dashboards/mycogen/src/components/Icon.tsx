@@ -93,7 +93,7 @@ export function Icon({
 }
 
 /**
- * The Mycogen wordmark.
+ * The Mylora wordmark.
  *
  * The reference sets its name in type with no mark at all, which is unusual
  * enough to be the design — so this is drawn type rather than a logo: the word
@@ -106,7 +106,7 @@ export function Wordmark({ size = 20 }: { size?: number }) {
       className="text-ink inline-flex items-baseline gap-[1px] font-extrabold tracking-[-0.03em]"
       style={{ fontSize: size }}
     >
-      Myc
+      Myl
       <span aria-hidden="true" className="relative inline-block" style={{ width: size * 0.52 }}>
         <svg
           viewBox="0 0 24 24"
@@ -118,7 +118,7 @@ export function Wordmark({ size = 20 }: { size?: number }) {
           <circle cx="12" cy="12" r="4" fill="var(--color-accent)" />
         </svg>
       </span>
-      gen
+      ra
     </span>
   );
 }

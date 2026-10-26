@@ -1,0 +1,53 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { ActionList, ColumnHead } from '@/features/nestactions/components/action-list';
+import { Dock } from '@/features/nestactions/components/dock';
+import { TopBar } from '@/features/nestactions/components/top-bar';
+import { T } from '@/features/nestactions/components/text';
+import { copy } from '@/features/nestactions/data/start';
+import { MARGIN, TITLE_TOP } from '@/features/nestactions/layout';
+import { ne, type } from '@/features/nestactions/theme';
+import { useInsets } from '@/features/nestactions/use-insets';
+
+/**
+ * Nest — the ledger.
+ *
+ * Assembly only: who is here, what the columns are, everything that has
+ * moved, and where else the app goes.
+ *
+ * The dock is welded to the foot and takes the bottom inset itself, so the
+ * list scrolls under it and its last row runs off the edge — which is what
+ * the reference crops.
+ */
+export default function NestactionsScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ne.canvas, paddingTop: insets.top }}>
+      <StatusBar style="dark" />
+
+      <View style={{ flex: 1, paddingHorizontal: MARGIN }}>
+        <TopBar />
+
+        <T variant="title" color={ne.ink} style={{ marginTop: TITLE_TOP, height: type.title.line }}>
+          {copy.title}
+        </T>
+
+        <ColumnHead />
+
+        <ActionList onPress={() => router.push('/nesthome')} />
+      </View>
+
+      <Dock
+        active="actions"
+        bottom={insets.bottom}
+        onSelect={(id) => {
+          if (id === 'home') router.push('/nesthome');
+          if (id === 'perf') router.push('/nestperf');
+        }}
+      />
+    </View>
+  );
+}

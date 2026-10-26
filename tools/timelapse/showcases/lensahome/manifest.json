@@ -1,0 +1,9 @@
+{
+ "home-screen": "src/app/lensahome/index.tsx",
+ "brand-head": "src/features/lensahome/components/brand-head.tsx",
+ "day-pills": "src/features/lensahome/components/day-pills.tsx",
+ "intake-card": "src/features/lensahome/components/intake-card.tsx",
+ "nutrition-card": "src/features/lensahome/components/nutrition-card.tsx",
+ "weight-card": "src/features/lensahome/components/weight-card.tsx",
+ "dock": "src/features/lensahome/components/dock.tsx"
+}

@@ -1,0 +1,61 @@
+import { View } from 'react-native';
+
+import { balanceText, btcText, changeText, copy } from '../data/start';
+import { BALANCE_TOP, LABEL_TOP, SUB_TOP } from '../layout';
+import { ne, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * What the wallet holds.
+ *
+ * **One decimal separator.** The reference prints "$145,752.90" and
+ * "+3,27%" two inches apart — a comma for thousands in one and for decimals
+ * in the other. Both are formatted here from numbers, in the same
+ * convention, so they cannot disagree again.
+ *
+ * The BTC line is the balance converted rather than a second figure typed
+ * in, for the same reason.
+ */
+export function BalanceBlock() {
+  return (
+    <View style={{ marginTop: LABEL_TOP }}>
+{/* STEP 1.08 what it measures
+      <T variant="label" color={ne.muted} style={{ height: type.label.line }}>
+        {copy.label}
+      </T>
+*/}
+
+{/* STEP 1.09 the figure
+      <T
+        variant="balance"
+        color={ne.ink}
+        style={{ marginTop: BALANCE_TOP, height: type.balance.line }}
+      >
+        {balanceText}
+      </T>
+*/}
+
+{/* STEP 1.10 and what it is in coin
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: SUB_TOP }}>
+        <T variant="sub" color={ne.muted} style={{ height: type.sub.line }}>
+          {`${copy.approx}${btcText}${copy.btc}`}
+        </T>
+
+        <View
+          style={{
+            marginLeft: 10,
+            paddingHorizontal: 10,
+            paddingVertical: 4,
+            borderRadius: radius.pill,
+            backgroundColor: ne.green,
+          }}
+        >
+          <T variant="pill" color={ne.greenInk} style={{ height: type.pill.line }}>
+            {changeText}
+          </T>
+        </View>
+      </View>
+*/}
+    </View>
+  );
+}

@@ -1,0 +1,109 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
+
+import { copy } from '../data/start';
+import { PILLS_TOP, PILL_HEIGHT } from '../layout';
+import { ls, radius, type } from '../theme';
+import { T } from './text';
+
+/** One of the two round controls on the right. */
+function Disc({ kind, onPress }: { kind: 'edit' | 'more'; onPress?: () => void }) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={kind}>
+      <View
+        style={{
+          width: PILL_HEIGHT,
+          height: PILL_HEIGHT,
+          marginLeft: 10,
+          borderRadius: radius.pill,
+          backgroundColor: ls.card,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Svg width={17} height={17} viewBox="0 0 24 24">
+          {kind === 'edit' ? (
+            <Path
+              d="M4.6 19.4h3.2l9.2-9.2-3.2-3.2-9.2 9.2Zm11-13.6 1.6-1.6a1.4 1.4 0 0 1 2 0l1.2 1.2a1.4 1.4 0 0 1 0 2l-1.6 1.6Z"
+              stroke={ls.ink}
+              strokeWidth={1.7}
+              strokeLinejoin="round"
+              fill="none"
+            />
+          ) : (
+            <>
+              <Circle cx={12} cy={5.4} r={1.8} fill={ls.ink} />
+              <Circle cx={12} cy={12} r={1.8} fill={ls.ink} />
+              <Circle cx={12} cy={18.6} r={1.8} fill={ls.ink} />
+            </>
+          )}
+        </Svg>
+      </View>
+    </Pressable>
+  );
+}
+
+/** Which day is being shown, and the two things that can be done to it. */
+export function DayPills({ onDay, onEdit }: { onDay?: () => void; onEdit?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: PILLS_TOP }}>
+{/* STEP 1.07 today
+      <Pressable onPress={onDay} accessibilityRole="button" accessibilityLabel={copy.today}>
+        <View
+          style={{
+            height: PILL_HEIGHT,
+            paddingHorizontal: 14,
+            borderRadius: radius.pill,
+            backgroundColor: ls.card,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
+        >
+          <Svg width={17} height={17} viewBox="0 0 24 24">
+            <Rect
+              x={4}
+              y={6}
+              width={16}
+              height={14}
+              rx={3.4}
+              stroke={ls.ink}
+              strokeWidth={1.7}
+              fill="none"
+            />
+            <Path
+              d="M4 10.6h16M8.4 3.6v4M15.6 3.6v4"
+              stroke={ls.ink}
+              strokeWidth={1.7}
+              strokeLinecap="round"
+            />
+          </Svg>
+
+          <T variant="pill" color={ls.ink} style={{ marginLeft: 9, height: type.pill.line }}>
+            {copy.today}
+          </T>
+
+          <Svg width={15} height={15} viewBox="0 0 24 24" style={{ marginLeft: 8 }}>
+            <Path
+              d="m6.6 9.4 5.4 5.2 5.4-5.2"
+              stroke={ls.ink}
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+*/}
+
+      <View style={{ flex: 1 }} />
+
+{/* STEP 1.08 a way to change it
+      <Disc kind="edit" onPress={onEdit} />
+*/}
+{/* STEP 1.09 and the rest
+      <Disc kind="more" />
+*/}
+    </View>
+  );
+}

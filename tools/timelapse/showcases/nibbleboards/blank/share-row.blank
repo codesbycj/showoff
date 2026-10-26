@@ -1,0 +1,71 @@
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { copy, friends } from '../data/start';
+import { SHARE_TOP } from '../layout';
+import { nb, radius, type } from '../theme';
+import { T } from './text';
+
+/** One person the board can go to. */
+function Friend({ i }: { i: number }) {
+  const f = friends[i];
+  return (
+    <View style={{ alignItems: 'center', marginLeft: 10 }}>
+      <Image source={f.photo} style={{ width: 44, height: 44, borderRadius: radius.pill }} />
+      <T variant="friend" color={nb.muted} style={{ marginTop: 5, height: type.friend.line }}>
+        {f.name}
+      </T>
+    </View>
+  );
+}
+
+/**
+ * Who else can see this.
+ *
+ * The faces are photographs. Initials on a coloured disc is a fallback state,
+ * not a substitute for the design (AGENTS.md, "Faces are photographs"), and a
+ * share row built from them is visibly missing what the reference had.
+ */
+export function ShareRow({ onInvite }: { onInvite?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: SHARE_TOP }}>
+{/* STEP 1.30 the invitation
+      <T variant="share" color={nb.ink} style={{ flex: 1, marginRight: 14 }}>
+        {copy.share}
+      </T>
+*/}
+
+{/* STEP 1.31 a way to send it
+      <Pressable onPress={onInvite} accessibilityRole="button" accessibilityLabel="Invite someone">
+        <View
+          style={{
+            width: 44,
+            height: 44,
+            marginBottom: 19,
+            borderRadius: radius.pill,
+            backgroundColor: nb.well,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={17} height={17} viewBox="0 0 24 24">
+            <Path
+              d="M12 5.4v13.2M5.4 12h13.2"
+              stroke={nb.ink}
+              strokeWidth={2.2}
+              strokeLinecap="round"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+*/}
+
+{/* STEP 1.32 one friend
+      <Friend i={0} />
+*/}
+{/* STEP 1.33 and another
+      <Friend i={1} />
+*/}
+    </View>
+  );
+}

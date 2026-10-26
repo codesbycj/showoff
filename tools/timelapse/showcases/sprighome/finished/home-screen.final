@@ -1,0 +1,87 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+
+import { DayCard } from '@/features/sprighome/components/day-card';
+import { Dock } from '@/features/sprighome/components/dock';
+import { GenerateButton } from '@/features/sprighome/components/generate-button';
+import { MacroRow } from '@/features/sprighome/components/macro-row';
+import { MealCard } from '@/features/sprighome/components/meal-card';
+import { Greeting } from '@/features/sprighome/components/greeting';
+import { RangeToggle } from '@/features/sprighome/components/range-toggle';
+import { T } from '@/features/sprighome/components/text';
+import { brunch, copy, lunch, todayNum } from '@/features/sprighome/data/start';
+import { LIST_TOP, MARGIN, SECTION_TOP } from '@/features/sprighome/layout';
+import { sg, type } from '@/features/sprighome/theme';
+import { useInsets } from '@/features/sprighome/use-insets';
+
+/**
+ * Sprig — the day.
+ *
+ * Assembly only: who is here, today or the week, the day's calories, the
+ * macros, a way to fill the day in, and what has been eaten so far.
+ *
+ * The meals scroll under the dock so the list runs off the bottom edge rather
+ * than stopping short of it, which is what the reference crops. The day and
+ * the range are real state held here, so adding a destination is a line in
+ * this file rather than a change to a component.
+ */
+export default function SprighomeScreen() {
+  const insets = useInsets();
+  const [range, setRange] = useState('today');
+  const [picked, setPicked] = useState(todayNum);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: sg.canvas, paddingTop: insets.top }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingHorizontal: MARGIN }}>
+        <Greeting />
+
+        <RangeToggle range={range} onRange={setRange} />
+
+        <DayCard picked={picked} onPick={setPicked} />
+
+        <MacroRow />
+
+        <GenerateButton onPress={() => router.push('/sprigdish')} />
+
+        <T
+          variant="section"
+          color={sg.ink}
+          style={{ marginTop: SECTION_TOP, height: type.section.line }}
+        >
+          {copy.meals}
+        </T>
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: MARGIN, paddingTop: LIST_TOP }}
+      >
+        <MealCard
+          id={brunch.id}
+          name={brunch.name}
+          items={brunch.items}
+          onAdd={() => router.push('/sprigdish')}
+        />
+        <MealCard
+          id={lunch.id}
+          name={lunch.name}
+          items={lunch.items}
+          glyph="bowl"
+          onAdd={() => router.push('/sprigdish')}
+        />
+      </ScrollView>
+
+      <View style={{ paddingHorizontal: MARGIN, paddingBottom: insets.bottom }}>
+        <Dock
+          active="day"
+          onSelect={(id) => id === 'burn' && router.push('/sprigprogress')}
+          onAdd={() => router.push('/sprigdish')}
+        />
+      </View>
+    </View>
+  );
+}

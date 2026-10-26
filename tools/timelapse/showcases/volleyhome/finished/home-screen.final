@@ -1,0 +1,55 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BookBar } from '@/features/volleyhome/components/book-bar';
+import { BrandHead } from '@/features/volleyhome/components/brand-head';
+import { Dock } from '@/features/volleyhome/components/dock';
+import { EventRail, UpcomingHead } from '@/features/volleyhome/components/event-rail';
+import { HeroCard } from '@/features/volleyhome/components/hero-card';
+import { QuickTiles } from '@/features/volleyhome/components/quick-tiles';
+import { MARGIN } from '@/features/volleyhome/layout';
+import { vl } from '@/features/volleyhome/theme';
+import { useInsets } from '@/features/volleyhome/use-insets';
+
+/**
+ * Volley - the home.
+ *
+ * Assembly only: the brand, the event the app wants you in, the four things
+ * it is for, a court to book, what is on soon, and where else it goes.
+ *
+ * The event rail takes `flex: 1`, so it grows into whatever the phone can
+ * spare and the dock sits on the bottom inset - the screen has no band of
+ * empty white at the foot.
+ */
+export default function VolleyhomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: vl.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <BrandHead />
+
+      <HeroCard onJoin={() => router.push('/volleyevent')} />
+
+      <QuickTiles onPress={() => router.push('/volleyevent')} />
+
+      <BookBar onBook={() => router.push('/volleyevent')} />
+
+      <UpcomingHead onSeeAll={() => router.push('/volleyevent')} />
+
+      <EventRail onPress={() => router.push('/volleyevent')} />
+
+      <Dock active="home" onSelect={(id) => id === 'rank' && router.push('/volleyrank')} />
+    </View>
+  );
+}

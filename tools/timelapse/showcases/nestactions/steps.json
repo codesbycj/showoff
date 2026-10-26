@@ -1,0 +1,245 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "@/features/nestactions/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "@/features/nestactions/components/action-list"
+   ],
+   "label": "what has moved"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the columns"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the rows"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.11"
+   ],
+   "label": "which coin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.12"
+   ],
+   "label": "who it was"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.13"
+   ],
+   "label": "their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and how much, if it is open"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the one that is open"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.16"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.17"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.18"
+   ],
+   "label": "two more"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/action-list.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and the last two"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "@/features/nestactions/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestactions/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and a dark bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/dock.tsx",
+    "STEP 1.22"
+   ],
+   "label": "the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/dock.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the wallet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/dock.tsx",
+    "STEP 1.24"
+   ],
+   "label": "how it is doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/dock.tsx",
+    "STEP 1.25"
+   ],
+   "label": "what has happened"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestactions/components/dock.tsx",
+    "STEP 1.26"
+   ],
+   "label": "and where it is kept"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nestactions/components/dock.tsx",
+    [
+     "// MISTAKE 1.27",
+     "opacity: 0.35,"
+    ]
+   ],
+   "label": "the tabs came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "action-list",
+     "src/features/nestactions/components/action-list.tsx"
+    ],
+    [
+     "actions-screen",
+     "src/app/nestactions/index.tsx"
+    ],
+    [
+     "dock",
+     "src/features/nestactions/components/dock.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/nestactions/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

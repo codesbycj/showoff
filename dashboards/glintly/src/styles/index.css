@@ -1,0 +1,235 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+
+/*
+ * Metriqo.
+ *
+ * A posed board with furniture: the reference is a macOS browser window on a
+ * very light ground. The chrome is a presentation effect exactly as the board
+ * is, so both are dropped and the page starts at the app's own sidebar.
+ *
+ * refscan read the palette off it: white cards on #f3f4f8, #245de8 for the
+ * blue, #7b9ef2, #cad9fa and #e8eefc for its tints.
+ *
+ * **This is the one episode in the batch with a light/dark switch**, because
+ * the reference puts one at the foot of its sidebar — so both are designed and
+ * both are probed (rule 7). The dark palette is not an inversion: the greys
+ * are warmed, the blue is lifted so it still reads against a dark card, and
+ * the heat scale is rebuilt rather than flipped.
+ *
+ * `static`, because the heatmap takes its cell fill as inline
+ * `var(--color-heat-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #f3f4f8;
+  --color-surface: #ffffff;
+  --color-sunken: #f6f7fa;
+  --color-sunken-deep: #e7e9f0;
+
+  --color-ink: #12141c;
+  --color-body: #434754;
+  /* 4.75:1 on the page ground. */
+  --color-muted: #63677a;
+  --color-line: #e8eaf1;
+
+  /*
+   * #245de8 carries white at 5.6:1, so unusually for this batch the brand
+   * blue *can* hold text and the deep variant is only for the dark theme,
+   * where the brand blue is too dark against a dark card.
+   */
+  --color-accent: #245de8;
+  --color-accent-deep: #1b48b4;
+  --color-accent-mid: #7b9ef2;
+  --color-accent-soft: #cad9fa;
+  --color-accent-faint: #e8eefc;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #1b7a45;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The time-of-day heatmap, coldest to hottest. */
+  --color-heat-0: #f1f3f8;
+  --color-heat-1: #e8eefc;
+  --color-heat-2: #cad9fa;
+  --color-heat-3: #7b9ef2;
+  --color-heat-4: #245de8;
+
+  /* Sessions by device. */
+  --color-dev-desktop: #245de8;
+  --color-dev-mobile: #7b9ef2;
+  --color-dev-tablet: #cad9fa;
+
+  /* Traffic sources, and the funnel's five bands. Marks only — nothing with
+     text on it takes one of these. */
+  --color-src-search: #245de8;
+  --color-src-direct: #4f7df0;
+  --color-src-social: #7b9ef2;
+  --color-src-referral: #b9c4dd;
+
+  --color-funnel-0: #1b48b4;
+  --color-funnel-1: #245de8;
+  --color-funnel-2: #4f7df0;
+  --color-funnel-3: #7b9ef2;
+  --color-funnel-4: #a9c0f6;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(18 20 28 / 0.05);
+}
+
+/*
+ * The dark theme.
+ *
+ * Driven by `data-theme` on the root rather than by the media query: the
+ * reference's switch is a control, so the viewer's choice has to win over
+ * their system. The light theme is re-stated under `[data-theme='light']`
+ * for the same reason.
+ */
+:root[data-theme='dark'] {
+  --color-ground: #0f1117;
+  --color-surface: #171a22;
+  --color-sunken: #1d2029;
+  --color-sunken-deep: #262a35;
+
+  --color-ink: #f2f4f9;
+  --color-body: #c3c7d4;
+  /* 7.1:1 on the dark page ground. */
+  --color-muted: #949aab;
+  --color-line: #262a35;
+
+  --color-accent: #5d8bff;
+  --color-accent-deep: #8fb0ff;
+  --color-accent-mid: #3f6ae0;
+  --color-accent-soft: #27345a;
+  --color-accent-faint: #1b2338;
+  --color-accent-fg: #0b1020;
+
+  --color-positive: #5ed08c;
+  --color-positive-soft: #16311f;
+  --color-danger: #f08a80;
+  --color-danger-soft: #35191a;
+  --color-warn: #e0b45c;
+  --color-warn-soft: #332a14;
+
+  --color-heat-0: #1b1f29;
+  --color-heat-1: #22304f;
+  --color-heat-2: #2f4a84;
+  --color-heat-3: #3f6ae0;
+  --color-heat-4: #7ba3ff;
+
+  --color-dev-desktop: #5d8bff;
+  --color-dev-mobile: #3f6ae0;
+  --color-dev-tablet: #27345a;
+
+  --color-src-search: #7ba3ff;
+  --color-src-direct: #5d8bff;
+  --color-src-social: #3f6ae0;
+  --color-src-referral: #3a4360;
+
+  --color-funnel-0: #9fbcff;
+  --color-funnel-1: #7ba3ff;
+  --color-funnel-2: #5d8bff;
+  --color-funnel-3: #3f6ae0;
+  --color-funnel-4: #2d4ea8;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  /*
+   * The UA's own widgets — the caret, the scrollbars, the search field's
+   * clear control — follow the *chosen* theme rather than the system's.
+   * Declared in CSS, not in the meta tag: the meta cannot know which way the
+   * switch in the sidebar is set.
+   */
+  :root {
+    color-scheme: light;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

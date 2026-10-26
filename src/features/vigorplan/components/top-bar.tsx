@@ -1,0 +1,113 @@
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { avatar, unread } from '../data/start';
+import { AVATAR, HEAD_DISC, HEAD_TOP } from '../layout';
+import { radius, type, vg } from '../theme';
+import { T } from './text';
+
+/**
+ * Who is here, a way to add, and what is waiting.
+ *
+ * The unread count is a real number from the data, so the badge cannot say
+ * one thing while the list says another. It is a sibling of the Svg rather
+ * than a `<Circle>` inside it, so it can overhang the glyph's own box.
+ */
+export function TopBar({ onAdd, onBell }: { onAdd?: () => void; onBell?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: HEAD_TOP }}>
+{/* STEP 1.03 a face
+      <Image
+        source={avatar}
+        style={{
+          width: AVATAR,
+          height: AVATAR,
+          borderRadius: radius.pill,
+          borderWidth: 2,
+          borderColor: vg.onOrange,
+        }}
+      />
+*/}
+
+{/* STEP 1.04 a way to add
+      <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel="Add">
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            marginLeft: -10,
+            borderRadius: radius.pill,
+            backgroundColor: vg.orangeSoft,
+            borderWidth: 2,
+            borderColor: vg.onOrange,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={14} height={14} viewBox="0 0 24 24">
+            <Path
+              d="M12 5.4v13.2M5.4 12h13.2"
+              stroke={vg.onOrange}
+              strokeWidth={2.4}
+              strokeLinecap="round"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+*/}
+
+      <View style={{ flex: 1 }} />
+
+{/* STEP 1.05 and what is waiting
+      <Pressable onPress={onBell} accessibilityRole="button" accessibilityLabel="Notifications">
+        <View
+          style={{
+            width: HEAD_DISC,
+            height: HEAD_DISC,
+            borderRadius: radius.pill,
+            backgroundColor: vg.orangeSoft,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={20} height={20} viewBox="0 0 24 24">
+            <Path
+              d="M6 10.4a6 6 0 0 1 12 0c0 3.2.8 4.6 1.5 5.4.4.5 0 1.2-.6 1.2H5.1c-.6 0-1-.7-.6-1.2.7-.8 1.5-2.2 1.5-5.4Z"
+              stroke={vg.onOrange}
+              strokeWidth={1.9}
+              strokeLinejoin="round"
+              fill="none"
+            />
+            <Path
+              d="M10 19.4a2.2 2.2 0 0 0 4 0"
+              stroke={vg.onOrange}
+              strokeWidth={1.9}
+              strokeLinecap="round"
+              fill="none"
+            />
+          </Svg>
+
+          <View
+            style={{
+              position: 'absolute',
+              top: -2,
+              right: -2,
+              minWidth: 20,
+              height: 20,
+              paddingHorizontal: 5,
+              borderRadius: radius.pill,
+              backgroundColor: vg.badge,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="badge" color={vg.onOrange} style={{ height: type.badge.line }}>
+              {String(unread)}
+            </T>
+          </View>
+        </View>
+      </Pressable>
+*/}
+    </View>
+  );
+}

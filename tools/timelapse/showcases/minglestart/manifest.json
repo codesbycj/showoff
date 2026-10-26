@@ -1,0 +1,7 @@
+{
+ "start-screen": "src/app/minglestart/index.tsx",
+ "wordmark": "src/features/minglestart/components/wordmark.tsx",
+ "constellation": "src/features/minglestart/components/constellation.tsx",
+ "pitch": "src/features/minglestart/components/pitch.tsx",
+ "start-button": "src/features/minglestart/components/start-button.tsx"
+}

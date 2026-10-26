@@ -1,0 +1,49 @@
+import { Pressable, View } from 'react-native';
+
+import { copy } from '../data/start';
+import { CTA_HEIGHT } from '../layout';
+import { radius, type, vl } from '../theme';
+import { T } from './text';
+
+/**
+ * The one thing this screen is for.
+ *
+ * The green is an absolutely-filled child rather than this View's own fill,
+ * so the blank state is a blank page and the button arrives as a step.
+ */
+export function JoinButton({ onPress }: { onPress?: () => void }) {
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={copy.cta}
+      style={({ pressed }) => ({ opacity: pressed ? 0.9 : 1 })}
+    >
+      <View
+        style={{
+          height: CTA_HEIGHT,
+          borderRadius: radius.pill,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+{/* STEP 1.23 the green
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            borderRadius: radius.pill,
+            backgroundColor: vl.green,
+          }}
+        />
+*/}
+        <T variant="cta" color={vl.onGreen} style={{ height: type.cta.line }}>
+          {copy.cta}
+        </T>
+      </View>
+    </Pressable>
+  );
+}

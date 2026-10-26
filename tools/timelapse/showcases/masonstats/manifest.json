@@ -1,0 +1,8 @@
+{
+ "stats-screen": "src/app/masonstats/index.tsx",
+ "top-bar": "src/features/masonstats/components/top-bar.tsx",
+ "segmented": "src/features/masonstats/components/segmented.tsx",
+ "completion-card": "src/features/masonstats/components/completion-card.tsx",
+ "forecast-card": "src/features/masonstats/components/forecast-card.tsx",
+ "dock": "src/features/masonstats/components/dock.tsx"
+}

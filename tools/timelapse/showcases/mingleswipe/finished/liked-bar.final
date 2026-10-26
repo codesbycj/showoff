@@ -1,0 +1,91 @@
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Circle, Path } from 'react-native-svg';
+
+import { avatar, copy, likes } from '../data/start';
+import { HEAD_AVATAR, HEAD_DISC, HEAD_TOP } from '../layout';
+import { mg, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Who is looking, and how many of them.
+ *
+ * The count on the badge is `likes` from the data, so it cannot say one
+ * thing while the list behind it says another. The badge is a sibling of the
+ * Svg rather than a `<Circle>` inside it, so it can overhang the glyph's own
+ * box.
+ */
+export function LikedBar({ onOpen }: { onOpen?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: HEAD_TOP }}>
+      <Image
+        source={avatar}
+        style={{
+          width: HEAD_AVATAR,
+          height: HEAD_AVATAR,
+          borderRadius: radius.pill,
+          borderWidth: 2,
+          borderColor: mg.over,
+        }}
+      />
+
+      <T
+        variant="liked"
+        color={mg.over}
+        style={{ flex: 1, marginLeft: 12, height: type.liked.line }}
+      >
+        {copy.liked}
+      </T>
+
+      <Pressable onPress={onOpen} accessibilityRole="button" accessibilityLabel={copy.liked}>
+        <View
+          style={{
+            width: HEAD_DISC,
+            height: HEAD_DISC,
+            borderRadius: radius.pill,
+            backgroundColor: mg.glass,
+            borderWidth: 1,
+            borderColor: mg.glassLine,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={20} height={20} viewBox="0 0 24 24">
+            <Circle cx={10} cy={8.4} r={3.6} stroke={mg.over} strokeWidth={1.8} fill="none" />
+            <Path
+              d="M3.6 20.4c.6-3.6 3.2-5.6 6.4-5.6s5.8 2 6.4 5.6"
+              stroke={mg.over}
+              strokeWidth={1.8}
+              strokeLinecap="round"
+              fill="none"
+            />
+            <Path
+              d="M17.4 7.4h4M19.4 5.4v4"
+              stroke={mg.over}
+              strokeWidth={1.8}
+              strokeLinecap="round"
+            />
+          </Svg>
+
+          <View
+            style={{
+              position: 'absolute',
+              top: -2,
+              right: -2,
+              minWidth: 20,
+              height: 20,
+              paddingHorizontal: 5,
+              borderRadius: radius.pill,
+              backgroundColor: mg.red,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="badge" color={mg.onRed} style={{ height: type.badge.line }}>
+              {String(likes)}
+            </T>
+          </View>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

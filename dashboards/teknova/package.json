@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 2: Teknova Store, an e-commerce control room.",
+  "description": "Dashboard episode 2: Kovelt Store, an e-commerce control room.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

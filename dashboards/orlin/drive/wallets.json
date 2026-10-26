@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:5352/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-wallets", "click": "[data-tab='wallets']", "settle": 950, "rest": true },
+
+    { "name": "wallet-growth", "click": "[data-wallet='growth']", "settle": 900, "rest": true },
+    { "name": "wallet-reserve", "click": "[data-wallet='reserve']", "settle": 900, "rest": true },
+    { "name": "wallet-everyday", "click": "[data-wallet='everyday']", "settle": 900, "rest": true },
+
+    { "name": "moved", "click": "[data-action='move']", "settle": 800, "rest": true },
+    { "name": "move-undone", "click": "[data-action='move']", "settle": 800, "rest": true },
+
+    { "name": "sort-amount", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-amount-asc", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-name", "click": "[data-sort='name']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-sort='stamp']", "settle": 750, "rest": true },
+
+    { "name": "mask-on", "click": "[aria-label='Hide every figure']", "settle": 900, "rest": true },
+    { "name": "mask-off", "click": "[aria-label='Show the figures']", "settle": 900, "rest": true },
+
+    { "name": "search-hawkins", "fill": ["[data-search]", "hawkins"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

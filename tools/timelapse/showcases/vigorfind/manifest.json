@@ -1,0 +1,8 @@
+{
+ "find-screen": "src/app/vigorfind/index.tsx",
+ "top-bar": "src/features/vigorfind/components/top-bar.tsx",
+ "headline": "src/features/vigorfind/components/headline.tsx",
+ "search-line": "src/features/vigorfind/components/search-line.tsx",
+ "filter-chips": "src/features/vigorfind/components/filter-chips.tsx",
+ "article-rail": "src/features/vigorfind/components/article-rail.tsx"
+}

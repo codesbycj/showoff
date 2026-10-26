@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/rubik';
+
+/*
+ * Atelyra.
+ *
+ * A posed board, and one with furniture: the reference is a macOS browser
+ * window — traffic lights, a back arrow, a URL bar — sitting on a grey ground.
+ * The chrome is a presentation effect like the board itself, so both are
+ * dropped and the page starts at the app's own header.
+ *
+ * refscan read the palette off it: white cards on #f4f4f4, #e16448 for the
+ * orange-red, #0c0c0c for the near-black.
+ *
+ * `static`, because the dot matrices take their fill as inline
+ * `var(--color-dot-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #f4f4f4;
+  --color-surface: #ffffff;
+  --color-sunken: #f6f6f6;
+  --color-sunken-deep: #e9e9e9;
+
+  --color-ink: #121212;
+  --color-body: #44464a;
+  /* 4.78:1 on the page ground. */
+  --color-muted: #65676b;
+  --color-line: #e8e8e8;
+
+  /*
+   * Two reds, and the split is measured. #e16448 is the brand's own, read off
+   * the reference, and it carries white at 3.1:1. So #e16448 is the *mark*
+   * colour (dots, bars, lines) and #b23c22 is the one anything with text on it
+   * uses: Enable, the active dot, the alerts badge. 5.6:1.
+   */
+  --color-accent: #e16448;
+  --color-accent-deep: #b23c22;
+  --color-accent-soft: #f2b9a9;
+  --color-accent-faint: #fbe9e3;
+
+  --color-ink-fill: #0c0c0c; /* the Receive button and the active nav pill */
+  --color-ink-fg: #f6f6f6;
+
+  --color-positive: #1d7a3f;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The dot matrices: an unfilled dot and a filled one. */
+  --color-dot-off: #dcdcdc;
+  --color-dot-on: #e16448;
+  --color-dot-dim: #f0c4b8;
+
+  --font-sans: 'Rubik Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(18 18 18 / 0.04);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

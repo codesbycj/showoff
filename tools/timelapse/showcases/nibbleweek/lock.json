@@ -1,0 +1,23 @@
+{
+ "assets/images/nibbleweek/CREDITS.md": "24a06e0a011c2dc74159c8ef1ab940e9bbd858bf82e01863bf64a7b61645bbdc",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "e8f2c70a9a1feb7e4a6125f91d300eebfe99475512c902bca1b13dd343a1a9a6",
+ "src/app/nibbleweek/index.tsx": "81cf9d5f06cee06ead13b155700f5f74a8ec8a7bd7066e95b2632f336161e4ae",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/nibbleweek/components/count-bar.tsx": "6ca347e3049d8badccf59bbc95ea6b2a3add11cb18eb6c1a4935885231fea2be",
+ "src/features/nibbleweek/components/food-cards.tsx": "2fad1d0f4dca83a33d5322f5a0aee09f16ca5fe436fa77ac541816ff8f071943",
+ "src/features/nibbleweek/components/left-block.tsx": "b13d98e4a0c6f8f5ea592377da20baecdc58829ea320be3d12e6dc4c300e6412",
+ "src/features/nibbleweek/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/nibbleweek/components/top-bar.tsx": "5ed96d98823910e7f77062f8d35461a845861b007259e0e42462689f91bb45a2",
+ "src/features/nibbleweek/components/week-strip.tsx": "c350e17bdca74191b5c64ac2cffb71bd7f1a565806a7406700b70865813c9623",
+ "src/features/nibbleweek/data/start.ts": "cdfe058d35bd8322c73b4b8e14eb26e225ec2f001f1878db4f68e4c8d4a360d0",
+ "src/features/nibbleweek/layout.ts": "db7a7fdc866a93d8583f533068fd6d2aba7ce61b6e8f2ea9de3de4c2d29b3e35",
+ "src/features/nibbleweek/theme.ts": "8eac9304a0005c4a4c52c1f76a041894225c5e75545c7c9904919ca8603f8ca8",
+ "src/features/nibbleweek/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

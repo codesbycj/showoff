@@ -1,0 +1,78 @@
+import { View } from 'react-native';
+
+import { macros } from '../data/start';
+import { MACRO_HEIGHT, MACRO_TOP } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+const TONES = {
+  blue: { fill: sg.blue, ink: sg.blueInk },
+  lime: { fill: sg.lime, ink: sg.limeInk },
+  peach: { fill: sg.peach, ink: sg.peachInk },
+} as const;
+
+/**
+ * One macro. The bar under it is `value / target` — the reference prints the
+ * pair and draws no bar at all, which leaves the tile saying a number twice
+ * and showing nothing.
+ */
+function Tile({ i }: { i: number }) {
+  const m = macros[i];
+  const tone = TONES[m.tone];
+  const share = Math.min(1, m.value / m.target);
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        height: MACRO_HEIGHT,
+        borderRadius: radius.tile,
+        paddingHorizontal: 12,
+        paddingTop: 9,
+      }}
+    >
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius.tile,
+          backgroundColor: tone.fill,
+        }}
+      />
+
+      <T variant="macroName" color={tone.ink} style={{ height: type.macroName.line }}>
+        {m.name}
+      </T>
+      <T variant="macroValue" color={sg.ink} style={{ height: type.macroValue.line }}>
+        {`${m.value} / ${m.target}g`}
+      </T>
+
+      <View
+        style={{
+          height: 4,
+          marginTop: 6,
+          borderRadius: 2,
+          backgroundColor: sg.card,
+          flexDirection: 'row',
+        }}
+      >
+        <View style={{ flex: share, borderRadius: 2, backgroundColor: tone.ink }} />
+        <View style={{ flex: 1 - share }} />
+      </View>
+    </View>
+  );
+}
+
+/** Carbs, protein and fat against their targets. */
+export function MacroRow() {
+  return (
+    <View style={{ flexDirection: 'row', gap: 10, marginTop: MACRO_TOP }}>
+      <Tile i={0} />
+      <Tile i={1} />
+      <Tile i={2} />
+    </View>
+  );
+}

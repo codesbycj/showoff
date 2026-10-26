@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/sora';
+
+/*
+ * Quilbo.
+ *
+ * A posed board: one rounded panel on a flat grey ground. refscan read the
+ * palette off it — #f2f2f2 for the panel, white cards, #108652 for the brand
+ * green, #8ebda9 for the hatched bars and #e5f1ed for the tints. The board is
+ * dropped and the panel's ground becomes the page.
+ *
+ * `static`, because the bar chart takes its hatch and fill colours as inline
+ * `var(--color-bar-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #f2f3f1;
+  --color-surface: #ffffff;
+  --color-sunken: #f1f5f3;
+  --color-sunken-deep: #e2eae6;
+
+  --color-ink: #10231b;
+  --color-body: #3c4a44;
+  /* 4.72:1 on the page ground. */
+  --color-muted: #616d67;
+  --color-line: #e6ebe8;
+
+  /*
+   * Two greens, and the split is measured. #108652 is the brand's own, read
+   * off the reference, and it carries white at 4.61:1 and the off-white tint
+   * at 4.36:1 — too thin for small type. So #108652 is the *mark* colour
+   * (bars, dots, meters, rings) and #0b5f3a is the one anything with text on
+   * it uses: the card, Send, the bubble, the active rail pill. 7.74:1.
+   */
+  --color-accent: #108652;
+  --color-accent-deep: #0b5f3a;
+  --color-accent-soft: #8ebda9;
+  --color-accent-faint: #e5f1ed;
+  --color-accent-fg: #f1fbf6;
+
+  --color-ink-fill: #10231b; /* the dark pill button */
+  --color-ink-fg: #f3f7f5;
+
+  --color-positive: #1a7a45;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The engagement bars: a hatched resting state and a solid highlight. */
+  --color-bar: #8ebda9;
+  --color-bar-hatch: #a9ccbd;
+  --color-bar-on: #108652;
+
+  --font-sans: 'Sora Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 18px;
+  --shadow-card: 0 1px 2px rgb(16 35 27 / 0.04), 0 12px 26px -22px rgb(16 35 27 / 0.22);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

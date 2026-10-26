@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:5368/",
+  "w": 1440,
+  "h": 900,
+  "settle": 500,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "hover-01",
+      "hover": ".hover\\:bg-accent-faint",
+      "rest": true
+    },
+    {
+      "name": "hover-02",
+      "hover": ".hover\\:bg-sunken",
+      "rest": true
+    },
+    {
+      "name": "hover-03",
+      "hover": ".hover\\:outline-\\[var\\(--color-ink-fill\\)\\]",
+      "rest": true
+    },
+    {
+      "name": "hover-04",
+      "hover": ".hover\\:text-ink",
+      "rest": true
+    }
+  ]
+}

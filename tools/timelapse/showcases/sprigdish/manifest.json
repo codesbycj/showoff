@@ -1,0 +1,8 @@
+{
+ "dish-screen": "src/app/sprigdish/index.tsx",
+ "hero": "src/features/sprigdish/components/hero.tsx",
+ "fact-row": "src/features/sprigdish/components/fact-row.tsx",
+ "portion-fields": "src/features/sprigdish/components/portion-fields.tsx",
+ "add-bar": "src/features/sprigdish/components/add-bar.tsx",
+ "facts-list": "src/features/sprigdish/components/facts-list.tsx"
+}

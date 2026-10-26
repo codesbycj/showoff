@@ -1,0 +1,130 @@
+import { View } from 'react-native';
+import Svg, { Circle, Path, Polygon } from 'react-native-svg';
+
+import { age, copy, interests } from '../data/start';
+import { BIO_TOP, CHIPS_TOP, CHIP_HEIGHT, PLACE_TOP } from '../layout';
+import { mg, radius, type } from '../theme';
+import { T } from './text';
+
+/** The glyph on an interest chip, drawn rather than taken from the emoji table. */
+function Mark({ id }: { id: string }) {
+  if (id === 'music') {
+    return (
+      <Svg width={14} height={14} viewBox="0 0 24 24">
+        <Path
+          d="M9.4 18V5.6l9.2-2v12.4"
+          stroke={mg.over}
+          strokeWidth={1.8}
+          strokeLinejoin="round"
+          fill="none"
+        />
+        <Circle cx={7.2} cy={18} r={2.4} stroke={mg.over} strokeWidth={1.8} fill="none" />
+        <Circle cx={16.4} cy={16} r={2.4} stroke={mg.over} strokeWidth={1.8} fill="none" />
+      </Svg>
+    );
+  }
+  if (id === 'cinema') {
+    return (
+      <Svg width={14} height={14} viewBox="0 0 24 24">
+        <Circle cx={12} cy={12} r={8.6} stroke={mg.over} strokeWidth={1.8} fill="none" />
+        <Polygon points="10,8.4 16.2,12 10,15.6" fill={mg.over} />
+      </Svg>
+    );
+  }
+  return (
+    <Svg width={14} height={14} viewBox="0 0 24 24">
+      <Path d="M13.4 2.6 5.6 13.4h5.2l-.6 8 7.8-10.8h-5.2Z" fill={mg.over} />
+    </Svg>
+  );
+}
+
+/** One interest. Written out so the reveal lands them one at a time. */
+function Chip({ i }: { i: number }) {
+  const c = interests[i];
+  return (
+    <View
+      style={{
+        height: CHIP_HEIGHT,
+        paddingHorizontal: 14,
+        marginRight: 8,
+        borderRadius: radius.chip,
+        backgroundColor: mg.glass,
+        borderWidth: 1,
+        borderColor: mg.glassLine,
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}
+    >
+      <Mark id={c.id} />
+      <T variant="chip" color={mg.over} style={{ marginLeft: 7, height: type.chip.line }}>
+        {c.label}
+      </T>
+    </View>
+  );
+}
+
+/**
+ * Who this is.
+ *
+ * The age trails the name in a lighter weight and a dimmer white, which is
+ * the reference's treatment — and it is a separate `T` on the same baseline
+ * rather than part of the same string, so the two can take different sizes
+ * without a nested Text whose baseline differs between web and Android.
+ */
+export function ProfileBlock() {
+  return (
+    <View>
+{/* STEP 1.12 where they are
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: PLACE_TOP }}>
+        <Svg width={15} height={15} viewBox="0 0 24 24">
+          <Path
+            d="M12 21.4c4.4-4.6 6.6-7.8 6.6-10.8a6.6 6.6 0 0 0-13.2 0c0 3 2.2 6.2 6.6 10.8Z"
+            stroke={mg.over}
+            strokeWidth={1.8}
+            strokeLinejoin="round"
+            fill="none"
+          />
+          <Circle cx={12} cy={10.4} r={2.4} stroke={mg.over} strokeWidth={1.8} fill="none" />
+        </Svg>
+        <T variant="place" color={mg.over} style={{ marginLeft: 7, height: type.place.line }}>
+          {copy.place}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.13 who they are
+      <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
+        <T variant="name" color={mg.over} style={{ height: type.name.line }}>
+          {copy.name}
+        </T>
+        <T variant="age" color={mg.overDim} style={{ marginLeft: 10, height: type.age.line }}>
+          {String(age)}
+        </T>
+      </View>
+*/}
+
+      <View style={{ flexDirection: 'row', marginTop: CHIPS_TOP }}>
+{/* STEP 1.14 music
+        <Chip i={0} />
+*/}
+{/* STEP 1.15 cinema
+        <Chip i={1} />
+*/}
+{/* STEP 1.16 and sport
+        <Chip i={2} />
+*/}
+      </View>
+
+{/* STEP 1.17 and what they say
+      <View style={{ marginTop: BIO_TOP }}>
+        <T variant="bioLabel" color={mg.over} style={{ height: type.bioLabel.line }}>
+          {copy.bioLabel}
+        </T>
+        <T variant="bio" color={mg.over}>
+          {copy.bio}
+        </T>
+      </View>
+*/}
+    </View>
+  );
+}

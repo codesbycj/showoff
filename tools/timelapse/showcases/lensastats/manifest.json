@@ -1,0 +1,7 @@
+{
+ "stats-screen": "src/app/lensastats/index.tsx",
+ "top-bar": "src/features/lensastats/components/top-bar.tsx",
+ "day-chart": "src/features/lensastats/components/day-chart.tsx",
+ "calories-card": "src/features/lensastats/components/calories-card.tsx",
+ "nutrition-card": "src/features/lensastats/components/nutrition-card.tsx"
+}

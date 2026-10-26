@@ -1,0 +1,58 @@
+{
+  "url": "http://localhost:5348/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "wallet-eur", "click": "[data-wallet='eur']", "settle": 850, "rest": true },
+    { "name": "wallet-bdt", "click": "[data-wallet='bdt']", "settle": 850, "rest": true },
+    { "name": "wallet-gbp", "click": "[data-wallet='gbp']", "settle": 850, "rest": true },
+
+    { "name": "currency-open", "click": "[data-select='currency'] > button", "settle": 600, "rest": true },
+    { "name": "currency-usd", "click": "[data-menu='currency'] [data-option='usd']", "settle": 850, "rest": true },
+
+    { "name": "sent", "click": "[data-action='send']", "settle": 700, "rest": true },
+    { "name": "requested", "click": "[data-action='request']", "settle": 700, "rest": true },
+    { "name": "request-off", "click": "[data-action='request']", "settle": 700, "rest": true },
+
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-last", "click": "[data-menu='span'] [data-option='last']", "settle": 900, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-year", "click": "[data-menu='span'] [data-option='year']", "settle": 900, "rest": true },
+
+    { "name": "bar-mar", "hover": "[data-card='overview'] [data-mark='mar']", "against": "span-year" },
+    { "name": "bar-dec", "hover": "[data-card='overview'] [data-mark='dec']", "against": "bar-mar" },
+
+    { "name": "plan-open", "click": "[data-plan='emergency']", "settle": 700, "rest": true },
+    { "name": "plan-close", "click": "[data-plan='emergency']", "settle": 700, "rest": true },
+    { "name": "plans-scrolled", "wheel": ["[data-scroller='plans']", 220], "rest": true },
+    { "name": "plans-top", "wheel": ["[data-scroller='plans']", -220], "rest": true },
+
+    { "name": "sort-price", "click": "[data-card='recent'] [data-sort='price']", "settle": 750, "rest": true },
+    { "name": "sort-price-asc", "click": "[data-card='recent'] [data-sort='price']", "settle": 750, "rest": true },
+    { "name": "sort-activity", "click": "[data-card='recent'] [data-sort='activity']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-card='recent'] [data-sort='stamp']", "settle": 750, "rest": true },
+    { "name": "recent-scrolled", "wheel": ["[data-scroller='recent']", 200], "rest": true },
+    { "name": "recent-top", "wheel": ["[data-scroller='recent']", -200], "rest": true },
+
+    { "name": "exported", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "mail-read", "click": "[data-action='mail']", "settle": 650, "rest": true },
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 650, "rest": true },
+    { "name": "pro-on", "click": "[data-action='pro']", "settle": 750, "rest": true },
+    { "name": "pro-off", "click": "[data-action='pro']", "settle": 750, "rest": true },
+
+    { "name": "search-grocery", "fill": ["[data-search]", "grocery"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-ledger", "click": "[aria-label='Open the full ledger']", "settle": 950, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 950, "rest": true },
+
+    { "name": "inert-analytics", "click": "[data-tab='analytics']", "against": "back-dashboard", "expectUnchanged": true },
+    { "name": "inert-invoices", "click": "[data-tab='invoices']", "against": "back-dashboard", "expectUnchanged": true }
+  ]
+}

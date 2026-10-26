@@ -1,0 +1,46 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Constellation } from '@/features/minglestart/components/constellation';
+import { Pitch } from '@/features/minglestart/components/pitch';
+import { StartButton } from '@/features/minglestart/components/start-button';
+import { Wordmark } from '@/features/minglestart/components/wordmark';
+import { MARGIN } from '@/features/minglestart/layout';
+import { mg } from '@/features/minglestart/theme';
+import { useInsets } from '@/features/minglestart/use-insets';
+
+/**
+ * Mingle — the welcome.
+ *
+ * Assembly only: the brand, the people, what the app is, and the way in.
+ *
+ * The constellation takes `flex: 1`, so it opens out into whatever the phone
+ * can spare above the sentence and the button sits on the bottom inset — the
+ * screen has no band of empty red at the foot.
+ */
+export default function MinglestartScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: mg.red,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <Wordmark />
+
+      <Constellation />
+
+      <Pitch />
+
+      <StartButton onPress={() => router.push('/mingleswipe')} />
+    </View>
+  );
+}

@@ -1,6 +1,6 @@
 # teknova — episode 2
 
-Teknova Store, an e-commerce control room, rebuilt from a posed presentation board as a
+Kovelt Store, an e-commerce control room, rebuilt from a posed presentation board as a
 working three-tab app with a real light/dark switch. Port 5304.
 
 ```bash
@@ -131,7 +131,7 @@ fix.**
 7. **The period control, the category filter, the sort, the stock bands and the ledger
    tiles are all real controls** the board could only draw as a single state.
 8. **A visible focus ring everywhere.** The board has none; no presentation board does.
-9. **The Teknova mark is invented**, drawn in the board's idiom — a dark disc with a white
+9. **The Kovelt mark is invented**, drawn in the board's idiom — a dark disc with a white
    bolt and a green flash. The copy is invented, so the mark has to be.
 10. **The waving hand after the name is drawn**, not an emoji: Windows, Android and iOS each
     render that codepoint differently and one of them picks a different skin tone.

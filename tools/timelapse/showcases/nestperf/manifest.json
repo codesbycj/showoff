@@ -1,0 +1,7 @@
+{
+ "perf-screen": "src/app/nestperf/index.tsx",
+ "top-bar": "src/features/nestperf/components/top-bar.tsx",
+ "perf-chart": "src/features/nestperf/components/perf-chart.tsx",
+ "news-cards": "src/features/nestperf/components/news-cards.tsx",
+ "dock": "src/features/nestperf/components/dock.tsx"
+}

@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 3: Nocta, a dark finance overview.",
+  "description": "Dashboard episode 3: Nyxora, a dark finance overview.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

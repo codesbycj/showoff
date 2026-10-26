@@ -1,0 +1,77 @@
+import { Image, View } from 'react-native';
+
+import { avatar, copy, verdict } from '../data/start';
+import { DISPLAY_TOP, EYEBROW_TOP, INLINE_AVATAR } from '../layout';
+import { radius, ty, type } from '../theme';
+import { Wave } from './glyphs';
+import { T } from './text';
+
+/**
+ * The sentence the whole screen is for.
+ *
+ * **It is a wrapping row of words, not one `Text` with things inside it.**
+ * React Native will nest a View or an Image inside a Text, but the baseline
+ * it gives them differs between web and Android and there is no way to check
+ * the second one here. Laying the words out as a `flexWrap` row puts every
+ * chunk on a line box of exactly `type.display.line`, so the glyph, the
+ * portrait and the words all sit on the same line on both — and the sentence
+ * still wraps word by word, which is the whole point of setting it this way.
+ *
+ * **The verdict is computed.** `verdict` is the score against the average, so
+ * the sentence cannot say "above average" over a figure that is not.
+ */
+export function ScoreSentence() {
+  const word = (s: string, bold?: boolean) => (
+    <T
+      key={s + (bold ? '!' : '')}
+      variant={bold ? 'displayBold' : 'display'}
+      color={ty.ink}
+      style={{ height: type.display.line }}
+    >
+      {s}
+    </T>
+  );
+
+  return (
+    <View style={{ marginTop: EYEBROW_TOP }}>
+      <T variant="eyebrow" color={ty.muted} style={{ height: type.eyebrow.line }}>
+        {copy.eyebrow}
+      </T>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          marginTop: DISPLAY_TOP,
+          columnGap: 9,
+        }}
+      >
+        {word('Hello')}
+
+        <View style={{ height: type.display.line, justifyContent: 'center' }}>
+          <Wave size={30} tint={ty.ink} />
+        </View>
+
+        {word(copy.name)}
+
+        <View style={{ height: type.display.line, justifyContent: 'center' }}>
+          <Image
+            source={avatar}
+            style={{
+              width: INLINE_AVATAR,
+              height: INLINE_AVATAR,
+              borderRadius: radius.pill,
+            }}
+          />
+        </View>
+
+        {word('your')}
+        {word('overall')}
+        {word('score')}
+        {word('is')}
+        {verdict.split(' ').map((w) => word(w, true))}
+      </View>
+    </View>
+  );
+}

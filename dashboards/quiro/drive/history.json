@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:5344/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-history", "click": "[data-tab='history']", "settle": 950, "rest": true },
+
+    { "name": "status-successful", "click": "[data-group='status'] [data-segment='Successful']", "settle": 850, "rest": true },
+    { "name": "status-pending", "click": "[data-group='status'] [data-segment='Pending']", "settle": 850, "rest": true },
+    { "name": "status-failed", "click": "[data-group='status'] [data-segment='Failed']", "settle": 850, "rest": true },
+    { "name": "status-all", "click": "[data-group='status'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "sort-amount", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-amount-asc", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-name", "click": "[data-sort='name']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-sort='stamp']", "settle": 750, "rest": true },
+
+    { "name": "history-scrolled", "wheel": ["[data-scroller='history']", 260], "rest": true },
+    { "name": "history-top", "wheel": ["[data-scroller='history']", -260], "rest": true },
+
+    { "name": "search-kestra", "fill": ["[data-search]", "kestra"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-documents", "click": "[data-tab='documents']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-rail-contacts", "click": "[data-rail='contacts']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

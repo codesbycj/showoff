@@ -1,0 +1,69 @@
+import { Pressable, View } from 'react-native';
+
+import { CARD_HEIGHT, CARD_PAD } from '../layout';
+import { lk, radius, type } from '../theme';
+import { CourseArt } from './course-art';
+import { T } from './text';
+
+const TONES: Record<string, string> = {
+  pink: lk.pink,
+  mint: lk.mint,
+  teal: lk.teal,
+  lilac: lk.lilac,
+  peach: lk.peach,
+};
+
+/**
+ * One course.
+ *
+ * The drawing sits in its own column rather than behind the words, so the
+ * body can wrap to two lines without running under it — the reference's
+ * copy collides with its illustration on the longer cards.
+ */
+export function CourseCard({
+  title,
+  body,
+  tone,
+  art,
+  onPress,
+}: {
+  title: string;
+  body: string;
+  tone: string;
+  art: string;
+  onPress?: () => void;
+}) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={title}>
+      <View
+        style={{
+          minHeight: CARD_HEIGHT,
+          borderRadius: radius.card,
+          // MISTAKE 1.21 the cards came in squared off
+          borderTopLeftRadius: 0,
+          backgroundColor: TONES[tone],
+          flexDirection: 'row',
+          alignItems: 'center',
+          padding: CARD_PAD,
+        }}
+      >
+        <View style={{ flex: 1, paddingRight: 10 }}>
+{/* STEP 1.09 its name
+          <T variant="cardTitle" color={lk.onCard} style={{ height: type.cardTitle.line }}>
+            {title}
+          </T>
+*/}
+{/* STEP 1.10 what it covers
+          <T variant="cardBody" color={lk.onCardSoft} style={{ marginTop: 4 }}>
+            {body}
+          </T>
+*/}
+        </View>
+
+{/* STEP 1.11 and its drawing
+        <CourseArt name={art} />
+*/}
+      </View>
+    </Pressable>
+  );
+}

@@ -1,0 +1,179 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Line, Path } from 'react-native-svg';
+
+import { copy, eaten, goal, rangeHigh, rangeLow, scaleMax } from '../data/start';
+import { CARD_PAD, CARD_TOP, TRACK_HEIGHT } from '../layout';
+import { ls, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * What the day came to, against the target and the range around it.
+ *
+ * **Everything on the track is the same scale.** The fill is `eaten`, the
+ * hatched band is `rangeLow`–`rangeHigh`, and both are laid out as a share of
+ * `scaleMax` — so the band sits where the figures say it does rather than
+ * where it looks good.
+ *
+ * The hatch is drawn as diagonal `Line`s rather than a flat tint, because a
+ * band that means "this is the range you are aiming at" has to read as
+ * different in kind from the bar, not merely a different grey.
+ */
+export function CaloriesCard({ onOpen }: { onOpen?: () => void }) {
+  const bandLeft = rangeLow / scaleMax;
+  const bandWidth = (rangeHigh - rangeLow) / scaleMax;
+
+  return (
+    <View
+      style={{
+        marginTop: CARD_TOP,
+        borderRadius: radius.card,
+        backgroundColor: ls.card,
+        // MISTAKE 1.24 the card came in with one corner squared off
+        borderBottomRightRadius: 0,
+        padding: CARD_PAD,
+      }}
+    >
+{/* STEP 1.13 the heading
+      <Pressable onPress={onOpen} accessibilityRole="button" accessibilityLabel={copy.calories}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View
+            style={{
+              width: 30,
+              height: 30,
+              borderRadius: radius.pill,
+              backgroundColor: ls.well,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Svg width={15} height={15} viewBox="0 0 24 24">
+              <Path
+                d="M13 2.6c3 3.1 4.2 5.2 4.2 7.3 0 .9-.3 1.7-.8 2.3.8-.2 1.5-.8 2-1.6 1 1.6 1.6 3.2 1.6 4.8 0 3.8-3.1 6.6-7 6.6s-7-2.8-7-6.6c0-4 2.6-7.1 5.3-10.4.6 1 .8 2.1.6 3.2 1-1.4 1.4-3.4 1.1-5.6Z"
+                fill={ls.ink}
+              />
+            </Svg>
+          </View>
+
+          <T
+            variant="cardLabel"
+            color={ls.ink}
+            style={{ flex: 1, marginLeft: 10, height: type.cardLabel.line }}
+          >
+            {copy.calories}
+          </T>
+
+          <Svg width={16} height={16} viewBox="0 0 24 24">
+            <Path
+              d="m9.6 6 5.4 6-5.4 6"
+              stroke={ls.faint}
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+*/}
+
+{/* STEP 1.14 the figure
+      <T variant="huge" color={ls.ink} style={{ marginTop: 10, height: type.huge.line }}>
+        {`${eaten.toLocaleString('en-US')} ${copy.kcal}`}
+      </T>
+*/}
+
+{/* STEP 1.15 what it was aiming at
+      <T variant="target" color={ls.muted} style={{ height: type.target.line }}>
+        {`${copy.targetLabel}${goal.toLocaleString('en-US')} ${copy.kcal}`}
+      </T>
+*/}
+
+{/* STEP 1.16 the track
+      <View
+        style={{
+          height: TRACK_HEIGHT,
+          marginTop: 12,
+          borderRadius: radius.pill,
+          backgroundColor: ls.well,
+          overflow: 'hidden',
+          flexDirection: 'row',
+        }}
+      >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: `${bandLeft * 100}%`,
+            width: `${bandWidth * 100}%`,
+            backgroundColor: ls.bar,
+          }}
+        >
+          <Svg width="100%" height="100%">
+            {[0, 6, 12, 18, 24, 30].map((x) => (
+              <Line
+                key={x}
+                x1={x}
+                y1={TRACK_HEIGHT}
+                x2={x + TRACK_HEIGHT}
+                y2={0}
+                stroke={ls.hatch}
+                strokeWidth={3}
+              />
+            ))}
+          </Svg>
+        </View>
+
+        <View
+          style={{
+            flex: eaten / scaleMax,
+            borderRadius: radius.pill,
+            backgroundColor: ls.limeDeep,
+          }}
+        />
+        <View style={{ flex: 1 - eaten / scaleMax }} />
+      </View>
+*/}
+
+{/* STEP 1.17 the scale under it
+      <View style={{ flexDirection: 'row', marginTop: 6 }}>
+        <T variant="scale" color={ls.faint} style={{ flex: 1, height: type.scale.line }}>
+          0
+        </T>
+        <T variant="scale" color={ls.faint} style={{ textAlign: 'right', height: type.scale.line }}>
+          {scaleMax.toLocaleString('en-US')}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.18 and what the hatch means
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+        <View
+          style={{
+            width: 14,
+            height: 14,
+            borderRadius: 4,
+            backgroundColor: ls.bar,
+            overflow: 'hidden',
+          }}
+        >
+          <Svg width="100%" height="100%">
+            <Line x1={-4} y1={14} x2={10} y2={0} stroke={ls.hatch} strokeWidth={3} />
+            <Line x1={4} y1={14} x2={18} y2={0} stroke={ls.hatch} strokeWidth={3} />
+          </Svg>
+        </View>
+
+        <T variant="range" color={ls.ink} style={{ marginLeft: 8, height: type.range.line }}>
+          {copy.rangeLabel}
+        </T>
+
+        <View style={{ flex: 1, height: 1, marginHorizontal: 10, backgroundColor: ls.hairline }} />
+
+        <T variant="rangeValue" color={ls.ink} style={{ height: type.rangeValue.line }}>
+          {`${rangeLow.toLocaleString('en-US')}-${rangeHigh.toLocaleString('en-US')}`}
+        </T>
+      </View>
+*/}
+    </View>
+  );
+}

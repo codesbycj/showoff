@@ -5,13 +5,25 @@ picture as a real, working app, and recorded by driving it with a cursor.
 
 | Folder | Episode | Reference | Tabs built | Port |
 |---|---|---|---|---|
-| [`twisty/`](./twisty) | 1 — TWISTY, a freelancer workspace | posed board (inspo brief) | Home · Projects · Wallet | 5300 |
-| [`teknova/`](./teknova) | 2 — Teknova Store, an e-commerce control room | posed board (inspo brief) | Dashboard · Products · Orders & Invoices | 5304 |
-| [`nocta/`](./nocta) | 3 — Nocta, a dark finance overview | posed board (inspo brief) | Overview · Transactions · Invoices | 5308 |
-| [`taskly/`](./taskly) | 4 — Taskly, a project workspace | posed board (inspo brief) | Dashboard · Task Overview · Calendar | 5312 |
-| [`sypher/`](./sypher) | 5 — Sypher, a fleet and financials console | posed board (inspo brief) | Dashboard · Financials · Fleet | 5316 |
-| [`finexy/`](./finexy) | 6 — Finexy, a multi-wallet money dashboard | posed board (inspo brief) | Overview · Activity · Manage | 5320 |
-| [`mycogen/`](./mycogen) | 7 — Mycogen, a store manager's dashboard | posed board (inspo brief) | Dashboard · Orders · Customers | 5324 |
+| [`twisty/`](./twisty) | 1 — ZELPA, a freelancer workspace | posed board (inspo brief) | Home · Projects · Wallet | 5300 |
+| [`teknova/`](./teknova) | 2 — Kovelt Store, an e-commerce control room | posed board (inspo brief) | Dashboard · Products · Orders & Invoices | 5304 |
+| [`nocta/`](./nocta) | 3 — Nyxora, a dark finance overview | posed board (inspo brief) | Overview · Transactions · Invoices | 5308 |
+| [`taskly/`](./taskly) | 4 — Plyra, a project workspace | posed board (inspo brief) | Dashboard · Task Overview · Calendar | 5312 |
+| [`sypher/`](./sypher) | 5 — Veloq, a fleet and financials console | posed board (inspo brief) | Dashboard · Financials · Fleet | 5316 |
+| [`finexy/`](./finexy) | 6 — Obolin, a multi-wallet money dashboard | posed board (inspo brief) | Overview · Activity · Manage | 5320 |
+| [`mycogen/`](./mycogen) | 7 — Mylora, a store manager's dashboard | posed board (inspo brief) | Dashboard · Orders · Customers | 5324 |
+| [`verdia/`](./verdia) | 8 — Pennora, a personal money dashboard | posed board (inspo brief) | Overview · Wealth · Cards | 5328 |
+| [`aurelo/`](./aurelo) | 9 — Orvela, a personal finance dashboard | posed board (inspo brief) | Home · History · Wallet | 5332 |
+| [`cindra/`](./cindra) | 10 — Corvane, a banking dashboard | **flat UI export (spec)** | Dashboard · Transactions · Saving Plans | 5336 |
+| [`salvora/`](./salvora) | 11 — Dravelo, a store admin's dashboard | posed board (inspo brief) | Overview · Transactions · Customers | 5340 |
+| [`quiro/`](./quiro) | 12 — Quilbo, a payments dashboard | posed board (inspo brief) | Dashboard · Reports · History | 5344 |
+| [`obelio/`](./obelio) | 13 — Talero, a multi-currency wallet dashboard | posed board (inspo brief) | Dashboard · Transactions · Recurring | 5348 |
+| [`orlin/`](./orlin) | 14 — Stakvio, an investment console | posed board (inspo brief) | Dashboard · Activity · Wallets | 5352 |
+| [`kavira/`](./kavira) | 15 — Atelyra, a studio's financial overview | posed board + browser chrome (inspo brief) | Overview · Projection · Savings | 5356 |
+| [`veltro/`](./veltro) | 16 — Selviq, a store's sales dashboard | posed board (inspo brief) | Dashboard · Products · Order | 5360 |
+| [`ledgra/`](./ledgra) | 17 — Tallora, an accounting workspace | posed board (inspo brief) | Home · Statements · Tax | 5364 |
+| [`glintly/`](./glintly) | 18 — Metriqo, a product-analytics dashboard | posed browser window (inspo brief) | Dashboard · Realtime · Conversion | 5368 |
+| [`hesper/`](./hesper) | 19 — Caldrow Legal., a consulting firm's workspace | posed browser window (inspo brief) | Overview · Task · Payment | 5372 |
 
 ```bash
 cd dashboards/twisty  && npm install && npm run dev    # http://localhost:5300
@@ -21,6 +33,18 @@ cd dashboards/taskly  && npm install && npm run dev    # http://localhost:5312
 cd dashboards/sypher  && npm install && npm run dev    # http://localhost:5316
 cd dashboards/finexy  && npm install && npm run dev    # http://localhost:5320
 cd dashboards/mycogen && npm install && npm run dev    # http://localhost:5324
+cd dashboards/verdia  && npm install && npm run dev    # http://localhost:5328
+cd dashboards/aurelo  && npm install && npm run dev    # http://localhost:5332
+cd dashboards/cindra  && npm install && npm run dev    # http://localhost:5336
+cd dashboards/salvora && npm install && npm run dev    # http://localhost:5340
+cd dashboards/quiro   && npm install && npm run dev    # http://localhost:5344
+cd dashboards/obelio  && npm install && npm run dev    # http://localhost:5348
+cd dashboards/orlin   && npm install && npm run dev    # http://localhost:5352
+cd dashboards/kavira  && npm install && npm run dev    # http://localhost:5356
+cd dashboards/veltro  && npm install && npm run dev    # http://localhost:5360
+cd dashboards/ledgra  && npm install && npm run dev    # http://localhost:5364
+cd dashboards/glintly && npm install && npm run dev    # http://localhost:5368
+cd dashboards/hesper  && npm install && npm run dev    # http://localhost:5372
 ```
 
 From the repository root, `npm run dev:<slug>` and `npm run build:<slug>` do the same

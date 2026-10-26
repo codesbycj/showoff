@@ -1,0 +1,59 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Dock } from '@/features/nestperf/components/dock';
+import { NewsCards } from '@/features/nestperf/components/news-cards';
+import { PerfChart } from '@/features/nestperf/components/perf-chart';
+import { SectionHead } from '@/features/nestperf/components/section-head';
+import { TopBar } from '@/features/nestperf/components/top-bar';
+import { copy } from '@/features/nestperf/data/start';
+import { MARGIN } from '@/features/nestperf/layout';
+import { ne } from '@/features/nestperf/theme';
+import { useInsets } from '@/features/nestperf/use-insets';
+
+/**
+ * Nest — performance.
+ *
+ * Assembly only: who is here, six months of it, the latest news, and where
+ * else the app goes.
+ *
+ * The chart takes `flex: 1`, so it grows into whatever the phone can spare
+ * above the news cards; the dock is welded to the foot and takes the bottom
+ * inset itself.
+ */
+export default function NestperfScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ne.canvas, paddingTop: insets.top }}>
+      <StatusBar style="dark" />
+
+      <View style={{ flex: 1, paddingHorizontal: MARGIN }}>
+        <TopBar />
+
+        <SectionHead
+          label={copy.performance}
+          of="performance"
+          first
+          onMore={() => router.push('/nesthome')}
+        />
+
+        <PerfChart />
+
+        <SectionHead label={copy.news} of="news" onMore={() => router.push('/nestactions')} />
+
+        <NewsCards onPress={() => router.push('/nestactions')} />
+      </View>
+
+      <Dock
+        active="perf"
+        bottom={insets.bottom}
+        onSelect={(id) => {
+          if (id === 'home') router.push('/nesthome');
+          if (id === 'actions') router.push('/nestactions');
+        }}
+      />
+    </View>
+  );
+}

@@ -1,0 +1,9 @@
+{
+ "score-screen": "src/app/tallyoscore/index.tsx",
+ "top-bar": "src/features/tallyoscore/components/top-bar.tsx",
+ "score-sentence": "src/features/tallyoscore/components/score-sentence.tsx",
+ "stat-chips": "src/features/tallyoscore/components/stat-chips.tsx",
+ "share-bar": "src/features/tallyoscore/components/share-bar.tsx",
+ "progress-card": "src/features/tallyoscore/components/progress-card.tsx",
+ "dock": "src/features/tallyoscore/components/dock.tsx"
+}

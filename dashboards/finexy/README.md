@@ -102,7 +102,7 @@ and two inert rail icons — and a live rail icon proving the rail really does n
    scroller nothing to scroll.
 7. **The rail is labelled and partly live**, as described above.
 8. **A visible focus ring everywhere.** The board has none.
-9. **The Finexy mark is invented**, drawn in the board's idiom — an orange disc with a
+9. **The Obolin mark is invented**, drawn in the board's idiom — an orange disc with a
    rising stroke cut out of it.
 10. **The activity icons are drawn**, not brand marks: the reference shows what look like
     real app icons, and a real brand on an invented invoice is the one thing this series

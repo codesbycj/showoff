@@ -1,0 +1,244 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "@/features/masontasks/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a chevron"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the filter"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "@/features/masontasks/components/filter-chips"
+   ],
+   "label": "which to show"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "counted, not typed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/filter-chips.tsx",
+    "STEP 1.08"
+   ],
+   "label": "all of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/filter-chips.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the open ones"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/filter-chips.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and the done"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "@/features/masontasks/components/sort-row"
+   ],
+   "label": "how to order them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "by due date"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/sort-row.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the order"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/sort-row.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and the view"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "@/features/masontasks/components/task-card"
+   ],
+   "label": "the tasks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the first one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/task-card.tsx",
+    "STEP 1.17"
+   ],
+   "label": "what and where"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/task-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "when, and who is on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masontasks/components/task-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and how far through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and the one that ends the rail"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "@/features/masontasks/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masontasks/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "floating"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/masontasks/components/filter-chips.tsx",
+    [
+     "// MISTAKE 1.25",
+     "opacity: 0.5,"
+    ]
+   ],
+   "label": "the chips came in half-faded"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/masontasks/components/task-card.tsx",
+    [
+     "// MISTAKE 1.26",
+     "borderTopRightRadius: 0,"
+    ]
+   ],
+   "label": "the cards came in square on one corner"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "filter-chips",
+     "src/features/masontasks/components/filter-chips.tsx"
+    ],
+    [
+     "sort-row",
+     "src/features/masontasks/components/sort-row.tsx"
+    ],
+    [
+     "task-card",
+     "src/features/masontasks/components/task-card.tsx"
+    ],
+    [
+     "tasks-screen",
+     "src/app/masontasks/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/masontasks/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

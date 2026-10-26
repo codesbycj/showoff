@@ -1,0 +1,166 @@
+import { Pressable, View } from 'react-native';
+
+import { copy, doingWell, score, series } from '../data/start';
+import { PROGRESS_MIN, PROGRESS_PAD, PROGRESS_TOP, SEG_HEIGHT } from '../layout';
+import { radius, ty, type } from '../theme';
+import { Growth, Smile } from './glyphs';
+import { T } from './text';
+
+/**
+ * How the chosen period is going.
+ *
+ * **The line is the figure's verdict, not a fixed string.** `doingWell` is
+ * the score against the average, so "You are doing well" cannot sit beside a
+ * number that says otherwise.
+ *
+ * The range toggle is real state: the reference ships with "Monthly" lit and
+ * nothing to press, and spells the other one "Weeekly".
+ *
+ * The cyan is an absolutely-filled child, so the blank state is a blank page.
+ */
+export function ProgressCard({
+  range,
+  onRange,
+}: {
+  range: string;
+  onRange?: (id: string) => void;
+}) {
+  const half = (id: string, label: string) => {
+    const on = id === range;
+    return (
+      <Pressable
+        onPress={() => onRange?.(id)}
+        accessibilityRole="tab"
+        accessibilityState={{ selected: on }}
+        accessibilityLabel={label}
+      >
+        <View
+          style={{
+            height: SEG_HEIGHT - 8,
+            paddingHorizontal: 14,
+            borderRadius: radius.pill,
+            backgroundColor: on ? ty.ink : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="seg" color={on ? ty.onDock : ty.ink} style={{ height: type.seg.line }}>
+            {label}
+          </T>
+        </View>
+      </Pressable>
+    );
+  };
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        minHeight: PROGRESS_MIN,
+        marginTop: PROGRESS_TOP,
+        borderRadius: radius.card,
+        padding: PROGRESS_PAD,
+      }}
+    >
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius.card,
+          backgroundColor: ty.cyan,
+        }}
+      />
+
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <View
+          style={{
+            width: 34,
+            height: 34,
+            borderRadius: radius.pill,
+            backgroundColor: ty.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Growth size={16} tint={ty.ink} />
+        </View>
+
+        <View style={{ flex: 1 }} />
+
+        <View
+          style={{
+            height: SEG_HEIGHT,
+            borderRadius: radius.pill,
+            backgroundColor: ty.card,
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 4,
+          }}
+        >
+          {half('weekly', copy.weekly)}
+          {half('monthly', copy.monthly)}
+        </View>
+      </View>
+
+      {/*
+        The middle of the card is the series the toggle is showing. The
+        reference's card has nothing here, which is fine on a board and leaves
+        a hand's width of empty cyan on a real phone — and it makes the toggle
+        above it a control with nothing behind it.
+
+        The columns divide the row's height with `flex`, and the row must
+        NOT set `alignItems: 'flex-end'` for that to work: flex-end sizes each
+        column to its own content, so the shares inside it divide nothing and
+        the bars come out with no height at all. The labels still paint, which
+        is what makes it look like a colour bug rather than a layout one.
+      */}
+      <View style={{ flex: 1, flexDirection: 'row', marginVertical: 14 }}>
+        {series[range === 'weekly' ? 'weekly' : 'monthly'].map((b, i, all) => (
+          <View key={b.label + i} style={{ flex: 1, alignItems: 'center' }}>
+            <View style={{ flex: 1 - b.share }} />
+            <View
+              style={{
+                width: 16,
+                flex: b.share,
+                borderRadius: 8,
+                backgroundColor: i === all.length - 1 ? ty.ink : ty.card,
+              }}
+            />
+            <T
+              variant="progressLabel"
+              color={ty.cyanInk}
+              style={{ marginTop: 7, height: type.progressLabel.line }}
+            >
+              {b.label}
+            </T>
+          </View>
+        ))}
+      </View>
+
+      <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+        <View style={{ flex: 1, marginRight: 12 }}>
+          <T variant="progressLabel" color={ty.cyanInk} style={{ height: type.progressLabel.line }}>
+            {copy.progress}
+          </T>
+          <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}>
+            <T variant="progressLine" color={ty.ink} style={{ height: type.progressLine.line }}>
+              {doingWell ? copy.doingWell : copy.needsWork}
+            </T>
+            <View
+              style={{ height: type.progressLine.line, justifyContent: 'center', marginLeft: 6 }}
+            >
+              <Smile size={18} tint={ty.ink} />
+            </View>
+          </View>
+        </View>
+
+        <T variant="huge" color={ty.ink} style={{ height: type.huge.line }}>
+          {`${score}%`}
+        </T>
+      </View>
+    </View>
+  );
+}

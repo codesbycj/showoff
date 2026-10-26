@@ -1,0 +1,60 @@
+import { Pressable, View } from 'react-native';
+
+import { copy } from '../data/start';
+import { PILL_GAP, PILL_HEIGHT, PILLS_TOP } from '../layout';
+import { cr, radius, type } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+/** One of the two things the panel offers. The whole 48dp pill is the target. */
+function Pill({ label, glyph, onPress }: { label: string; glyph: string; onPress?: () => void }) {
+  return (
+    <Pressable
+      onPress={onPress}
+      style={{ flex: 1 }}
+      accessibilityRole="button"
+      accessibilityLabel={label}
+    >
+      <View
+        style={{
+          height: PILL_HEIGHT,
+          borderRadius: radius.pill,
+          backgroundColor: cr.surface,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 8,
+        }}
+      >
+        <View
+          style={{
+            width: 32,
+            height: 32,
+            borderRadius: radius.pill,
+            backgroundColor: cr.orange,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name={glyph} size={16} tint={cr.onOrange} />
+        </View>
+        <T variant="pill" color={cr.ink} style={{ marginLeft: 9, height: type.pill.line }}>
+          {label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * The two things you do from here.
+ *
+ * Written out rather than mapped so the reveal can land them one at a time.
+ */
+export function ActionPills({ onSend, onTrack }: { onSend?: () => void; onTrack?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', gap: PILL_GAP, marginTop: PILLS_TOP }}>
+      <Pill label={copy.send} glyph="send" onPress={onSend} />
+      <Pill label={copy.track} glyph="pin" onPress={onTrack} />
+    </View>
+  );
+}

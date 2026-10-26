@@ -1,0 +1,57 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BrandHead } from '@/features/lensahome/components/brand-head';
+import { DayPills } from '@/features/lensahome/components/day-pills';
+import { Dock } from '@/features/lensahome/components/dock';
+import { IntakeCard } from '@/features/lensahome/components/intake-card';
+import { NutritionCard } from '@/features/lensahome/components/nutrition-card';
+import { WeightCard } from '@/features/lensahome/components/weight-card';
+import { MARGIN } from '@/features/lensahome/layout';
+import { ls } from '@/features/lensahome/theme';
+import { useInsets } from '@/features/lensahome/use-insets';
+
+/**
+ * Lensa — the day.
+ *
+ * Assembly only: the name, which day, how much of the allowance has gone,
+ * the three macros, what the scales said, and where else the app goes.
+ *
+ * The weight card takes `flex: 1`, so it grows into whatever the phone can
+ * spare and the dock sits on the bottom inset — the screen has no band of
+ * empty canvas at the foot.
+ */
+export default function LensahomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: ls.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <BrandHead />
+
+      <DayPills onDay={() => router.push('/lensastats')} />
+
+      <IntakeCard />
+
+      <NutritionCard onOpen={() => router.push('/lensastats')} />
+
+      <WeightCard onOpen={() => router.push('/lensastats')} />
+
+      <Dock
+        active="boards"
+        onSelect={(id) => id === 'stats' && router.push('/lensastats')}
+        onShoot={() => router.push('/lensastats')}
+      />
+    </View>
+  );
+}

@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+
+/*
+ * Talero.
+ *
+ * A posed board: one rounded panel on a very light grey ground. refscan read
+ * the palette off it — #ffffff cards on #eaeaea, #077b4a and #059055 for the
+ * greens, #f3fcf9 and #e7f6f1 for the tints, #1c1d22 for the dark controls.
+ * The board is dropped and the panel's ground becomes the page.
+ *
+ * `static`, because the wallet tiles take their flag-disc colours as inline
+ * `var(--color-flag-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #f4f5f6;
+  --color-surface: #ffffff;
+  --color-sunken: #f5f7f6;
+  --color-sunken-deep: #e8ebe9;
+
+  --color-ink: #16181c;
+  --color-body: #3f444a;
+  /* 4.76:1 on the page ground. */
+  --color-muted: #63696f;
+  --color-line: #e8eaec;
+
+  /*
+   * Two greens, and the split is measured. #059055 is the brand's own, read
+   * off the reference, and it carries white at 3.3:1 — nowhere near enough.
+   * So #059055 is the *mark* colour (bars, dots, meters) and #0a6b41 is the
+   * one anything with text on it uses: Send Money, Upgrade, the active bar.
+   */
+  --color-accent: #059055;
+  --color-accent-deep: #0a6b41;
+  --color-accent-soft: #bfe6d3;
+  --color-accent-faint: #e7f6f1;
+  --color-accent-tint: #f3fcf9;
+
+  --color-ink-fill: #1c1d22; /* the Export pill */
+  --color-ink-fg: #f4f6f5;
+
+  --color-positive: #1b7a45;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The four wallet discs. */
+  --color-flag-usd: #2f5bb7;
+  --color-flag-eur: #1b3a8c;
+  --color-flag-bdt: #0f6b3f;
+  --color-flag-gbp: #a3283a;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(22 24 28 / 0.04);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

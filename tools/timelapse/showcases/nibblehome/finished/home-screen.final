@@ -1,0 +1,56 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Dock } from '@/features/nibblehome/components/dock';
+import { MealCard } from '@/features/nibblehome/components/meal-card';
+import { ProgressHero } from '@/features/nibblehome/components/progress-hero';
+import { StatTiles } from '@/features/nibblehome/components/stat-tiles';
+import { TopBar } from '@/features/nibblehome/components/top-bar';
+import { MARGIN } from '@/features/nibblehome/layout';
+import { nb } from '@/features/nibblehome/theme';
+import { useInsets } from '@/features/nibblehome/use-insets';
+
+/**
+ * Nibble — the day.
+ *
+ * Assembly only: who is here, how the day is going, what the body weighs
+ * against what it has eaten, the meal itself, and where else the app goes.
+ *
+ * The meal card takes `flex: 1`, so it grows into whatever the phone can
+ * spare and the dock sits on the bottom inset — the screen has no band of
+ * empty canvas at the foot.
+ */
+export default function NibblehomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: nb.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <TopBar onSearch={() => router.push('/nibbleweek')} />
+
+      <ProgressHero onDate={() => router.push('/nibbleweek')} />
+
+      <StatTiles />
+
+      <MealCard onAdd={() => router.push('/nibbleweek')} />
+
+      <Dock
+        active="you"
+        onSelect={(id) => {
+          if (id === 'week') router.push('/nibbleweek');
+          if (id === 'scan') router.push('/nibbleboards');
+        }}
+      />
+    </View>
+  );
+}

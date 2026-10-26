@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/public-sans';
+
+/*
+ * Tallora.
+ *
+ * A posed board: one rounded panel on a light grey ground — and refscan
+ * agreed for once, calling it a board on a 1.5px ramp. The board is dropped
+ * and the panel's own ground becomes the page.
+ *
+ * Its palette, read off the picture: #fcfcfc for the page, #e0f9e3, #def4d0
+ * and #caffd7 for the green tints, #25942d and #33933c for the greens,
+ * #fcb407 for the amber.
+ *
+ * `static`, because the cash-flow heatmap takes its cell fill as inline
+ * `var(--color-heat-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions — which paints every cell the same, silently.
+ */
+@theme static {
+  --color-ground: #f5f6f5;
+  --color-surface: #ffffff;
+  --color-sunken: #f6f8f6;
+  --color-sunken-deep: #e9ece9;
+
+  --color-ink: #141815;
+  --color-body: #434a45;
+  /* 4.74:1 on the page ground. */
+  --color-muted: #646b66;
+  --color-line: #e7eae8;
+
+  /*
+   * Two greens, and the split is measured. #25942d is the brand's own, read
+   * off the reference, and it carries white at 3.6:1. So #25942d is the
+   * *mark* colour (meters, heat cells, the stacked bar) and #1a6d20 is the
+   * one anything with text on it uses: Export, Upgrade, the active pill.
+   * 5.6:1.
+   */
+  --color-accent: #25942d;
+  --color-accent-deep: #1a6d20;
+  --color-accent-soft: #caffd7;
+  --color-accent-faint: #e0f9e3;
+  --color-accent-tint: #f1fcf3;
+
+  --color-amber: #b07a00; /* the receivable meter, as *text* it is this */
+  --color-amber-mark: #fcb407; /* and as a mark it is the reference's own */
+  --color-amber-faint: #fef3d8;
+
+  --color-positive: #1b7a45;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The cash-flow heatmap, coldest to hottest. */
+  --color-heat-0: #f2f4f2;
+  --color-heat-1: #e0f9e3;
+  --color-heat-2: #a8e8b3;
+  --color-heat-3: #5cc06b;
+  --color-heat-4: #25942d;
+
+  /* The three tax lines in the stacked bar. */
+  --color-tax-vat: #25942d;
+  --color-tax-income: #2f5bb7;
+  --color-tax-services: #fcb407;
+
+  --font-sans:
+    'Public Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 12px;
+  --shadow-card: 0 1px 2px rgb(20 24 21 / 0.04);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

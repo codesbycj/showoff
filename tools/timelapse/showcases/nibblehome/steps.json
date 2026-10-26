@@ -1,0 +1,352 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "@/features/nibblehome/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "something to find"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/top-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and something waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "@/features/nibblehome/components/progress-hero"
+   ],
+   "label": "how the day is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "on a blue card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/progress-hero.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the blue"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/progress-hero.tsx",
+    "STEP 1.10"
+   ],
+   "label": "what it measures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/progress-hero.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/progress-hero.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the day"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/progress-hero.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and the ring"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "@/features/nibblehome/components/stat-tiles"
+   ],
+   "label": "the body, and the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "two tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the body"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the grey"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.18"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and what the body weighs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.21"
+   ],
+   "label": "the grey"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.22"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the average"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/stat-tiles.tsx",
+    "STEP 1.24"
+   ],
+   "label": "and the week behind it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "@/features/nibblehome/components/meal-card"
+   ],
+   "label": "the meals"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "STEP 1.26"
+   ],
+   "label": "on mint"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/meal-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the mint"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/meal-card.tsx",
+    "STEP 1.28"
+   ],
+   "label": "the meal"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/meal-card.tsx",
+    "STEP 1.29"
+   ],
+   "label": "the macros"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/meal-card.tsx",
+    "STEP 1.30"
+   ],
+   "label": "a rule"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/meal-card.tsx",
+    "STEP 1.31"
+   ],
+   "label": "what is next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/meal-card.tsx",
+    "STEP 1.32"
+   ],
+   "label": "the day, and a way to change it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "@/features/nibblehome/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibblehome/index.tsx",
+    "STEP 1.34"
+   ],
+   "label": "along the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/dock.tsx",
+    "STEP 1.35"
+   ],
+   "label": "you"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/dock.tsx",
+    "STEP 1.36"
+   ],
+   "label": "the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibblehome/components/dock.tsx",
+    "STEP 1.37"
+   ],
+   "label": "and the camera"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nibblehome/components/dock.tsx",
+    [
+     "// MISTAKE 1.38",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the discs came in squared off"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nibblehome/components/progress-hero.tsx",
+    [
+     "// MISTAKE 1.39",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the card came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dock",
+     "src/features/nibblehome/components/dock.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/nibblehome/index.tsx"
+    ],
+    [
+     "meal-card",
+     "src/features/nibblehome/components/meal-card.tsx"
+    ],
+    [
+     "progress-hero",
+     "src/features/nibblehome/components/progress-hero.tsx"
+    ],
+    [
+     "stat-tiles",
+     "src/features/nibblehome/components/stat-tiles.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/nibblehome/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

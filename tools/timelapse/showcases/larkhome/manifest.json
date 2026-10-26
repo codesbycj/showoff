@@ -1,0 +1,6 @@
+{
+ "home-screen": "src/app/larkhome/index.tsx",
+ "header": "src/features/larkhome/components/header.tsx",
+ "course-card": "src/features/larkhome/components/course-card.tsx",
+ "dock": "src/features/larkhome/components/dock.tsx"
+}

@@ -1,0 +1,6 @@
+{
+ "track-screen": "src/app/cratetrack/index.tsx",
+ "map-canvas": "src/features/cratetrack/components/map-canvas.tsx",
+ "parcel-card": "src/features/cratetrack/components/parcel-card.tsx",
+ "courier-bar": "src/features/cratetrack/components/courier-bar.tsx"
+}

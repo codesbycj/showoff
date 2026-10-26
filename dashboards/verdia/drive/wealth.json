@@ -1,0 +1,48 @@
+{
+  "url": "http://localhost:5328/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-wealth", "click": "[data-tab='wealth']", "settle": 900, "rest": true },
+
+    { "name": "range-1m", "click": "[data-group='range'] [data-segment='1m']", "settle": 900, "rest": true },
+    { "name": "range-1y", "click": "[data-group='range'] [data-segment='1y']", "settle": 900, "rest": true },
+    { "name": "range-all", "click": "[data-group='range'] [data-segment='all']", "settle": 900, "rest": true },
+    { "name": "range-6m", "click": "[data-group='range'] [data-segment='6m']", "settle": 900, "rest": true },
+
+    { "name": "nw-early", "hover": "[data-card='networth'] [data-mark='pt-4']", "against": "range-6m" },
+    { "name": "nw-late", "hover": "[data-card='networth'] [data-mark='pt-19']", "against": "nw-early" },
+
+    { "name": "parked-b", "rest": true },
+    { "name": "alloc-equity", "hover": "[data-card='allocation'] [data-mark='equity']", "against": "parked-b" },
+    { "name": "alloc-cash", "hover": "[data-card='allocation'] [data-mark='cash']", "against": "alloc-equity" },
+
+    { "name": "alloc-legend-bond", "click": "[data-card='allocation'] [data-legend='bond']", "settle": 600, "rest": true },
+    { "name": "alloc-legend-off", "click": "[data-card='allocation'] [data-legend='bond']", "settle": 600, "rest": true },
+
+    { "name": "sort-change", "click": "[data-sort='change']", "settle": 700, "rest": true },
+    { "name": "sort-change-asc", "click": "[data-sort='change']", "settle": 700, "rest": true },
+    { "name": "sort-name", "click": "[data-sort='name']", "settle": 700, "rest": true },
+    { "name": "sort-value", "click": "[data-sort='value']", "settle": 700, "rest": true },
+
+    { "name": "holding-open", "click": "[data-row='h1'] > button", "settle": 650, "rest": true },
+    { "name": "holding-close", "click": "[data-row='h1'] > button", "settle": 650, "rest": true },
+    { "name": "holdings-scrolled", "wheel": ["[data-scroller='holdings']", 260], "rest": true },
+    { "name": "holdings-top", "wheel": ["[data-scroller='holdings']", -260], "rest": true },
+
+    { "name": "goal-house", "click": "[data-goal='g2']", "settle": 650, "rest": true },
+    { "name": "goal-house-shut", "click": "[data-goal='g2']", "settle": 650, "rest": true },
+
+    { "name": "wealth-idr", "click": "[data-group='wealth-currency'] [data-segment='idr']", "settle": 800, "rest": true },
+    { "name": "wealth-usd", "click": "[data-group='wealth-currency'] [data-segment='usd']", "settle": 800, "rest": true },
+
+    { "name": "search-open", "click": "[aria-label='Search']", "settle": 600, "rest": true },
+    { "name": "search-bond", "fill": ["[data-search]", "bond"], "settle": 850, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    { "name": "inert-tools", "click": "[data-tab='tools']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:5364/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-tax", "click": "[data-tab='tax']", "settle": 950, "rest": true },
+
+    { "name": "paid-vat", "click": "[data-action='pay-vat']", "settle": 900, "rest": true },
+    { "name": "paid-services", "click": "[data-action='pay-services']", "settle": 900, "rest": true },
+    { "name": "unpaid-vat", "click": "[data-action='pay-vat']", "settle": 900, "rest": true },
+
+    { "name": "filter-notpaid", "click": "[data-group='status'] [data-segment='Not Paid']", "settle": 850, "rest": true },
+    { "name": "filter-scheduled", "click": "[data-group='status'] [data-segment='Scheduled']", "settle": 850, "rest": true },
+    { "name": "filter-paid", "click": "[data-group='status'] [data-segment='Paid']", "settle": 850, "rest": true },
+    { "name": "filter-all", "click": "[data-group='status'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "sort-date", "click": "[data-sort='stamp']", "settle": 750, "rest": true },
+    { "name": "sort-date-asc", "click": "[data-sort='stamp']", "settle": 750, "rest": true },
+    { "name": "sort-label", "click": "[data-sort='label']", "settle": 750, "rest": true },
+    { "name": "sort-amount", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+
+    { "name": "search-duty", "fill": ["[data-search]", "duty"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-help", "click": "[data-tab='help']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

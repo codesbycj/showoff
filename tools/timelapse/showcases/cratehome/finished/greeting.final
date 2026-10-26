@@ -1,0 +1,27 @@
+import { View } from 'react-native';
+
+import { copy } from '../data/start';
+import { GREET_TOP } from '../layout';
+import { cr, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Who the app is talking to.
+ *
+ * Two runs on two lines, written out so the reveal can set them one at a
+ * time. The reference ends the name with a waving-hand emoji; an emoji is a
+ * different glyph on every platform and missing outright for some codepoints
+ * on Windows, so it is not shipped as UI.
+ */
+export function Greeting() {
+  return (
+    <View style={{ marginTop: GREET_TOP }}>
+      <T variant="greetLead" color={cr.onPanelDim} style={{ height: type.greetLead.line }}>
+        {copy.greetLead}
+      </T>
+      <T variant="greetName" color={cr.onPanel} style={{ height: type.greetName.line }}>
+        {copy.greetName}
+      </T>
+    </View>
+  );
+}

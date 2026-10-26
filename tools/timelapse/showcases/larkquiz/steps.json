@@ -1,0 +1,228 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "@/features/larkquiz/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and the lives left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a disc to go back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the hearts"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "@/features/larkquiz/components/headline"
+   ],
+   "label": "what it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "in two lines"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/headline.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the first line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/headline.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the second"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "@/features/larkquiz/components/dialog-card"
+   ],
+   "label": "the dialog"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "on its pink card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/dialog-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the question"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/dialog-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the reply"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/dialog-card.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the answer"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/dialog-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and the last word"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "@/features/larkquiz/components/answer-grid"
+   ],
+   "label": "the four answers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "two by two"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/answer-grid.tsx",
+    "STEP 1.17"
+   ],
+   "label": "one word"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/answer-grid.tsx",
+    "STEP 1.18"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/answer-grid.tsx",
+    "STEP 1.19"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkquiz/components/answer-grid.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the last"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "@/features/larkquiz/components/next-button"
+   ],
+   "label": "and the way on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkquiz/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "waiting for an answer"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/larkquiz/components/dialog-card.tsx",
+    [
+     "// MISTAKE 1.23",
+     "paddingVertical: 62,"
+    ]
+   ],
+   "label": "the card came in over-padded"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/larkquiz/components/answer-grid.tsx",
+    [
+     "// MISTAKE 1.24",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the answers came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "answer-grid",
+     "src/features/larkquiz/components/answer-grid.tsx"
+    ],
+    [
+     "dialog-card",
+     "src/features/larkquiz/components/dialog-card.tsx"
+    ],
+    [
+     "headline",
+     "src/features/larkquiz/components/headline.tsx"
+    ],
+    [
+     "quiz-screen",
+     "src/app/larkquiz/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/larkquiz/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

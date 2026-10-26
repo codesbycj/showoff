@@ -98,7 +98,7 @@ export function Icon({
 }
 
 /**
- * The TWISTY mark: an invented wordmark's glyph, drawn in the reference's
+ * The ZELPA mark: an invented wordmark's glyph, drawn in the reference's
  * idiom -- a rounded square in the brand red with a white twist cut out of it.
  *
  * It is invented because the copy is invented (rule 8). A page carrying a real

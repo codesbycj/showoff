@@ -1,0 +1,265 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "@/features/nestperf/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "@/features/nestperf/components/section-head"
+   ],
+   "label": "what the sections are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the first heading"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "@/features/nestperf/components/perf-chart"
+   ],
+   "label": "six months of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the chart"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the months it covers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.12"
+   ],
+   "label": "a ring at each month"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.13"
+   ],
+   "label": "and a dot inside it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what one month did"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and how many moves it took"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/perf-chart.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the months along the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the second heading"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "@/features/nestperf/components/news-cards"
+   ],
+   "label": "the latest news"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "two cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/news-cards.tsx",
+    "STEP 1.20"
+   ],
+   "label": "one item"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/news-cards.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and another"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "@/features/nestperf/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nestperf/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and a dark bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/dock.tsx",
+    "STEP 1.24"
+   ],
+   "label": "the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/dock.tsx",
+    "STEP 1.25"
+   ],
+   "label": "the wallet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/dock.tsx",
+    "STEP 1.26"
+   ],
+   "label": "how it is doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/dock.tsx",
+    "STEP 1.27"
+   ],
+   "label": "what has happened"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nestperf/components/dock.tsx",
+    "STEP 1.28"
+   ],
+   "label": "and where it is kept"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nestperf/components/dock.tsx",
+    [
+     "// MISTAKE 1.29",
+     "opacity: 0.35,"
+    ]
+   ],
+   "label": "the tabs came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dock",
+     "src/features/nestperf/components/dock.tsx"
+    ],
+    [
+     "news-cards",
+     "src/features/nestperf/components/news-cards.tsx"
+    ],
+    [
+     "perf-chart",
+     "src/features/nestperf/components/perf-chart.tsx"
+    ],
+    [
+     "perf-screen",
+     "src/app/nestperf/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/nestperf/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "@/features/larkpick/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkpick/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a disc to go back"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/larkpick/components/top-bar.tsx",
+    [
+     "// MISTAKE 1.04",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the disc came in half-faded"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "@/features/larkpick/components/headline"
+   ],
+   "label": "what it asks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "in two lines"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkpick/components/headline.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the first line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkpick/components/headline.tsx",
+    "STEP 1.08"
+   ],
+   "label": "and the second"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "@/features/larkpick/components/language-row"
+   ],
+   "label": "the languages"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the first one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkpick/components/language-row.tsx",
+    "STEP 1.11"
+   ],
+   "label": "its flag, drawn"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkpick/components/language-row.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and its name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "the one it opens on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "and the last"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "@/features/larkpick/components/continue-button"
+   ],
+   "label": "and the way on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/larkpick/index.tsx",
+    "STEP 1.20"
+   ],
+   "label": "full width"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/larkpick/components/continue-button.tsx",
+    "STEP 1.21"
+   ],
+   "label": "the only other lime on the page"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/larkpick/components/continue-button.tsx",
+    [
+     "// MISTAKE 1.22",
+     "marginHorizontal: 46,"
+    ]
+   ],
+   "label": "the button came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "continue-button",
+     "src/features/larkpick/components/continue-button.tsx"
+    ],
+    [
+     "headline",
+     "src/features/larkpick/components/headline.tsx"
+    ],
+    [
+     "language-row",
+     "src/features/larkpick/components/language-row.tsx"
+    ],
+    [
+     "pick-screen",
+     "src/app/larkpick/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/larkpick/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

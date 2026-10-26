@@ -1,0 +1,52 @@
+{
+  "url": "http://localhost:5352/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-monthly", "click": "[data-menu='span'] [data-option='monthly']", "settle": 900, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-yearly", "click": "[data-menu='span'] [data-option='yearly']", "settle": 900, "rest": true },
+    { "name": "span-open-3", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-weekly", "click": "[data-menu='span'] [data-option='weekly']", "settle": 900, "rest": true },
+
+    { "name": "bar-b2", "hover": "[data-card='summary'] [data-mark='b2']", "against": "span-weekly" },
+    { "name": "bar-b9", "hover": "[data-card='summary'] [data-mark='b9']", "against": "bar-b2" },
+
+    { "name": "tile-receipts", "click": "[data-tile='receipts']", "settle": 700, "rest": true },
+    { "name": "tile-owes", "click": "[data-tile='owes']", "settle": 700, "rest": true },
+    { "name": "tile-off", "click": "[data-tile='owes']", "settle": 700, "rest": true },
+
+    { "name": "sort-amount", "click": "[data-card='history'] [data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-amount-asc", "click": "[data-card='history'] [data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-name", "click": "[data-card='history'] [data-sort='name']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-card='history'] [data-sort='stamp']", "settle": 750, "rest": true },
+    { "name": "history-scrolled", "wheel": ["[data-scroller='history']", 220], "rest": true },
+    { "name": "history-top", "wheel": ["[data-scroller='history']", -220], "rest": true },
+
+    { "name": "star-on", "click": "[aria-label='Show the watchlist only']", "settle": 850, "rest": true },
+    { "name": "star-off", "click": "[aria-label='Showing the watchlist']", "settle": 850, "rest": true },
+    { "name": "mask-on", "click": "[aria-label='Hide every figure']", "settle": 850, "rest": true },
+    { "name": "mask-off", "click": "[aria-label='Show the figures']", "settle": 850, "rest": true },
+    { "name": "share-on", "click": "[aria-label='Copy a link to this view']", "settle": 700, "rest": true },
+    { "name": "share-off", "click": "[aria-label='Link copied']", "settle": 700, "rest": true },
+    { "name": "rail-collapsed", "click": "[aria-label='Collapse the toolbar']", "settle": 800, "rest": true },
+    { "name": "rail-expanded", "click": "[aria-label='Expand the toolbar']", "settle": 800, "rest": true },
+
+    { "name": "card-added", "click": "[data-action='add-card']", "settle": 700, "rest": true },
+    { "name": "card-undone", "click": "[data-action='add-card']", "settle": 700, "rest": true },
+    { "name": "prompt-dismissed", "click": "[data-action='dismiss']", "settle": 750, "rest": true },
+    { "name": "mail-read", "click": "[data-action='mail']", "settle": 650, "rest": true },
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 650, "rest": true },
+
+    { "name": "search-fox", "fill": ["[data-search]", "fox"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

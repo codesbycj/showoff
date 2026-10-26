@@ -1,0 +1,285 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "@/features/nesthome/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "@/features/nesthome/components/balance-block"
+   ],
+   "label": "what it holds"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the balance"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/balance-block.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what it measures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/balance-block.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/balance-block.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and what it is in coin"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "@/features/nesthome/components/action-discs"
+   ],
+   "label": "what it does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "four discs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/action-discs.tsx",
+    "STEP 1.13"
+   ],
+   "label": "sign something"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/action-discs.tsx",
+    "STEP 1.14"
+   ],
+   "label": "send something"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/action-discs.tsx",
+    "STEP 1.15"
+   ],
+   "label": "add to it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/action-discs.tsx",
+    "STEP 1.16"
+   ],
+   "label": "or keep it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "@/features/nesthome/components/contact-grid"
+   ],
+   "label": "who it knows"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "a grid of people"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/contact-grid.tsx",
+    "STEP 1.19"
+   ],
+   "label": "one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/contact-grid.tsx",
+    "STEP 1.20"
+   ],
+   "label": "two"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/contact-grid.tsx",
+    "STEP 1.21"
+   ],
+   "label": "three"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/contact-grid.tsx",
+    "STEP 1.22"
+   ],
+   "label": "a second row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/contact-grid.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and room for one more"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "@/features/nesthome/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nesthome/index.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and a dark bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/dock.tsx",
+    "STEP 1.26"
+   ],
+   "label": "the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/dock.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the wallet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/dock.tsx",
+    "STEP 1.28"
+   ],
+   "label": "how it is doing"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/dock.tsx",
+    "STEP 1.29"
+   ],
+   "label": "what has happened"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nesthome/components/dock.tsx",
+    "STEP 1.30"
+   ],
+   "label": "and where it is kept"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nesthome/components/contact-grid.tsx",
+    [
+     "// MISTAKE 1.31",
+     "borderBottomLeftRadius: 0,"
+    ]
+   ],
+   "label": "the tiles came in squared off"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "action-discs",
+     "src/features/nesthome/components/action-discs.tsx"
+    ],
+    [
+     "balance-block",
+     "src/features/nesthome/components/balance-block.tsx"
+    ],
+    [
+     "contact-grid",
+     "src/features/nesthome/components/contact-grid.tsx"
+    ],
+    [
+     "dock",
+     "src/features/nesthome/components/dock.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/nesthome/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/nesthome/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

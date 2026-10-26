@@ -1,0 +1,53 @@
+{
+  "url": "http://localhost:5340/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "txn-open", "click": "[data-card='txn-list'] [data-row='t1']", "settle": 650, "rest": true },
+    { "name": "txn-close", "click": "[data-card='txn-list'] [data-row='t1']", "settle": 650, "rest": true },
+    { "name": "txns-scrolled", "wheel": ["[data-scroller='txns']", 260], "rest": true },
+    { "name": "txns-top", "wheel": ["[data-scroller='txns']", -260], "rest": true },
+
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-year", "click": "[data-menu='span'] [data-option='year']", "settle": 900, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-quarter", "click": "[data-menu='span'] [data-option='quarter']", "settle": 900, "rest": true },
+    { "name": "span-open-3", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-half", "click": "[data-menu='span'] [data-option='half']", "settle": 900, "rest": true },
+
+    { "name": "rev-jan-in", "hover": "[data-card='revenue'] [data-mark='jan-income']", "against": "span-half" },
+    { "name": "rev-jan-out", "hover": "[data-card='revenue'] [data-mark='jan-expenses']", "against": "rev-jan-in" },
+    { "name": "rev-apr-in", "hover": "[data-card='revenue'] [data-mark='apr-income']", "against": "rev-jan-out" },
+
+    { "name": "report-launched", "hover": "[data-card='report'] [data-mark='launched']", "against": "rev-apr-in" },
+    { "name": "report-sold", "hover": "[data-card='report'] [data-mark='sold']", "against": "report-launched" },
+
+    { "name": "perf-views", "hover": "[data-card='performance'] [data-mark='views']", "against": "report-sold" },
+    { "name": "perf-sales", "hover": "[data-card='performance'] [data-mark='sales']", "against": "perf-views" },
+    { "name": "perf-legend", "click": "[data-card='performance'] [data-legend='percent']", "settle": 650, "rest": true },
+    { "name": "perf-legend-off", "click": "[data-card='performance'] [data-legend='percent']", "settle": 650, "rest": true },
+
+    { "name": "guide-on", "click": "[data-action='guide']", "settle": 700, "rest": true },
+    { "name": "guide-off", "click": "[data-action='guide']", "settle": 700, "rest": true },
+    { "name": "upgrade-on", "click": "[data-action='upgrade']", "settle": 700, "rest": true },
+    { "name": "upgrade-off", "click": "[data-action='upgrade']", "settle": 700, "rest": true },
+
+    { "name": "product-drafted", "click": "[data-action='add-product']", "settle": 700, "rest": true },
+    { "name": "product-undone", "click": "[data-action='add-product']", "settle": 700, "rest": true },
+    { "name": "inbox-read", "click": "[data-action='inbox']", "settle": 600, "rest": true },
+
+    { "name": "search-hoodie", "fill": ["[data-search]", "hoodie"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "see-stats", "click": "[data-action='see-stats']", "settle": 950, "rest": true },
+    { "name": "back-overview", "click": "[data-tab='overview']", "settle": 950, "rest": true },
+
+    { "name": "inert-statistics", "click": "[data-tab='statistics']", "against": "back-overview", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "back-overview", "expectUnchanged": true }
+  ]
+}

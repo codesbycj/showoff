@@ -1,0 +1,57 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Dock } from '@/features/sprigprogress/components/dock';
+import { GoalRow } from '@/features/sprigprogress/components/goal-row';
+import { Header } from '@/features/sprigprogress/components/header';
+import { ProgressCard } from '@/features/sprigprogress/components/progress-card';
+import { SplitTiles } from '@/features/sprigprogress/components/split-tiles';
+import { StreakCard } from '@/features/sprigprogress/components/streak-card';
+import { MARGIN } from '@/features/sprigprogress/layout';
+import { sg } from '@/features/sprigprogress/theme';
+import { useInsets } from '@/features/sprigprogress/use-insets';
+
+/**
+ * Sprig — progress.
+ *
+ * Assembly only: what the screen is, how far through the plan, what goes in
+ * against what goes out, the run of days kept, and what all of it is for.
+ *
+ * The streak photograph takes `flex: 1`, so it grows into whatever the phone
+ * can spare and the goal row sits above the dock on the bottom inset rather
+ * than leaving a band of empty canvas.
+ */
+export default function SprigprogressScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: sg.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <Header />
+
+      <ProgressCard />
+
+      <SplitTiles onPress={() => router.push('/sprighome')} />
+
+      <StreakCard />
+
+      <GoalRow onPress={() => router.push('/sprigdish')} />
+
+      <Dock
+        active="burn"
+        onSelect={(id) => id === 'day' && router.push('/sprighome')}
+        onAdd={() => router.push('/sprigdish')}
+      />
+    </View>
+  );
+}

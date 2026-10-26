@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 4: Taskly, a SaaS project workspace.",
+  "description": "Dashboard episode 4: Plyra, a SaaS project workspace.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

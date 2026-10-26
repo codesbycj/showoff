@@ -35,7 +35,7 @@ viewport**.
 | `--color-surface` | `#ffffff` | every card |
 | `--color-sunken` | `#f3f4f7` | day chips, inert controls, the promo card |
 | `--color-ink` | `#12161d` | headings, the selected day, the Paid pill |
-| `--color-accent` | `#e8512a` | the TWISTY mark, Senior, the live strip |
+| `--color-accent` | `#e8512a` | the ZELPA mark, Senior, the live strip |
 | `--color-spark` | `#6d8ed6` | the dot on top of every income stem |
 
 ## The three tabs
@@ -152,7 +152,7 @@ Everywhere this differs from the picture, and why.
 8. **Ten projects, not three.** Three rows do not fill a 1440×900 shell and do not give
    the list anything to scroll.
 9. **A visible focus ring, everywhere.** The board has none; no presentation board does.
-10. **The TWISTY mark is invented**, drawn in the board's idiom — a rounded square in the
+10. **The ZELPA mark is invented**, drawn in the board's idiom — a rounded square in the
     brand red with a white twist cut out of it. The copy is invented, so the mark has to be
     (series rule 8).
 11. **The faces are free-licensed Pexels portraits**, credited in

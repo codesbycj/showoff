@@ -1,0 +1,103 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
+
+import { CONTROL, CONTROLS_TOP, SCAN } from '../layout';
+import { cr, radius } from '../theme';
+import { Glyph } from './glyph';
+
+/** A small round control: the gallery and the flash. */
+function Round({ kind, onPress }: { kind: 'gallery' | 'flash'; onPress?: () => void }) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={kind}>
+      <View
+        style={{
+          width: CONTROL,
+          height: CONTROL,
+          borderRadius: radius.pill,
+          backgroundColor: cr.canvas,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Svg width={21} height={21} viewBox="0 0 24 24">
+          {kind === 'gallery' ? (
+            <>
+              <Rect
+                x={3.4}
+                y={5}
+                width={17.2}
+                height={14}
+                rx={3}
+                stroke={cr.ink}
+                strokeWidth={1.8}
+                fill="none"
+              />
+              <Circle cx={8.6} cy={10} r={1.6} fill={cr.ink} />
+              <Path
+                d="m4.6 17 4.8-4.6 3.4 3.2 2.8-2.4 4 3.8"
+                stroke={cr.ink}
+                strokeWidth={1.8}
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </>
+          ) : (
+            <Path
+              d="M13.4 2.6 5.6 13.4h5l-.8 8 8-10.8h-5Z"
+              stroke={cr.ink}
+              strokeWidth={1.8}
+              strokeLinejoin="round"
+              fill="none"
+            />
+          )}
+        </Svg>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * The three controls under the viewfinder.
+ *
+ * The scan button is 76dp and the other two 54dp, which is the reference's
+ * hierarchy and the right one: one of them is the thing the screen is for,
+ * the other two are ways of changing your mind.
+ */
+export function Controls({ onScan }: { onScan?: () => void }) {
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: CONTROLS_TOP,
+        // MISTAKE 1.22 the controls came in squeezed
+        paddingHorizontal: 44,
+      }}
+    >
+{/* STEP 1.18 pick a photo instead
+      <Round kind="gallery" />
+*/}
+{/* STEP 1.19 or add light
+      <Round kind="flash" />
+*/}
+
+{/* STEP 1.20 and the one it is for
+      <Pressable onPress={onScan} accessibilityRole="button" accessibilityLabel="Scan now">
+        <View
+          style={{
+            width: SCAN,
+            height: SCAN,
+            borderRadius: radius.pill,
+            backgroundColor: cr.panel,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="scan" size={28} tint={cr.onPanel} />
+        </View>
+      </Pressable>
+*/}
+    </View>
+  );
+}

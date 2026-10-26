@@ -1,0 +1,9 @@
+{
+ "progress-screen": "src/app/sprigprogress/index.tsx",
+ "header": "src/features/sprigprogress/components/header.tsx",
+ "progress-card": "src/features/sprigprogress/components/progress-card.tsx",
+ "split-tiles": "src/features/sprigprogress/components/split-tiles.tsx",
+ "streak-card": "src/features/sprigprogress/components/streak-card.tsx",
+ "goal-row": "src/features/sprigprogress/components/goal-row.tsx",
+ "dock": "src/features/sprigprogress/components/dock.tsx"
+}

@@ -1,7 +1,7 @@
 /**
  * The content deck: every figure, product, customer and order on every pane.
  *
- * All invented (rule 5). Teknova is not a company, nobody here has bought
+ * All invented (rule 5). Kovelt is not a company, nobody here has bought
  * anything, and no figure on this screen was ever taken — which is what lets
  * the build use free-licensed photographs of real people for the customer
  * avatars without the page being able to pass as anyone's live product.
@@ -20,10 +20,10 @@ import type { Country } from '@/components/Icon';
 export const FACES = [face1, face2, face3, face4, face5, face6];
 
 export const store = {
-  name: 'Teknova Store',
+  name: 'Kovelt Store',
   plan: 'Pro',
   visibility: 'Private',
-  user: { name: 'Noah Bellingham', email: 'noah@gmail.com', face: face1 },
+  user: { name: 'Noah Bellingham', email: 'noah@kovelt.co', face: face1 },
   team: [face2, face3, face4],
   teamExtra: 6,
 };
@@ -157,7 +157,7 @@ export interface Product {
 export const PRODUCTS: Product[] = [
   {
     id: 'aero',
-    name: 'AeroPods Lite',
+    name: 'Pebble Buds Lite',
     variant: 'White, 20h Battery',
     category: 'Audio',
     glyph: 'buds',
@@ -170,7 +170,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'hyper',
-    name: 'HyperDrive SSD',
+    name: 'Vantage SSD',
     variant: '1TB, USB-C',
     category: 'Storage',
     glyph: 'ssd',
@@ -182,7 +182,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'novaear',
-    name: 'NovaEar Pro ANC',
+    name: 'Lumen Ear Pro ANC',
     variant: 'Black, 32h Battery',
     category: 'Audio',
     glyph: 'buds',
@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'tekwatch',
-    name: 'TekWatch Pulse',
+    name: 'Orbit Watch Pulse',
     variant: '44mm, Silver',
     category: 'Wearables',
     glyph: 'watch',
@@ -206,7 +206,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fluxcharge',
-    name: 'FluxCharge 65W',
+    name: 'Current 65W',
     variant: 'Fast Charger',
     category: 'Power',
     glyph: 'charger',
@@ -266,7 +266,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'novawatch',
-    name: 'NovaBand Go',
+    name: 'Lumen Band Go',
     variant: '38mm, Midnight',
     category: 'Wearables',
     glyph: 'watch',
@@ -320,7 +320,7 @@ export interface Txn {
 
 export const TRANSACTIONS: Txn[] = [
   {
-    id: 'TK-98421',
+    id: 'KV-98421',
     productId: 'novaear',
     when: '19 Nov 2025',
     time: '10:32',
@@ -331,7 +331,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98422',
+    id: 'KV-98422',
     productId: 'tekwatch',
     when: '19 Nov 2025',
     time: '11:05',
@@ -342,7 +342,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'App',
   },
   {
-    id: 'TK-98423',
+    id: 'KV-98423',
     productId: 'aero',
     when: '19 Nov 2025',
     time: '11:44',
@@ -353,7 +353,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98424',
+    id: 'KV-98424',
     productId: 'fluxcharge',
     when: '19 Nov 2025',
     time: '12:10',
@@ -364,7 +364,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Retail',
   },
   {
-    id: 'TK-98425',
+    id: 'KV-98425',
     productId: 'novamini',
     when: '19 Nov 2025',
     time: '12:40',
@@ -375,7 +375,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98426',
+    id: 'KV-98426',
     productId: 'smartcam',
     when: '19 Nov 2025',
     time: '13:15',
@@ -386,7 +386,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'App',
   },
   {
-    id: 'TK-98427',
+    id: 'KV-98427',
     productId: 'hyper',
     when: '19 Nov 2025',
     time: '13:52',
@@ -397,7 +397,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98428',
+    id: 'KV-98428',
     productId: 'boomlite',
     when: '19 Nov 2025',
     time: '14:20',
@@ -408,7 +408,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Retail',
   },
   {
-    id: 'TK-98429',
+    id: 'KV-98429',
     productId: 'novawatch',
     when: '19 Nov 2025',
     time: '14:58',
@@ -419,7 +419,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'App',
   },
   {
-    id: 'TK-98430',
+    id: 'KV-98430',
     productId: 'tekkeys',
     when: '19 Nov 2025',
     time: '15:31',
@@ -430,7 +430,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98431',
+    id: 'KV-98431',
     productId: 'aero',
     when: '19 Nov 2025',
     time: '15:58',
@@ -441,7 +441,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98432',
+    id: 'KV-98432',
     productId: 'hyper',
     when: '19 Nov 2025',
     time: '16:24',
@@ -452,7 +452,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'App',
   },
   {
-    id: 'TK-98433',
+    id: 'KV-98433',
     productId: 'aero',
     when: '19 Nov 2025',
     time: '16:47',
@@ -463,7 +463,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Retail',
   },
   {
-    id: 'TK-98434',
+    id: 'KV-98434',
     productId: 'novamini',
     when: '19 Nov 2025',
     time: '17:03',
@@ -474,7 +474,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98435',
+    id: 'KV-98435',
     productId: 'novaear',
     when: '19 Nov 2025',
     time: '17:29',
@@ -485,7 +485,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'App',
   },
   {
-    id: 'TK-98436',
+    id: 'KV-98436',
     productId: 'tekwatch',
     when: '19 Nov 2025',
     time: '17:51',
@@ -496,7 +496,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Web',
   },
   {
-    id: 'TK-98437',
+    id: 'KV-98437',
     productId: 'fluxcharge',
     when: '19 Nov 2025',
     time: '18:12',
@@ -507,7 +507,7 @@ export const TRANSACTIONS: Txn[] = [
     channel: 'Retail',
   },
   {
-    id: 'TK-98438',
+    id: 'KV-98438',
     productId: 'studiocam',
     when: '19 Nov 2025',
     time: '18:40',

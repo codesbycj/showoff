@@ -1,0 +1,55 @@
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { copy, goalPhoto } from '../data/start';
+import { GOAL_HEIGHT, GOAL_TOP } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+/**
+ * What all of it is for.
+ *
+ * In the reference this row sits under the floating add button, which covers
+ * the middle of the sentence. Here the dock is laid out in flow, so nothing
+ * is hidden behind it and the sentence can be read.
+ */
+export function GoalRow({ onPress }: { onPress?: () => void }) {
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={copy.goal}>
+      <View
+        style={{
+          height: GOAL_HEIGHT,
+          marginTop: GOAL_TOP,
+          borderRadius: radius.tile,
+          borderWidth: 1,
+          borderColor: sg.hairline,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 14,
+        }}
+      >
+        <Image source={goalPhoto} style={{ width: 44, height: 44, borderRadius: radius.pill }} />
+
+        <View style={{ flex: 1, marginLeft: 12 }}>
+          <T variant="goalName" color={sg.ink} style={{ height: type.goalName.line }}>
+            {copy.goal}
+          </T>
+          <T variant="goalNote" color={sg.muted} style={{ height: type.goalNote.line }}>
+            {copy.goalNote}
+          </T>
+        </View>
+
+        <Svg width={16} height={16} viewBox="0 0 24 24">
+          <Path
+            d="m9.6 6 5.4 6-5.4 6"
+            stroke={sg.faint}
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+        </Svg>
+      </View>
+    </Pressable>
+  );
+}

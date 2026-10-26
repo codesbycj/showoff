@@ -1,0 +1,66 @@
+{
+  "url": "http://localhost:5372/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "range-open", "click": "[data-select='range'] > button", "settle": 600, "rest": true },
+    { "name": "range-quarter", "click": "[data-menu='range'] [data-option='q']", "settle": 900, "rest": true },
+    { "name": "range-open-2", "click": "[data-select='range'] > button", "settle": 600, "rest": true },
+    { "name": "range-ytd", "click": "[data-menu='range'] [data-option='ytd']", "settle": 900, "rest": true },
+    { "name": "range-open-3", "click": "[data-select='range'] > button", "settle": 600, "rest": true },
+    { "name": "range-30d", "click": "[data-menu='range'] [data-option='30d']", "settle": 900, "rest": true },
+
+    { "name": "curve-mid", "hover": "[data-card='profit'] [data-mark='pt-12']", "against": "range-30d" },
+    { "name": "curve-late", "hover": "[data-card='profit'] [data-mark='pt-26']", "against": "curve-mid" },
+
+    { "name": "client-hover", "hover": "[data-card='clients'] [data-mark='c3']", "against": "curve-late" },
+    { "name": "client-pick", "click": "[data-card='clients'] [data-mark='c1']", "settle": 800, "rest": true },
+    { "name": "client-clear", "click": "[data-action='clear-client']", "settle": 800, "rest": true },
+
+    { "name": "sort-client", "click": "[data-sort='client']", "settle": 700, "rest": true },
+    { "name": "sort-client-up", "click": "[data-sort='client']", "settle": 700, "rest": true },
+    { "name": "sort-matter", "click": "[data-sort='matter']", "settle": 700, "rest": true },
+    { "name": "sort-billable", "click": "[data-sort='billable']", "settle": 700, "rest": true },
+
+    { "name": "matters-down", "wheel": ["[data-scroller='matters']", 220], "settle": 500, "rest": true },
+    { "name": "matters-top", "wheel": ["[data-scroller='matters']", -220], "settle": 500, "rest": true },
+
+    { "name": "window-open", "click": "[data-select='window'] > button", "settle": 600, "rest": true },
+    { "name": "window-month", "click": "[data-menu='window'] [data-option='month']", "settle": 900, "rest": true },
+    { "name": "cases-down", "wheel": ["[data-scroller='cases']", 240], "settle": 500, "rest": true },
+    { "name": "window-open-2", "click": "[data-select='window'] > button", "settle": 600, "rest": true },
+    { "name": "window-week", "click": "[data-menu='window'] [data-option='week']", "settle": 900, "rest": true },
+
+    { "name": "exported", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 700, "rest": true },
+
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 500, "rest": true },
+    { "name": "alerts-back", "click": "[data-action='alerts']", "settle": 500, "rest": true },
+
+    { "name": "mail-open", "click": "[data-action='mail']", "settle": 700, "rest": true },
+    { "name": "mail-closed", "click": "[data-action='mail']", "settle": 700, "rest": true },
+
+    { "name": "find-open", "click": "[data-action='find']", "settle": 700, "rest": true },
+    { "name": "find-typed", "fill": ["[data-search='find']", "dispute"], "settle": 800, "rest": true },
+    { "name": "find-empty", "fill": ["[data-search='find']", "zzzz"], "settle": 800, "rest": true },
+    { "name": "find-matter", "fill": ["[data-search='find']", "grid"], "settle": 800, "rest": true },
+    { "name": "find-open-matter", "click": "[data-find='m14']", "settle": 1000, "rest": true },
+    { "name": "back-overview", "click": "[data-tab='overview']", "settle": 1000, "rest": true },
+
+    { "name": "open-row", "click": "[data-card='matters'] [data-row='m07']", "settle": 1000, "rest": true },
+    { "name": "back-again", "click": "[data-tab='overview']", "settle": 1000, "rest": true },
+
+    { "name": "view-all", "click": "[data-action='view-all']", "settle": 1000, "rest": true },
+    { "name": "back-third", "click": "[data-tab='overview']", "settle": 1000, "rest": true },
+
+    { "name": "inert-team", "click": "[data-tab='team']", "against": "back-third", "expectUnchanged": true },
+    { "name": "inert-company", "click": "[data-tab='company']", "against": "back-third", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "back-third" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

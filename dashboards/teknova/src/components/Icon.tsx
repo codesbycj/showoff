@@ -112,16 +112,26 @@ export function Icon({
 }
 
 /**
- * The Teknova mark: a dark disc with a drawn "T" bolt. Invented, in the
- * reference's idiom — the copy on this screen is invented, so the mark has to
- * be (rule 8).
+ * The Kovelt mark: a dark disc with a drawn "K" and an accent spark.
+ * Invented, in the reference's idiom — the copy on this screen is invented, so
+ * the mark has to be (rule 8).
+ *
+ * The letter is drawn, not set, so it does not follow a string rename: this
+ * one was a different letter under this episode's previous name and had to be
+ * redrawn by hand when the name changed.
  */
 export function Logo({ size = 36 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" aria-hidden="true" focusable="false">
       <circle cx="20" cy="20" r="20" fill="var(--color-ink)" />
-      <path d="M12 14h16M20 14v13" stroke="#fff" strokeWidth="2.8" strokeLinecap="round" />
-      <path d="M23.5 20.5 18 27h5.5l-1.5 5 5.5-6.5h-5z" fill="var(--color-accent)" />
+      <path
+        d="M14.5 13v14M24.5 13.5 16 20.5M18.5 19 25.5 27"
+        stroke="#fff"
+        strokeWidth="2.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="28" cy="13.5" r="2.4" fill="var(--color-accent)" />
     </svg>
   );
 }

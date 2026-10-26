@@ -1,0 +1,51 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { ActionDiscs } from '@/features/nesthome/components/action-discs';
+import { BalanceBlock } from '@/features/nesthome/components/balance-block';
+import { ContactGrid } from '@/features/nesthome/components/contact-grid';
+import { Dock } from '@/features/nesthome/components/dock';
+import { TopBar } from '@/features/nesthome/components/top-bar';
+import { MARGIN } from '@/features/nesthome/layout';
+import { ne } from '@/features/nesthome/theme';
+import { useInsets } from '@/features/nesthome/use-insets';
+
+/**
+ * Nest — the wallet.
+ *
+ * Assembly only: who is here, what the wallet holds, the four things it
+ * does, everyone it knows, and where else the app goes.
+ *
+ * The dock is welded to the foot and takes the bottom inset itself, so the
+ * contact grid can scroll under it — which is why the grid takes `flex: 1`
+ * and the screen has no band of empty cream at the foot.
+ */
+export default function NesthomeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ne.canvas, paddingTop: insets.top }}>
+      <StatusBar style="dark" />
+
+      <View style={{ flex: 1, paddingHorizontal: MARGIN }}>
+        <TopBar />
+
+        <BalanceBlock />
+
+        <ActionDiscs onAdd={() => router.push('/nestactions')} />
+
+        <ContactGrid onPress={() => router.push('/nestactions')} />
+      </View>
+
+      <Dock
+        active="home"
+        bottom={insets.bottom}
+        onSelect={(id) => {
+          if (id === 'perf') router.push('/nestperf');
+          if (id === 'actions') router.push('/nestactions');
+        }}
+      />
+    </View>
+  );
+}

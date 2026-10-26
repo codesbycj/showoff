@@ -1,0 +1,23 @@
+{
+ "assets/images/larkpick/CREDITS.md": "5e22855ae3fc6fd0e2c5e5e4c35aea54e180073e8ab2089595886b60ef240605",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "3194b1ceeb598420a74148ce5bdae090e14e292140c223a2b28b7193c8cbf0c8",
+ "src/app/larkpick/index.tsx": "162f9d94a430de0fa6d64f67c2b13f3fe2c9888cade31ef20102e02354c2f12a",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/larkpick/components/continue-button.tsx": "04ec2d0d452188e9018431e746488f8e762bce66779bbe4d26b708eb94653ec8",
+ "src/features/larkpick/components/flag.tsx": "d73399ebfd3d0c6103c8775252a819aea288a6cc053b917f639650df3f7f91aa",
+ "src/features/larkpick/components/headline.tsx": "f7d5f0b4a5ea4b95e5edfc30a6fa1129cf2f2d72db65e23693a98c772759f372",
+ "src/features/larkpick/components/language-row.tsx": "cc73a6a1855198c9fe22908f8484567760638a5b040c852c94e9f70912a62caa",
+ "src/features/larkpick/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/larkpick/components/top-bar.tsx": "de04ff5a95103c9a1a5ff4b7e205e02f41e98f23a21ed65d966b3e2a77a8e806",
+ "src/features/larkpick/data/start.ts": "3b2b41b9e744193209315aa5d99e54aa902a2a3f0a4351175e0a265f1ec979bd",
+ "src/features/larkpick/layout.ts": "c8b11891ad200970e577e323a4a09bedbfeff184e1f7c2705d4cfbab3a1ed7d2",
+ "src/features/larkpick/theme.ts": "8d1db837376a6ec02b3c4ba44becd7a7ffad85e802c073325b4add287efa2f9f",
+ "src/features/larkpick/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

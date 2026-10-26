@@ -1,0 +1,107 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path, Rect } from 'react-native-svg';
+
+import { copy } from '../data/start';
+import { FOOT_HEIGHT, FOOT_TOP } from '../layout';
+import { nb, radius, type } from '../theme';
+import { T } from './text';
+
+/** The keypad glyph on either end of the bar. */
+function Pad({ tint }: { tint: string }) {
+  return (
+    <Svg width={17} height={17} viewBox="0 0 24 24">
+      <Rect x={4} y={4} width={16} height={16} rx={4} stroke={tint} strokeWidth={1.7} fill="none" />
+      <Path
+        d="M8.4 9.2h.01M12 9.2h.01M15.6 9.2h.01M8.4 12.8h.01M12 12.8h.01M15.6 12.8h.01M8.4 16.4h.01M12 16.4h.01M15.6 16.4h.01"
+        stroke={tint}
+        strokeWidth={2.2}
+        strokeLinecap="round"
+      />
+    </Svg>
+  );
+}
+
+/**
+ * The one thing this screen is for.
+ *
+ * The reference's bar carries three chevrons pointing nowhere; here the whole
+ * bar is the control and it has a name, so it answers a tap and a screen
+ * reader. The yellow is an absolutely-filled child, so the blank state is a
+ * blank page.
+ */
+export function CountBar({ onPress }: { onPress?: () => void }) {
+  return (
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => ({ opacity: pressed ? 0.86 : 1 })}
+      accessibilityRole="button"
+      accessibilityLabel={copy.count}
+    >
+      <View
+        style={{
+          height: FOOT_HEIGHT,
+          marginTop: FOOT_TOP,
+          borderRadius: radius.pill,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 6,
+        }}
+      >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            borderRadius: radius.pill,
+            backgroundColor: nb.yellow,
+          }}
+        />
+
+        <View
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: radius.pill,
+            backgroundColor: nb.yellowDeep,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Pad tint={nb.yellowInk} />
+        </View>
+
+        <T
+          variant="bar"
+          color={nb.yellowInk}
+          style={{ flex: 1, textAlign: 'center', height: type.bar.line }}
+        >
+          {copy.count}
+        </T>
+
+        <View
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: radius.pill,
+            backgroundColor: nb.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={17} height={17} viewBox="0 0 24 24">
+            <Path
+              d="m9.6 6 5.4 6-5.4 6"
+              stroke={nb.yellowInk}
+              strokeWidth={2.2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
+      </View>
+    </Pressable>
+  );
+}

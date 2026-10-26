@@ -112,7 +112,7 @@ export function Icon({
   );
 }
 
-/** The Finexy mark: an orange disc with a rising stroke cut out of it. */
+/** The Obolin mark: an orange disc with a rising stroke cut out of it. */
 export function Logo({ size = 30 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true" focusable="false">

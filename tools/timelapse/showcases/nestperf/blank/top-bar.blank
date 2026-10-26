@@ -1,0 +1,67 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { avatar, copy } from '../data/start';
+import { AVATAR, BELL, HEAD_TOP } from '../layout';
+import { ne, radius, type } from '../theme';
+import { Bell, Wave } from './glyphs';
+import { T } from './text';
+
+/**
+ * Who is here, and whether anything is waiting.
+ *
+ * The waving hand is drawn, not set as an emoji — the reference's is an
+ * emoji, which is rendered by whatever font the platform happens to have.
+ */
+export function TopBar({ onBell }: { onBell?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: HEAD_TOP }}>
+{/* STEP 1.03 a face
+      <Image source={avatar} style={{ width: AVATAR, height: AVATAR, borderRadius: radius.pill }} />
+*/}
+
+{/* STEP 1.04 a greeting
+      <View style={{ flex: 1, marginLeft: 12 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <T variant="hello" color={ne.muted} style={{ height: type.hello.line }}>
+            {copy.hello}
+          </T>
+          <View style={{ marginLeft: 4 }}>
+            <Wave size={14} tint={ne.muted} />
+          </View>
+        </View>
+        <T variant="name" color={ne.ink} style={{ height: type.name.line }}>
+          {copy.name}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.05 and what is waiting
+      <Pressable onPress={onBell} accessibilityRole="button" accessibilityLabel="Notifications">
+        <View
+          style={{
+            width: BELL,
+            height: BELL,
+            borderRadius: radius.pill,
+            backgroundColor: ne.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Bell tint={ne.ink} />
+          <View
+            style={{
+              position: 'absolute',
+              top: 6,
+              right: 6,
+              width: 9,
+              height: 9,
+              borderRadius: radius.pill,
+              backgroundColor: ne.greenDeep,
+            }}
+          />
+        </View>
+      </Pressable>
+*/}
+    </View>
+  );
+}

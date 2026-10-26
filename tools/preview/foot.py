@@ -35,6 +35,7 @@ painted pixels is centred and narrow, and by ignoring the rightmost 8dp outright
 """
 
 import sys
+from collections import Counter
 
 from PIL import Image
 
@@ -43,7 +44,21 @@ SCREEN_DP_H = 852
 SAFE_BOTTOM_DP = 34  # the home indicator's own band; a correct screen stops here
 LIMIT_DP = 24  # dead canvas *below* the safe area that still passes
 RIGHT_MARGIN_DP = 8  # a scrollbar track lives here on the web render
-TOL = 18  # how far from the ground colour a pixel has to be to count
+# How far from the ground colour a pixel has to be to count as paint.
+#
+# This was 18, and at 18 the tool is blind to a white card on a warm off-white
+# page: #FFFFFF against #F6F6F2 is nine units apart, so the card did not count
+# and the measurement ran up to the last dark *text* inside it instead --
+# reporting 25dp of dead canvas on a screen whose last card ends exactly on the
+# safe area. Swept over every finished shot in the batch at 18 / 12 / 8 / 6:
+# every other screen reads the same at every tolerance, and only the
+# near-ground one moves. So the threshold was the bug, not the screen.
+#
+# 8 is below the nine-unit gap a card of this kind makes and far above the
+# render's own noise -- the harness writes a lossless PNG, so a flat fill is
+# exactly flat. `MIN_RUN_DP` stays at 6 and still rejects hairlines; raising it
+# was tried in the same sweep and only made two screens read worse.
+TOL = 8
 MIN_RUN_DP = 6  # ignore a run narrower than this; antialiasing and hairlines
 INDICATOR_BAND_DP = 26  # the home indicator lives inside this much of the foot
 INDICATOR_MAX_DP = 160  # ...and is no wider than this
@@ -68,6 +83,24 @@ def measure(path):
         # The corners disagree -- a gradient or a full-bleed image. Nothing is
         # dead space in that case; report zero and say which.
         return 0, 0, 'full-bleed foot (corners differ), nothing to measure'
+
+    # A screen can end on a bar welded to the bottom edge -- a dark dock, a
+    # coloured footer. Its colour then fills both corners and becomes the
+    # "ground", and the scan measures up to the last thing *above* the bar and
+    # calls the bar itself dead canvas. It is the opposite of dead: it is the
+    # screen reaching the edge.
+    #
+    # The test is specific rather than clever, and it has to rule out the case
+    # it would otherwise wave through: a screen with a photograph at the top
+    # and the page's own white at the foot, where the bottom band is uniform
+    # and differs from the top simply because the top is a picture. So the bar
+    # must also differ from the page's own surface -- the colour that occupies
+    # most of a column down the left margin.
+    surface = Counter(px[inset, y] for y in range(inset, h - inset, scale)).most_common(1)[0][0]
+    if dist(ground, px[inset, inset]) > TOL and dist(ground, surface) > TOL:
+        row = h - inset
+        if all(dist(px[x, row], ground) <= TOL for x in range(0, right, scale)):
+            return 0, 0, 'ends on a full-width bar at the edge, nothing to measure'
 
     last = None
     for y in range(h - 1, -1, -1):

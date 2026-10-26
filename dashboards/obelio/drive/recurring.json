@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:5348/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-recurring", "click": "[data-tab='recurring']", "settle": 950, "rest": true },
+
+    { "name": "cadence-monthly", "click": "[data-group='cadence'] [data-segment='Monthly']", "settle": 850, "rest": true },
+    { "name": "cadence-weekly", "click": "[data-group='cadence'] [data-segment='Weekly']", "settle": 850, "rest": true },
+    { "name": "cadence-yearly", "click": "[data-group='cadence'] [data-segment='Yearly']", "settle": 850, "rest": true },
+    { "name": "cadence-all", "click": "[data-group='cadence'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "rule-off", "click": "[data-toggle='r1']", "settle": 800, "rest": true },
+    { "name": "rule-on", "click": "[data-toggle='r1']", "settle": 800, "rest": true },
+    { "name": "rule-festival-on", "click": "[data-toggle='r6']", "settle": 800, "rest": true },
+    { "name": "rule-shop-off", "click": "[data-toggle='r5']", "settle": 800, "rest": true },
+
+    { "name": "rules-scrolled", "wheel": ["[data-scroller='rules']", 260], "rest": true },
+    { "name": "rules-top", "wheel": ["[data-scroller='rules']", -260], "rest": true },
+
+    { "name": "search-cloud", "fill": ["[data-search]", "cloud"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-feedback", "click": "[data-tab='feedback']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-help", "click": "[data-tab='help']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

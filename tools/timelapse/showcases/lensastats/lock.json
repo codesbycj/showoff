@@ -1,0 +1,22 @@
+{
+ "assets/images/lensastats/CREDITS.md": "110fea72a9db6481fc39419f3722b0d3909349c6494233ae9b6f6f5fefcf8d57",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "0f197b76651f3d8f36d26dc42e8089a906e2d25c59a150ccce1d7bf805370cab",
+ "src/app/lensastats/index.tsx": "1074a3f9528a657bfca0251b20c7e8ffd4ce6cb67357789a845de6a17392636a",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/lensastats/components/calories-card.tsx": "528b222df8ebc34fc2e1df8c08364b73007dd5d801053929390534776d7bdf22",
+ "src/features/lensastats/components/day-chart.tsx": "f79f5bbb82ffcc0b8ed3c61002bb65fdfa525fb454165e83e8f07cdffa02dab1",
+ "src/features/lensastats/components/nutrition-card.tsx": "39cb6701b2b6ecda708a1bcd7cfd5f5629ca3fb96920147d0798864f73219c4f",
+ "src/features/lensastats/components/text.tsx": "a986f90995a940bdd9e4ec2ac2660da7198d3279075ab8850b0b27d7fc37eaa1",
+ "src/features/lensastats/components/top-bar.tsx": "8ea9ba09e510d731a7ab6050868813d3d4c18442fdf9c21ac99cea2eb3b287f6",
+ "src/features/lensastats/data/start.ts": "871a8efacf475ae60aa7f3f5418e7859648abcea7bd00eab0a7fedf148973a4d",
+ "src/features/lensastats/layout.ts": "48c8564630497250f55cd39c3ecb3f23e4db4dc61efaacaf7a2631869dbda2b9",
+ "src/features/lensastats/theme.ts": "6485b6180a9b1e85ea0e5e8d47bd7b392f26c5c8ff382b932dcaab3ad5280e6e",
+ "src/features/lensastats/use-insets.ts": "3975af63e5f6e72ac180033d7a2dd926013bbbbfff6cbc2eac6e8526f8e26a72",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

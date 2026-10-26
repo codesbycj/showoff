@@ -1,0 +1,46 @@
+{
+  "url": "http://localhost:5364/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "month-open", "click": "[data-select='month'] > button", "settle": 600, "rest": true },
+    { "name": "month-july", "click": "[data-menu='month'] [data-option='jul']", "settle": 900, "rest": true },
+    { "name": "month-open-2", "click": "[data-select='month'] > button", "settle": 600, "rest": true },
+    { "name": "month-june", "click": "[data-menu='month'] [data-option='jun']", "settle": 900, "rest": true },
+    { "name": "month-open-3", "click": "[data-select='month'] > button", "settle": 600, "rest": true },
+    { "name": "month-august", "click": "[data-menu='month'] [data-option='aug']", "settle": 900, "rest": true },
+
+    { "name": "outflow", "click": "[data-group='direction'] [data-segment='outflow']", "settle": 900, "rest": true },
+    { "name": "inflow", "click": "[data-group='direction'] [data-segment='inflow']", "settle": 900, "rest": true },
+
+    { "name": "heat-cell", "hover": "[data-card='cashflow'] [data-mark='cell-1-8']", "against": "inflow" },
+    { "name": "heat-cell-2", "hover": "[data-card='cashflow'] [data-mark='cell-2-20']", "against": "heat-cell" },
+
+    { "name": "tax-scrolled", "wheel": ["[data-scroller='tax']", 140], "rest": true },
+    { "name": "tax-top", "wheel": ["[data-scroller='tax']", -140], "rest": true },
+
+    { "name": "exported", "click": "[data-action='export']", "settle": 750, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 750, "rest": true },
+    { "name": "shared", "click": "[data-action='share']", "settle": 750, "rest": true },
+    { "name": "share-off", "click": "[data-action='share']", "settle": 750, "rest": true },
+    { "name": "upgraded", "click": "[data-action='upgrade']", "settle": 800, "rest": true },
+    { "name": "upgrade-off", "click": "[data-action='upgrade']", "settle": 800, "rest": true },
+
+    { "name": "search-vat", "fill": ["[data-search]", "value"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-tax", "click": "[data-action='open-tax']", "settle": 950, "rest": true },
+    { "name": "back-home", "click": "[data-tab='home']", "settle": 950, "rest": true },
+    { "name": "banner-dismissed", "click": "[data-action='dismiss']", "settle": 800, "rest": true },
+
+    { "name": "parked", "rest": true },
+
+    { "name": "inert-inbox", "click": "[data-tab='inbox']", "against": "parked", "expectUnchanged": true },
+    { "name": "inert-metrics", "click": "[data-tab='metrics']", "against": "parked", "expectUnchanged": true }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+ "actions-screen": "src/app/nestactions/index.tsx",
+ "top-bar": "src/features/nestactions/components/top-bar.tsx",
+ "action-list": "src/features/nestactions/components/action-list.tsx",
+ "dock": "src/features/nestactions/components/dock.tsx"
+}

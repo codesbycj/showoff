@@ -1,0 +1,63 @@
+import { Pressable, View } from 'react-native';
+
+import { days } from '../data/start';
+import { DAY_H, DAY_W } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+/** One day. Written out in `DayStrip` so the reveal lands them one at a time. */
+function Day({ i, picked, onPick }: { i: number; picked: number; onPick?: (n: number) => void }) {
+  const day = days[i];
+  const on = day.num === picked;
+  return (
+    <Pressable
+      onPress={() => onPick?.(day.num)}
+      accessibilityRole="button"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={`${day.letter} ${day.num}`}
+    >
+      <View
+        style={{
+          width: DAY_W,
+          height: DAY_H,
+          borderRadius: radius.day,
+          backgroundColor: on ? sg.panel : 'transparent',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T
+          variant="dayLetter"
+          color={on ? sg.onPanel : sg.limeInk}
+          style={{ height: type.dayLetter.line }}
+        >
+          {day.letter}
+        </T>
+        <T variant="dayNum" color={on ? sg.onPanel : sg.ink} style={{ height: type.dayNum.line }}>
+          {String(day.num)}
+        </T>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * The week, with today on a black tile.
+ *
+ * Seven 34dp tiles spread across the card rather than a scrolling rail: a
+ * week always has seven days, so there is nothing to scroll and a rail would
+ * only cost the row its even rhythm.
+ */
+export function DayStrip({ picked, onPick }: { picked: number; onPick?: (n: number) => void }) {
+  return (
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <Day i={0} picked={picked} onPick={onPick} />
+      <Day i={1} picked={picked} onPick={onPick} />
+      <Day i={2} picked={picked} onPick={onPick} />
+      <Day i={3} picked={picked} onPick={onPick} />
+      <Day i={4} picked={picked} onPick={onPick} />
+      <Day i={5} picked={picked} onPick={onPick} />
+      <Day i={6} picked={picked} onPick={onPick} />
+    </View>
+  );
+}

@@ -1,0 +1,140 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/urbanist';
+
+/*
+ * Dravelo.
+ *
+ * A posed board: one rounded panel on a flat grey ground. refscan read the
+ * palette off it — #042314 for the sidebar and the filled controls, #d8d9c7
+ * for the pale promo card, white cards on a near-white page — and lime for
+ * everything that moves. The board is dropped and the panel's ground becomes
+ * the page.
+ *
+ * The capture is 736x552, which is a *small* board: at that size a 14px label
+ * is ten pixels tall and nothing in it can be measured. Rule 1 is off; the
+ * palette, the hierarchy and the order of the blocks are the brief, and the
+ * sizes are what is right for a 1440x900 browser.
+ *
+ * `static`, because the donut takes its segment colours as inline
+ * `var(--color-seg-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions — which paints two of three segments black, silently.
+ */
+@theme static {
+  --color-ground: #f4f5f2;
+  --color-surface: #ffffff;
+  --color-sunken: #f2f4ef;
+  --color-sunken-deep: #e4e8dd;
+
+  --color-ink: #141a13;
+  --color-body: #41493f;
+  /* 4.63:1 on the page ground. */
+  --color-muted: #636b60;
+  --color-line: #e7eae4;
+
+  /* The sidebar, the dark cards and the primary button. */
+  --color-forest: #042314;
+  --color-forest-soft: #0b3520;
+  --color-forest-fg: #eef5ea;
+
+  --color-accent: #9ede3f; /* the lime: the active pill, the bars, the leaf */
+  --color-accent-soft: #cdeea4;
+  --color-accent-faint: #eef8de;
+  --color-accent-deep: #3c6410; /* lime as *text* on a pale ground */
+
+  --color-bone: #d8d9c7; /* the pale promo card at the foot of the right column */
+
+  --color-positive: #1d7a3f;
+  --color-positive-soft: #e3f3e7;
+  --color-danger: #b03028;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The three slices of Total View Performance. */
+  --color-seg-views: #04341c;
+  --color-seg-percent: #6aa83a;
+  --color-seg-sales: #c6e98e;
+
+  --font-sans: 'Urbanist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(20 26 19 / 0.04), 0 10px 24px -20px rgb(20 26 19 / 0.2);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

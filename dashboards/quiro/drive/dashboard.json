@@ -1,0 +1,52 @@
+{
+  "url": "http://localhost:5344/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "wallet-reserve", "click": "[data-wallet='reserve']", "settle": 850, "rest": true },
+    { "name": "wallet-travel", "click": "[data-wallet='travel']", "settle": 850, "rest": true },
+    { "name": "wallet-main", "click": "[data-wallet='main']", "settle": 850, "rest": true },
+
+    { "name": "sent", "click": "[data-action='send']", "settle": 700, "rest": true },
+    { "name": "sent-off", "click": "[data-action='send']", "settle": 700, "rest": true },
+
+    { "name": "range-6m", "click": "[data-group='range'] [data-segment='6m']", "settle": 900, "rest": true },
+    { "name": "range-1y", "click": "[data-group='range'] [data-segment='1y']", "settle": 900, "rest": true },
+    { "name": "range-3m", "click": "[data-group='range'] [data-segment='3m']", "settle": 900, "rest": true },
+
+    { "name": "period-monthly", "click": "[data-group='period'] [data-segment='monthly']", "settle": 900, "rest": true },
+    { "name": "period-annually", "click": "[data-group='period'] [data-segment='annually']", "settle": 900, "rest": true },
+
+    { "name": "bar-jan", "hover": "[data-card='engagement'] [data-mark='jan']", "against": "period-annually" },
+    { "name": "bar-jun", "hover": "[data-card='engagement'] [data-mark='jun']", "against": "bar-jan" },
+
+    { "name": "payee-pick", "click": "[data-payee='m2']", "settle": 700, "rest": true },
+    { "name": "payee-off", "click": "[data-payee='m2']", "settle": 700, "rest": true },
+
+    { "name": "sort-amount", "click": "[data-card='history'] [data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-amount-asc", "click": "[data-card='history'] [data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-name", "click": "[data-card='history'] [data-sort='name']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-card='history'] [data-sort='stamp']", "settle": 750, "rest": true },
+    { "name": "history-scrolled", "wheel": ["[data-scroller='history']", 220], "rest": true },
+    { "name": "history-top", "wheel": ["[data-scroller='history']", -220], "rest": true },
+
+    { "name": "wallet-added", "click": "[data-action='add-wallet']", "settle": 700, "rest": true },
+    { "name": "wallet-undone", "click": "[data-action='add-wallet']", "settle": 700, "rest": true },
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 650, "rest": true },
+
+    { "name": "search-driblo", "fill": ["[data-search]", "driblo"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-history", "click": "[data-action='open-history']", "settle": 950, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 950, "rest": true },
+
+    { "name": "inert-documents", "click": "[data-tab='documents']", "against": "back-dashboard", "expectUnchanged": true },
+    { "name": "inert-contacts", "click": "[data-tab='contacts']", "against": "back-dashboard", "expectUnchanged": true },
+    { "name": "inert-rail-documents", "click": "[data-rail='documents']", "against": "back-dashboard", "expectUnchanged": true }
+  ]
+}

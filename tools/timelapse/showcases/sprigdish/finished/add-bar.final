@@ -1,0 +1,75 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { copy } from '../data/start';
+import { BUTTON_HEIGHT, BUTTON_TOP } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Put it in a meal.
+ *
+ * Two controls: the button, and a chevron that opens the list of other meals
+ * to put it in. In the reference the chevron is a second lime square with
+ * nothing to say what it does, so it carries an accessible name here.
+ */
+export function AddBar({ onAdd, onPick }: { onAdd?: () => void; onPick?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', gap: 10, marginTop: BUTTON_TOP }}>
+      <Pressable
+        onPress={onAdd}
+        style={({ pressed }) => ({ flex: 1, opacity: pressed ? 0.85 : 1 })}
+        accessibilityRole="button"
+        accessibilityLabel={copy.add}
+      >
+        <View
+          style={{
+            height: BUTTON_HEIGHT,
+            borderRadius: radius.chip,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: radius.chip,
+              backgroundColor: sg.lime,
+            }}
+          />
+          <T variant="button" color={sg.ink} style={{ height: type.button.line }}>
+            {copy.add}
+          </T>
+        </View>
+      </Pressable>
+
+      <Pressable onPress={onPick} accessibilityRole="button" accessibilityLabel="Choose a meal">
+        <View
+          style={{
+            width: BUTTON_HEIGHT,
+            height: BUTTON_HEIGHT,
+            borderRadius: radius.chip,
+            backgroundColor: sg.limeWash,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={18} height={18} viewBox="0 0 24 24">
+            <Path
+              d="m6.6 9.4 5.4 5.2 5.4-5.2"
+              stroke={sg.limeInk}
+              strokeWidth={2.2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

@@ -1,0 +1,38 @@
+{
+  "url": "http://localhost:5332/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-wallet", "click": "[data-tab='wallet']", "settle": 900, "rest": true },
+
+    { "name": "card-reserve", "click": "[data-group='card'] [data-segment='reserve']", "settle": 900, "rest": true },
+    { "name": "card-shared", "click": "[data-group='card'] [data-segment='shared']", "settle": 900, "rest": true },
+    { "name": "card-everyday", "click": "[data-group='card'] [data-segment='everyday']", "settle": 900, "rest": true },
+
+    { "name": "week-tue", "hover": "[data-card='limit'] [data-mark='day-1']", "against": "card-everyday" },
+    { "name": "week-fri", "hover": "[data-card='limit'] [data-mark='day-4']", "against": "week-tue" },
+
+    { "name": "trail-mid", "hover": "[data-card='trail'] [data-mark='pt-10']", "against": "week-fri" },
+    { "name": "trail-late", "hover": "[data-card='trail'] [data-mark='pt-25']", "against": "trail-mid" },
+
+    { "name": "payee-pick", "click": "[data-payee='p3']", "settle": 700, "rest": true },
+    { "name": "amount-120", "click": "[data-group='amount'] [data-segment='120']", "settle": 700, "rest": true },
+    { "name": "sent", "click": "[data-action='send']", "settle": 700, "rest": true },
+    { "name": "sent-off", "click": "[data-action='send']", "settle": 700, "rest": true },
+    { "name": "payee-off", "click": "[data-payee='p3']", "settle": 700, "rest": true },
+
+    { "name": "bill-off", "click": "[data-toggle='r1']", "settle": 700, "rest": true },
+    { "name": "bill-on", "click": "[data-toggle='r1']", "settle": 700, "rest": true },
+    { "name": "bills-scrolled", "wheel": ["[data-scroller='recurring']", 220], "rest": true },
+    { "name": "bills-top", "wheel": ["[data-scroller='recurring']", -220], "rest": true },
+
+    { "name": "search-halcyon", "fill": ["[data-search]", "halcyon"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-people", "click": "[data-tab='people']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-goals", "click": "[data-tab='goals']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

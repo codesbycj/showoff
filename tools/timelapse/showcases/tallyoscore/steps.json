@@ -1,0 +1,340 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "@/features/tallyoscore/components/top-bar"
+   ],
+   "label": "the mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a way to send it on"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "@/features/tallyoscore/components/score-sentence"
+   ],
+   "label": "the sentence it is all for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "the headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/score-sentence.tsx",
+    "STEP 1.07"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/score-sentence.tsx",
+    "STEP 1.08"
+   ],
+   "label": "a greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/score-sentence.tsx",
+    "STEP 1.09"
+   ],
+   "label": "a hand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/score-sentence.tsx",
+    "STEP 1.10"
+   ],
+   "label": "a name, and a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/score-sentence.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and the verdict"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "@/features/tallyoscore/components/stat-chips"
+   ],
+   "label": "two figures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "two chips"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/stat-chips.tsx",
+    "STEP 1.14"
+   ],
+   "label": "how much it grew"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/stat-chips.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the best run so far"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/stat-chips.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and a way into it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "@/features/tallyoscore/components/share-bar"
+   ],
+   "label": "who else sees them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "a yellow bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/share-bar.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the yellow"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/share-bar.tsx",
+    "STEP 1.20"
+   ],
+   "label": "who it went to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/share-bar.tsx",
+    "STEP 1.21"
+   ],
+   "label": "a link"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/share-bar.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and their face"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "@/features/tallyoscore/components/progress-card"
+   ],
+   "label": "how it is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "STEP 1.24"
+   ],
+   "label": "a cyan card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/progress-card.tsx",
+    "STEP 1.25"
+   ],
+   "label": "the cyan"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/progress-card.tsx",
+    "STEP 1.26"
+   ],
+   "label": "the range"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/progress-card.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the period itself"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/progress-card.tsx",
+    "STEP 1.28"
+   ],
+   "label": "and how it is going"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "@/features/tallyoscore/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/tallyoscore/index.tsx",
+    "STEP 1.30"
+   ],
+   "label": "and a dark one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/dock.tsx",
+    "STEP 1.31"
+   ],
+   "label": "the bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/dock.tsx",
+    "STEP 1.32"
+   ],
+   "label": "the tasks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/dock.tsx",
+    "STEP 1.33"
+   ],
+   "label": "the figures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/dock.tsx",
+    "STEP 1.34"
+   ],
+   "label": "the settings"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/tallyoscore/components/dock.tsx",
+    "STEP 1.35"
+   ],
+   "label": "and you"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/tallyoscore/components/progress-card.tsx",
+    [
+     "// MISTAKE 1.36",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the card came in half-faded"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/tallyoscore/components/dock.tsx",
+    [
+     "// MISTAKE 1.37",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the lit tab came in squared off"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dock",
+     "src/features/tallyoscore/components/dock.tsx"
+    ],
+    [
+     "progress-card",
+     "src/features/tallyoscore/components/progress-card.tsx"
+    ],
+    [
+     "score-screen",
+     "src/app/tallyoscore/index.tsx"
+    ],
+    [
+     "score-sentence",
+     "src/features/tallyoscore/components/score-sentence.tsx"
+    ],
+    [
+     "share-bar",
+     "src/features/tallyoscore/components/share-bar.tsx"
+    ],
+    [
+     "stat-chips",
+     "src/features/tallyoscore/components/stat-chips.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/tallyoscore/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

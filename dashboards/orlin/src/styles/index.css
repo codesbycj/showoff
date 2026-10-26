@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/space-grotesk';
+
+/*
+ * Stakvio.
+ *
+ * A posed board: one rounded panel on a flat grey ground. refscan read the
+ * palette off it — #f5f5f5 for the panel, #f05409 for the orange, #402917 for
+ * the dark card, #e7dfd4 and #ffefd3 for the creams. The board is dropped and
+ * the panel's ground becomes the page.
+ *
+ * `static`, because the sparklines take their stroke as inline
+ * `var(--color-spark-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #f4f4f4;
+  --color-surface: #ffffff;
+  --color-sunken: #f7f6f5;
+  --color-sunken-deep: #ece9e5;
+  /* The pale panel the Summary and Activity blocks sit in. */
+  --color-shelf: #f0efed;
+
+  --color-ink: #1a1512;
+  --color-body: #4a423c;
+  /* 4.72:1 on the page ground. */
+  --color-muted: #6c635c;
+  --color-line: #e8e5e1;
+
+  /*
+   * Two oranges, and the split is measured. #f05409 is the brand's own, read
+   * off the reference, and it carries white at 3.51:1 — fine for a 24px
+   * figure, not for a 13px button. So #f05409 is the *mark* colour (bars,
+   * sparklines, dots) and #c0400a is the one anything with text on it uses.
+   * 5.28:1.
+   */
+  --color-accent: #f05409;
+  --color-accent-deep: #c0400a;
+  --color-accent-soft: #f5c9ab;
+  --color-accent-faint: #ffefd3;
+
+  /* The dark "Owes" card, and the filled pill nav. */
+  --color-cocoa: #402917;
+  --color-cocoa-deep: #2a1406;
+  --color-cocoa-fg: #f7efe7;
+
+  --color-bone: #e7dfd4; /* the beige half of the summary bars */
+
+  --color-positive: #1d7a3f;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad2f27;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  --color-spark-warm: #d6451f;
+  --color-spark-on-dark: #ff7a33;
+
+  --font-sans:
+    'Space Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(26 21 18 / 0.04);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

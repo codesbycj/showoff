@@ -1,0 +1,123 @@
+import { useId } from 'react';
+import { useWindowDimensions, View } from 'react-native';
+import Svg, { Circle, Defs, G, Line, Path, RadialGradient, Stop } from 'react-native-svg';
+
+import { cr } from '../theme';
+
+/**
+ * The map, built as the *idea* of one.
+ *
+ * **A map is not in drawing range** (AGENTS.md). It has no idea to interpret,
+ * so vectoring one means reproducing a specific arrangement of streets — that
+ * is tracing the reference path by path, which is copying with extra steps at
+ * twenty times the cost of either honest route. There is no free-licensed
+ * static tile bundled here either, so what is drawn is the part of a map that
+ * *is* an idea: a flat ground, a radius around where the parcel started, a
+ * route to where it is going, and a pin at each end.
+ *
+ * Where it started is a filled disc inside a white ring; where it is going is
+ * a pin. Those notes live here rather than beside the elements, because a JSX
+ * comment cannot survive inside the block that stages it - the inner `*&#47;`
+ * closes the outer one.
+ *
+ * The faint rule across the ground is a texture, not a place. It is a regular
+ * grid at a constant angle, which reads as "map" without claiming to be
+ * anywhere — unlike the reference's street names, which are real
+ * neighbourhoods.
+ *
+ * Every gradient id comes from `useId`: react-native-svg's `Defs` ids are
+ * document-global on web, so a second map on the page would paint in
+ * whichever mounted first.
+ */
+export function MapCanvas() {
+  const halo = useId();
+  const { width, height } = useWindowDimensions();
+
+  // The route runs from lower-left to upper-right, which leaves the lower
+  // third clear for the cards that sit over it.
+  const from = { x: width * 0.26, y: height * 0.52 };
+  const to = { x: width * 0.78, y: height * 0.24 };
+  const bend = { x: width * 0.42, y: height * 0.26 };
+
+  const rules = [];
+  for (let i = -8; i < 22; i++) {
+    rules.push(
+      <Line
+        key={'a' + i}
+        x1={i * 56}
+        y1={0}
+        x2={i * 56 + height * 0.4}
+        y2={height}
+        stroke={cr.groundRule}
+        strokeWidth={1.2}
+      />,
+    );
+  }
+  for (let i = 0; i < 16; i++) {
+    rules.push(
+      <Line
+        key={'b' + i}
+        x1={0}
+        y1={i * 74}
+        x2={width}
+        y2={i * 74 - width * 0.22}
+        stroke={cr.groundRule}
+        strokeWidth={1.2}
+      />,
+    );
+  }
+
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        backgroundColor: cr.ground,
+      }}
+    >
+      <Svg width="100%" height="100%">
+        <Defs>
+          <RadialGradient id={halo} cx="50%" cy="50%" r="50%">
+            <Stop offset="0" stopColor={cr.orange} stopOpacity="0.20" />
+            <Stop offset="1" stopColor={cr.orange} stopOpacity="0" />
+          </RadialGradient>
+        </Defs>
+
+        <G opacity={0.9}>{rules}</G>
+
+        <Circle cx={from.x} cy={from.y} r={110} fill={`url(#${halo})`} />
+        <Circle
+          cx={from.x}
+          cy={from.y}
+          r={86}
+          stroke={cr.orange}
+          strokeWidth={1.4}
+          strokeDasharray="5 7"
+          fill="none"
+          opacity={0.5}
+        />
+
+        <Path
+          d={`M${from.x} ${from.y} Q${bend.x} ${bend.y} ${to.x} ${to.y}`}
+          stroke={cr.orange}
+          strokeWidth={3}
+          strokeDasharray="9 8"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        <Circle cx={from.x} cy={from.y} r={9} fill={cr.orange} />
+        <Circle cx={from.x} cy={from.y} r={15} stroke={cr.surface} strokeWidth={3} fill="none" />
+
+        <Path
+          d={`M${to.x} ${to.y + 14} c-9 -11 -14 -17 -14 -24 a14 14 0 0 1 28 0 c0 7 -5 13 -14 24 Z`}
+          fill={cr.panel}
+        />
+        <Circle cx={to.x} cy={to.y - 11} r={5} fill={cr.surface} />
+      </Svg>
+    </View>
+  );
+}

@@ -1,0 +1,103 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path, Rect } from 'react-native-svg';
+
+import { DOCK_DISC, DOCK_HEIGHT } from '../layout';
+import { lk, radius } from '../theme';
+
+/** The three destinations, drawn. */
+function Glyph({ id, tint }: { id: string; tint: string }) {
+  if (id === 'home') {
+    return (
+      <Svg width={19} height={19} viewBox="0 0 24 24">
+        <Path
+          d="M4.4 10.4 12 4.6l7.6 5.8v8a1.6 1.6 0 0 1-1.6 1.6H6a1.6 1.6 0 0 1-1.6-1.6Z"
+          fill={tint}
+        />
+      </Svg>
+    );
+  }
+  if (id === 'settings') {
+    return (
+      <Svg width={19} height={19} viewBox="0 0 24 24">
+        <Path d="M4 7h16M4 12h16M4 17h16" stroke={tint} strokeWidth={1.9} strokeLinecap="round" />
+        <Rect x={7} y={5} width={4} height={4} rx={2} fill={tint} />
+        <Rect x={13} y={15} width={4} height={4} rx={2} fill={tint} />
+      </Svg>
+    );
+  }
+  return (
+    <Svg width={19} height={19} viewBox="0 0 24 24">
+      <Path d="M6 17V11M12 17V6M18 17v-8" stroke={tint} strokeWidth={2.1} strokeLinecap="round" />
+    </Svg>
+  );
+}
+
+/**
+ * Where else the app goes.
+ *
+ * A small floating cluster rather than a full-width bar, which is the
+ * reference's shape. The lit disc is lime; the others are the page's own grey,
+ * so the dock reads as three controls rather than as a panel.
+ */
+export function Dock({ active, onSelect }: { active: string; onSelect?: (id: string) => void }) {
+  const cell = (id: string) => ({ id, active, onSelect });
+
+  return (
+    <View
+      style={{
+        height: DOCK_HEIGHT,
+        flexDirection: 'row',
+        // MISTAKE 1.22 the dock came in pushed left
+        paddingRight: 70,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+{/* STEP 1.18 home
+      <Cell {...cell('home')} />
+*/}
+{/* STEP 1.19 settings
+      <Cell {...cell('settings')} />
+*/}
+{/* STEP 1.20 and progress
+      <Cell {...cell('chart')} />
+*/}
+    </View>
+  );
+}
+
+/** One disc. Written out in `Dock` rather than mapped, so the reveal can land
+ *  them one at a time. */
+function Cell({
+  id,
+  active,
+  onSelect,
+}: {
+  id: string;
+  active: string;
+  onSelect?: (id: string) => void;
+}) {
+  const on = id === active;
+  return (
+    <Pressable
+      onPress={() => onSelect?.(id)}
+      accessibilityRole="tab"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={id}
+    >
+      <View
+        style={{
+          width: DOCK_DISC,
+          height: DOCK_DISC,
+          marginHorizontal: 5,
+          borderRadius: radius.pill,
+          backgroundColor: on ? lk.lime : lk.pill,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph id={id} tint={on ? lk.onLime : lk.muted} />
+      </View>
+    </Pressable>
+  );
+}

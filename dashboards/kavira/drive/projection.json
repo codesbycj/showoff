@@ -1,0 +1,27 @@
+{
+  "url": "http://localhost:5356/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-projection", "click": "[data-tab='projection']", "settle": 950, "rest": true },
+
+    { "name": "horizon-6m", "click": "[data-group='horizon'] [data-segment='6m']", "settle": 900, "rest": true },
+    { "name": "horizon-24m", "click": "[data-group='horizon'] [data-segment='24m']", "settle": 900, "rest": true },
+    { "name": "horizon-12m", "click": "[data-group='horizon'] [data-segment='12m']", "settle": 900, "rest": true },
+
+    { "name": "line-costs", "click": "[data-line='costs']", "settle": 900, "rest": true },
+    { "name": "line-payroll", "click": "[data-line='payroll']", "settle": 900, "rest": true },
+    { "name": "line-tax", "click": "[data-line='tax']", "settle": 900, "rest": true },
+    { "name": "line-revenue", "click": "[data-line='revenue']", "settle": 900, "rest": true },
+
+
+    { "name": "search-payroll", "fill": ["[data-search]", "payroll"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-legality", "click": "[data-tab='legality']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-emergency", "click": "[data-tab='emergency']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

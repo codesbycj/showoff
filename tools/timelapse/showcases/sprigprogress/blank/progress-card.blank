@@ -1,0 +1,110 @@
+import { View } from 'react-native';
+
+import { copy, note, pct, share } from '../data/start';
+import { BUBBLE_H, CARD_PAD, CARD_TOP, RAIL_HEIGHT } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+/**
+ * How far through the plan.
+ *
+ * **The bubble, the rail and the sentence all read `pct`.** In the reference
+ * the bubble says 40%, the body copy says 40%, and the rail is drawn at about
+ * a quarter — three claims about one thing, one of them a picture, and they
+ * do not agree.
+ *
+ * The rail is two flex boxes rather than a percentage width: a percentage
+ * needs a definite parent, and this one is a `flex` row inside a card.
+ *
+ * The lime is an absolutely-filled child rather than this View's own fill, so
+ * the blank state is a blank page.
+ */
+export function ProgressCard() {
+  return (
+    <View style={{ marginTop: CARD_TOP, borderRadius: radius.card, padding: CARD_PAD }}>
+{/* STEP 1.07 the lime
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius.card,
+          backgroundColor: sg.lime,
+          // MISTAKE 1.31 the lime came in half-faded
+          opacity: 0.45,
+        }}
+      />
+*/}
+
+{/* STEP 1.08 what it measures
+      <T variant="cardTitle" color={sg.ink} style={{ height: type.cardTitle.line }}>
+        {copy.total}
+      </T>
+*/}
+
+      <View style={{ marginTop: 10 }}>
+{/* STEP 1.09 the figure
+        <View style={{ flexDirection: 'row', height: BUBBLE_H }}>
+          <View style={{ flex: share }} />
+          <View
+            style={{
+              height: BUBBLE_H,
+              marginLeft: -22,
+              paddingHorizontal: 10,
+              borderRadius: radius.chip,
+              backgroundColor: sg.panel,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="bubble" color={sg.onPanel} style={{ height: type.bubble.line }}>
+              {`${pct}%`}
+            </T>
+          </View>
+          <View style={{ flex: 1 - share }} />
+        </View>
+*/}
+
+{/* STEP 1.10 the rail it sits on
+        <View
+          style={{
+            height: RAIL_HEIGHT,
+            marginTop: 4,
+            borderRadius: RAIL_HEIGHT / 2,
+            backgroundColor: sg.limeDeep,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
+        >
+          <View
+            style={{
+              flex: share,
+              height: RAIL_HEIGHT,
+              borderRadius: RAIL_HEIGHT / 2,
+              backgroundColor: sg.panel,
+            }}
+          />
+          <View
+            style={{
+              width: 12,
+              height: 12,
+              marginLeft: -6,
+              borderRadius: radius.pill,
+              backgroundColor: sg.card,
+            }}
+          />
+          <View style={{ flex: 1 - share }} />
+        </View>
+*/}
+      </View>
+
+{/* STEP 1.11 and what it means
+      <T variant="note" color={sg.limeInk} style={{ marginTop: 10 }}>
+        {note}
+      </T>
+*/}
+    </View>
+  );
+}

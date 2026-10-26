@@ -1,0 +1,61 @@
+{
+  "url": "http://localhost:5356/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "card-open", "click": "[data-select='card'] > button", "settle": 600, "rest": true },
+    { "name": "card-payroll", "click": "[data-menu='card'] [data-option='payroll']", "settle": 850, "rest": true },
+    { "name": "card-open-2", "click": "[data-select='card'] > button", "settle": 600, "rest": true },
+    { "name": "card-direct", "click": "[data-menu='card'] [data-option='direct']", "settle": 850, "rest": true },
+
+    { "name": "receive", "click": "[data-action='receive']", "settle": 700, "rest": true },
+    { "name": "send", "click": "[data-action='send']", "settle": 700, "rest": true },
+    { "name": "send-off", "click": "[data-action='send']", "settle": 700, "rest": true },
+
+    { "name": "income-span-open", "click": "[data-select='income-span'] > button", "settle": 600, "rest": true },
+    { "name": "income-monthly", "click": "[data-menu='income-span'] [data-option='monthly']", "settle": 900, "rest": true },
+    { "name": "paid-span-open", "click": "[data-select='paid-span'] > button", "settle": 600, "rest": true },
+    { "name": "paid-quarterly", "click": "[data-menu='paid-span'] [data-option='quarterly']", "settle": 900, "rest": true },
+
+    { "name": "dot-20", "hover": "[data-card='income'] [data-mark='dot-20']", "against": "paid-quarterly" },
+    { "name": "dot-60", "hover": "[data-card='income'] [data-mark='dot-60']", "against": "dot-20" },
+
+    { "name": "growth-bar", "hover": "[data-card='growth'] [data-mark='mini-4']", "against": "dot-60" },
+    { "name": "growth-bar-2", "hover": "[data-card='growth'] [data-mark='mini-11']", "against": "growth-bar" },
+
+    { "name": "lock-off", "click": "[data-action='lock']", "settle": 750, "rest": true },
+    { "name": "lock-on", "click": "[data-action='lock']", "settle": 750, "rest": true },
+
+    { "name": "year-2022", "click": "[data-year='y2022']", "settle": 900, "rest": true },
+    { "name": "year-2023", "click": "[data-year='y2023']", "settle": 900, "rest": true },
+
+    { "name": "chip-today-off", "click": "[data-chip='today']", "settle": 850, "rest": true },
+    { "name": "chip-insights-off", "click": "[data-chip='insights']", "settle": 850, "rest": true },
+    { "name": "chip-insights-on", "click": "[data-chip='insights']", "settle": 850, "rest": true },
+    { "name": "chip-today-on", "click": "[data-chip='today']", "settle": 850, "rest": true },
+
+    { "name": "activity-scrolled", "wheel": ["[data-scroller='activity']", 220], "rest": true },
+    { "name": "activity-top", "wheel": ["[data-scroller='activity']", -220], "rest": true },
+
+    { "name": "plan-accounting", "click": "[data-plan='accounting']", "settle": 750, "rest": true },
+    { "name": "plan-hr", "click": "[data-plan='hr']", "settle": 750, "rest": true },
+    { "name": "verify-on", "click": "[data-action='verify']", "settle": 800, "rest": true },
+    { "name": "verify-off", "click": "[data-action='verify']", "settle": 800, "rest": true },
+
+    { "name": "trial-on", "click": "[data-action='trial']", "settle": 800, "rest": true },
+    { "name": "trial-off", "click": "[data-action='trial']", "settle": 800, "rest": true },
+    { "name": "shared", "click": "[aria-label='Share this view']", "settle": 750, "rest": true },
+    { "name": "share-off", "click": "[aria-label='Link copied']", "settle": 750, "rest": true },
+
+    { "name": "activity-search", "fill": ["[data-card='activity'] [data-search]", "payroll"], "settle": 900, "rest": true },
+    { "name": "activity-empty", "fill": ["[data-card='activity'] [data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "activity-cleared", "click": "[data-card='activity'] [data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-legality", "click": "[data-tab='legality']", "against": "activity-cleared", "expectUnchanged": true },
+    { "name": "inert-account", "click": "[data-tab='account']", "against": "activity-cleared", "expectUnchanged": true }
+  ]
+}

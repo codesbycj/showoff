@@ -1,0 +1,212 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "@/features/cratescan/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a chevron"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and the overflow"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "@/features/cratescan/components/scan-frame"
+   ],
+   "label": "the viewfinder"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "filling the page"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/scan-frame.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what the camera sees"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/scan-frame.tsx",
+    "STEP 1.09"
+   ],
+   "label": "one corner"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/scan-frame.tsx",
+    "STEP 1.10"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/scan-frame.tsx",
+    "STEP 1.11"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/scan-frame.tsx",
+    "STEP 1.12"
+   ],
+   "label": "and the last"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "@/features/cratescan/components/caption"
+   ],
+   "label": "what to do with it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "in one line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/caption.tsx",
+    "STEP 1.15"
+   ],
+   "label": "centred under it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "@/features/cratescan/components/controls"
+   ],
+   "label": "and the controls"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratescan/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "three of them"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/controls.tsx",
+    "STEP 1.18"
+   ],
+   "label": "pick a photo instead"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/controls.tsx",
+    "STEP 1.19"
+   ],
+   "label": "or add light"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratescan/components/controls.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the one it is for"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cratescan/components/scan-frame.tsx",
+    [
+     "// MISTAKE 1.21",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the frame came in square on one corner"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cratescan/components/controls.tsx",
+    [
+     "// MISTAKE 1.22",
+     "paddingHorizontal: 44,"
+    ]
+   ],
+   "label": "the controls came in squeezed"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "caption",
+     "src/features/cratescan/components/caption.tsx"
+    ],
+    [
+     "controls",
+     "src/features/cratescan/components/controls.tsx"
+    ],
+    [
+     "scan-frame",
+     "src/features/cratescan/components/scan-frame.tsx"
+    ],
+    [
+     "scan-screen",
+     "src/app/cratescan/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/cratescan/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

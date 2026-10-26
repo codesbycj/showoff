@@ -1,0 +1,392 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/greeting"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/greeting.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/greeting.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the day, and the hour"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/range-toggle"
+   ],
+   "label": "today, or the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "a toggle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/range-toggle.tsx",
+    "STEP 1.07"
+   ],
+   "label": "today, or the week"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/day-card"
+   ],
+   "label": "the day"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "on a lime card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/day-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the lime"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/day-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/day-strip.tsx",
+    "STEP 1.12"
+   ],
+   "label": "Sunday to Tuesday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/day-strip.tsx",
+    "STEP 1.13"
+   ],
+   "label": "today, and the rest of the week"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/features/sprighome/components/day-card.tsx",
+    "./calorie-gauge"
+   ],
+   "label": "and the calories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/day-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and the ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/calorie-gauge.tsx",
+    "STEP 1.16"
+   ],
+   "label": "what went in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/calorie-gauge.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the arc it is of"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/calorie-gauge.tsx",
+    "STEP 1.18"
+   ],
+   "label": "what is left"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/calorie-gauge.tsx",
+    "STEP 1.19"
+   ],
+   "label": "in calories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/calorie-gauge.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and what went out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/macro-row"
+   ],
+   "label": "the macros"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "three tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/macro-row.tsx",
+    "STEP 1.23"
+   ],
+   "label": "carbs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/macro-row.tsx",
+    "STEP 1.24"
+   ],
+   "label": "protein and fat"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/generate-button"
+   ],
+   "label": "fill the day in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.26"
+   ],
+   "label": "one button"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/generate-button.tsx",
+    "STEP 1.27"
+   ],
+   "label": "in lime"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.28"
+   ],
+   "label": "the section"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/meal-card"
+   ],
+   "label": "what has been eaten"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.30"
+   ],
+   "label": "the first meal"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/meal-card.tsx",
+    "STEP 1.31"
+   ],
+   "label": "what kind of meal"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/meal-card.tsx",
+    "STEP 1.32"
+   ],
+   "label": "its name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/meal-card.tsx",
+    "STEP 1.33"
+   ],
+   "label": "what it came to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/meal-card.tsx",
+    "STEP 1.34"
+   ],
+   "label": "and what was in it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.35"
+   ],
+   "label": "and the second"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "@/features/sprighome/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprighome/index.tsx",
+    "STEP 1.37"
+   ],
+   "label": "along the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/dock.tsx",
+    "STEP 1.38"
+   ],
+   "label": "the day and the plan"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/dock.tsx",
+    "STEP 1.39"
+   ],
+   "label": "add something"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprighome/components/dock.tsx",
+    "STEP 1.40"
+   ],
+   "label": "what was burned, and you"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sprighome/components/range-toggle.tsx",
+    [
+     "// MISTAKE 1.41",
+     "borderTopRightRadius: 0,"
+    ]
+   ],
+   "label": "the toggle came in square"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sprighome/components/macro-row.tsx",
+    [
+     "// MISTAKE 1.42",
+     "marginTop: 14,"
+    ]
+   ],
+   "label": "the tiles came in sitting too low"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "calorie-gauge",
+     "src/features/sprighome/components/calorie-gauge.tsx"
+    ],
+    [
+     "day-card",
+     "src/features/sprighome/components/day-card.tsx"
+    ],
+    [
+     "day-strip",
+     "src/features/sprighome/components/day-strip.tsx"
+    ],
+    [
+     "dock",
+     "src/features/sprighome/components/dock.tsx"
+    ],
+    [
+     "generate-button",
+     "src/features/sprighome/components/generate-button.tsx"
+    ],
+    [
+     "greeting",
+     "src/features/sprighome/components/greeting.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/sprighome/index.tsx"
+    ],
+    [
+     "macro-row",
+     "src/features/sprighome/components/macro-row.tsx"
+    ],
+    [
+     "meal-card",
+     "src/features/sprighome/components/meal-card.tsx"
+    ],
+    [
+     "range-toggle",
+     "src/features/sprighome/components/range-toggle.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

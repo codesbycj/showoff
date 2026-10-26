@@ -1,0 +1,7 @@
+{
+ "rank-screen": "src/app/volleyrank/index.tsx",
+ "rank-head": "src/features/volleyrank/components/rank-head.tsx",
+ "podium": "src/features/volleyrank/components/podium.tsx",
+ "rank-sheet": "src/features/volleyrank/components/rank-sheet.tsx",
+ "dock": "src/features/volleyrank/components/dock.tsx"
+}

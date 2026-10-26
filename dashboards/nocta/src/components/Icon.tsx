@@ -94,7 +94,7 @@ export function Icon({
 }
 
 /**
- * The Nocta mark: two angular chevrons meeting at a seam, in the reference's
+ * The Nyxora mark: two angular chevrons meeting at a seam, in the reference's
  * idiom. Invented, because the copy on this screen is invented (rule 8).
  */
 export function Logo({ size = 26 }: { size?: number }) {

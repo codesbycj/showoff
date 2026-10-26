@@ -1,0 +1,34 @@
+import { View } from 'react-native';
+
+import { copy, dateLine } from '../data/start';
+import { DATE_TOP, DISPLAY_TOP } from '../layout';
+import { type, vg } from '../theme';
+import { T } from './text';
+
+/**
+ * The day, and what the screen is.
+ *
+ * `dateLine` is computed from the day the rail below has picked out, so the
+ * two cannot drift apart when the selection changes.
+ */
+export function PlanHead() {
+  return (
+    <View style={{ marginTop: DATE_TOP }}>
+{/* STEP 1.08 the date
+      <T variant="dateLine" color={vg.onOrangeDim} style={{ height: type.dateLine.line }}>
+        {dateLine}
+      </T>
+*/}
+
+{/* STEP 1.09 and the title
+      <T
+        variant="display"
+        color={vg.onOrange}
+        style={{ marginTop: DISPLAY_TOP, height: type.display.line }}
+      >
+        {copy.display}
+      </T>
+*/}
+    </View>
+  );
+}

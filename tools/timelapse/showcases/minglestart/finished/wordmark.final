@@ -1,0 +1,25 @@
+import { View } from 'react-native';
+
+import { copy } from '../data/start';
+import { HEAD_TOP } from '../layout';
+import { mg, type } from '../theme';
+import { T } from './text';
+
+/**
+ * The brand, with its registered mark.
+ *
+ * The `®` is a real character set small and raised, not a glyph drawn by
+ * hand — it is type, and the typeface already has it.
+ */
+export function Wordmark() {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: HEAD_TOP }}>
+      <T variant="wordmark" color={mg.onRed} style={{ height: type.wordmark.line }}>
+        {copy.brand}
+      </T>
+      <T variant="reg" color={mg.onRed} style={{ marginTop: 3, height: type.reg.line }}>
+        {copy.reg}
+      </T>
+    </View>
+  );
+}

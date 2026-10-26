@@ -1,0 +1,47 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Caption } from '@/features/cratescan/components/caption';
+import { Controls } from '@/features/cratescan/components/controls';
+import { ScanFrame } from '@/features/cratescan/components/scan-frame';
+import { TopBar } from '@/features/cratescan/components/top-bar';
+import { MARGIN } from '@/features/cratescan/layout';
+import { cr } from '@/features/cratescan/theme';
+import { useInsets } from '@/features/cratescan/use-insets';
+
+/**
+ * Crate — the scanner.
+ *
+ * Assembly only: the way back, the viewfinder, what to do with it, and the
+ * three controls.
+ *
+ * The frame takes the slack between the header and the caption, so the
+ * viewfinder grows to whatever the phone can spare and the controls sit on
+ * the bottom inset at any screen height.
+ */
+export default function CratescanScreen() {
+  const insets = useInsets();
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: cr.surface,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <TopBar onBack={() => router.back()} />
+
+      <ScanFrame />
+
+      <Caption />
+
+      <Controls onScan={() => router.push('/cratetrack')} />
+    </View>
+  );
+}

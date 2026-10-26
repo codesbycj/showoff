@@ -1,0 +1,8 @@
+{
+ "week-screen": "src/app/nibbleweek/index.tsx",
+ "top-bar": "src/features/nibbleweek/components/top-bar.tsx",
+ "week-strip": "src/features/nibbleweek/components/week-strip.tsx",
+ "left-block": "src/features/nibbleweek/components/left-block.tsx",
+ "food-cards": "src/features/nibbleweek/components/food-cards.tsx",
+ "count-bar": "src/features/nibbleweek/components/count-bar.tsx"
+}

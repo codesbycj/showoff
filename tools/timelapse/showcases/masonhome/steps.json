@@ -1,0 +1,253 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "@/features/masonhome/components/header"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "and who is signed in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a tower, drawn"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "the bell"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "@/features/masonhome/components/greeting"
+   ],
+   "label": "who it is talking to"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "in three lines"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/header.tsx",
+    "STEP 1.07"
+   ],
+   "label": "and their photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/greeting.tsx",
+    "STEP 1.08"
+   ],
+   "label": "bold where it matters"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "@/features/masonhome/components/snapshot-card"
+   ],
+   "label": "how far through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "on its own card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/snapshot-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/snapshot-card.tsx",
+    "STEP 1.12"
+   ],
+   "label": "counted from the work"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "@/features/masonhome/components/money-tiles"
+   ],
+   "label": "what it costs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "two tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/snapshot-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and whether it is on track"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/snapshot-card.tsx",
+    "STEP 1.16"
+   ],
+   "label": "week by week"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "@/features/masonhome/components/task-row"
+   ],
+   "label": "today's tasks"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "row by row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/task-row.tsx",
+    "STEP 1.20"
+   ],
+   "label": "a hard hat"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/task-row.tsx",
+    "STEP 1.21"
+   ],
+   "label": "what and where"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/task-row.tsx",
+    "STEP 1.22"
+   ],
+   "label": "how it is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/task-row.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and a way in"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "@/features/masonhome/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/masonhome/index.tsx",
+    "STEP 1.25"
+   ],
+   "label": "floating"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/masonhome/components/dock.tsx",
+    "STEP 1.26"
+   ],
+   "label": "home"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/masonhome/components/task-row.tsx",
+    [
+     "// MISTAKE 1.27",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the rows came in square on one corner"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dock",
+     "src/features/masonhome/components/dock.tsx"
+    ],
+    [
+     "greeting",
+     "src/features/masonhome/components/greeting.tsx"
+    ],
+    [
+     "header",
+     "src/features/masonhome/components/header.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/masonhome/index.tsx"
+    ],
+    [
+     "snapshot-card",
+     "src/features/masonhome/components/snapshot-card.tsx"
+    ],
+    [
+     "task-row",
+     "src/features/masonhome/components/task-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

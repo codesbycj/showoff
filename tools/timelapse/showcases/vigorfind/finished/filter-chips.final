@@ -1,0 +1,67 @@
+import { Pressable, ScrollView, View } from 'react-native';
+
+import { chips } from '../data/start';
+import { CHIPS_TOP, CHIP_HEIGHT, MARGIN } from '../layout';
+import { radius, type, vg } from '../theme';
+import { T } from './text';
+
+/** One chip. Written out in `FilterChips` so the reveal fills the rail. */
+function Chip({ i, picked, onPick }: { i: number; picked: string; onPick?: (id: string) => void }) {
+  const c = chips[i];
+  const on = c.id === picked;
+  return (
+    <Pressable
+      onPress={() => onPick?.(c.id)}
+      accessibilityRole="button"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={c.label}
+    >
+      <View
+        style={{
+          height: CHIP_HEIGHT,
+          paddingHorizontal: 18,
+          marginRight: 10,
+          borderRadius: radius.chip,
+          backgroundColor: on ? vg.orange : vg.blueSoft,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T variant="chip" color={vg.onBlue} style={{ height: type.chip.line }}>
+          {c.label}
+        </T>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * Which part of the catalogue.
+ *
+ * **A horizontal `ScrollView`, not a wrap.** The reference shows the fourth
+ * chip clipped by the right edge, and a wrap layout physically cannot do that
+ * (AGENTS.md — a row that runs off the screen edge is a scrolling row). The
+ * rail bleeds past the page margin on both sides and puts the margin back as
+ * content padding, so the first chip lines up with the headline and the last
+ * one runs under the edge.
+ */
+export function FilterChips({ picked, onPick }: { picked: string; onPick?: (id: string) => void }) {
+  return (
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      // A ScrollView carries `flexGrow: 1` in its own default style, so in a
+      // column this rail swells to eat every spare pixel and shoves whatever
+      // follows it to the bottom of the screen. Pinned to the chips' own
+      // height, it occupies exactly the row it draws.
+      style={{ height: CHIP_HEIGHT, flexGrow: 0, marginHorizontal: -MARGIN, marginTop: CHIPS_TOP }}
+      contentContainerStyle={{ paddingHorizontal: MARGIN }}
+    >
+      <Chip i={0} picked={picked} onPick={onPick} />
+      <Chip i={1} picked={picked} onPick={onPick} />
+      <Chip i={2} picked={picked} onPick={onPick} />
+      <Chip i={3} picked={picked} onPick={onPick} />
+      <Chip i={4} picked={picked} onPick={onPick} />
+    </ScrollView>
+  );
+}

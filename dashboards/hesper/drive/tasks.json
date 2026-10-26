@@ -1,0 +1,45 @@
+{
+  "url": "http://localhost:5372/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "tasks", "click": "[data-tab='tasks']", "settle": 1000, "rest": true },
+
+    { "name": "filter-waiting", "click": "[data-filter='waiting']", "settle": 800, "rest": true },
+    { "name": "filter-review", "click": "[data-filter='review']", "settle": 800, "rest": true },
+    { "name": "filter-closed", "click": "[data-filter='closed']", "settle": 800, "rest": true },
+    { "name": "filter-all", "click": "[data-filter='all']", "settle": 800, "rest": true },
+
+    { "name": "sort-value", "click": "[data-group='sort'] [data-segment='value']", "settle": 800, "rest": true },
+    { "name": "sort-flip", "click": "[data-action='sort-dir']", "settle": 800, "rest": true },
+    { "name": "sort-hours", "click": "[data-group='sort'] [data-segment='hours']", "settle": 800, "rest": true },
+    { "name": "sort-due", "click": "[data-group='sort'] [data-segment='due']", "settle": 800, "rest": true },
+    { "name": "sort-back", "click": "[data-action='sort-dir']", "settle": 800, "rest": true },
+
+    { "name": "owner-imani", "click": "[data-owner='p2']", "settle": 800, "rest": true },
+    { "name": "owner-noor", "click": "[data-owner='p4']", "settle": 800, "rest": true },
+    { "name": "owner-clear", "click": "[data-action='clear-owner']", "settle": 800, "rest": true },
+
+    { "name": "type-litigation", "click": "[data-type='litigation']", "settle": 800, "rest": true },
+    { "name": "type-advisory", "click": "[data-type='advisory']", "settle": 800, "rest": true },
+    { "name": "type-clear", "click": "[data-type='advisory']", "settle": 800, "rest": true },
+
+    { "name": "row-open", "click": "[data-card='matters'] [data-row='m17']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-card='matters'] [data-row='m05']", "settle": 800, "rest": true },
+    { "name": "row-closed", "click": "[data-card='matters'] [data-row='m05']", "settle": 800, "rest": true },
+
+    { "name": "matters-down", "wheel": ["[data-scroller='matters']", 320], "settle": 500, "rest": true },
+    { "name": "matters-further", "wheel": ["[data-scroller='matters']", 320], "settle": 500, "rest": true },
+    { "name": "matters-top", "wheel": ["[data-scroller='matters']", -640], "settle": 500, "rest": true },
+
+    { "name": "search-permits", "fill": ["[data-search='matters']", "permits"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='matters']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-team", "click": "[data-tab='team']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-company", "click": "[data-tab='company']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

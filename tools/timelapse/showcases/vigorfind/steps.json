@@ -1,0 +1,261 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "@/features/vigorfind/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a way to add"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "@/features/vigorfind/components/headline"
+   ],
+   "label": "what the app offers"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/headline.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the eyebrow"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/headline.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and the sentence"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "@/features/vigorfind/components/search-line"
+   ],
+   "label": "a way to search it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "a search line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/search-line.tsx",
+    "STEP 1.12"
+   ],
+   "label": "a lens"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/search-line.tsx",
+    "STEP 1.13"
+   ],
+   "label": "what it does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/search-line.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and what it looks through"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "@/features/vigorfind/components/filter-chips"
+   ],
+   "label": "which part of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "a rail of chips"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/filter-chips.tsx",
+    "STEP 1.17"
+   ],
+   "label": "all of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/filter-chips.tsx",
+    "STEP 1.18"
+   ],
+   "label": "preparation"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/filter-chips.tsx",
+    "STEP 1.19"
+   ],
+   "label": "basic"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/filter-chips.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the two that run off the edge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "@/features/vigorfind/components/article-rail"
+   ],
+   "label": "and the articles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorfind/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and a rail of cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/article-rail.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/article-rail.tsx",
+    "STEP 1.24"
+   ],
+   "label": "what it is about"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/article-rail.tsx",
+    "STEP 1.25"
+   ],
+   "label": "the photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/article-rail.tsx",
+    "STEP 1.26"
+   ],
+   "label": "and how it has been received"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorfind/components/article-rail.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and the ones behind it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/vigorfind/components/article-rail.tsx",
+    [
+     "// MISTAKE 1.28",
+     "borderTopLeftRadius: 0,"
+    ]
+   ],
+   "label": "the cards came in squared off on one corner"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "article-rail",
+     "src/features/vigorfind/components/article-rail.tsx"
+    ],
+    [
+     "filter-chips",
+     "src/features/vigorfind/components/filter-chips.tsx"
+    ],
+    [
+     "find-screen",
+     "src/app/vigorfind/index.tsx"
+    ],
+    [
+     "headline",
+     "src/features/vigorfind/components/headline.tsx"
+    ],
+    [
+     "search-line",
+     "src/features/vigorfind/components/search-line.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/vigorfind/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

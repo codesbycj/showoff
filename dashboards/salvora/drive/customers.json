@@ -1,0 +1,29 @@
+{
+  "url": "http://localhost:5340/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-customers", "click": "[data-tab='customers']", "settle": 950, "rest": true },
+
+    { "name": "tier-vip", "click": "[data-group='tier'] [data-segment='VIP']", "settle": 850, "rest": true },
+    { "name": "tier-new", "click": "[data-group='tier'] [data-segment='New']", "settle": 850, "rest": true },
+    { "name": "tier-returning", "click": "[data-group='tier'] [data-segment='Returning']", "settle": 850, "rest": true },
+    { "name": "tier-all", "click": "[data-group='tier'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "pick-marcus", "click": "[data-customer='c4']", "settle": 900, "rest": true },
+    { "name": "pick-soraya", "click": "[data-customer='c3']", "settle": 900, "rest": true },
+    { "name": "pick-imani", "click": "[data-customer='c1']", "settle": 900, "rest": true },
+
+    { "name": "orders-scrolled", "wheel": ["[data-scroller='customer-orders']", 200], "rest": true },
+    { "name": "orders-top", "wheel": ["[data-scroller='customer-orders']", -200], "rest": true },
+
+    { "name": "search-khan", "fill": ["[data-search]", "khan"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-messages", "click": "[data-tab='messages']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-statistics", "click": "[data-tab='statistics']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

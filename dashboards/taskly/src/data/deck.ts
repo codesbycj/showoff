@@ -1,7 +1,7 @@
 /**
  * The content deck: every project, task, message, meeting and note.
  *
- * All invented (rule 5). Taskly is not a product, Milesto is not a team, and
+ * All invented (rule 5). Plyra is not a product, Milesto is not a team, and
  * nobody here is in a scrum at ten — which is what lets the build use
  * free-licensed photographs of real people for the avatars without the page
  * being able to pass as anyone's live workspace.
@@ -16,7 +16,7 @@ import face6 from '@/assets/img/face-6.jpg';
 export const FACES = [face1, face2, face3, face4, face5, face6];
 
 export const workspace = {
-  brand: 'Taskly',
+  brand: 'Plyra',
   team: 'Milesto Team',
   visibility: 'Private',
   user: { name: 'Brenda', full: 'Brenda Oyelowo', face: face1 },
@@ -36,7 +36,7 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  { id: 'taskly', name: 'Taskly - Saas Dashboard', badge: 'Pro member', group: 'Ongoing Projects' },
+  { id: 'taskly', name: 'Plyra - Saas Dashboard', badge: 'Pro member', group: 'Ongoing Projects' },
   { id: 'neura', name: 'Neura Mobile Responsive', badge: 'Beta', group: 'Ongoing Projects' },
 ];
 

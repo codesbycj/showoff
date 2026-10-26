@@ -1,0 +1,39 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { avatar, copy } from '../data/start';
+import { AVATAR, GREET_TOP } from '../layout';
+import { radius, sg, type } from '../theme';
+import { T } from './text';
+
+/**
+ * Who is using the app, and when.
+ *
+ * The face is a photograph. Initials on a coloured disc is a fallback state,
+ * not a substitute for the design (AGENTS.md, "Faces are photographs"), and a
+ * greeting row is the one place a screen looks obviously unfinished without
+ * one.
+ *
+ * The date is `copy.greetWhen`, which names the same day the strip below
+ * marks as today — the reference's header and strip disagree by three days.
+ */
+export function Greeting({ onProfile }: { onProfile?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: GREET_TOP }}>
+      <Pressable onPress={onProfile} accessibilityRole="button" accessibilityLabel="Your profile">
+        <Image
+          source={avatar}
+          style={{ width: AVATAR, height: AVATAR, borderRadius: radius.pill }}
+        />
+      </Pressable>
+
+      <View style={{ marginLeft: 12 }}>
+        <T variant="greetSmall" color={sg.muted} style={{ height: type.greetSmall.line }}>
+          {copy.greetWhen}
+        </T>
+        <T variant="greet" color={sg.ink} style={{ height: type.greet.line }}>
+          {copy.greet}
+        </T>
+      </View>
+    </View>
+  );
+}

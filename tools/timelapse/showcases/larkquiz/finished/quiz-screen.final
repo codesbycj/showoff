@@ -1,0 +1,54 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { AnswerGrid } from '@/features/larkquiz/components/answer-grid';
+import { DialogCard } from '@/features/larkquiz/components/dialog-card';
+import { Headline } from '@/features/larkquiz/components/headline';
+import { NextButton } from '@/features/larkquiz/components/next-button';
+import { TopBar } from '@/features/larkquiz/components/top-bar';
+import { CARD_TOP, MARGIN } from '@/features/larkquiz/layout';
+import { lk } from '@/features/larkquiz/theme';
+import { useInsets } from '@/features/larkquiz/use-insets';
+
+/**
+ * Lark — the exercise.
+ *
+ * Assembly only: the way back and the lives left, what the exercise asks, the
+ * dialog, the four answers, and the way on.
+ *
+ * The chosen answer is state held here rather than baked into the data, so
+ * the screen answers a tap and the Next button lights when there is something
+ * to go on with.
+ */
+export default function LarkquizScreen() {
+  const insets = useInsets();
+  const [picked, setPicked] = useState<string | null>(null);
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: lk.canvas,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <TopBar onBack={() => router.back()} />
+
+      <Headline />
+
+      <View style={{ flex: 1, marginTop: CARD_TOP }}>
+        <DialogCard />
+      </View>
+
+      <AnswerGrid picked={picked} onPick={setPicked} />
+
+      <NextButton ready={picked !== null} onPress={() => router.push('/larkhome')} />
+    </View>
+  );
+}

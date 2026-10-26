@@ -1,0 +1,209 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "@/features/mingleswipe/components/hero-photo"
+   ],
+   "label": "the photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "full bleed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/hero-photo.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the frame"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/hero-photo.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and something to read on it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "@/features/mingleswipe/components/liked-bar"
+   ],
+   "label": "who is looking"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "a bar over it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/liked-bar.tsx",
+    "STEP 1.07"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/liked-bar.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what it says"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/liked-bar.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and how many are waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "@/features/mingleswipe/components/profile-block"
+   ],
+   "label": "who this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the profile"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/profile-block.tsx",
+    "STEP 1.12"
+   ],
+   "label": "where they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/profile-block.tsx",
+    "STEP 1.13"
+   ],
+   "label": "who they are"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/profile-block.tsx",
+    "STEP 1.14"
+   ],
+   "label": "music"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/profile-block.tsx",
+    "STEP 1.15"
+   ],
+   "label": "cinema"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/profile-block.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and sport"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/profile-block.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and what they say"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "@/features/mingleswipe/components/action-row"
+   ],
+   "label": "and what to do about it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/mingleswipe/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "and two buttons"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/action-row.tsx",
+    "STEP 1.20"
+   ],
+   "label": "pass"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/mingleswipe/components/action-row.tsx",
+    "STEP 1.21"
+   ],
+   "label": "or like"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/mingleswipe/components/action-row.tsx",
+    [
+     "// MISTAKE 1.22",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the pass button came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "action-row",
+     "src/features/mingleswipe/components/action-row.tsx"
+    ],
+    [
+     "hero-photo",
+     "src/features/mingleswipe/components/hero-photo.tsx"
+    ],
+    [
+     "liked-bar",
+     "src/features/mingleswipe/components/liked-bar.tsx"
+    ],
+    [
+     "profile-block",
+     "src/features/mingleswipe/components/profile-block.tsx"
+    ],
+    [
+     "swipe-screen",
+     "src/app/mingleswipe/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

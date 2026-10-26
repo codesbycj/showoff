@@ -1,0 +1,54 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { ActionRow } from '@/features/mingleswipe/components/action-row';
+import { HeroPhoto } from '@/features/mingleswipe/components/hero-photo';
+import { LikedBar } from '@/features/mingleswipe/components/liked-bar';
+import { ProfileBlock } from '@/features/mingleswipe/components/profile-block';
+import { MARGIN } from '@/features/mingleswipe/layout';
+import { mg } from '@/features/mingleswipe/theme';
+import { useInsets } from '@/features/mingleswipe/use-insets';
+
+/**
+ * Mingle — a profile.
+ *
+ * Assembly only: the photograph, who is looking, who this is, and the two
+ * things that can be done about it.
+ *
+ * The photograph is full-bleed and the interface is laid over it, so the
+ * column is a header, one `flex: 1` spacer and the profile block — the header
+ * sits on the top inset and the buttons on the bottom one. There is no canvas
+ * here to leave dead.
+ */
+export default function MingleswipeScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: mg.ink }}>
+      <StatusBar style="light" />
+
+      <HeroPhoto />
+
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top,
+          paddingBottom: insets.bottom,
+          paddingHorizontal: MARGIN,
+        }}
+      >
+        <LikedBar onOpen={() => router.push('/minglestart')} />
+
+        <View style={{ flex: 1 }} />
+
+        <ProfileBlock />
+
+        <ActionRow
+          onPass={() => router.push('/minglestart')}
+          onLike={() => router.push('/minglestart')}
+        />
+      </View>
+    </View>
+  );
+}

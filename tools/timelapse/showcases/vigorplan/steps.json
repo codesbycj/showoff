@@ -1,0 +1,225 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "@/features/vigorplan/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a way to add"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and what is waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "@/features/vigorplan/components/plan-head"
+   ],
+   "label": "what day it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the date and the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-head.tsx",
+    "STEP 1.08"
+   ],
+   "label": "the date"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-head.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and the title"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "@/features/vigorplan/components/day-rail"
+   ],
+   "label": "and which one is picked"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "a rail of days"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/day-rail.tsx",
+    "STEP 1.12"
+   ],
+   "label": "Monday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/day-rail.tsx",
+    "STEP 1.13"
+   ],
+   "label": "today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/day-rail.tsx",
+    "STEP 1.14"
+   ],
+   "label": "Friday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/day-rail.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and the two after it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "@/features/vigorplan/components/plan-card"
+   ],
+   "label": "the programmes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "the first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "how far through it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "how long it takes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-card.tsx",
+    "STEP 1.21"
+   ],
+   "label": "a way to begin"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/vigorplan/components/plan-card.tsx",
+    "STEP 1.22"
+   ],
+   "label": "and a picture of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/vigorplan/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and the two behind it"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/vigorplan/components/plan-card.tsx",
+    [
+     "// MISTAKE 1.24",
+     "borderBottomRightRadius: 0,"
+    ]
+   ],
+   "label": "the cards came in squared off on one corner"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "day-rail",
+     "src/features/vigorplan/components/day-rail.tsx"
+    ],
+    [
+     "plan-card",
+     "src/features/vigorplan/components/plan-card.tsx"
+    ],
+    [
+     "plan-head",
+     "src/features/vigorplan/components/plan-head.tsx"
+    ],
+    [
+     "plan-screen",
+     "src/app/vigorplan/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/vigorplan/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

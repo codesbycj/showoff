@@ -1,14 +1,14 @@
 /**
  * The content deck: every figure, invoice, vehicle and cost line.
  *
- * All invented (rule 5). Sypher is not a company, none of the customers on this
+ * All invented (rule 5). Veloq is not a company, none of the customers on this
  * ledger exist, and no delivery on this screen was ever made.
  */
 import type { MarkId } from '@/components/Icon';
 import { rng } from '@/data/rng';
 
 export const company = {
-  name: 'Sypher',
+  name: 'Veloq',
   user: { name: 'Dana Whitlock', role: 'Operations lead' },
   updated: '3 min ago',
 };

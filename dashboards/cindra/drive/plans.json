@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:5336/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-plans", "click": "[data-tab='plans']", "settle": 950, "rest": true },
+
+    { "name": "plan-vacation", "click": "[data-card='plan-list'] [data-plan='vacation']", "settle": 900, "rest": true },
+    { "name": "plan-home", "click": "[data-card='plan-list'] [data-plan='home']", "settle": 900, "rest": true },
+    { "name": "plan-car", "click": "[data-card='plan-list'] [data-plan='car']", "settle": 900, "rest": true },
+    { "name": "plan-emergency", "click": "[data-card='plan-list'] [data-plan='emergency']", "settle": 900, "rest": true },
+
+    { "name": "topup-250", "click": "[data-group='topup'] [data-segment='250']", "settle": 700, "rest": true },
+    { "name": "added", "click": "[data-action='topup']", "settle": 800, "rest": true },
+    { "name": "added-twice", "click": "[data-action='topup']", "settle": 800, "rest": true },
+    { "name": "undone", "click": "[data-action='undo']", "settle": 800, "rest": true },
+
+    { "name": "rule-off", "click": "[data-toggle='roundup']", "settle": 700, "rest": true },
+    { "name": "rule-on", "click": "[data-toggle='roundup']", "settle": 700, "rest": true },
+    { "name": "rule-sweep", "click": "[data-toggle='spare']", "settle": 700, "rest": true },
+
+    { "name": "search-home", "fill": ["[data-search]", "home"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-investments", "click": "[data-tab='investments']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-insights", "click": "[data-tab='insights']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

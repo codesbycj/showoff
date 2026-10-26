@@ -1,0 +1,8 @@
+{
+ "home-screen": "src/app/nibblehome/index.tsx",
+ "top-bar": "src/features/nibblehome/components/top-bar.tsx",
+ "progress-hero": "src/features/nibblehome/components/progress-hero.tsx",
+ "stat-tiles": "src/features/nibblehome/components/stat-tiles.tsx",
+ "meal-card": "src/features/nibblehome/components/meal-card.tsx",
+ "dock": "src/features/nibblehome/components/dock.tsx"
+}

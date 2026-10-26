@@ -1,0 +1,68 @@
+import { Pressable, View } from 'react-native';
+
+import { days } from '../data/start';
+import { DAYS_TOP, DAY_H, DAY_W } from '../layout';
+import { radius, type, vg } from '../theme';
+import { T } from './text';
+
+/** One day disc. Written out in `DayRail` so the reveal fills the rail. */
+function Day({ i, picked, onPick }: { i: number; picked: number; onPick?: (n: number) => void }) {
+  const d = days[i];
+  const on = d.num === picked;
+  return (
+    <Pressable
+      onPress={() => onPick?.(d.num)}
+      accessibilityRole="button"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={`${d.name} ${d.num}`}
+    >
+      <View
+        style={{
+          width: on ? DAY_W + 6 : DAY_W,
+          height: on ? DAY_H + 6 : DAY_H,
+          borderRadius: radius.pill,
+          backgroundColor: on ? vg.card : vg.orangeSoft,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T variant="dayNum" color={on ? vg.ink : vg.onOrange} style={{ height: type.dayNum.line }}>
+          {String(d.num)}
+        </T>
+        <T
+          variant="dayName"
+          color={on ? vg.muted : vg.onOrangeDim}
+          style={{ height: type.dayName.line }}
+        >
+          {d.name}
+        </T>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * Which day the plan is for.
+ *
+ * Five discs spread across the width with today a little larger, which is the
+ * reference's treatment. They are spread rather than scrolled because five
+ * fit: a rail that does not run off the edge should not pretend to.
+ */
+export function DayRail({ picked, onPick }: { picked: number; onPick?: (n: number) => void }) {
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: DAYS_TOP,
+      }}
+    >
+      <Day i={0} picked={picked} onPick={onPick} />
+      <Day i={1} picked={picked} onPick={onPick} />
+      <Day i={2} picked={picked} onPick={onPick} />
+      <Day i={3} picked={picked} onPick={onPick} />
+      <Day i={4} picked={picked} onPick={onPick} />
+    </View>
+  );
+}

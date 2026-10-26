@@ -1,0 +1,216 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "@/features/cratetrack/components/map-canvas"
+   ],
+   "label": "the ground it crosses"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "not a map, the idea of one"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a texture, not a place"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.04"
+   ],
+   "label": "a glow where it started"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.05"
+   ],
+   "label": "and a radius"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.06"
+   ],
+   "label": "the route"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.07"
+   ],
+   "label": "where it set off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.08"
+   ],
+   "label": "ringed"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and where it is going"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/map-canvas.tsx",
+    "STEP 1.10"
+   ],
+   "label": "pinned"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "the way out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "@/features/cratetrack/components/parcel-card"
+   ],
+   "label": "what is being tracked"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "on a card over it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/parcel-card.tsx",
+    "STEP 1.14"
+   ],
+   "label": "which parcel"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/parcel-card.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and between where"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "@/features/cratetrack/components/courier-bar"
+   ],
+   "label": "and who is carrying it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/cratetrack/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and a bar under that"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/courier-bar.tsx",
+    "STEP 1.18"
+   ],
+   "label": "their photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/courier-bar.tsx",
+    "STEP 1.19"
+   ],
+   "label": "their name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/courier-bar.tsx",
+    "STEP 1.20"
+   ],
+   "label": "a way to call"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/cratetrack/components/courier-bar.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and a way to write"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cratetrack/components/parcel-card.tsx",
+    [
+     "// MISTAKE 1.22",
+     "borderBottomLeftRadius: 0,"
+    ]
+   ],
+   "label": "the card came in square on one corner"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/cratetrack/components/courier-bar.tsx",
+    [
+     "// MISTAKE 1.23",
+     "paddingVertical: 14,"
+    ]
+   ],
+   "label": "the bar came in over-padded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "courier-bar",
+     "src/features/cratetrack/components/courier-bar.tsx"
+    ],
+    [
+     "map-canvas",
+     "src/features/cratetrack/components/map-canvas.tsx"
+    ],
+    [
+     "parcel-card",
+     "src/features/cratetrack/components/parcel-card.tsx"
+    ],
+    [
+     "track-screen",
+     "src/app/cratetrack/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

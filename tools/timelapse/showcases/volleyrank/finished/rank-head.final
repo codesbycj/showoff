@@ -1,0 +1,70 @@
+import { Pressable, View } from 'react-native';
+
+import { copy, tabs } from '../data/start';
+import { HEAD_TOP, SEG_HEIGHT, SEG_TOP } from '../layout';
+import { radius, type, vl } from '../theme';
+import { T } from './text';
+
+/**
+ * What the screen is, and which leaderboard.
+ *
+ * The three tabs are real state: the reference ships with "Global" lit and
+ * nothing to press.
+ */
+export function RankHead({ tab, onTab }: { tab: string; onTab?: (id: string) => void }) {
+  const third = (i: number) => {
+    const t = tabs[i];
+    const on = t.id === tab;
+    return (
+      <Pressable
+        onPress={() => onTab?.(t.id)}
+        style={{ flex: 1 }}
+        accessibilityRole="tab"
+        accessibilityState={{ selected: on }}
+        accessibilityLabel={t.label}
+      >
+        <View
+          style={{
+            height: SEG_HEIGHT - 8,
+            borderRadius: radius.pill,
+            backgroundColor: on ? vl.onGreen : 'transparent',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="seg" color={on ? vl.green : vl.onGreenDim} style={{ height: type.seg.line }}>
+            {t.label}
+          </T>
+        </View>
+      </Pressable>
+    );
+  };
+
+  return (
+    <View>
+      <T
+        variant="screenTitle"
+        color={vl.onGreen}
+        style={{ marginTop: HEAD_TOP, textAlign: 'center', height: type.screenTitle.line }}
+      >
+        {copy.title}
+      </T>
+
+      <View
+        style={{
+          height: SEG_HEIGHT,
+          marginTop: SEG_TOP,
+          borderRadius: radius.pill,
+          backgroundColor: '#FFFFFF1F',
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 4,
+        }}
+      >
+        {third(0)}
+        {third(1)}
+        {third(2)}
+      </View>
+    </View>
+  );
+}

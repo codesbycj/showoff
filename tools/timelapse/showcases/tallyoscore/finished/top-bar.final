@@ -1,0 +1,31 @@
+import { Pressable, View } from 'react-native';
+
+import { HEAD_DISC, HEAD_TOP } from '../layout';
+import { radius, ty } from '../theme';
+import { Mark, Share } from './glyphs';
+
+/** The brand's mark, and a way to send the figures on. */
+export function TopBar({ onShare }: { onShare?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: HEAD_TOP }}>
+      <Mark size={24} tint={ty.ink} />
+
+      <View style={{ flex: 1 }} />
+
+      <Pressable onPress={onShare} accessibilityRole="button" accessibilityLabel="Share">
+        <View
+          style={{
+            width: HEAD_DISC,
+            height: HEAD_DISC,
+            borderRadius: radius.pill,
+            backgroundColor: ty.well,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Share tint={ty.ink} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

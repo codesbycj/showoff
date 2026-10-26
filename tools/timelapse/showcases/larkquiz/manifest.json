@@ -1,0 +1,7 @@
+{
+ "quiz-screen": "src/app/larkquiz/index.tsx",
+ "top-bar": "src/features/larkquiz/components/top-bar.tsx",
+ "headline": "src/features/larkquiz/components/headline.tsx",
+ "dialog-card": "src/features/larkquiz/components/dialog-card.tsx",
+ "answer-grid": "src/features/larkquiz/components/answer-grid.tsx"
+}

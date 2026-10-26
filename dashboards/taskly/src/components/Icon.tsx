@@ -113,7 +113,7 @@ export function Icon({
 }
 
 /**
- * The Taskly mark: a lilac rounded square with a tick cut out as a rising
+ * The Plyra mark: a lilac rounded square with a tick cut out as a rising
  * stroke. Invented, in the reference's idiom (rule 8).
  */
 export function Logo({ size = 30 }: { size?: number }) {

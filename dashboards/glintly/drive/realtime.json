@@ -1,0 +1,48 @@
+{
+  "url": "http://localhost:5368/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "realtime", "click": "[data-tab='realtime']", "settle": 1000, "rest": true },
+
+    { "name": "window-30m", "click": "[data-group='window'] [data-segment='m30']", "settle": 900, "rest": true },
+    { "name": "window-24h", "click": "[data-group='window'] [data-segment='h24']", "settle": 900, "rest": true },
+    { "name": "window-1m", "click": "[data-group='window'] [data-segment='m1']", "settle": 900, "rest": true },
+
+    { "name": "trail-mid", "hover": "[data-card='live-now'] [data-mark='pt-22']", "against": "window-1m" },
+    { "name": "trail-late", "hover": "[data-card='live-now'] [data-mark='pt-48']", "against": "trail-mid" },
+
+    { "name": "source-search", "click": "[data-source='search']", "settle": 800, "rest": true },
+    { "name": "source-social", "click": "[data-source='social']", "settle": 800, "rest": true },
+    { "name": "source-cleared", "click": "[data-action='clear-source']", "settle": 800, "rest": true },
+
+    { "name": "sort-trend", "click": "[data-group='sort'] [data-segment='trend']", "settle": 800, "rest": true },
+    { "name": "sort-ascending", "click": "[data-action='sort-dir']", "settle": 800, "rest": true },
+    { "name": "sort-descending", "click": "[data-action='sort-dir']", "settle": 800, "rest": true },
+    { "name": "sort-active", "click": "[data-group='sort'] [data-segment='active']", "settle": 800, "rest": true },
+
+    { "name": "pages-down", "wheel": ["[data-scroller='pages']", 320], "settle": 500, "rest": true },
+    { "name": "pages-further", "wheel": ["[data-scroller='pages']", 320], "settle": 500, "rest": true },
+    { "name": "pages-top", "wheel": ["[data-scroller='pages']", -640], "settle": 500, "rest": true },
+
+    { "name": "page-pricing", "click": "[data-row='l1']", "settle": 900, "rest": true },
+    { "name": "page-trail", "hover": "[data-card='live-now'] [data-mark='pt-30']", "against": "page-pricing" },
+    { "name": "page-home", "click": "[data-row='l2']", "settle": 900, "rest": true },
+    { "name": "page-cleared", "click": "[data-action='clear-page']", "settle": 900, "rest": true },
+
+    { "name": "search-docs", "fill": ["[data-card='live-pages'] [data-search]", "docs"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-card='live-pages'] [data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-card='live-pages'] [data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "theme-dark", "click": "[data-theme-choice='dark']", "settle": 800, "rest": true },
+    { "name": "dark-source", "click": "[data-source='direct']", "settle": 800, "rest": true },
+    { "name": "dark-source-off", "click": "[data-source='direct']", "settle": 800, "rest": true },
+    { "name": "theme-light", "click": "[data-theme-choice='light']", "settle": 800, "rest": true },
+
+    { "name": "inert-behavior", "click": "[data-tab='behavior']", "against": "theme-light", "expectUnchanged": true },
+    { "name": "inert-help", "click": "[data-tab='help']", "against": "theme-light", "expectUnchanged": true }
+  ]
+}

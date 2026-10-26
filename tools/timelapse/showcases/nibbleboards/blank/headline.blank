@@ -1,0 +1,50 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { copy } from '../data/start';
+import { ADD_DISC, HEADLINE_TOP } from '../layout';
+import { nb, radius } from '../theme';
+import { T } from './text';
+
+/**
+ * What the screen is about, and a way to add a board.
+ *
+ * The sentence is grammatical. The reference reads "your boards looks so
+ * good" — a design shot is not an authority on its own copy (AGENTS.md, "Fix
+ * the reference's mistakes").
+ */
+export function Headline({ onAdd }: { onAdd?: () => void }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: HEADLINE_TOP }}>
+{/* STEP 1.09 the sentence
+      <T variant="headline" color={nb.ink} style={{ flex: 1, marginRight: 14 }}>
+        {copy.headline}
+      </T>
+*/}
+
+{/* STEP 1.10 and a way to add a board
+      <Pressable onPress={onAdd} accessibilityRole="button" accessibilityLabel="Add a board">
+        <View
+          style={{
+            width: ADD_DISC,
+            height: ADD_DISC,
+            borderRadius: radius.pill,
+            backgroundColor: nb.well,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={17} height={17} viewBox="0 0 24 24">
+            <Path
+              d="M12 5.4v13.2M5.4 12h13.2"
+              stroke={nb.ink}
+              strokeWidth={2.2}
+              strokeLinecap="round"
+            />
+          </Svg>
+        </View>
+      </Pressable>
+*/}
+    </View>
+  );
+}

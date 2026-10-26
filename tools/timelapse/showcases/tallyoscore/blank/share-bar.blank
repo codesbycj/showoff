@@ -1,0 +1,68 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { copy, friendAvatar, friends } from '../data/start';
+import { SHARE_HEIGHT, SHARE_TOP } from '../layout';
+import { radius, ty, type } from '../theme';
+import { LinkMark } from './glyphs';
+import { T } from './text';
+
+/**
+ * Who else is getting these figures.
+ *
+ * The sentence agrees with itself: "1 friend" or "3 friends" comes off
+ * `friends`, so the plural cannot go wrong when the number changes.
+ *
+ * The yellow is an absolutely-filled child rather than this View's own fill,
+ * so the blank state is a blank page and the bar arrives as a step.
+ */
+export function ShareBar({ onManage }: { onManage?: () => void }) {
+  return (
+    <View
+      style={{
+        height: SHARE_HEIGHT,
+        marginTop: SHARE_TOP,
+        borderRadius: radius.card,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 18,
+      }}
+    >
+{/* STEP 1.19 the yellow
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius.card,
+          backgroundColor: ty.butter,
+        }}
+      />
+*/}
+
+{/* STEP 1.20 who it went to
+      <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+        <T variant="share" color={ty.ink} style={{ height: type.share.line }}>
+          {`${copy.sharedBefore}${friends}`}
+        </T>
+        <T variant="share" color={ty.butterInk} style={{ height: type.share.line }}>
+          {`${copy.sharedAfter}${friends === 1 ? '' : 's'}`}
+        </T>
+      </View>
+*/}
+
+{/* STEP 1.21 a link
+      <Pressable onPress={onManage} accessibilityRole="button" accessibilityLabel="Copy the link">
+        <View style={{ marginRight: 12 }}>
+          <LinkMark tint={ty.butterInk} />
+        </View>
+      </Pressable>
+*/}
+
+{/* STEP 1.22 and their face
+      <Image source={friendAvatar} style={{ width: 38, height: 38, borderRadius: radius.pill }} />
+*/}
+    </View>
+  );
+}

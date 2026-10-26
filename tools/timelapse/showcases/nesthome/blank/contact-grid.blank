@@ -1,0 +1,121 @@
+import { Image, Pressable, ScrollView, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { contacts } from '../data/start';
+import { BLOB, GRID_GAP, GRID_TOP } from '../layout';
+import { ne, radius, type } from '../theme';
+import { T } from './text';
+
+const TONES = { blush: ne.blush, mist: ne.mist, lilac: ne.lilac } as const;
+
+/**
+ * One person you send to.
+ *
+ * The portrait sits on a tinted blob rather than in a plain circle, which is
+ * the reference's treatment: the tint is what distinguishes one tile from
+ * the next at this size, and a row of identical grey circles would not.
+ *
+ * `borderRadius` of a third of the box is as close to the reference's
+ * squircle as a View gets without a clip path, and a clip path here would
+ * cost an Svg per tile for a difference nobody could name.
+ */
+function Contact({ i, onPress }: { i: number; onPress?: (id: string) => void }) {
+  const c = contacts[i];
+  return (
+    <Pressable
+      onPress={() => onPress?.(c.id)}
+      style={{ width: '33.33%', alignItems: 'center', marginBottom: GRID_GAP }}
+      accessibilityRole="button"
+      accessibilityLabel={c.name}
+    >
+      <View
+        style={{
+          width: BLOB,
+          height: BLOB,
+          borderRadius: radius.blob,
+          backgroundColor: TONES[c.tone],
+          // MISTAKE 1.31 the tiles came in squared off
+          borderBottomLeftRadius: 0,
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          overflow: 'hidden',
+        }}
+      >
+        <Image source={c.photo} style={{ width: BLOB - 8, height: BLOB - 6 }} />
+      </View>
+
+      <T variant="contact" color={ne.ink} style={{ marginTop: 7, height: type.contact.line }}>
+        {c.name}
+      </T>
+    </Pressable>
+  );
+}
+
+/** The dashed tile that adds one. */
+function AddTile({ onPress }: { onPress?: () => void }) {
+  return (
+    <Pressable
+      onPress={onPress}
+      style={{ width: '33.33%', alignItems: 'center', marginBottom: GRID_GAP }}
+      accessibilityRole="button"
+      accessibilityLabel="Add a contact"
+    >
+      <View
+        style={{
+          width: BLOB,
+          height: BLOB,
+          borderRadius: radius.pill,
+          borderWidth: 1.5,
+          borderColor: ne.faint,
+          borderStyle: 'dashed',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Svg width={20} height={20} viewBox="0 0 24 24">
+          <Path
+            d="M12 5.4v13.2M5.4 12h13.2"
+            stroke={ne.faint}
+            strokeWidth={2}
+            strokeLinecap="round"
+          />
+        </Svg>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * Everyone the wallet knows.
+ *
+ * The grid scrolls, so the last row runs under the dock rather than stopping
+ * short of it — which is what the reference crops.
+ */
+export function ContactGrid({ onPress }: { onPress?: (id: string) => void }) {
+  return (
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ flex: 1, marginTop: GRID_TOP }}
+      contentContainerStyle={{ flexDirection: 'row', flexWrap: 'wrap' }}
+    >
+{/* STEP 1.19 one
+      <Contact i={0} onPress={onPress} />
+*/}
+{/* STEP 1.20 two
+      <Contact i={1} onPress={onPress} />
+*/}
+{/* STEP 1.21 three
+      <Contact i={2} onPress={onPress} />
+*/}
+{/* STEP 1.22 a second row
+      <Contact i={3} onPress={onPress} />
+      <Contact i={4} onPress={onPress} />
+      <Contact i={5} onPress={onPress} />
+*/}
+{/* STEP 1.23 and room for one more
+      <Contact i={6} onPress={onPress} />
+      <AddTile />
+*/}
+    </ScrollView>
+  );
+}

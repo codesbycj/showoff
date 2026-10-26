@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/outfit';
+
+/*
+ * Pennora.
+ *
+ * A posed board: one rounded panel on a flat grey ground (#d1d1d1), which is a
+ * presentation effect and is dropped — the panel's own pale ground becomes the
+ * page. refscan read the rest straight off the picture: #ffffff cards, a
+ * #b3ed74 lime, a #ccf3a0 tint under it and a very dark green for the filled
+ * controls.
+ *
+ * `static`, because the category colours reach the donut as inline
+ * `var(--color-cat-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions — which paints five of six segments black, silently.
+ */
+@theme static {
+  --color-ground: #f3f3f3;
+  --color-surface: #ffffff;
+  --color-sunken: #f4f6f1;
+  --color-sunken-deep: #e4e7df;
+
+  --color-ink: #11210f; /* headings and the figures */
+  --color-fill: #17461a; /* the dark green button, and the text on it */
+  --color-fill-fg: #f3ffe9;
+  --color-body: #3c4b39;
+  /* 4.84:1 on white, 4.57:1 on the pale ground. */
+  --color-muted: #637060;
+  --color-line: #e7eae3;
+
+  --color-accent: #b3ed74; /* the lime: rewards card, arc, the round action */
+  --color-accent-soft: #ccf3a0;
+  --color-accent-faint: #eaf9d9;
+  /* Lime is far too light to carry text, so accent *text* is the deep green. */
+  --color-accent-deep: #2c5c17;
+
+  --color-positive: #1d6b35;
+  --color-positive-soft: #e2f3e5;
+  --color-danger: #a8301f;
+  --color-danger-soft: #fbe9e6;
+  --color-goal: #d9541c; /* the earning target's underline */
+  /* The same idea as text: #d9541c on the pale tint is 3.64:1, this is 7.0:1. */
+  --color-goal-deep: #8c3a0f;
+
+  /* The four spending categories, in the reference's own order. */
+  --color-cat-rent: #2c5c17;
+  --color-cat-transport: #6aa63c;
+  --color-cat-food: #a7d96d;
+  --color-cat-entertainment: #d4ecb4;
+
+  --font-sans: 'Outfit Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 20px;
+  --shadow-card: 0 1px 2px rgb(17 33 15 / 0.04), 0 12px 28px -22px rgb(17 33 15 / 0.22);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-fill);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

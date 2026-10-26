@@ -1,0 +1,131 @@
+import { Pressable, View } from 'react-native';
+import Svg, { Path, Rect } from 'react-native-svg';
+
+import { copy, days } from '../data/start';
+import { DAY_H, DAY_W, STRIP_TOP, TITLE_TOP } from '../layout';
+import { nb, radius, type } from '../theme';
+import { T } from './text';
+
+/** One day pill. Written out in `WeekStrip` so the reveal fills the rail. */
+function Day({ i, picked, onPick }: { i: number; picked: number; onPick?: (n: number) => void }) {
+  const day = days[i];
+  const on = day.num === picked;
+  return (
+    <Pressable
+      onPress={() => onPick?.(day.num)}
+      accessibilityRole="button"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={`${day.letter} ${day.num}`}
+    >
+      <View style={{ width: DAY_W, alignItems: 'center' }}>
+        <T variant="dayLetter" color={nb.muted} style={{ height: type.dayLetter.line }}>
+          {day.letter}
+        </T>
+
+        <View
+          style={{
+            width: DAY_W,
+            height: DAY_H,
+            marginTop: 8,
+            borderRadius: radius.day,
+            backgroundColor: nb.well,
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingVertical: 10,
+          }}
+        >
+          <View
+            style={{
+              width: 6,
+              height: 6,
+              borderRadius: radius.pill,
+              backgroundColor: on ? nb.ink : nb.faint,
+            }}
+          />
+          <View
+            style={{
+              width: 30,
+              height: 30,
+              borderRadius: radius.pill,
+              backgroundColor: on ? nb.blue : 'transparent',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T
+              variant="dayNum"
+              color={on ? nb.blueInk : nb.muted}
+              style={{ height: type.dayNum.line }}
+            >
+              {String(day.num)}
+            </T>
+          </View>
+        </View>
+      </View>
+    </Pressable>
+  );
+}
+
+/**
+ * What the screen is, and which day it is showing.
+ *
+ * Seven pills spread across the width rather than a scrolling rail: a week
+ * has seven days, so there is nothing to scroll and a rail would cost the
+ * row its even rhythm.
+ */
+export function WeekStrip({ picked, onPick }: { picked: number; onPick?: (n: number) => void }) {
+  return (
+    <View>
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: TITLE_TOP }}>
+        <View style={{ flex: 1 }}>
+          <T variant="title" color={nb.ink} style={{ height: type.title.line }}>
+            {copy.title}
+          </T>
+          <T variant="subtitle" color={nb.muted} style={{ height: type.subtitle.line }}>
+            {copy.weekDays}
+          </T>
+        </View>
+
+        <View
+          style={{
+            width: 42,
+            height: 42,
+            borderRadius: 14,
+            backgroundColor: nb.well,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Svg width={19} height={19} viewBox="0 0 24 24">
+            <Rect
+              x={4}
+              y={6}
+              width={16}
+              height={14}
+              rx={3.4}
+              stroke={nb.ink}
+              strokeWidth={1.8}
+              fill="none"
+            />
+            <Path
+              d="M4 10.6h16M8.4 3.6v4M15.6 3.6v4"
+              stroke={nb.ink}
+              strokeWidth={1.8}
+              strokeLinecap="round"
+            />
+          </Svg>
+        </View>
+      </View>
+
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: STRIP_TOP }}>
+        <Day i={0} picked={picked} onPick={onPick} />
+        <Day i={1} picked={picked} onPick={onPick} />
+        <Day i={2} picked={picked} onPick={onPick} />
+        <Day i={3} picked={picked} onPick={onPick} />
+        <Day i={4} picked={picked} onPick={onPick} />
+        <Day i={5} picked={picked} onPick={onPick} />
+        <Day i={6} picked={picked} onPick={onPick} />
+      </View>
+    </View>
+  );
+}

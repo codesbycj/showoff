@@ -1,0 +1,55 @@
+{
+  "url": "http://localhost:5332/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "contact-pick", "click": "[data-contact='p2']", "settle": 600, "rest": true },
+    { "name": "contact-off", "click": "[data-contact='p2']", "settle": 600, "rest": true },
+    { "name": "contacts-paged", "click": "[aria-label='More people']", "settle": 800, "rest": true },
+    { "name": "contacts-back", "click": "[aria-label='Back to the start']", "settle": 800, "rest": true },
+
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-7m", "click": "[data-menu='span'] [data-option='7m']", "settle": 800, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-3m", "click": "[data-menu='span'] [data-option='3m']", "settle": 800, "rest": true },
+    { "name": "span-open-3", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-5m", "click": "[data-menu='span'] [data-option='5m']", "settle": 800, "rest": true },
+
+    { "name": "bar-jan", "hover": "[data-card='balance'] [data-mark='jan']", "against": "span-5m" },
+    { "name": "bar-mar", "hover": "[data-card='balance'] [data-mark='mar']", "against": "bar-jan" },
+
+    { "name": "card-reserve", "click": "[data-card='bankcard'] [data-segment='reserve']", "settle": 800, "rest": true },
+    { "name": "card-shared", "click": "[data-card='bankcard'] [data-segment='shared']", "settle": 800, "rest": true },
+    { "name": "card-everyday", "click": "[data-card='bankcard'] [data-segment='everyday']", "settle": 800, "rest": true },
+
+    { "name": "gauge-progress", "hover": "[data-card='analytics'] [data-mark='progress']", "against": "card-everyday" },
+    { "name": "gauge-todo", "hover": "[data-card='analytics'] [data-mark='todo']", "against": "gauge-progress" },
+
+    { "name": "txn-open", "click": "[data-row='t4']", "settle": 650, "rest": true },
+    { "name": "txn-close", "click": "[data-row='t4']", "settle": 650, "rest": true },
+    { "name": "txns-scrolled", "wheel": ["[data-scroller='txns']", 260], "rest": true },
+    { "name": "txns-top", "wheel": ["[data-scroller='txns']", -260], "rest": true },
+
+    { "name": "flow-expense", "hover": "[data-card='flow'] [data-mark='expense']", "against": "txns-top" },
+    { "name": "flow-income", "hover": "[data-card='flow'] [data-mark='income']", "against": "flow-expense" },
+
+    { "name": "premium-on", "click": "[data-action='premium']", "settle": 700, "rest": true },
+    { "name": "premium-off", "click": "[data-action='premium']", "settle": 700, "rest": true },
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 600, "rest": true },
+
+    { "name": "search-orchard", "fill": ["[data-search]", "orchard"], "settle": 850, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    { "name": "strip-to-end", "click": "[aria-label='More people']", "settle": 800, "rest": true },
+    { "name": "send-money", "click": "[data-action='send-money']", "settle": 950, "rest": true },
+    { "name": "back-home", "click": "[data-tab='home']", "settle": 950, "rest": true },
+
+    { "name": "inert-people", "click": "[data-tab='people']", "against": "back-home", "expectUnchanged": true },
+    { "name": "inert-goals", "click": "[data-tab='goals']", "against": "back-home", "expectUnchanged": true }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+ "home-screen": "src/app/masonhome/index.tsx",
+ "header": "src/features/masonhome/components/header.tsx",
+ "greeting": "src/features/masonhome/components/greeting.tsx",
+ "snapshot-card": "src/features/masonhome/components/snapshot-card.tsx",
+ "task-row": "src/features/masonhome/components/task-row.tsx",
+ "dock": "src/features/masonhome/components/dock.tsx"
+}

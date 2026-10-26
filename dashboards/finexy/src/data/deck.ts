@@ -1,7 +1,7 @@
 /**
  * The content deck: every balance, wallet, card, figure and activity row.
  *
- * All invented (rule 5). Finexy is not a bank, no card number here is a card
+ * All invented (rule 5). Obolin is not a bank, no card number here is a card
  * number, and nobody has been charged for anything on this screen.
  */
 import type { Country, IconName } from '@/components/Icon';
@@ -10,11 +10,11 @@ import { rng } from '@/data/rng';
 import face1 from '@/assets/img/face-1.jpg';
 
 export const account = {
-  brand: 'Finexy',
+  brand: 'Obolin',
   user: {
     name: 'Sajibur Rahman',
     first: 'Sajibur',
-    email: 'sajibur.rahman@gmail.com',
+    email: 'sajibur.rahman@obolin.co',
     face: face1,
   },
   greeting: 'Good morning',

@@ -1,0 +1,40 @@
+{
+  "url": "http://localhost:5372/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "payments", "click": "[data-tab='payments']", "settle": 1000, "rest": true },
+
+    { "name": "bar-aug", "hover": "[data-mark='aug-billed']", "against": "payments" },
+    { "name": "bar-aug-collected", "hover": "[data-mark='aug-collected']", "against": "bar-aug" },
+    { "name": "bar-may", "hover": "[data-mark='may-billed']", "against": "bar-aug-collected" },
+
+    { "name": "lens-collected", "click": "[data-stat='paid']", "settle": 900, "rest": true },
+    { "name": "lens-outstanding", "click": "[data-stat='open']", "settle": 900, "rest": true },
+    { "name": "lens-overdue", "click": "[data-stat='overdue']", "settle": 900, "rest": true },
+    { "name": "lens-clear", "click": "[data-action='clear-lens']", "settle": 900, "rest": true },
+
+    { "name": "sort-open", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-largest", "click": "[data-menu='sort'] [data-option='amount']", "settle": 900, "rest": true },
+    { "name": "sort-open-2", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-client", "click": "[data-menu='sort'] [data-option='client']", "settle": 900, "rest": true },
+
+    { "name": "row-open", "click": "[data-row='INV-2624']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-row='INV-2621']", "settle": 800, "rest": true },
+    { "name": "row-closed", "click": "[data-row='INV-2621']", "settle": 800, "rest": true },
+
+    { "name": "invoices-down", "wheel": ["[data-scroller='invoices']", 320], "settle": 500, "rest": true },
+    { "name": "invoices-further", "wheel": ["[data-scroller='invoices']", 320], "settle": 500, "rest": true },
+    { "name": "invoices-top", "wheel": ["[data-scroller='invoices']", -640], "settle": 500, "rest": true },
+
+    { "name": "search-marlow", "fill": ["[data-search='invoices']", "marlow"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='invoices']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-team", "click": "[data-tab='team']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-company", "click": "[data-tab='company']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

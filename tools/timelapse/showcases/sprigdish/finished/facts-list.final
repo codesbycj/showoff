@@ -1,0 +1,54 @@
+import { View } from 'react-native';
+
+import { copy, rows } from '../data/start';
+import { ROW_HEIGHT, SECTION_TOP } from '../layout';
+import { sg, type } from '../theme';
+import { T } from './text';
+
+/** One line of the table. */
+function Row({ i, last }: { i: number; last?: boolean }) {
+  const r = rows[i];
+  return (
+    <View
+      style={{
+        height: ROW_HEIGHT,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderBottomWidth: last ? 0 : 1,
+        borderBottomColor: sg.hairline,
+      }}
+    >
+      <T variant="rowName" color={sg.muted} style={{ flex: 1, height: type.rowName.line }}>
+        {r.name}
+      </T>
+      <T variant="rowValue" color={sg.ink} style={{ height: type.rowValue.line }}>
+        {r.value}
+      </T>
+    </View>
+  );
+}
+
+/**
+ * The full table.
+ *
+ * Six rows rather than the reference's two, so the list has somewhere to go:
+ * a table that stops after Calories and Protein is the thing that leaves a
+ * band of empty canvas under it. The first four read off the same grams as
+ * the row of figures above.
+ */
+export function FactsList() {
+  return (
+    <View style={{ marginTop: SECTION_TOP }}>
+      <T variant="section" color={sg.ink} style={{ height: type.section.line }}>
+        {copy.facts}
+      </T>
+
+      <Row i={0} />
+      <Row i={1} />
+      <Row i={2} />
+      <Row i={3} />
+      <Row i={4} />
+      <Row i={5} last />
+    </View>
+  );
+}

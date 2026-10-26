@@ -1,0 +1,217 @@
+import { useId, useState } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Defs, Line, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { actual, ahead, axis, copy, peakValue, peakWeek } from '../data/start';
+import { CARD_PAD, CARD_TOP, FORECAST_MIN } from '../layout';
+import { ms, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * What the project is forecast to do.
+ *
+ * **The percentage is derived.** `ahead` is the actual total against the
+ * planned total; the reference prints "75% ahead" over bars that do not
+ * differ by anything like it, and its own subtitle says "shedule".
+ *
+ * The gridlines bracket the data rather than stopping at it: the scale is
+ * the tallest bar over 0.78, so the peak lands near the 75% rule and the
+ * readout has somewhere to sit. A scale that stops at the maximum leaves a
+ * bar standing taller than the axis that is supposed to measure it.
+ *
+ * The plot's height is a number rather than a percentage: a percentage
+ * height needs a definite parent and a `flex: 1` box is not one on web.
+ */
+export function ForecastCard({ mode, onMode }: { mode: string; onMode?: (m: string) => void }) {
+  const fade = useId();
+
+  /**
+   * The plot takes whatever height the card has left, measured rather than
+   * assumed — a fixed 140 left a hand's width of empty card under the chart
+   * on a 393x852 phone, which is the "dead space" defect one card in.
+   * `box` is 0 until the first layout, so the fallback is what paints on the
+   * very first frame and then it re-renders at the real height.
+   */
+  const [box, setBox] = useState(0);
+  const PLOT = Math.max(150, box - type.axis.line - 4);
+
+  /** Headroom over the tallest bar, so the tooltip is not laid across it. */
+  const top = Math.max(...actual) / 0.78;
+
+  const toggle = (id: string, label: string) => {
+    const on = id === mode;
+    return (
+      <Pressable
+        onPress={() => onMode?.(id)}
+        accessibilityRole="button"
+        accessibilityState={{ selected: on }}
+        accessibilityLabel={label}
+      >
+        <View
+          style={{
+            marginLeft: 6,
+            paddingHorizontal: 12,
+            paddingVertical: 6,
+            borderRadius: radius.chip,
+            backgroundColor: on ? ms.panel : ms.well,
+          }}
+        >
+          <T variant="chip" color={on ? ms.onPanel : ms.muted} style={{ height: type.chip.line }}>
+            {label}
+          </T>
+        </View>
+      </Pressable>
+    );
+  };
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        minHeight: FORECAST_MIN,
+        marginTop: CARD_TOP,
+        borderRadius: radius.card,
+        backgroundColor: ms.card,
+        padding: CARD_PAD,
+        shadowColor: '#2A1B12',
+        shadowOpacity: 0.08,
+        shadowRadius: 18,
+        shadowOffset: { width: 0, height: 8 },
+        elevation: 4,
+      }}
+    >
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+        <View style={{ flex: 1 }}>
+          <T variant="cardTitle" color={ms.ink} style={{ height: type.cardTitle.line }}>
+            {copy.forecast}
+          </T>
+          <T variant="note" color={ms.muted}>
+            {'Progress is ' + ahead + '% ahead of planned schedule'}
+          </T>
+        </View>
+        <Svg width={18} height={18} viewBox="0 0 24 24">
+          <Circle cx={6} cy={12} r={1.6} fill={ms.faint} />
+          <Circle cx={12} cy={12} r={1.6} fill={ms.faint} />
+          <Circle cx={18} cy={12} r={1.6} fill={ms.faint} />
+        </Svg>
+      </View>
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+          <T variant="big" color={ms.ink} style={{ height: type.big.line }}>
+            {String(ahead)}
+          </T>
+          <T variant="bigUnit" color={ms.ink} style={{ marginTop: 10, height: type.bigUnit.line }}>
+            %
+          </T>
+        </View>
+        <T variant="chip" color={ms.green} style={{ marginLeft: 8, height: type.chip.line }}>
+          {'▲ ' + copy.aheadChip}
+        </T>
+        <View style={{ flex: 1 }} />
+        {toggle('planned', copy.planned)}
+        {toggle('actual', copy.actual)}
+      </View>
+
+      <View
+        style={{ flex: 1, flexDirection: 'row', marginTop: 12 }}
+        onLayout={(e) => setBox(e.nativeEvent.layout.height)}
+      >
+        <View
+          style={{
+            width: 34,
+            height: PLOT,
+            marginTop: -type.axis.line / 2,
+            justifyContent: 'space-between',
+          }}
+        >
+          {axis.map((a) => (
+            <T key={a} variant="axis" color={ms.faint} style={{ height: type.axis.line }}>
+              {a + '%'}
+            </T>
+          ))}
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <Svg width="100%" height={PLOT}>
+            <Defs>
+              <LinearGradient
+                id={fade}
+                gradientUnits="userSpaceOnUse"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2={String(PLOT)}
+              >
+                <Stop offset="0" stopColor={ms.peach} stopOpacity="1" />
+                <Stop offset="1" stopColor={ms.peach} stopOpacity="0.1" />
+              </LinearGradient>
+            </Defs>
+
+            {axis.map((a, i) => (
+              <Line
+                key={a}
+                x1={0}
+                y1={(PLOT / (axis.length - 1)) * i}
+                x2="100%"
+                y2={(PLOT / (axis.length - 1)) * i}
+                stroke={ms.hairline}
+                strokeWidth={1}
+              />
+            ))}
+
+            {actual.map((v, i) => {
+              const h = (v / top) * PLOT;
+              return (
+                <Rect
+                  key={i}
+                  x={`${i * 14 + 2}%`}
+                  y={PLOT - h}
+                  width="9%"
+                  height={h}
+                  rx={4}
+                  fill={i === peakWeek ? ms.orange : `url(#${fade})`}
+                />
+              );
+            })}
+          </Svg>
+
+          <View
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              paddingHorizontal: 10,
+              paddingVertical: 6,
+              borderRadius: radius.tile,
+              backgroundColor: ms.card,
+              shadowColor: '#2A1B12',
+              shadowOpacity: 0.14,
+              shadowRadius: 10,
+              shadowOffset: { width: 0, height: 4 },
+              elevation: 4,
+            }}
+          >
+            <T variant="tipBig" color={ms.orange} style={{ height: type.tipBig.line }}>
+              {peakValue.toLocaleString('en-US')}
+            </T>
+            <T variant="tipSmall" color={ms.muted} style={{ height: type.tipSmall.line }}>
+              {copy.tipUnit}
+            </T>
+            <T variant="tipSmall" color={ms.ink} style={{ height: type.tipSmall.line }}>
+              {copy.tipWhen}
+            </T>
+          </View>
+
+          <T
+            variant="axis"
+            color={ms.faint}
+            style={{ marginTop: 4, textAlign: 'right', height: type.axis.line }}
+          >
+            {copy.month}
+          </T>
+        </View>
+      </View>
+    </View>
+  );
+}

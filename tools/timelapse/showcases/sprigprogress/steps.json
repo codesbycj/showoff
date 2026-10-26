@@ -1,0 +1,300 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "@/features/sprigprogress/components/header"
+   ],
+   "label": "what this is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/header.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/header.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and how it is going"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "@/features/sprigprogress/components/progress-card"
+   ],
+   "label": "how far through"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "on a lime card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/progress-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the lime"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/progress-card.tsx",
+    "STEP 1.08"
+   ],
+   "label": "what it measures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/progress-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/progress-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "the rail it sits on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/progress-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "and what it means"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "@/features/sprigprogress/components/split-tiles"
+   ],
+   "label": "in and out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "two tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/split-tiles.tsx",
+    "STEP 1.14"
+   ],
+   "label": "what goes in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/split-tiles.tsx",
+    "STEP 1.15"
+   ],
+   "label": "and what goes out"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "@/features/sprigprogress/components/streak-card"
+   ],
+   "label": "the run of days"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "STEP 1.17"
+   ],
+   "label": "a photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/streak-card.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the photograph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/streak-card.tsx",
+    "STEP 1.19"
+   ],
+   "label": "something to read it on"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/streak-card.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the streak"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "@/features/sprigprogress/components/goal-row"
+   ],
+   "label": "what it is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "the goal"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/goal-row.tsx",
+    "STEP 1.23"
+   ],
+   "label": "a picture of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/goal-row.tsx",
+    "STEP 1.24"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/goal-row.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and a way in"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "@/features/sprigprogress/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/sprigprogress/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "along the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/dock.tsx",
+    "STEP 1.28"
+   ],
+   "label": "the day and the plan"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/dock.tsx",
+    "STEP 1.29"
+   ],
+   "label": "add something"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/sprigprogress/components/dock.tsx",
+    "STEP 1.30"
+   ],
+   "label": "what was burned, and you"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sprigprogress/components/progress-card.tsx",
+    [
+     "// MISTAKE 1.31",
+     "opacity: 0.45,"
+    ]
+   ],
+   "label": "the lime came in half-faded"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/sprigprogress/components/split-tiles.tsx",
+    [
+     "// MISTAKE 1.32",
+     "minHeight: 150,"
+    ]
+   ],
+   "label": "the tiles came in far too tall"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "dock",
+     "src/features/sprigprogress/components/dock.tsx"
+    ],
+    [
+     "goal-row",
+     "src/features/sprigprogress/components/goal-row.tsx"
+    ],
+    [
+     "header",
+     "src/features/sprigprogress/components/header.tsx"
+    ],
+    [
+     "progress-card",
+     "src/features/sprigprogress/components/progress-card.tsx"
+    ],
+    [
+     "progress-screen",
+     "src/app/sprigprogress/index.tsx"
+    ],
+    [
+     "split-tiles",
+     "src/features/sprigprogress/components/split-tiles.tsx"
+    ],
+    [
+     "streak-card",
+     "src/features/sprigprogress/components/streak-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

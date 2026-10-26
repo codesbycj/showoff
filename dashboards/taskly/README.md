@@ -117,7 +117,7 @@ Two layout defects the shots caught that no check would have:
 8. **The three emoji are drawn** — 👋, 🔥 and 👍 render differently on Windows, Android and
    iOS, and one of them in a different skin tone.
 9. **A visible focus ring everywhere.** The board has none.
-10. **The Taskly mark is invented**, drawn in the board's idiom — a lilac rounded square
+10. **The Plyra mark is invented**, drawn in the board's idiom — a lilac rounded square
     with a tick in it.
 11. **The meeting preview is a free-licensed Pexels portrait**, credited in
     `src/assets/img/CREDITS.md`. It is a photograph of a person, which is the one thing on

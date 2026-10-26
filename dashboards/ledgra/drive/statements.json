@@ -1,0 +1,32 @@
+{
+  "url": "http://localhost:5364/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-statements", "click": "[data-tab='statements']", "settle": 950, "rest": true },
+
+    { "name": "group-revenue", "click": "[data-group='group'] [data-segment='Revenue']", "settle": 850, "rest": true },
+    { "name": "group-cost", "click": "[data-group='group'] [data-segment='Cost of sales']", "settle": 850, "rest": true },
+    { "name": "group-operating", "click": "[data-group='group'] [data-segment='Operating']", "settle": 850, "rest": true },
+    { "name": "group-all", "click": "[data-group='group'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "line-operating", "click": "[data-group-line='Operating']", "settle": 900, "rest": true },
+    { "name": "line-other", "click": "[data-group-line='Other']", "settle": 900, "rest": true },
+    { "name": "line-revenue", "click": "[data-group-line='Revenue']", "settle": 900, "rest": true },
+
+    { "name": "month-july", "click": "[data-group='month'] [data-segment='jul']", "settle": 900, "rest": true },
+    { "name": "month-august", "click": "[data-group='month'] [data-segment='aug']", "settle": 900, "rest": true },
+
+    { "name": "lines-scrolled", "wheel": ["[data-scroller='lines']", 200], "rest": true },
+    { "name": "lines-top", "wheel": ["[data-scroller='lines']", -200], "rest": true },
+
+    { "name": "search-rent", "fill": ["[data-search]", "rent"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-accounts", "click": "[data-tab='accounts']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-budgeting", "click": "[data-tab='budgeting']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

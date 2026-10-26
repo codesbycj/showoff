@@ -1,0 +1,7 @@
+{
+ "tasks-screen": "src/app/masontasks/index.tsx",
+ "top-bar": "src/features/masontasks/components/top-bar.tsx",
+ "filter-chips": "src/features/masontasks/components/filter-chips.tsx",
+ "sort-row": "src/features/masontasks/components/sort-row.tsx",
+ "task-card": "src/features/masontasks/components/task-card.tsx"
+}

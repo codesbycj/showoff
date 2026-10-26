@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 1: TWISTY, a freelancer workspace, rebuilt from a posed presentation board as a working three-tab dashboard.",
+  "description": "Dashboard episode 1: ZELPA, a freelancer workspace.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -1,0 +1,94 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+// STEP 1.16 and who is carrying it
+// import { CourierBar } from '@/features/cratetrack/components/courier-bar';
+// STEP 1.01 the ground it crosses
+// import { MapCanvas } from '@/features/cratetrack/components/map-canvas';
+// STEP 1.12 what is being tracked
+// import { ParcelCard } from '@/features/cratetrack/components/parcel-card';
+import { CLOSE, CLOSE_TOP, MARGIN } from '@/features/cratetrack/layout';
+import { cr, radius } from '@/features/cratetrack/theme';
+import { useInsets } from '@/features/cratetrack/use-insets';
+
+/**
+ * Crate — the tracker.
+ *
+ * Assembly only: the ground the parcel is crossing, the way out, what is
+ * being tracked, and who is carrying it.
+ *
+ * **There is no map.** A map is not in drawing range — it has no idea to
+ * interpret, so vectoring one is tracing a specific arrangement rather than
+ * expressing an idea (AGENTS.md). What is drawn is the map idea: a flat
+ * ground, a radius around where the parcel started, a route to where it is
+ * going, and a pin at each end. The reference's real street and district
+ * names are not reused.
+ *
+ * The map is absolutely filled behind everything, so the cards sit over it
+ * and the screen is full to both edges at any height.
+ */
+export default function CratetrackScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: cr.ground }}>
+      <StatusBar style="dark" />
+
+{/* STEP 1.02 not a map, the idea of one
+      <MapCanvas />
+*/}
+
+{/* STEP 1.11 the way out
+      <View style={{ flex: 1, paddingTop: insets.top + CLOSE_TOP, paddingHorizontal: MARGIN }}>
+        <Pressable
+          onPress={() => router.back()}
+          accessibilityRole="button"
+          accessibilityLabel="Close"
+        >
+          <View
+            style={{
+              width: CLOSE,
+              height: CLOSE,
+              borderRadius: radius.pill,
+              backgroundColor: cr.surface,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Svg width={18} height={18} viewBox="0 0 24 24">
+              <Path
+                d="M6.6 6.6 17.4 17.4M17.4 6.6 6.6 17.4"
+                stroke={cr.ink}
+                strokeWidth={2.1}
+                strokeLinecap="round"
+              />
+            </Svg>
+          </View>
+        </Pressable>
+      </View>
+*/}
+
+{/* STEP 1.13 on a card over it
+      <View style={{ paddingHorizontal: MARGIN }}>
+        <ParcelCard onOpen={() => router.push('/cratehome')} />
+      </View>
+*/}
+
+{/* STEP 1.17 and a bar under that
+      <View
+        style={{
+          marginTop: 10,
+          backgroundColor: cr.panel,
+          borderTopLeftRadius: 24,
+          borderTopRightRadius: 24,
+          paddingBottom: insets.bottom,
+        }}
+      >
+        <CourierBar />
+      </View>
+*/}
+    </View>
+  );
+}

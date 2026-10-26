@@ -1,0 +1,217 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "@/features/minglestart/components/wordmark"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/wordmark.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/wordmark.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the mark after it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "@/features/minglestart/components/constellation"
+   ],
+   "label": "the people"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "a constellation"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.07"
+   ],
+   "label": "one ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.08"
+   ],
+   "label": "another"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.09"
+   ],
+   "label": "and a third"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.10"
+   ],
+   "label": "someone on the outer ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.11"
+   ],
+   "label": "someone else"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.12"
+   ],
+   "label": "closer in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.13"
+   ],
+   "label": "further out"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and you in the middle"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/pitch.tsx",
+    "STEP 1.15"
+   ],
+   "label": "the sentence"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/pitch.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and what is behind it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "@/features/minglestart/components/pitch"
+   ],
+   "label": "what the app is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the sentence"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/start-button.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what it says"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "@/features/minglestart/components/start-button"
+   ],
+   "label": "and the way in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/minglestart/index.tsx",
+    "STEP 1.21"
+   ],
+   "label": "and the button"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/minglestart/components/constellation.tsx",
+    [
+     "// MISTAKE 1.22",
+     "borderWidth: 6,"
+    ]
+   ],
+   "label": "the rings came in far too heavy"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/minglestart/components/start-button.tsx",
+    "STEP 1.23"
+   ],
+   "label": "and where it goes"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "constellation",
+     "src/features/minglestart/components/constellation.tsx"
+    ],
+    [
+     "pitch",
+     "src/features/minglestart/components/pitch.tsx"
+    ],
+    [
+     "start-button",
+     "src/features/minglestart/components/start-button.tsx"
+    ],
+    [
+     "start-screen",
+     "src/app/minglestart/index.tsx"
+    ],
+    [
+     "wordmark",
+     "src/features/minglestart/components/wordmark.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

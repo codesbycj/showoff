@@ -1,0 +1,7 @@
+{
+ "scan-screen": "src/app/cratescan/index.tsx",
+ "top-bar": "src/features/cratescan/components/top-bar.tsx",
+ "scan-frame": "src/features/cratescan/components/scan-frame.tsx",
+ "caption": "src/features/cratescan/components/caption.tsx",
+ "controls": "src/features/cratescan/components/controls.tsx"
+}

@@ -1,0 +1,55 @@
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { Dock } from '@/features/tallyoscore/components/dock';
+import { ProgressCard } from '@/features/tallyoscore/components/progress-card';
+import { ScoreSentence } from '@/features/tallyoscore/components/score-sentence';
+import { ShareBar } from '@/features/tallyoscore/components/share-bar';
+import { StatChips } from '@/features/tallyoscore/components/stat-chips';
+import { TopBar } from '@/features/tallyoscore/components/top-bar';
+import { MARGIN } from '@/features/tallyoscore/layout';
+import { ty } from '@/features/tallyoscore/theme';
+import { useInsets } from '@/features/tallyoscore/use-insets';
+
+/**
+ * Tallyo — the score.
+ *
+ * Assembly only: the mark, the sentence the screen is for, the two figures
+ * under it, who else is getting them, how the period is going, and where
+ * else the app goes.
+ *
+ * The progress card takes `flex: 1`, so it grows into whatever the phone can
+ * spare and the dock sits on the bottom inset — the screen has no band of
+ * empty canvas at the foot.
+ */
+export default function TallyoscoreScreen() {
+  const insets = useInsets();
+  const [range, setRange] = useState('monthly');
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: ty.canvas,
+        paddingTop: insets.top,
+        paddingBottom: insets.bottom,
+        paddingHorizontal: MARGIN,
+      }}
+    >
+      <StatusBar style="dark" />
+
+      <TopBar />
+
+      <ScoreSentence />
+
+      <StatChips />
+
+      <ShareBar />
+
+      <ProgressCard range={range} onRange={setRange} />
+
+      <Dock active="stats" />
+    </View>
+  );
+}

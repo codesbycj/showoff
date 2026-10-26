@@ -1,0 +1,297 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "@/features/volleyhome/components/brand-head"
+   ],
+   "label": "the brand"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/brand-head.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/brand-head.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the greeting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "@/features/volleyhome/components/hero-card"
+   ],
+   "label": "the event it wants you in"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "a hero card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/hero-card.tsx",
+    "STEP 1.07"
+   ],
+   "label": "the court"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/hero-card.tsx",
+    "STEP 1.08"
+   ],
+   "label": "something to read on it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/hero-card.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the level and the date"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/hero-card.tsx",
+    "STEP 1.10"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/hero-card.tsx",
+    "STEP 1.11"
+   ],
+   "label": "who is in, and the way in"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "@/features/volleyhome/components/quick-tiles"
+   ],
+   "label": "what the app is for"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "four tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/quick-tiles.tsx",
+    "STEP 1.14"
+   ],
+   "label": "where"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/quick-tiles.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/quick-tiles.tsx",
+    "STEP 1.16"
+   ],
+   "label": "with whom"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/quick-tiles.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and everyone else"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "@/features/volleyhome/components/book-bar"
+   ],
+   "label": "a court to book"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.19"
+   ],
+   "label": "a green bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/book-bar.tsx",
+    "STEP 1.20"
+   ],
+   "label": "the green"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "@/features/volleyhome/components/event-rail"
+   ],
+   "label": "and what is on soon"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "a heading"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.23"
+   ],
+   "label": "a rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/event-rail.tsx",
+    "STEP 1.24"
+   ],
+   "label": "the first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/event-rail.tsx",
+    "STEP 1.25"
+   ],
+   "label": "and the one behind it"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "@/features/volleyhome/components/dock"
+   ],
+   "label": "where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/volleyhome/index.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/dock.tsx",
+    "STEP 1.28"
+   ],
+   "label": "home"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/dock.tsx",
+    "STEP 1.29"
+   ],
+   "label": "bookings"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/dock.tsx",
+    "STEP 1.30"
+   ],
+   "label": "the board"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/volleyhome/components/dock.tsx",
+    "STEP 1.31"
+   ],
+   "label": "and you"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/volleyhome/components/dock.tsx",
+    [
+     "// MISTAKE 1.32",
+     "borderBottomRightRadius: 0,"
+    ]
+   ],
+   "label": "the lit tab came in squared off"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "book-bar",
+     "src/features/volleyhome/components/book-bar.tsx"
+    ],
+    [
+     "brand-head",
+     "src/features/volleyhome/components/brand-head.tsx"
+    ],
+    [
+     "dock",
+     "src/features/volleyhome/components/dock.tsx"
+    ],
+    [
+     "event-rail",
+     "src/features/volleyhome/components/event-rail.tsx"
+    ],
+    [
+     "hero-card",
+     "src/features/volleyhome/components/hero-card.tsx"
+    ],
+    [
+     "home-screen",
+     "src/app/volleyhome/index.tsx"
+    ],
+    [
+     "quick-tiles",
+     "src/features/volleyhome/components/quick-tiles.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

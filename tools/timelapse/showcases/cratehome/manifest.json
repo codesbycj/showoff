@@ -1,0 +1,9 @@
+{
+ "home-screen": "src/app/cratehome/index.tsx",
+ "panel-head": "src/features/cratehome/components/panel-head.tsx",
+ "greeting": "src/features/cratehome/components/greeting.tsx",
+ "search-field": "src/features/cratehome/components/search-field.tsx",
+ "action-pills": "src/features/cratehome/components/action-pills.tsx",
+ "delivery-card": "src/features/cratehome/components/delivery-card.tsx",
+ "tab-bar": "src/features/cratehome/components/tab-bar.tsx"
+}

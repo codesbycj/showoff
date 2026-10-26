@@ -1,0 +1,34 @@
+{
+  "url": "http://localhost:5352/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-activity", "click": "[data-tab='activity']", "settle": 950, "rest": true },
+
+    { "name": "status-completed", "click": "[data-group='status'] [data-segment='Completed']", "settle": 850, "rest": true },
+    { "name": "status-pending", "click": "[data-group='status'] [data-segment='Pending']", "settle": 850, "rest": true },
+    { "name": "status-declined", "click": "[data-group='status'] [data-segment='Declined']", "settle": 850, "rest": true },
+    { "name": "status-all", "click": "[data-group='status'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "sort-amount", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-amount-asc", "click": "[data-sort='amount']", "settle": 750, "rest": true },
+    { "name": "sort-name", "click": "[data-sort='name']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-sort='stamp']", "settle": 750, "rest": true },
+
+    { "name": "ledger-scrolled", "wheel": ["[data-scroller='ledger']", 240], "rest": true },
+    { "name": "ledger-top", "wheel": ["[data-scroller='ledger']", -240], "rest": true },
+
+    { "name": "star-on", "click": "[aria-label='Show the watchlist only']", "settle": 900, "rest": true },
+    { "name": "star-off", "click": "[aria-label='Showing the watchlist']", "settle": 900, "rest": true },
+    { "name": "mask-on", "click": "[aria-label='Hide every figure']", "settle": 900, "rest": true },
+    { "name": "mask-off", "click": "[aria-label='Show the figures']", "settle": 900, "rest": true },
+
+    { "name": "search-reyes", "fill": ["[data-search]", "reyes"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

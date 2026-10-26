@@ -1,7 +1,7 @@
 /**
  * The content deck. Every figure, name, project and date on every pane.
  *
- * All of it is invented (rule 5). TWISTY is not a company, nobody here is a
+ * All of it is invented (rule 5). ZELPA is not a company, nobody here is a
  * real freelancer, and no rate on this screen was ever charged -- which is what
  * lets the build use free-licensed photographs of real people for the faces
  * without the page being able to masquerade as anyone's live product.
@@ -21,7 +21,7 @@ import face6 from '@/assets/img/face-6.jpg';
 export const FACES = [face1, face2, face3, face4, face5, face6];
 
 export const brand = {
-  name: 'TWISTY',
+  name: 'ZELPA',
   user: { name: 'Mara Quill', handle: '@maraquill', role: 'Product designer', face: face1 },
 };
 
@@ -485,7 +485,7 @@ export const WALLET = {
   pending: 4310.5,
   thisMonth: 7920,
   lastMonth: 7065,
-  card: { label: 'TWISTY balance', last4: '4417', expires: '09/27' },
+  card: { label: 'ZELPA balance', last4: '4417', expires: '09/27' },
 };
 
 export const PAYOUTS: Payout[] = [

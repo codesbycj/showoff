@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:5356/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-savings", "click": "[data-tab='savings']", "settle": 950, "rest": true },
+
+    { "name": "pot-equipment", "click": "[data-pot='equipment']", "settle": 900, "rest": true },
+    { "name": "pot-tax", "click": "[data-pot='tax']", "settle": 900, "rest": true },
+    { "name": "pot-bonus", "click": "[data-pot='bonus']", "settle": 900, "rest": true },
+    { "name": "pot-runway", "click": "[data-pot='runway']", "settle": 900, "rest": true },
+
+    { "name": "topup-5000", "click": "[data-group='topup'] [data-segment='5000']", "settle": 750, "rest": true },
+    { "name": "added", "click": "[data-action='topup']", "settle": 850, "rest": true },
+    { "name": "added-twice", "click": "[data-action='topup']", "settle": 850, "rest": true },
+    { "name": "undone", "click": "[data-action='undo']", "settle": 850, "rest": true },
+
+    { "name": "dot-40", "hover": "[data-card='pot-detail'] [data-mark='dot-40']", "against": "undone" },
+    { "name": "dot-120", "hover": "[data-card='pot-detail'] [data-mark='dot-120']", "against": "dot-40" },
+
+
+    { "name": "search-tax", "fill": ["[data-search]", "tax"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-account", "click": "[data-tab='account']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-emergency", "click": "[data-tab='emergency']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

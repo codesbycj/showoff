@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Dashboard episode 5: Sypher, a fleet and financials console.",
+  "description": "Dashboard episode 5: Veloq, a fleet and financials console.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

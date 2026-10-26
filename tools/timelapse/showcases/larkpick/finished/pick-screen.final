@@ -1,0 +1,69 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { ContinueButton } from '@/features/larkpick/components/continue-button';
+import { Headline } from '@/features/larkpick/components/headline';
+import { LanguageRow } from '@/features/larkpick/components/language-row';
+import { TopBar } from '@/features/larkpick/components/top-bar';
+import { initial, languages } from '@/features/larkpick/data/start';
+import { LIST_TOP, MARGIN, ROW_GAP } from '@/features/larkpick/layout';
+import { lk } from '@/features/larkpick/theme';
+import { useInsets } from '@/features/larkpick/use-insets';
+
+/**
+ * Lark — choosing a language.
+ *
+ * Assembly only: the way back, what the screen is asking, the languages, and
+ * the way on.
+ *
+ * The rows are written out rather than mapped so the reveal can land them one
+ * at a time; the selection is real state, so the list answers a tap instead of
+ * showing a hard-coded highlight.
+ *
+ * Each row takes an equal share of what the headline and the button leave, so
+ * the list reaches the button at any screen height rather than stacking at a
+ * fixed pitch and leaving a band of canvas.
+ */
+export default function LarkpickScreen() {
+  const insets = useInsets();
+  const [picked, setPicked] = useState(initial);
+
+  const row = (i: number) => ({
+    label: languages[i].label,
+    flag: languages[i].flag,
+    selected: picked === languages[i].id,
+    onPress: () => setPicked(languages[i].id),
+  });
+
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: lk.canvas,
+        paddingTop: insets.top,
+        paddingHorizontal: MARGIN,
+        paddingBottom: insets.bottom,
+      }}
+    >
+      <StatusBar style="light" />
+
+      <TopBar onBack={() => router.back()} />
+
+      <Headline />
+
+      <View style={{ flex: 1, marginTop: LIST_TOP, gap: ROW_GAP }}>
+        <LanguageRow {...row(0)} />
+        <LanguageRow {...row(1)} />
+        <LanguageRow {...row(2)} />
+        <LanguageRow {...row(3)} />
+        <LanguageRow {...row(4)} />
+        <LanguageRow {...row(5)} />
+        <LanguageRow {...row(6)} />
+      </View>
+
+      <ContinueButton onPress={() => router.push('/larkhome')} />
+    </View>
+  );
+}

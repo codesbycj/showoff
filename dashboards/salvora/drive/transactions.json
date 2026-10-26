@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:5340/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-transactions", "click": "[data-tab='transactions']", "settle": 950, "rest": true },
+
+    { "name": "status-completed", "click": "[data-group='status'] [data-segment='Completed']", "settle": 850, "rest": true },
+    { "name": "status-pending", "click": "[data-group='status'] [data-segment='Pending']", "settle": 850, "rest": true },
+    { "name": "status-refunded", "click": "[data-group='status'] [data-segment='Refunded']", "settle": 850, "rest": true },
+    { "name": "status-all", "click": "[data-group='status'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "sort-total", "click": "[data-sort='total']", "settle": 750, "rest": true },
+    { "name": "sort-total-asc", "click": "[data-sort='total']", "settle": 750, "rest": true },
+    { "name": "sort-product", "click": "[data-sort='product']", "settle": 750, "rest": true },
+    { "name": "sort-date", "click": "[data-sort='date']", "settle": 750, "rest": true },
+
+    { "name": "orders-scrolled", "wheel": ["[data-scroller='orders']", 300], "rest": true },
+    { "name": "orders-top", "wheel": ["[data-scroller='orders']", -300], "rest": true },
+
+    { "name": "search-roast", "fill": ["[data-search]", "roast"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-product", "click": "[data-tab='product']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-security", "click": "[data-tab='security']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

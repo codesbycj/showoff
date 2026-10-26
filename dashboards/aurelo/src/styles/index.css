@@ -1,0 +1,141 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/dm-sans';
+
+/*
+ * Orvela.
+ *
+ * A posed board: one rounded panel on a warm grey ground, read off the picture
+ * by refscan — #ebe9ea around it, white cards on it, #82a2df and #99b3e4 doing
+ * the accent work, #272727 for type.
+ *
+ * The board is dropped and the panel's ground becomes the page.
+ *
+ * `static`, because the analytics gauge takes its segment colours as inline
+ * `var(--color-task-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions — which paints every segment but one black, silently.
+ */
+@theme static {
+  --color-ground: #ebe9ea;
+  --color-surface: #ffffff;
+  --color-sunken: #f3f2f3;
+  --color-sunken-deep: #e2e0e1;
+
+  --color-ink: #1d1d20;
+  --color-body: #43434a;
+  /* 4.86:1 on the ground, 7.5:1 on white. #6c6c74 measured 4.31 and failed. */
+  --color-muted: #64646b;
+  --color-line: #e4e2e3;
+
+  /* The rail, the avatar and the premium card are all this near-black. */
+  --color-rail: #26262a;
+  --color-rail-fg: #f4f4f6;
+
+  --color-accent: #4a6fbd; /* the card, the gauge's "done", the name in the greeting */
+  --color-accent-soft: #99b3e4; /* the reference's own pale periwinkle */
+  --color-accent-faint: #e8eefb;
+  --color-accent-deep: #2f4f91; /* accent as *text* on a pale ground */
+
+  --color-positive: #1f7a42;
+  --color-positive-soft: #e3f3e9;
+  --color-danger: #b23026;
+  --color-danger-soft: #fbe9e7;
+
+  /* The three analytics states, in the reference's own order. */
+  --color-task-done: #4a6fbd;
+  --color-task-progress: #d9a21c;
+  --color-task-todo: #cf4b3f;
+
+  --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 22px;
+  --shadow-card: 0 1px 2px rgb(29 29 32 / 0.04), 0 14px 30px -24px rgb(29 29 32 / 0.25);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 12px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@utility scroll-row {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

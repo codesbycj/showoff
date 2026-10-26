@@ -1,0 +1,364 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "@/features/nibbleboards/components/top-bar"
+   ],
+   "label": "who is here"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a face"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and a greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/top-bar.tsx",
+    "STEP 1.05"
+   ],
+   "label": "something to find"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/top-bar.tsx",
+    "STEP 1.06"
+   ],
+   "label": "and something waiting"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "@/features/nibbleboards/components/headline"
+   ],
+   "label": "what this is about"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "a sentence"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/headline.tsx",
+    "STEP 1.09"
+   ],
+   "label": "the sentence"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/headline.tsx",
+    "STEP 1.10"
+   ],
+   "label": "and a way to add a board"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "@/features/nibbleboards/components/board-tiles"
+   ],
+   "label": "the two boards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "two tiles"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.13"
+   ],
+   "label": "what was burned"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.14"
+   ],
+   "label": "the grey"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.15"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.16"
+   ],
+   "label": "and the ring"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.17"
+   ],
+   "label": "and what was drunk"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the blue"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.19"
+   ],
+   "label": "what it is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/board-tiles.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and the week"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "@/features/nibbleboards/components/gauge-row"
+   ],
+   "label": "the five gauges"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "five gauges"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/gauge-row.tsx",
+    "STEP 1.23"
+   ],
+   "label": "calories"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/gauge-row.tsx",
+    "STEP 1.24"
+   ],
+   "label": "protein"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/gauge-row.tsx",
+    "STEP 1.25"
+   ],
+   "label": "carbs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/gauge-row.tsx",
+    "STEP 1.26"
+   ],
+   "label": "fat"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/gauge-row.tsx",
+    "STEP 1.27"
+   ],
+   "label": "and the whole day"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "@/features/nibbleboards/components/share-row"
+   ],
+   "label": "who else sees it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "STEP 1.29"
+   ],
+   "label": "a share row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/share-row.tsx",
+    "STEP 1.30"
+   ],
+   "label": "the invitation"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/share-row.tsx",
+    "STEP 1.31"
+   ],
+   "label": "a way to send it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/share-row.tsx",
+    "STEP 1.32"
+   ],
+   "label": "one friend"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/share-row.tsx",
+    "STEP 1.33"
+   ],
+   "label": "and another"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "@/features/nibbleboards/components/dock"
+   ],
+   "label": "and where else it goes"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleboards/index.tsx",
+    "STEP 1.35"
+   ],
+   "label": "along the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/dock.tsx",
+    "STEP 1.36"
+   ],
+   "label": "you"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/dock.tsx",
+    "STEP 1.37"
+   ],
+   "label": "the week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleboards/components/dock.tsx",
+    "STEP 1.38"
+   ],
+   "label": "and the camera"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nibbleboards/components/gauge-row.tsx",
+    [
+     "// MISTAKE 1.39",
+     "borderBottomLeftRadius: 0,"
+    ]
+   ],
+   "label": "the capsules came in squared off at the foot"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nibbleboards/components/dock.tsx",
+    [
+     "// MISTAKE 1.40",
+     "opacity: 0.4,"
+    ]
+   ],
+   "label": "the discs came in half-faded"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "board-tiles",
+     "src/features/nibbleboards/components/board-tiles.tsx"
+    ],
+    [
+     "boards-screen",
+     "src/app/nibbleboards/index.tsx"
+    ],
+    [
+     "dock",
+     "src/features/nibbleboards/components/dock.tsx"
+    ],
+    [
+     "gauge-row",
+     "src/features/nibbleboards/components/gauge-row.tsx"
+    ],
+    [
+     "headline",
+     "src/features/nibbleboards/components/headline.tsx"
+    ],
+    [
+     "share-row",
+     "src/features/nibbleboards/components/share-row.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/nibbleboards/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

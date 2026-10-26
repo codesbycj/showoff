@@ -1,0 +1,7 @@
+{
+ "swipe-screen": "src/app/mingleswipe/index.tsx",
+ "hero-photo": "src/features/mingleswipe/components/hero-photo.tsx",
+ "liked-bar": "src/features/mingleswipe/components/liked-bar.tsx",
+ "profile-block": "src/features/mingleswipe/components/profile-block.tsx",
+ "action-row": "src/features/mingleswipe/components/action-row.tsx"
+}

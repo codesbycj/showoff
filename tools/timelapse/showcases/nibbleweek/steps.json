@@ -1,0 +1,344 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "@/features/nibbleweek/components/top-bar"
+   ],
+   "label": "the way back"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "at the top"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/top-bar.tsx",
+    "STEP 1.03"
+   ],
+   "label": "a chevron"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/top-bar.tsx",
+    "STEP 1.04"
+   ],
+   "label": "and the two every screen has"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "@/features/nibbleweek/components/week-strip"
+   ],
+   "label": "which day"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "a rail of days"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.07"
+   ],
+   "label": "what the screen is"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.08"
+   ],
+   "label": "a way to pick another week"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.09"
+   ],
+   "label": "Monday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.10"
+   ],
+   "label": "Tuesday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.11"
+   ],
+   "label": "today"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.12"
+   ],
+   "label": "Thursday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.13"
+   ],
+   "label": "Friday"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/week-strip.tsx",
+    "STEP 1.14"
+   ],
+   "label": "and the weekend"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "@/features/nibbleweek/components/left-block"
+   ],
+   "label": "what is left of it"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "the headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/left-block.tsx",
+    "STEP 1.17"
+   ],
+   "label": "what it measures"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/left-block.tsx",
+    "STEP 1.18"
+   ],
+   "label": "the figure"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/left-block.tsx",
+    "STEP 1.19"
+   ],
+   "label": "the bar it came off"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/left-block.tsx",
+    "STEP 1.20"
+   ],
+   "label": "and what the colours mean"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "@/features/nibbleweek/components/food-cards"
+   ],
+   "label": "what was logged"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "STEP 1.22"
+   ],
+   "label": "two cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.23"
+   ],
+   "label": "the first"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.24"
+   ],
+   "label": "its colour"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.25"
+   ],
+   "label": "its name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.26"
+   ],
+   "label": "what it cost"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.27"
+   ],
+   "label": "the carbs"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.28"
+   ],
+   "label": "the protein"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.29"
+   ],
+   "label": "and the fat"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    "STEP 1.30"
+   ],
+   "label": "and the second"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "@/features/nibbleweek/components/count-bar"
+   ],
+   "label": "and a way to add more"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nibbleweek/index.tsx",
+    "STEP 1.33"
+   ],
+   "label": "and a bar along the foot"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/count-bar.tsx",
+    "STEP 1.34"
+   ],
+   "label": "the yellow"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/count-bar.tsx",
+    "STEP 1.35"
+   ],
+   "label": "a keypad"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/count-bar.tsx",
+    "STEP 1.36"
+   ],
+   "label": "what it does"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/features/nibbleweek/components/count-bar.tsx",
+    "STEP 1.37"
+   ],
+   "label": "and a way on"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nibbleweek/components/food-cards.tsx",
+    [
+     "// MISTAKE 1.38",
+     "borderTopRightRadius: 0,"
+    ]
+   ],
+   "label": "the cards came in squared off on one corner"
+  },
+  {
+   "op": "cutfirst",
+   "args": [
+    "src/features/nibbleweek/components/count-bar.tsx",
+    [
+     "// MISTAKE 1.39",
+     "maxHeight: 30,"
+    ]
+   ],
+   "label": "the bar came in far too short"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "count-bar",
+     "src/features/nibbleweek/components/count-bar.tsx"
+    ],
+    [
+     "food-cards",
+     "src/features/nibbleweek/components/food-cards.tsx"
+    ],
+    [
+     "left-block",
+     "src/features/nibbleweek/components/left-block.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/nibbleweek/components/top-bar.tsx"
+    ],
+    [
+     "week-screen",
+     "src/app/nibbleweek/index.tsx"
+    ],
+    [
+     "week-strip",
+     "src/features/nibbleweek/components/week-strip.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

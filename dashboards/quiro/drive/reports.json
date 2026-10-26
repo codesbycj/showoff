@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:5344/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-reports", "click": "[data-tab='reports']", "settle": 950, "rest": true },
+
+    { "name": "kind-statements", "click": "[data-group='kind'] [data-segment='Statement']", "settle": 850, "rest": true },
+    { "name": "kind-tax", "click": "[data-group='kind'] [data-segment='Tax']", "settle": 850, "rest": true },
+    { "name": "kind-audits", "click": "[data-group='kind'] [data-segment='Audit']", "settle": 850, "rest": true },
+    { "name": "kind-all", "click": "[data-group='kind'] [data-segment='all']", "settle": 850, "rest": true },
+
+    { "name": "range-3m", "click": "[data-group='range'] [data-segment='3m']", "settle": 900, "rest": true },
+    { "name": "range-1y", "click": "[data-group='range'] [data-segment='1y']", "settle": 900, "rest": true },
+    { "name": "range-6m", "click": "[data-group='range'] [data-segment='6m']", "settle": 900, "rest": true },
+
+    { "name": "report-queued", "click": "[data-action='get-r1']", "settle": 800, "rest": true },
+    { "name": "report-unqueued", "click": "[data-action='get-r1']", "settle": 800, "rest": true },
+    { "name": "reports-scrolled", "wheel": ["[data-scroller='reports']", 200], "rest": true },
+    { "name": "reports-top", "wheel": ["[data-scroller='reports']", -200], "rest": true },
+
+    { "name": "search-statement", "fill": ["[data-search]", "statement"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-documents", "click": "[data-tab='documents']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-contacts", "click": "[data-tab='contacts']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

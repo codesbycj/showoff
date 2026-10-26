@@ -1,0 +1,8 @@
+{
+ "home-screen": "src/app/nesthome/index.tsx",
+ "top-bar": "src/features/nesthome/components/top-bar.tsx",
+ "balance-block": "src/features/nesthome/components/balance-block.tsx",
+ "action-discs": "src/features/nesthome/components/action-discs.tsx",
+ "contact-grid": "src/features/nesthome/components/contact-grid.tsx",
+ "dock": "src/features/nesthome/components/dock.tsx"
+}

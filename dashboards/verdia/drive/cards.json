@@ -1,0 +1,43 @@
+{
+  "url": "http://localhost:5328/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "open-cards", "click": "[data-tab='cards']", "settle": 900, "rest": true },
+
+    { "name": "card-travel", "click": "[data-group='card'] [data-segment='travel']", "settle": 850, "rest": true },
+    { "name": "card-savings", "click": "[data-group='card'] [data-segment='savings']", "settle": 850, "rest": true },
+    { "name": "card-everyday", "click": "[data-group='card'] [data-segment='everyday']", "settle": 850, "rest": true },
+
+    { "name": "freeze", "click": "[data-action='freeze']", "settle": 800, "rest": true },
+    { "name": "unfreeze", "click": "[data-action='freeze']", "settle": 800, "rest": true },
+
+    { "name": "atm-on", "click": "[data-toggle='atm']", "settle": 600, "rest": true },
+    { "name": "online-off", "click": "[data-toggle='online']", "settle": 600, "rest": true },
+    { "name": "online-on", "click": "[data-toggle='online']", "settle": 600, "rest": true },
+
+    { "name": "parked-a", "rest": true },
+    { "name": "week-mon", "hover": "[data-card='limit'] [data-mark='day-0']", "against": "parked-a" },
+    { "name": "week-sat", "hover": "[data-card='limit'] [data-mark='day-5']", "against": "week-mon" },
+
+    { "name": "parked-b", "rest": true },
+    { "name": "cat-shopping", "hover": "[data-mark='cat-Shopping']", "against": "parked-b" },
+    { "name": "cat-food", "hover": "[data-mark='cat-Food']", "against": "cat-shopping" },
+
+    { "name": "filter-food", "click": "[data-group='category'] [data-segment='Food']", "settle": 800, "rest": true },
+    { "name": "filter-travel", "click": "[data-group='category'] [data-segment='Travel']", "settle": 800, "rest": true },
+    { "name": "filter-all", "click": "[data-group='category'] [data-segment='all']", "settle": 800, "rest": true },
+
+    { "name": "spend-scrolled", "wheel": ["[data-scroller='card-spend']", 280], "rest": true },
+    { "name": "spend-top", "wheel": ["[data-scroller='card-spend']", -280], "rest": true },
+
+    { "name": "search-open", "click": "[aria-label='Search']", "settle": 600, "rest": true },
+    { "name": "search-tenter", "fill": ["[data-search]", "tenter"], "settle": 850, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 850, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 850, "rest": true },
+
+    { "name": "inert-tools", "click": "[data-tab='tools']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

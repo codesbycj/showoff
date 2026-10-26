@@ -1,0 +1,331 @@
+{
+  "image": "C:\\Users\\CJ\\Documents\\Project\\Post\\showoff\\dashboards\\obelio\\ref\\shot.png",
+  "width": 1200,
+  "height": 900,
+  "flatMargins": {
+    "top": 66,
+    "bottom": 66,
+    "left": 60,
+    "right": 60
+  },
+  "shot": {
+    "columnSpikeRatio": 6.1,
+    "rowSpikeRatio": 8.57,
+    "edgeRampPx": 2.0,
+    "borderStd": 0.0,
+    "nonBorderShare": 0.547,
+    "verdict": "flat UI export (spec)"
+  },
+  "density": {
+    "hairlineMode": null,
+    "candidates": [],
+    "hairlineRuns": []
+  },
+  "scaleUsed": 1.0,
+  "palette": [
+    {
+      "hex": "#ffffff",
+      "share": 0.6552,
+      "luma": 255.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#eaeaea",
+      "share": 0.2573,
+      "luma": 234.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#f3fcf9",
+      "share": 0.0154,
+      "luma": 248.0,
+      "sat": 0.036
+    },
+    {
+      "hex": "#077b4a",
+      "share": 0.0069,
+      "luma": 68.0,
+      "sat": 0.943
+    },
+    {
+      "hex": "#059055",
+      "share": 0.0068,
+      "luma": 78.0,
+      "sat": 0.965
+    },
+    {
+      "hex": "#e7f6f1",
+      "share": 0.0055,
+      "luma": 239.3,
+      "sat": 0.061
+    },
+    {
+      "hex": "#1c1d22",
+      "share": 0.004,
+      "luma": 30.3,
+      "sat": 0.176
+    },
+    {
+      "hex": "#dcf0e7",
+      "share": 0.0034,
+      "luma": 230.3,
+      "sat": 0.083
+    },
+    {
+      "hex": "#a3a3a3",
+      "share": 0.003,
+      "luma": 163.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#bebebe",
+      "share": 0.0029,
+      "luma": 190.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#dddddd",
+      "share": 0.0023,
+      "luma": 221.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#0a6f45",
+      "share": 0.0019,
+      "luma": 63.3,
+      "sat": 0.91
+    },
+    {
+      "hex": "#969696",
+      "share": 0.0019,
+      "luma": 150.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#d2d2d2",
+      "share": 0.0018,
+      "luma": 210.0,
+      "sat": 0.0
+    }
+  ],
+  "roles": {
+    "ground": "#ffffff",
+    "surface": "#eaeaea",
+    "ink": "#077b4a",
+    "accent": "#059055",
+    "mode": "light"
+  },
+  "grid": {
+    "x": [
+      {
+        "px": 59,
+        "css": 59.0,
+        "energy": 15.6
+      },
+      {
+        "px": 71,
+        "css": 71.0,
+        "energy": 23.7
+      },
+      {
+        "px": 85,
+        "css": 85.0,
+        "energy": 13.0
+      },
+      {
+        "px": 99,
+        "css": 99.0,
+        "energy": 11.3
+      },
+      {
+        "px": 111,
+        "css": 111.0,
+        "energy": 12.1
+      },
+      {
+        "px": 136,
+        "css": 136.0,
+        "energy": 10.8
+      },
+      {
+        "px": 242,
+        "css": 242.0,
+        "energy": 18.4
+      },
+      {
+        "px": 292,
+        "css": 292.0,
+        "energy": 13.1
+      },
+      {
+        "px": 303,
+        "css": 303.0,
+        "energy": 11.6
+      },
+      {
+        "px": 321,
+        "css": 321.0,
+        "energy": 12.2
+      },
+      {
+        "px": 335,
+        "css": 335.0,
+        "energy": 13.1
+      },
+      {
+        "px": 351,
+        "css": 351.0,
+        "energy": 11.1
+      },
+      {
+        "px": 361,
+        "css": 361.0,
+        "energy": 11.5
+      },
+      {
+        "px": 373,
+        "css": 373.0,
+        "energy": 11.1
+      },
+      {
+        "px": 917,
+        "css": 917.0,
+        "energy": 11.1
+      },
+      {
+        "px": 932,
+        "css": 932.0,
+        "energy": 11.4
+      },
+      {
+        "px": 949,
+        "css": 949.0,
+        "energy": 10.7
+      },
+      {
+        "px": 1005,
+        "css": 1005.0,
+        "energy": 10.9
+      },
+      {
+        "px": 1139,
+        "css": 1139.0,
+        "energy": 15.6
+      }
+    ],
+    "y": [
+      {
+        "px": 65,
+        "css": 65.0,
+        "energy": 17.6
+      },
+      {
+        "px": 146,
+        "css": 146.0,
+        "energy": 25.8
+      },
+      {
+        "px": 159,
+        "css": 159.0,
+        "energy": 30.7
+      },
+      {
+        "px": 176,
+        "css": 176.0,
+        "energy": 19.3
+      },
+      {
+        "px": 238,
+        "css": 238.0,
+        "energy": 23.8
+      },
+      {
+        "px": 273,
+        "css": 273.0,
+        "energy": 17.7
+      },
+      {
+        "px": 290,
+        "css": 290.0,
+        "energy": 20.6
+      },
+      {
+        "px": 340,
+        "css": 340.0,
+        "energy": 11.4
+      },
+      {
+        "px": 355,
+        "css": 355.0,
+        "energy": 11.9
+      },
+      {
+        "px": 372,
+        "css": 372.0,
+        "energy": 10.4
+      },
+      {
+        "px": 464,
+        "css": 464.0,
+        "energy": 12.3
+      },
+      {
+        "px": 474,
+        "css": 474.0,
+        "energy": 10.4
+      },
+      {
+        "px": 554,
+        "css": 554.0,
+        "energy": 13.9
+      },
+      {
+        "px": 638,
+        "css": 638.0,
+        "energy": 19.1
+      },
+      {
+        "px": 697,
+        "css": 697.0,
+        "energy": 20.2
+      },
+      {
+        "px": 713,
+        "css": 713.0,
+        "energy": 17.3
+      },
+      {
+        "px": 727,
+        "css": 727.0,
+        "energy": 11.1
+      },
+      {
+        "px": 743,
+        "css": 743.0,
+        "energy": 16.9
+      },
+      {
+        "px": 778,
+        "css": 778.0,
+        "energy": 22.3
+      },
+      {
+        "px": 803,
+        "css": 803.0,
+        "energy": 19.2
+      },
+      {
+        "px": 818,
+        "css": 818.0,
+        "energy": 22.7
+      },
+      {
+        "px": 833,
+        "css": 833.0,
+        "energy": 17.5
+      }
+    ],
+    "sidebarWidth": 85.0,
+    "headerHeight": 65.0
+  }
+}

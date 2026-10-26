@@ -1,0 +1,120 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { CARD_PAD, THUMB } from '../layout';
+import { cr, radius, type } from '../theme';
+import { T } from './text';
+
+/**
+ * One parcel on its way.
+ *
+ * The rail is `flex: progress` against `flex: 1 - progress`, not a percentage
+ * width: a percentage needs a definite parent and a `flex: 1` row is not one
+ * on web. The middle node is where the parcel is now — the reference labels
+ * that node "To", which is a preposition where a place name belongs.
+ */
+export function DeliveryCard({
+  code,
+  name,
+  state,
+  from,
+  at,
+  to,
+  progress,
+  art,
+  onPress,
+}: {
+  code: string;
+  name: string;
+  state: string;
+  from: string;
+  at: string;
+  to: string;
+  progress: number;
+  art: number;
+  onPress?: () => void;
+}) {
+  const dot = (filled: boolean) => ({
+    width: filled ? 11 : 9,
+    height: filled ? 11 : 9,
+    borderRadius: radius.pill,
+    backgroundColor: filled ? cr.orange : cr.surface,
+    borderWidth: filled ? 0 : 1.6,
+    borderColor: cr.hairline,
+  });
+
+  return (
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={code}>
+      <View
+        style={{
+          borderRadius: radius.card,
+          backgroundColor: cr.surface,
+          padding: CARD_PAD,
+          // MISTAKE 1.29 the cards came in square on one corner
+          borderTopRightRadius: 0,
+        }}
+      >
+{/* STEP 1.21 what it is
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Image
+            source={art}
+            style={{ width: THUMB, height: THUMB, borderRadius: 13 }}
+            accessibilityIgnoresInvertColors
+          />
+          <View style={{ flex: 1, marginLeft: 11 }}>
+            <T variant="rowId" color={cr.ink} style={{ height: type.rowId.line }}>
+              {code}
+            </T>
+            <T variant="rowName" color={cr.muted} style={{ height: type.rowName.line }}>
+              {name}
+            </T>
+          </View>
+          <View
+            style={{
+              paddingHorizontal: 10,
+              paddingVertical: 5,
+              borderRadius: radius.pill,
+              backgroundColor: cr.canvas,
+            }}
+          >
+            <T variant="chip" color={cr.muted} style={{ height: type.chip.line }}>
+              {state}
+            </T>
+          </View>
+        </View>
+*/}
+
+{/* STEP 1.22 how far along
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 16 }}>
+          <View style={dot(true)} />
+          <View style={{ flex: progress, height: 2, backgroundColor: cr.orange }} />
+          <View style={dot(true)} />
+          <View style={{ flex: 1 - progress, height: 2, backgroundColor: cr.hairline }} />
+          <View style={dot(false)} />
+        </View>
+*/}
+
+{/* STEP 1.23 and between where
+        <View style={{ flexDirection: 'row', marginTop: 7 }}>
+          <T variant="node" color={cr.muted} style={{ flex: 1, height: type.node.line }}>
+            {from}
+          </T>
+          <T
+            variant="node"
+            color={cr.ink}
+            style={{ flex: 1, textAlign: 'center', height: type.node.line }}
+          >
+            {at}
+          </T>
+          <T
+            variant="node"
+            color={cr.muted}
+            style={{ flex: 1, textAlign: 'right', height: type.node.line }}
+          >
+            {to}
+          </T>
+        </View>
+*/}
+      </View>
+    </Pressable>
+  );
+}

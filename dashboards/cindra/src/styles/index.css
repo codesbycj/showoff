@@ -1,0 +1,140 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/plus-jakarta-sans';
+
+/*
+ * Corvane.
+ *
+ * The one **flat UI export** in this batch: 1199x861 of interface edge to
+ * edge, no board behind it and no shadow around it. refscan called the ramp at
+ * 2px and it was right. W/1440 = 0.8326, so the capture is a 1440 viewport at
+ * 83%, and a measurement in the picture divided by 0.8326 is a CSS pixel.
+ *
+ * So rule 1 is on here in the way it is not for the other eleven: the spacing,
+ * the radii, the type scale and the colours are matched rather than
+ * interpreted. The palette is refscan's, unmodified except where it failed
+ * contrast.
+ *
+ * `static`, because the donut takes its segment colours as inline
+ * `var(--color-cat-...)` and Tailwind tree-shakes theme vars no utility
+ * mentions — which paints four of five segments black, silently.
+ */
+@theme static {
+  --color-ground: #fbfbfd;
+  --color-surface: #ffffff;
+  --color-sunken: #f3f6f2;
+  --color-sunken-deep: #e6ebe4;
+
+  --color-ink: #16241f;
+  --color-body: #41504a;
+  /* 4.72:1 on the ground. */
+  --color-muted: #636f69;
+  --color-line: #e8eae9;
+
+  /* The deep green of the balance card, the active pill and the Get Pro panel. */
+  --color-forest: #1f4842;
+  --color-forest-deep: #153831;
+  --color-forest-fg: #eef7ea;
+
+  --color-accent: #bcf49d; /* the lime: bars, the Get Pro button, the active dot */
+  --color-accent-soft: #dcf5cd;
+  --color-accent-faint: #edf5ea; /* the sidebar's own ground */
+  --color-accent-deep: #2b5e21; /* lime as *text* on a pale ground */
+
+  --color-positive: #1d7a3f;
+  --color-positive-soft: #e3f3e7;
+  --color-danger: #b03028;
+  --color-danger-soft: #fbe9e7;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The five expense categories, in the reference's own order. */
+  --color-cat-rent: #1f4842;
+  --color-cat-invest: #3f7d5c;
+  --color-cat-education: #6aa86f;
+  --color-cat-food: #9ccf8a;
+  --color-cat-fun: #c9e9b4;
+
+  --font-sans:
+    'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(22 36 31 / 0.04);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

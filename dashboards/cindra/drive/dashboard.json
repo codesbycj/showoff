@@ -1,0 +1,64 @@
+{
+  "url": "http://localhost:5336/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "cvv-shown", "click": "[data-action='cvv']", "settle": 600, "rest": true },
+    { "name": "cvv-hidden", "click": "[data-action='cvv']", "settle": 600, "rest": true },
+
+    { "name": "quick-topup", "click": "[data-quick='topup']", "settle": 650, "rest": true },
+    { "name": "quick-transfer", "click": "[data-quick='transfer']", "settle": 650, "rest": true },
+    { "name": "quick-off", "click": "[data-quick='transfer']", "settle": 650, "rest": true },
+
+    { "name": "plan-open", "click": "[data-card='plans'] [data-plan='emergency']", "settle": 650, "rest": true },
+    { "name": "plan-close", "click": "[data-card='plans'] [data-plan='emergency']", "settle": 650, "rest": true },
+    { "name": "plans-scrolled", "wheel": ["[data-scroller='plans']", 200], "rest": true },
+    { "name": "plans-top", "wheel": ["[data-scroller='plans']", -200], "rest": true },
+
+    { "name": "year-open", "click": "[data-select='year'] > button", "settle": 600, "rest": true },
+    { "name": "year-last", "click": "[data-menu='year'] [data-option='y2028']", "settle": 900, "rest": true },
+    { "name": "year-open-2", "click": "[data-select='year'] > button", "settle": 600, "rest": true },
+    { "name": "year-this", "click": "[data-menu='year'] [data-option='y2029']", "settle": 900, "rest": true },
+
+    { "name": "flow-mar", "hover": "[data-card='cashflow'] [data-mark='mar']", "against": "year-this" },
+    { "name": "flow-sep", "hover": "[data-card='cashflow'] [data-mark='sep']", "against": "flow-mar" },
+
+    { "name": "stat-income", "click": "[data-side='income']", "settle": 800, "rest": true },
+    { "name": "stat-expense", "click": "[data-side='expense']", "settle": 800, "rest": true },
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-quarter", "click": "[data-menu='span'] [data-option='quarter']", "settle": 800, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-month", "click": "[data-menu='span'] [data-option='month']", "settle": 800, "rest": true },
+
+    { "name": "ring-rent", "hover": "[data-card='statistic'] [data-mark='rent']", "against": "span-month" },
+    { "name": "ring-education", "hover": "[data-card='statistic'] [data-mark='education']", "against": "ring-rent" },
+    { "name": "legend-food", "click": "[data-card='statistic'] [data-legend='food']", "settle": 650, "rest": true },
+    { "name": "legend-off", "click": "[data-card='statistic'] [data-legend='food']", "settle": 650, "rest": true },
+
+    { "name": "sort-amount", "click": "[data-card='recent'] [data-sort='amount']", "settle": 700, "rest": true },
+    { "name": "sort-amount-asc", "click": "[data-card='recent'] [data-sort='amount']", "settle": 700, "rest": true },
+    { "name": "sort-name", "click": "[data-card='recent'] [data-sort='name']", "settle": 700, "rest": true },
+    { "name": "sort-status", "click": "[data-card='recent'] [data-sort='status']", "settle": 700, "rest": true },
+    { "name": "recent-scrolled", "wheel": ["[data-scroller='recent']", 200], "rest": true },
+    { "name": "recent-top", "wheel": ["[data-scroller='recent']", -200], "rest": true },
+
+    { "name": "messages-read", "click": "[data-action='messages']", "settle": 600, "rest": true },
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 600, "rest": true },
+    { "name": "pro-on", "click": "[data-action='pro']", "settle": 700, "rest": true },
+    { "name": "pro-off", "click": "[data-action='pro']", "settle": 700, "rest": true },
+
+    { "name": "search-groceries", "fill": ["[data-search]", "groceries"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search]", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-ledger", "click": "[data-card='recent'] [aria-label='Open the full ledger']", "settle": 950, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 950, "rest": true },
+
+    { "name": "inert-payments", "click": "[data-tab='payments']", "against": "back-dashboard", "expectUnchanged": true },
+    { "name": "inert-inbox", "click": "[data-tab='inbox']", "against": "back-dashboard", "expectUnchanged": true }
+  ]
+}
