@@ -1,0 +1,37 @@
+{
+  "url": "http://localhost:5408/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "team", "click": "[data-tab='team']", "settle": 1000, "rest": true },
+
+    { "name": "role-engineering", "click": "[data-role='engineering']", "settle": 900, "rest": true },
+    { "name": "role-design", "click": "[data-role='design']", "settle": 900, "rest": true },
+    { "name": "everyone", "click": "[data-role='all']", "settle": 900, "rest": true },
+
+    { "name": "sort-calls", "click": "[data-group='sort'] [data-segment='calls']", "settle": 900, "rest": true },
+    { "name": "sort-focus", "click": "[data-group='sort'] [data-segment='focus']", "settle": 900, "rest": true },
+    { "name": "sort-name", "click": "[data-group='sort'] [data-segment='name']", "settle": 900, "rest": true },
+    { "name": "sort-hours", "click": "[data-group='sort'] [data-segment='hours']", "settle": 900, "rest": true },
+
+    { "name": "row-closed", "click": "[data-member='m1']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-member='m4']", "settle": 800, "rest": true },
+
+    { "name": "row-marco", "click": "[data-member='m5']", "settle": 800, "rest": true },
+    { "name": "row-collapsed", "click": "[data-member='m5']", "settle": 800, "rest": true },
+
+    { "name": "search-marco", "fill": ["[data-search='global']", "marco"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-session", "click": "[data-member='m1']", "settle": 800, "rest": true },
+    { "name": "session-to-recording", "click": "[data-session='r1']", "settle": 1000, "rest": true },
+    { "name": "back-team", "click": "[data-tab='team']", "settle": 1000, "rest": true },
+
+    { "name": "inert-calendar", "click": "[data-tab='calendar']", "against": "back-team", "expectUnchanged": true },
+    { "name": "inert-files", "click": "[data-tab='files']", "against": "back-team", "expectUnchanged": true }
+  ]
+}

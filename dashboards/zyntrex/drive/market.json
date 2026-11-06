@@ -1,0 +1,42 @@
+{
+  "url": "http://localhost:5396/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "market", "click": "[data-tab='market']", "settle": 1000, "rest": true },
+
+    { "name": "sort-price", "click": "[data-sort='price']", "settle": 800, "rest": true },
+    { "name": "sort-price-asc", "click": "[data-sort='price']", "settle": 800, "rest": true },
+    { "name": "sort-24h", "click": "[data-sort='h24']", "settle": 800, "rest": true },
+    { "name": "sort-7d", "click": "[data-sort='d7']", "settle": 800, "rest": true },
+    { "name": "sort-volume", "click": "[data-sort='volume']", "settle": 800, "rest": true },
+    { "name": "sort-cap", "click": "[data-sort='cap']", "settle": 800, "rest": true },
+
+    { "name": "watch-sol", "click": "[data-watch='sol']", "settle": 700, "rest": true },
+    { "name": "watch-ada", "click": "[data-watch='ada']", "settle": 700, "rest": true },
+    { "name": "unwatch-btc", "click": "[data-watch='btc']", "settle": 700, "rest": true },
+
+    { "name": "lens-watchlist", "click": "[data-group='lens'] [data-segment='watchlist']", "settle": 900, "rest": true },
+    { "name": "lens-advancing", "click": "[data-group='lens'] [data-segment='gainers']", "settle": 900, "rest": true },
+    { "name": "lens-all", "click": "[data-group='lens'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "list-down", "wheel": ["[data-scroller='market']", 220], "settle": 500, "rest": true },
+    { "name": "list-top", "wheel": ["[data-scroller='market']", -220], "settle": 500, "rest": true },
+
+    { "name": "search-link", "fill": ["[data-search='global']", "link"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-trade", "click": "[data-open='dot']", "settle": 1000, "rest": true },
+    { "name": "back-market", "click": "[data-tab='market']", "settle": 1000, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "inert-portfolio", "click": "[data-tab='portfolio']", "against": "light", "expectUnchanged": true },
+    { "name": "inert-otc", "click": "[data-tab='otc']", "against": "light", "expectUnchanged": true }
+  ]
+}

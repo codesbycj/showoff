@@ -1,0 +1,346 @@
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Path, Polyline, Rect } from 'react-native-svg';
+
+import { Mascot } from '@/features/gluhome/components/mascot';
+import { T } from '@/features/gluhome/components/text';
+import { average, copy, latest, readings, tabs, week } from '@/features/gluhome/data/home';
+import { ct, radius, type } from '@/features/gluhome/theme';
+import { useGluHomeLayout } from '@/features/gluhome/layout';
+import { useInsets } from '@/features/gluhome/use-insets';
+
+const MARGIN = 22;
+
+function Glyph({
+  name,
+  size = 22,
+  tint = ct.ink,
+}: {
+  name: 'menu' | 'home' | 'trend' | 'meals' | 'person' | 'wave' | 'up' | 'down';
+  size?: number;
+  tint?: string;
+}) {
+  const s = {
+    stroke: tint,
+    strokeWidth: 1.8,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    fill: 'none',
+  };
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      {name === 'menu' && <Path {...s} strokeWidth={2} d="M4 7.5h16M4 12h11M4 16.5h16" />}
+      {name === 'home' && (
+        <Path
+          {...s}
+          d="M5 10.6a2.5 2.5 0 0 1 .95-1.96l5.05-4a1.6 1.6 0 0 1 2 0l5.05 4A2.5 2.5 0 0 1 19 10.6v6.9a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 5 17.5Z"
+        />
+      )}
+      {name === 'trend' && (
+        <>
+          <Path {...s} strokeWidth={2} d="M4 15.6 9 10.6l3 3 6.2-6.2" />
+          <Path {...s} strokeWidth={2} d="M14.2 7.4h4.6V12" />
+        </>
+      )}
+      {name === 'meals' && (
+        <>
+          <Path {...s} d="M7 3.6v8M4.6 3.6v4a2.4 2.4 0 0 0 4.8 0v-4" />
+          <Path {...s} d="M7 11.6v8.8M16.6 20.4V3.6c2.4 1 3.4 4 3.4 7.4 0 2-1.2 3-3.4 3" />
+        </>
+      )}
+      {name === 'person' && (
+        <>
+          <Circle {...s} cx="12" cy="8.4" r="3.4" />
+          <Path {...s} d="M5.8 19.8a6.4 6.4 0 0 1 12.4 0" />
+        </>
+      )}
+      {name === 'wave' && (
+        <Path
+          fill="#E3A33C"
+          d="M8.6 3.4a1.5 1.5 0 0 1 3 0v6h.8v-7a1.5 1.5 0 0 1 3 0v7h.8V5a1.5 1.5 0 0 1 3 0v8.4c0 4.2-2.8 7.2-7 7.2s-7-2.8-7-6.6V8.2a1.5 1.5 0 0 1 3 0v3h.4Z"
+        />
+      )}
+      {name === 'up' && <Path fill={tint} d="M12 5.6 18 14H6Z" />}
+      {name === 'down' && <Path fill={tint} d="M12 18.4 6 10h12Z" />}
+    </Svg>
+  );
+}
+
+/** The seven-day line, drawn from the data with the average under it. */
+function Trend({ width, height }: { width: number; height: number }) {
+  const values = week.map((d) => d.value);
+  const lo = Math.min(...values) - 8;
+  const hi = Math.max(...values) + 8;
+  const plotH = height - 22;
+  const pts = week
+    .map((d, i) => {
+      const x = (i / (week.length - 1)) * width;
+      const y = plotH - ((d.value - lo) / (hi - lo)) * plotH;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(' ');
+
+  return (
+    <View style={{ width, height }}>
+      <Svg width={width} height={height}>
+        <Polyline
+          points={pts}
+          fill="none"
+          stroke={ct.ink}
+          strokeWidth={1.6}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </Svg>
+      <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, flexDirection: 'row' }}>
+        {week.map((d) => (
+          <View key={d.id} style={{ flex: 1, alignItems: 'center' }}>
+            <T variant="axis" color={ct.faint} style={{ height: type.axis.line }}>
+              {d.label}
+            </T>
+          </View>
+        ))}
+      </View>
+    </View>
+  );
+}
+
+/**
+ * Glu — home.
+ *
+ * Assembly only: the greeting, the latest reading, what Glu makes of it, the
+ * week, and today's readings.
+ *
+ * The cards' heights are fixed and the readings list takes what is left, so
+ * the last row lands on the dock. The average under the trend line is the
+ * mean of the series it is drawn from.
+ */
+export default function GluhomeScreen() {
+  const insets = useInsets();
+  const { rowH, chartW, cardH } = useGluHomeLayout(insets, readings.length);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: insets.top + 6, paddingHorizontal: MARGIN }}>
+        <View style={{ height: 48, flexDirection: 'row', alignItems: 'center' }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Menu">
+            <View style={{ width: 44, height: 44, justifyContent: 'center' }}>
+              <Glyph name="menu" size={22} />
+            </View>
+          </Pressable>
+          <View style={{ flex: 1 }} />
+          <Pressable accessibilityRole="button" accessibilityLabel="Your profile">
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 22,
+                backgroundColor: ct.greenSoft,
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+              }}
+            >
+              <Mascot size={34} />
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+          <Glyph name="wave" size={18} />
+          <T variant="welcome" color={ct.ink} style={{ height: type.welcome.line, marginLeft: 7 }}>
+            {copy.welcome}
+          </T>
+        </View>
+
+        <T
+          variant="sectionSerif"
+          color={ct.ink}
+          style={{ height: type.sectionSerif.line, marginTop: 10 }}
+        >
+          {copy.latest}
+        </T>
+
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', marginTop: 4 }}>
+          <T variant="reading" color={ct.ink} style={{ height: type.reading.line }}>
+            {String(latest)}
+          </T>
+          <View style={{ marginLeft: 8, marginTop: 14 }}>
+            <View
+              style={{
+                alignSelf: 'flex-start',
+                height: 24,
+                paddingHorizontal: 10,
+                borderRadius: 12,
+                backgroundColor: ct.greenSoft,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <T variant="chip" color={ct.green} style={{ height: type.chip.line }}>
+                {copy.inRange}
+              </T>
+            </View>
+            <T
+              variant="unit"
+              color={ct.muted}
+              style={{ height: type.unit.line, marginTop: 6, marginLeft: 2 }}
+            >
+              {copy.unit}
+            </T>
+          </View>
+          <View style={{ flex: 1 }} />
+          <View style={{ alignItems: 'flex-end' }}>
+            <T variant="axis" color={ct.faint} style={{ height: type.axis.line, marginTop: 6 }}>
+              {copy.at}
+            </T>
+            <View style={{ marginTop: 6 }}>
+              <Mascot size={50} />
+            </View>
+          </View>
+        </View>
+
+        <View
+          style={{
+            marginTop: 14,
+            borderRadius: radius.card,
+            backgroundColor: ct.card,
+            padding: 14,
+          }}
+        >
+          <T variant="cardTitle" color={ct.ink} style={{ height: type.cardTitle.line }}>
+            {copy.insightTitle}
+          </T>
+          <T variant="cardBody" color={ct.muted} style={{ marginTop: 4 }}>
+            {copy.insightBody}
+          </T>
+        </View>
+
+        <View
+          style={{
+            marginTop: 12,
+            height: cardH,
+            borderRadius: radius.card,
+            backgroundColor: ct.card,
+            padding: 14,
+          }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <T variant="cardTitle" color={ct.ink} style={{ flex: 1, height: type.cardTitle.line }}>
+              {copy.trend}
+            </T>
+            <T variant="axis" color={ct.faint} style={{ height: type.axis.line }}>
+              {`Avg. ${average} ${copy.unit}`}
+            </T>
+          </View>
+          <View style={{ marginTop: 10 }}>
+            <Trend width={chartW} height={cardH - 56} />
+          </View>
+        </View>
+
+        <T
+          variant="sectionSerif"
+          color={ct.ink}
+          style={{ height: type.sectionSerif.line, marginTop: 16 }}
+        >
+          {copy.today}
+        </T>
+
+        <View style={{ marginTop: 6, borderRadius: radius.card, backgroundColor: ct.card }}>
+          {readings.map((r, i) => (
+            <Pressable
+              key={r.id}
+              accessibilityRole="button"
+              accessibilityLabel={`${r.label}, ${r.value} ${copy.unit}`}
+            >
+              <View
+                style={{
+                  height: rowH,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  paddingHorizontal: 14,
+                  borderTopWidth: i === 0 ? 0 : 1,
+                  borderTopColor: ct.hairline,
+                }}
+              >
+                <View
+                  style={{
+                    width: 34,
+                    height: 34,
+                    borderRadius: 17,
+                    backgroundColor: ct.greenSoft,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Glyph name={i === 0 ? 'up' : 'down'} size={15} tint={ct.green} />
+                </View>
+                <View style={{ flex: 1, marginLeft: 12 }}>
+                  <T variant="rowTitle" color={ct.ink} style={{ height: type.rowTitle.line }}>
+                    {r.label}
+                  </T>
+                  <T variant="axis" color={ct.faint} style={{ height: type.axis.line }}>
+                    {r.at}
+                  </T>
+                </View>
+                <T variant="rowValue" color={ct.ink} style={{ height: type.rowValue.line }}>
+                  {String(r.value)}
+                </T>
+                <T
+                  variant="axis"
+                  color={ct.faint}
+                  style={{ height: type.axis.line, marginLeft: 4, marginTop: 4 }}
+                >
+                  {copy.unit}
+                </T>
+              </View>
+            </Pressable>
+          ))}
+        </View>
+      </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 58 + insets.bottom,
+          flexDirection: 'row',
+          alignItems: 'center',
+          borderTopWidth: 1,
+          borderTopColor: ct.hairline,
+          backgroundColor: ct.page,
+        }}
+      >
+        {tabs.map((tab, i) => {
+          const on = i === 0;
+          return (
+            <Pressable
+              key={tab.id}
+              accessibilityRole="button"
+              accessibilityLabel={tab.label}
+              accessibilityState={{ selected: on }}
+              style={{ flex: 1, height: '100%', alignItems: 'center', justifyContent: 'center' }}
+            >
+              {tab.icon === 'mascot' ? (
+                <Mascot size={26} />
+              ) : (
+                <Glyph name={tab.icon} size={21} tint={on ? ct.ink : ct.faint} />
+              )}
+              <T
+                variant="tab"
+                color={on ? ct.ink : ct.faint}
+                style={{ height: type.tab.line, marginTop: 4 }}
+              >
+                {tab.label}
+              </T>
+            </Pressable>
+          );
+        })}
+      </View>
+    </View>
+  );
+}

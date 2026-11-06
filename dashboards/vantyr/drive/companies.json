@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:5384/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "companies", "click": "[data-tab='companies']", "settle": 1000, "rest": true },
+
+    { "name": "sector-software", "click": "[data-sector='software']", "settle": 800, "rest": true },
+    { "name": "sector-health", "click": "[data-sector='health']", "settle": 800, "rest": true },
+    { "name": "sector-all", "click": "[data-sector='all']", "settle": 800, "rest": true },
+
+    { "name": "sort-name", "click": "[data-group='sort'] [data-segment='name']", "settle": 800, "rest": true },
+    { "name": "sort-team", "click": "[data-group='sort'] [data-segment='team']", "settle": 800, "rest": true },
+    { "name": "sort-value", "click": "[data-group='sort'] [data-segment='value']", "settle": 800, "rest": true },
+
+    { "name": "card-open", "click": "[data-row='c1']", "settle": 800, "rest": true },
+    { "name": "card-other", "click": "[data-row='c3']", "settle": 800, "rest": true },
+    { "name": "card-closed", "click": "[data-row='c3']", "settle": 800, "rest": true },
+
+    { "name": "search-bio", "fill": ["[data-search='companies']", "bio"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='companies']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-sidebar", "click": "[data-side='knowledge']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-invite", "click": "[data-side='invite']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

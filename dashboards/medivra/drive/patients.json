@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5400/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "patients", "click": "[data-tab='patients']", "settle": 1000, "rest": true },
+
+    { "name": "sort-due", "click": "[data-group='sort'] [data-segment='due']", "settle": 800, "rest": true },
+    { "name": "sort-bed", "click": "[data-group='sort'] [data-segment='bed']", "settle": 800, "rest": true },
+    { "name": "sort-acuity", "click": "[data-group='sort'] [data-segment='acuity']", "settle": 800, "rest": true },
+    { "name": "sort-score", "click": "[data-group='sort'] [data-segment='score']", "settle": 800, "rest": true },
+
+    { "name": "band-high", "click": "[data-band='high']", "settle": 800, "rest": true },
+    { "name": "band-medium", "click": "[data-band='medium']", "settle": 800, "rest": true },
+    { "name": "band-low", "click": "[data-band='low']", "settle": 800, "rest": true },
+    { "name": "whole-ward", "click": "[data-band='all']", "settle": 800, "rest": true },
+
+    { "name": "row-open", "click": "[data-patient='p7']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-patient='p1']", "settle": 800, "rest": true },
+    { "name": "row-closed", "click": "[data-patient='p1']", "settle": 800, "rest": true },
+
+    { "name": "ward-down", "wheel": ["[data-scroller='ward']", 260], "settle": 500, "rest": true },
+    { "name": "ward-top", "wheel": ["[data-scroller='ward']", -260], "settle": 500, "rest": true },
+
+    { "name": "search-sepsis", "fill": ["[data-search='ward']", "sepsis"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='ward']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-doctors", "click": "[data-tab='doctors']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "url": "http://localhost:5412/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "playing", "click": "[data-action='play']", "settle": 700, "rest": true },
+    { "name": "paused", "click": "[data-action='play']", "settle": 700, "rest": true },
+    { "name": "forward", "click": "[data-action='forward']", "settle": 600, "rest": true },
+    { "name": "forward-again", "click": "[data-action='forward']", "settle": 600, "rest": true },
+    { "name": "back", "click": "[data-action='back']", "settle": 600, "rest": true },
+
+    { "name": "day-13", "click": "[data-day='13']", "settle": 800, "rest": true },
+    { "name": "day-16", "click": "[data-day='16']", "settle": 800, "rest": true },
+    { "name": "day-14", "click": "[data-day='14']", "settle": 800, "rest": true },
+    { "name": "day-15", "click": "[data-day='15']", "settle": 800, "rest": true },
+
+    { "name": "track-typography", "click": "[data-track='typography']", "settle": 900, "rest": true },
+    { "name": "track-front-end", "click": "[data-track='front-end']", "settle": 900, "rest": true },
+    { "name": "track-all", "click": "[data-track='all']", "settle": 900, "rest": true },
+
+    { "name": "track-branding", "click": "[data-track='branding']", "settle": 900, "rest": true },
+    { "name": "track-illustration", "click": "[data-track='illustration']", "settle": 900, "rest": true },
+    { "name": "track-back", "click": "[data-track='illustration']", "settle": 900, "rest": true },
+    { "name": "lessons-down", "wheel": ["[data-scroller='lessons']", 180], "settle": 500, "rest": true },
+    { "name": "lessons-top", "wheel": ["[data-scroller='lessons']", -180], "settle": 500, "rest": true },
+
+    { "name": "search-spacing", "fill": ["[data-search='global']", "spacing"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "continue", "click": "[data-action='continue']", "settle": 1000, "rest": true },
+    { "name": "back-learn", "click": "[data-tab='learn']", "settle": 1000, "rest": true },
+    { "name": "open-tasks", "click": "[data-action='open-tasks']", "settle": 1000, "rest": true },
+    { "name": "home", "click": "[data-tab='learn']", "settle": 1000, "rest": true },
+
+    { "name": "inert-calendar", "click": "[data-tab='calendar']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-messages", "click": "[data-tab='messages']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "home", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "home" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

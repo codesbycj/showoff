@@ -1,0 +1,48 @@
+{
+  "url": "http://localhost:5380/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "period-open", "click": "[data-select='period'] > button", "settle": 600, "rest": true },
+    { "name": "period-6m", "click": "[data-menu='period'] [data-option='h']", "settle": 900, "rest": true },
+    { "name": "period-open-2", "click": "[data-select='period'] > button", "settle": 600, "rest": true },
+    { "name": "period-ytd", "click": "[data-menu='period'] [data-option='y']", "settle": 900, "rest": true },
+    { "name": "period-open-3", "click": "[data-select='period'] > button", "settle": 600, "rest": true },
+    { "name": "period-quarter", "click": "[data-menu='period'] [data-option='q']", "settle": 900, "rest": true },
+
+    { "name": "trend-jan", "hover": "[data-card='revenue'] [data-mark='m-jan']", "against": "period-quarter" },
+    { "name": "trend-mar", "hover": "[data-card='revenue'] [data-mark='m-mar']", "against": "trend-jan" },
+
+    { "name": "series-leads", "click": "[data-group='series'] [data-segment='leads']", "settle": 800, "rest": true },
+    { "name": "series-deals", "click": "[data-group='series'] [data-segment='deals']", "settle": 800, "rest": true },
+    { "name": "series-revenue", "click": "[data-group='series'] [data-segment='revenue']", "settle": 800, "rest": true },
+    { "name": "bar-hover", "hover": "[data-card='platform'] [data-mark='bar-jan']", "against": "series-revenue" },
+
+    { "name": "queue-stalled", "click": "[data-group='queue'] [data-segment='stalled']", "settle": 800, "rest": true },
+    { "name": "queue-soon", "click": "[data-group='queue'] [data-segment='soon']", "settle": 800, "rest": true },
+    { "name": "queue-largest", "click": "[data-group='queue'] [data-segment='top']", "settle": 800, "rest": true },
+    { "name": "queue-down", "wheel": ["[data-scroller='queue']", 140], "settle": 500, "rest": true },
+    { "name": "queue-top", "wheel": ["[data-scroller='queue']", -140], "settle": 500, "rest": true },
+
+    { "name": "shared", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "share-off", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "messages-read", "click": "[data-action='messages']", "settle": 500, "rest": true },
+    { "name": "messages-back", "click": "[data-action='messages']", "settle": 500, "rest": true },
+
+    { "name": "open-deal", "click": "[data-card='queue'] [data-row='d16']", "settle": 1000, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+    { "name": "view-team", "click": "[data-action='view-team']", "settle": 1000, "rest": true },
+    { "name": "back-again", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+
+    { "name": "inert-workflows", "click": "[data-tab='workflows']", "against": "back-again", "expectUnchanged": true },
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "back-again", "expectUnchanged": true },
+    { "name": "inert-bell", "click": "[data-site='notifications']", "against": "back-again", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "back-again" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+ "assets/images/nudgehome/CREDITS.md": "67c08d4781d3aded9b0cc2613bb1d7728e8494765954e0ceff14163e0e3460a2",
+ "assets/images/nudgehome/exercise.jpg": "b9e38929068b623399605f94fb6d1909fb43565d5558ccbf8a838d159d9198d9",
+ "assets/images/nudgehome/shelter.jpg": "863f2741ed4728cb50b2b751c6b26bf6991466adff4ec8a355a7f2f547cf2ff9",
+ "assets/images/nudgehome/veg.jpg": "2a06473d0a2489f0c21822212fb5bfd31280e9ddc412f2945783ab158405005d",
+ "src/app/_layout.tsx": "6f618ca12fa2c3038358ec927b2dc8b8a3889a721517de1ea1a506b37f4504e0",
+ "src/app/index.tsx": "947f051ea2aa97af396df8b33e258d7c4361a04c271b67ce84b0de912e136bee",
+ "src/app/nudgehome/index.tsx": "db5fdebbd57ee9fbe78d6ad6dca6403bd2aa4674ddac8a12a1eecc6798dc6abf",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/nudgehome/components/glyph.tsx": "64266e0b010f51b77a8bb0e6684e4a3fe2e2f79243ee749c4d3a136554da86a2",
+ "src/features/nudgehome/components/text.tsx": "06911175bdfc0dc17d0084fa92906cdcb9ba6dcffb6a21d0c2f3b8b06b1c2b9a",
+ "src/features/nudgehome/data/home.ts": "5537ec0d60372a2ffdd09e6a18d7b596f8c6c85276639233b8908623dec7ca8e",
+ "src/features/nudgehome/theme.ts": "185e177dcd162dfd3b9af15f44a8df39caaf6a63551cfac1b3eca3e2e6d5ca19",
+ "src/features/nudgehome/use-insets.ts": "5f846fbb4591a6f346c8fd9d62cf64b6455ad5ab1a37c07ca6283ae2474253dd",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

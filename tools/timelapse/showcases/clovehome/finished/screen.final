@@ -1,0 +1,75 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { ActionRow } from '@/features/clovehome/components/action-row';
+import { ActivitySheet } from '@/features/clovehome/components/activity-sheet';
+import { Balance } from '@/features/clovehome/components/balance';
+import { CardRail } from '@/features/clovehome/components/card-rail';
+import { Dock } from '@/features/clovehome/components/dock';
+import { Greeting } from '@/features/clovehome/components/greeting';
+import { activity } from '@/features/clovehome/data/home';
+import {
+  GAP_ACTIONS_SHEET,
+  GAP_BALANCE_CARDS,
+  GAP_CARDS_ACTIONS,
+  GAP_GREET_BALANCE,
+  MARGIN,
+  PAD_TOP,
+  useCloveHomeLayout,
+} from '@/features/clovehome/layout';
+import { ct } from '@/features/clovehome/theme';
+import { useInsets } from '@/features/clovehome/use-insets';
+
+/**
+ * Clove — the wallet.
+ *
+ * Assembly only: who you are, what you have, which cards it is on, the two
+ * things you do with it, what happened lately, and where else to go.
+ *
+ * The sheet's height is computed from the window rather than left to `flex`,
+ * so the list inside it can size its own rows to reach the dock. Nothing on
+ * this screen is centred in a flexible band, which is the other way a hole
+ * appears.
+ *
+ * The card rail scrolls sideways under the page margin, so the second card is
+ * clipped by the screen edge exactly as the reference shows it.
+ */
+export default function ClovehomeScreen() {
+  const insets = useInsets();
+  const { sheetH, rowH } = useCloveHomeLayout(insets, activity.length);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: insets.top + PAD_TOP, paddingHorizontal: MARGIN }}>
+        <Greeting />
+
+        <View style={{ marginTop: GAP_GREET_BALANCE }}>
+          <Balance />
+        </View>
+      </View>
+
+      <View style={{ marginTop: GAP_BALANCE_CARDS, paddingLeft: MARGIN }}>
+        <CardRail />
+      </View>
+
+      <View style={{ marginTop: GAP_CARDS_ACTIONS, paddingHorizontal: MARGIN }}>
+        <ActionRow onSend={() => router.push('/clovestats')} />
+      </View>
+
+      <View style={{ marginTop: GAP_ACTIONS_SHEET }}>
+        <ActivitySheet height={sheetH} rowH={rowH} />
+      </View>
+
+      <View style={{ flex: 1, backgroundColor: ct.sheet }} />
+
+      {/* Pinned: a hand-summed column that runs 2dp over puts its last child
+          2dp below the screen edge. */}
+      <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }}>
+        <Dock active={0} bottom={insets.bottom} />
+      </View>
+    </View>
+  );
+}

@@ -1,0 +1,134 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "@/features/clovehome/components/action-row"
+   ],
+   "label": "import action row"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "@/features/clovehome/components/activity-sheet"
+   ],
+   "label": "import activity sheet"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "@/features/clovehome/components/balance"
+   ],
+   "label": "import balance"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "@/features/clovehome/components/card-rail"
+   ],
+   "label": "import card rail"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "@/features/clovehome/components/dock"
+   ],
+   "label": "import dock"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "@/features/clovehome/components/greeting"
+   ],
+   "label": "import greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "greeting"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "card rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "action row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "activity sheet"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "the next block"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/clovehome/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/clovehome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

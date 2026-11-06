@@ -1,0 +1,126 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "@/features/byteactivity/components/dock"
+   ],
+   "label": "import dock"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "@/features/byteactivity/components/glyph"
+   ],
+   "label": "import glyph"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "@/features/byteactivity/components/overview-list"
+   ],
+   "label": "import overview list"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "@/features/byteactivity/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "@/features/byteactivity/components/week-chart"
+   ],
+   "label": "import week chart"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "\"Back\""
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "period"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "week chart"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "overview"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "overview list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/byteactivity/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/byteactivity/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,170 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Line } from 'react-native-svg';
+
+// STEP 1.01 import text
+// import { T } from '@/features/gluask/components/text';
+import { copy, page, pages } from '@/features/gluask/data/ask';
+import { ct, radius, type } from '@/features/gluask/theme';
+import { useInsets } from '@/features/gluask/use-insets';
+
+const MARGIN = 24;
+
+/**
+ * The dotted-grid ground the reference puts behind its chat card.
+ *
+ * Drawn as circles on a lattice rather than a tiled bitmap: at 1dp a raster
+ * dot grid moirés the moment the device scale is not exactly 3.
+ */
+function DotGrid({ width, height }: { width: number; height: number }) {
+  const step = 16;
+  const dots = [];
+  for (let y = step / 2; y < height; y += step) {
+    for (let x = step / 2; x < width; x += step) {
+      dots.push(<Circle key={`${x}-${y}`} cx={x} cy={y} r={1} fill={ct.hairline} />);
+    }
+  }
+  return (
+    <Svg width={width} height={height} style={{ position: 'absolute' }}>
+      {dots}
+    </Svg>
+  );
+}
+
+/**
+ * Glu — asking.
+ *
+ * Assembly only: a glimpse of the assistant, the promise, the dots and the
+ * way on.
+ *
+ * The card sits in the screen's one flexible band. Its reply is a real
+ * string from the data file, not an image of a conversation.
+ */
+export default function GluaskScreen() {
+  const insets = useInsets();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top + 10,
+          paddingBottom: insets.bottom + 12,
+          paddingHorizontal: MARGIN,
+        }}
+      >
+        {/* STEP 1.02 reply
+        <View
+          style={{
+            flex: 1,
+            minHeight: 240,
+            borderRadius: radius.card,
+            overflow: 'hidden',
+            backgroundColor: ct.card,
+            justifyContent: 'flex-end',
+            padding: 16,
+          }}
+        >
+          <DotGrid width={345} height={520} />
+
+          <View
+            style={{
+              alignSelf: 'flex-end',
+              maxWidth: '86%',
+              borderRadius: 18,
+              backgroundColor: ct.black,
+              paddingHorizontal: 14,
+              paddingVertical: 12,
+              zIndex: 1,
+            }}
+          >
+            <T variant="body" color={ct.onBlack}>
+              {copy.reply}
+            </T>
+          </View>
+
+          <View style={{ marginTop: 18, zIndex: 1 }}>
+            <T
+              variant="pillNote"
+              color={ct.faint}
+              style={{ height: type.pillNote.line, letterSpacing: 1.1 }}
+            >
+              {copy.assistant}
+            </T>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 6 }}>
+              <T variant="body" color={ct.muted} style={{ flex: 1 }}>
+                {copy.prompt}
+              </T>
+            </View>
+            <View style={{ height: 1, backgroundColor: ct.hairline, marginTop: 10 }} />
+            <Svg width="100%" height={1}>
+              <Line x1="0" y1="0" x2="100%" y2="0" stroke={ct.hairline} />
+            </Svg>
+          </View>
+        </View>
+        */}
+
+        {/* STEP 1.03 headline
+        <T variant="display" color={ct.ink} style={{ marginTop: 26 }}>
+          {copy.headline}
+        </T>
+        */}
+
+        {/* STEP 1.04 body
+        <T variant="body" color={ct.muted} style={{ marginTop: 10 }}>
+          {copy.body}
+        </T>
+        */}
+
+        {/* STEP 1.05 view
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 22 }}>
+          {Array.from({ length: pages }).map((_, i) => (
+            <View
+              key={i}
+              style={{
+                width: i === page ? 18 : 6,
+                height: 6,
+                borderRadius: 3,
+                marginRight: 5,
+                backgroundColor: i === page ? ct.ink : ct.hairline,
+              }}
+            />
+          ))}
+        </View>
+        */}
+
+        {/* STEP 1.06 next
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={copy.next}
+          onPress={() => router.push('/glucompanion')}
+          style={{ marginTop: 22 }}
+        >
+          {({ pressed }) => (
+            <View
+              style={{
+                height: 58,
+                borderRadius: radius.cta,
+                backgroundColor: ct.black,
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: pressed ? 0.9 : 1,
+              }}
+            >
+              <T variant="cta" color={ct.onBlack} style={{ height: type.cta.line }}>
+                {copy.next}
+              </T>
+            </View>
+          )}
+        </Pressable>
+        */}
+        {/* STEP 1.07 a stray gap under it | FIX 1.08 take the gap back out
+        <View style={{ height: 23 }} />
+        */}
+      </View>
+    </View>
+  );
+}

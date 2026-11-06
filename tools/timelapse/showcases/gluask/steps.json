@@ -1,0 +1,78 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "@/features/gluask/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "reply"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "body"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "next"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/gluask/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/gluask/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

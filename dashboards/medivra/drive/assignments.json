@@ -1,0 +1,33 @@
+{
+  "url": "http://localhost:5400/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "assignments", "click": "[data-tab='assignments']", "settle": 1000, "rest": true },
+
+    { "name": "by-name", "click": "[data-group='lens'] [data-segment='name']", "settle": 800, "rest": true },
+    { "name": "escalating-first", "click": "[data-group='lens'] [data-segment='escalating']", "settle": 800, "rest": true },
+    { "name": "by-load", "click": "[data-group='lens'] [data-segment='load']", "settle": 800, "rest": true },
+
+    { "name": "row-closed", "click": "[data-nurse='n2']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-nurse='n4']", "settle": 800, "rest": true },
+    { "name": "row-charge", "click": "[data-nurse='n1']", "settle": 800, "rest": true },
+
+    { "name": "board-down", "wheel": ["[data-scroller='board']", 220], "settle": 500, "rest": true },
+    { "name": "board-top", "wheel": ["[data-scroller='board']", -220], "settle": 500, "rest": true },
+
+    { "name": "search-hana", "fill": ["[data-search='ward']", "hana"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='ward']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-bed", "click": "[data-nurse='n6']", "settle": 800, "rest": true },
+    { "name": "bed-to-patient", "click": "[data-bed='p7']", "settle": 1000, "rest": true },
+    { "name": "back-board", "click": "[data-tab='assignments']", "settle": 1000, "rest": true },
+
+    { "name": "inert-medications", "click": "[data-tab='medications']", "against": "back-board", "expectUnchanged": true },
+    { "name": "inert-doctors", "click": "[data-tab='doctors']", "against": "back-board", "expectUnchanged": true }
+  ]
+}

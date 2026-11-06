@@ -1,0 +1,46 @@
+{
+  "url": "http://localhost:5376/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "activity", "click": "[data-tab='activity']", "settle": 1000, "rest": true },
+
+    { "name": "filter-buy", "click": "[data-filter='buy']", "settle": 800, "rest": true },
+    { "name": "filter-sell", "click": "[data-filter='sell']", "settle": 800, "rest": true },
+    { "name": "filter-reward", "click": "[data-filter='reward']", "settle": 800, "rest": true },
+    { "name": "filter-all", "click": "[data-filter='all']", "settle": 800, "rest": true },
+
+    { "name": "account-open", "click": "[data-select='account'] > button", "settle": 600, "rest": true },
+    { "name": "account-cold", "click": "[data-menu='account'] [data-option='Cold wallet']", "settle": 900, "rest": true },
+    { "name": "account-open-2", "click": "[data-select='account'] > button", "settle": 600, "rest": true },
+    { "name": "account-all", "click": "[data-menu='account'] [data-option='all']", "settle": 900, "rest": true },
+
+    { "name": "sort-open", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-largest", "click": "[data-menu='sort'] [data-option='largest']", "settle": 900, "rest": true },
+    { "name": "sort-open-2", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-newest", "click": "[data-menu='sort'] [data-option='newest']", "settle": 900, "rest": true },
+
+    { "name": "row-open", "click": "[data-row='t01']", "settle": 800, "rest": true },
+    { "name": "row-sell", "click": "[data-row='t03']", "settle": 800, "rest": true },
+    { "name": "row-closed", "click": "[data-row='t03']", "settle": 800, "rest": true },
+
+    { "name": "ledger-down", "wheel": ["[data-scroller='ledger']", 320], "settle": 500, "rest": true },
+    { "name": "ledger-further", "wheel": ["[data-scroller='ledger']", 320], "settle": 500, "rest": true },
+    { "name": "ledger-top", "wheel": ["[data-scroller='ledger']", -640], "settle": 500, "rest": true },
+
+    { "name": "search-btc", "fill": ["[data-search='activity']", "bitcoin"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='activity']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "exported", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 700, "rest": true },
+
+    { "name": "parked", "rest": true },
+
+    { "name": "inert-earn", "click": "[data-tab='earn']", "against": "parked", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "parked", "expectUnchanged": true }
+  ]
+}

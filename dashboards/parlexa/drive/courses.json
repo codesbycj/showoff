@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5404/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "courses", "click": "[data-tab='courses']", "settle": 1000, "rest": true },
+
+    { "name": "mine", "click": "[data-group='scope'] [data-segment='mine']", "settle": 900, "rest": true },
+    { "name": "all-courses", "click": "[data-group='scope'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "level-b2", "click": "[data-group='level'] [data-segment='B2']", "settle": 900, "rest": true },
+    { "name": "level-a2", "click": "[data-group='level'] [data-segment='A2']", "settle": 900, "rest": true },
+    { "name": "any-level", "click": "[data-group='level'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "pick-basics", "click": "[data-course='c2']", "settle": 900, "rest": true },
+    { "name": "pick-write", "click": "[data-course='c4']", "settle": 900, "rest": true },
+    { "name": "pick-first", "click": "[data-course='c1']", "settle": 900, "rest": true },
+
+    { "name": "catalogue-down", "wheel": ["[data-scroller='catalogue']", 240], "settle": 500, "rest": true },
+    { "name": "catalogue-top", "wheel": ["[data-scroller='catalogue']", -240], "settle": 500, "rest": true },
+
+    { "name": "search-stress", "fill": ["[data-search='global']", "stress"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "inert-speaking", "click": "[data-tab='speaking']", "against": "light", "expectUnchanged": true },
+    { "name": "inert-review", "click": "[data-tab='review']", "against": "light", "expectUnchanged": true }
+  ]
+}

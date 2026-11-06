@@ -1,0 +1,134 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "@/features/clovestats/components/category-list"
+   ],
+   "label": "import category list"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "@/features/clovestats/components/dock"
+   ],
+   "label": "import dock"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "@/features/clovestats/components/expense-chart"
+   ],
+   "label": "import expense chart"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "@/features/clovestats/components/expense-head"
+   ],
+   "label": "import expense head"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "@/features/clovestats/components/spend-card"
+   ],
+   "label": "import spend card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "@/features/clovestats/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "spend card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "expense head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "expense chart"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "category list"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/clovestats/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/clovestats/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

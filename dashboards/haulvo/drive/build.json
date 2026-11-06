@@ -1,0 +1,53 @@
+{
+  "url": "http://localhost:5392/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "load-two", "click": "[data-load='ld2']", "settle": 800, "rest": true },
+    { "name": "load-three", "click": "[data-load='ld3']", "settle": 800, "rest": true },
+    { "name": "load-closed", "click": "[data-load='ld3']", "settle": 800, "rest": true },
+
+    { "name": "truck-next", "click": "[data-action='change-truck']", "settle": 800, "rest": true },
+    { "name": "truck-again", "click": "[data-action='change-truck']", "settle": 800, "rest": true },
+    { "name": "driver-next", "click": "[data-action='change-driver']", "settle": 800, "rest": true },
+    { "name": "driver-again", "click": "[data-action='change-driver']", "settle": 800, "rest": true },
+
+    { "name": "check-seal", "click": "[data-check='ch2']", "settle": 600, "rest": true },
+    { "name": "check-sheet", "click": "[data-check='ch3']", "settle": 600, "rest": true },
+    { "name": "check-undone", "click": "[data-check='ch1']", "settle": 600, "rest": true },
+
+    { "name": "load-one", "click": "[data-load='ld1']", "settle": 800, "rest": true },
+
+    { "name": "leg-delivery", "click": "[data-action='filter']", "settle": 700, "rest": true },
+    { "name": "leg-pickup", "click": "[data-action='filter']", "settle": 700, "rest": true },
+    { "name": "leg-transfer", "click": "[data-action='filter']", "settle": 700, "rest": true },
+    { "name": "leg-cleared", "click": "[data-action='filter']", "settle": 700, "rest": true },
+
+    { "name": "phone-shown", "click": "[data-action='call-ld1']", "settle": 600, "rest": true },
+    { "name": "phone-hidden", "click": "[data-action='call-ld1']", "settle": 600, "rest": true },
+
+    { "name": "search-pickup", "fill": ["[data-search='loads']", "pick"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='loads']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "saved-draft", "click": "[data-action='save-draft']", "settle": 800, "rest": true },
+    { "name": "draft-undone", "click": "[data-action='save-draft']", "settle": 800, "rest": true },
+    { "name": "submitted", "click": "[data-action='submit']", "settle": 800, "rest": true },
+    { "name": "submit-undone", "click": "[data-action='submit']", "settle": 800, "rest": true },
+
+    { "name": "to-shipments", "click": "[data-tab='shipments']", "settle": 1000, "rest": true },
+    { "name": "to-tracking", "click": "[data-tab='tracking']", "settle": 1000, "rest": true },
+    { "name": "back-build", "click": "[data-tab='build']", "settle": 1000, "rest": true },
+
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "back-build", "expectUnchanged": true },
+    { "name": "inert-clients", "click": "[data-tab='clients']", "against": "back-build", "expectUnchanged": true },
+    { "name": "inert-add-load", "click": "[data-action='add-load']", "against": "back-build", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "back-build" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

@@ -1,0 +1,143 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/dm-sans';
+
+/*
+ * Routra.
+ *
+ * The reference is a fleet console: a near-black icon rail, a driver list, and
+ * a detail column. refscan read `#ffffff` across half the frame, `#f4f5f9` for
+ * the page, `#e1e4e9` for the panel ground and a blue for the status bars.
+ *
+ * **The accent split, measured.** `#2f6fed` carries white at 4.55:1 — over
+ * the line by a hair, which is not a margin for a status pill that has to be
+ * read from across a dispatch desk. So `#2f6fed` is the *mark* colour (the
+ * stacked bar, the route line, a dot) and `#1f5ad4` (6.05:1) is the one
+ * anything with text on it uses.
+ *
+ * The amber is the opposite case: `#e39a16` is 2.36:1 under white and 7.87:1
+ * under ink, so every amber chip carries ink type.
+ *
+ * `static`, because the time-by-category bar and the status dots take their
+ * fill as an inline `var(--color-…)` and Tailwind tree-shakes theme vars no
+ * utility mentions.
+ */
+@theme static {
+  --color-ground: #f4f5f9;
+  --color-surface: #ffffff;
+  --color-sunken: #f1f3f7;
+  --color-sunken-deep: #e1e4e9;
+  --color-panel: #e9ecf1;
+
+  --color-ink: #111318;
+  --color-ink-fg: #ffffff;
+  --color-body: #333a45;
+  /* 6.4:1 on the page tint, 5.47:1 on the panel — it has to clear both. */
+  --color-muted: #525a66;
+  --color-line: #e4e7ec;
+
+  --color-accent: #2f6fed;
+  --color-accent-deep: #1f5ad4;
+  --color-accent-soft: #b9cefb;
+  --color-accent-faint: #e8eefd;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #1a7a4a;
+  --color-positive-soft: #e4f3ea;
+  --color-danger: #b3312a;
+  --color-danger-soft: #fdecea;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /*
+   * The four states a driver's day is made of, in the reference's own order
+   * and its own colours. Only the amber carries ink type; the rest carry
+   * white.
+   */
+  --color-state-way: #2f6fed;
+  --color-state-unloading: #3bb0f0;
+  --color-state-loading: #e39a16;
+  --color-state-waiting: #111318;
+
+  --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(17 19 24 / 0.05);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

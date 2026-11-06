@@ -1,0 +1,157 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/jetbrains-mono';
+
+/*
+ * Tokens, read off the reference with refscan.py -- never a hex scattered
+ * through a component. Name them for what they do, not what colour they are.
+ *
+ * The split that runs through this file: the reference's coral `#ff7747` is
+ * 2.66:1 against white, so it cannot carry type and nothing with words on it
+ * may use it. It is the *mark* colour -- the logo tile, the chart line, the
+ * area fill, a dot. `--color-accent-deep` (5.18:1) is what a button, a pill or
+ * a line of accent text uses. The same split decides the two greens, the two
+ * reds and the two greys.
+ */
+@theme static {
+  --color-ground: #f7f7f7;
+  --color-surface: #ffffff;
+  --color-sunken: #f2f3f6;
+  --color-sunken-deep: #e4e6ed;
+  --color-panel: #16151a;
+  --color-panel-fg: #f4f4f6;
+
+  --color-ink: #17171c;
+  --color-ink-fg: #ffffff;
+  --color-body: #343a46;
+  --color-muted: #5b6472;
+  --color-line: #ebecf1;
+  /* An inert destination still has to be readable: 4.8:1, and the cursor,
+     the dimming and `aria-disabled` are what say it cannot be used. */
+  --color-muted-inert: #6b7385;
+
+  --color-accent: #ff7747;
+  --color-accent-deep: #c2410c;
+  --color-accent-soft: #ffc4ac;
+  --color-accent-faint: #fff1ea;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #13713a; /* 6.1:1 on white, 5.3:1 on its own soft */
+  --color-positive-soft: #e3f4e9;
+  --color-danger: #c22b23;
+  --color-danger-soft: #fdeceb;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* Buy and sell sides of the book. They are the positive/danger pair by
+     convention, kept as their own names so a chart that is not about profit
+     does not borrow them by accident. */
+  --color-bid: #13713a;
+  --color-bid-wash: #e3f4e9;
+  --color-ask: #c22b23;
+  --color-ask-wash: #fdeceb;
+
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgb(23 23 28 / 0.05);
+
+  --font-sans:
+    'Space Grotesk Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+/*
+ * Dark. The reference puts a sun and a moon in its header, and this is the one
+ * category where people sit in front of the screen for hours — so the toggle
+ * is real rather than decorative.
+ *
+ * The split inverts: in light, coral is the mark and `--color-accent-deep` is
+ * what carries type; in dark, coral itself clears 6.6:1 on the surface, and
+ * the thing that cannot carry white is the coral *button*, which takes near
+ * black type at 7.1:1 instead.
+ */
+[data-theme='dark'] {
+  --color-ground: #121214;
+  --color-surface: #1a1a1e;
+  --color-sunken: #232329;
+  --color-sunken-deep: #2e2e36;
+  --color-panel: #2a2a32;
+  --color-panel-fg: #f4f4f6;
+
+  --color-ink: #f4f4f6;
+  --color-ink-fg: #17171c;
+  --color-body: #c9cad1;
+  --color-muted: #969cab; /* 6.3:1 on the surface */
+  --color-line: #2b2b33;
+  --color-muted-inert: #7d8494; /* 4.6:1 on the surface */
+
+  --color-accent: #ff7747;
+  --color-accent-deep: #ff9a73; /* 8.4:1 on the surface */
+  --color-accent-soft: #6b3418;
+  --color-accent-faint: #2a1811;
+  --color-accent-fg: #1a1008; /* 7.1:1 on the coral button */
+
+  --color-positive: #46c97c;
+  --color-positive-soft: #11291d;
+  --color-danger: #f87a70;
+  --color-danger-soft: #2f1512;
+  --color-warn: #e0a84a;
+  --color-warn-soft: #2d2311;
+
+  --color-bid: #46c97c;
+  --color-bid-wash: #11291d;
+  --color-ask: #f87a70;
+  --color-ask-wash: #2f1512;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.55);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ground);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+}
+
+@utility tnum {
+  /* Every price, size and total on this build. The reference sets its figures
+     in a monospace and tracks them out; so does this. */
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "url": "http://localhost:5396/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "range-24h", "click": "[data-group='range'] [data-segment='24h']", "settle": 800, "rest": true },
+    { "name": "range-30d", "click": "[data-group='range'] [data-segment='30d']", "settle": 800, "rest": true },
+    { "name": "range-1y", "click": "[data-group='range'] [data-segment='1y']", "settle": 800, "rest": true },
+    { "name": "range-7d", "click": "[data-group='range'] [data-segment='7d']", "settle": 800, "rest": true },
+
+    { "name": "leaders-month", "click": "[data-group='leaderwindow'] [data-segment='month']", "settle": 800, "rest": true },
+    { "name": "leaders-week", "click": "[data-group='leaderwindow'] [data-segment='week']", "settle": 800, "rest": true },
+
+    { "name": "deposit", "click": "[data-action='deposit']", "settle": 700, "rest": true },
+    { "name": "withdraw", "click": "[data-action='withdraw']", "settle": 700, "rest": true },
+    { "name": "swap", "click": "[data-action='swap']", "settle": 700, "rest": true },
+    { "name": "transfer", "click": "[data-action='transfer']", "settle": 700, "rest": true },
+    { "name": "balance-back", "click": "[data-action='transfer']", "settle": 700, "rest": true },
+
+    { "name": "fills-buys", "click": "[data-group='side'] [data-segment='buy']", "settle": 800, "rest": true },
+    { "name": "fills-sells", "click": "[data-group='side'] [data-segment='sell']", "settle": 800, "rest": true },
+    { "name": "fills-all", "click": "[data-group='side'] [data-segment='all']", "settle": 800, "rest": true },
+
+    { "name": "fills-down", "wheel": ["[data-scroller='fills']", 260], "settle": 500, "rest": true },
+    { "name": "fills-top", "wheel": ["[data-scroller='fills']", -260], "settle": 500, "rest": true },
+
+    { "name": "search-eth", "fill": ["[data-search='global']", "eth"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "pair-to-trade", "click": "[data-pair='eth']", "settle": 1000, "rest": true },
+    { "name": "back-dashboard", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+    { "name": "holding-to-trade", "click": "[data-holding='sol']", "settle": 1000, "rest": true },
+    { "name": "home", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+
+    { "name": "inert-analytics", "click": "[data-tab='analytics']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-portfolio", "click": "[data-tab='portfolio']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-otc", "click": "[data-tab='otc']", "against": "home", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "home" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

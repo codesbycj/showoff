@@ -1,0 +1,110 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "@/features/clovestart/components/brand-mark"
+   ],
+   "label": "import brand mark"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "@/features/clovestart/components/headline"
+   ],
+   "label": "import headline"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "@/features/clovestart/components/hero-cards"
+   ],
+   "label": "import hero cards"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "@/features/clovestart/components/login-line"
+   ],
+   "label": "import login line"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "@/features/clovestart/components/primary-button"
+   ],
+   "label": "import primary button"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "brand mark"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "hero cards"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "primary button"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "login line"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/clovestart/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/clovestart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

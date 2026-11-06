@@ -90,6 +90,8 @@ the build rather than in the ruler.
 
 | file | does |
 |---|---|
+| `audit.js` | the design bar, read off the DOM: gaps, clipping, collisions, contrast, copy, tap targets. Exits 1 on a FAIL |
+| `foot.py` | dead canvas at the foot of a shot, in dp from the safe area |
 | `shoot.js` | screenshot a route off the running dev server (the common case) |
 | `boxes.js` | dump a reference page's own element boxes and styles, as JSON |
 | `shot.js` | screenshot any URL; drives Chrome over CDP |

@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5384/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "syndicates", "click": "[data-tab='syndicates']", "settle": 1000, "rest": true },
+
+    { "name": "lens-joined", "click": "[data-group='lens'] [data-segment='joined']", "settle": 800, "rest": true },
+    { "name": "lens-all", "click": "[data-group='lens'] [data-segment='all']", "settle": 800, "rest": true },
+    { "name": "lens-open", "click": "[data-group='lens'] [data-segment='open']", "settle": 800, "rest": true },
+
+    { "name": "sort-size", "click": "[data-group='sort'] [data-segment='size']", "settle": 800, "rest": true },
+    { "name": "sort-filled", "click": "[data-group='sort'] [data-segment='filled']", "settle": 800, "rest": true },
+    { "name": "sort-closing", "click": "[data-group='sort'] [data-segment='closing']", "settle": 800, "rest": true },
+
+    { "name": "row-open", "click": "[data-row='s02']", "settle": 800, "rest": true },
+    { "name": "commit", "click": "[data-action='commit-s02']", "settle": 800, "rest": true },
+    { "name": "commit-off", "click": "[data-action='commit-s02']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-row='s03']", "settle": 800, "rest": true },
+    { "name": "row-closed", "click": "[data-row='s03']", "settle": 800, "rest": true },
+
+    { "name": "syndicates-down", "wheel": ["[data-scroller='syndicates']", 260], "settle": 500, "rest": true },
+    { "name": "syndicates-top", "wheel": ["[data-scroller='syndicates']", -260], "settle": 500, "rest": true },
+
+    { "name": "search-energy", "fill": ["[data-search='syndicates']", "energy"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='syndicates']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-sidebar", "click": "[data-side='insights']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-logout", "click": "[data-site='logout']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

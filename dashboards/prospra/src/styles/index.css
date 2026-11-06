@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/outfit';
+
+/*
+ * Prospra.
+ *
+ * The reference is a browser window posed on a pale grey board — both are
+ * presentation furniture and both are dropped. refscan read `#fafafa` across
+ * two-thirds of the frame, `#eaeef1` for the card ground, `#57b6ec` for the
+ * blue and `#daf1ff` / `#cae7f7` for its tints, with one near-black tile.
+ *
+ * **The accent split, measured.** `#57b6ec` carries white at **2.26:1** —
+ * nowhere near a label — so it is strictly the *mark* colour: the chart fill,
+ * the striped bar, the quota rings, a dot. `#176a99` is the one anything with
+ * text on it uses (5.9:1), and the near-black `--color-ink-fill` is the
+ * reference's own primary tile.
+ *
+ * `static`, because the stage bars and the country rows take their fill as an
+ * inline `var(--color-stage-…)` and Tailwind tree-shakes theme vars no
+ * utility mentions.
+ */
+@theme static {
+  --color-ground: #fafafa;
+  --color-surface: #ffffff;
+  --color-sunken: #f1f3f6;
+  --color-sunken-deep: #e4e8ed;
+  /* The card ground the reference uses inside its panels. */
+  --color-panel: #eaeef1;
+
+  --color-ink: #0d1116;
+  --color-ink-fill: #111318;
+  --color-ink-fg: #ffffff;
+  --color-body: #3a4350;
+  /* 6.59:1 on the page, 5.89:1 on the pale blue tint. */
+  --color-muted: #525b68;
+  --color-line: #e6e9ee;
+
+  --color-accent: #57b6ec;
+  --color-accent-deep: #176a99;
+  --color-accent-soft: #cae7f7;
+  --color-accent-faint: #daf1ff;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #1a7a4a;
+  --color-positive-soft: #e4f3ea;
+  --color-danger: #b3312a;
+  --color-danger-soft: #fdecea;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* The pipeline, earliest stage to latest. Marks only — a stage column's
+     label sits on the card, not on the colour. */
+  --color-stage-0: #cae7f7;
+  --color-stage-1: #9ad2f2;
+  --color-stage-2: #57b6ec;
+  --color-stage-3: #2b8fc9;
+  --color-stage-4: #176a99;
+
+  --font-sans: 'Outfit Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(13 17 22 / 0.05);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The reference's diagonal hatch, used on the quota bar's remainder. */
+  .hatched {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--color-accent-soft) 0 5px,
+      var(--color-accent-faint) 5px 10px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,150 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/chip-rail"
+   ],
+   "label": "import chip rail"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/dock"
+   ],
+   "label": "import dock"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/hangout-card"
+   ],
+   "label": "import hangout card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/search-row"
+   ],
+   "label": "import search row"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/section-head"
+   ],
+   "label": "import section head"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/top-bar"
+   ],
+   "label": "import top bar"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "@/features/huddlehome/components/trending-card"
+   ],
+   "label": "import trending card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "top bar"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "search row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "chip rail"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "section head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "trending card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.13"
+   ],
+   "label": "section head"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.14"
+   ],
+   "label": "hangout card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.15"
+   ],
+   "label": "dock"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "STEP 1.16"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/huddlehome/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/huddlehome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

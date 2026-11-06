@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/manrope';
+
+/*
+ * Tokens, read off the reference with refscan.py -- never a hex scattered
+ * through a component. Name them for what they do, not what colour they are.
+ *
+ * The split: the reference's yellow `#ffce1f` is 1.49:1 against white. It is a
+ * *ground* and nothing else -- the active pill, a badge, a progress bar -- and
+ * what it carries is ink at 10.9:1, never white. `--color-accent-deep`
+ * `#8a6008` (5.6:1) is the one any yellow *word* on a light ground uses.
+ */
+@theme static {
+  --color-ground: #f4f1ec;
+  --color-surface: #ffffff;
+  --color-sunken: #f7f5f1;
+  --color-sunken-deep: #e8e4dc;
+  --color-panel: #23201f;
+  --color-panel-fg: #ffffff;
+  --color-panel-muted: #a8a29a;
+
+  --color-ink: #23201f;
+  --color-ink-fg: #ffffff;
+  --color-body: #3b3733;
+  --color-muted: #635e58;
+  --color-muted-inert: #716c65; /* 5.2:1 — inert is not an excuse to be unreadable */
+  --color-line: #ebe7e0;
+
+  --color-accent: #ffce1f;
+  --color-accent-deep: #8a6008;
+  --color-accent-soft: #ffe79b;
+  --color-accent-faint: #fdf6e3;
+  /* What the yellow carries: ink, at 10.9:1. Never white, which is 1.5:1. */
+  --color-accent-fg: #23201f;
+
+  /*
+   * The inverted tile — the reference's black square with a yellow glyph in
+   * it. Its own three tokens rather than `bg-ink`: `--color-ink` flips with
+   * the theme, so a tile built out of it turns light while the type on it
+   * stays light, and both go invisible. These flip together.
+   */
+  --color-invert: #23201f;
+  --color-invert-fg: #ffffff;
+  --color-invert-accent: #ffce1f;
+
+  /* What a level chip's ground carries. Flips for the same reason. */
+  --color-level-fg: #ffffff;
+
+  --color-positive: #2c7a4b;
+  --color-positive-soft: #e5f3ea;
+  --color-danger: #b3362c;
+  --color-danger-soft: #fbece9;
+  --color-warn: #8a6008;
+  --color-warn-soft: #fdf2db;
+
+  /* The three levels a catalogue sorts by, chosen together so a chip, a dot
+     and a figure can share a colour and each clears 4.5:1 on white. */
+  --color-beginner: #2c7a4b;
+  --color-intermediate: #8a6008;
+  --color-advanced: #9c3a86;
+
+  --radius-card: 20px;
+  --shadow-card: 0 1px 2px rgb(35 32 31 / 0.05);
+
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/*
+ * Dark. The reference puts a sun and a moon in its header, so the toggle is
+ * real rather than decorative.
+ *
+ * The yellow does not move: it clears 10:1 on the dark surface as well as
+ * carrying ink on a light one, which is the one convenient thing about a
+ * colour that bright. What changes is everything it sits on.
+ */
+[data-theme='dark'] {
+  --color-ground: #16140f;
+  --color-surface: #211e18;
+  --color-sunken: #2a2620;
+  --color-sunken-deep: #3a352c;
+  --color-panel: #2f2a22;
+  --color-panel-fg: #f6f3ec;
+  --color-panel-muted: #a8a29a;
+
+  --color-ink: #f6f3ec;
+  --color-ink-fg: #23201f;
+  --color-body: #d2cdc3;
+  --color-muted: #aaa49b; /* 6.7:1 on the surface, 4.9:1 on a segmented track */
+  --color-muted-inert: #8b857b; /* 4.6:1 — dimmer than muted, still readable */
+  --color-line: #332e26;
+
+  --color-accent: #ffce1f;
+  --color-accent-deep: #f0c13a; /* 10.1:1 on the surface */
+  --color-accent-soft: #5a4512;
+  --color-accent-faint: #2b2518;
+  --color-accent-fg: #23201f;
+
+  --color-invert: #f6f3ec;
+  --color-invert-fg: #23201f; /* 14.6:1 on the inverted tile */
+  --color-invert-accent: #8a6008; /* 5.0:1 on it */
+
+  --color-level-fg: #23201f; /* 7.0:1 or better on all three level grounds */
+
+  --color-positive: #5cc488;
+  --color-positive-soft: #16291d;
+  --color-danger: #f0867b;
+  --color-danger-soft: #2d1714;
+  --color-warn: #dba94e;
+  --color-warn-soft: #2c2413;
+
+  --color-beginner: #5cc488;
+  --color-intermediate: #dba94e;
+  --color-advanced: #e58fcd;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ground);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

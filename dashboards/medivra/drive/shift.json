@@ -1,0 +1,40 @@
+{
+  "url": "http://localhost:5400/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "lens-done", "click": "[data-group='lens'] [data-segment='done']", "settle": 800, "rest": true },
+    { "name": "lens-all", "click": "[data-group='lens'] [data-segment='all']", "settle": 800, "rest": true },
+    { "name": "lens-open", "click": "[data-group='lens'] [data-segment='open']", "settle": 800, "rest": true },
+
+    { "name": "band-high", "click": "[data-band='high']", "settle": 800, "rest": true },
+    { "name": "band-medium", "click": "[data-band='medium']", "settle": 800, "rest": true },
+    { "name": "band-low", "click": "[data-band='low']", "settle": 800, "rest": true },
+    { "name": "band-cleared", "click": "[data-band='low']", "settle": 800, "rest": true },
+
+    { "name": "tasks-down", "wheel": ["[data-scroller='tasks']", 240], "settle": 500, "rest": true },
+    { "name": "tasks-top", "wheel": ["[data-scroller='tasks']", -240], "settle": 500, "rest": true },
+    { "name": "notes-down", "wheel": ["[data-scroller='notes']", 180], "settle": 500, "rest": true },
+    { "name": "notes-top", "wheel": ["[data-scroller='notes']", -180], "settle": 500, "rest": true },
+
+    { "name": "search-pettersen", "fill": ["[data-search='ward']", "pettersen"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='ward']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "task-opens-patient", "click": "[data-task='t2']", "settle": 1000, "rest": true },
+    { "name": "back-shift", "click": "[data-tab='shift']", "settle": 1000, "rest": true },
+    { "name": "note-opens-patient", "click": "[data-note='h1']", "settle": 1000, "rest": true },
+    { "name": "home", "click": "[data-tab='shift']", "settle": 1000, "rest": true },
+
+    { "name": "inert-doctors", "click": "[data-tab='doctors']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-medications", "click": "[data-tab='medications']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "home", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "home" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

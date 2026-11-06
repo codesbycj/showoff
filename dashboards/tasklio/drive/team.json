@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5416/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "team", "click": "[data-tab='team']", "settle": 1000, "rest": true },
+
+    { "name": "by-open", "click": "[data-group='lens'] [data-segment='open']", "settle": 900, "rest": true },
+    { "name": "by-name", "click": "[data-group='lens'] [data-segment='name']", "settle": 900, "rest": true },
+    { "name": "by-load", "click": "[data-group='lens'] [data-segment='load']", "settle": 900, "rest": true },
+
+    { "name": "row-closed", "click": "[data-person='u2']", "settle": 800, "rest": true },
+    { "name": "row-ama", "click": "[data-person='u3']", "settle": 800, "rest": true },
+    { "name": "row-ama-shut", "click": "[data-person='u3']", "settle": 800, "rest": true },
+    { "name": "row-noor", "click": "[data-person='u5']", "settle": 800, "rest": true },
+
+    { "name": "people-down", "wheel": ["[data-scroller='people']", 200], "settle": 500, "rest": true },
+    { "name": "people-top", "wheel": ["[data-scroller='people']", -200], "settle": 500, "rest": true },
+
+    { "name": "search-noor", "fill": ["[data-search='global']", "noor"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "shut-noor", "click": "[data-person='u5']", "settle": 800, "rest": true },
+    { "name": "open-person", "click": "[data-person='u3']", "settle": 800, "rest": true },
+    { "name": "assigned-to-task", "click": "[data-assigned='k2']", "settle": 1000, "rest": true },
+    { "name": "back-team", "click": "[data-tab='team']", "settle": 1000, "rest": true },
+
+    { "name": "inert-clients", "click": "[data-tab='clients']", "against": "back-team", "expectUnchanged": true },
+    { "name": "inert-schedule", "click": "[data-tab='schedule']", "against": "back-team", "expectUnchanged": true }
+  ]
+}

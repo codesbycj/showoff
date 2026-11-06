@@ -1,0 +1,44 @@
+{
+  "url": "http://localhost:5416/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "move-on", "click": "[data-action='on-k1']", "settle": 800, "rest": true },
+    { "name": "move-on-again", "click": "[data-action='on-k1']", "settle": 800, "rest": true },
+    { "name": "move-back", "click": "[data-action='back-k1']", "settle": 800, "rest": true },
+    { "name": "move-home", "click": "[data-action='back-k1']", "settle": 800, "rest": true },
+    { "name": "move-other", "click": "[data-action='on-k4']", "settle": 800, "rest": true },
+    { "name": "move-other-back", "click": "[data-action='back-k4']", "settle": 800, "rest": true },
+
+    { "name": "tag-client", "click": "[data-tag='-client']", "settle": 900, "rest": true },
+    { "name": "tag-website", "click": "[data-tag='-website']", "settle": 900, "rest": true },
+    { "name": "tag-all", "click": "[data-tag='all']", "settle": 900, "rest": true },
+
+    { "name": "mine", "click": "[data-group='scope'] [data-segment='mine']", "settle": 900, "rest": true },
+    { "name": "everyone", "click": "[data-group='scope'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "todo-down", "wheel": ["[data-scroller='col-todo']", 220], "settle": 500, "rest": true },
+    { "name": "todo-top", "wheel": ["[data-scroller='col-todo']", -220], "settle": 500, "rest": true },
+    { "name": "review-down", "wheel": ["[data-scroller='col-review']", 220], "settle": 500, "rest": true },
+    { "name": "review-top", "wheel": ["[data-scroller='col-review']", -220], "settle": 500, "rest": true },
+
+    { "name": "search-webflow", "fill": ["[data-search='global']", "webflow"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "open-task", "click": "[data-task='k2']", "settle": 1000, "rest": true },
+    { "name": "back-board", "click": "[data-tab='board']", "settle": 1000, "rest": true },
+
+    { "name": "inert-schedule", "click": "[data-tab='schedule']", "against": "back-board", "expectUnchanged": true },
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "back-board", "expectUnchanged": true },
+    { "name": "inert-clients", "click": "[data-tab='clients']", "against": "back-board", "expectUnchanged": true },
+    { "name": "inert-create", "click": "[data-action='create']", "against": "back-board", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "back-board" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

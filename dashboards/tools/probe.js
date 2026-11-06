@@ -44,13 +44,17 @@ const num = (s, n) => String(s).padStart(n);
     await s.goto(url, a.num('wait', 2600));
 
     // A dashboard's other tabs are states of one shell, not other URLs, so
-    // getting to them is a click rather than a path.
+    // getting to them is a click rather than a path. Several, separated by
+    // `|`, for a state two controls deep -- a tab inside a theme, say. Not a
+    // comma: a CSS selector may contain one.
     if (a.opt('click')) {
-      if (!(await s.click(a.opt('click')))) {
-        console.error('click target not found: ' + a.opt('click'));
-        process.exit(1);
+      for (const sel of a.opt('click').split('|')) {
+        if (!(await s.click(sel.trim()))) {
+          console.error('click target not found: ' + sel.trim());
+          process.exit(1);
+        }
+        await s.sleep(a.num('settle', 900));
       }
-      await s.sleep(a.num('settle', 900));
     }
 
     await s.parkPointer();

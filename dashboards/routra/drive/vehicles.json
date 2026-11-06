@@ -1,0 +1,30 @@
+{
+  "url": "http://localhost:5388/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "vehicles", "click": "[data-tab='vehicles']", "settle": 1000, "rest": true },
+
+    { "name": "lens-trucks", "click": "[data-group='lens'] [data-segment='Truck']", "settle": 800, "rest": true },
+    { "name": "lens-vans", "click": "[data-group='lens'] [data-segment='Van']", "settle": 800, "rest": true },
+    { "name": "lens-all", "click": "[data-group='lens'] [data-segment='all']", "settle": 800, "rest": true },
+
+    { "name": "sort-payload", "click": "[data-group='sort'] [data-segment='payload']", "settle": 800, "rest": true },
+    { "name": "sort-model", "click": "[data-group='sort'] [data-segment='model']", "settle": 800, "rest": true },
+    { "name": "sort-service", "click": "[data-group='sort'] [data-segment='service']", "settle": 800, "rest": true },
+
+    { "name": "card-open", "click": "[data-row='v7']", "settle": 800, "rest": true },
+    { "name": "card-other", "click": "[data-row='v5']", "settle": 800, "rest": true },
+    { "name": "card-closed", "click": "[data-row='v5']", "settle": 800, "rest": true },
+
+    { "name": "search-harlo", "fill": ["[data-search='vehicles']", "harlo"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='vehicles']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-inbox", "click": "[data-tab='inbox']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-map", "click": "[data-tab='map']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

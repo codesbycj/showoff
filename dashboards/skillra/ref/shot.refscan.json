@@ -1,0 +1,254 @@
+{
+  "image": "C:\\Users\\CJ\\Documents\\Project\\Post\\showoff\\dashboards\\skillra\\ref\\shot.png",
+  "width": 1200,
+  "height": 900,
+  "flatMargins": {
+    "top": 47,
+    "bottom": 25,
+    "left": 16,
+    "right": 66
+  },
+  "shot": {
+    "columnSpikeRatio": 5.09,
+    "rowSpikeRatio": 8.94,
+    "edgeRampPx": 2.0,
+    "borderStd": 0.8,
+    "nonBorderShare": 0.424,
+    "verdict": "posed board (inspo brief)"
+  },
+  "density": {
+    "hairlineMode": 1,
+    "candidates": [],
+    "hairlineRuns": [
+      1,
+      1
+    ]
+  },
+  "scaleUsed": 1.0,
+  "palette": [
+    {
+      "hex": "#e9e9e9",
+      "share": 0.3266,
+      "luma": 233.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#ffffff",
+      "share": 0.2841,
+      "luma": 255.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#f4f1ec",
+      "share": 0.2388,
+      "luma": 240.3,
+      "sat": 0.033
+    },
+    {
+      "hex": "#d7d7d7",
+      "share": 0.0455,
+      "luma": 215.0,
+      "sat": 0.0
+    },
+    {
+      "hex": "#a2a7a1",
+      "share": 0.0084,
+      "luma": 163.3,
+      "sat": 0.036
+    },
+    {
+      "hex": "#23262d",
+      "share": 0.0081,
+      "luma": 39.3,
+      "sat": 0.222
+    },
+    {
+      "hex": "#dee5ed",
+      "share": 0.0056,
+      "luma": 229.3,
+      "sat": 0.063
+    },
+    {
+      "hex": "#c2c2c4",
+      "share": 0.0045,
+      "luma": 194.7,
+      "sat": 0.01
+    },
+    {
+      "hex": "#bbb8b3",
+      "share": 0.0037,
+      "luma": 183.3,
+      "sat": 0.043
+    },
+    {
+      "hex": "#979c98",
+      "share": 0.0027,
+      "luma": 153.0,
+      "sat": 0.032
+    },
+    {
+      "hex": "#d1cec9",
+      "share": 0.0019,
+      "luma": 205.3,
+      "sat": 0.038
+    },
+    {
+      "hex": "#adaaa5",
+      "share": 0.0017,
+      "luma": 169.3,
+      "sat": 0.046
+    },
+    {
+      "hex": "#e2e1dd",
+      "share": 0.0014,
+      "luma": 224.0,
+      "sat": 0.022
+    },
+    {
+      "hex": "#c4cdc8",
+      "share": 0.0004,
+      "luma": 200.3,
+      "sat": 0.044
+    }
+  ],
+  "roles": {
+    "ground": "#e9e9e9",
+    "surface": "#ffffff",
+    "ink": "#23262d",
+    "accent": "#23262d",
+    "mode": "light"
+  },
+  "grid": {
+    "x": [
+      {
+        "px": 104,
+        "css": 104.0,
+        "energy": 12.5
+      },
+      {
+        "px": 114,
+        "css": 114.0,
+        "energy": 12.6
+      },
+      {
+        "px": 172,
+        "css": 172.0,
+        "energy": 16.0
+      },
+      {
+        "px": 280,
+        "css": 280.0,
+        "energy": 10.6
+      },
+      {
+        "px": 327,
+        "css": 327.0,
+        "energy": 10.6
+      },
+      {
+        "px": 672,
+        "css": 672.0,
+        "energy": 10.4
+      },
+      {
+        "px": 756,
+        "css": 756.0,
+        "energy": 13.4
+      }
+    ],
+    "y": [
+      {
+        "px": 126,
+        "css": 126.0,
+        "energy": 19.4
+      },
+      {
+        "px": 142,
+        "css": 142.0,
+        "energy": 13.7
+      },
+      {
+        "px": 161,
+        "css": 161.0,
+        "energy": 21.1
+      },
+      {
+        "px": 214,
+        "css": 214.0,
+        "energy": 12.6
+      },
+      {
+        "px": 307,
+        "css": 307.0,
+        "energy": 13.4
+      },
+      {
+        "px": 400,
+        "css": 400.0,
+        "energy": 18.7
+      },
+      {
+        "px": 431,
+        "css": 431.0,
+        "energy": 11.0
+      },
+      {
+        "px": 461,
+        "css": 461.0,
+        "energy": 10.2
+      },
+      {
+        "px": 487,
+        "css": 487.0,
+        "energy": 11.0
+      },
+      {
+        "px": 501,
+        "css": 501.0,
+        "energy": 14.2
+      },
+      {
+        "px": 555,
+        "css": 555.0,
+        "energy": 10.7
+      },
+      {
+        "px": 594,
+        "css": 594.0,
+        "energy": 16.0
+      },
+      {
+        "px": 611,
+        "css": 611.0,
+        "energy": 17.2
+      },
+      {
+        "px": 667,
+        "css": 667.0,
+        "energy": 18.5
+      },
+      {
+        "px": 679,
+        "css": 679.0,
+        "energy": 23.7
+      },
+      {
+        "px": 727,
+        "css": 727.0,
+        "energy": 15.9
+      },
+      {
+        "px": 758,
+        "css": 758.0,
+        "energy": 28.7
+      },
+      {
+        "px": 796,
+        "css": 796.0,
+        "energy": 11.0
+      }
+    ],
+    "sidebarWidth": 104.0,
+    "headerHeight": 126.0
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "url": "http://localhost:5408/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 500,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "hover-sunken",
+      "hover": ".hover\\:bg-sunken",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "hover-ink",
+      "hover": ".hover\\:text-ink",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "hover-join",
+      "hover": ".hover\\:brightness-110",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "hover-rail",
+      "hover": ".hover\\:bg-white\\/10",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "team",
+      "click": "[data-tab='team']",
+      "settle": 1000,
+      "rest": true
+    },
+    {
+      "name": "hover-session",
+      "hover": ".hover\\:border-\\[var\\(--color-accent-soft\\)\\]",
+      "rest": true,
+      "against": "team"
+    }
+  ]
+}

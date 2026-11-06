@@ -1,0 +1,57 @@
+{
+  "url": "http://localhost:5384/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "span-open", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-1y", "click": "[data-menu='span'] [data-option='1y']", "settle": 900, "rest": true },
+    { "name": "span-open-2", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-3y", "click": "[data-menu='span'] [data-option='3y']", "settle": 900, "rest": true },
+    { "name": "span-open-3", "click": "[data-select='span'] > button", "settle": 600, "rest": true },
+    { "name": "span-all", "click": "[data-menu='span'] [data-option='all']", "settle": 900, "rest": true },
+
+    { "name": "step-mid", "hover": "[data-card='value-chart'] [data-mark='pt-10']", "against": "span-all" },
+    { "name": "step-late", "hover": "[data-card='value-chart'] [data-mark='pt-20']", "against": "step-mid" },
+
+    { "name": "sort-invested", "click": "[data-sort='invested']", "settle": 700, "rest": true },
+    { "name": "sort-invested-up", "click": "[data-sort='invested']", "settle": 700, "rest": true },
+    { "name": "sort-multiple", "click": "[data-sort='multiple']", "settle": 700, "rest": true },
+    { "name": "sort-value", "click": "[data-sort='netvalue']", "settle": 700, "rest": true },
+
+    { "name": "status-open", "click": "[data-select='status'] > button", "settle": 600, "rest": true },
+    { "name": "status-exited", "click": "[data-menu='status'] [data-option='Exited']", "settle": 900, "rest": true },
+    { "name": "status-open-2", "click": "[data-select='status'] > button", "settle": 600, "rest": true },
+    { "name": "status-all", "click": "[data-menu='status'] [data-option='all']", "settle": 900, "rest": true },
+
+    { "name": "positions-down", "wheel": ["[data-scroller='positions']", 200], "settle": 500, "rest": true },
+    { "name": "positions-top", "wheel": ["[data-scroller='positions']", -200], "settle": 500, "rest": true },
+    { "name": "activity-down", "wheel": ["[data-scroller='activity']", 200], "settle": 500, "rest": true },
+    { "name": "activity-top", "wheel": ["[data-scroller='activity']", -200], "settle": 500, "rest": true },
+
+    { "name": "search-castwyn", "fill": ["[data-search='positions']", "castwyn"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='positions']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "tax-submitted", "click": "[data-action='submit-tax']", "settle": 800, "rest": true },
+    { "name": "tax-undone", "click": "[data-action='submit-tax']", "settle": 800, "rest": true },
+    { "name": "exported", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "mail-read", "click": "[data-action='mail']", "settle": 500, "rest": true },
+    { "name": "mail-back", "click": "[data-action='mail']", "settle": 500, "rest": true },
+
+    { "name": "to-syndicates", "click": "[data-tab='syndicates']", "settle": 1000, "rest": true },
+    { "name": "to-companies", "click": "[data-tab='companies']", "settle": 1000, "rest": true },
+    { "name": "back-investments", "click": "[data-tab='investments']", "settle": 1000, "rest": true },
+
+    { "name": "inert-sidebar", "click": "[data-side='documents']", "against": "back-investments", "expectUnchanged": true },
+    { "name": "inert-community", "click": "[data-side='community']", "against": "back-investments", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-site='settings']", "against": "back-investments", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "back-investments" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

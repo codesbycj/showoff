@@ -1,0 +1,118 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "@/features/wanderstay/components/amenity-row"
+   ],
+   "label": "import amenity row"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "@/features/wanderstay/components/glyph"
+   ],
+   "label": "import glyph"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "@/features/wanderstay/components/hero"
+   ],
+   "label": "import hero"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "@/features/wanderstay/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "hero image"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "kind"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "amenity row"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "price"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/wanderstay/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/wanderstay/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+  "url": "http://localhost:5376/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "span-24h", "click": "[data-group='span'] [data-segment='24h']", "settle": 900, "rest": true },
+    { "name": "span-7d", "click": "[data-group='span'] [data-segment='7d']", "settle": 900, "rest": true },
+    { "name": "span-30d", "click": "[data-group='span'] [data-segment='30d']", "settle": 900, "rest": true },
+    { "name": "span-1y", "click": "[data-group='span'] [data-segment='1y']", "settle": 900, "rest": true },
+
+    { "name": "curve-mid", "hover": "[data-card='value'] [data-mark='pt-18']", "against": "span-1y" },
+    { "name": "curve-late", "hover": "[data-card='value'] [data-mark='pt-40']", "against": "curve-mid" },
+
+    { "name": "token-btc", "click": "[data-token='btc']", "settle": 800, "rest": true },
+    { "name": "token-eth", "click": "[data-token='eth']", "settle": 800, "rest": true },
+    { "name": "token-cleared", "click": "[data-action='clear-asset']", "settle": 800, "rest": true },
+
+    { "name": "sort-pnl", "click": "[data-sort='profitloss']", "settle": 700, "rest": true },
+    { "name": "sort-pnl-up", "click": "[data-sort='profitloss']", "settle": 700, "rest": true },
+    { "name": "sort-asset", "click": "[data-sort='asset']", "settle": 700, "rest": true },
+    { "name": "sort-value", "click": "[data-sort='value']", "settle": 700, "rest": true },
+
+    { "name": "holdings-down", "wheel": ["[data-scroller='holdings']", 140], "settle": 500, "rest": true },
+    { "name": "holdings-top", "wheel": ["[data-scroller='holdings']", -140], "settle": 500, "rest": true },
+
+    { "name": "cohort-jul-dec", "hover": "[data-card='cohorts'] [data-mark='cell-0-5']", "against": "holdings-top" },
+    { "name": "cohort-sep-nov", "hover": "[data-card='cohorts'] [data-mark='cell-2-4']", "against": "cohort-jul-dec" },
+
+    { "name": "window-open", "click": "[data-select='window'] > button", "settle": 600, "rest": true },
+    { "name": "window-6m", "click": "[data-menu='window'] [data-option='h2']", "settle": 900, "rest": true },
+    { "name": "window-open-2", "click": "[data-select='window'] > button", "settle": 600, "rest": true },
+    { "name": "window-12m", "click": "[data-menu='window'] [data-option='h1']", "settle": 900, "rest": true },
+
+    { "name": "exported", "click": "[data-action='export']", "settle": 700, "rest": true },
+    { "name": "export-off", "click": "[data-action='export']", "settle": 700, "rest": true },
+
+    { "name": "alerts-read", "click": "[data-action='alerts']", "settle": 500, "rest": true },
+    { "name": "alerts-back", "click": "[data-action='alerts']", "settle": 500, "rest": true },
+
+    { "name": "to-markets", "click": "[data-tab='markets']", "settle": 1000, "rest": true },
+    { "name": "to-activity", "click": "[data-tab='activity']", "settle": 1000, "rest": true },
+    { "name": "back-overview", "click": "[data-tab='overview']", "settle": 1000, "rest": true },
+
+    { "name": "inert-earn", "click": "[data-tab='earn']", "against": "back-overview", "expectUnchanged": true },
+    { "name": "inert-alerts-tab", "click": "[data-tab='alerts']", "against": "back-overview", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "back-overview", "expectUnchanged": true },
+    { "name": "inert-site-link", "click": "[data-site='exchange']", "against": "back-overview", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "back-overview" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

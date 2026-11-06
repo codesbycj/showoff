@@ -1,0 +1,158 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/outfit';
+
+/*
+ * Tokens, read off the reference with refscan.py -- never a hex scattered
+ * through a component. Name them for what they do, not what colour they are.
+ *
+ * The split: the reference's lavender `#a6b6e9` is 2.00:1 against white. It
+ * cannot carry type at all, so it is the *mark* colour -- the logo tile, a
+ * chart's fill, a card's tint -- and `--color-accent-deep` `#514f8c` (7.4:1)
+ * is what any word, pill or button uses.
+ *
+ * The four pastel card tints are the same case: they are grounds, never ink.
+ * Each one carries `--color-ink` at 11:1 or better, which is why the course
+ * cards keep their colour and stay readable.
+ */
+@theme static {
+  --color-ground: #f4f5fa;
+  --color-surface: #ffffff;
+  --color-sunken: #f2f3f9;
+  --color-sunken-deep: #e2e4f2;
+  --color-panel: #1d1d1d;
+  --color-panel-fg: #ffffff;
+
+  --color-ink: #1d1d1d;
+  --color-ink-fg: #ffffff;
+  --color-body: #35353a;
+  --color-muted: #5d5d6b;
+  --color-muted-inert: #6b6b7a; /* 5.2:1 — inert is not an excuse to be unreadable */
+  --color-line: #ebecf4;
+
+  --color-accent: #a6b6e9;
+  --color-accent-deep: #514f8c;
+  --color-accent-soft: #c6cff5;
+  --color-accent-faint: #eef0fc;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #2f7d4f;
+  --color-positive-soft: #e5f4ea;
+  --color-danger: #b3362c;
+  --color-danger-soft: #fbece9;
+  --color-warn: #8a6008;
+  --color-warn-soft: #fdf2db;
+
+  /* The three things the week is spent on. Each clears 4.5:1 on white, so a
+     legend, a line and a number can all be set in the same colour. */
+  --color-theory: #3f6fd8;
+  --color-practice: #b03a76;
+  --color-lexicon: #2f7d4f;
+
+  /* The reference's four card tints. Grounds only. */
+  --color-tile-lavender: #d0d5fd;
+  --color-tile-blue: #e1f2fc;
+  --color-tile-green: #e1fbd4;
+  --color-tile-pink: #f5e0df;
+
+  --radius-card: 20px;
+  --shadow-card: 0 1px 2px rgb(29 29 29 / 0.05);
+
+  --font-sans: 'Outfit Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/*
+ * Dark. The reference puts a sun and a moon at the foot of its rail, so the
+ * toggle is real rather than decorative.
+ *
+ * The split inverts: in light, lavender is the mark and the deep violet
+ * carries type; in dark, the lavender itself clears 8:1 on the surface and
+ * the thing that cannot take white is the lavender *button*, which takes
+ * near-black type instead.
+ */
+[data-theme='dark'] {
+  --color-ground: #121218;
+  --color-surface: #1b1b23;
+  --color-sunken: #23232d;
+  --color-sunken-deep: #2f2f3c;
+  --color-panel: #2f2f3c;
+  --color-panel-fg: #f4f4f8;
+
+  --color-ink: #f4f4f8;
+  --color-ink-fg: #1d1d1d;
+  --color-body: #c9c9d4;
+  --color-muted: #9b9bab; /* 6.3:1 on the surface, 4.8:1 on a segmented track */
+  --color-muted-inert: #868696; /* 4.8:1 — dimmer than muted, still readable */
+  --color-line: #2c2c38;
+
+  --color-accent: #a6b6e9;
+  --color-accent-deep: #b9c4f0; /* 9.0:1 on the surface */
+  --color-accent-soft: #3b3a63;
+  --color-accent-faint: #22222e;
+  --color-accent-fg: #15151c;
+
+  --color-positive: #5cc488;
+  --color-positive-soft: #15291d;
+  --color-danger: #f0867b;
+  --color-danger-soft: #2d1714;
+  --color-warn: #dba94e;
+  --color-warn-soft: #2c2413;
+
+  --color-theory: #86a8f5;
+  --color-practice: #ef8fbd;
+  --color-lexicon: #6cc98c;
+
+  --color-tile-lavender: #2b2c4a;
+  --color-tile-blue: #1d2d3c;
+  --color-tile-green: #1f3426;
+  --color-tile-pink: #3a2727;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ground);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

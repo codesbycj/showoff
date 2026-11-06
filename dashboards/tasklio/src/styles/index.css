@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/dm-sans';
+
+/*
+ * Tokens, read off the reference with refscan.py -- never a hex scattered
+ * through a component. Name them for what they do, not what colour they are.
+ *
+ * The split: the reference's lilac `#9981d9` is 3.23:1 against white. It
+ * clears the 3:1 a graphic needs and fails the 4.5:1 type needs, so it is the
+ * *mark* colour and `--color-accent-deep` `#5a44a8` (7.4:1) is what any word,
+ * pill or button uses.
+ *
+ * The six pastel card grounds are the same case from the other side: they are
+ * grounds, never ink. Each carries `--color-ink` at 12:1 or better and
+ * `--color-body` at 8:1 — but `--color-muted` on the lilac is 4.31:1, so a
+ * card's secondary line is set in body rather than muted.
+ */
+@theme static {
+  --color-ground: #efeef2;
+  --color-surface: #ffffff;
+  --color-sunken: #f7f6f9;
+  --color-sunken-deep: #e6e4ec;
+  --color-panel: #0e0e0e;
+  --color-panel-fg: #ffffff;
+
+  --color-ink: #0e0e0e;
+  --color-ink-fg: #ffffff;
+  --color-body: #35333a;
+  --color-muted: #5e5b66;
+  --color-muted-inert: #6d6a76; /* 5.3:1 — inert is not an excuse to be unreadable */
+  --color-line: #eae8ef;
+
+  --color-accent: #9981d9;
+  --color-accent-deep: #5a44a8;
+  --color-accent-soft: #c9bdf0;
+  --color-accent-faint: #f1edfd;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #2c7a4b;
+  --color-positive-soft: #e5f3ea;
+  --color-danger: #b3362c;
+  --color-danger-soft: #fbece9;
+  --color-warn: #8a6008;
+  --color-warn-soft: #fdf2db;
+
+  /* The four columns. Each is a ground that carries ink, and each has a deep
+     partner for the column's own heading and count. */
+  --color-todo: #d2cbf7;
+  --color-todo-deep: #5a44a8;
+  --color-doing: #fdecda;
+  --color-doing-deep: #8a6008;
+  --color-review: #d2f0fa;
+  --color-review-deep: #0f6480;
+  --color-done: #bcedd7;
+  --color-done-deep: #226039; /* 4.8:1 on its own mint, 6.8:1 on white */
+
+  /* The six card tints, in the reference's own order. */
+  --color-tint-lilac: #d8e2fb;
+  --color-tint-peach: #fdecda;
+  --color-tint-mint: #bcedd7;
+  --color-tint-rose: #ffd8fc;
+  --color-tint-sky: #d2f0fa;
+  --color-tint-blush: #f7e2dd;
+
+  --radius-card: 18px;
+  --shadow-card: 0 1px 2px rgb(14 14 14 / 0.05);
+
+  --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ground);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

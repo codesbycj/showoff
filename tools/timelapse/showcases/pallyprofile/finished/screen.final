@@ -1,0 +1,311 @@
+import { Image } from 'expo-image';
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/pallyprofile/components/glyph';
+import {
+  BombSticker,
+  ChilliSticker,
+  DrinkSticker,
+  ShapeSticker,
+} from '@/features/pallyprofile/components/stickers';
+import { T } from '@/features/pallyprofile/components/text';
+import { avatar, chips, copy, memories, sky, tabs } from '@/features/pallyprofile/data/profile';
+import {
+  AVATAR,
+  CHIP_H,
+  DOCK_H,
+  GAP_AVATAR_NAME,
+  GAP_BIO_CHIPS,
+  GAP_CHIPS_SECTION,
+  GAP_NAME_STATS,
+  GAP_SECTION_FAN,
+  GAP_STATS_BIO,
+  HEAD_H,
+  MARGIN,
+  PAD_TOP,
+  usePallyLayout,
+} from '@/features/pallyprofile/layout';
+import { chipTints, ct, radius, type } from '@/features/pallyprofile/theme';
+import { useInsets } from '@/features/pallyprofile/use-insets';
+
+/**
+ * Pally — a profile.
+ *
+ * Assembly only: the cover and who is on it, the numbers, what they are
+ * into, and today's photographs.
+ *
+ * The memory fan takes the height left under the chips, so the row reaches
+ * the dock. The reference crops its own fan against the dock, which is what
+ * a scrolling gallery looks like — but a crop is not the same thing as a
+ * band of white, and this one fills.
+ */
+export default function PallyprofileScreen() {
+  const insets = useInsets();
+  const { fanH, coverH, width } = usePallyLayout(insets);
+
+  // Photographs, so a photograph's proportions: the height comes from the
+  // band and the width follows it at 4:5.3. The width used to be a constant
+  // and the height the leftover, which stretched them into slabs.
+  const cardH = fanH - 16;
+  const memoryW = Math.min(Math.round(cardH * 0.76), Math.floor((width - 40) / 2));
+  const step = Math.round(memoryW * 0.6);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ height: coverH }}>
+        <Image
+          source={sky}
+          style={{ position: 'absolute', width: '100%', height: coverH }}
+          contentFit="cover"
+        />
+
+        <View
+          style={{
+            height: HEAD_H,
+            marginTop: insets.top + PAD_TOP,
+            marginHorizontal: MARGIN,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
+        >
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Back"
+            onPress={() => router.back()}
+          >
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: radius.disc,
+                backgroundColor: 'rgba(255,255,255,0.92)',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="back" size={19} tint={ct.ink} />
+            </View>
+          </Pressable>
+          <T
+            variant="screenTitle"
+            color={ct.onPhoto}
+            style={{ flex: 1, textAlign: 'center', height: type.screenTitle.line }}
+          >
+            {copy.title}
+          </T>
+          <Pressable accessibilityRole="button" accessibilityLabel="More">
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: radius.disc,
+                backgroundColor: 'rgba(255,255,255,0.92)',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="kebab" size={19} tint={ct.ink} />
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ position: 'absolute', left: 10, top: insets.top + 58 }}>
+          <ChilliSticker size={78} />
+        </View>
+        <View style={{ position: 'absolute', right: 24, top: insets.top + 66 }}>
+          <BombSticker size={64} />
+        </View>
+        <View style={{ position: 'absolute', left: 14, top: insets.top + 146 }}>
+          <DrinkSticker size={70} />
+        </View>
+        <View style={{ position: 'absolute', right: 14, top: insets.top + 152 }}>
+          <ShapeSticker size={66} />
+        </View>
+      </View>
+
+      <View style={{ alignItems: 'center', marginTop: -AVATAR / 2 }}>
+        <View
+          style={{
+            width: AVATAR,
+            height: AVATAR,
+            borderRadius: AVATAR / 2,
+            borderWidth: 5,
+            borderColor: ct.page,
+            overflow: 'hidden',
+            backgroundColor: ct.hairline,
+          }}
+        >
+          <Image
+            source={avatar}
+            style={{ width: AVATAR - 10, height: AVATAR - 10 }}
+            contentFit="cover"
+          />
+        </View>
+
+        <T
+          variant="name"
+          color={ct.ink}
+          style={{ height: type.name.line, marginTop: GAP_AVATAR_NAME }}
+        >
+          {copy.name}
+        </T>
+
+        <View style={{ flexDirection: 'row', marginTop: GAP_NAME_STATS }}>
+          <T variant="statStrong" color={ct.ink} style={{ height: type.stat.line }}>
+            {copy.followers}
+          </T>
+          <T variant="stat" color={ct.muted} style={{ height: type.stat.line, marginLeft: 5 }}>
+            {copy.followersLabel}
+          </T>
+          <View style={{ width: 18 }} />
+          <T variant="statStrong" color={ct.ink} style={{ height: type.stat.line }}>
+            {copy.following}
+          </T>
+          <T variant="stat" color={ct.muted} style={{ height: type.stat.line, marginLeft: 5 }}>
+            {copy.followingLabel}
+          </T>
+        </View>
+
+        <T
+          variant="bio"
+          color={ct.muted}
+          style={{ height: type.bio.line, marginTop: GAP_STATS_BIO }}
+        >
+          {copy.bio}
+        </T>
+
+        <View style={{ flexDirection: 'row', marginTop: GAP_BIO_CHIPS }}>
+          {chips.map((c, i) => {
+            const tint = chipTints[i % chipTints.length];
+            return (
+              <Pressable key={c.id} accessibilityRole="button" accessibilityLabel={c.label}>
+                <View
+                  style={{
+                    height: CHIP_H,
+                    paddingHorizontal: 12,
+                    marginHorizontal: 4,
+                    borderRadius: radius.chip,
+                    backgroundColor: tint.bg,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Glyph name={c.icon} size={14} tint={tint.ink} strokeWidth={1.9} />
+                  <T
+                    variant="chip"
+                    color={tint.ink}
+                    style={{ height: type.chip.line, marginLeft: 5 }}
+                  >
+                    {c.label}
+                  </T>
+                </View>
+              </Pressable>
+            );
+          })}
+        </View>
+      </View>
+
+      <View style={{ marginTop: GAP_CHIPS_SECTION, paddingHorizontal: MARGIN }}>
+        <T variant="section" color={ct.ink} style={{ height: type.section.line }}>
+          {copy.memories}
+        </T>
+        <T
+          variant="sectionNote"
+          color={ct.muted}
+          style={{ height: type.sectionNote.line, marginTop: 2 }}
+        >
+          {copy.memoriesNote}
+        </T>
+      </View>
+
+      <View
+        style={{
+          height: fanH,
+          marginTop: GAP_SECTION_FAN,
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          overflow: 'hidden',
+        }}
+      >
+        <View style={{ width: memoryW + step * 2, height: fanH }}>
+          {memories.map((m, i) => {
+            const angle = [-9, 2, 11][i];
+            const left = [0, step, step * 2][i];
+            return (
+              <View
+                key={i}
+                style={{
+                  position: 'absolute',
+                  left,
+                  top: i === 1 ? -6 : 10,
+                  width: memoryW,
+                  height: cardH,
+                  borderRadius: radius.memory,
+                  overflow: 'hidden',
+                  borderWidth: 4,
+                  borderColor: ct.page,
+                  transform: [{ rotate: `${angle}deg` }],
+                  shadowColor: '#0D1420',
+                  shadowOpacity: 0.16,
+                  shadowRadius: 12,
+                  shadowOffset: { width: 0, height: 6 },
+                  elevation: 6,
+                }}
+              >
+                <Image
+                  source={m}
+                  style={{ width: memoryW - 8, height: cardH - 8 }}
+                  contentFit="cover"
+                />
+              </View>
+            );
+          })}
+        </View>
+      </View>
+
+      <View
+        style={{
+          height: DOCK_H,
+          marginHorizontal: MARGIN,
+          // 20dp from the screen edge. The inset used to be *padding inside*
+          // the bar, which made an 88dp slab with 34dp of nothing in it.
+          marginBottom: Math.max(10, insets.bottom - 20),
+          borderRadius: 28,
+          backgroundColor: ct.dock,
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        {tabs.map((tab, i) => {
+          const on = i === 3;
+          return (
+            <Pressable
+              key={tab.id}
+              accessibilityRole="button"
+              accessibilityLabel={tab.label}
+              accessibilityState={{ selected: on }}
+              style={{ flex: 1, height: DOCK_H, alignItems: 'center', justifyContent: 'center' }}
+            >
+              <View
+                style={{
+                  width: 46,
+                  height: 46,
+                  borderRadius: 23,
+                  backgroundColor: on ? ct.page : 'transparent',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Glyph name={tab.icon} size={22} tint={on ? ct.blue : ct.muted} filled={on} />
+              </View>
+            </Pressable>
+          );
+        })}
+      </View>
+    </View>
+  );
+}

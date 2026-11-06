@@ -1,0 +1,86 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "@/features/lootwin/components/badge"
+   ],
+   "label": "import badge"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "@/features/lootwin/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "rays"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "body"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "pill"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "keep"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/lootwin/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/lootwin/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

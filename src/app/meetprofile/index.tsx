@@ -1,0 +1,344 @@
+import { Image } from 'expo-image';
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useId } from 'react';
+import { Pressable, View, useWindowDimensions } from 'react-native';
+import Svg, { Circle, Defs, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
+
+// STEP 1.01 import text
+// import { T } from '@/features/meetprofile/components/text';
+import { avatar, copy, interests, photos, stats } from '@/features/meetprofile/data/profile';
+import { ct, radius, type } from '@/features/meetprofile/theme';
+import { useInsets } from '@/features/meetprofile/use-insets';
+
+const MARGIN = 22;
+
+function Glyph({
+  name,
+  size = 16,
+  tint = ct.onPage,
+}: {
+  name: 'back' | 'kebab' | 'pin' | 'film' | 'pan' | 'book' | 'dumbbell' | 'plane';
+  size?: number;
+  tint?: string;
+}) {
+  const s = {
+    stroke: tint,
+    strokeWidth: 1.8,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    fill: 'none',
+  };
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      {name === 'back' && <Path {...s} strokeWidth={2.2} d="m14.2 5.6-6.4 6.4 6.4 6.4" />}
+      {name === 'kebab' && (
+        <>
+          <Circle cx="5.6" cy="12" r="1.8" fill={tint} />
+          <Circle cx="12" cy="12" r="1.8" fill={tint} />
+          <Circle cx="18.4" cy="12" r="1.8" fill={tint} />
+        </>
+      )}
+      {name === 'pin' && (
+        <>
+          <Path {...s} d="M12 20.8s5.8-5 5.8-9.4a5.8 5.8 0 1 0-11.6 0c0 4.4 5.8 9.4 5.8 9.4Z" />
+          <Circle {...s} cx="12" cy="11.2" r="2.1" />
+        </>
+      )}
+      {name === 'film' && (
+        <>
+          <Rect {...s} x="3.4" y="5.4" width="17.2" height="13.2" rx="2.8" />
+          <Path {...s} d="M7.6 5.4v13.2M16.4 5.4v13.2M3.4 12h17.2" />
+        </>
+      )}
+      {name === 'pan' && (
+        <>
+          <Path
+            {...s}
+            d="M3.6 11.4h11.2a0 0 0 0 1 0 0v1.8a5.6 5.6 0 0 1-5.6 5.6H9.2a5.6 5.6 0 0 1-5.6-5.6v-1.8Z"
+          />
+          <Path {...s} d="M14.8 12.4h5.6" />
+        </>
+      )}
+      {name === 'book' && (
+        <>
+          <Path
+            {...s}
+            d="M4.4 5.2a2 2 0 0 1 2-2H18a1.6 1.6 0 0 1 1.6 1.6v12.4H6.4a2 2 0 0 0-2 2Z"
+          />
+          <Path {...s} d="M4.4 19.2a2 2 0 0 0 2 2h13.2" />
+        </>
+      )}
+      {name === 'dumbbell' && (
+        <>
+          <Path {...s} d="M6.4 9.2v5.6M3.6 10.4v3.2M17.6 9.2v5.6M20.4 10.4v3.2M6.4 12h11.2" />
+        </>
+      )}
+      {name === 'plane' && (
+        <Path
+          fill={tint}
+          d="M20.6 11.1 14.4 9.4l-3.3-5.8a1 1 0 0 0-1.8.1L7.9 8.1 4.6 7.2a.8.8 0 0 0-.9 1.2l2.1 3.5-2.1 3.5a.8.8 0 0 0 .9 1.2l3.3-.9 1.4 4.4a1 1 0 0 0 1.8.1l3.3-5.8 6.2-1.7a1 1 0 0 0 0-1.6Z"
+        />
+      )}
+    </Svg>
+  );
+}
+
+/**
+ * Meet — a profile.
+ *
+ * Assembly only: the portrait, who they are, the numbers, what they are
+ * into, their photographs, and the one thing you can do.
+ *
+ * The photo row takes the screen's one flexible band. Each frame is an
+ * elongated oval — the reference's shape — made with a border radius of half
+ * the width, which stays an oval at any size rather than a rounded rectangle
+ * that happens to look like one at 393dp.
+ */
+export default function MeetprofileScreen() {
+  const insets = useInsets();
+  const { width } = useWindowDimensions();
+  const glow = `meetGlow-${useId()}`;
+
+  const photoW = Math.min(104, Math.floor((width - MARGIN * 2 - 24) / 3));
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      {/* STEP 1.02 radial gradient
+      <Svg width="100%" height="56%" style={{ position: 'absolute', top: 0 }}>
+        <Defs>
+          <RadialGradient id={glow} cx="0.5" cy="0.32" r="0.62">
+            <Stop offset="0" stopColor={ct.glow} />
+            <Stop offset="1" stopColor={ct.page} />
+          </RadialGradient>
+        </Defs>
+        <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${glow})`} />
+      </Svg>
+      */}
+
+      <View
+        style={{
+          flex: 1,
+          paddingTop: insets.top + 6,
+          paddingBottom: insets.bottom + 10,
+          paddingHorizontal: MARGIN,
+        }}
+      >
+        {/* STEP 1.03 "Back"
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Back"
+            onPress={() => router.back()}
+          >
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: radius.disc,
+                backgroundColor: ct.tile,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="back" size={19} />
+            </View>
+          </Pressable>
+          <View style={{ flex: 1 }} />
+          <Pressable accessibilityRole="button" accessibilityLabel="More">
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: radius.disc,
+                backgroundColor: ct.tile,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="kebab" size={19} />
+            </View>
+          </Pressable>
+        </View>
+        */}
+
+        {/* STEP 1.04 name
+        <View style={{ alignItems: 'center', marginTop: 18 }}>
+          <View
+            style={{
+              width: 128,
+              height: 160,
+              borderRadius: 64,
+              overflow: 'hidden',
+              backgroundColor: ct.tile,
+            }}
+          >
+            <Image source={avatar} style={{ width: 128, height: 160 }} contentFit="cover" />
+          </View>
+
+          <T variant="name" color={ct.onPage} style={{ height: type.name.line, marginTop: 16 }}>
+            {copy.name}
+          </T>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginTop: 8,
+              height: 32,
+              paddingHorizontal: 12,
+              borderRadius: 16,
+              backgroundColor: ct.tile,
+            }}
+          >
+            <Glyph name="pin" size={14} tint={ct.dim} />
+            <T variant="place" color={ct.dim} style={{ height: type.place.line, marginLeft: 5 }}>
+              {copy.place}
+            </T>
+          </View>
+        </View>
+        */}
+
+        {/* STEP 1.05 label
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: 20,
+            borderRadius: radius.card,
+            backgroundColor: ct.card,
+            paddingVertical: 14,
+          }}
+        >
+          {stats.map((st, i) => (
+            <View
+              key={st.id}
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                borderLeftWidth: i === 0 ? 0 : 1,
+                borderLeftColor: ct.hairline,
+              }}
+            >
+              <T variant="statLabel" color={ct.faint} style={{ height: type.statLabel.line }}>
+                {st.label}
+              </T>
+              <T
+                variant="statValue"
+                color={ct.onPage}
+                style={{ height: type.statValue.line, marginTop: 2 }}
+              >
+                {st.value}
+              </T>
+            </View>
+          ))}
+        </View>
+        */}
+
+        {/* STEP 1.06 interests
+        <T variant="label" color={ct.faint} style={{ height: type.label.line, marginTop: 20 }}>
+          {copy.interests}
+        </T>
+        */}
+
+        {/* STEP 1.07 label
+        <View
+          style={{
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            marginTop: 8,
+          }}
+        >
+          {interests.map((it) => (
+            <Pressable key={it.id} accessibilityRole="button" accessibilityLabel={it.label}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  height: 44,
+                  paddingHorizontal: 14,
+                  margin: 4,
+                  borderRadius: radius.chip,
+                  backgroundColor: ct.tile,
+                }}
+              >
+                <Glyph name={it.icon} size={15} tint={ct.dim} />
+                <T
+                  variant="chip"
+                  color={ct.onPage}
+                  style={{ height: type.chip.line, marginLeft: 7 }}
+                >
+                  {it.label}
+                </T>
+              </View>
+            </Pressable>
+          ))}
+        </View>
+        */}
+
+        {/* STEP 1.08 image
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: 140,
+          }}
+        >
+          {photos.map((p, i) => {
+            const tall = i === 1;
+            const w = tall ? photoW + 8 : photoW;
+            const h = Math.round(w * 1.3);
+            return (
+              <View
+                key={i}
+                style={{
+                  width: w,
+                  height: h,
+                  borderRadius: w / 2,
+                  overflow: 'hidden',
+                  marginHorizontal: 5,
+                  backgroundColor: ct.tile,
+                }}
+              >
+                <Image source={p} style={{ width: w, height: h }} contentFit="cover" />
+              </View>
+            );
+          })}
+        </View>
+        */}
+
+        {/* STEP 1.09 cta
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={copy.cta}
+          style={{ marginTop: 10 }}
+        >
+          {({ pressed }) => (
+            <View
+              style={{
+                height: 58,
+                borderRadius: radius.cta,
+                backgroundColor: ct.white,
+                alignItems: 'center',
+                justifyContent: 'center',
+                opacity: pressed ? 0.9 : 1,
+              }}
+            >
+              <T variant="cta" color={ct.page} style={{ height: type.cta.line }}>
+                {copy.cta}
+              </T>
+            </View>
+          )}
+        </Pressable>
+        */}
+        {/* STEP 1.10 a stray gap under it | FIX 1.11 take the gap back out
+        <View style={{ height: 23 }} />
+        */}
+      </View>
+    </View>
+  );
+}

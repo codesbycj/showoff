@@ -1,0 +1,70 @@
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { CategoryList } from '@/features/clovestats/components/category-list';
+import { Dock } from '@/features/clovestats/components/dock';
+import { ExpenseChart } from '@/features/clovestats/components/expense-chart';
+import { ExpenseHead } from '@/features/clovestats/components/expense-head';
+import { SpendCard } from '@/features/clovestats/components/spend-card';
+import { T } from '@/features/clovestats/components/text';
+import { categories, copy } from '@/features/clovestats/data/stats';
+import {
+  GAP_CARD_EXPENSE,
+  GAP_CHART_RULE,
+  GAP_EXPENSE_CHART,
+  GAP_TITLE_CARD,
+  MARGIN,
+  PAD_TOP,
+  TITLE_H,
+  useCloveStatsLayout,
+} from '@/features/clovestats/layout';
+import { ct, type } from '@/features/clovestats/theme';
+import { useInsets } from '@/features/clovestats/use-insets';
+
+/**
+ * Clove — analytics.
+ *
+ * Assembly only: the title, this week at a glance, the month's outgoings as a
+ * curve, and where they went.
+ *
+ * Nothing here is centred in a flexible band and nothing is in a scroller.
+ * The category rows take their height from what is left between the chart and
+ * the dock, which is what keeps the last row on the dock rather than halfway
+ * up to it.
+ */
+export default function ClovestatsScreen() {
+  const insets = useInsets();
+  const { rowH, chartW, chartH } = useCloveStatsLayout(insets, categories.length);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: insets.top + PAD_TOP, paddingHorizontal: MARGIN }}>
+        <T variant="title" color={ct.ink} style={{ height: TITLE_H, textAlign: 'center' }}>
+          {copy.title}
+        </T>
+
+        <View style={{ marginTop: GAP_TITLE_CARD }}>
+          <SpendCard />
+        </View>
+
+        <View style={{ marginTop: GAP_CARD_EXPENSE }}>
+          <ExpenseHead />
+        </View>
+
+        <View style={{ marginTop: GAP_EXPENSE_CHART }}>
+          <ExpenseChart width={chartW} height={chartH} />
+        </View>
+
+        <View style={{ marginTop: GAP_CHART_RULE, height: 1, backgroundColor: ct.hairline }} />
+
+        <CategoryList rowH={rowH} />
+      </View>
+
+      <View style={{ flex: 1 }} />
+
+      <Dock active={1} bottom={insets.bottom} />
+    </View>
+  );
+}

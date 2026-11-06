@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5380/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "sales", "click": "[data-tab='sales']", "settle": 1000, "rest": true },
+
+    { "name": "deal-kelvo", "click": "[data-deal='d16']", "settle": 800, "rest": true },
+    { "name": "deal-orrin", "click": "[data-deal='d05']", "settle": 800, "rest": true },
+    { "name": "deal-stale", "click": "[data-deal='d20']", "settle": 800, "rest": true },
+    { "name": "detail-closed", "click": "[data-action='close-detail']", "settle": 800, "rest": true },
+
+    { "name": "owner-open", "click": "[data-select='owner'] > button", "settle": 600, "rest": true },
+    { "name": "owner-imani", "click": "[data-menu='owner'] [data-option='r3']", "settle": 900, "rest": true },
+    { "name": "owner-open-2", "click": "[data-select='owner'] > button", "settle": 600, "rest": true },
+    { "name": "owner-team", "click": "[data-menu='owner'] [data-option='all']", "settle": 900, "rest": true },
+
+    { "name": "sort-open", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-close", "click": "[data-menu='sort'] [data-option='close']", "settle": 900, "rest": true },
+    { "name": "sort-open-2", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-idle", "click": "[data-menu='sort'] [data-option='idle']", "settle": 900, "rest": true },
+    { "name": "sort-open-3", "click": "[data-select='sort'] > button", "settle": 600, "rest": true },
+    { "name": "sort-value", "click": "[data-menu='sort'] [data-option='value']", "settle": 900, "rest": true },
+
+    { "name": "search-energy", "fill": ["[data-search='deals']", "energy"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='deals']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-workflows", "click": "[data-tab='workflows']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

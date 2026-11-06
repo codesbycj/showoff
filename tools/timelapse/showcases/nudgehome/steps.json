@@ -1,0 +1,118 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "@/features/nudgehome/components/glyph"
+   ],
+   "label": "import glyph"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "@/features/nudgehome/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "the next block"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "hello"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "label"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "\"Collapse planned\""
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "letter"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "anytime"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.10"
+   ],
+   "label": "\"Options\""
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.11"
+   ],
+   "label": "glyph"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "STEP 1.12"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/nudgehome/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/nudgehome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

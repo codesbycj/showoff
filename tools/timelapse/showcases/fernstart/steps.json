@@ -1,0 +1,94 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "@/features/fernstart/components/hero-card"
+   ],
+   "label": "import hero card"
+  },
+  {
+   "op": "imp",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "@/features/fernstart/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "radial gradient"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "hero card"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "headline"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "body"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "view"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "skip"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/fernstart/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/fernstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

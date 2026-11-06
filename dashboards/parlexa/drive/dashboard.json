@@ -1,0 +1,45 @@
+{
+  "url": "http://localhost:5404/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+
+    { "name": "monthly", "click": "[data-group='range'] [data-segment='monthly']", "settle": 900, "rest": true },
+    { "name": "weekly", "click": "[data-group='range'] [data-segment='weekly']", "settle": 900, "rest": true },
+
+    { "name": "theory-off", "click": "[data-series='theory']", "settle": 800, "rest": true },
+    { "name": "lexicon-off", "click": "[data-series='lexicon']", "settle": 800, "rest": true },
+    { "name": "practice-only", "click": "[data-series='practice']", "settle": 800, "rest": true },
+    { "name": "all-back", "click": "[data-series='theory']", "settle": 800, "rest": true },
+    { "name": "two-back", "click": "[data-series='practice']", "settle": 800, "rest": true },
+    { "name": "three-back", "click": "[data-series='lexicon']", "settle": 800, "rest": true },
+
+    { "name": "top-three", "click": "[data-group='scope'] [data-segment='top']", "settle": 800, "rest": true },
+    { "name": "all-friends", "click": "[data-group='scope'] [data-segment='friends']", "settle": 800, "rest": true },
+
+    { "name": "courses-down", "wheel": ["[data-scroller='courses']", 260], "settle": 500, "rest": true },
+    { "name": "courses-top", "wheel": ["[data-scroller='courses']", -260], "settle": 500, "rest": true },
+    { "name": "homework-down", "wheel": ["[data-scroller='homework']", 140], "settle": 500, "rest": true },
+    { "name": "homework-top", "wheel": ["[data-scroller='homework']", -140], "settle": 500, "rest": true },
+
+    { "name": "search-native", "fill": ["[data-search='global']", "native"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "open-course", "click": "[data-course='c3']", "settle": 1000, "rest": true },
+    { "name": "home", "click": "[data-tab='dashboard']", "settle": 1000, "rest": true },
+
+    { "name": "inert-speaking", "click": "[data-tab='speaking']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-review", "click": "[data-tab='review']", "against": "home", "expectUnchanged": true },
+    { "name": "inert-community", "click": "[data-tab='community']", "against": "home", "expectUnchanged": true },
+
+    { "name": "focus-first", "key": "Tab", "settle": 350, "against": "home" },
+    { "name": "focus-second", "key": "Tab", "settle": 350, "against": "focus-first" }
+  ]
+}

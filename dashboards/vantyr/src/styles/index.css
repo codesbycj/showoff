@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/plus-jakarta-sans';
+
+/*
+ * Vantyr.
+ *
+ * The reference is a rendered mock-up on a grey board — refscan called it a
+ * flat UI export for the third time in this batch, and for the third time the
+ * frame is a third furniture: 10px of board at the sides, 28px at the top,
+ * and an app area of 716×494 that is an artboard rather than a viewport. Read
+ * as an inspo brief; the board is dropped.
+ *
+ * Its palette: a white page, `#f3f4f6` for the panel tint, `#f3e9df` for the
+ * cream promo card, and `#225559` — a deep teal — for the portfolio card and
+ * the primary buttons.
+ *
+ * **The accent needs no split, but the muted grey does.** `#225559` carries
+ * white at 8.36:1. `--color-muted` has to clear three grounds — white, the
+ * panel tint and the cream card — and the cream is the tightest, so it is
+ * measured against that: 5.36:1.
+ *
+ * `static`, because the status pills and the stage bars take their fill as an
+ * inline `var(--color-…)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #fbfbfc;
+  --color-surface: #ffffff;
+  --color-sunken: #f3f4f6;
+  --color-sunken-deep: #e4e7ea;
+  /* The cream the reference uses for its promo and alert cards. */
+  --color-cream: #f3e9df;
+  --color-cream-deep: #e8d9c8;
+
+  --color-ink: #101518;
+  --color-body: #333c45;
+  /* 5.36:1 on the cream card, which is the tightest of the three grounds. */
+  --color-muted: #55606b;
+  --color-line: #e6e9ec;
+
+  --color-accent: #225559;
+  --color-accent-deep: #163c3f;
+  --color-accent-soft: #9cc4c6;
+  --color-accent-faint: #e3eeee;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #1a7a4a;
+  --color-positive-soft: #e4f3ea;
+  --color-danger: #a8302a;
+  --color-danger-soft: #fbeae8;
+  --color-warn: #8a5a08;
+  --color-warn-soft: #fdf1da;
+
+  /* Investment status, and the bands of the value chart's steps. */
+  --color-live: #225559;
+  --color-exited: #1a7a4a;
+  --color-written: #a8302a;
+
+  --font-sans:
+    'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 16px;
+  --shadow-card: 0 1px 2px rgb(16 21 24 / 0.05);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

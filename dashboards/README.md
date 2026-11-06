@@ -24,6 +24,17 @@ picture as a real, working app, and recorded by driving it with a cursor.
 | [`ledgra/`](./ledgra) | 17 — Tallora, an accounting workspace | posed board (inspo brief) | Home · Statements · Tax | 5364 |
 | [`glintly/`](./glintly) | 18 — Metriqo, a product-analytics dashboard | posed browser window (inspo brief) | Dashboard · Realtime · Conversion | 5368 |
 | [`hesper/`](./hesper) | 19 — Caldrow Legal., a consulting firm's workspace | posed browser window (inspo brief) | Overview · Task · Payment | 5372 |
+| [`lunara/`](./lunara) | 20 — Lunara, a crypto portfolio tracker | posed board (inspo brief) | Overview · Markets · Activity | 5376 |
+| [`prospra/`](./prospra) | 21 — Prospra, a B2B sales and marketing CRM | posed browser window (inspo brief) | Dashboard · Leads · Sales | 5380 |
+| [`vantyr/`](./vantyr) | 22 — vantyr, a private-investment portfolio | posed mock-up (inspo brief) | Investments · Syndicates · Companies | 5384 |
+| [`routra/`](./routra) | 23 — Routra, a fleet and driver console | posed mock-up (inspo brief) | Fleet · Routes · Vehicles | 5388 |
+| [`haulvo/`](./haulvo) | 24 — Haulvo, a freight shipment builder | posed browser window (inspo brief) | New shipment · Shipments · Tracking | 5392 |
+| [`zyntrex/`](./zyntrex) | 25 — Zyntrex, a crypto exchange front end | posed board (inspo brief) | Dashboard · Trade · Market | 5396 |
+| [`medivra/`](./medivra) | 26 — Medivra, a hospital ward nursing console | posed board (inspo brief) | Dashboard · Patients · Assignments | 5400 |
+| [`parlexa/`](./parlexa) | 27 — Parlexa, a language-learning study console | posed board (inspo brief) | Dashboard · Progress · Courses | 5404 |
+| [`hivora/`](./hivora) | 28 — Hivora, a team workspace and recording library | posed board (inspo brief) | Home · Recordings · Team | 5408 |
+| [`skillra/`](./skillra) | 29 — Skillra, an e-learning course platform | posed board (inspo brief) | Learn · Courses · Tasks | 5412 |
+| [`tasklio/`](./tasklio) | 30 — Tasklio, a studio kanban board | posed board (inspo brief) | Board · All tasks · Team | 5416 |
 
 ```bash
 cd dashboards/twisty  && npm install && npm run dev    # http://localhost:5300
@@ -45,6 +56,17 @@ cd dashboards/veltro  && npm install && npm run dev    # http://localhost:5360
 cd dashboards/ledgra  && npm install && npm run dev    # http://localhost:5364
 cd dashboards/glintly && npm install && npm run dev    # http://localhost:5368
 cd dashboards/hesper  && npm install && npm run dev    # http://localhost:5372
+cd dashboards/lunara  && npm install && npm run dev    # http://localhost:5376
+cd dashboards/prospra && npm install && npm run dev    # http://localhost:5380
+cd dashboards/vantyr  && npm install && npm run dev    # http://localhost:5384
+cd dashboards/routra  && npm install && npm run dev    # http://localhost:5388
+cd dashboards/haulvo  && npm install && npm run dev    # http://localhost:5392
+cd dashboards/zyntrex && npm install && npm run dev    # http://localhost:5396
+cd dashboards/medivra && npm install && npm run dev    # http://localhost:5400
+cd dashboards/parlexa && npm install && npm run dev    # http://localhost:5404
+cd dashboards/hivora  && npm install && npm run dev    # http://localhost:5408
+cd dashboards/skillra && npm install && npm run dev    # http://localhost:5412
+cd dashboards/tasklio && npm install && npm run dev    # http://localhost:5416
 ```
 
 From the repository root, `npm run dev:<slug>` and `npm run build:<slug>` do the same

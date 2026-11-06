@@ -1,0 +1,34 @@
+{
+  "url": "http://localhost:5416/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "tasks", "click": "[data-tab='tasks']", "settle": 1000, "rest": true },
+
+    { "name": "column-doing", "click": "[data-group='column'] [data-segment='doing']", "settle": 900, "rest": true },
+    { "name": "column-done", "click": "[data-group='column'] [data-segment='done']", "settle": 900, "rest": true },
+    { "name": "column-all", "click": "[data-group='column'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "sort-progress", "click": "[data-group='sort'] [data-segment='progress']", "settle": 900, "rest": true },
+    { "name": "sort-budget", "click": "[data-group='sort'] [data-segment='budget']", "settle": 900, "rest": true },
+    { "name": "sort-title", "click": "[data-group='sort'] [data-segment='title']", "settle": 900, "rest": true },
+    { "name": "sort-due", "click": "[data-group='sort'] [data-segment='due']", "settle": 900, "rest": true },
+
+    { "name": "pick-second", "click": "[data-task='k11']", "settle": 900, "rest": true },
+    { "name": "pick-third", "click": "[data-task='k12']", "settle": 900, "rest": true },
+    { "name": "pick-first", "click": "[data-task='k10']", "settle": 900, "rest": true },
+
+    { "name": "list-down", "wheel": ["[data-scroller='list']", 220], "settle": 500, "rest": true },
+    { "name": "list-top", "wheel": ["[data-scroller='list']", -220], "settle": 500, "rest": true },
+
+    { "name": "search-crm", "fill": ["[data-search='global']", "crm"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

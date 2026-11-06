@@ -1,0 +1,25 @@
+{
+  "url": "http://localhost:5404/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "progress", "click": "[data-tab='progress']", "settle": 1000, "rest": true },
+
+    { "name": "what-moved", "click": "[data-group='lens'] [data-segment='gain']", "settle": 900, "rest": true },
+    { "name": "where-i-am", "click": "[data-group='lens'] [data-segment='now']", "settle": 900, "rest": true },
+
+    { "name": "search-speaking", "fill": ["[data-search='global']", "speaking"], "settle": 900, "rest": true },
+    { "name": "search-writing", "fill": ["[data-search='global']", "writing"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "inert-community", "click": "[data-tab='community']", "against": "light", "expectUnchanged": true },
+    { "name": "inert-speaking", "click": "[data-tab='speaking']", "against": "light", "expectUnchanged": true }
+  ]
+}

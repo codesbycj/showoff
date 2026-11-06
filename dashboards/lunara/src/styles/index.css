@@ -1,0 +1,163 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/manrope';
+
+/*
+ * Lunara.
+ *
+ * The reference is a posed board: a white page carrying white cards, a left
+ * icon rail, and a row of **pastel tiles** that are the design's whole
+ * identity — mint, peach, lilac, pale blue, pale yellow. refscan read
+ * `#ffffff` for three-quarters of the frame, `#355967` for the ink, and those
+ * five tints underneath.
+ *
+ * **Two muted greys, and the split is measured.** A single muted grey cannot
+ * serve both grounds: `#5a6b73` clears 5.55:1 on white but only 4.06:1 on the
+ * lilac tile, which fails. So `--color-muted` is the one for white cards and
+ * `--color-muted-tile` is the darker one every pastel tile uses. Same lesson
+ * as the accent split in the earlier episodes, one layer down.
+ *
+ * The accent needs no split: `#355967` carries white at 7.56:1, so it is both
+ * the mark colour and the fill under white type.
+ *
+ * `static`, because the retention grid and the token tiles take their fill as
+ * an inline `var(--color-…)` and Tailwind tree-shakes theme vars no utility
+ * mentions.
+ */
+@theme static {
+  --color-ground: #f6f8f9;
+  --color-surface: #ffffff;
+  --color-sunken: #f3f5f6;
+  --color-sunken-deep: #e6eaec;
+
+  --color-ink: #15262c;
+  --color-body: #3c4d55;
+  /* 5.55:1 on white. */
+  --color-muted: #5a6b73;
+  /* 6.44:1 on the lilac tile, which is the worst of the five. */
+  --color-muted-tile: #3c4d55;
+  --color-line: #e8ecee;
+
+  --color-accent: #355967;
+  --color-accent-deep: #23404a;
+  --color-accent-soft: #a5d7e4;
+  --color-accent-faint: #e8f4f8;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #1c7a4f;
+  --color-positive-soft: #e3f3ea;
+  --color-danger: #ad3127;
+  --color-danger-soft: #fbe9e7;
+
+  /*
+   * ...and a third pair for the same reason, found by probe.js: #1c7a4f is
+   * 4.51:1 on the mint tile but 3.89:1 on the lilac one, so a 24h chip inside
+   * a pastel tile needs its own darker green and red. 5.36:1 and 5.63:1 at
+   * their worst tile.
+   */
+  --color-positive-tile: #176243;
+  --color-danger-tile: #9a2a21;
+
+  /* The five pastel tiles, in the reference's own order. */
+  --color-tile-mint: #d6f1f8;
+  --color-tile-lilac: #dfd9f3;
+  --color-tile-peach: #fae2c0;
+  --color-tile-sky: #bbe8fb;
+  --color-tile-lemon: #f6f7be;
+
+  /*
+   * The holder-cohort grid, coldest to hottest. **Only the last band carries
+   * white type.** Band 4 was `#3f94ad`, which is 3.47:1 under white and
+   * 4.497:1 under ink — failing *both* ways, by three thousandths. Lightened
+   * to `#4a9db5` it carries ink at 5.04:1, and the white flip moved to band 5.
+   * Both numbers came from probe.js, not from looking at it.
+   */
+  --color-heat-0: #eef8fb;
+  --color-heat-1: #cfeaf2;
+  --color-heat-2: #a5d7e4;
+  --color-heat-3: #6fb9cd;
+  --color-heat-4: #4a9db5;
+  --color-heat-5: #2b6b80;
+
+  --font-sans: 'Manrope Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-card: 18px;
+  --shadow-card: 0 1px 2px rgb(21 38 44 / 0.05);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    background: var(--color-ground);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 10px;
+  }
+
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@layer utilities {
+  .scroll-region::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-sunken-deep);
+    border-radius: 3px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

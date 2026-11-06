@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/plus-jakarta-sans';
+
+/*
+ * Tokens, read off the reference with refscan.py -- never a hex scattered
+ * through a component. Name them for what they do, not what colour they are.
+ *
+ * The split: the reference's lilac `#d5d0f0` is 1.49:1 against white. It is a
+ * *ground* and nothing else -- the hero, a tile, a bar. `--color-accent-deep`
+ * `#594aa8` (7.1:1) is what any word, pill or button uses, and the mid violet
+ * sits between them for a mark that carries no type.
+ */
+@theme static {
+  --color-ground: #f0f0f0;
+  --color-surface: #ffffff;
+  --color-sunken: #f5f5f7;
+  --color-sunken-deep: #e4e4ea;
+  --color-panel: #0b0b0b;
+  --color-panel-fg: #ffffff;
+  --color-panel-muted: #9a9aa4;
+
+  --color-ink: #0b0b0b;
+  --color-ink-fg: #ffffff;
+  --color-body: #343438;
+  --color-muted: #5e5e66;
+  --color-muted-inert: #6c6c76; /* 5.2:1 — inert is not an excuse to be unreadable */
+  --color-line: #e8e8ec;
+
+  --color-accent: #8b7ad6;
+  --color-accent-deep: #594aa8;
+  --color-accent-soft: #b8aee6;
+  --color-accent-faint: #f3f1ff;
+  --color-accent-tint: #d5d0f0;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #2c7a4b;
+  --color-positive-soft: #e5f3ea;
+  --color-danger: #b3362c;
+  --color-danger-soft: #fbece9;
+  --color-warn: #8a6008;
+  --color-warn-soft: #fdf2db;
+
+  /* The three things a week of work divides into, chosen together: each one
+     clears 4.5:1 on white, so a legend, a bar and a figure can share a colour. */
+  --color-calls: #594aa8;
+  --color-focus: #b43f87;
+  --color-async: #2c7a4b;
+
+  --radius-card: 22px;
+  --shadow-card: 0 1px 2px rgb(11 11 11 / 0.05);
+
+  --font-sans:
+    'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ground);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

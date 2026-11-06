@@ -34,6 +34,12 @@ screens, whichever app it is.
    everything that isn't blocked first.
 5. **No git.** Never commit, branch, stage, checkout or reset. These are showcases, not
    shipped code. Back work up by copying files, never with git.
+6. **The design bar.** Every screen passes `node tools/preview/audit.js <slug>` with no
+   FAIL before it is called finished, and the handover quotes the result per screen.
+   The ten rules it enforces — full screen, nothing clipped, nothing colliding,
+   everything readable, copy that is labels and not prose — are in
+   [APP-DESIGN-RULES.md](APP-DESIGN-RULES.md), which is loaded every session and
+   outranks the reference where they disagree.
 
 ## Three kinds of reference
 
@@ -203,6 +209,9 @@ check against the reference is seconds rather than minutes:
 npx expo start --web                                 # once, leave it up
 node tools/preview/shoot.js <slug>/<screen> shot.png # ~7s
 node tools/preview/rows.js shot.png                  # element tops/heights in dp
+node tools/preview/audit.js <slug>                   # the design bar, from the DOM
+node tools/preview/blank.js <slug> ...               # is the blank state really blank
+node tools/preview/dockcheck.js <slug> ...           # bar height, and is its ink centred
 ```
 
 Exporting to check a screen costs ~2.5 minutes; shooting the live dev server costs ~7,
@@ -262,6 +271,14 @@ the first frame is the one that gets recorded.
 The one legitimate exception is a screen whose design ends on a floating bar or a sheet
 that deliberately floats clear of the edge. Say so in the handover; everything else is a
 defect.
+
+**And dead space in the middle is the same defect, which `foot.py` cannot see.** It
+measures from the bottom up and stops at the first thing that paints, so a screen ending
+on a pinned ask bar reads 8dp and passes while carrying 146dp of white across its centre.
+That shipped. `node tools/preview/audit.js <slug>` walks the DOM instead and reports the
+largest empty run *between* blocks — over 48dp is a warning, over 72dp fails — along with
+clipped text, collisions, contrast and copy length. Run both: the pixels for the foot, the
+DOM for everything else.
 
 ### The web render is a proxy, not proof
 
@@ -420,6 +437,47 @@ older copy over your work. `--check` before a take says whether that has happene
 step exists because a marker exists, and its needle is read off the very line it will act
 on — which removes both the authoring cost (141 entries for the second app) and the class
 of bug where a step's needle no longer matches the file.
+
+**And never hand-write the blank file either.** A screen that obeys rule 2 — assembly,
+never markup — is already a complete description of its own reveal: its component imports
+come back one at a time, then the blocks of its JSX appear in the order they are
+assembled. `node tools/timelapse/stage.js <slug>` reads that and writes the blank tree,
+the finished tree, the manifest and the staged mistake; `--dry` prints the plan and writes
+nothing. Twenty-nine screens staged this way in one pass.
+
+```bash
+node tools/timelapse/stage.js <slug> --dry   # the plan: imports, blocks, labels
+node tools/timelapse/stage.js <slug>         # write blank/ + finished/ + manifest
+node tools/timelapse/gen.js <slug>           # markers -> steps.json
+```
+
+Four things it gets right that are easy to get wrong by hand, each of which cost a pass:
+
+- **It finds blocks by indentation, not by counting brackets.** One mis-signed term in a
+  bracket counter chopped a single child into twenty, silently.
+- **It stages the screen's own `return (`, not the first one in the file.** Several of
+  these screens define a local `Glyph` above the default export, and the first `return (`
+  belongs to that — staging it reveals a helper's SVG paths instead of the screen.
+- **It only stages an import whose every use is inside a staged block.** `text.tsx` lives
+  in `components/`, so the `T` primitive looks like a component import — but a local
+  `SectionHead` helper above the export uses it too, and commenting the import out left
+  live code referring to a name that no longer existed. `verify` cannot see that, because
+  it only diffs the finished end of the replay. `rehearse` can.
+- **It refuses to run on a file that is already blank.** `lock` and `rehearse` both leave
+  the tree blank, so the route on disk after a gate run is the staged one — and staging
+  that produces a blank file whose "blocks" are the previous pass's JSX comments, with
+  every import already invisible. It writes cleanly and is completely wrong.
+  `apply.js <slug> final` first.
+
+What it does not do: stage the inside of a composite component, so a row lands whole
+rather than one item at a time. That is a refinement on a correct reveal and is still
+authored per component.
+
+A container that paints — a sheet, a card — is descended into, so its shell is on screen
+in frame one and then fills. That is what a speed-build looks like and it is deliberate:
+refusing to enter anything with a `backgroundColor` collapsed one screen's whole reveal to
+a single step. What must never be live in frame one is *content*, which is what
+`tools/preview/blank.js` measures.
 
 Mistakes are staged **inside the block they belong to**, so they appear as that part of the
 screen is revealed rather than breaking the app from step one. Two shapes, and the choice
@@ -580,10 +638,20 @@ An app is not finished until all of these pass, with the dev server stopped:
 4. `run.py <slug> rehearse` — preflight, replay, typecheck and diff, **per screen**, which
    is the exact path a take walks. Per screen because preflight resets every staged file
    back to blank; one pass over all screens would not exercise that.
-5. Screenshot the blank state of every screen. It is the first frame of every recording and
-   nothing else checks it renders.
+5. `node tools/preview/blank.js <slug> ...` over every screen in **blank** state, exit 0.
+   It is the first frame of every recording and nothing else checks it. A screenshot only
+   answers "does it render", which is the weaker half of the question: what matters is
+   that no *content* is live, so the probe reports any visible text, photograph or drawn
+   mark and a clean blank state has none of the three. Counting colours was the first
+   attempt and is the wrong measure — a card shell left live by a descent is meant to be
+   there, and its rounded corners alone put a few hundred antialiased colours in the
+   frame. Shoot the blank state too, for the record.
 5b. `python tools/preview/foot.py` over the **finished** shot of every screen, with no
    screen over 24dp of dead canvas at the foot. See "Dead space at the foot".
+5c. `node tools/preview/audit.js <slug>` for every screen, exit 0, with every warning
+   either fixed or answered in the handover. This is the check that reads the DOM rather
+   than the pixels, so it catches the band of empty canvas *between* two blocks that
+   `foot.py` structurally cannot see — see [APP-DESIGN-RULES.md](APP-DESIGN-RULES.md).
 6. `run.py <slug> lock` — record the baseline preflight will check against. Then break one
    unstaged file on purpose and confirm preflight reports `DRIFT` and exits 1.
 7. Leave it in blank state.

@@ -1,0 +1,35 @@
+{
+  "url": "http://localhost:5388/",
+  "w": 1440,
+  "h": 900,
+  "settle": 500,
+  "beats": [
+    {
+      "name": "rest"
+    },
+    {
+      "name": "hover-01",
+      "hover": ".hover\\:bg-sunken",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "hover-02",
+      "hover": ".hover\\:bg-white\\/10",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "hover-03",
+      "hover": ".hover\\:text-ink",
+      "rest": true,
+      "against": "rest"
+    },
+    {
+      "name": "hover-04",
+      "hover": ".hover\\:text-white",
+      "rest": true,
+      "against": "rest"
+    }
+  ]
+}

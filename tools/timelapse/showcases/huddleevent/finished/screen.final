@@ -1,0 +1,80 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { ScrollView, View } from 'react-native';
+
+import { FooterBar } from '@/features/huddleevent/components/footer-bar';
+import { GoingRow } from '@/features/huddleevent/components/going-row';
+import { HeroImage } from '@/features/huddleevent/components/hero';
+import { InfoCard } from '@/features/huddleevent/components/info-card';
+import { T } from '@/features/huddleevent/components/text';
+import { copy } from '@/features/huddleevent/data/event';
+import {
+  GAP_ABOUT_BODY,
+  GAP_BODY_GOING,
+  GAP_INFO_ABOUT,
+  MARGIN,
+  SHEET_PAD,
+  useEventLayout,
+} from '@/features/huddleevent/layout';
+import { ct, radius, type } from '@/features/huddleevent/theme';
+import { useInsets } from '@/features/huddleevent/use-insets';
+
+/**
+ * Huddle — one hangout.
+ *
+ * Assembly only: the photograph and what it is, when and where, what it is
+ * like, who is going, and the way in.
+ *
+ * The sheet is pulled up over the foot of the photograph by its own corner
+ * radius, which is what makes it read as a sheet rather than as a second
+ * block. The page scrolls behind an opaque footer whose height the scroll
+ * content pays for, so nothing of the page can end up underneath it.
+ */
+export default function HuddleeventScreen() {
+  const insets = useInsets();
+  const { heroH, footerH } = useEventLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: footerH + insets.bottom + 10 }}
+      >
+        <HeroImage height={heroH} insetTop={insets.top} onBack={() => router.back()} />
+
+        <View
+          style={{
+            marginTop: -radius.sheet,
+            backgroundColor: ct.page,
+            borderTopLeftRadius: radius.sheet,
+            borderTopRightRadius: radius.sheet,
+            paddingHorizontal: MARGIN,
+            paddingTop: SHEET_PAD,
+          }}
+        >
+          <InfoCard />
+
+          <T
+            variant="section"
+            color={ct.ink}
+            style={{ height: type.section.line, marginTop: GAP_INFO_ABOUT }}
+          >
+            {copy.about}
+          </T>
+
+          <T variant="body" color={ct.muted} style={{ marginTop: GAP_ABOUT_BODY }}>
+            {copy.body}
+          </T>
+
+          <View style={{ marginTop: GAP_BODY_GOING }}>
+            <GoingRow />
+          </View>
+        </View>
+      </ScrollView>
+
+      <FooterBar bottom={insets.bottom} />
+    </View>
+  );
+}

@@ -1,0 +1,54 @@
+{
+  "url": "http://localhost:5396/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "trade", "click": "[data-tab='trade']", "settle": 1000, "rest": true },
+
+    { "name": "pair-eth", "click": "[data-group='pair'] [data-segment='ETH']", "settle": 900, "rest": true },
+    { "name": "pair-xrp", "click": "[data-group='pair'] [data-segment='XRP']", "settle": 900, "rest": true },
+    { "name": "pair-btc", "click": "[data-group='pair'] [data-segment='BTC']", "settle": 900, "rest": true },
+
+    { "name": "interval-5m", "click": "[data-group='interval'] [data-segment='5m']", "settle": 900, "rest": true },
+    { "name": "interval-1d", "click": "[data-group='interval'] [data-segment='1d']", "settle": 900, "rest": true },
+    { "name": "interval-1h", "click": "[data-group='interval'] [data-segment='1h']", "settle": 900, "rest": true },
+
+    { "name": "book-bids", "click": "[data-action='book-bids']", "settle": 800, "rest": true },
+    { "name": "book-asks", "click": "[data-action='book-asks']", "settle": 800, "rest": true },
+    { "name": "book-both", "click": "[data-action='book-both']", "settle": 800, "rest": true },
+
+    { "name": "group-1", "click": "[data-group='grouping'] [data-segment='1']", "settle": 800, "rest": true },
+    { "name": "group-10", "click": "[data-group='grouping'] [data-segment='10']", "settle": 800, "rest": true },
+    { "name": "group-fine", "click": "[data-group='grouping'] [data-segment='0.1']", "settle": 800, "rest": true },
+
+    { "name": "level-picked", "click": "[data-level='bid-2']", "settle": 700, "rest": true },
+
+    { "name": "rail-50", "click": "[data-rail='50']", "settle": 700, "rest": true },
+    { "name": "rail-100", "click": "[data-rail='100']", "settle": 700, "rest": true },
+    { "name": "rail-off", "click": "[data-rail='100']", "settle": 700, "rest": true },
+    { "name": "rail-25", "click": "[data-rail='25']", "settle": 700, "rest": true },
+
+    { "name": "type-market", "click": "[data-group='type'] [data-segment='market']", "settle": 800, "rest": true },
+    { "name": "type-stop", "click": "[data-group='type'] [data-segment='stop']", "settle": 800, "rest": true },
+    { "name": "type-limit", "click": "[data-group='type'] [data-segment='limit']", "settle": 800, "rest": true },
+
+    { "name": "sell-side", "click": "[data-group='side'] [data-segment='sell']", "settle": 800, "rest": true },
+    { "name": "buy-side", "click": "[data-group='side'] [data-segment='buy']", "settle": 800, "rest": true },
+
+    { "name": "book-down", "wheel": ["[data-scroller='book']", 200], "settle": 500, "rest": true },
+    { "name": "book-top", "wheel": ["[data-scroller='book']", -200], "settle": 500, "rest": true },
+    { "name": "trades-down", "wheel": ["[data-scroller='trades']", 160], "settle": 500, "rest": true },
+    { "name": "trades-top", "wheel": ["[data-scroller='trades']", -160], "settle": 500, "rest": true },
+
+    { "name": "cancel-order", "click": "[data-action='cancel-o1']", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "inert-otc", "click": "[data-tab='otc']", "against": "light", "expectUnchanged": true },
+    { "name": "inert-analytics", "click": "[data-tab='analytics']", "against": "light", "expectUnchanged": true }
+  ]
+}

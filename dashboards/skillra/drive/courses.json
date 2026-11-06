@@ -1,0 +1,43 @@
+{
+  "url": "http://localhost:5412/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "courses", "click": "[data-tab='courses']", "settle": 1000, "rest": true },
+
+    { "name": "mine", "click": "[data-group='scope'] [data-segment='mine']", "settle": 900, "rest": true },
+    { "name": "all-courses", "click": "[data-group='scope'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "level-advanced", "click": "[data-group='level'] [data-segment='Advanced']", "settle": 900, "rest": true },
+    { "name": "level-beginner", "click": "[data-group='level'] [data-segment='Beginner']", "settle": 900, "rest": true },
+    { "name": "any-level", "click": "[data-group='level'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "sort-rating", "click": "[data-group='sort'] [data-segment='rating']", "settle": 900, "rest": true },
+    { "name": "sort-length", "click": "[data-group='sort'] [data-segment='length']", "settle": 900, "rest": true },
+    { "name": "sort-title", "click": "[data-group='sort'] [data-segment='title']", "settle": 900, "rest": true },
+    { "name": "sort-progress", "click": "[data-group='sort'] [data-segment='progress']", "settle": 900, "rest": true },
+
+    { "name": "pick-typography", "click": "[data-course='c3']", "settle": 900, "rest": true },
+    { "name": "pick-branding", "click": "[data-course='c4']", "settle": 900, "rest": true },
+    { "name": "pick-first", "click": "[data-course='c1']", "settle": 900, "rest": true },
+
+    { "name": "catalogue-down", "wheel": ["[data-scroller='catalogue']", 240], "settle": 500, "rest": true },
+    { "name": "catalogue-top", "wheel": ["[data-scroller='catalogue']", -240], "settle": 500, "rest": true },
+
+    { "name": "track-branding", "click": "[data-track='branding']", "settle": 900, "rest": true },
+    { "name": "track-all", "click": "[data-track='all']", "settle": 900, "rest": true },
+
+    { "name": "search-grid", "fill": ["[data-search='global']", "grid"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "dark", "click": "[data-theme-btn='dark']", "settle": 900, "rest": true },
+    { "name": "light", "click": "[data-theme-btn='light']", "settle": 900, "rest": true },
+
+    { "name": "inert-messages", "click": "[data-tab='messages']", "against": "light", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "light", "expectUnchanged": true }
+  ]
+}

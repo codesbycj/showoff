@@ -1,0 +1,36 @@
+{
+  "url": "http://localhost:5408/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "recordings", "click": "[data-tab='recordings']", "settle": 1000, "rest": true },
+
+    { "name": "unwatched", "click": "[data-group='lens'] [data-segment='unwatched']", "settle": 900, "rest": true },
+    { "name": "all", "click": "[data-group='lens'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "topic-research", "click": "[data-group='topic'] [data-segment='Research']", "settle": 900, "rest": true },
+    { "name": "topic-standup", "click": "[data-group='topic'] [data-segment='Standup']", "settle": 900, "rest": true },
+    { "name": "every-topic", "click": "[data-group='topic'] [data-segment='all']", "settle": 900, "rest": true },
+
+    { "name": "sort-discussed", "click": "[data-group='sort'] [data-segment='discussed']", "settle": 900, "rest": true },
+    { "name": "sort-longest", "click": "[data-group='sort'] [data-segment='longest']", "settle": 900, "rest": true },
+    { "name": "sort-recent", "click": "[data-group='sort'] [data-segment='recent']", "settle": 900, "rest": true },
+
+    { "name": "pick-billing", "click": "[data-recording='r3']", "settle": 900, "rest": true },
+    { "name": "pick-demo", "click": "[data-recording='r5']", "settle": 900, "rest": true },
+    { "name": "pick-first", "click": "[data-recording='r1']", "settle": 900, "rest": true },
+
+    { "name": "library-down", "wheel": ["[data-scroller='library']", 260], "settle": 500, "rest": true },
+    { "name": "library-top", "wheel": ["[data-scroller='library']", -260], "settle": 500, "rest": true },
+
+    { "name": "search-pricing", "fill": ["[data-search='global']", "pricing"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='global']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "inert-files", "click": "[data-tab='files']", "against": "search-cleared", "expectUnchanged": true },
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "search-cleared", "expectUnchanged": true }
+  ]
+}

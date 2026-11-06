@@ -1,0 +1,36 @@
+{
+  "url": "http://localhost:5392/",
+  "w": 1440,
+  "h": 900,
+  "wait": 6500,
+  "settle": 650,
+  "beats": [
+    { "name": "rest" },
+    { "name": "shipments", "click": "[data-tab='shipments']", "settle": 1000, "rest": true },
+
+    { "name": "state-transit", "click": "[data-state='in-transit']", "settle": 800, "rest": true },
+    { "name": "state-delivered", "click": "[data-state='delivered']", "settle": 800, "rest": true },
+    { "name": "state-cleared", "click": "[data-state='delivered']", "settle": 800, "rest": true },
+
+    { "name": "sort-weight", "click": "[data-group='sort'] [data-segment='weight']", "settle": 800, "rest": true },
+    { "name": "sort-loads", "click": "[data-group='sort'] [data-segment='loads']", "settle": 800, "rest": true },
+    { "name": "sort-start", "click": "[data-group='sort'] [data-segment='start']", "settle": 800, "rest": true },
+
+    { "name": "list-down", "wheel": ["[data-scroller='shipments']", 200], "settle": 500, "rest": true },
+    { "name": "list-top", "wheel": ["[data-scroller='shipments']", -200], "settle": 500, "rest": true },
+
+    { "name": "row-open", "click": "[data-row='sh2']", "settle": 800, "rest": true },
+    { "name": "row-other", "click": "[data-row='sh6']", "settle": 800, "rest": true },
+    { "name": "row-closed", "click": "[data-row='sh6']", "settle": 800, "rest": true },
+
+    { "name": "search-rockford", "fill": ["[data-search='shipments']", "rockford"], "settle": 900, "rest": true },
+    { "name": "search-empty", "fill": ["[data-search='shipments']", "zzzz"], "settle": 900, "rest": true },
+    { "name": "search-cleared", "click": "[data-search-clear]", "settle": 900, "rest": true },
+
+    { "name": "new-shipment", "click": "[data-action='new-shipment']", "settle": 1000, "rest": true },
+    { "name": "back-shipments", "click": "[data-tab='shipments']", "settle": 1000, "rest": true },
+
+    { "name": "inert-settings", "click": "[data-tab='settings']", "against": "back-shipments", "expectUnchanged": true },
+    { "name": "inert-reports", "click": "[data-tab='reports']", "against": "back-shipments", "expectUnchanged": true }
+  ]
+}

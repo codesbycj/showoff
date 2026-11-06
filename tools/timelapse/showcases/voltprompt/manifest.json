@@ -1,7 +1,0 @@
-{
- "prompt-screen": "src/app/voltprompt/index.tsx",
- "prompt-head": "src/features/voltprompt/components/prompt-head.tsx",
- "hour-chart": "src/features/voltprompt/components/hour-chart.tsx",
- "tool-rail": "src/features/voltprompt/components/tool-rail.tsx",
- "ask-bar": "src/features/voltprompt/components/ask-bar.tsx"
-}

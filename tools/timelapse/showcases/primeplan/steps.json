@@ -1,0 +1,94 @@
+{
+ "1": [
+  {
+   "op": "imp",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "@/features/primeplan/components/text"
+   ],
+   "label": "import text"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.02"
+   ],
+   "label": "linear gradient"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.03"
+   ],
+   "label": "\"Back\""
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.04"
+   ],
+   "label": "count"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.05"
+   ],
+   "label": "plan title"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.06"
+   ],
+   "label": "name"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.07"
+   ],
+   "label": "fine"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.08"
+   ],
+   "label": "cta"
+  },
+  {
+   "op": "jsx",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "STEP 1.09"
+   ],
+   "label": "a stray gap under it"
+  },
+  {
+   "op": "cutel",
+   "args": [
+    "src/app/primeplan/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ],
+   "label": "take the gap back out"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "screen",
+     "src/app/primeplan/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

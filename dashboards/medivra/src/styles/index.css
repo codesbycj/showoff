@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/figtree';
+
+/*
+ * Tokens, read off the reference with refscan.py -- never a hex scattered
+ * through a component. Name them for what they do, not what colour they are.
+ *
+ * The split: the reference's sage `#748d53` is 3.70:1 against white, which
+ * clears the 3:1 a graphic needs and fails the 4.5:1 type needs. So it is the
+ * *mark* colour -- the logo tile, a ring's track, a bar, a dot -- and
+ * `--color-accent-deep` (6.1:1) is what any word, pill or button uses.
+ *
+ * The clinical colours are not decoration. An early-warning band is read
+ * across a ward at a glance, so each one carries its own ground *and* a text
+ * colour that clears 4.5:1 on that ground.
+ */
+@theme static {
+  --color-ground: #eceeea;
+  --color-surface: #ffffff;
+  --color-sunken: #f4f6f1;
+  --color-sunken-deep: #e2e7da;
+
+  --color-ink: #16201a;
+  --color-ink-fg: #ffffff;
+  --color-body: #343a37;
+  --color-muted: #5c6360;
+  --color-line: #e6e9e2;
+  /* An inert destination still has to be readable: 4.8:1, and the cursor,
+     the dimming and `aria-disabled` are what say it cannot be used. */
+  --color-muted-inert: #6a706c;
+
+  --color-accent: #748d53;
+  --color-accent-deep: #4e6a2f;
+  --color-accent-soft: #c3d2ad;
+  --color-accent-faint: #eef3e6;
+  --color-accent-fg: #ffffff;
+
+  --color-positive: #2f6d3c;
+  --color-positive-soft: #e6f2e7;
+  --color-danger: #b3261e;
+  --color-danger-soft: #fbeae9;
+  --color-warn: #8a6a08;
+  --color-warn-soft: #fdf3dc;
+
+  /* The three NEWS-style escalation bands. Ground and ink are a pair: the
+     band's chip carries type, so neither half is chosen on its own. */
+  --color-band-low: #2f6d3c;
+  --color-band-low-wash: #e6f2e7;
+  --color-band-mid: #8a6a08;
+  --color-band-mid-wash: #fdf3dc;
+  --color-band-high: #b3261e;
+  --color-band-high-wash: #fbeae9;
+
+  --radius-card: 18px;
+  --shadow-card: 0 1px 2px rgb(22 32 26 / 0.05);
+
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ground);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    /* A dashboard is a shell: the document itself never scrolls (rule 3). */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-deep);
+    outline-offset: 2px;
+  }
+}
+
+@utility tnum {
+  /* Every observation, dose and time on this build. A ward list is read down
+     its columns, and proportional figures cannot be. */
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+
+@utility scroll-region {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sunken-deep) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Not a shorter duration: entrances do not play at all, and whatever is
+     switched off still has to leave the dashboard usable. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
