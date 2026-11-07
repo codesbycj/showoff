@@ -4,7 +4,7 @@ Bake the photographs for the three `volley` showcases.
     python tools/bake/volley.py
 
 A sports-events app is made of pictures of courts and the people on them, so
-the hero and every event card is a bitmap (AGENTS.md, "Draw the interface,
+the hero and every event card is a bitmap (RULES.md, "Draw the interface,
 photograph the picture"). Everything over them — the chips, the date tile, the
 badges, the podium, the dock — is drawn.
 

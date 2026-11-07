@@ -4,7 +4,7 @@ Bake the miles board's photography.
     python tools/bake/miles.py
 
 The reference scatters 3D renders of food and gadgets over a blue page. Those
-cannot be recreated and must not be traced badly (AGENTS.md, "A 3D render in
+cannot be recreated and must not be traced badly (RULES.md, "A 3D render in
 the shot"), so each one is stood in for by a free-licensed photograph cut off
 its backdrop — a burger, a coffee cup, a pair of hot dogs, a pair of game
 controllers. A burger is a specific subject and squarely out of drawing range;

@@ -44,7 +44,7 @@ const INSETS = (process.env.SHOOT_INSETS || '59,0,34,0').split(',').map(Number);
 
 function probe() {
   const style = (el) => window.getComputedStyle(el);
-  const out = { text: [], img: [], svg: [], grounds: [] };
+  const out = { text: [], img: [], svg: [], shell: [], grounds: [] };
 
   const shown = (el) => {
     const s = style(el);
@@ -65,7 +65,23 @@ function probe() {
       continue;
     }
     if (tag === 'svg') {
-      out.svg.push(box);
+      // A full-bleed <svg> is the page's ground, not content: several of
+      // these designs paint their background as a gradient rather than a
+      // flat fill, and that is the drawn equivalent of a `backgroundColor`
+      // on the root, which is live in frame one on every screen here.
+      // `audit.js` draws the same line for the same reason.
+      if (r.width >= 391 && r.height >= 850) {
+        out.grounds.push('svg ' + box);
+        continue;
+      }
+      // An <svg> whose shapes are all staged out paints nothing - the
+      // element is still in the tree but the frame is flat. Count the shapes
+      // that would actually mark the page, ignoring anything inside <defs>,
+      // which only defines gradients and clips.
+      const marks = Array.from(
+        el.querySelectorAll('path,circle,rect,ellipse,line,polygon,polyline,text,image,use'),
+      ).filter((m) => !m.closest('defs'));
+      if (marks.length) out.svg.push(box + ' ' + marks.length + ' marks');
       continue;
     }
     // A leaf with characters in it. The status bar is not part of the app.
@@ -73,10 +89,13 @@ function probe() {
       const t = (el.textContent || '').trim();
       if (t) out.text.push(box + ' ' + JSON.stringify(t.slice(0, 40)));
     }
-    // What is painting the ground, for the report line only.
+    // A painted box. Full-bleed is the page's ground and is always live;
+    // anything smaller is a shell the reveal left behind - a sheet, a card,
+    // a disc - and it is on screen before the first step runs.
     const bg = style(el).backgroundColor;
-    if (bg && bg !== 'rgba(0, 0, 0, 0)' && r.width * r.height > 393 * 852 * 0.08) {
-      out.grounds.push(bg + ' ' + box);
+    if (bg && bg !== 'rgba(0, 0, 0, 0)' && r.width * r.height > 200) {
+      if (r.width >= 391 && r.height >= 850) out.grounds.push(bg + ' ' + box);
+      else out.shell.push(bg + ' ' + box);
     }
   }
   return out;
@@ -180,10 +199,17 @@ const chrome = spawn(
     await new Promise((x) => setTimeout(x, 900));
     const res = await send('Runtime.evaluate', { expression: call, returnByValue: true });
     const v = (res && res.result && res.result.value) || {};
-    const n = (v.text || []).length + (v.img || []).length + (v.svg || []).length;
+    const n =
+      (v.text || []).length + (v.img || []).length + (v.svg || []).length + (v.shell || []).length;
     const grounds = [...new Set(v.grounds || [])].length;
     if (n === 0) {
       console.log(`${slug.padEnd(14)} blank  (${grounds} ground${grounds === 1 ? '' : 's'})`);
+      // The shapes that are painting, for when the shot is not one flat
+      // colour: a shell left live by a descent is legitimate, but it is worth
+      // being able to name it rather than guess.
+      if (process.env.BLANK_GROUNDS) {
+        for (const g of [...new Set(v.grounds || [])]) console.log(`    GROUND ${g}`);
+      }
       continue;
     }
     bad += 1;
@@ -195,6 +221,7 @@ const chrome = spawn(
     for (const x of (v.text || []).slice(0, 6)) console.log(`    TEXT  ${x}`);
     for (const x of (v.img || []).slice(0, 6)) console.log(`    IMG   ${x}`);
     for (const x of (v.svg || []).slice(0, 6)) console.log(`    SVG   ${x}`);
+    for (const x of (v.shell || []).slice(0, 8)) console.log(`    SHELL ${x}`);
   }
 
   ws.close();

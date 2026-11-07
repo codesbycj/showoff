@@ -2,7 +2,7 @@
 
 The shots are `ref/batch2/<family>.png`, named after the showcase family they became —
 `lark.png` is the board that became `larkpick`, `larkhome` and `larkquiz`. Each is an
-**inspo brief** (AGENTS.md, "Three kinds of reference"): match the spirit, build at real
+**inspo brief** (RULES.md, "Three kinds of reference"): match the spirit, build at real
 393dp sizes, fill the screen, fix the reference's mistakes, and say which calls were mine.
 
 **One showcase per screen.** A three-phone board is three showcases with three slugs, not
@@ -44,11 +44,11 @@ Status: `todo` → `built` → `staged` (blank/final registered) → `done` (gat
 | 62 | `volley.png` | Padel / sports events, dark green | 3 | `volleyhome` · `volleyrank` · `volleyevent` | **done** |
 
 **28 showcases.** Every brand name is invented; none of the references' own marks are
-copied (AGENTS.md, "Sourcing assets").
+copied (RULES.md, "Sourcing assets").
 
 ## What is a photograph in this batch, and what is drawn
 
-The split is the one AGENTS.md sets: the interface is vectors, the pictures are bitmaps.
+The split is the one RULES.md sets: the interface is vectors, the pictures are bitmaps.
 
 **Photographs** — free-licensed stock, bundled, credited in each showcase's `CREDITS.md`:
 

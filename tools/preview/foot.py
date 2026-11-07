@@ -15,7 +15,7 @@ after two cards, reads 84dp. Against the screen edge those three are
 indistinguishable; against the safe area they are 4, 10 and 50.
 
 Why this exists: "look at the last shot of every screen for dead space" was in
-AGENTS.md as an instruction to eyeball, and two showcases shipped with a band of
+RULES.md as an instruction to eyeball, and two showcases shipped with a band of
 empty canvas under the last block anyway. It is hard to see while building
 because the window is taller than the phone and the eye reads the gap as margin.
 It is trivial to see as a number.

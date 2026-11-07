@@ -9,7 +9,7 @@ masking at runtime is the only option that works: React Native has no chroma
 key, and a rectangular photo over a purple card is a different design.
 
 The subjects are a person and a spacesuit — large, specific things, which
-AGENTS.md puts outside drawing range. The confetti and the blobs around them
+RULES.md puts outside drawing range. The confetti and the blobs around them
 are drawn, because those are flat marks.
 
 Sources are free-licensed Pexels photographs; the ids are credited in

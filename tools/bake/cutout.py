@@ -4,7 +4,7 @@ Lift a subject off a plain backdrop and write it as a transparent PNG.
     python tools/bake/cutout.py <src> <out.png> [--tol 34] [--feather 1.6]
                                [--trim] [--width 900] [--gray] [--contrast 1.0]
 
-The method is the one AGENTS.md describes under "Sourcing assets": flood fill
+The method is the one RULES.md describes under "Sourcing assets": flood fill
 inwards from the border, then ramp the alpha over the last couple of pixels so
 the edge stays soft. A hard threshold leaves a jagged outline that reads as a
 mistake on every frame of a video; a ramp does not.

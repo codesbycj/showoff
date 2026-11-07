@@ -4,7 +4,7 @@
 
 **These are photographs, not drawings.** A bicycle is a large specific subject
 and vectoring one produces a cartoon of a bike where the design had a bike
-(AGENTS.md, "Know what is in drawing range"). Clean product shots of bikes on
+(RULES.md, "Know what is in drawing range"). Clean product shots of bikes on
 a studio sweep turned out not to exist in free stock, so these are crops of
 real bikes in real places — the same answer `mileshome` reached for its
 category cards: the photograph is a crop, not a cut-out, and it fills the

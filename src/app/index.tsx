@@ -1,6 +1,6 @@
 import { Redirect } from 'expo-router';
 
-/** The app opens on the showcase currently being built or recorded. */
+/** No showcase yet — scaffold one with tools/showcase.js new <slug>. */
 export default function Index() {
-  return <Redirect href="/acropay" />;
+  return <Redirect href="/_sitemap" />;
 }

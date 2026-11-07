@@ -3,7 +3,7 @@ Bake the Delivery board's one photograph.
 
     python tools/bake/dropolivia.py
 
-A lorry is a large, specific subject and out of drawing range (AGENTS.md,
+A lorry is a large, specific subject and out of drawing range (RULES.md,
 "Know what is in drawing range"), so the reference's cut-out lorry is stood in
 for by a free-licensed photograph. It is a **crop, not a cut-out**: every stock
 lorry is photographed on a road, and a flood fill on that backdrop leaves a

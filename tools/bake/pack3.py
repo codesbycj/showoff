@@ -7,7 +7,7 @@ Every one of these is a **crop**, not a cut-out. Each subject is either a scene
 (a group of friends shot from below, a deli counter) or already sits in a
 rounded frame in the design, so there is no backdrop to remove — and a flood
 fill on a photographed room leaves a halo that shows on every frame of a video
-(AGENTS.md, "Sourcing assets").
+(RULES.md, "Sourcing assets").
 
 What is *not* here is as deliberate: the Eats screen's product tiles, its
 category glyphs and the Nutrilens progress rings are drawn, because a cable, a

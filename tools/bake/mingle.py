@@ -4,7 +4,7 @@ Bake the photographs for the two `mingle` showcases.
     python tools/bake/mingle.py
 
 A dating app is made of pictures of people, so almost everything on these two
-screens is a bitmap (AGENTS.md, "Faces are photographs"). Initials on a disc
+screens is a bitmap (RULES.md, "Faces are photographs"). Initials on a disc
 would not merely look unfinished here — the constellation on the first screen
 and the whole of the second screen *are* the photographs.
 

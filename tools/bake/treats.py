@@ -14,7 +14,7 @@ the pack in one image, with no edge to key.
 
 The pouch is blank on purpose. A real snack pack carries someone else's
 trademark, and this board's own name goes on the pack as drawn type in
-`pack-card.tsx` — which is the split AGENTS.md asks for: the object is a
+`pack-card.tsx` — which is the split RULES.md asks for: the object is a
 photograph, the wordmark is drawn.
 
 **The snack shots** are loose crisps and a snack flatlay, cropped to the

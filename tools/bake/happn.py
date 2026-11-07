@@ -8,7 +8,7 @@ exactly that is scarce, so each hero here is a **composite**: a studio portrait
 cut off its white sweep and laid over a sky photograph. Both halves are
 free-licensed; the join is a flood fill with a feathered alpha, which is clean
 because the sweep is a flat 255 with a standard deviation under one level
-(AGENTS.md, "Sourcing assets").
+(RULES.md, "Sourcing assets").
 
 A person is out of drawing range, so neither half is drawn. The big ghost
 wordmark the reference puts behind the figure *is* drawn, in the screen.

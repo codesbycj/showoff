@@ -5,7 +5,7 @@
 A tag's thumbnail is 30dp square, so 120px covers it at 4x with room for a
 larger phone. They are *photographs* and not drawn marks on purpose: a place
 is a picture of somewhere, which is out of drawing range however small it ends
-up on screen (AGENTS.md, "Know what is in drawing range").
+up on screen (RULES.md, "Know what is in drawing range").
 
 Each is centre-cropped to a square rather than squashed, written as JPEG q86 —
 at 120px that is about 5KB a file, so all seven together cost less than one

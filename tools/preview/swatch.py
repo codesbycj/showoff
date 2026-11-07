@@ -1,8 +1,8 @@
 """Read exact colours and sizes out of a reference image.
 
-    python tools/preview/swatch.py ref/batch3/11.png                 # size + corner/ground
-    python tools/preview/swatch.py ref/batch3/11.png 120,300 400,900 # specific points
-    python tools/preview/swatch.py ref/batch3/11.png --band 300 0 400  # row 300, x 0..400
+    python tools/preview/swatch.py ref/batch3/clove-board.png                 # size + corner/ground
+    python tools/preview/swatch.py ref/batch3/clove-board.png 120,300 400,900 # specific points
+    python tools/preview/swatch.py ref/batch3/clove-board.png --band 300 0 400  # row 300, x 0..400
 
 Points are in the image's own pixels. A design shot is a posed board, so this
 is for *palette*, never for a dp scale -- see the inspo-brief rules.

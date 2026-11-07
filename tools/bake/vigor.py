@@ -5,7 +5,7 @@ Bake the photographs for the two `vigor` showcases.
 
 **The reference draws its article art as flat illustrations of people.** A
 drawn person is a picture *of* someone, which is the bitmap side of the split
-(AGENTS.md, "Draw the interface, photograph the picture") — and a hand-vectored
+(RULES.md, "Draw the interface, photograph the picture") — and a hand-vectored
 figure is the same mistake as a hand-vectored map: reproducing an arrangement
 rather than expressing an idea. So the article cards carry photographs of
 people training, as the plan cards already do in the reference itself.

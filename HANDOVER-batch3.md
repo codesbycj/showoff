@@ -271,106 +271,129 @@ logos, a neon shopfront whose own signage filled two feed posts, and a yoga
 frame cropped above a cafe's sign. A black-and-white bare tree was swapped
 for a turquoise lake on Glu — "peace of mind" should not read as bleak.
 
+
 ## Staging — all 29 recordable
 
-Every screen is staged, locked and left in blank state. A take is the usual
-two commands:
+Every screen is staged, locked and left in blank state. A take is:
 
 ```bash
-node tools/record.js <slug>                     # use -> preflight -> start -> reveal
+node tools/record.js <slug>                          # use -> preflight -> start -> reveal
 python tools/timelapse/run.py <slug> 1 --delay 1.5   # or drive the reveal by hand
 ```
 
-Reveals run 6-18 steps: the showcase's component imports come back one at a
-time, then the blocks of the screen's JSX in assembly order, then one staged
-mistake and its fix. Step counts per screen are in each
-`tools/timelapse/showcases/<slug>/steps.json`.
+Step counts, 21–39 (the floor is 20):
 
-### The blank files are generated, not written
-
-`tools/timelapse/stage.js` is new. A screen that obeys rule 2 is already a
-complete description of its own reveal, so the stager reads the route file and
-writes the blank tree, the finished tree, the manifest and the staged mistake.
-29 screens in one pass; the previous app cost 141 hand-written step entries.
-
-Four faults it was taught, each found by a gate that the previous one missed:
-
-1. **It staged a helper's `return (`, not the screen's.** Eight screens define
-   a local `Glyph` above the default export, so the first `return (` in the
-   file is that component's — the reveal was its SVG paths. The regex meant to
-   anchor on `export default function` held a literal backspace byte where a
-   `\b` was intended, so it matched nothing and the search silently fell
-   through to line 0. Authored through a shell, which `AGENTS.md` already
-   warns about; the symptom is a regex that looks correct in every editor.
-2. **It commented out an import that unstaged code still used.** `text.tsx`
-   lives under `components/`, so the `T` primitive looked like a component
-   import — but a `SectionHead` helper above the export uses it too. Four
-   `TS2304`s in the blank state of bytehome, which `verify` cannot see because
-   it only diffs the finished end of the replay. `rehearse` caught it. An
-   import is now staged only if every use of it is inside a staged block;
-   that holds one import back on bytehome, atlasfeed, gluhome and driftfeed.
-3. **It staged its own output.** `lock` and `rehearse` both leave the tree
-   blank, so re-running the stager after a gate pass read the blank file and
-   produced a blank-of-a-blank: imports already invisible, "blocks" that were
-   the previous pass's JSX comments. It wrote cleanly and was entirely wrong.
-   The stager now refuses a file that already carries STEP markers.
-4. **A coloured spacer is not a spacer.** `<View style={{ flex: 1,
-   backgroundColor: ct.sheet }} />` matched the spacer exemption and was left
-   out of the reveal, so it painted from frame one. On clovehome it happened
-   to match the page colour and got away with it.
-
-### Blank states are measured, not looked at
-
-`tools/preview/blank.js` is new and is now done-gate step 5. Counting colours
-was the first attempt and is the wrong measure: a sheet or card shell left live
-by a descent is *meant* to be there, and its rounded corners alone put a few
-hundred antialiased colours in the frame. The probe reads the DOM instead and
-reports the three things that are never legitimately in a first frame —
-visible text, a photograph, a drawn mark.
-
-All 29: **0 text, 0 img, 0 svg**, and all 29 shoot as a single flat colour.
-
-Two needed a change to get there. **acropay** opened on its empty white sheet
-over the pink page (92/8) and **wanderhome** on its empty white sheet over the
-black page (58/42) — in both cases the sheet's `backgroundColor` sat on the
-container whose children are staged, so the shell painted from frame one. The
-fill moved to an absolutely-filled child, which becomes a step of its own:
-
-```tsx
-<View style={{ height: sheetH, paddingHorizontal: MARGIN, paddingTop: SHEET_PAD }}>
-  <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-                 backgroundColor: ct.sheet, borderTopLeftRadius: radius.sheet,
-                 borderTopRightRadius: radius.sheet }} />
-  ...
-</View>
+```
+clovestart   22   huddleevent  23   bytestart    21   pallyprofile 25   glutrack     21   stridprofile 22
+clovehome    33   wanderhome   22   bytehome     34   atlasfeed    21   gluask       22   tripfeed     22
+clovestats   38   wanderstay   23   byteactivity 25   acropay      27   glucompanion 32   driftfeed    21
+huddlehome   39   wandertrips  23   fernstart    22   lootwin      21   gluwhy       22   meetprofile  21
+                                    fernhome     21   nudgehome    21   gluhome      23
+                                    fernreport   26   primeplan    21
 ```
 
-Both re-audit at **no failures, 0 warnings** and **0dp dead at the foot**, so
-the finished render is unchanged; acropay's reveal went 13 -> 16 steps and
-wanderhome's 15 -> 17. Shots of every blank state are in `shots/batch3-blank/`.
+### Element-level, which is three levels
+
+The first pass staged only the screen file and came out at 7–18 steps: a `<CardRail />`
+landed whole, which is exactly what `RULES.md` says not to do. Reveals now stage, per
+block and in this order:
+
+1. **the screen's JSX block** — the shell of that part appears
+2. **the component it mounts, internally** — and the components *that* mounts, to a depth
+   of four — so the shell fills piece by piece
+3. **the data array it renders** — one entry at a time, so a rail fills card by card
+
+`tools/timelapse/stage.js` generates all of it from the source and **exits 1 under 20
+steps**. The floor is a gate, not a note that scrolls past.
+
+### Six screens were markup, not assembly
+
+They could not reach 20 by any amount of descent, because there was nothing to descend
+into — which is a rule-2 violation nothing had been measuring. Extracting their blocks
+into real components fixed both at once:
+
+| Screen | was | now | extracted |
+|---|---|---|---|
+| `driftfeed` | 11 | 21 | `post` `top-bar` `dock` `glyph`, plus a `layout.ts` |
+| `glutrack` | 12 | 21 | `hero-card` `reading-pill` `intro` `pager` `next-button` `drop` `tick` |
+| `gluask` | 13 | 22 | `chat-card` `dot-grid` `reply-bubble` `prompt-block` `intro` `pager` `next-button` |
+| `glucompanion` | 15 | 32 | `intro` `pager` `start-buttons` `legal-line`, `mascot.tsx` → `orb.tsx` |
+| `gluwhy` | 10 | 22 | `intro` `feature-list` `feature-row` `cta-button` `glyph` |
+| `lootwin` | 19 | 21 | (reached the floor on a second staged mistake) |
+
+Every one of them still audits at **no failures** and its foot is unchanged within a
+dp or two. The one real slip: `glucompanion`'s root carried a literal near-black that is
+not in its theme, and the rewrite put `ct.page` there — an off-white — which turned every
+white string on the screen invisible and showed up as three `CONTRAST` FAILs. It is now a
+`night` token in that showcase's `theme.ts`. The blank-state shots are what caught it:
+the recorded ground was `#0C0C0D` and the new one was not.
+
+### A mistake is a beat, so sparse screens get two
+
+Where a screen's structure genuinely bottoms out, the stager stages a second (and if
+needed a third) deliberate mistake rather than padding with invisible steps. A mistake
+always shows on screen and is then corrected, which is what the format is for; a
+one-block component mounting and showing nothing is a frame where nothing changes.
+
+### Blank states are measured, and nothing paints in frame one
+
+`tools/preview/blank.js` is new and is done-gate step 5. It reads the DOM and reports the
+four things that are never legitimately in a first frame — visible text, a photograph, a
+drawn mark, and any painted box that is not the full-bleed ground.
+
+**All 29: 0 text, 0 img, 0 svg, 0 shell, and all 29 shoot as a single flat colour.**
+
+Seven screens needed the fill moved off a container and onto an absolutely-filled child,
+which makes it a step instead of scenery: `acropay` and `wanderhome` (sheet over a
+coloured page), `bytehome` (sheet over the dark head), `stridprofile` (the profile card),
+`tripfeed` (the add-story tile), `lootwin` (the violet card and a translucent chip) and
+`primeplan` (a card whose shadow had to move with the fill — left behind, an emptied card
+still paints its 32dp of padding with a shadow under it).
+
+`nudgehome`'s `days` array needed an explicit type: the reveal stages its rows one at a
+time, and the only row carrying `today` is commented out in the blank state, so the
+inferred type lost the property and `tsc` failed on a file nobody had touched.
+
+### Two faults in the stager worth recording
+
+- **The anchor regex held a literal backspace byte** where a `\b` was meant, from being
+  authored through a shell. It matched nothing, so `findIndex` returned -1 and the stager
+  silently staged a local `Glyph` helper's SVG paths instead of the screen. It renders
+  correctly in every editor; only `od -c` shows it.
+- **A descended region's last child came back one line short**, leaving the `</T>` that
+  closed it outside the staged comment — four `TS17002`s in a blank file, invisible to
+  `verify` because `verify` only diffs the finished end of the replay. `wrapBlock` now
+  counts opens against closes and pulls the end forward until the region balances.
 
 ### Done-gate
 
 ```
-1. tsc --noEmit                      clean across all of src/
-2. expo export --platform android    ok - android bundle 4.4MB
-3. run.py <slug> verify              29/29 "1/1 files identical to finished"
-4. run.py <slug> rehearse            29/29 "all screens replay and typecheck, left blank"
-5. blank.js <slug>                   29/29 blank - 0 text, 0 img, 0 svg,
-                                     and 29/29 a single flat colour in the shot
-5b. foot.py                          unchanged from the build pass (staging restores
-5c. audit.js                         every file byte-identical, proved by verify)
+1. tsc --noEmit                      clean in finished state and in blank state
+2. expo export --platform android    ok - android bundle 4.45MB (run it FINISHED; run it
+                                     blank and it bundles almost nothing and still passes)
+3. run.py <slug> verify              29/29 every staged file identical to finished
+                                     (2-9 files per showcase now, not 1)
+4. run.py <slug> rehearse            29/29 replay and typecheck, left blank
+5. blank.js <slug>                   29/29 blank - 0 text, 0 img, 0 svg, 0 shell;
+                                     29/29 a single flat colour in the shot
+5b. foot.py                          re-measured on every screen whose source changed;
+5c. audit.js                         all no failures. primeplan keeps its 3 known
+                                     avatar-stack warnings and gluwhy its 55dp gap
 6. run.py <slug> lock                29/29 recorded; drift test on meetprofile/theme.ts
                                      reported DRIFT and exited 1, clean after restore
 7. left in blank state               yes, all 29
 ```
 
-5b and 5c were re-run on acropay and wanderhome, the two screens whose source
-changed, and not on the other 27: `verify` proves their finished state is
-byte-identical to what was audited during the build and the review pass, so
-their rendered pixels cannot have moved. The per-screen audit and foot figures
-above still stand.
+## References renamed to the builds
 
-Run the export in **finished** state. Run blank, it bundles only the assets the
-uncommented imports still reach — 3.7KB of metadata against 7.2KB — and
-succeeds, which reads as a pass and checks almost nothing.
+`ref/batch3/` was numbered `11.png`–`27.png` with `-left`/`-mid`/`-right`/`-c` crops.
+Every reference is now named for the screen it produced — `wanderstay.png`,
+`byteactivity.png`, `pallyprofile-crop.png` — and the boards carrying two or three posed
+phones take the app's name: `clove-board.png`, `wander-board.png`, `byte-board.png`,
+`fern-board.png`, `glu-board.png` (plus `-top`/`-bot`).
+
+The mapping was measured, not guessed: each crop was matched against the 29 finished shots
+by palette-and-distribution signature, then constrained by the app table above. The 20
+citations in `theme.ts` comments and `swatch.py` were repointed with it. The stock and
+working files (`sheet-*`, `wander-fjord`, `huddle-yoga`, …) keep their own names — they
+are asset sources, not references, and several feed more than one screen.

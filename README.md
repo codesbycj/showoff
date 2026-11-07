@@ -4,7 +4,7 @@ Three series of UI rebuilds, recorded as videos. One repository, three sets of r
 
 | Series | What an episode is | How it is filmed | Rules |
 |---|---|---|---|
-| **apps** — this project's root | One app screen in Expo + NativeWind, one showcase per screen | A speed-build reveal: the UI appears a component at a time | [AGENTS.md](AGENTS.md) |
+| **apps** — this project's root | One app screen in Expo + NativeWind, one showcase per screen | A speed-build reveal: the UI appears a component at a time | [RULES.md](RULES.md) |
 | **[websites/](websites)** — closed at episode 10 | One business's site, shown bad and rebuilt, with a crossfade | A toggle between Before CJ and After CJ | [websites/README.md](websites/README.md) |
 | **[dashboards/](dashboards)** — current | One dashboard design, three working tabs, the rest inert | No reveal: a cursor using the finished thing | [dashboards/README.md](dashboards/README.md) |
 

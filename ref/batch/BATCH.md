@@ -4,7 +4,7 @@ The shots are `ref/batch/<family>.png`, named after the showcase family they bec
 `brisk.png` is the board that became `briskhome` and `briskcase`. They arrived
 numbered 25-41 and the Shot column keeps those numbers, because the skip note and the
 build order refer to them. Each is an **inspo
-brief** (AGENTS.md, "Three kinds of reference"): match the spirit, build at real 393dp
+brief** (RULES.md, "Three kinds of reference"): match the spirit, build at real 393dp
 sizes, fill the screen, fix the reference's mistakes, and say which calls were mine.
 
 **One showcase per screen.** A three-phone board is three showcases with three slugs,
@@ -40,7 +40,7 @@ Status: `todo` → `built` → `staged` (blank/final registered) → `done` (gat
 | 41 | `focal.png` | Focus/productivity, white + blue/violet/lime | 3 | `focalhome` · `focalstart` · `focalplan` | **done** |
 
 **42 showcases.** Every brand name is invented; none of the references' own marks are
-copied (AGENTS.md, "Sourcing assets").
+copied (RULES.md, "Sourcing assets").
 
 ## Two rules this batch exists to not break again
 

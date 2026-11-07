@@ -10,7 +10,7 @@ into this brand's green and apricot. Duotone rather than a cut-out: the pouch
 is white against a pale grey sweep, which is the one contrast a flood fill
 cannot find, and the reference's packs sit on a tinted panel anyway. The pack
 is blank on purpose — the brand's own name goes on it as drawn type in the
-component, which is the split AGENTS.md asks for.
+component, which is the split RULES.md asks for.
 
 **The bites** are a real photograph cut off a marble sweep. A snack is a
 specific object and out of drawing range; a vector of one comes out a cartoon.

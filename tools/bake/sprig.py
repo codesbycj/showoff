@@ -4,7 +4,7 @@ Bake the photographs for the three `sprig` showcases.
     python tools/bake/sprig.py
 
 Food is a picture *of* something, so it is a bitmap here and not a drawing
-(AGENTS.md, "Draw the interface, photograph the picture"). A drawn bowl of
+(RULES.md, "Draw the interface, photograph the picture"). A drawn bowl of
 poke is a cartoon of a bowl of poke, and a row of them is what makes a screen
 read as a toy.
 
