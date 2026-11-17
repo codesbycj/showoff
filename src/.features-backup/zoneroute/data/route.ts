@@ -1,0 +1,99 @@
+/**
+ * Everything zoneroute says.
+ *
+ * **The map is not a photograph and not a trace.** I4 puts a map out of
+ * drawing range and gives two honest routes; this build takes the second — the
+ * map *idea* over a flat ground, built from the geometry in this file. No real
+ * place is depicted and none is implied.
+ *
+ * **Every figure derives from the route** (R9): the distance is the sum of the
+ * leg lengths, and the ETA follows from it at a stated speed, so the header
+ * and the picture cannot disagree.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const screen = { title: 'On the way', help: 'Help' };
+
+export type Point = { x: number; y: number };
+
+/**
+ * The route, in fractions of the map's own box, so it holds at any width (I2).
+ *
+ * Index 0 is the restaurant, the last is the door, and the rider is partway
+ * along. These are drawn as a polyline rather than traced off a map image.
+ */
+export const path: Point[] = [
+  { x: 0.60, y: 0.18 },
+  { x: 0.60, y: 0.34 },
+  { x: 0.40, y: 0.34 },
+  { x: 0.40, y: 0.56 },
+  { x: 0.46, y: 0.56 },
+  { x: 0.46, y: 0.84 },
+];
+
+/** How far along the rider is, 0 to 1. */
+export const progress = 0.42;
+
+export type Street = { id: string; label: string; x: number; y: number; angle: number };
+
+/**
+ * Invented street names, placed by fraction like everything else.
+ *
+ * **All of them sit below the floating control row and above the sheet.** A
+ * label under either is text painted over by a control, which R3 calls a FAIL
+ * outright — and `audit.js` reported exactly that twice before these moved.
+ */
+export const streets: Street[] = [
+  { id: 's1', label: 'Assembly Rd', x: 0.08, y: 0.34, angle: -90 },
+  { id: 's2', label: 'Steiner St', x: 0.24, y: 0.26, angle: 0 },
+  { id: 's3', label: 'Marin Blvd', x: 0.12, y: 0.52, angle: 0 },
+  { id: 's4', label: '14th Ave', x: 0.80, y: 0.44, angle: -62 },
+  { id: 's5', label: 'South St', x: 0.66, y: 0.64, angle: 0 },
+  { id: 's6', label: 'Flushing Ave', x: 0.10, y: 0.78, angle: 0 },
+];
+
+/**
+ * The trip.
+ *
+ * `km` is the summed polyline in map units scaled to a stated block size, so
+ * the number under the title follows from the line on the screen rather than
+ * being typed beside it.
+ */
+const BLOCK_KM = 2.4;
+
+export function distanceKm(): number {
+  let sum = 0;
+  for (let i = 1; i < path.length; i += 1) {
+    const dx = path[i].x - path[i - 1].x;
+    const dy = path[i].y - path[i - 1].y;
+    sum += Math.sqrt(dx * dx + dy * dy);
+  }
+  return sum * BLOCK_KM;
+}
+
+/** 18 km/h on a moped in traffic, rounded up to the nearest minute. */
+export function etaMinutes(): number {
+  const remaining = distanceKm() * (1 - progress);
+  return Math.max(1, Math.ceil((remaining / 18) * 60));
+}
+
+export const rider = { name: 'Dani R.', role: 'Your courier', rating: 4.9 };
+
+export type Step = { id: string; label: string; done: boolean };
+
+/**
+ * The progress rows.
+ *
+ * **Mine, not the board's.** The board's map screen is a map and nothing else,
+ * and it is cropped off at the bottom of its artboard. I3's lever for that
+ * space is the section the board cut, and what a delivery map genuinely
+ * carries under it is where the order has got to.
+ */
+export const steps: Step[] = [
+  { id: 'p1', label: 'Order confirmed', done: true },
+  { id: 'p2', label: 'Picked up from Maison Grill', done: true },
+  { id: 'p3', label: 'On the way to you', done: false },
+];

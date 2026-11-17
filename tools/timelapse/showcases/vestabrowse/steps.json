@@ -1,0 +1,401 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "@/features/vestabrowse/components/search-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/search-row.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import search row + placeholder"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/search-row.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "\"Filters\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "@/features/vestabrowse/components/chip-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/chip-row.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "import chip row + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "dresses"
+          ]
+        }
+      ],
+      "label": "\"Dresses\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "jackets"
+          ]
+        }
+      ],
+      "label": "\"Jackets\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "jeans"
+          ]
+        }
+      ],
+      "label": "\"Jeans\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "knitwear"
+          ]
+        }
+      ],
+      "label": "\"Knitwear\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "@/features/vestabrowse/components/results-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.10"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/results-row.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "import results row + t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/results-row.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "sort"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "@/features/vestabrowse/components/section-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/section-head.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import section head + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/section-head.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "more"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "@/features/vestabrowse/components/product-grid"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/product-grid.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "import product grid + card"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "hoodie"
+          ]
+        }
+      ],
+      "label": "\"Casual Hoodie Black\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "biker"
+          ]
+        }
+      ],
+      "label": "\"Biker Jacket Noir\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "white"
+          ]
+        }
+      ],
+      "label": "\"Oversized Hoodie Ecru\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "tee"
+          ]
+        }
+      ],
+      "label": "\"Cotton V-Neck Black\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "tee2"
+          ]
+        }
+      ],
+      "label": "\"Boxy Tee Off-White\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "@/features/vestabrowse/components/dock"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.23"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestabrowse/components/dock.tsx",
+            "STEP 1.24"
+          ]
+        }
+      ],
+      "label": "import dock + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "shop"
+          ]
+        }
+      ],
+      "label": "\"Shopping\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "saved"
+          ]
+        }
+      ],
+      "label": "\"Saved\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestabrowse/data/browse.ts",
+            "me"
+          ]
+        }
+      ],
+      "label": "\"Profile\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "STEP 1.28"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vestabrowse/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "chip-row",
+              "src/features/vestabrowse/components/chip-row.tsx"
+            ],
+            [
+              "data-browse",
+              "src/features/vestabrowse/data/browse.ts"
+            ],
+            [
+              "dock",
+              "src/features/vestabrowse/components/dock.tsx"
+            ],
+            [
+              "product-grid",
+              "src/features/vestabrowse/components/product-grid.tsx"
+            ],
+            [
+              "results-row",
+              "src/features/vestabrowse/components/results-row.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vestabrowse/index.tsx"
+            ],
+            [
+              "search-row",
+              "src/features/vestabrowse/components/search-row.tsx"
+            ],
+            [
+              "section-head",
+              "src/features/vestabrowse/components/section-head.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

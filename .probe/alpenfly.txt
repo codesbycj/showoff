@@ -1,0 +1,34 @@
+    1    0.45%        import glyph + "Back"
+    2    3.78%        import text + label
+    3    1.65%        "Round trip"
+    4    0.30%        import route card
+    5   15.38%  BIG   image
+    6   15.17%  BIG   view
+    7    0.12%        from code
+    8    0.04%        from city
+    9    0.38%        glyph
+   10    0.63%        to code
+   11    0.37%        to city
+   12    0.56%        change
+   13    0.35%        glyph
+   14    8.16%        a stray gap above it
+   15    8.16%        take the gap back out
+   16    1.13%        import filter chips
+   17    1.83%        "February 2026"
+   18    1.59%        "8 / 10 seats"
+   19    5.30%        import date strip
+   20    0.33%        t
+   21    0.47%        alpen 2
+   22    0.69%        a stray gap above it
+   23    0.69%        take the gap back out
+   24    0.34%        "Filter results"
+   25   36.41%  BIG   import ticket list
+   26   13.37%        a stray gap above it
+   27   13.37%        take the gap back out
+   28    0.00%  tidy  tidy up
+
+alpenfly/1: 28 steps, largest 36.4%, median 0.69%
+  FAIL  step 5 paints 15.4% of the frame - image
+  FAIL  step 6 paints 15.2% of the frame - view
+  FAIL  step 25 paints 36.4% of the frame - import ticket list
+3 failures

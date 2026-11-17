@@ -1,0 +1,186 @@
+{
+  "slug": "vaultperf",
+  "screen": "1",
+  "total": 22,
+  "port": 8082,
+  "settle": 400,
+  "maxwait": 5000,
+  "steps": [
+    {
+      "n": 1,
+      "label": "import wordmark",
+      "file": "01.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 2,
+      "label": "import menu button",
+      "file": "02.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 3,
+      "label": "a stray rule",
+      "file": "03.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 4,
+      "label": "take the rule back out",
+      "file": "04.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 5,
+      "label": "import section tabs",
+      "file": "05.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 6,
+      "label": "\"Advisor\"",
+      "file": "06.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 7,
+      "label": "\"Assets\"",
+      "file": "07.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 8,
+      "label": "a stray rule",
+      "file": "08.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 9,
+      "label": "take the rule back out",
+      "file": "09.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 10,
+      "label": "import return figure",
+      "file": "10.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 11,
+      "label": "compare",
+      "file": "11.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 12,
+      "label": "a stray rule",
+      "file": "12.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 13,
+      "label": "take the rule back out",
+      "file": "13.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 14,
+      "label": "import return caption",
+      "file": "14.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 15,
+      "label": "a stray rule",
+      "file": "15.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 16,
+      "label": "take the rule back out",
+      "file": "16.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 17,
+      "label": "import stat tiles",
+      "file": "17.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 18,
+      "label": "\"Operational spending\"",
+      "file": "18.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 19,
+      "label": "\"Dividend income\"",
+      "file": "19.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 20,
+      "label": "\"Custody and fees\"",
+      "file": "20.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 21,
+      "label": "import accounts link",
+      "file": "21.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 22,
+      "label": "tidy up",
+      "file": "22.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    }
+  ]
+}

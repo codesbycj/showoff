@@ -1,0 +1,152 @@
+import { Pressable, View } from 'react-native';
+
+import { type Trip } from '../data/plan';
+import { arrival, clock } from '../format';
+import { ct } from '../theme';
+import { RouteArc } from './route-arc';
+import { T } from './text';
+
+type Props = { trip: Trip; width: number; height: number; radius: number };
+
+/**
+ * One saved trip, drawn as a ticket stub.
+ *
+ * **R9: the arrival clock is computed** from the departure, the block time and
+ * the destination's offset. The board prints a 07:47 departure, 7h 15m and a
+ * 14:30 arrival on the same card, which is six hours and forty-three minutes.
+ *
+ * The notches are two circles in the page colour sitting on the card's edges,
+ * which is how a ticket perforation is drawn without clipping anything — and
+ * `overflow: 'hidden'` next to `elevation` is unreliable on Android (§7).
+ */
+export function TripCard({ trip, width, height, radius }: Props) {
+  const notch = 18;
+
+  return (
+    <View style={{ width, height }}>
+      {/* STEP 1.23 view
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.surface,
+          shadowColor: '#0B1220',
+          shadowOpacity: 0.08,
+          shadowRadius: 16,
+          shadowOffset: { width: 0, height: 6 },
+          elevation: 4,
+        }}
+      />
+      */}
+
+      {/* STEP 1.24 "DEPART"
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${trip.airline}, ${trip.fromCode} to ${trip.toCode}`}
+        style={{ flex: 1, paddingHorizontal: 18, paddingTop: 16 }}
+      >
+        <View style={{ alignItems: 'center' }}>
+          <T variant="airline">{trip.airline}</T>
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginTop: 12,
+          }}
+        >
+          <View>
+            <T variant="clock">{clock(trip.departMin)}</T>
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 4 }}>
+              <T variant="code">{trip.fromCode}</T>
+              <T variant="city">{trip.fromCity}</T>
+            </View>
+          </View>
+
+          <RouteArc minutes={trip.durationMin} />
+
+          <View style={{ alignItems: 'flex-end' }}>
+            <T variant="clock">{arrival(trip.departMin, trip.durationMin, trip.offsetMin)}</T>
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 4 }}>
+              <T variant="code">{trip.toCode}</T>
+              <T variant="city">{trip.toCity}</T>
+            </View>
+          </View>
+        </View>
+
+        <View style={{ flex: 1, justifyContent: 'center', gap: 14 }}>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+            {trip.facts.map((fact) => (
+              <View
+                key={fact}
+                style={{
+                  height: 30,
+                  paddingHorizontal: 12,
+                  borderRadius: 15,
+                  backgroundColor: ct.page,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <T variant="duration">{fact}</T>
+              </View>
+            ))}
+          </View>
+
+          <View style={{ height: 1, backgroundColor: ct.dash, opacity: 0.8 }} />
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingBottom: 16,
+          }}
+        >
+          <View>
+            <T variant="stub">DEPART</T>
+            <T variant="stubValue">{trip.outDate}</T>
+          </View>
+          <View style={{ alignItems: 'flex-end' }}>
+            <T variant="stub">{trip.returning ? 'RETURN' : 'ONE WAY'}</T>
+            <T variant="stubValue">{trip.returning ? trip.backDate : '—'}</T>
+          </View>
+        </View>
+      </Pressable>
+      */}
+
+      {/* STEP 1.25 view
+      <View
+        style={{
+          position: 'absolute',
+          left: -notch / 2,
+          top: height * 0.56 - notch / 2,
+          width: notch,
+          height: notch,
+          borderRadius: notch / 2,
+          backgroundColor: ct.page,
+        }}
+      />
+      */}
+      {/* STEP 1.26 view
+      <View
+        style={{
+          position: 'absolute',
+          right: -notch / 2,
+          top: height * 0.56 - notch / 2,
+          width: notch,
+          height: notch,
+          borderRadius: notch / 2,
+          backgroundColor: ct.page,
+        }}
+      />
+      */}
+    </View>
+  );
+}

@@ -1,0 +1,42 @@
+/**
+ * Everything cocoaitem says.
+ *
+ * **R9: the price the button charges is the unit price times the quantity**,
+ * so the pill beside the stepper and the bar under it cannot disagree - the
+ * board prints `$ 06.00` against a quantity of three.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const product = {
+  name: 'Coconut Chips',
+  maker: 'Harvest Lane',
+  claim: 'Pure coconut 100%',
+  unit: 6,
+  qty: 3,
+  cta: 'Add To Cart',
+  image: require('../../../../assets/images/cocoaitem/hero.jpg'),
+};
+
+export type Variant = { id: string; label: string; image: number; on?: boolean };
+
+export const variants: Variant[] = [
+  {
+    id: 'plain',
+    label: 'Plain',
+    image: require('../../../../assets/images/cocoaitem/v1.jpg'),
+    on: true,
+  },
+  { id: 'salted', label: 'Salted', image: require('../../../../assets/images/cocoaitem/v2.jpg') },
+];
+
+/** One money format, applied once (R9). */
+export function money(value: number) {
+  return '$' + value.toFixed(2);
+}
+
+/** R9: what the bar charges is the unit price times the quantity. */
+export function total() {
+  return product.unit * Math.max(product.qty, 1);
+}

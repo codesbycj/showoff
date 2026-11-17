@@ -1,0 +1,33 @@
+import { Pressable, View } from 'react-native';
+
+import { scene } from '../data/room';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { size: number };
+
+/**
+ * Add the piece being previewed.
+ *
+ * Its own component for the same reason as the close control: `stage.js`
+ * stages what the screen mounts, so a control that is its own block is its
+ * own step (I5).
+ */
+export function AddButton({ size }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={`Add ${scene.piece}`}>
+      <View
+        style={{
+          width: size,
+          height: size,
+          borderRadius: size / 2,
+          backgroundColor: ct.white,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph name="plus" size={18} color={ct.ink} strokeWidth={2} />
+      </View>
+    </Pressable>
+  );
+}

@@ -1,0 +1,62 @@
+/**
+ * Everything cocoacart says.
+ *
+ * **R9: every figure on this screen is computed.** The board's own totals
+ * happen to add up, but they are typed; here the subtotal is the sum of the
+ * lines, the total is the subtotal plus delivery, and the badge counts the
+ * lines, so no two can drift apart.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const header = { title: 'Cart', pay: 'Make Payment' };
+
+export type Line = { id: string; name: string; sub: string; price: number; image: number };
+
+export const lines: Line[] = [
+  {
+    id: 'dark',
+    name: 'Dark Chocolate',
+    sub: 'Perfect snacks',
+    price: 8,
+    image: require('../../../../assets/images/cocoacart/l1.jpg'),
+  },
+  // STEP 1.09 "Salted Cashews"
+  // {
+  //   id: 'cashew',
+  //   name: 'Salted Cashews',
+  //   sub: 'Sweet snacks',
+  //   price: 8,
+  //   image: require('../../../../assets/images/cocoacart/l2.jpg'),
+  // },
+  // STEP 1.10 "Coconut Chips"
+  // {
+  //   id: 'coconut',
+  //   name: 'Coconut Chips',
+  //   sub: 'Harvest Lane',
+  //   price: 18,
+  //   image: require('../../../../assets/images/cocoacart/l3.jpg'),
+  // },
+];
+
+export const delivery = { label: 'Delivery Amount', amount: 4 };
+export const totals = {
+  label: 'Total Amount',
+  image: require('../../../../assets/images/cocoacart/t1.jpg'),
+};
+
+/** One money format, applied once (R9). */
+export function money(value: number) {
+  return '$' + value.toFixed(2);
+}
+
+/** R9: the subtotal is the sum of the lines, never a typed figure. */
+export function subtotal() {
+  return lines.reduce((sum, line) => sum + line.price, 0);
+}
+
+/** R9: and the total is that plus delivery. */
+export function total() {
+  return subtotal() + delivery.amount;
+}

@@ -1,0 +1,309 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "@/features/foldcard/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "@/features/foldcard/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "@/features/foldcard/components/card-face"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import card face"
+  },
+  {
+   "label": "pan",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/card-face.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "holder label",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/card-face.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "holder",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/card-face.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "expiry label",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/card-face.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "expiry",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/card-face.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/card-face.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/folder.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "section",
+   "op": "jsx",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "@/features/foldcard/components/field-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import field list"
+  },
+  {
+   "label": "\"Expiry date\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldcard/data/card.ts",
+    "expiry"
+   ]
+  },
+  {
+   "label": "\"VCC\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldcard/data/card.ts",
+    "vcc"
+   ]
+  },
+  {
+   "label": "\"Card holder\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldcard/data/card.ts",
+    "holder"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "@/features/foldcard/components/country-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldcard/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import country row"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/country-row.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/country-row.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/foldcard/components/country-row.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/foldcard/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "card-face",
+     "src/features/foldcard/components/card-face.tsx"
+    ],
+    [
+     "country-row",
+     "src/features/foldcard/components/country-row.tsx"
+    ],
+    [
+     "data-card",
+     "src/features/foldcard/data/card.ts"
+    ],
+    [
+     "folder",
+     "src/features/foldcard/components/folder.tsx"
+    ],
+    [
+     "screen",
+     "src/app/foldcard/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

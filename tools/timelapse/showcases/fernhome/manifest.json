@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/fernhome/index.tsx",
+  "weather-pill": "src/features/fernhome/components/weather-pill.tsx",
+  "flag-disc": "src/features/fernhome/components/flag-disc.tsx",
+  "activity-chips": "src/features/fernhome/components/activity-chips.tsx",
+  "data-home": "src/features/fernhome/data/home.ts",
+  "hero-trip": "src/features/fernhome/components/hero-trip.tsx",
+  "dock": "src/features/fernhome/components/dock.tsx"
+}

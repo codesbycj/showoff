@@ -1,0 +1,131 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { ControlsCard } from '@/features/hushmix/components/controls-card';
+import { FoundationCard } from '@/features/hushmix/components/foundation-card';
+import { Glyph } from '@/features/hushmix/components/glyph';
+import { MotiveCard } from '@/features/hushmix/components/motive-card';
+import { SessionCard } from '@/features/hushmix/components/session-card';
+import { T } from '@/features/hushmix/components/text';
+import { TimerCard } from '@/features/hushmix/components/timer-card';
+import { session } from '@/features/hushmix/data/session';
+import { useLayout } from '@/features/hushmix/layout';
+import { ct } from '@/features/hushmix/theme';
+
+/**
+ * Hush - the session.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The five cards share the remainder, so the screen is full to the bottom edge
+ * with no band under it (I3).
+ */
+export default function HushmixScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.topH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/hushstart')}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={19} color={ct.onDark} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+
+        <View style={{ flexDirection: 'row' }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Save this session">
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 22,
+                backgroundColor: ct.card,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="heart" size={19} color={ct.onDark} strokeWidth={1.7} />
+            </View>
+          </Pressable>
+
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Share this session"
+            onPress={() => router.push('/hushshare')}
+          >
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 22,
+                backgroundColor: ct.card,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="share" size={19} color={ct.onDark} strokeWidth={1.7} />
+            </View>
+          </Pressable>
+        </View>
+      </View>
+
+      <View style={{ height: L.gapTop }} />
+      <View style={{ marginHorizontal: L.margin, gap: L.card.gap }}>
+        <SessionCard
+          radius={L.card.radius}
+          height={L.card.h}
+          onOpen={() => router.push('/hushshare')}
+        />
+        <TimerCard radius={L.card.radius} height={L.card.h} />
+        <FoundationCard radius={L.card.radius} height={L.card.h} />
+        <MotiveCard radius={L.card.radius} height={L.card.h} />
+        <ControlsCard radius={L.card.radius} height={L.card.h} width={L.card.width} />
+      </View>
+
+      <View style={{ height: L.gapStack }} />
+      <Pressable accessibilityRole="button" accessibilityLabel={session.cta}>
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.cta.h,
+            borderRadius: L.cta.radius,
+            backgroundColor: ct.pill,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="cta">{session.cta}</T>
+        </View>
+      </Pressable>
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

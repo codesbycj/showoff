@@ -1,0 +1,100 @@
+import { useId } from 'react';
+import { View } from 'react-native';
+import Svg, { Defs, Line, LinearGradient, Path, Stop } from 'react-native-svg';
+
+import { kg, prediction, projected, screen, series, stats, unit } from '../data/weight';
+import { ct } from '../theme';
+import { T } from './text';
+
+import { ChartProps } from './_weight-parts-shared';
+
+/**
+ * The weight line.
+ *
+ * **Everything here survives an empty series** (I7 / §5.4). The reveal fills
+ * `series` one point at a time, and this is the exact shape that has
+ * red-screened a reveal before now: `Math.max(...[])` is `-Infinity`, the
+ * coordinate becomes `NaN`, and `react-native-svg` throws. So the component
+ * returns `null` below two points and the span is clamped to a minimum.
+ *
+ * **The ticks bracket the data** (R9): the axis is padded past the real low
+ * and high rather than stopping at them, so no part of the line leaves the
+ * plot — a nice-tick loop that stops at `max` leaves marks taller than its
+ * own axis.
+ *
+ * **`useId` for the gradient.** `react-native-svg` ids are document-global on
+ * web, so two gradients sharing one id make everything render in the first
+ * colour (Part 7).
+ */
+export function WeightChart({ margin, width, height, axisH }: ChartProps) {
+  const id = useId();
+  const plotW = width - margin * 2;
+  const plotH = height - axisH;
+  if (series.length < 2 || plotW <= 0 || plotH <= 0) return null;
+
+  const vals = series.map((p) => p.kg);
+  const low = Math.min(...vals);
+  const high = Math.max(...vals);
+  const pad = Math.max((high - low) * 0.3, 0.5);
+  const top = high + pad;
+  const bottom = low - pad;
+  const span = Math.max(top - bottom, 0.5);
+
+  const x = (i: number) => (i / (series.length - 1)) * plotW;
+  const y = (v: number) => plotH - ((v - bottom) / span) * plotH;
+
+  const line = series
+    .map((p, i) => `${i === 0 ? 'M' : 'L'}${x(i).toFixed(1)} ${y(p.kg).toFixed(1)}`)
+    .join(' ');
+  const area = `${line} L${plotW.toFixed(1)} ${plotH} L0 ${plotH} Z`;
+
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      <Svg width={plotW} height={plotH}>
+        <Defs>
+          <LinearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor={ct.accent} stopOpacity={0.28} />
+            <Stop offset="1" stopColor={ct.accent} stopOpacity={0.02} />
+          </LinearGradient>
+        </Defs>
+
+        {[0.25, 0.5, 0.75].map((f) => (
+          <Line
+            key={f}
+            x1={0}
+            y1={plotH * f}
+            x2={plotW}
+            y2={plotH * f}
+            stroke={ct.hairline}
+            strokeWidth={1}
+          />
+        ))}
+
+        <Path d={area} fill={`url(#${id})`} />
+        <Path
+          d={line}
+          stroke={ct.accent}
+          strokeWidth={2.4}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+      </Svg>
+
+      <View
+        style={{
+          height: axisH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {series.map((p) => (
+          <T key={p.label} variant="axis">
+            {p.label}
+          </T>
+        ))}
+      </View>
+    </View>
+  );
+}

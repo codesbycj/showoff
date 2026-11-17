@@ -1,0 +1,38 @@
+import { Pressable, View } from 'react-native';
+
+import { sections } from '../data/home';
+import { T } from './text';
+
+type Props = { margin: number; height: number; title: string };
+
+/**
+ * A section heading with its "See All".
+ *
+ * The link is padded to a 44dp box rather than left at its line height, which
+ * is all a text link otherwise offers a thumb (R7).
+ */
+export function SectionRow({ margin, height, title }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <T variant="section">{title}</T>
+
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={`${sections.seeAll} ${title}`}
+        hitSlop={{ top: 14, bottom: 14, left: 14, right: 10 }}
+      >
+        <View style={{ height: 44, paddingHorizontal: 2, justifyContent: 'center' }}>
+          <T variant="seeAll">{sections.seeAll}</T>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

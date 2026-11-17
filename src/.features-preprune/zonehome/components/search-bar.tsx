@@ -1,0 +1,86 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { location, promo, search, texture } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { SearchProps } from './_home-header-shared';
+
+/**
+ * The search field, straddling the header's lower edge as the board draws it.
+ *
+ * R3 allows a control to sit inside a surface but not to straddle the edge of
+ * content it covers — this crosses the header's *edge*, not any of its text,
+ * and that is the one shape on this board where the overlap is the design.
+ * Named in the handover.
+ *
+ * It is a `Pressable`, not a `TextInput`: this showcase is filmed, not typed
+ * into, and a focused input would put a blinking caret in every frame.
+ */
+export function SearchBar({ margin, height, control, top }: SearchProps) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: margin,
+        right: margin,
+        top,
+        flexDirection: 'row',
+        gap: 10,
+      }}
+    >
+      <Pressable
+        accessibilityRole="search"
+        accessibilityLabel={search.placeholder}
+        style={{ flex: 1 }}
+      >
+        {({ pressed }) => (
+          <View
+            style={{
+              height,
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 10,
+              paddingHorizontal: 16,
+              borderRadius: height / 2,
+              backgroundColor: ct.field,
+              opacity: pressed ? 0.85 : 1,
+              shadowColor: '#2A1A14',
+              shadowOpacity: 0.16,
+              shadowRadius: 16,
+              shadowOffset: { width: 0, height: 6 },
+              elevation: 7,
+            }}
+          >
+            <Glyph name="search" size={17} color={ct.sub} />
+            <T variant="placeholder">{search.placeholder}</T>
+          </View>
+        )}
+      </Pressable>
+
+      <Pressable accessibilityRole="button" accessibilityLabel="Map view">
+        {({ pressed }) => (
+          <View
+            style={{
+              width: control,
+              height: control,
+              borderRadius: control / 2,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: ct.brand,
+              opacity: pressed ? 0.85 : 1,
+              shadowColor: '#5C0A04',
+              shadowOpacity: 0.26,
+              shadowRadius: 14,
+              shadowOffset: { width: 0, height: 6 },
+              elevation: 7,
+            }}
+          >
+            <Glyph name="map" size={19} color={ct.brandInk} />
+          </View>
+        )}
+      </Pressable>
+    </View>
+  );
+}

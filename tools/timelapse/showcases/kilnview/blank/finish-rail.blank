@@ -1,0 +1,65 @@
+import { Pressable, ScrollView, View } from 'react-native';
+
+import { finishes, labels } from '../data/view';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; swatch: number };
+
+/**
+ * The glazes the piece can be had in.
+ *
+ * **The swatches are drawn, not photographed** (I4): a glaze colour is an
+ * idea. A horizontal scroller, not a wrap, so the rail crops at the edge the
+ * way the board's does (R2), and `flexGrow: 0` keeps it from eating the
+ * column's slack.
+ */
+export function FinishRail({ margin, height, swatch }: Props) {
+  return (
+    <View style={{ height }}>
+      <View
+        style={{
+          marginHorizontal: margin,
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 6,
+          height: 26,
+        }}
+      >
+        <T variant="finish">{labels.finishes}</T>
+        <Glyph name="chevron" size={15} color={ct.onDarkMuted} strokeWidth={1.8} />
+      </View>
+
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ flexGrow: 0, flexShrink: 0 }}
+        contentContainerStyle={{ paddingHorizontal: margin, gap: 12, alignItems: 'center' }}
+      >
+        {/* STEP 1.15 pressable
+        {finishes.map((finish) => (
+          <Pressable
+            key={finish.id}
+            accessibilityRole="button"
+            accessibilityState={{ selected: !!finish.on }}
+            accessibilityLabel={finish.label}
+            hitSlop={{ top: 8, bottom: 8, left: 2, right: 2 }}
+          >
+            <View
+              style={{
+                width: swatch,
+                height: swatch,
+                borderRadius: swatch / 2,
+                backgroundColor: finish.swatch,
+                borderWidth: finish.on ? 2 : 0,
+                borderColor: ct.onDark,
+              }}
+            />
+          </Pressable>
+        ))}
+        */}
+      </ScrollView>
+    </View>
+  );
+}

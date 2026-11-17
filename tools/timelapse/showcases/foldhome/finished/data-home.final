@@ -1,0 +1,76 @@
+import type { GlyphName } from '../components/glyph';
+
+/**
+ * Everything foldhome says, so the components stay presentational.
+ *
+ * **The card schemes are invented.** The board sets a VISA mark and a PayPal
+ * mark; neither is ours to ship, so the two faces here belong to schemes that
+ * do not exist and their wordmarks are set in the app's own type (I1 / I4).
+ *
+ * **Every array is annotated** (I7): a reveal fills them one entry at a time,
+ * and a type inferred from whichever rows happen to be uncommented loses every
+ * property that only appears on a later row.
+ */
+export const header = {
+  hi: 'Hi, Justin',
+  welcome: 'Welcome back!',
+  add: 'Add new card',
+  section: 'All transactions',
+  filter: 'Today',
+};
+
+export type CardFace = {
+  id: string;
+  scheme: string;
+  pan: string;
+  holder: string;
+  expiry: string;
+  tint: 'lime' | 'yellow';
+};
+
+/** Back to front: the second scheme peeks out behind the live card. */
+export const cards: CardFace[] = [
+  {
+    id: 'orbit',
+    scheme: 'ORBIT PAY',
+    pan: '•••  •••  •••2218',
+    holder: 'Imran Khan',
+    expiry: '09/27',
+    tint: 'yellow',
+  },
+  {
+    id: 'volta',
+    scheme: 'VOLTA',
+    pan: '•••  •••  •••9743',
+    holder: 'Imran Khan',
+    expiry: '02/02',
+    tint: 'lime',
+  },
+];
+
+export const fields = { holder: 'Holder', expiry: 'Exp date' };
+
+export type Action = { id: string; label: string; icon: GlyphName };
+
+export const actions: Action[] = [
+  { id: 'deposit', label: 'Deposit', icon: 'deposit' },
+  { id: 'transfer', label: 'Transfer', icon: 'transfer' },
+  { id: 'withdraw', label: 'Withdraw', icon: 'withdraw' },
+  { id: 'more', label: 'More', icon: 'grid' },
+];
+
+export type Tx = { id: string; name: string; kind: string; amount: number; icon: GlyphName };
+
+export const txs: Tx[] = [
+  { id: 'brody', name: 'Brody Zmymo', kind: 'Sent', amount: -128.08, icon: 'send' },
+  { id: 'gym', name: 'Gym', kind: 'Payment', amount: -30.08, icon: 'dumbbell' },
+  { id: 'salary', name: 'Salary', kind: 'Received', amount: 3607, icon: 'wallet' },
+  { id: 'tunes', name: 'Tuneloop', kind: 'Subscription', amount: -10.99, icon: 'music' },
+  { id: 'nadia', name: 'Nadia Ray', kind: 'Received', amount: 240, icon: 'send' },
+];
+
+export const money = (n: number) =>
+  `${n < 0 ? '- ' : '+ '}$${Math.abs(n).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;

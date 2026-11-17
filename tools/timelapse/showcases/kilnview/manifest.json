@@ -1,0 +1,6 @@
+{
+  "screen": "src/app/kilnview/index.tsx",
+  "view-controls": "src/features/kilnview/components/view-controls.tsx",
+  "data-view": "src/features/kilnview/data/view.ts",
+  "finish-rail": "src/features/kilnview/components/finish-rail.tsx"
+}

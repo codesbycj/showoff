@@ -1,0 +1,298 @@
+{
+  "slug": "romeobook",
+  "screen": "1",
+  "total": 36,
+  "port": 8082,
+  "settle": 400,
+  "maxwait": 5000,
+  "steps": [
+    {
+      "n": 1,
+      "label": "import top bar",
+      "file": "01.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 2,
+      "label": "t",
+      "file": "02.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 3,
+      "label": "\"Go back\"",
+      "file": "03.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 4,
+      "label": "import venue card",
+      "file": "04.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 5,
+      "label": "view",
+      "file": "05.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 6,
+      "label": "name",
+      "file": "06.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 7,
+      "label": "tags",
+      "file": "07.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 8,
+      "label": "address",
+      "file": "08.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 9,
+      "label": "import date card",
+      "file": "09.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 10,
+      "label": "view",
+      "file": "10.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 11,
+      "label": "\"Open calendar\"",
+      "file": "11.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 12,
+      "label": "day chip",
+      "file": "12.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 13,
+      "label": "\"Thu\"",
+      "file": "13.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 14,
+      "label": "\"Fri\"",
+      "file": "14.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 15,
+      "label": "\"Sat\"",
+      "file": "15.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 16,
+      "label": "\"Sun\"",
+      "file": "16.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 17,
+      "label": "\"Mon\"",
+      "file": "17.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 18,
+      "label": "\"Tue\"",
+      "file": "18.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 19,
+      "label": "\"Wed\"",
+      "file": "19.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 20,
+      "label": "\"Thu\"",
+      "file": "20.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 21,
+      "label": "\"Fri\"",
+      "file": "21.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 22,
+      "label": "import time field",
+      "file": "22.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 23,
+      "label": "time label",
+      "file": "23.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 24,
+      "label": "glyph",
+      "file": "24.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 25,
+      "label": "import party field",
+      "file": "25.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 26,
+      "label": "party label",
+      "file": "26.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 27,
+      "label": "step",
+      "file": "27.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 28,
+      "label": "import note field",
+      "file": "28.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 29,
+      "label": "t",
+      "file": "29.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 30,
+      "label": "view",
+      "file": "30.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 31,
+      "label": "note field",
+      "file": "31.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 32,
+      "label": "import confirm cta",
+      "file": "32.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 33,
+      "label": "confirm",
+      "file": "33.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 34,
+      "label": "a stray gap above it",
+      "file": "34.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 35,
+      "label": "take the gap back out",
+      "file": "35.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 36,
+      "label": "tidy up",
+      "file": "36.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    }
+  ]
+}

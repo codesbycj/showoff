@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/nookstart/index.tsx",
+  "brand-row": "src/features/nookstart/components/brand-row.tsx",
+  "splash-title": "src/features/nookstart/components/splash-title.tsx",
+  "season-count": "src/features/nookstart/components/season-count.tsx",
+  "posed-pieces": "src/features/nookstart/components/posed-pieces.tsx",
+  "data-start": "src/features/nookstart/data/start.ts",
+  "start-disc": "src/features/nookstart/components/start-disc.tsx"
+}

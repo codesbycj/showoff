@@ -568,6 +568,13 @@ straddle the edge of the content it covers.
 - `audit.js` reports `COVERED` — it fires only when two boxes overlap
   *partially*, which is the shape an accident has. Wholly-inside is layering by
   design and is ignored.
+- **The direction matters.** The exemption is for the *coverer* sitting wholly
+  inside the *covered* — a photo on its own coloured ground, an icon in its
+  tile. Growing the covering box until it contains the other does **not**
+  silence it, and a cut-out piece overhanging the disc it is posed on is a
+  straddle however deliberate it looks. Two boxes that share an edge exactly
+  also count: three flag bands side by side, or a notch tab stacked on a card
+  body, report as overlaps until they touch at zero width.
 - Covering **text** is a FAIL. Covering a bar, a photo or a shape is a WARN and
   needs a reason: a tool rail half on the last bar of its own chart is not one.
 - The fix is to inset the content, not to move the control one dp.
@@ -618,8 +625,12 @@ the design is a list or a sheet that genuinely continues, and then by a little.
 Every pressable is ≥44dp in both directions, or has hit slop that makes it so.
 
 - `audit.js` reports `TAP` with the measured box. A 34dp icon button is a WARN
-  by default because the reference drew it that way; the fix is `hitSlop`, and
-  the handover says so.
+  by default because the reference drew it that way.
+- **`audit.js` does not read `hitSlop`.** It measures the pressable's own box,
+  so a 34dp disc with 10dp of slop still reports 34x34. The fix that clears the
+  gate is to wrap the *visual* disc in a transparent 44dp `View` inside the
+  `Pressable`: the control is 44, the mark keeps the reference's size, and
+  nothing new paints. `hitSlop` on top of that is belt and braces.
 - A text link's tap target is its **line height**. Pad the anchor and move any
   underline to an inner span.
 
@@ -706,6 +717,14 @@ server rewrites `router.d.ts` with bogus routes — kill it before trusting `tsc
 
 One dock height per batch, centred across the **painted** bar, pinned. Never
 clamp a height upward. `dockcheck.js` reports it.
+
+**Read its `skew` column, not its `barH`.** `barH` and the `delta` beside it
+subtract the bar's own bottom padding before measuring, because that padding
+is the indicator zone rather than the band the icons live in - which is right
+for centring and is exactly what hid a whole batch of bars that were 40dp
+taller than their contents. `skew` is the honest number: slack below the ink
+minus slack above it, padding counted. Over 12dp the command exits 1. The rule
+is INSPO-RULES I11.
 
 ## 4.4 The web render is a proxy, not proof
 
@@ -1108,6 +1127,18 @@ negative tracking, `paddingLeft` for positive.
   build's HTML parser.
 - **`svg` paints below positioned siblings on web** — an absolute sibling hides
   an `<svg>`, while a `Text` beside it survives, so the icon just looks missing.
+  Every `View` is `position: relative` in RNW, so an in-flow `<svg>` sibling of
+  an absolutely positioned page ground comes back **blank**. Wrap the `<svg>`
+  in a `View`.
+- **An `<svg>` has no `backgroundColor` for a hit stack to resolve.**
+  `audit.js` walks that stack to find the real ground behind a string, so every
+  line over an svg ground reports as a 1:1 CONTRAST **failure** — even though
+  the render looks right. Put a real filled `View` under the svg (the page's
+  mid colour, the bar's start colour), or build the shape out of Views instead.
+- **A sized child in a row beside a `flex: 1` sibling still shrinks.**
+  `flexShrink` defaults to 1, so a 261dp bar next to a flexible spacer
+  collapsed to a 50dp disc with its label wrapped inside it. Pin it with
+  `flexShrink: 0`.
 - **SVG gradient ids are document-global on web.** Use `useId`, or everything
   renders in the first colour.
 - **`<G origin=...>` emits an invalid DOM prop and red-bars the screen.** Build
@@ -1123,6 +1154,14 @@ negative tracking, `paddingLeft` for positive.
 
 ## Windows / tooling
 
+- **`apply.js` racing Metro is an `EBUSY` crash.** `apply.js <slug> blank|final`
+  rewrites a route while the dev server is watching it, and on Windows Metro
+  opens the file mid-write: `EBUSY: resource busy or locked, open
+  '...\src\app\<slug>\index.tsx'`, and the whole server dies. Every probe after
+  it then prints nothing but `Node.js v22.16.0`, which reads like a crash in the
+  probe — two clean screens looked like staging bugs for several passes. **When
+  a probe prints a bare Node version, check the server before you touch the
+  screen.**
 - **Write files with `newline=''`** in Python. Text mode rewrites everything as
   CRLF, which makes every line look changed.
 - **Do not author a script through a shell heredoc if it contains `\n` or `\s`.**
@@ -1163,7 +1202,16 @@ node tools/showcase.js use <slug>        # repoint the boot redirect for recordi
 node tools/showcase.js list              # what exists, and which one boots
 node tools/showcase.js rm <slug> --yes   # delete one showcase
 node tools/showcase.js wipe --yes        # delete every showcase (weekly reset)
+node tools/showcase.js catalog           # boot route -> the wall of every showcase
+EXPO_PORT=8082 python tools/catalog.py   # re-shoot every route, rewrite shots.ts
 ```
+
+`src/app/index.tsx` is a **derived file**: `use`, `rm`, `wipe` and `record.js`
+each rewrite it as a boot redirect for a take, and `catalog` puts it back. The
+root serves the wall at every other time - INSPO-RULES I10. `catalog.py`
+refuses to run unless the web bundle compiles, because a build error
+red-screens every route at once and the shooter cannot tell that frame from a
+screen.
 
 **A take is four commands, so there is one that runs all four:**
 

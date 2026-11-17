@@ -1,0 +1,61 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { CartBar } from '@/features/cocoahome/components/cart-bar';
+import { KindChips } from '@/features/cocoahome/components/kind-chips';
+import { PackRail } from '@/features/cocoahome/components/pack-rail';
+import { ShopHeader } from '@/features/cocoahome/components/shop-header';
+import { T } from '@/features/cocoahome/components/text';
+import { header } from '@/features/cocoahome/data/shop';
+import { useLayout } from '@/features/cocoahome/layout';
+import { ct } from '@/features/cocoahome/theme';
+
+/**
+ * Cocoa - the shop.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The collection rail is the remainder, so the screen always ends on the
+ * pinned cart with no band under it (I3).
+ */
+export default function CocoahomeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ShopHeader margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <KindChips margin={L.margin} height={L.chip.h} radius={L.chip.radius} />
+
+      <View style={{ height: L.gapChips }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH, justifyContent: 'center' }}>
+        <T variant="section">{header.collections}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <PackRail
+        margin={L.margin}
+        width={L.card.w}
+        height={L.card.h}
+        radius={L.card.radius}
+        onOpen={() => router.push('/cocoaitem')}
+      />
+
+      <View style={{ flex: 1 }} />
+      <CartBar
+        margin={L.margin}
+        height={L.bar.h}
+        radius={L.bar.radius}
+        onPress={() => router.push('/cocoacart')}
+      />
+      <View style={{ height: 16 }} />
+    </View>
+  );
+}

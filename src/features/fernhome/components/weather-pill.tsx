@@ -1,0 +1,72 @@
+import { View } from 'react-native';
+
+import { account } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+/**
+ * Today, in the corner of the greeting.
+ *
+ * The board draws the sun as an emoji; emoji are not UI (I8), so it is a
+ * drawn mark on its own disc. The pill's white fill lives on an
+ * absolutely-filled child so that emptying the pill during a reveal paints
+ * nothing at all (§5.5) — the shadow travels with the fill for the same
+ * reason, and `shadow*` and `elevation` ride together in one style object
+ * rather than a `Platform.select` the web render could never check (I8).
+ */
+export function WeatherPill() {
+  return (
+    <View
+      style={{
+        height: 52,
+        paddingLeft: 6,
+        paddingRight: 16,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      {/* STEP 1.02 view
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: 26,
+          backgroundColor: ct.white,
+          shadowColor: '#1F3324',
+          shadowOpacity: 0.08,
+          shadowRadius: 12,
+          shadowOffset: { width: 0, height: 4 },
+          elevation: 3,
+        }}
+      />
+      */}
+
+      {/* STEP 1.03 glyph
+      <View
+        style={{
+          width: 40,
+          height: 40,
+          borderRadius: 20,
+          backgroundColor: ct.page,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph name="sun" size={24} color="#E8A317" />
+      </View>
+      */}
+
+      {/* STEP 1.04 weather label
+      <View>
+        <T variant="weatherLabel">{account.weatherLabel}</T>
+        <T variant="weather">{account.weather}</T>
+      </View>
+      */}
+    </View>
+  );
+}

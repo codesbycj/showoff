@@ -1,0 +1,43 @@
+import { Image, View } from 'react-native';
+
+import { advisor } from '../data/advisor';
+import { ct } from '../theme';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The advisor.
+ *
+ * **A face is a photograph** (I4). Initials on a coloured disc is a fallback
+ * state, not a substitute - a screen built from one is visibly missing what
+ * the board had.
+ *
+ * The frame's fill sits under the image so an emptied frame paints a quiet
+ * ground rather than a hole during the reveal (I9), and the `Image` carries a
+ * numeric size: absolute insets alone make it paint nothing, silently
+ * (RULES Part 7).
+ */
+export function Portrait({ margin, height, radius }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, borderRadius: radius, overflow: 'hidden' }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.grey,
+        }}
+      />
+      {/* STEP 1.03 image
+      <Image
+        source={advisor.image}
+        style={{ width: '100%', height }}
+        resizeMode="cover"
+        accessibilityIgnoresInvertColors
+      />
+      */}
+    </View>
+  );
+}

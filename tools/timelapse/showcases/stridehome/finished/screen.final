@@ -1,0 +1,61 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { DayHeader } from '@/features/stridehome/components/day-header';
+import { Dock } from '@/features/stridehome/components/dock';
+import { FocusCard } from '@/features/stridehome/components/focus-card';
+import { ReadinessCard } from '@/features/stridehome/components/readiness-card';
+import { WeekCard } from '@/features/stridehome/components/week-card';
+import { useLayout } from '@/features/stridehome/layout';
+import { ct } from '@/features/stridehome/theme';
+
+/**
+ * Stride — today.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The week card is cropped by the dock exactly as the board crops it, so there
+ * is no slack at the foot for a band to open in (I3).
+ */
+export default function StridehomeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <DayHeader margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <ReadinessCard
+        margin={L.margin}
+        height={L.readiness.h}
+        radius={L.readiness.radius}
+        ring={L.readiness.ring}
+      />
+
+      <View style={{ height: L.gapCard }} />
+      <FocusCard
+        margin={L.margin}
+        width={L.W - L.margin * 2}
+        height={L.focus.h}
+        radius={L.focus.radius}
+        onStart={() => router.push('/stridestart')}
+      />
+
+      <View style={{ height: L.gapCard }} />
+      <WeekCard margin={L.margin} height={L.week.h} radius={L.week.radius} />
+
+      <Dock
+        height={L.dock.h}
+        bottom={L.dock.bottom}
+        active="home"
+        onRun={() => router.push('/stridestart')}
+      />
+    </View>
+  );
+}

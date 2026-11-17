@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/vitalday/index.tsx",
+  "day-bar": "src/features/vitalday/components/day-bar.tsx",
+  "ring-strip": "src/features/vitalday/components/ring-strip.tsx",
+  "data-day": "src/features/vitalday/data/day.ts",
+  "month-chart": "src/features/vitalday/components/month-chart.tsx",
+  "follow-tiles": "src/features/vitalday/components/follow-tiles.tsx"
+}

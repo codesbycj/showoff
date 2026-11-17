@@ -78,15 +78,44 @@ def search(query, want=12):
     return ids
 
 
+# The search page needs browser navigation headers (above), but reusing them
+# for the image GET advertises `image/avif` and the CDN content-negotiates:
+# every "jpeg" comes back as AVIF with a .jpg name. Recent Pillow reads AVIF, so
+# a contact sheet looks perfect and nothing complains - but Metro cannot bundle
+# it, and the failure surfaces at `expo export`, long after the asset was
+# chosen. Ask for JPEG here, and transcode anything that still is not one.
+IMG_HEADERS = dict(HEADERS, Accept='image/jpeg,image/png;q=0.9,*/*;q=0.5')
+
+
+def _as_jpeg(data, dest):
+    """Write JPEG bytes, transcoding if the CDN ignored the Accept header."""
+    if data[:2] == b'\xff\xd8':            # already JPEG
+        with open(dest, 'wb') as fh:
+            fh.write(data)
+        return 'jpeg'
+    import io as _io
+
+    from PIL import Image
+    im = Image.open(_io.BytesIO(data))
+    fmt = im.format
+    im.convert('RGB').save(dest, 'JPEG', quality=92)
+    return '%s->jpeg' % (fmt or '?').lower()
+
+
 def get(pid, dest):
     os.makedirs(os.path.dirname(dest) or '.', exist_ok=True)
-    data = _get(CDN % (pid, pid))
+    req = urllib.request.Request(CDN % (pid, pid), headers=IMG_HEADERS)
+    with urllib.request.urlopen(req, timeout=45) as r:
+        data = r.read()
     if len(data) < 8000:
         print('%s: suspiciously small (%d bytes), not saved' % (pid, len(data)))
         return False
-    with open(dest, 'wb') as fh:
-        fh.write(data)
-    print('%s -> %s (%d KB)' % (pid, dest, len(data) // 1024))
+    try:
+        how = _as_jpeg(data, dest)
+    except Exception as e:
+        print('%s: not a decodable image (%s)' % (pid, e))
+        return False
+    print('%s -> %s (%d KB, %s)' % (pid, dest, os.path.getsize(dest) // 1024, how))
     return True
 
 

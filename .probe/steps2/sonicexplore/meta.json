@@ -1,0 +1,154 @@
+{
+  "slug": "sonicexplore",
+  "screen": "1",
+  "total": 18,
+  "port": 8082,
+  "settle": 400,
+  "maxwait": 5000,
+  "steps": [
+    {
+      "n": 1,
+      "label": "import search field",
+      "file": "01.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 2,
+      "label": "placeholder",
+      "file": "02.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 3,
+      "label": "glyph + import explore title",
+      "file": "03.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 4,
+      "label": "import feature rail + tag",
+      "file": "04.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 5,
+      "label": "f2",
+      "file": "05.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 6,
+      "label": "f3",
+      "file": "06.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 7,
+      "label": "a stray gap under it + take the gap back out + import moods title",
+      "file": "07.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 8,
+      "label": "take the gap back out + import genre grid + label",
+      "file": "08.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 9,
+      "label": "\"Electronic\"",
+      "file": "09.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 10,
+      "label": "\"Pop\"",
+      "file": "10.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 11,
+      "label": "\"Party\"",
+      "file": "11.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 12,
+      "label": "\"Blues\"",
+      "file": "12.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 13,
+      "label": "\"Techno\"",
+      "file": "13.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 14,
+      "label": "import dock + label",
+      "file": "14.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 15,
+      "label": "\"Search\"",
+      "file": "15.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 16,
+      "label": "\"Add\"",
+      "file": "16.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 17,
+      "label": "\"Library\"",
+      "file": "17.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 18,
+      "label": "\"Profile\" + take the gap back out + tidy up",
+      "file": "18.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "screen": "src/app/twirlfeed/index.tsx",
+  "feed-bar": "src/features/twirlfeed/components/feed-bar.tsx",
+  "story-rail": "src/features/twirlfeed/components/story-rail.tsx",
+  "data-feed": "src/features/twirlfeed/data/feed.ts",
+  "post-author": "src/features/twirlfeed/components/post-author.tsx",
+  "post-copy": "src/features/twirlfeed/components/post-copy.tsx",
+  "post-collage": "src/features/twirlfeed/components/post-collage.tsx",
+  "post-stats": "src/features/twirlfeed/components/post-stats.tsx",
+  "post-actions": "src/features/twirlfeed/components/post-actions.tsx",
+  "next-post": "src/features/twirlfeed/components/next-post.tsx",
+  "tab-bar": "src/features/twirlfeed/components/tab-bar.tsx"
+}

@@ -1,0 +1,138 @@
+import { useState } from 'react';
+import {
+  Image,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+  Pressable,
+  ScrollView,
+  View,
+} from 'react-native';
+
+import { gallery } from '../data/stay';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { width: number; height: number; radius: number; insetTop: number; margin: number; onBack?: () => void };
+
+/**
+ * The stay's photographs — the dominant element on the screen (R8).
+ *
+ * A real pager: the dots count the frames that exist and mark the one on
+ * screen (R9), with the index clamped at both ends because the reveal stages
+ * the array one entry at a time (I7).
+ *
+ * The three controls float over the photographs rather than inside the pager,
+ * so a swipe never carries them off the screen, and each is 44dp (R7).
+ */
+export function StayGallery({ width, height, radius, insetTop, margin, onBack }: Props) {
+  const [page, setPage] = useState(0);
+
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const next = Math.round(e.nativeEvent.contentOffset.x / Math.max(width, 1));
+    setPage(Math.min(Math.max(next, 0), Math.max(gallery.length - 1, 0)));
+  };
+
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(20,23,18,0.46)',
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        height,
+        borderBottomLeftRadius: radius,
+        borderBottomRightRadius: radius,
+        overflow: 'hidden',
+        backgroundColor: ct.tray,
+      }}
+    >
+      {/* STEP 1.02 "Stay photograph"
+      <ScrollView
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={onScroll}
+        scrollEventThrottle={32}
+      >
+        {gallery.map((shot) => (
+          <Image
+            key={shot.id}
+            source={shot.image}
+            style={{ width, height }}
+            resizeMode="cover"
+            accessibilityLabel="Stay photograph"
+          />
+        ))}
+      </ScrollView>
+      */}
+
+      <View
+        style={{
+          position: 'absolute',
+          top: insetTop + 4,
+          left: margin,
+          right: margin,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* STEP 1.03 "Back"
+        <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onBack}>
+          <View style={round}>
+            <Glyph name="back" size={19} color={ct.white} strokeWidth={2} />
+          </View>
+        </Pressable>
+        */}
+
+        <View style={{ flexDirection: 'row', gap: 10 }}>
+          {/* STEP 1.04 "Share this stay"
+          <Pressable accessibilityRole="button" accessibilityLabel="Share this stay">
+            <View style={round}>
+              <Glyph name="share" size={18} color={ct.white} strokeWidth={1.8} />
+            </View>
+          </Pressable>
+          */}
+
+          {/* STEP 1.05 "Save this stay"
+          <Pressable accessibilityRole="button" accessibilityLabel="Save this stay">
+            <View style={round}>
+              <Glyph name="star" size={18} color={ct.lime} />
+            </View>
+          </Pressable>
+          */}
+        </View>
+      </View>
+
+      {/* STEP 1.06 view
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 18,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          gap: 6,
+        }}
+      >
+        {gallery.map((shot, i) => (
+          <View
+            key={shot.id}
+            style={{
+              width: i === page ? 20 : 7,
+              height: 7,
+              borderRadius: 4,
+              backgroundColor: i === page ? ct.lime : 'rgba(255,255,255,0.6)',
+            }}
+          />
+        ))}
+      </View>
+      */}
+    </View>
+  );
+}

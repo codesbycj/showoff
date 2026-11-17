@@ -1,0 +1,73 @@
+/**
+ * Everything axistime says, so the components stay presentational.
+ *
+ * **The chart is drawn from these two series** (R9) - the curve is not a
+ * decorative squiggle with a weekday axis under it, and the dot at the end of
+ * the solid line is its last reading.
+ *
+ * **One scale for priority.** Both cards grade on the same 1-5 scale the risk
+ * screen uses, so a 5 and a 2 mean what they say (I1).
+ *
+ * **Every array is annotated** (I7): a reveal fills them one entry at a time,
+ * and a type inferred from whichever rows happen to be uncommented loses every
+ * property that only appears on a later row.
+ */
+export const header = { badge: '8', display: 'Risk\nTimeline' };
+
+export type Day = { id: string; label: string; risk: number; threat: number };
+
+export const days: Day[] = [
+  { id: 'mon', label: 'Mon', risk: 38, threat: 62 },
+  // STEP 1.10 "Tue"
+  // { id: 'tue', label: 'Tue', risk: 30, threat: 70 },
+  // STEP 1.11 "Wed"
+  // { id: 'wed', label: 'Wed', risk: 52, threat: 58 },
+  // STEP 1.12 "Thu"
+  // { id: 'thu', label: 'Thu', risk: 20, threat: 72 },
+  // STEP 1.13 "Fri"
+  // { id: 'fri', label: 'Fri', risk: 26, threat: 64 },
+  // STEP 1.14 "Sat"
+  // { id: 'sat', label: 'Sat', risk: 44, threat: 48 },
+  // STEP 1.15 "Sun"
+  // { id: 'sun', label: 'Sun', risk: 86, threat: 40 },
+];
+
+/** The axis top is the first round ten at or above the tallest reading of
+ *  either series, so no point can out-reach the plot (R9). It is guarded for
+ *  the empty case the reveal starts from (I7). */
+export const axisTop = () => {
+  const highest = Math.max(...days.map((d) => Math.max(d.risk, d.threat)), 1);
+  return Math.ceil(highest / 10) * 10;
+};
+
+/** The day the chart rests on - the last one the reveal has uncommented, or
+ *  nothing at all while the series is still empty. */
+export const today = () => (days.length > 0 ? days[days.length - 1].id : null);
+
+export type Entry = {
+  id: string;
+  kind: string;
+  title: string;
+  priority: number;
+  tone: 'dark' | 'light';
+};
+
+export const entries: Entry[] = [
+  {
+    id: 'vuln',
+    kind: 'Vulnerability',
+    title: 'Vendors data encryption attack',
+    priority: 5,
+    tone: 'dark',
+  },
+  // STEP 1.22 "Supplier data encryption attack"
+  // {
+  //   id: 'threat',
+  //   kind: 'Threat',
+  //   title: 'Supplier data encryption attack',
+  //   priority: 2,
+  //   tone: 'light',
+  // },
+];
+
+export const priorityLabel = 'Priority';

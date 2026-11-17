@@ -1,0 +1,64 @@
+import { Pressable, View } from 'react-native';
+
+import { tabs } from '../data/find';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { height: number };
+
+/**
+ * The navigation.
+ *
+ * **It does not reserve the indicator's strip.** A pinned, full-width bar is
+ * its own height and nothing more; padding it by `insets.bottom` as well
+ * counts the system's space twice and makes the bar taller than its contents
+ * (I11, R1b).
+ *
+ * The white fill lives on an absolutely-filled child so an emptied dock paints
+ * nothing during a reveal (SS5.5).
+ */
+export function Dock({ height }: Props) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+      }}
+    >
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.white,
+          borderTopWidth: 1,
+          borderTopColor: ct.line,
+        }}
+      />
+
+      {tabs.map((tab) => (
+        <Pressable
+          key={tab.id}
+          accessibilityRole="tab"
+          accessibilityState={{ selected: !!tab.on }}
+          accessibilityLabel={tab.label}
+          style={{ flex: 1, height, alignItems: 'center', justifyContent: 'center' }}
+        >
+          <Glyph
+            name={tab.glyph}
+            size={21}
+            color={tab.on ? ct.ink : ct.muted}
+            strokeWidth={tab.on ? 2 : 1.6}
+          />
+        </Pressable>
+      ))}
+    </View>
+  );
+}

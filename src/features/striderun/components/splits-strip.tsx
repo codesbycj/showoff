@@ -1,0 +1,62 @@
+import { View } from 'react-native';
+
+import { splits, splitWidth } from '../data/run';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * The kilometre splits so far.
+ *
+ * **R9: each bar is its own split against the rest**, mapped onto 40-100% of
+ * the strip so that four kilometres within eight seconds of each other read as
+ * four different bars rather than four identical ones. Longer is slower, so
+ * the one flagged `best` is the shortest. The range is clamped, because the
+ * reveal stages this list one entry at a time (I7).
+ */
+export function SplitsStrip({ margin, height }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center', gap: 8 }}>
+      {/* STEP 1.15 "SPLITS"
+      <T variant="label">SPLITS</T>
+      */}
+
+      {/* STEP 1.16 km
+      <View style={{ flexDirection: 'row', gap: 8 }}>
+        {splits.map((split) => (
+          <View key={split.id} style={{ flex: 1, gap: 6 }}>
+            <View
+              style={{
+                height: 6,
+                borderRadius: 3,
+                backgroundColor: ct.cardSoft,
+                overflow: 'hidden',
+              }}
+            >
+              <View
+                style={{
+                  width: `${splitWidth(splits, split.seconds)}%`,
+                  height: 6,
+                  borderRadius: 3,
+                  backgroundColor: split.best ? ct.lime : ct.violet,
+                }}
+              />
+            </View>
+
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+              <T variant="day">{split.km}</T>
+              <T
+                variant="chipOff"
+                style={{ color: split.best ? ct.lime : ct.ink, letterSpacing: 0 }}
+              >
+                {split.pace}
+              </T>
+            </View>
+          </View>
+        ))}
+      </View>
+      */}
+    </View>
+  );
+}

@@ -358,13 +358,20 @@ function probe(limits) {
     // and excluding by size alone read a swipe screen's whole photo as 452dp
     // of empty canvas.
     //
-    // The line between them is `<img>`. A photograph arrives as one; a
-    // decorative ground arrives as a full-screen <svg> gradient or a filled
-    // div, and counting that as content marks every row of the screen
-    // painted and blinds this check completely. That is not hypothetical:
-    // an onboarding screen with a radial-gradient background passed with
-    // 190dp of empty ground under its hero.
-    if (r.width >= W - 2 && r.height >= H - 2 && el.tagName !== 'IMG' && !isLeafText(el)) continue;
+    // The line between them is a **bitmap**. A photograph is one; a decorative
+    // ground is a full-screen <svg> gradient or a filled div, and counting
+    // that as content marks every row of the screen painted and blinds this
+    // check completely. That is not hypothetical: an onboarding screen with a
+    // radial-gradient background passed with 190dp of empty ground under its
+    // hero.
+    //
+    // The test used to be `tagName === 'IMG'`, which is wrong under
+    // react-native-web: an `<Image>` renders as a div carrying a
+    // `background-image`, never as an `<img>`. So every full-bleed photograph
+    // in this repo was being read as decorative ground, and a travel splash
+    // whose whole middle *is* its photograph reported 375dp of empty canvas.
+    const bitmap = el.tagName === 'IMG' || /url\(/.test(style(el).backgroundImage);
+    if (r.width >= W - 2 && r.height >= H - 2 && !bitmap && !isLeafText(el)) continue;
     const top = Math.max(0, Math.floor(r.top));
     const bot = Math.min(H - 1, Math.ceil(r.bottom));
     for (let y = top; y <= bot; y++) rows[y] = true;

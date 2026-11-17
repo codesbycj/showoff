@@ -1,0 +1,83 @@
+import { Image, Pressable, ScrollView, View } from 'react-native';
+
+import { stories } from '../data/feed';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; size: number };
+
+/**
+ * The stories.
+ *
+ * **Every face is a photograph** (I4). A horizontal scroller, not a wrap: the
+ * board crops its last story at the frame, which a wrap cannot reproduce (R2).
+ *
+ * A live story is marked by a ring *and* a dot, never by colour alone.
+ */
+export function StoryRail({ margin, height, size }: Props) {
+  return (
+    <View style={{ height }}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: margin, gap: 12 }}
+      >
+        {/* STEP 1.08 "Add"
+        <Pressable accessibilityRole="button" accessibilityLabel="Add a story">
+          <View style={{ width: size, alignItems: 'center', gap: 7 }}>
+            <View
+              style={{
+                width: size,
+                height: size,
+                borderRadius: size / 2,
+                borderWidth: 1.5,
+                borderStyle: 'dashed',
+                borderColor: ct.violet,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="plus" size={20} color={ct.violet} strokeWidth={2} />
+            </View>
+            <T variant="story">Add</T>
+          </View>
+        </Pressable>
+        */}
+
+        {/* STEP 1.09 name
+        {stories.map((story) => (
+          <Pressable
+            key={story.id}
+            accessibilityRole="button"
+            accessibilityLabel={`${story.name}${story.live ? ', live' : ''}`}
+          >
+            <View style={{ width: size, alignItems: 'center', gap: 7 }}>
+              <View
+                style={{
+                  width: size,
+                  height: size,
+                  borderRadius: size / 2,
+                  borderWidth: story.live ? 2 : 1,
+                  borderColor: story.live ? ct.pink : ct.line,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Image
+                  source={story.image}
+                  style={{ width: size - 8, height: size - 8, borderRadius: (size - 8) / 2 }}
+                  resizeMode="cover"
+                />
+              </View>
+              <T variant="story" numberOfLines={1}>
+                {story.name}
+              </T>
+            </View>
+          </Pressable>
+        ))}
+        */}
+      </ScrollView>
+    </View>
+  );
+}

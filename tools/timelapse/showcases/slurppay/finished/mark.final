@@ -1,0 +1,59 @@
+import Svg, { Circle, Path, Rect } from 'react-native-svg';
+
+import type { Mark as MarkName } from '../data/checkout';
+import { ct } from '../theme';
+
+type Props = { name: MarkName; size?: number };
+
+/**
+ * The three payment marks, **invented and drawn** (I1 / I4).
+ *
+ * The board sets Mastercard, PayPal and Apple Pay; none of those are ours to
+ * ship. These are three schemes that do not exist, each with a mark that is an
+ * idea rather than a copy of somebody's logo - a card, a drop, a contactless
+ * arc.
+ *
+ * Each returns its own tile colour as well as its paths, so the row that
+ * mounts it does not have to know which mark it asked for.
+ */
+export const markTile: Record<MarkName, string> = {
+  card: '#E8E9FB',
+  drop: '#DFF1EF',
+  wave: '#F1F1F1',
+};
+
+export function Mark({ name, size = 22 }: Props) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      {name === 'card' && (
+        <>
+          <Rect x={2.6} y={5.4} width={18.8} height={13.2} rx={2.6} fill="#3B3FAE" />
+          <Rect x={5.2} y={9.4} width={4.4} height={3.4} rx={0.9} fill="#C9CBF4" />
+          <Path d="M12.8 15.4h5.8" stroke="#C9CBF4" strokeWidth={1.6} strokeLinecap="round" />
+        </>
+      )}
+
+      {name === 'drop' && (
+        <>
+          <Path
+            d="M12 3.4c3.6 4 5.6 6.6 5.6 9.2a5.6 5.6 0 0 1-11.2 0c0-2.6 2-5.2 5.6-9.2Z"
+            fill="#128C7A"
+          />
+          <Circle cx={12} cy={13.4} r={2.1} fill="#DFF1EF" />
+        </>
+      )}
+
+      {name === 'wave' && (
+        <>
+          <Path
+            d="M8.4 7.6a7.2 7.2 0 0 1 0 8.8M12.2 5.6a11 11 0 0 1 0 12.8M16 3.8a14.6 14.6 0 0 1 0 16.4"
+            stroke={ct.ink}
+            strokeWidth={1.9}
+            strokeLinecap="round"
+            fill="none"
+          />
+        </>
+      )}
+    </Svg>
+  );
+}

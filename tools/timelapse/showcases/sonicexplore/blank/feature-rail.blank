@@ -1,0 +1,73 @@
+import { LinearGradient } from 'expo-linear-gradient';
+import { Image, Pressable, ScrollView, View } from 'react-native';
+
+import { features } from '../data/explore';
+import { ct } from '../theme';
+import { T } from './text';
+
+import { RailProps } from './_explore-parts-shared';
+
+/**
+ * The featured tiles.
+ *
+ * **A horizontal `ScrollView`, not a wrap.** The board shows its third tile
+ * cut by the screen edge, and a wrap layout physically cannot reproduce that
+ * (R2). The rail is pinned to its own height so it cannot absorb the screen's
+ * slack.
+ *
+ * Each caption sits under a scrim, because text over a photograph has to clear
+ * 4.5:1 (R4). The scrim runs top to bottom, which `expo-linear-gradient`
+ * handles; only a *diagonal* is mirrored on web (Part 7).
+ */
+export function FeatureRail({ margin, height, width, radius }: RailProps) {
+  return (
+    <View style={{ height }}>
+      {/* STEP 1.06 tag
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: margin, gap: 12 }}
+      >
+        {features.map((f) => (
+          <Pressable
+            key={f.id}
+            accessibilityRole="button"
+            accessibilityLabel={`${f.tag}, ${f.artist}`}
+          >
+            {({ pressed }) => (
+              <View
+                style={{
+                  width,
+                  height,
+                  borderRadius: radius,
+                  overflow: 'hidden',
+                  backgroundColor: ct.card,
+                  opacity: pressed ? 0.88 : 1,
+                }}
+              >
+                <Image source={f.photo} style={{ width, height }} resizeMode="cover" />
+                <LinearGradient
+                  colors={['rgba(10,10,10,0)', 'rgba(10,10,10,0.92)']}
+                  locations={[0.45, 1]}
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: height * 0.55,
+                  }}
+                  pointerEvents="none"
+                />
+                <View style={{ position: 'absolute', left: 12, right: 12, bottom: 12 }}>
+                  <T variant="tag">{f.tag}</T>
+                  <T variant="tagArtist">{f.artist}</T>
+                </View>
+              </View>
+            )}
+          </Pressable>
+        ))}
+      </ScrollView>
+      */}
+    </View>
+  );
+}

@@ -1,0 +1,324 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "@/features/lumofeed/components/wash-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import wash ground"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "@/features/lumofeed/components/feed-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import feed header"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/feed-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/feed-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "\"Search\"",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/feed-header.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "\"Notifications\"",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/feed-header.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "@/features/lumofeed/components/story-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "STEP 1.07"
+     ]
+    }
+   ],
+   "label": "import story rail"
+  },
+  {
+   "label": "\"Add\"",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/story-rail.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/story-rail.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "\"marco\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "s2"
+   ]
+  },
+  {
+   "label": "\"jim\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "s3"
+   ]
+  },
+  {
+   "label": "\"tayor\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "s4"
+   ]
+  },
+  {
+   "label": "\"noor\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "s5"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "@/features/lumofeed/components/featured-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import featured card"
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/featured-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/featured-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "@/features/lumofeed/components/post-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import post card"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/post-card.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/post-card.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/post-card.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "caption",
+   "op": "jsx",
+   "args": [
+    "src/features/lumofeed/components/post-card.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "@/features/lumofeed/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumofeed/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Search\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "search"
+   ]
+  },
+  {
+   "label": "\"Post\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "post"
+   ]
+  },
+  {
+   "label": "\"Messages\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "messages"
+   ]
+  },
+  {
+   "label": "\"Profile\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumofeed/data/feed.ts",
+    "profile"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/lumofeed/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/lumofeed/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-feed",
+     "src/features/lumofeed/data/feed.ts"
+    ],
+    [
+     "featured-card",
+     "src/features/lumofeed/components/featured-card.tsx"
+    ],
+    [
+     "feed-header",
+     "src/features/lumofeed/components/feed-header.tsx"
+    ],
+    [
+     "post-card",
+     "src/features/lumofeed/components/post-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/lumofeed/index.tsx"
+    ],
+    [
+     "story-rail",
+     "src/features/lumofeed/components/story-rail.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

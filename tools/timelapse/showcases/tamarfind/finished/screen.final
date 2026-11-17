@@ -1,0 +1,73 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { CategoryRow } from '@/features/tamarfind/components/category-row';
+import { CategoryTitle } from '@/features/tamarfind/components/category-title';
+import { FindHeader } from '@/features/tamarfind/components/find-header';
+import { SearchField } from '@/features/tamarfind/components/search-field';
+import { MapGround } from '@/features/tamarfind/components/map-ground';
+import { MapPins } from '@/features/tamarfind/components/map-pins';
+import { TabBar } from '@/features/tamarfind/components/tab-bar';
+import { VenueCard } from '@/features/tamarfind/components/venue-card';
+import { useLayout } from '@/features/tamarfind/layout';
+import { ct } from '@/features/tamarfind/theme';
+
+/**
+ * Tamarran — find classes.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The map takes the screen's slack (see `layout.ts`), so the foot cannot open
+ * a band. It is built as the map *idea* rather than traced — see
+ * `map-ground.tsx` and I4.
+ */
+export default function TamarfindScreen() {
+  const L = useLayout();
+  const [cat, setCat] = useState('strength');
+  const [tab, setTab] = useState('explore');
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page, paddingTop: L.insets.top }}>
+      <StatusBar style="dark" />
+
+      <FindHeader height={L.headerH} margin={L.margin} control={L.control} />
+
+      <View style={{ height: L.gapHeader }} />
+      <SearchField height={L.searchH} margin={L.margin} />
+
+      <View style={{ height: L.gapSearch }} />
+      <CategoryTitle height={L.catTitleH} margin={L.margin} />
+
+      <View style={{ height: L.gapCatTitle }} />
+      <CategoryRow
+        height={L.chips.h}
+        margin={L.margin}
+        radius={L.chips.radius}
+        value={cat}
+        onSelect={setCat}
+      />
+
+      <View style={{ height: L.gapChips }} />
+      <View style={{ height: L.map.h }}>
+        <MapGround width={L.W} height={L.map.h} />
+        <MapPins width={L.W} height={L.map.h} />
+      </View>
+
+      <View style={{ height: L.gapCard }} />
+      <VenueCard
+        margin={L.margin}
+        height={L.card.h}
+        radius={L.card.radius}
+        photoH={L.card.photoH}
+        reserveH={L.card.reserveH}
+        onReserve={() => router.push('/tamargym')}
+      />
+
+      <TabBar height={L.tabs.h} bottomInset={L.insets.bottom} value={tab} onSelect={setTab} />
+    </View>
+  );
+}

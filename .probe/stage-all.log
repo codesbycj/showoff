@@ -1,0 +1,25 @@
+--- chunk a ---
+ 1/12  romeospot      planned=30  painting=23  zero=0  err=0  largest=21.0 
+ 2/12  romeobook      planned=36  painting=26  zero=0  err=0  largest=13.8 
+ 3/12  romeodate      planned=29  painting=24  zero=0  err=0  largest=38.8 
+ 4/12  crypinhome     planned=30  painting=18  zero=0  err=0  largest=20.5 
+ 5/12  crypinswap     planned=38  painting=30  zero=0  err=0  largest=14.3 
+ 6/12  crypinconfirm  planned=29  painting=22  zero=0  err=0  largest=18.1 
+ 7/12  vestahome      planned=34  painting=25  zero=0  err=0  largest=15.9 
+ 8/12  vestabrowse    planned=30  painting=23  zero=0  err=0  largest=11.0 
+ 9/12  vestaitem      planned=36  painting=26  zero=1  err=0  largest=32.9 
+10/12  lumistart      planned=28  painting=25  zero=0  err=0  largest=23.9 
+11/12  lumihome       planned=28  painting=21  zero=0  err=0  largest=7.3  
+12/12  lumistock      planned=27  painting=18  zero=0  err=0  largest=8.9  
+chunk a exit=0
+--- chunk b ---
+ 1/12  tamarstart     planned=19  painting=17  zero=0  err=0  largest=9.1  
+ 2/12  tamarfind      planned=39  painting=27  zero=0  err=0  largest=28.8 
+ 3/12  tamargym       planned=31  painting=24  zero=0  err=0  largest=49.3 
+ 4/12  zonestart      planned=21  painting=17  zero=0  err=0  largest=51.5 
+ 5/12  zonehome       planned=33  painting=22  zero=0  err=0  largest=29.5 
+ 6/12  zonemenu       planned=29  painting=20  zero=0  err=0  largest=19.7 
+ 7/12  zoneroute      planned=37  painting=24  zero=0  err=0  largest=31.9 
+ 8/12  zoneitem       planned=29  painting=22  zero=0  err=0  largest=43.4 
+ 9/12  vitalcycle     planned=29  painting=24  zero=1  err=0  largest=16.4 
+10/12  vitalweight    planned=25  painting=19  zero=0  err=0  largest=15.8 

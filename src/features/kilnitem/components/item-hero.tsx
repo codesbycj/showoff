@@ -1,0 +1,122 @@
+import { useId } from 'react';
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { piece } from '../data/item';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  width: number;
+  height: number;
+  margin: number;
+  insetTop: number;
+  onClose: () => void;
+};
+
+/**
+ * The piece in use - the dominant element on the screen (R8).
+ *
+ * **The caption sits on a scrim** so every string clears 4.5:1 over any frame
+ * of the photograph (R4) - the audit skips text over photography, so this one
+ * is built not to need judging. The scrim is an `<svg>` gradient rather than
+ * `expo-linear-gradient`, which flips a diagonal on web (SS7), and its id comes
+ * from `useId` because ids are document-global there.
+ */
+export function ItemHero({ width, height, margin, insetTop, onClose }: Props) {
+  const gid = useId();
+
+  return (
+    <View style={{ width, height, overflow: 'hidden' }}>
+      {/* The photograph and its scrim are one element: the picture as it is
+          actually seen. Staged apart, the scrim was a second step repainting
+          the same 18-36% of the frame the photograph had just painted. */}
+      <View style={{ position: 'absolute', top: 0, left: 0, width, height }}>
+        <Image
+          source={piece.image}
+          style={{ position: 'absolute', top: 0, left: 0, width, height }}
+          resizeMode="cover"
+        />
+
+        <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+          <Defs>
+            <LinearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
+              <Stop offset="0.4" stopColor="#141414" stopOpacity="0" />
+              <Stop offset="1" stopColor="#141414" stopOpacity="0.82" />
+            </LinearGradient>
+          </Defs>
+          <Rect x="0" y="0" width={width} height={height} fill={`url(#${gid})`} />
+        </Svg>
+      </View>
+
+      {/* STEP 1.02 "Back"
+      <View
+        style={{
+          marginTop: insetTop,
+          marginHorizontal: margin,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={onClose}
+          hitSlop={{ top: 2, bottom: 2, left: 2, right: 2 }}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.scrim,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="close" size={16} color={ct.onDark} strokeWidth={2} />
+          </View>
+        </Pressable>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Save this piece"
+          hitSlop={{ top: 2, bottom: 2, left: 2, right: 2 }}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.scrim,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="heart" size={16} color={ct.onDark} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+      */}
+
+      {/* STEP 1.03 maker
+      <View style={{ position: 'absolute', left: margin, right: margin, bottom: 18, gap: 8 }}>
+        <View
+          style={{
+            alignSelf: 'flex-start',
+            paddingHorizontal: 10,
+            paddingVertical: 5,
+            borderRadius: 11,
+            backgroundColor: ct.scrim,
+          }}
+        >
+          <T variant="makerChip">{piece.maker}</T>
+        </View>
+
+        <T variant="itemTitle">{piece.name}</T>
+      </View>
+      */}
+    </View>
+  );
+}

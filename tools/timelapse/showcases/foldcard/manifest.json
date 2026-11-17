@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/foldcard/index.tsx",
+  "card-face": "src/features/foldcard/components/card-face.tsx",
+  "folder": "src/features/foldcard/components/folder.tsx",
+  "field-list": "src/features/foldcard/components/field-list.tsx",
+  "data-card": "src/features/foldcard/data/card.ts",
+  "country-row": "src/features/foldcard/components/country-row.tsx"
+}

@@ -1,0 +1,52 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { DurationBlock } from '@/features/striderun/components/duration-block';
+import { EffortBar } from '@/features/striderun/components/effort-bar';
+import { RunControls } from '@/features/striderun/components/run-controls';
+import { RunHeader } from '@/features/striderun/components/run-header';
+import { SplitsStrip } from '@/features/striderun/components/splits-strip';
+import { StatGrid } from '@/features/striderun/components/stat-grid';
+import { useLayout } from '@/features/striderun/layout';
+import { ct } from '@/features/striderun/theme';
+
+/**
+ * Stride — recording.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The stat grid is the remainder, so the controls always sit on the foot with
+ * no band under them (I3), and the pace is computed from the duration and the
+ * distance rather than typed beside them (R9).
+ */
+export default function StriderunScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <RunHeader margin={L.margin} height={L.headerH} onLock={() => router.push('/stridehome')} />
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ flex: L.durationFlex }}>
+        <DurationBlock margin={L.margin} />
+      </View>
+
+      <View style={{ height: L.gapDuration }} />
+      <View style={{ flex: L.statsFlex }}>
+        <StatGrid margin={L.margin} />
+      </View>
+
+      <SplitsStrip margin={L.margin} height={L.splits.h} />
+
+      <EffortBar margin={L.margin} height={L.effort.h} />
+
+      <RunControls height={L.controlsH} onStop={() => router.push('/stridehome')} />
+    </View>
+  );
+}

@@ -1,0 +1,312 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "@/features/foldhome/components/greet-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import greet row"
+  },
+  {
+   "label": "\"Scan a code\"",
+   "op": "jsx",
+   "args": [
+    "src/features/foldhome/components/greet-row.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "@/features/foldhome/components/card-stack"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import card stack"
+  },
+  {
+   "label": "tab",
+   "op": "jsx",
+   "args": [
+    "src/features/foldhome/components/card-stack.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "scheme",
+   "op": "jsx",
+   "args": [
+    "src/features/foldhome/components/card-stack.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "volta",
+   "op": "block",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "volta"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/foldhome/components/folder.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "@/features/foldhome/components/action-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import action row"
+  },
+  {
+   "label": "\"Transfer\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "transfer"
+   ]
+  },
+  {
+   "label": "\"Withdraw\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "withdraw"
+   ]
+  },
+  {
+   "label": "\"More\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "more"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "@/features/foldhome/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import text + section"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "filter",
+   "op": "jsx",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "@/features/foldhome/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import glyph"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/foldhome/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "@/features/foldhome/components/tx-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/foldhome/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import tx list"
+  },
+  {
+   "label": "\"Gym\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "gym"
+   ]
+  },
+  {
+   "label": "\"Salary\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "salary"
+   ]
+  },
+  {
+   "label": "\"Tuneloop\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "tunes"
+   ]
+  },
+  {
+   "label": "\"Nadia Ray\"",
+   "op": "entry",
+   "args": [
+    "src/features/foldhome/data/home.ts",
+    "nadia"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "card-stack",
+     "src/features/foldhome/components/card-stack.tsx"
+    ],
+    [
+     "data-home",
+     "src/features/foldhome/data/home.ts"
+    ],
+    [
+     "folder",
+     "src/features/foldhome/components/folder.tsx"
+    ],
+    [
+     "greet-row",
+     "src/features/foldhome/components/greet-row.tsx"
+    ],
+    [
+     "screen",
+     "src/app/foldhome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

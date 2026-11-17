@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/foldhome/index.tsx",
+  "greet-row": "src/features/foldhome/components/greet-row.tsx",
+  "card-stack": "src/features/foldhome/components/card-stack.tsx",
+  "data-home": "src/features/foldhome/data/home.ts",
+  "folder": "src/features/foldhome/components/folder.tsx",
+  "action-row": "src/features/foldhome/components/action-row.tsx",
+  "tx-list": "src/features/foldhome/components/tx-list.tsx"
+}

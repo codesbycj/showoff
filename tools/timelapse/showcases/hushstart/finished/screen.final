@@ -1,0 +1,76 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { ContinueButton } from '@/features/hushstart/components/continue-button';
+import { HeroScrim } from '@/features/hushstart/components/hero-scrim';
+import { MoodChips } from '@/features/hushstart/components/mood-chips';
+import { OnboardBody } from '@/features/hushstart/components/onboard-body';
+import { OnboardTitle } from '@/features/hushstart/components/onboard-title';
+import { PageDots } from '@/features/hushstart/components/page-dots';
+import { SkipLink } from '@/features/hushstart/components/skip-link';
+import { Wordmark } from '@/features/hushstart/components/wordmark';
+import { useLayout } from '@/features/hushstart/layout';
+import { ct } from '@/features/hushstart/theme';
+
+/**
+ * Hush - the welcome.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The wordmark and the skip control are mounted side by side from here rather
+ * than wrapped in one header: `stage.js` stages what the screen mounts, so two
+ * marks in one wrapper reveal as one step (I5).
+ *
+ * The photograph is full bleed and the copy sits in the bottom of it, so the
+ * screen ends on the pill with no band under it (I3).
+ */
+export default function HushstartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+      <HeroScrim width={L.W} height={L.H} />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.topH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Wordmark height={L.topH} />
+        <SkipLink onPress={() => router.push('/hushmix')} />
+      </View>
+
+      <View style={{ flex: 1 }} />
+
+      <PageDots height={L.dotsH} margin={L.margin} />
+
+      <View style={{ height: L.gapDots }} />
+      <OnboardTitle margin={L.margin} height={L.displayH} />
+
+      <View style={{ height: L.gapDisplay }} />
+      <OnboardBody margin={L.margin} height={L.bodyH} />
+
+      <View style={{ height: L.gapBody }} />
+      <MoodChips margin={L.margin} height={L.moodH} />
+
+      <View style={{ height: L.gapMoods }} />
+      <ContinueButton
+        margin={L.margin}
+        height={L.cta.h}
+        radius={L.cta.radius}
+        onPress={() => router.push('/hushmix')}
+      />
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

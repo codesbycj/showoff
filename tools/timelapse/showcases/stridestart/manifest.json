@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/stridestart/index.tsx",
+  "route-map": "src/features/stridestart/components/route-map.tsx",
+  "gps-pill": "src/features/stridestart/components/gps-pill.tsx",
+  "mode-chips": "src/features/stridestart/components/mode-chips.tsx",
+  "data-start": "src/features/stridestart/data/start.ts",
+  "option-rows": "src/features/stridestart/components/option-rows.tsx",
+  "start-controls": "src/features/stridestart/components/start-controls.tsx"
+}

@@ -1,0 +1,70 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { DealRow } from '@/features/pawshome/components/deal-row';
+import { Dock } from '@/features/pawshome/components/dock';
+import { HomeHeader } from '@/features/pawshome/components/home-header';
+import { PetChips } from '@/features/pawshome/components/pet-chips';
+import { ProductGrid } from '@/features/pawshome/components/product-grid';
+import { SearchField } from '@/features/pawshome/components/search-field';
+import { SectionRow } from '@/features/pawshome/components/section-row';
+import { sections } from '@/features/pawshome/data/home';
+import { useLayout } from '@/features/pawshome/layout';
+import { ct } from '@/features/pawshome/theme';
+
+/**
+ * Paws — home.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The product grid is the remainder — its cards grow into whatever the header,
+ * the search field, the chips and the dock leave — so the screen always ends
+ * on the dock with no band under it (I3).
+ */
+export default function PawshomeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <HomeHeader margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <SearchField margin={L.margin} height={L.search.h} radius={L.search.radius} />
+
+      <View style={{ height: L.gapSearch }} />
+      <PetChips margin={L.margin} height={L.pet.h} size={L.pet.size} />
+
+      <View style={{ height: L.gapPets }} />
+      <SectionRow margin={L.margin} height={L.sectionH} title={sections.popular} />
+
+      <View style={{ height: L.gapSection }} />
+      <ProductGrid
+        margin={L.margin}
+        width={L.card.w}
+        height={L.card.h}
+        radius={L.card.radius}
+        onOpen={() => router.push('/pawsitem')}
+      />
+
+      <View style={{ height: L.gapDeal }} />
+      <SectionRow margin={L.margin} height={L.sectionH} title={sections.deals} />
+
+      <View style={{ height: L.gapSection }} />
+      <DealRow
+        margin={L.margin}
+        height={L.deal.h}
+        radius={L.deal.radius}
+        thumb={L.deal.thumb}
+        onOpen={() => router.push('/pawsitem')}
+      />
+
+      <Dock height={L.dock.h} onCart={() => router.push('/pawsitem')} />
+    </View>
+  );
+}

@@ -1,0 +1,341 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/top-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import top bar"
+  },
+  {
+   "label": "\"Cart\"",
+   "op": "jsx",
+   "args": [
+    "src/features/slurpdish/components/top-bar.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/dish-hero"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import dish hero"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/slurpdish/components/dish-hero.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/qty-pill"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import qty pill"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/slurpdish/components/qty-pill.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "\"One fewer\"",
+   "op": "jsx",
+   "args": [
+    "src/features/slurpdish/components/qty-pill.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/size-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import size rail"
+  },
+  {
+   "label": "\"Medium\"",
+   "op": "block",
+   "args": [
+    "src/features/slurpdish/data/dish.ts",
+    "medium"
+   ]
+  },
+  {
+   "label": "\"Large\"",
+   "op": "block",
+   "args": [
+    "src/features/slurpdish/data/dish.ts",
+    "large"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/slurpdish/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/sheet-dome"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import sheet dome"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/app/slurpdish/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/fact-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import fact chips"
+  },
+  {
+   "label": "\"15-20 min\"",
+   "op": "entry",
+   "args": [
+    "src/features/slurpdish/data/dish.ts",
+    "time"
+   ]
+  },
+  {
+   "label": "\"4.9 (12,165)\"",
+   "op": "entry",
+   "args": [
+    "src/features/slurpdish/data/dish.ts",
+    "rating"
+   ]
+  },
+  {
+   "label": "section",
+   "op": "jsx",
+   "args": [
+    "src/app/slurpdish/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/extras-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import extras row"
+  },
+  {
+   "label": "\"Chili oil\"",
+   "op": "entry",
+   "args": [
+    "src/features/slurpdish/data/dish.ts",
+    "chili"
+   ]
+  },
+  {
+   "label": "\"Scallions\"",
+   "op": "entry",
+   "args": [
+    "src/features/slurpdish/data/dish.ts",
+    "onion"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/slurpdish/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/slurpdish/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "@/features/slurpdish/components/select-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurpdish/index.tsx",
+      "STEP 1.24"
+     ]
+    }
+   ],
+   "label": "import select bar"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/slurpdish/components/select-bar.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/slurpdish/components/select-bar.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-dish",
+     "src/features/slurpdish/data/dish.ts"
+    ],
+    [
+     "dish-hero",
+     "src/features/slurpdish/components/dish-hero.tsx"
+    ],
+    [
+     "qty-pill",
+     "src/features/slurpdish/components/qty-pill.tsx"
+    ],
+    [
+     "screen",
+     "src/app/slurpdish/index.tsx"
+    ],
+    [
+     "select-bar",
+     "src/features/slurpdish/components/select-bar.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/slurpdish/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

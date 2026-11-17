@@ -1,0 +1,68 @@
+/**
+ * Everything flowrecipe says.
+ *
+ * **R9: the macro rings sweep their own share of the dish.** Each ring's arc
+ * is that macro's grams over the three together, so the picture cannot
+ * disagree with the numbers beside it — and the energy line is computed from
+ * the macros at 4/4/9 kcal a gram rather than typed.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const recipe = {
+  slot: 'LUNCH · FOLLICULAR',
+  name: 'Salmon poke bowl',
+  minutes: 20,
+  serves: 1,
+  image: require('../../../../assets/images/flowrecipe/hero.jpg'),
+  cta: 'Start cooking',
+};
+
+export type Macro = {
+  id: string;
+  label: string;
+  grams: number;
+  colour: 'rose' | 'amber' | 'lilac';
+};
+
+export const macros: Macro[] = [
+  { id: 'protein', label: 'Protein', grams: 34, colour: 'rose' },
+  { id: 'carbs', label: 'Carbs', grams: 58, colour: 'amber' },
+  { id: 'fat', label: 'Fat', grams: 18, colour: 'lilac' },
+];
+
+export const insight = {
+  label: 'Why this now',
+  /** R5: one line, 66 characters. */
+  body: 'Omega-3 and iron support the energy rise in this phase.',
+};
+
+export type Tab = { id: string; label: string; on?: boolean };
+
+export const tabs: Tab[] = [
+  { id: 'ingredients', label: 'Ingredients', on: true },
+  { id: 'method', label: 'Method · 4 steps' },
+];
+
+export type Ingredient = { id: string; label: string; amount: string; have?: boolean };
+
+export const ingredients: Ingredient[] = [
+  { id: 'rice', label: 'Sushi rice', amount: '80 g', have: true },
+  { id: 'salmon', label: 'Fresh salmon, sliced', amount: '120 g', have: true },
+  { id: 'avocado', label: 'Avocado', amount: '½' },
+  { id: 'edamame', label: 'Edamame', amount: '60 g' },
+];
+
+/** Total grams, floored at one so a ring can never divide by zero (I7). */
+export function macroTotal(rows: Macro[]) {
+  return Math.max(
+    rows.reduce((sum, row) => sum + row.grams, 0),
+    1,
+  );
+}
+
+/** Energy from the macros: 4 kcal a gram of protein and carbohydrate, 9 of fat. */
+export function energy(rows: Macro[]) {
+  return Math.round(rows.reduce((sum, row) => sum + row.grams * (row.id === 'fat' ? 9 : 4), 0));
+}

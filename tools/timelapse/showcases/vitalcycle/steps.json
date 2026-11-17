@@ -1,0 +1,409 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/back-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.01"
+          ]
+        }
+      ],
+      "label": "import back row"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/back-row.tsx",
+            "STEP 1.02"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/headline"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "glyph + import headline"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/range-tabs"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "import range tabs"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/day-strip"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.05"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/day-strip.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "import day strip + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "d2"
+          ]
+        }
+      ],
+      "label": "\"M\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "d3"
+          ]
+        }
+      ],
+      "label": "\"T\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "d4"
+          ]
+        }
+      ],
+      "label": "\"W\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "d5"
+          ]
+        }
+      ],
+      "label": "\"T\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "d6"
+          ]
+        }
+      ],
+      "label": "\"F\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "d7"
+          ]
+        }
+      ],
+      "label": "\"S\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/symptom-chips"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.13"
+          ]
+        }
+      ],
+      "label": "import symptom chips"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/symptom-chips.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "c2"
+          ]
+        }
+      ],
+      "label": "\"No discharge\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "c3"
+          ]
+        }
+      ],
+      "label": "\"Back pain\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "c4"
+          ]
+        }
+      ],
+      "label": "\"Irregular\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "c5"
+          ]
+        }
+      ],
+      "label": "\"Contraception\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/log-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "import log title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/promo-card"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.20"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/promo-card.tsx",
+            "STEP 1.21"
+          ]
+        }
+      ],
+      "label": "import promo card + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/promo-card.tsx",
+            "STEP 1.22"
+          ]
+        }
+      ],
+      "label": "title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/promo-card.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "cta"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "@/features/vitalcycle/components/note-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.24"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalcycle/components/note-row.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "import note row + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalcycle/data/cycle.ts",
+            "n2"
+          ]
+        }
+      ],
+      "label": "\"Stay motivated\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalcycle/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "back-row",
+              "src/features/vitalcycle/components/back-row.tsx"
+            ],
+            [
+              "data-cycle",
+              "src/features/vitalcycle/data/cycle.ts"
+            ],
+            [
+              "day-strip",
+              "src/features/vitalcycle/components/day-strip.tsx"
+            ],
+            [
+              "note-row",
+              "src/features/vitalcycle/components/note-row.tsx"
+            ],
+            [
+              "promo-card",
+              "src/features/vitalcycle/components/promo-card.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vitalcycle/index.tsx"
+            ],
+            [
+              "symptom-chips",
+              "src/features/vitalcycle/components/symptom-chips.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

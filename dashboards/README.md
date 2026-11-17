@@ -35,6 +35,7 @@ picture as a real, working app, and recorded by driving it with a cursor.
 | [`hivora/`](./hivora) | 28 — Hivora, a team workspace and recording library | posed board (inspo brief) | Home · Recordings · Team | 5408 |
 | [`skillra/`](./skillra) | 29 — Skillra, an e-learning course platform | posed board (inspo brief) | Learn · Courses · Tasks | 5412 |
 | [`tasklio/`](./tasklio) | 30 — Tasklio, a studio kanban board | posed board (inspo brief) | Board · All tasks · Team | 5416 |
+| [`admyra/`](./admyra) | 31 — Meta Ads Manager, the campaigns table | **screen recording (clone, stripped down)** | Campaigns only — see its README | 5420 |
 
 ```bash
 cd dashboards/twisty  && npm install && npm run dev    # http://localhost:5300
@@ -67,6 +68,7 @@ cd dashboards/parlexa && npm install && npm run dev    # http://localhost:5404
 cd dashboards/hivora  && npm install && npm run dev    # http://localhost:5408
 cd dashboards/skillra && npm install && npm run dev    # http://localhost:5412
 cd dashboards/tasklio && npm install && npm run dev    # http://localhost:5416
+cd dashboards/admyra  && npm install && npm run dev    # http://localhost:5420
 ```
 
 From the repository root, `npm run dev:<slug>` and `npm run build:<slug>` do the same

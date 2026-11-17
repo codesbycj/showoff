@@ -1,0 +1,43 @@
+import { useId } from 'react';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { ct } from '../theme';
+
+type Props = { width: number; height: number };
+
+/**
+ * The page's own ground: the board's warm gradient, pink into peach.
+ *
+ * Full-bleed, so under §5.5 this is the page's ground and is allowed to paint
+ * in frame one — like the gradient backgrounds several of these designs use.
+ * Everything else on the screen is staged over it.
+ *
+ * **Drawn in `react-native-svg` user space, not `expo-linear-gradient`.** A
+ * diagonal is mirrored on web by that library (Part 7), and this one is
+ * diagonal.
+ *
+ * **`useId` for the gradient.** `react-native-svg` ids are document-global on
+ * web, so two gradients sharing one id make everything render in the first
+ * colour.
+ */
+export function PageGround({ width, height }: Props) {
+  const id = useId();
+
+  return (
+    <Svg
+      width={width}
+      height={height}
+      style={{ position: 'absolute', top: 0, left: 0 }}
+      pointerEvents="none"
+    >
+      <Defs>
+        <LinearGradient id={id} x1="0" y1="0" x2="0.85" y2="1">
+          <Stop offset="0" stopColor={ct.bgTop} />
+          <Stop offset="0.45" stopColor={ct.bgMid} />
+          <Stop offset="1" stopColor={ct.bgBottom} />
+        </LinearGradient>
+      </Defs>
+      <Rect x={0} y={0} width={width} height={height} fill={`url(#${id})`} />
+    </Svg>
+  );
+}

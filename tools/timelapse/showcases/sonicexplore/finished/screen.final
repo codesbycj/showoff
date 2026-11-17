@@ -1,0 +1,67 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { Dock } from '@/features/sonicexplore/components/dock';
+import { ExploreTitle } from '@/features/sonicexplore/components/explore-title';
+import { FeatureRail } from '@/features/sonicexplore/components/feature-rail';
+import { GenreGrid } from '@/features/sonicexplore/components/genre-grid';
+import { MoodsTitle } from '@/features/sonicexplore/components/moods-title';
+import { SearchField } from '@/features/sonicexplore/components/search-field';
+import { useLayout } from '@/features/sonicexplore/layout';
+import { ct } from '@/features/sonicexplore/theme';
+
+/**
+ * Sonic — explore.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The board heads this screen with a real service's name; renamed here,
+ * because a rebuild that keeps it is impersonation. Every tile's artwork is
+ * free-licensed photography standing in for a fictional release.
+ */
+export default function SonicexploreScreen() {
+  const L = useLayout();
+  const [tab, setTab] = useState('search');
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page, paddingTop: L.insets.top }}>
+      <StatusBar style="light" />
+
+      <SearchField margin={L.margin} height={L.searchH} />
+
+      <View style={{ height: L.gapSearch }} />
+      <ExploreTitle margin={L.margin} height={L.exploreH} />
+
+      <View style={{ height: L.gapExplore }} />
+      <FeatureRail margin={L.margin} height={L.rail.h} width={L.rail.w} radius={L.rail.radius} />
+
+      <View style={{ height: L.gapRail }} />
+      <MoodsTitle margin={L.margin} height={L.moodsH} />
+
+      <View style={{ height: L.gapMoods }} />
+      <GenreGrid
+        margin={L.margin}
+        height={L.grid.h}
+        gutter={L.gutter}
+        rowH={L.grid.rowH}
+        radius={L.grid.radius}
+        art={L.grid.art}
+        tile={L.grid.tile}
+      />
+
+      <Dock
+        width={L.dock.w}
+        height={L.dock.h}
+        lift={L.dock.lift}
+        item={L.dock.item}
+        bottomInset={L.insets.bottom}
+        value={tab}
+        onSelect={(id) => (id === 'home' ? router.push('/sonichome') : setTab(id))}
+      />
+    </View>
+  );
+}

@@ -1,0 +1,218 @@
+{
+  "slug": "vestaitem",
+  "screen": "1",
+  "total": 26,
+  "port": 8082,
+  "settle": 400,
+  "maxwait": 5000,
+  "steps": [
+    {
+      "n": 1,
+      "label": "import detail header + title",
+      "file": "01.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 2,
+      "label": "round",
+      "file": "02.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 3,
+      "label": "import hero shot + image",
+      "file": "03.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 4,
+      "label": "view + s2",
+      "file": "04.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 5,
+      "label": "s3",
+      "file": "05.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 6,
+      "label": "s4",
+      "file": "06.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 7,
+      "label": "s5",
+      "file": "07.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 8,
+      "label": "import shot rail + image",
+      "file": "08.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 9,
+      "label": "import item title + name",
+      "file": "09.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 10,
+      "label": "t",
+      "file": "10.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 11,
+      "label": "import size head + size title",
+      "file": "11.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 12,
+      "label": "size chart",
+      "file": "12.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 13,
+      "label": "import size picker + label",
+      "file": "13.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 14,
+      "label": "\"M\"",
+      "file": "14.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 15,
+      "label": "\"L\"",
+      "file": "15.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 16,
+      "label": "\"XL\"",
+      "file": "16.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 17,
+      "label": "\"XXL\"",
+      "file": "17.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 18,
+      "label": "\"XXXL\"",
+      "file": "18.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 19,
+      "label": "import blurb row",
+      "file": "19.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 20,
+      "label": "import delivery row",
+      "file": "20.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 21,
+      "label": "glyph + label",
+      "file": "21.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 22,
+      "label": "when",
+      "file": "22.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 23,
+      "label": "import cart bar + \"Share this item\"",
+      "file": "23.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 24,
+      "label": "label",
+      "file": "24.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 25,
+      "label": "a stray gap above it",
+      "file": "25.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 26,
+      "label": "take the gap back out + tidy up",
+      "file": "26.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    }
+  ]
+}

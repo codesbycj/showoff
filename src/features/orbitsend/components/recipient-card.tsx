@@ -1,0 +1,58 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { contacts, recipient } from '../data/send';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The contact the money is going to.
+ *
+ * **Guarded**: `recipient` falls back to the first row and then to `null`,
+ * because the reveal stages `contacts` one entry at a time and an index into
+ * an empty array is the crash shape I7 names. With nothing to show the block
+ * renders nothing rather than throwing.
+ */
+export function RecipientCard({ margin, height, radius }: Props) {
+  const person = recipient(contacts);
+  if (!person) return null;
+
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={`Paying ${person.name}`}>
+        <View
+          style={{
+            height,
+            borderRadius: radius,
+            backgroundColor: ct.tray,
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 12,
+            gap: 12,
+          }}
+        >
+          {/* STEP 1.11 image
+          <Image
+            source={person.image}
+            style={{ width: 48, height: 48, borderRadius: 24 }}
+            resizeMode="cover"
+          />
+          */}
+
+          {/* STEP 1.12 name
+          <View style={{ flex: 1 }}>
+            <T variant="name">{person.name}</T>
+            <T variant="account">{person.account}</T>
+          </View>
+          */}
+
+          {/* STEP 1.13 glyph
+          <Glyph name="chevron" size={18} color={ct.muted} strokeWidth={2} />
+          */}
+        </View>
+      </Pressable>
+    </View>
+  );
+}

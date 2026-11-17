@@ -1,0 +1,76 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { training } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number; onOpen?: () => void };
+
+/**
+ * Today's session.
+ *
+ * The arrow is a sibling of the card's own `Pressable`, never a child: a
+ * `role="button"` inside another is torn apart by the static web build's HTML
+ * parser (§7). The text column is inset by the button's width, so the control
+ * cannot straddle the content it covers (R3).
+ */
+export function SessionCard({ margin, height, radius, onOpen }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      {/* STEP 1.22 tag
+      <Pressable accessibilityRole="button" accessibilityLabel={training.name} onPress={onOpen}>
+        <View
+          style={{
+            height,
+            borderRadius: radius,
+            backgroundColor: ct.surface,
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 10,
+            gap: 12,
+          }}
+        >
+          <Image
+            source={training.image}
+            style={{ width: 72, height: 72, borderRadius: radius - 6 }}
+            resizeMode="cover"
+          />
+
+          <View style={{ flex: 1, gap: 2, paddingRight: 54 }}>
+            <T variant="tag">{training.tag}</T>
+            <T variant="session" numberOfLines={1}>
+              {training.name}
+            </T>
+            <T variant="sessionMeta">{training.meta}</T>
+          </View>
+        </View>
+      </Pressable>
+      */}
+
+      {/* STEP 1.23 glyph
+      <View style={{ position: 'absolute', right: 16, top: height / 2 - 21 }}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`Start ${training.name}`}
+          onPress={onOpen}
+          hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
+        >
+          <View
+            style={{
+              width: 42,
+              height: 42,
+              borderRadius: 21,
+              backgroundColor: ct.dark,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="arrow" size={19} color={ct.onDark} strokeWidth={2} />
+          </View>
+        </Pressable>
+      </View>
+      */}
+    </View>
+  );
+}

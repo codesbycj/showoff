@@ -1,0 +1,38 @@
+import { View } from 'react-native';
+
+import { money, total } from '../data/cart';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * What it comes to.
+ *
+ * Computed from the rows above it, never typed beside them (R9), and guarded
+ * for the empty cart the reveal starts from (I7).
+ */
+export function TotalRow({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <T variant="totalLabel">Total amount</T>
+
+      {/* One element, not two. The board sets the currency mark in orange,
+          a step smaller than the number; as its own element it measured
+          0.0095% of the frame and as a nested `<Text>` 0.0148% — both of them
+          steps that painted nothing, and the probe is right, because nobody
+          sees a `$` arrive on its own. The mark is part of the amount. */}
+      {/* STEP 1.19 t
+      <T variant="totalValue">{money(total())}</T>
+      */}
+    </View>
+  );
+}

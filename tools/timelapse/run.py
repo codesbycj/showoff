@@ -238,14 +238,36 @@ def steps_for(slug, screen):
     return data[screen]
 
 
+def run_one(slug, op, args):
+    """Apply a single op."""
+    if op == 'final':
+        final(slug, *[tuple(p) for p in args])
+    else:
+        OPS[op](*args)
+
+
+def ops_of(st):
+    """The ops a step applies, in order.
+
+    A step may carry several. RULES 5.2: "an import is never a step of its own.
+    It is uncommented in the same step as the first JSX block that uses it. One
+    step = one import + the block it feeds = one visible change." A step that
+    could only ever hold one op is a step that paints nothing, and the per-step
+    probe fails it under rule 0.2.
+
+    The old single-op shape is still read, so an un-compacted steps.json
+    replays unchanged.
+    """
+    if 'ops' in st:
+        return [(o['op'], o['args']) for o in st['ops']]
+    return [(st['op'], st['args'])]
+
+
 def perform(slug, screen, delay):
     steps = steps_for(slug, screen)
     for n, st in enumerate(steps, 1):
-        op, args = st['op'], st['args']
-        if op == 'final':
-            final(slug, *[tuple(p) for p in args])
-        else:
-            OPS[op](*args)
+        for op, args in ops_of(st):
+            run_one(slug, op, args)
         if st.get('label'):
             print('%2d/%d  %s' % (n, len(steps), st['label']))
             sys.stdout.flush()
@@ -296,8 +318,9 @@ def verify(slug):
 def touched_by(slug, screen):
     """The files a screen's steps end up rewriting, named by the tidy-up beat."""
     for st in steps_for(slug, screen):
-        if st['op'] == 'final':
-            return [name for name, _ in st['args']]
+        for op, args in ops_of(st):
+            if op == 'final':
+                return [name for name, _ in args]
     return []
 
 

@@ -1,0 +1,142 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { CategoryRail } from '@/features/foldspend/components/category-rail';
+import { FlowTiles } from '@/features/foldspend/components/flow-tiles';
+import { Glyph } from '@/features/foldspend/components/glyph';
+import { SpendChart } from '@/features/foldspend/components/spend-chart';
+import { T } from '@/features/foldspend/components/text';
+import { TransferList } from '@/features/foldspend/components/transfer-list';
+import { header, money, spent } from '@/features/foldspend/data/activity';
+import { useLayout } from '@/features/foldspend/layout';
+import { ct } from '@/features/foldspend/theme';
+
+/**
+ * Fold - the activity.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * Every figure is computed from the months under it (R9), and the transfer
+ * list runs under the bottom edge so the screen ends on a row crossing the
+ * frame (I3).
+ */
+export default function FoldspendScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View style={{ marginHorizontal: L.margin, height: L.topH, justifyContent: 'center' }}>
+        <View style={{ position: 'absolute', left: 0, right: 0, alignItems: 'center' }}>
+          <T variant="section">{header.title}</T>
+        </View>
+
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Back"
+            onPress={() => router.push('/foldhome')}
+          >
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 22,
+                backgroundColor: ct.card,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="back" size={18} color={ct.ink} strokeWidth={1.9} />
+            </View>
+          </Pressable>
+
+          <Pressable accessibilityRole="button" accessibilityLabel="More">
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 22,
+                backgroundColor: ct.card,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="more" size={18} color={ct.ink} strokeWidth={1.6} />
+            </View>
+          </Pressable>
+        </View>
+      </View>
+
+      <View style={{ height: L.gapTop }} />
+      <View style={{ height: L.totalLabelH, alignItems: 'center' }}>
+        <T variant="totalLabel">{header.totalLabel}</T>
+      </View>
+
+      <View style={{ height: L.totalH, alignItems: 'center' }}>
+        <T variant="total">{money(spent())}</T>
+      </View>
+
+      <View style={{ height: L.gapTotal }} />
+      <SpendChart margin={L.margin} width={L.chart.w} height={L.chart.h} />
+
+      <View style={{ height: L.gapChart }} />
+      <FlowTiles margin={L.margin} width={L.flow.w} height={L.flow.h} gap={L.flow.gap} />
+
+      <View style={{ height: L.gapFlow }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.sectionH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <T variant="section">{header.categories}</T>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`Filter: ${header.categoryFilter}`}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, height: 44 }}>
+            <T variant="filter">{header.categoryFilter}</T>
+            <Glyph name="chevronDown" size={14} color={ct.muted} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <CategoryRail margin={L.margin} width={L.cat.w} height={L.cat.h} gap={L.cat.gap} />
+
+      <View style={{ height: L.gapCats }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.sectionH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <T variant="section">{header.transfers}</T>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`Filter: ${header.transferFilter}`}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, height: 44 }}>
+            <T variant="filter">{header.transferFilter}</T>
+            <Glyph name="chevronDown" size={14} color={ct.muted} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <TransferList margin={L.margin} height={L.list.h} rowH={L.list.rowH} gap={L.list.gap} />
+    </View>
+  );
+}

@@ -1,0 +1,64 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AddonHead } from '@/features/zoneitem/components/addon-head';
+import { AddonList } from '@/features/zoneitem/components/addon-list';
+import { CartBar } from '@/features/zoneitem/components/cart-bar';
+import { ItemBlurb } from '@/features/zoneitem/components/item-blurb';
+import { ItemHero } from '@/features/zoneitem/components/item-hero';
+import { ItemTitle } from '@/features/zoneitem/components/item-title';
+import { LikedBadge } from '@/features/zoneitem/components/liked-badge';
+import { useLayout } from '@/features/zoneitem/layout';
+import { ct } from '@/features/zoneitem/theme';
+
+/**
+ * Food Zone — item detail.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The hero takes the screen's slack (see `layout.ts`), so the foot cannot open
+ * a band.
+ */
+export default function ZoneitemScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <ItemHero
+        width={L.W}
+        height={L.hero.h}
+        topInset={L.insets.top}
+        control={L.hero.control}
+        onBack={() => router.back()}
+      />
+
+      <View style={{ height: L.gapHero }} />
+      <LikedBadge margin={L.margin} height={L.badgeH} />
+
+      <View style={{ height: L.gapBadge }} />
+      <ItemTitle margin={L.margin} nameH={L.nameH} metaH={L.metaH} priceH={L.priceH} />
+
+      <View style={{ height: L.gapTitle }} />
+      <ItemBlurb margin={L.margin} height={L.blurbH} />
+
+      <View style={{ height: L.gapBlurb }} />
+      <AddonHead margin={L.margin} height={L.addonHeadH} />
+
+      <AddonList margin={L.margin} height={L.options.h} rowH={L.options.rowH} box={L.options.box} />
+
+      <View style={{ height: L.gapOptions }} />
+      <CartBar
+        margin={L.margin}
+        height={L.bar.h}
+        radius={L.bar.radius}
+        step={L.bar.step}
+        onAdd={() => router.push('/zoneroute')}
+      />
+    </View>
+  );
+}

@@ -1,0 +1,42 @@
+import { Pressable, View } from 'react-native';
+
+import { cta } from '../data/start';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { AsideProps } from './_start-copy-shared';
+
+/**
+ * "I already have an account →".
+ *
+ * **The link's tap target is its line height**, which is 18dp and under R7's
+ * 44 — so the anchor carries `hitSlop` that takes the real target past it,
+ * rather than the row being inflated to 44dp of empty space.
+ */
+export function StartAside({ margin, height, onPress }: AsideProps) {
+  return (
+    <View style={{ marginHorizontal: margin, height, alignItems: 'center' }}>
+      <Pressable
+        hitSlop={{ top: 14, bottom: 14, left: 16, right: 16 }}
+        onPress={onPress}
+        accessibilityRole="link"
+        accessibilityLabel={cta.aside}
+      >
+        {({ pressed }) => (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 8,
+              opacity: pressed ? 0.65 : 1,
+            }}
+          >
+            <T variant="aside">{cta.aside}</T>
+            <Glyph name="arrowRight" size={17} color={ct.ink} />
+          </View>
+        )}
+      </Pressable>
+    </View>
+  );
+}

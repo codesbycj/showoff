@@ -1,0 +1,60 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BioLines } from '@/features/lumoprofile/components/bio-lines';
+import { Dock } from '@/features/lumoprofile/components/dock';
+import { PhotoGrid } from '@/features/lumoprofile/components/photo-grid';
+import { ProfileHeader } from '@/features/lumoprofile/components/profile-header';
+import { StatRow } from '@/features/lumoprofile/components/stat-row';
+import { WashGround } from '@/features/lumoprofile/components/wash-ground';
+import { useLayout } from '@/features/lumoprofile/layout';
+import { ct } from '@/features/lumoprofile/theme';
+
+/**
+ * Lumora — profile.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The purple wash is the page's own ground and may paint in frame one; the
+ * grid runs under the dock as the board crops it, so the foot cannot open a
+ * band (I3).
+ */
+export default function LumoprofileScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <WashGround width={L.W} height={Math.round(L.H * 0.5)} />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ProfileHeader margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <StatRow margin={L.margin} height={L.statsH} />
+
+      <View style={{ height: L.gapStats }} />
+      <BioLines margin={L.margin} height={L.bioH} />
+
+      <View style={{ height: L.gapBio }} />
+      <PhotoGrid
+        margin={L.margin}
+        tabsH={L.tabsH}
+        cell={L.cell}
+        gap={L.gapTabs}
+        bottomPad={L.dock.h + L.dock.bottom}
+      />
+
+      <Dock
+        height={L.dock.h}
+        bottom={L.dock.bottom}
+        active="profile"
+        onProfile={() => router.push('/lumofeed')}
+      />
+    </View>
+  );
+}

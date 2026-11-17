@@ -1,0 +1,35 @@
+import { View } from 'react-native';
+
+import { welcome } from '../data/start';
+import { T } from './text';
+
+type Props = { margin: number; displayH: number; gap: number; bodyH: number };
+
+/**
+ * What the screen says.
+ *
+ * The headline is **two elements, not one string with a newline in it**: the
+ * reveal paints one element per step (I9), and a two-line serif display that
+ * lands whole is the single largest thing on the screen arriving in one beat.
+ */
+export function WelcomeCopy({ margin, displayH, gap, bodyH }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <View style={{ height: displayH, justifyContent: 'center' }}>
+        {/* STEP 1.05 display top
+        <T variant="display">{welcome.displayTop}</T>
+        */}
+        {/* STEP 1.06 display bottom
+        <T variant="display">{welcome.displayBottom}</T>
+        */}
+      </View>
+
+      <View style={{ height: gap }} />
+      {/* STEP 1.07 body
+      <View style={{ height: bodyH }}>
+        <T variant="body">{welcome.body}</T>
+      </View>
+      */}
+    </View>
+  );
+}

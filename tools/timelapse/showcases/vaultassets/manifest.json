@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/vaultassets/index.tsx",
+  "section-tabs": "src/features/vaultassets/components/section-tabs.tsx",
+  "data-assets": "src/features/vaultassets/data/assets.ts",
+  "total-figure": "src/features/vaultassets/components/total-figure.tsx",
+  "stat-rows": "src/features/vaultassets/components/stat-rows.tsx"
+}

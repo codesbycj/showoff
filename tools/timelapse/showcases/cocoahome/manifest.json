@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/cocoahome/index.tsx",
+  "shop-header": "src/features/cocoahome/components/shop-header.tsx",
+  "kind-chips": "src/features/cocoahome/components/kind-chips.tsx",
+  "data-shop": "src/features/cocoahome/data/shop.ts",
+  "pack-rail": "src/features/cocoahome/components/pack-rail.tsx",
+  "cart-bar": "src/features/cocoahome/components/cart-bar.tsx"
+}

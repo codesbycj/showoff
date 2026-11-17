@@ -1,0 +1,30 @@
+import { View } from 'react-native';
+
+import { account, balanceFrom, movements } from '../data/home';
+import { T } from './text';
+
+type Props = { height: number };
+
+/**
+ * The account balance — the dominant element on the screen (R8).
+ *
+ * **R9: it is the opening balance plus every movement in the list below**, so
+ * the headline and the transactions cannot disagree. `balanceFrom` carries an
+ * initial value, because the reveal stages that list one row at a time (I7).
+ */
+export function BalanceBlock({ height }: Props) {
+  const balance = balanceFrom(movements);
+
+  return (
+    <View style={{ height, alignItems: 'center', justifyContent: 'center' }}>
+      {/* STEP 1.07 t
+      <T variant="balance">
+        ${balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      </T>
+      */}
+      {/* STEP 1.08 balance label
+      <T variant="balanceLabel">{account.balanceLabel}</T>
+      */}
+    </View>
+  );
+}

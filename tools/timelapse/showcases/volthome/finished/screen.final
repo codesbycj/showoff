@@ -1,0 +1,66 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { CategoryRail } from '@/features/volthome/components/category-rail';
+import { ProductGrid } from '@/features/volthome/components/product-grid';
+import { PromoBanner } from '@/features/volthome/components/promo-banner';
+import { SearchBar } from '@/features/volthome/components/search-bar';
+import { SectionRow } from '@/features/volthome/components/section-row';
+import { ShopHeader } from '@/features/volthome/components/shop-header';
+import { TabBar } from '@/features/volthome/components/tab-bar';
+import { useCountdown } from '@/features/volthome/components/use-countdown';
+import { SALE_SECONDS, sections } from '@/features/volthome/data/home';
+import { useLayout } from '@/features/volthome/layout';
+import { ct } from '@/features/volthome/theme';
+
+/**
+ * Voltline — shop.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The grid runs off the bottom of the frame, so the foot cannot open a band
+ * (I3), and the sale clock counts rather than being typed (R9).
+ */
+export default function VolthomeScreen() {
+  const L = useLayout();
+  const clock = useCountdown(SALE_SECONDS);
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ShopHeader margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <SearchBar margin={L.margin} height={L.search.h} radius={L.search.radius} />
+
+      <View style={{ height: L.gapSearch }} />
+      <PromoBanner margin={L.margin} height={L.promo.h} radius={L.promo.radius} />
+
+      <View style={{ height: L.gapPromo }} />
+      <SectionRow margin={L.margin} height={L.sectionH} label={sections.categories} />
+
+      <View style={{ height: L.gapSection }} />
+      <CategoryRail margin={L.margin} width={L.tile.w} height={L.tile.h} labelH={L.tile.labelH} />
+
+      <View style={{ height: L.gapTiles }} />
+      <SectionRow margin={L.margin} height={L.sectionH} label={sections.flash} timer={clock} />
+
+      <View style={{ height: L.gapSection }} />
+      <ProductGrid
+        margin={L.margin}
+        width={L.card.w}
+        imageH={L.card.imageH}
+        radius={L.card.radius}
+        bottomPad={L.bar.h + 12}
+        onSelect={() => router.push('/voltitem')}
+      />
+
+      <TabBar height={L.bar.h} onCart={() => router.push('/voltcart')} />
+    </View>
+  );
+}

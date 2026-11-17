@@ -1,0 +1,57 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { GpsPill } from '@/features/stridestart/components/gps-pill';
+import { ModeChips } from '@/features/stridestart/components/mode-chips';
+import { OptionRows } from '@/features/stridestart/components/option-rows';
+import { RouteMap } from '@/features/stridestart/components/route-map';
+import { SheetGround } from '@/features/stridestart/components/sheet-ground';
+import { StartControls } from '@/features/stridestart/components/start-controls';
+import { useLayout } from '@/features/stridestart/layout';
+import { ct } from '@/features/stridestart/theme';
+
+/**
+ * Stride - start a run.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * **The map is built as the map idea, never traced** (I4), and it is the
+ * remainder of the screen, so the sheet always sits on the foot (I3).
+ */
+export default function StridestartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <RouteMap width={L.W} height={L.map.h} />
+
+      <GpsPill top={L.insets.top + 8} />
+
+      <View style={{ flex: 1 }}>
+        <SheetGround radius={L.sheet.radius} />
+
+        <View style={{ height: L.handleH, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ width: 42, height: 4.5, borderRadius: 3, backgroundColor: ct.line }} />
+        </View>
+
+        <View style={{ marginHorizontal: L.margin }}>
+          <ModeChips
+            height={L.mode.h}
+            width={(L.W - L.margin * 2 - 30) / 4}
+            radius={L.mode.radius}
+          />
+
+          <View style={{ height: L.gapRow }} />
+          <OptionRows height={L.option.h} radius={L.option.radius} />
+        </View>
+
+        <StartControls height={L.controlsH} onStart={() => router.push('/striderun')} />
+      </View>
+    </View>
+  );
+}

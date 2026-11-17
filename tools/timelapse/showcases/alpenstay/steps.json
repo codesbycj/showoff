@@ -1,0 +1,287 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenstay/index.tsx",
+      "@/features/alpenstay/components/stay-gallery"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenstay/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import stay gallery"
+  },
+  {
+   "label": "\"Stay photograph\"",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenstay/components/stay-gallery.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenstay/components/stay-gallery.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Share this stay\"",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenstay/components/stay-gallery.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "\"Save this stay\"",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenstay/components/stay-gallery.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenstay/components/stay-gallery.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "g2",
+   "op": "entry",
+   "args": [
+    "src/features/alpenstay/data/stay.ts",
+    "g2"
+   ]
+  },
+  {
+   "label": "g3",
+   "op": "entry",
+   "args": [
+    "src/features/alpenstay/data/stay.ts",
+    "g3"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenstay/index.tsx",
+      "@/features/alpenstay/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenstay/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import glyph"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenstay/index.tsx",
+      "@/features/alpenstay/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenstay/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import text"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "reviews",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "\"2 guests\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenstay/data/stay.ts",
+    "guests"
+   ]
+  },
+  {
+   "label": "\"10 nights\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenstay/data/stay.ts",
+    "nights"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "\"Free wi-fi\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenstay/data/stay.ts",
+    "wifi"
+   ]
+  },
+  {
+   "label": "\"Smart TV\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenstay/data/stay.ts",
+    "tv"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "label": "\"From\"",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenstay/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-stay",
+     "src/features/alpenstay/data/stay.ts"
+    ],
+    [
+     "screen",
+     "src/app/alpenstay/index.tsx"
+    ],
+    [
+     "stay-gallery",
+     "src/features/alpenstay/components/stay-gallery.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

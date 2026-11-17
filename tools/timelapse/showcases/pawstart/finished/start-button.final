@@ -1,0 +1,37 @@
+import { Pressable, View } from 'react-native';
+
+import { welcome } from '../data/start';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onPress: () => void };
+
+/**
+ * The primary action.
+ *
+ * The dark fill lives on an absolutely-filled child, so an emptied button
+ * paints nothing during a reveal rather than opening the take on a black pill
+ * (SS5.5) - and the ground and the label become two beats instead of one.
+ */
+export function StartButton({ margin, height, onPress }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={welcome.cta} onPress={onPress}>
+        <View style={{ height, alignItems: 'center', justifyContent: 'center' }}>
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 16,
+              backgroundColor: ct.ink,
+            }}
+          />
+          <T variant="cta">{welcome.cta}</T>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

@@ -1,0 +1,87 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Image, Pressable, View } from 'react-native';
+
+import { ActionRail } from '@/features/lumoreel/components/action-rail';
+import { Dock } from '@/features/lumoreel/components/dock';
+import { Glyph } from '@/features/lumoreel/components/glyph';
+import { ReelCaption } from '@/features/lumoreel/components/reel-caption';
+import { reel } from '@/features/lumoreel/data/reel';
+import { useLayout } from '@/features/lumoreel/layout';
+import { ct } from '@/features/lumoreel/theme';
+
+/**
+ * Lumora — reel.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * **The photograph is the page.** It is full-bleed, every control sits over
+ * it, and there is nothing that could leave a band at the foot (I3).
+ */
+export default function LumoreelScreen() {
+  const L = useLayout();
+
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: 'rgba(18,11,34,0.55)',
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <Image
+        source={reel.image}
+        style={{ width: L.W, height: L.H }}
+        resizeMode="cover"
+        accessibilityLabel={reel.caption}
+      />
+
+      <View
+        style={{
+          position: 'absolute',
+          top: L.insets.top + 4,
+          left: L.margin,
+          right: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/lumofeed')}
+        >
+          <View style={round}>
+            <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+
+        <Pressable accessibilityRole="button" accessibilityLabel="Search">
+          <View style={round}>
+            <Glyph name="search" size={19} color={ct.ink} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+
+      <ActionRail bottom={L.dock.h + L.dock.bottom + 110} gap={L.railGap} />
+
+      <ReelCaption margin={L.margin} height={L.captionH} bottom={L.dock.h + L.dock.bottom + 16} />
+
+      <Dock
+        height={L.dock.h}
+        bottom={L.dock.bottom}
+        active="home"
+        onProfile={() => router.push('/lumoprofile')}
+      />
+    </View>
+  );
+}

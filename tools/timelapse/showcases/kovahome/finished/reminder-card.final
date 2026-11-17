@@ -1,0 +1,55 @@
+import { View } from 'react-native';
+
+import { reminders } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The next thing due.
+ *
+ * The board shows one reminder; this shows the first of the list the count at
+ * the top is computed from, so the two cannot disagree (R9). It is guarded for
+ * an empty list, because the reveal fills that list one row at a time (I7).
+ */
+export function ReminderCard({ margin, height, radius }: Props) {
+  const next = reminders[0];
+  if (!next) return null;
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        borderRadius: radius,
+        backgroundColor: ct.surface,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 14,
+        gap: 12,
+      }}
+    >
+      <View
+        style={{
+          width: 42,
+          height: 42,
+          borderRadius: 13,
+          backgroundColor: ct.violetSoft,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph name={next.glyph} size={20} color={ct.violet} strokeWidth={1.7} />
+      </View>
+
+      <View style={{ flex: 1 }}>
+        <T variant="reminder" numberOfLines={1}>
+          {next.title}
+        </T>
+        <T variant="reminderMeta">{next.when}</T>
+      </View>
+    </View>
+  );
+}

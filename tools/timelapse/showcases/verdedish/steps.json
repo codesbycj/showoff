@@ -1,0 +1,324 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "@/features/verdedish/components/plate-gallery"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import plate gallery"
+  },
+  {
+   "label": "\"Dish photograph\"",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/plate-gallery.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/plate-gallery.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "g2",
+   "op": "entry",
+   "args": [
+    "src/features/verdedish/data/dish.ts",
+    "g2"
+   ]
+  },
+  {
+   "label": "g3",
+   "op": "entry",
+   "args": [
+    "src/features/verdedish/data/dish.ts",
+    "g3"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "@/features/verdedish/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "the next block",
+   "op": "jsx",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "@/features/verdedish/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "label": "\"Save this dish\"",
+   "op": "jsx",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "@/features/verdedish/components/dish-facts"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import dish facts"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/dish-facts.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/dish-facts.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "minutes",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/dish-facts.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/dish-facts.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/dish-facts.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "blurb",
+   "op": "jsx",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "@/features/verdedish/components/extras-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import extras list"
+  },
+  {
+   "label": "customise label",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/extras-list.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/extras-list.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "\"Hot green chilli\"",
+   "op": "entry",
+   "args": [
+    "src/features/verdedish/data/dish.ts",
+    "spice"
+   ]
+  },
+  {
+   "label": "\"Side kachumber salad\"",
+   "op": "entry",
+   "args": [
+    "src/features/verdedish/data/dish.ts",
+    "salad"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "@/features/verdedish/components/order-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdedish/index.tsx",
+      "STEP 1.24"
+     ]
+    }
+   ],
+   "label": "import order bar"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/order-bar.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "pressable",
+   "op": "jsx",
+   "args": [
+    "src/features/verdedish/components/order-bar.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/verdedish/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-dish",
+     "src/features/verdedish/data/dish.ts"
+    ],
+    [
+     "dish-facts",
+     "src/features/verdedish/components/dish-facts.tsx"
+    ],
+    [
+     "extras-list",
+     "src/features/verdedish/components/extras-list.tsx"
+    ],
+    [
+     "order-bar",
+     "src/features/verdedish/components/order-bar.tsx"
+    ],
+    [
+     "plate-gallery",
+     "src/features/verdedish/components/plate-gallery.tsx"
+    ],
+    [
+     "screen",
+     "src/app/verdedish/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+{
+  "screen": "src/app/flowrecipe/index.tsx",
+  "data-recipe": "src/features/flowrecipe/data/recipe.ts",
+  "macro-rings": "src/features/flowrecipe/components/macro-rings.tsx",
+  "ingredient-list": "src/features/flowrecipe/components/ingredient-list.tsx"
+}

@@ -1,0 +1,60 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { KindRail } from '@/features/nookshop/components/kind-rail';
+import { PieceGrid } from '@/features/nookshop/components/piece-grid';
+import { PromoCard } from '@/features/nookshop/components/promo-card';
+import { ShopHeader } from '@/features/nookshop/components/shop-header';
+import { T } from '@/features/nookshop/components/text';
+import { header } from '@/features/nookshop/data/shop';
+import { useLayout } from '@/features/nookshop/layout';
+import { ct } from '@/features/nookshop/theme';
+
+/**
+ * Nook - the catalog.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The cards are the remainder, so the screen always ends on the promo with no
+ * band under it (I3).
+ */
+export default function NookshopScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.white }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ShopHeader margin={L.margin} height={L.headerH} onCart={() => router.push('/nookroom')} />
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ marginHorizontal: L.margin, height: L.titleH, justifyContent: 'center' }}>
+        <T variant="title">{header.title}</T>
+      </View>
+
+      <View style={{ height: L.gapTitle }} />
+      <KindRail margin={L.margin} height={L.kind.h} size={L.kind.size} />
+
+      <View style={{ height: L.gapKind }} />
+      <PieceGrid
+        margin={L.margin}
+        width={L.card.w}
+        height={L.card.h}
+        radius={L.card.radius}
+        onOpen={() => router.push('/nookroom')}
+      />
+
+      <View style={{ height: L.gapCards }} />
+      <PromoCard
+        margin={L.margin}
+        height={L.promo.h}
+        radius={L.promo.radius}
+        onPress={() => router.push('/nookroom')}
+      />
+    </View>
+  );
+}

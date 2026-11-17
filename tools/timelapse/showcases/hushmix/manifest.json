@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/hushmix/index.tsx",
+  "session-card": "src/features/hushmix/components/session-card.tsx",
+  "data-session": "src/features/hushmix/data/session.ts",
+  "timer-card": "src/features/hushmix/components/timer-card.tsx",
+  "foundation-card": "src/features/hushmix/components/foundation-card.tsx",
+  "motive-card": "src/features/hushmix/components/motive-card.tsx",
+  "controls-card": "src/features/hushmix/components/controls-card.tsx"
+}

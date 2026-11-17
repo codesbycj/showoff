@@ -1,0 +1,86 @@
+/**
+ * Everything nordsearch says.
+ *
+ * **R5: labels, not prose.** The board's own words, trimmed to fit.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const header = { title: 'Search' };
+
+export const query = {
+  place: 'Norway',
+  meta: '18 - 21 Oct · 4 guests',
+};
+
+/** Three nights, the same stay the price line on every card prices. */
+export const NIGHTS = 3;
+
+export type ChipType = { id: string; label: string; on?: boolean };
+
+export const types: ChipType[] = [
+  { id: 'any', label: 'Any type', on: true },
+  // STEP 1.14 "Room"
+  // { id: 'room', label: 'Room' },
+  // STEP 1.15 "Entire home"
+  // { id: 'home', label: 'Entire home' },
+];
+
+export type Result = {
+  id: string;
+  title: string;
+  rating: number;
+  reviews: number;
+  facts: string[];
+  wasNight: number;
+  nightly: number;
+  image: number;
+  saved?: boolean;
+};
+
+/**
+ * R9: each card's total is `nightly * NIGHTS`, computed in the card. The
+ * board's own card reads "€87 night · €261 total", which is the one price line
+ * on the board that multiplies correctly — the detail screen's does not.
+ *
+ * A third result is the batch's own addition (I3): the board crops its list at
+ * two and a half cards, and an invented row is the fix for empty space where a
+ * spacer never is.
+ */
+export const results: Result[] = [
+  {
+    id: 'riverside',
+    title: 'Riverside retreat, Vang',
+    rating: 4.93,
+    reviews: 167,
+    facts: ['2 bedrooms', '2 beds', '1 bathroom'],
+    wasNight: 108,
+    nightly: 87,
+    image: require('../../../../assets/images/nordsearch/r1.jpg'),
+    saved: true,
+  },
+  // STEP 1.17 "Timber lodge, Hemsedal"
+  // {
+  //   id: 'timber',
+  //   title: 'Timber lodge, Hemsedal',
+  //   rating: 4.87,
+  //   reviews: 94,
+  //   facts: ['3 bedrooms', '4 beds', '2 bathrooms'],
+  //   wasNight: 142,
+  //   nightly: 119,
+  //   image: require('../../../../assets/images/nordsearch/r2.jpg'),
+  // },
+  // STEP 1.18 "Hillside studio, Valdres"
+  // {
+  //   id: 'hillside',
+  //   title: 'Hillside studio, Valdres',
+  //   rating: 4.81,
+  //   reviews: 58,
+  //   facts: ['1 bedroom', '1 bed', '1 bathroom'],
+  //   wasNight: 96,
+  //   nightly: 74,
+  //   image: require('../../../../assets/images/nordsearch/r3.jpg'),
+  // },
+];

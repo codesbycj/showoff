@@ -1,0 +1,333 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "@/features/voltcart/components/cart-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import cart header"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/cart-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Cart options\"",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/cart-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "@/features/voltcart/components/address-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import address row"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/address-row.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "value",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/address-row.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/address-row.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "@/features/voltcart/components/cart-lines"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import cart lines"
+  },
+  {
+   "label": "pressable",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/cart-lines.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/cart-lines.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/cart-lines.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "\"Voltline Field Watch, 42mm\"",
+   "op": "block",
+   "args": [
+    "src/features/voltcart/data/cart.ts",
+    "watch"
+   ]
+  },
+  {
+   "label": "\"Voltline Pulse Buds, Graphite\"",
+   "op": "block",
+   "args": [
+    "src/features/voltcart/data/cart.ts",
+    "buds"
+   ]
+  },
+  {
+   "label": "\"Voltline Studio 14, Silver\"",
+   "op": "block",
+   "args": [
+    "src/features/voltcart/data/cart.ts",
+    "studio"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/voltcart/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/voltcart/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "@/features/voltcart/components/checkout-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import checkout bar"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/checkout-bar.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/checkout-bar.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "\"Delivery\"",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/checkout-bar.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/checkout-bar.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "pressable",
+   "op": "jsx",
+   "args": [
+    "src/features/voltcart/components/checkout-bar.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/voltcart/index.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "@/features/voltcart/components/tab-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltcart/index.tsx",
+      "STEP 1.24"
+     ]
+    }
+   ],
+   "label": "import tab bar"
+  },
+  {
+   "label": "\"Catalog\"",
+   "op": "entry",
+   "args": [
+    "src/features/voltcart/data/tabs.ts",
+    "catalog"
+   ]
+  },
+  {
+   "label": "\"Cart\"",
+   "op": "entry",
+   "args": [
+    "src/features/voltcart/data/tabs.ts",
+    "cart"
+   ]
+  },
+  {
+   "label": "\"Favorites\"",
+   "op": "entry",
+   "args": [
+    "src/features/voltcart/data/tabs.ts",
+    "saved"
+   ]
+  },
+  {
+   "label": "\"Profile\"",
+   "op": "entry",
+   "args": [
+    "src/features/voltcart/data/tabs.ts",
+    "profile"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/voltcart/index.tsx",
+    "STEP 1.29"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/voltcart/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "address-row",
+     "src/features/voltcart/components/address-row.tsx"
+    ],
+    [
+     "cart-header",
+     "src/features/voltcart/components/cart-header.tsx"
+    ],
+    [
+     "cart-lines",
+     "src/features/voltcart/components/cart-lines.tsx"
+    ],
+    [
+     "checkout-bar",
+     "src/features/voltcart/components/checkout-bar.tsx"
+    ],
+    [
+     "data-cart",
+     "src/features/voltcart/data/cart.ts"
+    ],
+    [
+     "data-tabs",
+     "src/features/voltcart/data/tabs.ts"
+    ],
+    [
+     "screen",
+     "src/app/voltcart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

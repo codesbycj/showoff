@@ -1,0 +1,76 @@
+import Svg, { Circle, Path } from 'react-native-svg';
+
+import { ct } from '../theme';
+
+type Props = { width: number; height: number };
+
+/**
+ * The map, built as the map **idea** (I4).
+ *
+ * `@not-a-ground` - it is full-bleed, which is the shape of a page ground, but
+ * it paints five marks: the water, the roads, the radius ring and the route.
+ * Left as a ground the stager keeps every one of them live and the reveal
+ * opens on a finished map. The page's own flat colour is the ground, and it is
+ * on the screen's root (I9 / SS5.5).
+ *
+ * A map is out of drawing range: it has no idea to interpret, so vectoring one
+ * is tracing the reference path by path - copying with extra steps. What the
+ * board's map actually says is "your drink is on this road, this far away",
+ * and that is a route, a pickup, a destination and a radius ring over flat
+ * colour. No street grid is drawn, because drawing one would be the tracing
+ * the rule forbids.
+ *
+ * **The flat colour is the screen's own `backgroundColor`, not a rect in here.**
+ * Drawn twice, the ground rect arrived as a step that changed 0.0000% of the
+ * frame — it was already that colour — and moving the page to white instead
+ * made the same step paint 71.1%. The page carries the ground; this carries
+ * the marks on it.
+ *
+ * The `<svg>` is the page's own ground, so it is allowed to paint in frame one
+ * of a reveal (I9) - and with every shape staged out it paints nothing anyway.
+ */
+export function MapGround({ width, height }: Props) {
+  const pickX = width * 0.3;
+  const pickY = height * 0.34;
+  const dropX = width * 0.74;
+  const dropY = height * 0.72;
+
+  return (
+    <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+      <Path
+        d={`M${width} ${height * 0.12} C ${width * 0.72} ${height * 0.24}, ${width * 0.8} ${height * 0.46}, ${width * 0.56} ${height * 0.6} C ${width * 0.36} ${height * 0.72}, ${width * 0.5} ${height * 0.9}, ${width * 0.42} ${height}  L ${width} ${height} Z`}
+        fill={ct.water}
+      />
+
+      {/* STEP 1.02 path
+      <Path
+        d={`M${width * 0.08} 0 L${width * 0.2} ${height} M${width * 0.64} 0 L${width * 0.52} ${height} M0 ${height * 0.3} L${width} ${height * 0.22} M0 ${height * 0.62} L${width} ${height * 0.54} M0 ${height * 0.86} L${width} ${height * 0.78}`}
+        stroke={ct.road}
+        strokeWidth={9}
+        strokeLinecap="round"
+        fill="none"
+      />
+      */}
+
+      {/* STEP 1.03 circle
+      <Circle
+        cx={pickX}
+        cy={pickY}
+        r={Math.min(width, height) * 0.22}
+        fill={ct.green}
+        opacity={0.14}
+      />
+      */}
+
+      {/* STEP 1.04 path
+      <Path
+        d={`M${pickX} ${pickY} C ${pickX - width * 0.16} ${pickY + height * 0.14}, ${dropX - width * 0.1} ${dropY - height * 0.3}, ${dropX} ${dropY}`}
+        stroke={ct.ink}
+        strokeWidth={2.6}
+        strokeLinecap="round"
+        fill="none"
+      />
+      */}
+    </Svg>
+  );
+}

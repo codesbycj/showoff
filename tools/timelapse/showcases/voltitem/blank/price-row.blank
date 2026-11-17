@@ -1,0 +1,50 @@
+import { View } from 'react-native';
+
+import { product } from '../data/item';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * What it costs, and what that is a month.
+ *
+ * **R9: the monthly figure is computed** — `price / financeMonths`, rounded up
+ * to the pound. The board types "from £14 per month" beside £169.00, which is
+ * £168 over twelve months and so cannot be the same offer.
+ */
+export function PriceRow({ margin, height }: Props) {
+  const monthly = Math.ceil(product.price / Math.max(product.financeMonths, 1));
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        borderRadius: 16,
+        backgroundColor: ct.tray,
+        paddingHorizontal: 16,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      {/* STEP 1.17 t
+      <T variant="title" style={{ fontSize: 22 }}>
+        £{product.price}.00
+      </T>
+      */}
+      {/* STEP 1.18 t
+      <T variant="finance" style={{ textDecorationLine: 'line-through' }}>
+        £{product.was}.00
+      </T>
+      */}
+      <View style={{ flex: 1 }} />
+      {/* STEP 1.19 t
+      <T variant="finance">
+        from £{monthly} a month over {product.financeMonths}
+      </T>
+      */}
+    </View>
+  );
+}

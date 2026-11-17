@@ -1,0 +1,99 @@
+import { Pressable, View } from 'react-native';
+
+import { tabs } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { height: number; bottom: number; active?: string; onRun?: () => void };
+
+/**
+ * The dock, with the run control raised out of its middle.
+ *
+ * **It is not padded by `insets.bottom`.** The bar's own height ends at the
+ * frame and the system reserves the strip below it; padding the bar by the
+ * inset as well counts that strip twice (R1b, I3).
+ *
+ * The raised button is a sibling of the bar rather than a child of a tab, so a
+ * `role="button"` never ends up inside another (§7).
+ *
+ * **The root is a real `View`, not a fragment.** Both children are absolutely
+ * positioned, so an absolute `pointerEvents="box-none"` wrapper changes
+ * nothing about where they paint — but `stage.js` balances a staged block by
+ * counting `<Name` against `</Name`, and a `<>` is neither, so a block inside
+ * a fragment-rooted component swallowed the fragment's close, the `);` and
+ * the function's own brace (§5.6).
+ */
+export function Dock({ height, bottom, active = 'home', onRun }: Props) {
+  return (
+    <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0 }} pointerEvents="box-none">
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: height + bottom,
+          paddingBottom: bottom,
+          backgroundColor: ct.page,
+          borderTopWidth: 1,
+          borderTopColor: ct.line,
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        {tabs.map((tab) => {
+          const on = tab.id === active;
+          return (
+            <Pressable
+              key={tab.id}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: on }}
+              accessibilityLabel={tab.label}
+              style={{ flex: 1, height, alignItems: 'center', justifyContent: 'center', gap: 4 }}
+            >
+              <Glyph
+                name={tab.glyph}
+                size={21}
+                color={on ? ct.lime : ct.muted}
+                strokeWidth={on ? 2 : 1.6}
+              />
+              <T variant={on ? 'dockOn' : 'dockOff'}>{tab.label}</T>
+            </Pressable>
+          );
+        })}
+      </View>
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: height + bottom - 28,
+          alignItems: 'center',
+        }}
+        pointerEvents="box-none"
+      >
+        <Pressable accessibilityRole="button" accessibilityLabel="Start a run" onPress={onRun}>
+          <View
+            style={{
+              width: 58,
+              height: 58,
+              borderRadius: 29,
+              backgroundColor: ct.lime,
+              alignItems: 'center',
+              justifyContent: 'center',
+              shadowColor: ct.lime,
+              shadowOpacity: 0.45,
+              shadowRadius: 18,
+              shadowOffset: { width: 0, height: 0 },
+              elevation: 10,
+            }}
+          >
+            <Glyph name="runner" size={26} color={ct.onLime} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

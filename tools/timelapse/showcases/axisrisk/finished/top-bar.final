@@ -1,0 +1,68 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { header, me } from '../data/risk';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onProfile: () => void };
+
+/**
+ * Who is signed in, and the board control with its count.
+ *
+ * The portrait is a photograph; the grid is interface, so it is a vector (I4).
+ * The count sits beside the grid rather than on its shoulder, because a mark
+ * that straddles the edge of what it covers is what `audit.js` reports as
+ * COVERED (R3).
+ */
+export function TopBar({ margin, height, onProfile }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Pressable accessibilityRole="button" accessibilityLabel="Your profile" onPress={onProfile}>
+        <View style={{ width: 44, height: 44, alignItems: 'center', justifyContent: 'center' }}>
+          <Image
+            source={me}
+            style={{ width: 44, height: 44, borderRadius: 22 }}
+            accessibilityIgnoresInvertColors
+          />
+        </View>
+      </Pressable>
+
+      <Pressable accessibilityRole="button" accessibilityLabel={`Boards, ${header.badge}`}>
+        <View
+          style={{
+            height: 44,
+            borderRadius: 22,
+            backgroundColor: ct.white,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 10,
+            paddingHorizontal: 14,
+          }}
+        >
+          <Glyph name="grid" size={18} color={ct.ink} strokeWidth={1.7} />
+          <View
+            style={{
+              minWidth: 22,
+              height: 22,
+              borderRadius: 11,
+              backgroundColor: ct.lavenderTile,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="count">{header.badge}</T>
+          </View>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

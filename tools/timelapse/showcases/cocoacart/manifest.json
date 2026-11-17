@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/cocoacart/index.tsx",
+  "cart-header": "src/features/cocoacart/components/cart-header.tsx",
+  "cart-lines": "src/features/cocoacart/components/cart-lines.tsx",
+  "data-cart": "src/features/cocoacart/data/cart.ts",
+  "totals-card": "src/features/cocoacart/components/totals-card.tsx",
+  "pay-button": "src/features/cocoacart/components/pay-button.tsx"
+}

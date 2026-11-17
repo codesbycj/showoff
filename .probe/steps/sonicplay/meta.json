@@ -1,0 +1,250 @@
+{
+  "slug": "sonicplay",
+  "screen": "1",
+  "total": 30,
+  "port": 8082,
+  "settle": 400,
+  "maxwait": 5000,
+  "steps": [
+    {
+      "n": 1,
+      "label": "import player bar",
+      "file": "01.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 2,
+      "label": "round",
+      "file": "02.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 3,
+      "label": "from",
+      "file": "03.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 4,
+      "label": "album",
+      "file": "04.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 5,
+      "label": "round",
+      "file": "05.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 6,
+      "label": "import cover art",
+      "file": "06.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 7,
+      "label": "import now playing",
+      "file": "07.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 8,
+      "label": "title",
+      "file": "08.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 9,
+      "label": "artist",
+      "file": "09.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 10,
+      "label": "\"Save this track\"",
+      "file": "10.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 11,
+      "label": "a stray gap under it",
+      "file": "11.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 12,
+      "label": "take the gap back out",
+      "file": "12.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 13,
+      "label": "import scrubber",
+      "file": "13.png",
+      "error": "",
+      "waitMs": 5250,
+      "waitedOut": true
+    },
+    {
+      "n": 14,
+      "label": "view",
+      "file": "14.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 15,
+      "label": "t",
+      "file": "15.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 16,
+      "label": "t",
+      "file": "16.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 17,
+      "label": "a stray gap under it",
+      "file": "17.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 18,
+      "label": "take the gap back out",
+      "file": "18.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 19,
+      "label": "import transport",
+      "file": "19.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 20,
+      "label": "glyph",
+      "file": "20.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 21,
+      "label": "prev",
+      "file": "21.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 22,
+      "label": "play",
+      "file": "22.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 23,
+      "label": "next",
+      "file": "23.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 24,
+      "label": "repeat",
+      "file": "24.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 25,
+      "label": "import lyrics handle",
+      "file": "25.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 26,
+      "label": "lyrics",
+      "file": "26.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 27,
+      "label": "glyph",
+      "file": "27.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 28,
+      "label": "a stray gap under it",
+      "file": "28.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 29,
+      "label": "take the gap back out",
+      "file": "29.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    },
+    {
+      "n": 30,
+      "label": "tidy up",
+      "file": "30.png",
+      "error": "",
+      "waitMs": 0,
+      "waitedOut": false
+    }
+  ]
+}

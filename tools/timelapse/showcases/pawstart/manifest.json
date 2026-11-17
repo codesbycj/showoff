@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/pawstart/index.tsx",
+  "brand-mark": "src/features/pawstart/components/brand-mark.tsx",
+  "page-dots": "src/features/pawstart/components/page-dots.tsx",
+  "data-start": "src/features/pawstart/data/start.ts",
+  "welcome-headline": "src/features/pawstart/components/welcome-headline.tsx",
+  "benefit-chips": "src/features/pawstart/components/benefit-chips.tsx",
+  "start-button": "src/features/pawstart/components/start-button.tsx"
+}

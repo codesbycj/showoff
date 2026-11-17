@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/volthome/index.tsx",
+  "shop-header": "src/features/volthome/components/shop-header.tsx",
+  "search-bar": "src/features/volthome/components/search-bar.tsx",
+  "promo-banner": "src/features/volthome/components/promo-banner.tsx",
+  "section-row": "src/features/volthome/components/section-row.tsx",
+  "data-home": "src/features/volthome/data/home.ts",
+  "category-rail": "src/features/volthome/components/category-rail.tsx",
+  "product-grid": "src/features/volthome/components/product-grid.tsx",
+  "tab-bar": "src/features/volthome/components/tab-bar.tsx"
+}

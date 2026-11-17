@@ -1,0 +1,92 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { EtaChip } from '@/features/pulptrack/components/eta-chip';
+import { CourierRow } from '@/features/pulptrack/components/courier-row';
+import { Glyph } from '@/features/pulptrack/components/glyph';
+import { MapControls } from '@/features/pulptrack/components/map-controls';
+import { MapGround } from '@/features/pulptrack/components/map-ground';
+import { MapPins } from '@/features/pulptrack/components/map-pins';
+import { StageRail } from '@/features/pulptrack/components/stage-rail';
+import { T } from '@/features/pulptrack/components/text';
+import { order } from '@/features/pulptrack/data/order';
+import { useLayout } from '@/features/pulptrack/layout';
+import { ct } from '@/features/pulptrack/theme';
+
+/**
+ * Pulp - the delivery.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The map is drawn as the map **idea** (I4), and the sheet is pinned flush to
+ * the foot, so nothing empty sits under it (I3).
+ */
+export default function PulptrackScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.map }}>
+      <StatusBar style="dark" />
+
+      <View style={{ height: L.map.h }}>
+        <MapGround width={L.W} height={L.map.h} />
+        <MapPins width={L.W} height={L.map.h} />
+        <MapControls
+          margin={L.margin}
+          insetTop={L.insets.top}
+          onBack={() => router.push('/pulpitem')}
+        />
+      </View>
+
+      <View style={{ flex: 1 }}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: ct.white,
+            borderTopLeftRadius: L.sheet.radius,
+            borderTopRightRadius: L.sheet.radius,
+          }}
+        />
+
+        <View style={{ height: L.sheet.padTop }} />
+        <View style={{ alignItems: 'center' }}>
+          <View
+            style={{
+              width: 40,
+              height: L.sheet.grabberH,
+              borderRadius: 2,
+              backgroundColor: ct.line,
+            }}
+          />
+        </View>
+
+        <View style={{ height: L.sheet.gapGrabber }} />
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.sheet.titleH,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <T variant="sheetTitle">{order.title}</T>
+          <EtaChip />
+        </View>
+
+        <View style={{ height: L.sheet.gapTitle }} />
+        <StageRail margin={L.margin} height={L.sheet.railH} disc={L.sheet.disc} />
+
+        <View style={{ height: L.sheet.gapRail }} />
+        <CourierRow margin={L.margin} height={L.sheet.rowH} />
+      </View>
+    </View>
+  );
+}

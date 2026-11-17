@@ -1,0 +1,70 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { ActionRow } from '@/features/foldhome/components/action-row';
+import { CardStack } from '@/features/foldhome/components/card-stack';
+import { Glyph } from '@/features/foldhome/components/glyph';
+import { GreetRow } from '@/features/foldhome/components/greet-row';
+import { T } from '@/features/foldhome/components/text';
+import { TxList } from '@/features/foldhome/components/tx-list';
+import { header } from '@/features/foldhome/data/home';
+import { useLayout } from '@/features/foldhome/layout';
+import { ct } from '@/features/foldhome/theme';
+
+/**
+ * Fold - the wallet.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The transaction list is the remainder and it runs under the bottom edge, so
+ * the screen ends on a row crossing the frame with no band under it (I3).
+ */
+export default function FoldhomeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <GreetRow margin={L.margin} height={L.greetH} />
+
+      <View style={{ height: L.gapGreet }} />
+      <CardStack
+        margin={L.margin}
+        width={L.card.w}
+        cardH={L.card.h}
+        peek={L.card.peek}
+        onOpen={() => router.push('/foldcard')}
+      />
+
+      <View style={{ height: L.gapStack }} />
+      <ActionRow margin={L.margin} width={L.action.w} height={L.action.h} gap={L.action.gap} />
+
+      <View style={{ height: L.gapActions }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.sectionH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <T variant="section">{header.section}</T>
+        <Pressable accessibilityRole="button" accessibilityLabel={`Filter: ${header.filter}`}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4, height: 44 }}>
+            <T variant="filter">{header.filter}</T>
+            <Glyph name="chevronDown" size={14} color={ct.muted} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <TxList margin={L.margin} height={L.list.h} rowH={L.list.rowH} gap={L.list.gap} />
+    </View>
+  );
+}

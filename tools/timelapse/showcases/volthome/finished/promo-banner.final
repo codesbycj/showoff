@@ -1,0 +1,58 @@
+import { View } from 'react-native';
+import Svg, { Circle } from 'react-native-svg';
+
+import { promo } from '../data/home';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The delivery promotion.
+ *
+ * The board drops a 3D blob into this banner. A render cannot be traced and
+ * must not be drawn badly (§2.2), so the *idea* is rebuilt instead: two soft
+ * discs of the brand's acid green, drawn in `react-native-svg` user space
+ * rather than with `expo-linear-gradient`, which flips a diagonal on web (§7).
+ */
+export function PromoBanner({ margin, height, radius }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        borderRadius: radius,
+        backgroundColor: ct.surface,
+        overflow: 'hidden',
+        justifyContent: 'center',
+      }}
+    >
+      <Svg
+        width={160}
+        height={height}
+        style={{ position: 'absolute', right: 0, top: 0 }}
+        pointerEvents="none"
+      >
+        <Circle cx={118} cy={height * 0.5} r={46} fill={ct.acid} opacity={0.9} />
+        <Circle cx={62} cy={height * 0.82} r={26} fill={ct.acidSoft} />
+      </Svg>
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 18 }}>
+        <T variant="promo">{promo.lead}</T>
+        <View
+          style={{
+            paddingHorizontal: 10,
+            height: 26,
+            borderRadius: 13,
+            backgroundColor: ct.acid,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="promoBadge">{promo.badge}</T>
+        </View>
+        <T variant="promo">{promo.tail}</T>
+      </View>
+    </View>
+  );
+}

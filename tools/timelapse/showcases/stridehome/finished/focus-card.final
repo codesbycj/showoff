@@ -1,0 +1,137 @@
+import { useId } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { blocks, focus, focusMinutes } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  margin: number;
+  width: number;
+  height: number;
+  radius: number;
+  onStart?: () => void;
+};
+
+/**
+ * The session the plan calls for today.
+ *
+ * **R9: the minute count is the session**, computed from its warm-up, its
+ * reps and its cool-down rather than typed beside them — and the block strip
+ * under it has one block per piece of the same session, so the picture and the
+ * number cannot drift apart.
+ *
+ * The button's sweep is drawn in `react-native-svg` user space, not with
+ * `expo-linear-gradient`, which flips a diagonal on web (§7).
+ */
+export function FocusCard({ margin, width, height, radius, onStart }: Props) {
+  const gid = useId();
+  const ctaW = width - 32 - 56;
+  const ctaH = 54;
+
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.card,
+          borderWidth: 1,
+          borderColor: ct.line,
+        }}
+      />
+
+      <View style={{ flex: 1, padding: 16 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <T variant="label" style={{ flex: 1 }}>
+            {focus.label}
+          </T>
+          <View
+            style={{
+              height: 22,
+              paddingHorizontal: 10,
+              borderRadius: 11,
+              backgroundColor: ct.cardSoft,
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="chipOff">{focus.week}</T>
+          </View>
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end', marginTop: 10 }}>
+          <View style={{ flex: 1 }}>
+            <T variant="focus">{focus.name}</T>
+            <T variant="focusMeta">
+              {focus.reps} × {focus.repMetres} M · TARGET {focus.targetPace}
+            </T>
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 3 }}>
+            <T variant="focusMinutes">{focusMinutes()}</T>
+            <T variant="unit">min</T>
+          </View>
+        </View>
+
+        <View style={{ flexDirection: 'row', gap: 5, marginTop: 12 }}>
+          {blocks.map((work, i) => (
+            <View
+              key={`${i}-${work ? 'w' : 'r'}`}
+              style={{
+                flex: work ? 1.6 : 1,
+                height: 18,
+                borderRadius: 5,
+                backgroundColor: work ? ct.lime : ct.cardSoft,
+              }}
+            />
+          ))}
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 14 }}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={focus.cta}
+            onPress={onStart}
+            style={{ flex: 1 }}
+          >
+            <View style={{ height: ctaH, borderRadius: ctaH / 2, overflow: 'hidden' }}>
+              <Svg width={ctaW} height={ctaH} style={{ position: 'absolute', top: 0, left: 0 }}>
+                <Defs>
+                  <LinearGradient id={gid} x1="0" y1="0" x2="1" y2="0">
+                    <Stop offset="0" stopColor={ct.lime} />
+                    <Stop offset="1" stopColor={ct.violet} />
+                  </LinearGradient>
+                </Defs>
+                <Rect x="0" y="0" width={ctaW} height={ctaH} rx={ctaH / 2} fill={`url(#${gid})`} />
+              </Svg>
+              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <T variant="cta">{focus.cta}</T>
+              </View>
+            </View>
+          </Pressable>
+
+          <Pressable accessibilityRole="button" accessibilityLabel="Swap today's session">
+            <View
+              style={{
+                width: 48,
+                height: 48,
+                borderRadius: 24,
+                borderWidth: 1,
+                borderColor: ct.line,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="shuffle" size={20} color={ct.ink} strokeWidth={1.7} />
+            </View>
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
+}

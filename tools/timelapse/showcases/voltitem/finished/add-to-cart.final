@@ -1,0 +1,37 @@
+import { Pressable, View } from 'react-native';
+
+import { product } from '../data/item';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onPress?: () => void };
+
+/**
+ * The screen's primary action.
+ *
+ * Ink on the brand's acid green, never white on it: white reads 1.5:1 there
+ * and fails R4 at any size.
+ */
+export function AddToCart({ margin, height, onPress }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={product.cta} onPress={onPress}>
+        <View
+          style={{
+            height,
+            borderRadius: height / 2,
+            backgroundColor: ct.acid,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 10,
+          }}
+        >
+          <Glyph name="cart" size={19} color={ct.acidInk} strokeWidth={1.8} />
+          <T variant="cta">{product.cta}</T>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

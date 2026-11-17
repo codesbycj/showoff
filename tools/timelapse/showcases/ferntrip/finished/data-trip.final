@@ -1,0 +1,59 @@
+import type { FlagName } from '../components/flag-disc';
+import type { GlyphName } from '../components/glyph';
+
+/**
+ * Everything ferntrip says, so the components stay presentational.
+ *
+ * **Every array is annotated** (I7): the reveal uncomments entries one at a
+ * time, so a type inferred from whichever rows happen to be live loses every
+ * property that only appears on a later row.
+ */
+export const summit = {
+  altitude: '2,665m',
+  /** Two lines, as the board sets it. */
+  name: 'Tyrolean\nAlps',
+  weatherLabel: 'Weather',
+  weather: '15 °C',
+  image: require('../../../../assets/images/ferntrip/hero.jpg'),
+} as const;
+
+export const party = {
+  /** 3 faces shown, 22 more on the trip. */
+  more: '+22',
+  avatars: [
+    require('../../../../assets/images/ferntrip/f1.jpg'),
+    require('../../../../assets/images/ferntrip/f2.jpg'),
+    require('../../../../assets/images/ferntrip/f3.jpg'),
+  ],
+} as const;
+
+export const trip = {
+  country: 'Austria',
+  flag: 'at' as FlagName,
+  title: 'Discovering the Magic of Austrian Mountains',
+} as const;
+
+export type Fact = { id: string; label: string; glyph: GlyphName };
+
+export const facts: Fact[] = [
+  { id: 'days', label: '27/03 – 7/04', glyph: 'days' },
+  { id: 'distance', label: '10 km', glyph: 'distance' },
+  { id: 'party', label: '8/10', glyph: 'party' },
+];
+
+/**
+ * The board books "Lenas Donau Hotel, 22nd district, Donaustadt, Vienna" for a
+ * trip to the Tyrolean Alps — 480km away, on the Danube. The stay is moved to
+ * Tyrol so it is a stay on this trip (I1), and the rating's decimal comma is
+ * made a point to match the price below it.
+ */
+export const stay = {
+  name: 'Lenas Alpin Hotel',
+  area: 'Hungerburg',
+  city: 'Innsbruck, Tyrol',
+  rating: '7.4',
+  reviews: '(Reviews)',
+  price: '$89.00',
+  per: '/ night',
+  image: require('../../../../assets/images/ferntrip/stay.jpg'),
+} as const;

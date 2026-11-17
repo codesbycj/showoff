@@ -1,0 +1,87 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { ActionRow } from '@/features/orbithome/components/action-row';
+import { BalanceBlock } from '@/features/orbithome/components/balance-block';
+import { ContactRail } from '@/features/orbithome/components/contact-rail';
+import { Dock } from '@/features/orbithome/components/dock';
+import { GreetingRow } from '@/features/orbithome/components/greeting-row';
+import { MovementList } from '@/features/orbithome/components/movement-list';
+import { PromoRail } from '@/features/orbithome/components/promo-rail';
+import { SectionRow } from '@/features/orbithome/components/section-row';
+import { WashGround } from '@/features/orbithome/components/wash-ground';
+import { sections } from '@/features/orbithome/data/home';
+import { useLayout } from '@/features/orbithome/layout';
+import { ct } from '@/features/orbithome/theme';
+
+/**
+ * Orbit — wallet.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The peach wash is an absolutely-filled child of the header block rather than
+ * a fill on the block itself, so nothing but the page paints in frame one
+ * (§5.5).
+ */
+export default function OrbithomeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ height: L.wash.h }}>
+        <WashGround width={L.W} height={L.wash.h} radius={L.wash.radius} />
+
+        <View style={{ paddingTop: L.insets.top }} />
+        <GreetingRow margin={L.margin} height={L.greetH} />
+
+        <View style={{ height: L.gapGreet }} />
+        <BalanceBlock height={L.balanceH} />
+
+        <View style={{ height: L.gapBalance }} />
+        <ActionRow
+          margin={L.margin}
+          height={L.actionH}
+          onTransfer={() => router.push('/orbitsend')}
+        />
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <SectionRow margin={L.margin} height={L.sectionH} label={sections.quickSend} />
+
+      <View style={{ height: L.gapSection }} />
+      <ContactRail
+        margin={L.margin}
+        width={L.contact.w}
+        height={L.contact.h}
+        onSelect={() => router.push('/orbitsend')}
+      />
+
+      <View style={{ height: L.gapContacts }} />
+      <PromoRail margin={L.margin} width={L.promo.w} height={L.promo.h} radius={L.promo.radius} />
+
+      <View style={{ height: L.gapPromo }} />
+      <SectionRow margin={L.margin} height={L.sectionH} label={sections.transactions} />
+
+      <View style={{ height: L.gapSection }} />
+      <MovementList
+        margin={L.margin}
+        height={L.row.h}
+        gap={L.row.gap}
+        bottomPad={L.dock.h + L.dock.bottom}
+      />
+
+      <Dock
+        margin={L.margin}
+        height={L.dock.h}
+        radius={L.dock.radius}
+        bottom={L.dock.bottom}
+        active="home"
+      />
+    </View>
+  );
+}

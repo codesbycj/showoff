@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/foldspend/index.tsx",
+  "spend-chart": "src/features/foldspend/components/spend-chart.tsx",
+  "data-activity": "src/features/foldspend/data/activity.ts",
+  "folder": "src/features/foldspend/components/folder.tsx",
+  "category-rail": "src/features/foldspend/components/category-rail.tsx",
+  "transfer-list": "src/features/foldspend/components/transfer-list.tsx"
+}

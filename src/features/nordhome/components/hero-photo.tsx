@@ -1,0 +1,65 @@
+import { useId } from 'react';
+import { Image, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { heroImage } from '../data/home';
+import { ct } from '../theme';
+
+type Props = { width: number; height: number; radius: number };
+
+/**
+ * The hero photograph and its scrims.
+ *
+ * A lodge is a picture *of* somewhere, so it is a photograph, not a drawing
+ * (I4). The board's own hero is a glass dome under a storm; no free-licensed
+ * frame of one exists, so the subject is kept and the plot is unchanged.
+ *
+ * **The scrim is an `<svg>` gradient, not `expo-linear-gradient`**, which
+ * flips a diagonal on web (§7). Two stops top and bottom, because the sky in
+ * this frame is pale and white type has to clear both ends (R4).
+ *
+ * The `Image` carries a numeric width and height: absolute insets alone make
+ * it paint nothing, silently. The gradient id comes from `useId`, because SVG
+ * ids are document-global on web and a second gradient would otherwise render
+ * in this one's colours.
+ *
+ * `@not-a-ground`: It fills the HERO, not the page: at 320dp it is the top third of the
+ * screen, so this surface is a step of the reveal.
+ * `stage.js` reads a component's own root to decide whether it is the
+ * page's ground, and an absolute fill looks the same either way (SS5.5).
+ */
+export function HeroPhoto({ width, height, radius }: Props) {
+  const gid = useId();
+
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        borderBottomLeftRadius: radius,
+        borderBottomRightRadius: radius,
+        overflow: 'hidden',
+        backgroundColor: ct.dark,
+      }}
+    >
+      {/* STEP 1.02 image
+      <Image source={heroImage} style={{ width, height }} resizeMode="cover" />
+      */}
+      {/* STEP 1.03 linear gradient
+      <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+        <Defs>
+          <LinearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor="#100F0E" stopOpacity="0.62" />
+            <Stop offset="0.42" stopColor="#100F0E" stopOpacity="0.28" />
+            <Stop offset="1" stopColor="#100F0E" stopOpacity="0.82" />
+          </LinearGradient>
+        </Defs>
+        <Rect x="0" y="0" width={width} height={height} fill={`url(#${gid})`} />
+      </Svg>
+      */}
+    </View>
+  );
+}

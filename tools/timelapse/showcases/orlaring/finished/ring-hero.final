@@ -1,0 +1,53 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { finishes, ring } from '../data/ring';
+import { ct } from '../theme';
+
+type Props = { width: number; height: number; finish: number; margin: number };
+
+/**
+ * The ring, with its finishes beside it.
+ *
+ * **The ring is a photograph** (I4) and the finish swatches are small crops of
+ * the same frames, so a swatch always shows the thing it selects.
+ *
+ * The `Image` carries a numeric width and height: absolute insets alone make
+ * it paint nothing, silently (SS7).
+ */
+export function RingHero({ width, height, finish, margin }: Props) {
+  const imageW = width - margin * 2 - 60;
+
+  return (
+    <View style={{ height, alignItems: 'center', justifyContent: 'center' }}>
+      <Image
+        source={ring.image}
+        style={{ width: imageW, height: height - 20, borderRadius: 24 }}
+        resizeMode="cover"
+      />
+
+      <View style={{ position: 'absolute', left: margin, gap: 10 }}>
+        {finishes.map((f) => (
+          <Pressable
+            key={f.id}
+            accessibilityRole="button"
+            accessibilityState={{ selected: !!f.on }}
+            accessibilityLabel={f.label}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          >
+            <Image
+              source={f.image}
+              style={{
+                width: finish,
+                height: finish,
+                borderRadius: finish / 2,
+                borderWidth: f.on ? 2 : 1,
+                borderColor: f.on ? ct.ink : ct.line,
+              }}
+              resizeMode="cover"
+            />
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
+}

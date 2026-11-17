@@ -1,6 +1,9 @@
-import { Redirect } from 'expo-router';
+import { Catalog } from '@/components/catalog/catalog';
 
-/** No showcase yet — scaffold one with tools/showcase.js new <slug>. */
-export default function Index() {
-  return <Redirect href="/_sitemap" />;
-}
+/**
+ * The app opens on the catalog: every showcase, as a wall of thumbnails.
+ *
+ * This file is derived. `showcase.js use <slug>` and `record.js` replace it
+ * with a boot redirect for a take; `showcase.js catalog` puts it back.
+ */
+export default Catalog;

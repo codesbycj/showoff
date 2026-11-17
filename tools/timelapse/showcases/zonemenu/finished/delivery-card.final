@@ -1,0 +1,54 @@
+import { View } from 'react-native';
+
+import { delivery, usd } from '../data/menu';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { DeliveryProps } from './_menu-head-shared';
+
+/** How long, how much, and the minimum. All labels and units (R5). */
+export function DeliveryCard({ margin, height, radius }: DeliveryProps) {
+  return (
+    <View
+      style={{ marginHorizontal: margin, height, paddingHorizontal: 14, justifyContent: 'center' }}
+    >
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          borderWidth: 1,
+          borderColor: ct.fieldEdge,
+          backgroundColor: ct.white,
+        }}
+      />
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <View
+          style={{
+            width: 34,
+            height: 34,
+            borderRadius: 17,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: '#FDEDEB',
+          }}
+        >
+          <Glyph name="bag" size={17} color={ct.brand} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+            <T variant="deliveryLabel">{delivery.label}</T>
+            <T variant="deliveryValue">{delivery.value}</T>
+          </View>
+          <T variant="deliveryLabel">
+            {`${delivery.chargeLabel} ${usd(delivery.charge)} · ${delivery.minLabel} ${usd(delivery.min)}`}
+          </T>
+        </View>
+      </View>
+    </View>
+  );
+}

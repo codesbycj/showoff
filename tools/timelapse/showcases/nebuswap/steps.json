@@ -1,0 +1,335 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/nebula-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import nebula ground"
+  },
+  {
+   "label": "ellipse",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/nebula-ground.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "ellipse",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/nebula-ground.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/swap-fields"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import swap fields"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "send label",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "\"Balance\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "receive label",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "\"Balance\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "\"Reverse the swap\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-fields.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/nebuswap/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/rate-insight"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import rate insight"
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/rate-insight.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "\"Ask the assistant\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/rate-insight.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/section-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import section title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/swap-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import swap list"
+  },
+  {
+   "label": "day",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-list.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "from symbol",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuswap/components/swap-list.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "nova usdn",
+   "op": "block",
+   "args": [
+    "src/features/nebuswap/data/swap.ts",
+    "nova-usdn"
+   ]
+  },
+  {
+   "label": "linx sol",
+   "op": "block",
+   "args": [
+    "src/features/nebuswap/data/swap.ts",
+    "linx-sol"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "@/features/nebuswap/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuswap/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Swap\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuswap/data/swap.ts",
+    "swap"
+   ]
+  },
+  {
+   "label": "\"Services\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuswap/data/swap.ts",
+    "services"
+   ]
+  },
+  {
+   "label": "\"Support\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuswap/data/swap.ts",
+    "support"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/nebuswap/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nebuswap/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-swap",
+     "src/features/nebuswap/data/swap.ts"
+    ],
+    [
+     "nebula-ground",
+     "src/features/nebuswap/components/nebula-ground.tsx"
+    ],
+    [
+     "rate-insight",
+     "src/features/nebuswap/components/rate-insight.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nebuswap/index.tsx"
+    ],
+    [
+     "swap-fields",
+     "src/features/nebuswap/components/swap-fields.tsx"
+    ],
+    [
+     "swap-list",
+     "src/features/nebuswap/components/swap-list.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

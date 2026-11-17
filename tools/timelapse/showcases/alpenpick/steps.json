@@ -1,0 +1,231 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenpick/index.tsx",
+      "@/features/alpenpick/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenpick/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Filter destinations\"",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Saved destinations\"",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenpick/index.tsx",
+      "@/features/alpenpick/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenpick/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "\"Kayaking\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenpick/data/pick.ts",
+    "kayaking"
+   ]
+  },
+  {
+   "label": "\"Biking\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenpick/data/pick.ts",
+    "biking"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenpick/index.tsx",
+      "@/features/alpenpick/components/destination-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenpick/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import destination grid"
+  },
+  {
+   "label": "\"Summit Serenity\"",
+   "op": "block",
+   "args": [
+    "src/features/alpenpick/data/pick.ts",
+    "summit"
+   ]
+  },
+  {
+   "label": "\"Fjell Ridge\"",
+   "op": "block",
+   "args": [
+    "src/features/alpenpick/data/pick.ts",
+    "fjell"
+   ]
+  },
+  {
+   "label": "\"Alm Meadows\"",
+   "op": "block",
+   "args": [
+    "src/features/alpenpick/data/pick.ts",
+    "alm"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenpick/components/flag-disc.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenpick/components/flag-disc.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenpick/components/flag-disc.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "circle",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenpick/components/flag-disc.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenpick/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-pick",
+     "src/features/alpenpick/data/pick.ts"
+    ],
+    [
+     "flag-disc",
+     "src/features/alpenpick/components/flag-disc.tsx"
+    ],
+    [
+     "screen",
+     "src/app/alpenpick/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

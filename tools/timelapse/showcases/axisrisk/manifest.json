@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/axisrisk/index.tsx",
+  "top-bar": "src/features/axisrisk/components/top-bar.tsx",
+  "score-card": "src/features/axisrisk/components/score-card.tsx",
+  "fact-grid": "src/features/axisrisk/components/fact-grid.tsx",
+  "data-risk": "src/features/axisrisk/data/risk.ts",
+  "assessor-list": "src/features/axisrisk/components/assessor-list.tsx"
+}

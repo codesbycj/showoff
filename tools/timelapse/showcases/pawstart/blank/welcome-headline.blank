@@ -1,0 +1,32 @@
+import { View } from 'react-native';
+
+import { welcome } from '../data/start';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * The headline.
+ *
+ * Its two lines are two elements rather than one string with a newline in it:
+ * the reveal paints one element per step, and a two-line display that lands
+ * whole is the largest thing on the panel arriving in one beat (I9).
+ *
+ * It is its own component rather than half of a copy block, because
+ * `stage.js` stages what the screen mounts - a headline and a body in one
+ * wrapper reveal together, and mounted side by side they reveal in turn (I5).
+ */
+export function WelcomeHeadline({ margin, height }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center' }}>
+      <T variant="display" style={{ textAlign: 'center' }}>
+        {welcome.displayTop}
+      </T>
+      <T variant="display" style={{ textAlign: 'center' }}>
+        {/* STEP 1.11 display bottom
+        {welcome.displayBottom}
+        */}
+      </T>
+    </View>
+  );
+}

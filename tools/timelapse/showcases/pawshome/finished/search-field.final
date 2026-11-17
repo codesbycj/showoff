@@ -1,0 +1,37 @@
+import { View } from 'react-native';
+
+import { account } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The search field.
+ *
+ * The fill is on the field itself, not on an absolutely-filled child: this
+ * component is one staged block, so there is no container left behind to paint
+ * an empty strip (SS5.5) - and an absolute child under an `<svg>` sibling is
+ * what `audit.js` reads as a partial overlap, since a bare svg has no
+ * background for its hit stack to resolve (R3).
+ */
+export function SearchField({ margin, height, radius }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 14,
+        gap: 10,
+        borderRadius: radius,
+        backgroundColor: ct.card,
+      }}
+    >
+      <Glyph name="search" size={18} color={ct.muted} strokeWidth={1.8} />
+      <T variant="search">{account.search}</T>
+    </View>
+  );
+}

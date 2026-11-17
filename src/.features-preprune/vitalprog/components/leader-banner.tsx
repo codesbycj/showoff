@@ -1,0 +1,67 @@
+import { useId } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
+
+import {
+  calorieRow,
+  calorieSeries,
+  calories,
+  dayLabels,
+  kmShare,
+  leaderboard,
+  pct,
+  screen,
+  share,
+  trends,
+  type Trend,
+} from '../data/programs';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { BannerProps } from './_prog-parts-shared';
+
+/**
+ * The leaderboard banner.
+ *
+ * **The gradient is drawn in `react-native-svg` user space**, not
+ * `expo-linear-gradient`: this one runs diagonally, and a diagonal is mirrored
+ * on web by that library (Part 7).
+ *
+ * **`useId` for the gradient.** Its ids are document-global on web.
+ */
+export function LeaderBanner({ margin, height, radius }: BannerProps) {
+  const id = useId();
+
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`${leaderboard.title}, day ${leaderboard.day} of ${leaderboard.of}`}
+      style={{ marginHorizontal: margin }}
+    >
+      {({ pressed }) => (
+        <View style={{ height, borderRadius: radius, overflow: 'hidden', opacity: pressed ? 0.88 : 1 }}>
+          <Svg width="100%" height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+            <Defs>
+              <LinearGradient id={id} x1="0" y1="0" x2="1" y2="0.6">
+                <Stop offset="0" stopColor={ct.accent} stopOpacity={0.55} />
+                <Stop offset="0.55" stopColor={ct.blush} />
+                <Stop offset="1" stopColor={ct.lilac} />
+              </LinearGradient>
+            </Defs>
+            <Rect x={0} y={0} width="100%" height={height} fill={`url(#${id})`} />
+          </Svg>
+
+          <View style={{ flex: 1, paddingHorizontal: 18, justifyContent: 'center' }}>
+            <T variant="boardTitle">{leaderboard.title}</T>
+            <T variant="boardDay">{`Day ${leaderboard.day} of ${leaderboard.of}`}</T>
+          </View>
+
+          <View style={{ position: 'absolute', right: 18, top: height / 2 - 14 }}>
+            <Glyph name="sparkle" size={28} color={ct.accentDeep} />
+          </View>
+        </View>
+      )}
+    </Pressable>
+  );
+}

@@ -1,0 +1,29 @@
+import type { GlyphName } from '../components/glyph';
+
+/**
+ * Everything pulptrack says, so the components stay presentational.
+ *
+ * **Every array is annotated** (I7): a reveal fills them one entry at a time,
+ * and a type inferred from whichever rows happen to be uncommented loses every
+ * property that only appears on a later row.
+ */
+export const order = {
+  title: 'Your order is coming!',
+  eta: '12 min',
+};
+
+export type Stage = { id: string; icon: GlyphName; label: string; done?: boolean };
+
+export const stages: Stage[] = [
+  { id: 'paid', icon: 'check', label: 'Paid', done: true },
+  { id: 'made', icon: 'bottle', label: 'Pressed', done: true },
+  { id: 'road', icon: 'truck', label: 'On the way', done: true },
+  { id: 'door', icon: 'home', label: 'Delivered' },
+];
+
+/** Named for the photograph, not for the board's caption. */
+export const courier = {
+  name: 'Mia',
+  role: 'Courier',
+  image: require('../../../../assets/images/pulptrack/courier.jpg'),
+};

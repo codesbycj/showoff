@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/pawshome/index.tsx",
+  "home-header": "src/features/pawshome/components/home-header.tsx",
+  "search-field": "src/features/pawshome/components/search-field.tsx",
+  "pet-chips": "src/features/pawshome/components/pet-chips.tsx",
+  "data-home": "src/features/pawshome/data/home.ts",
+  "section-row": "src/features/pawshome/components/section-row.tsx",
+  "product-grid": "src/features/pawshome/components/product-grid.tsx",
+  "dock": "src/features/pawshome/components/dock.tsx"
+}

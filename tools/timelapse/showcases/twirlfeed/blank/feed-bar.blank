@@ -1,0 +1,46 @@
+import { Pressable, View } from 'react-native';
+
+import { brand } from '../data/feed';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { BarProps } from './_feed-parts-shared';
+
+/** The wordmark and the bell. */
+export function FeedBar({ margin, height, control }: BarProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      {/* STEP 1.02 name
+      <T variant="wordmark">{brand.name}</T>
+      */}
+      {/* STEP 1.03 "Notifications"
+      <Pressable hitSlop={8} accessibilityRole="button" accessibilityLabel="Notifications">
+        {({ pressed }) => (
+          <View
+            style={{
+              width: control,
+              height: control,
+              borderRadius: control / 2,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: ct.tile,
+              opacity: pressed ? 0.7 : 1,
+            }}
+          >
+            <Glyph name="bell" size={18} color={ct.ink} />
+          </View>
+        )}
+      </Pressable>
+      */}
+    </View>
+  );
+}

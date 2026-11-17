@@ -1,0 +1,75 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { promo } from '../data/home';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; width: number; height: number; radius: number };
+
+/**
+ * The month's offer — the dominant element on the screen (R8).
+ *
+ * **The board's mascot is a 3D render of a laughing fries carton.** A render
+ * cannot be traced and must not be drawn badly (§2.2), so the card carries a
+ * photograph of the food instead — which is also what I4 asks for.
+ *
+ * **The card is the deeper green, not the board's.** White on the board's
+ * #7CB518 measures 2.5:1, which fails R4 at every size; on this step it is
+ * 5.6:1 and the brand's bright green stays on the marks that carry no type.
+ */
+export function PromoCard({ margin, width, height, radius }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        borderRadius: radius,
+        backgroundColor: ct.greenDeep,
+        overflow: 'hidden',
+      }}
+    >
+      {/* STEP 1.09 image
+      <Image
+        source={promo.image}
+        style={{
+          position: 'absolute',
+          right: 0,
+          top: 0,
+          width: Math.round(width * 0.42),
+          height,
+        }}
+        resizeMode="cover"
+      />
+      */}
+
+      {/* STEP 1.10 kicker
+      <View style={{ flex: 1, paddingHorizontal: 18, paddingVertical: 16, width: width * 0.62 }}>
+        <T variant="promoKicker">{promo.kicker}</T>
+        <T variant="promoTitle">{promo.title}</T>
+
+        <View style={{ flex: 1 }} />
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={promo.cta}
+          hitSlop={{ top: 6, bottom: 6, left: 8, right: 8 }}
+          style={{ alignSelf: 'flex-start' }}
+        >
+          <View
+            style={{
+              height: 40,
+              paddingHorizontal: 18,
+              borderRadius: 20,
+              backgroundColor: ct.white,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="promoCta">{promo.cta}</T>
+          </View>
+        </Pressable>
+      </View>
+      */}
+    </View>
+  );
+}

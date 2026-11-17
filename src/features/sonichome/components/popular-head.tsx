@@ -1,0 +1,17 @@
+import {
+  categories,
+  collection,
+  collectionLine,
+  greeting,
+  playlist,
+  popular,
+  songs,
+  tabs,
+  tracks,
+} from '../data/home';
+import { BlockProps } from './_home-parts-shared';
+import { SectionHead } from './section-head';
+
+export function PopularHead({ margin, height }: BlockProps) {
+  return <SectionHead margin={margin} height={height} title={popular.title} more={popular.more} />;
+}

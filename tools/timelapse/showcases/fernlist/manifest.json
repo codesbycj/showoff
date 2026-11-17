@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/fernlist/index.tsx",
+  "featured-trip": "src/features/fernlist/components/featured-trip.tsx",
+  "flag-disc": "src/features/fernlist/components/flag-disc.tsx",
+  "date-chips": "src/features/fernlist/components/date-chips.tsx",
+  "data-list": "src/features/fernlist/data/list.ts",
+  "trip-deck": "src/features/fernlist/components/trip-deck.tsx"
+}

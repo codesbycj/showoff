@@ -145,16 +145,36 @@ for (const [name, rel] of Object.entries(manifest)) {
 
 const out = {};
 for (const screen of Object.keys(touched).sort()) {
-  const steps = found
-    .filter((s) => s.screen === screen)
-    .sort((a, b) => a.n - b.n)
-    .map(({ op, args, label }) => ({ op, args, label }));
+  const mine = found.filter((s) => s.screen === screen).sort((a, b) => a.n - b.n);
 
   const seen = new Set();
-  for (const s of steps) {
+  for (const s of mine) {
     const key = s.op + JSON.stringify(s.args);
     if (seen.has(key)) throw new Error(`duplicate step in screen ${screen}: ${key}`);
     seen.add(key);
+  }
+
+  // Markers that share a number are one step. That is how an import rides with
+  // the block it feeds (RULES 5.2): on its own it paints nothing, because the
+  // component it names is still a JSX comment. A step with one op keeps the
+  // flat shape, so older showcases read unchanged.
+  const steps = [];
+  for (const s of mine) {
+    const prev = steps[steps.length - 1];
+    if (prev && prev.n === s.n) {
+      prev.ops.push({ op: s.op, args: s.args });
+      if (s.label && !prev.label.includes(s.label)) prev.label += ' + ' + s.label;
+      continue;
+    }
+    steps.push({ n: s.n, ops: [{ op: s.op, args: s.args }], label: s.label });
+  }
+  for (const s of steps) {
+    delete s.n;
+    if (s.ops.length === 1) {
+      s.op = s.ops[0].op;
+      s.args = s.ops[0].args;
+      delete s.ops;
+    }
   }
 
   // The tidy-up beat: every file the screen touched goes to its finished copy,
@@ -168,10 +188,16 @@ for (const screen of Object.keys(touched).sort()) {
   out[screen] = steps;
 }
 
+// A number may carry several markers: the block, plus every import it needs.
+// One block often mounts two components, and both their imports belong to that
+// one step. What it may not carry twice is a *painting* marker - two `jsx`
+// markers on one number would be two elements in one step, which RULES 0.3
+// forbids, and two `entry` markers would be two rows.
 const numbers = {};
 for (const s of found) {
-  const key = `${s.screen}.${s.n}`;
-  if (numbers[key]) throw new Error(`step number ${key} used twice`);
+  if (s.op === 'imp') continue;
+  const key = `${s.screen}.${s.n}.${s.op}`;
+  if (numbers[key]) throw new Error(`step number ${s.screen}.${s.n} used twice for ${s.op}`);
   numbers[key] = true;
 }
 

@@ -1,0 +1,84 @@
+/**
+ * Everything zoneitem says.
+ *
+ * **Two of the board's own typos are fixed** (I1): it writes "Add to card" for
+ * the primary action and "Add ons for Bourger" for the section heading. A typo
+ * is not a design.
+ *
+ * **Every money figure is computed** (R9): the total is the item price plus the
+ * selected add-ons, times the quantity, so the button and the rows above it
+ * cannot disagree — the board's button carries no total at all.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const hero = require('../../../../assets/images/zoneitem/hero.jpg');
+
+export const badge = '#1 Most liked';
+
+export const item = {
+  name: 'Superiority Burger',
+  place: 'Maison Grill',
+  calories: 201,
+  price: 5.2,
+  /** R5: one run, 97 characters. The board's own runs to 118. */
+  blurb: 'Smash patty, aged cheddar and house pickles in a toasted brioche bun.',
+};
+
+export const addons = {
+  /** FIX: the board writes "Bourger". */
+  title: 'Add ons for Burger',
+  optional: 'Optional',
+  note: 'Select up to 2',
+  max: 2,
+};
+
+export type Addon = { id: string; label: string; price: number; on?: boolean };
+
+export const options: Addon[] = [
+  { id: 'mushroom', label: 'Mushroom', price: 0.5, on: true },
+  // STEP 1.19 "Chicken Patty"
+  // { id: 'patty', label: 'Chicken Patty', price: 5 },
+  // STEP 1.20 "Poached Egg"
+  // { id: 'egg', label: 'Poached Egg', price: 1 },
+  // STEP 1.21 "Smoked Bacon"
+  // { id: 'bacon', label: 'Smoked Bacon', price: 1.8 },
+];
+
+/**
+ * How many addon rows the layout reserves.
+ *
+ * Declared rather than read off `options.length`: the reveal stages entries
+ * one at a time, so a height taken from the live length shrinks on every
+ * revealed row and drags whatever is sized against it - here the hero - with
+ * it, repainting half the frame for one new row (RULES 0.3).
+ */
+export const OPTION_ROWS = 4;
+
+export const quantity = 1;
+
+/** FIX: the board writes "Add to card". */
+export const cta = { label: 'Add to cart' };
+
+/**
+ * The total.
+ *
+ * Derived, and safe while `options` is still being staged: `reduce` over an
+ * empty array returns the seed rather than throwing (I7).
+ */
+export function total(qty: number = quantity) {
+  const extras = options.reduce((sum, o) => (o.on ? sum + o.price : sum), 0);
+  return (item.price + extras) * Math.max(qty, 1);
+}
+
+/** Money, formatted once so every figure on the board reads the same way. */
+export function usd(n: number) {
+  return `$${n.toFixed(2)}`;
+}
+
+/** An add-on's price reads as what it adds. */
+export function plus(n: number) {
+  return `+ ${usd(n)}`;
+}

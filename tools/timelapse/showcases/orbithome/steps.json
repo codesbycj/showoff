@@ -1,0 +1,357 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/wash-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import wash ground"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/greeting-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import greeting row"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/greeting-row.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "hello",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/greeting-row.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "\"Notifications\"",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/greeting-row.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/balance-block"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import balance block"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/balance-block.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "balance label",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/balance-block.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/action-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import action row"
+  },
+  {
+   "label": "\"Withdraw\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "withdraw"
+   ]
+  },
+  {
+   "label": "\"Top up\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "topup"
+   ]
+  },
+  {
+   "label": "\"More\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "more"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/section-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import section row"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/section-row.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "see all",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/section-row.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/contact-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import contact rail"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/contact-rail.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "\"Add\"",
+   "op": "jsx",
+   "args": [
+    "src/features/orbithome/components/contact-rail.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/promo-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import promo rail"
+  },
+  {
+   "label": "\"Almost there\"",
+   "op": "block",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "almost"
+   ]
+  },
+  {
+   "label": "section row",
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/movement-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import movement list"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "@/features/orbithome/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbithome/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Cards\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "cards"
+   ]
+  },
+  {
+   "label": "\"Stats\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "stats"
+   ]
+  },
+  {
+   "label": "\"Account\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbithome/data/home.ts",
+    "me"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orbithome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "balance-block",
+     "src/features/orbithome/components/balance-block.tsx"
+    ],
+    [
+     "contact-rail",
+     "src/features/orbithome/components/contact-rail.tsx"
+    ],
+    [
+     "data-home",
+     "src/features/orbithome/data/home.ts"
+    ],
+    [
+     "greeting-row",
+     "src/features/orbithome/components/greeting-row.tsx"
+    ],
+    [
+     "screen",
+     "src/app/orbithome/index.tsx"
+    ],
+    [
+     "section-row",
+     "src/features/orbithome/components/section-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

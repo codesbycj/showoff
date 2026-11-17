@@ -1,0 +1,66 @@
+import { Pressable, View } from 'react-native';
+
+import { picks, session } from '../data/session';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { radius: number; height: number };
+
+/**
+ * What the session is built on.
+ *
+ * The picks are outlined rather than filled, as the board draws them, so they
+ * read as choices made rather than labels applied.
+ *
+ * The card's fill sits on an absolutely-filled child so an emptied card paints
+ * nothing in frame one of the reveal (I9).
+ */
+export function FoundationCard({ radius, height }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={session.foundationLabel}>
+      <View style={{ height, borderRadius: radius, padding: 18, justifyContent: 'center' }}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: ct.card,
+            borderRadius: radius,
+          }}
+        />
+
+        {/* STEP 1.12 foundation label
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ flex: 1 }}>
+            <T variant="rowTitle">{session.foundationLabel}</T>
+          </View>
+          <Glyph name="chevron" size={16} color={ct.onDarkMuted} strokeWidth={1.8} />
+        </View>
+        */}
+
+        <View style={{ flexDirection: 'row', gap: 10, marginTop: 12 }}>
+          {/* STEP 1.13 label
+          {picks.map((pick) => (
+            <View
+              key={pick.id}
+              style={{
+                height: 34,
+                borderRadius: 17,
+                paddingHorizontal: 16,
+                justifyContent: 'center',
+                borderWidth: 1,
+                borderColor: ct.line,
+              }}
+            >
+              <T variant="pick">{pick.label}</T>
+            </View>
+          ))}
+          */}
+        </View>
+      </View>
+    </Pressable>
+  );
+}

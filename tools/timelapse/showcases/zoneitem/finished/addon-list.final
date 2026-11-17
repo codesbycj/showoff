@@ -1,0 +1,67 @@
+import { Pressable, View } from 'react-native';
+
+import { addons, badge, cta, hero, item, options, plus, quantity, total, usd } from '../data/item';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { OptionProps } from './_item-parts-shared';
+
+/**
+ * The add-ons.
+ *
+ * Each row is 42dp with `hitSlop` taking the real target past R7's 44 — the
+ * board draws them smaller still, and inflating them to 44dp of empty space
+ * would open exactly the gaps R1 exists to catch.
+ */
+export function AddonList({ margin, height, rowH, box }: OptionProps) {
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      {options.map((o, i) => (
+        <Pressable
+          key={o.id}
+          hitSlop={{ top: 2, bottom: 2, left: 0, right: 0 }}
+          accessibilityRole="checkbox"
+          accessibilityState={{ checked: !!o.on }}
+          accessibilityLabel={`${o.label}, ${plus(o.price)}`}
+        >
+          {({ pressed }) => (
+            <View
+              style={{
+                height: rowH,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 12,
+                borderBottomWidth: i === options.length - 1 ? 0 : 1,
+                borderBottomColor: ct.hairline,
+                opacity: pressed ? 0.7 : 1,
+              }}
+            >
+              <View
+                style={{
+                  width: box,
+                  height: box,
+                  borderRadius: 6,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderWidth: o.on ? 0 : 1.5,
+                  borderColor: ct.fieldEdge,
+                  backgroundColor: o.on ? ct.brand : ct.white,
+                }}
+              >
+                {o.on ? (
+                  <Glyph name="check" size={13} color={ct.brandInk} strokeWidth={2.8} />
+                ) : null}
+              </View>
+
+              <T variant="option" style={{ flex: 1 }}>
+                {o.label}
+              </T>
+              <T variant="optionPrice">{plus(o.price)}</T>
+            </View>
+          )}
+        </Pressable>
+      ))}
+    </View>
+  );
+}

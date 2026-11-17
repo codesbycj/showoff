@@ -1,0 +1,62 @@
+/**
+ * Everything lumoreel says.
+ *
+ * **The board's audio line names a real band and its handle reads
+ * "@rayyan.offical"** (I1). Both are fixed: the track is invented and the
+ * handle is spelled.
+ *
+ * **R5: hashtags are labels.** The board runs eight of them over two lines;
+ * four is a row.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const reel = {
+  image: require('../../../../assets/images/lumoreel/hero.jpg'),
+  name: 'Mohammed Rayyan',
+  handle: '@rayyan.official',
+  avatar: require('../../../../assets/images/lumoreel/me.jpg'),
+  likes: 1900000,
+  comments: 22200,
+  shares: 89000,
+  audio: 'Night Shift — Aster Vale',
+  caption: 'Three takes, one light, no edit.',
+};
+
+export const hashtags: string[] = ['#music', '#nightset', '#creatorlife', '#bluehour'];
+
+export type Action = { id: string; glyph: 'liked' | 'comment' | 'send'; value: number };
+
+export const actions: Action[] = [
+  { id: 'like', glyph: 'liked', value: reel.likes },
+  // STEP 1.07 comment
+  // { id: 'comment', glyph: 'comment', value: reel.comments },
+  // STEP 1.08 share
+  // { id: 'share', glyph: 'send', value: reel.shares },
+];
+
+export type Tab = {
+  id: string;
+  label: string;
+  glyph: 'home' | 'search' | 'plus' | 'messages' | 'profile';
+};
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  // STEP 1.20 "Search"
+  // { id: 'search', label: 'Search', glyph: 'search' },
+  // STEP 1.21 "Post"
+  // { id: 'post', label: 'Post', glyph: 'plus' },
+  // STEP 1.22 "Messages"
+  // { id: 'messages', label: 'Messages', glyph: 'messages' },
+  // STEP 1.23 "Profile"
+  // { id: 'profile', label: 'Profile', glyph: 'profile' },
+];
+
+/** 1900000 -> "1.9M". A count is a label, so it is formatted, never typed. */
+export function count(value: number) {
+  if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
+  if (value >= 1000) return `${(value / 1000).toFixed(1)}K`;
+  return String(value);
+}

@@ -1,0 +1,371 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/nebula-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import nebula ground"
+  },
+  {
+   "label": "ellipse",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/nebula-ground.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "ellipse",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/nebula-ground.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/account-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import account row"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/account-row.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "welcome",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/account-row.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "\"Search\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/account-row.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "\"Notifications\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/account-row.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/balance-block"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import balance block"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/balance-block.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/balance-block.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/balance-block.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "orbit",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "orbit"
+   ]
+  },
+  {
+   "label": "solis",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "solis"
+   ]
+  },
+  {
+   "label": "linx",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "linx"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/action-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import action chips"
+  },
+  {
+   "label": "\"Send\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "send"
+   ]
+  },
+  {
+   "label": "\"Buy crypto\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "buy"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/section-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import section title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/holdings-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import holdings list"
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/featured-holding.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "holding row",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/featured-holding.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "\"Ask the assistant\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/featured-holding.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/holding-row.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "symbol",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/holding-row.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "amount",
+   "op": "jsx",
+   "args": [
+    "src/features/nebuhome/components/holding-row.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "@/features/nebuhome/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nebuhome/index.tsx",
+      "STEP 1.27"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Swap\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "swap"
+   ]
+  },
+  {
+   "label": "\"Services\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "services"
+   ]
+  },
+  {
+   "label": "\"Support\"",
+   "op": "entry",
+   "args": [
+    "src/features/nebuhome/data/home.ts",
+    "support"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/nebuhome/index.tsx",
+    "STEP 1.31"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nebuhome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "account-row",
+     "src/features/nebuhome/components/account-row.tsx"
+    ],
+    [
+     "balance-block",
+     "src/features/nebuhome/components/balance-block.tsx"
+    ],
+    [
+     "data-home",
+     "src/features/nebuhome/data/home.ts"
+    ],
+    [
+     "featured-holding",
+     "src/features/nebuhome/components/featured-holding.tsx"
+    ],
+    [
+     "holding-row",
+     "src/features/nebuhome/components/holding-row.tsx"
+    ],
+    [
+     "nebula-ground",
+     "src/features/nebuhome/components/nebula-ground.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nebuhome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

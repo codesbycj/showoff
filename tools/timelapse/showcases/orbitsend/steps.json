@@ -1,0 +1,391 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/send-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import send header"
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/send-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/send-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Scan a code\"",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/send-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/contact-picker"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import contact picker"
+  },
+  {
+   "label": "\"Martin Varela\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "martin"
+   ]
+  },
+  {
+   "label": "\"Stefan Kutch\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "stefan"
+   ]
+  },
+  {
+   "label": "\"Sophie Varela\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "sophie"
+   ]
+  },
+  {
+   "label": "\"Nadia Brandt\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "nadia"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/recipient-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import recipient card"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/recipient-card.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/recipient-card.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/recipient-card.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/amount-panel"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import amount panel"
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/amount-panel.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/amount-panel.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import text + view"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/keypad"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import keypad"
+  },
+  {
+   "label": "\"2\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "2"
+   ]
+  },
+  {
+   "label": "\"3\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "3"
+   ]
+  },
+  {
+   "label": "\"4\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "4"
+   ]
+  },
+  {
+   "label": "\"5\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "5"
+   ]
+  },
+  {
+   "label": "\"6\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "6"
+   ]
+  },
+  {
+   "label": "\"7\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "7"
+   ]
+  },
+  {
+   "label": "\"8\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "8"
+   ]
+  },
+  {
+   "label": "\"9\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "9"
+   ]
+  },
+  {
+   "label": "\".\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "dot"
+   ]
+  },
+  {
+   "label": "\"0\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "0"
+   ]
+  },
+  {
+   "label": "\"Delete\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitsend/data/send.ts",
+    "back"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "@/features/orbitsend/components/slide-send"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitsend/index.tsx",
+      "STEP 1.30"
+     ]
+    }
+   ],
+   "label": "import slide send"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/slide-send.tsx",
+    "STEP 1.31"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/slide-send.tsx",
+    "STEP 1.32"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitsend/components/slide-send.tsx",
+    "STEP 1.33"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/orbitsend/index.tsx",
+    "STEP 1.34"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orbitsend/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "amount-panel",
+     "src/features/orbitsend/components/amount-panel.tsx"
+    ],
+    [
+     "data-send",
+     "src/features/orbitsend/data/send.ts"
+    ],
+    [
+     "recipient-card",
+     "src/features/orbitsend/components/recipient-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/orbitsend/index.tsx"
+    ],
+    [
+     "send-header",
+     "src/features/orbitsend/components/send-header.tsx"
+    ],
+    [
+     "slide-send",
+     "src/features/orbitsend/components/slide-send.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

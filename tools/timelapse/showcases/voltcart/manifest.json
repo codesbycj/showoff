@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/voltcart/index.tsx",
+  "cart-header": "src/features/voltcart/components/cart-header.tsx",
+  "address-row": "src/features/voltcart/components/address-row.tsx",
+  "cart-lines": "src/features/voltcart/components/cart-lines.tsx",
+  "data-cart": "src/features/voltcart/data/cart.ts",
+  "checkout-bar": "src/features/voltcart/components/checkout-bar.tsx",
+  "tab-bar": "src/features/voltcart/components/tab-bar.tsx",
+  "data-tabs": "src/features/voltcart/data/tabs.ts"
+}

@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/nordstay/index.tsx",
+  "gallery": "src/features/nordstay/components/gallery.tsx",
+  "data-stay": "src/features/nordstay/data/stay.ts",
+  "gallery-controls": "src/features/nordstay/components/gallery-controls.tsx",
+  "stay-title": "src/features/nordstay/components/stay-title.tsx",
+  "host-row": "src/features/nordstay/components/host-row.tsx",
+  "amenities": "src/features/nordstay/components/amenities.tsx",
+  "check-in-notes": "src/features/nordstay/components/check-in-notes.tsx",
+  "price-bar": "src/features/nordstay/components/price-bar.tsx"
+}

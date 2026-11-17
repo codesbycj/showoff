@@ -1,0 +1,30 @@
+import { View } from 'react-native';
+
+import { header } from '../data/find';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * How much is new.
+ *
+ * A count, not a sentence (R5). The board's display has nothing under it;
+ * inventing the row a board cuts is the sanctioned fix for a short screen
+ * (I3).
+ */
+export function CollectionCount({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      <T variant="count">{header.count}</T>
+      <T variant="count">{header.made}</T>
+    </View>
+  );
+}

@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/pulpitem/index.tsx",
+  "item-hero": "src/features/pulpitem/components/item-hero.tsx",
+  "title-row": "src/features/pulpitem/components/title-row.tsx",
+  "tag-row": "src/features/pulpitem/components/tag-row.tsx",
+  "data-item": "src/features/pulpitem/data/item.ts",
+  "fact-tiles": "src/features/pulpitem/components/fact-tiles.tsx",
+  "buy-row": "src/features/pulpitem/components/buy-row.tsx"
+}

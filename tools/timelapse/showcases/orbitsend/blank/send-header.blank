@@ -1,0 +1,52 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/send';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onBack?: () => void };
+
+/** Back, title, scan. Both controls are 44dp of real box (R7). */
+export function SendHeader({ margin, height, onBack }: Props) {
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: ct.tray,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      {/* STEP 1.02 "Back"
+      <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onBack}>
+        <View style={round}>
+          <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+        </View>
+      </Pressable>
+      */}
+
+      {/* STEP 1.03 title
+      <T variant="title">{header.title}</T>
+      */}
+
+      {/* STEP 1.04 "Scan a code"
+      <Pressable accessibilityRole="button" accessibilityLabel="Scan a code">
+        <View style={round}>
+          <Glyph name="scan" size={19} color={ct.ink} strokeWidth={1.8} />
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

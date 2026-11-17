@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/flowtrain/index.tsx",
+  "exercise-hero": "src/features/flowtrain/components/exercise-hero.tsx",
+  "set-clock": "src/features/flowtrain/components/set-clock.tsx",
+  "transport": "src/features/flowtrain/components/transport.tsx",
+  "data-train": "src/features/flowtrain/data/train.ts"
+}

@@ -1,0 +1,95 @@
+import { Pressable, View } from 'react-native';
+
+import { ingredients, tabs } from '../data/recipe';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; tabsH: number; itemH: number; gap: number };
+
+/**
+ * What goes in it, under the two tabs the board draws.
+ *
+ * Each tick is 24dp with hit slop that takes it past 44dp (R7), and the
+ * chosen tab is marked by a fill as well as by weight, so it survives a
+ * greyscale render.
+ */
+export function IngredientList({ margin, tabsH, itemH, gap }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      {/* STEP 1.21 label
+      <View
+        style={{
+          height: tabsH,
+          flexDirection: 'row',
+          backgroundColor: ct.tray,
+          borderRadius: tabsH / 2,
+          padding: 4,
+        }}
+      >
+        {tabs.map((tab) => (
+          <Pressable
+            key={tab.id}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: !!tab.on }}
+            accessibilityLabel={tab.label}
+            style={{ flex: 1 }}
+          >
+            <View
+              style={{
+                flex: 1,
+                borderRadius: (tabsH - 8) / 2,
+                backgroundColor: tab.on ? ct.white : 'transparent',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <T variant={tab.on ? 'tabOnX' : 'tabOffX'}>{tab.label}</T>
+            </View>
+          </Pressable>
+        ))}
+      </View>
+      */}
+
+      <View style={{ height: gap }} />
+
+      {/* STEP 1.22 label
+      {ingredients.map((item) => (
+        <View
+          key={item.id}
+          style={{ height: itemH, flexDirection: 'row', alignItems: 'center', gap: 12 }}
+        >
+          <Pressable
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: !!item.have }}
+            accessibilityLabel={item.label}
+            hitSlop={{ top: 11, bottom: 11, left: 11, right: 11 }}
+          >
+            <View
+              style={{
+                width: 24,
+                height: 24,
+                borderRadius: 8,
+                borderWidth: item.have ? 0 : 1.5,
+                borderColor: ct.line,
+                backgroundColor: item.have ? ct.rose : ct.white,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {item.have ? (
+                <Glyph name="tick" size={14} color={ct.white} strokeWidth={2.4} />
+              ) : null}
+            </View>
+          </Pressable>
+
+          <T variant="item" style={{ flex: 1 }}>
+            {item.label}
+          </T>
+          <T variant="amount">{item.amount}</T>
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

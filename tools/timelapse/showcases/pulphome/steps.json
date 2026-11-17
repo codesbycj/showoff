@@ -1,0 +1,261 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "@/features/pulphome/components/greet-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import greet bar"
+  },
+  {
+   "label": "hello",
+   "op": "jsx",
+   "args": [
+    "src/features/pulphome/components/greet-bar.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Search\"",
+   "op": "jsx",
+   "args": [
+    "src/features/pulphome/components/greet-bar.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "@/features/pulphome/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import text + display"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "sub",
+   "op": "jsx",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "@/features/pulphome/components/kind-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import kind chips"
+  },
+  {
+   "label": "\"Vegan\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "vegan"
+   ]
+  },
+  {
+   "label": "\"Smoothies\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "smoothies"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "@/features/pulphome/components/bottle-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import bottle list"
+  },
+  {
+   "label": "\"Dragon Fruit & Berry\"",
+   "op": "block",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "dragon"
+   ]
+  },
+  {
+   "label": "\"Sunrise Fruit Flight\"",
+   "op": "block",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "sunrise"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulphome/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "@/features/pulphome/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulphome/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Cart\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "cart"
+   ]
+  },
+  {
+   "label": "\"Orders\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "orders"
+   ]
+  },
+  {
+   "label": "\"Settings\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulphome/data/shop.ts",
+    "settings"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-shop",
+     "src/features/pulphome/data/shop.ts"
+    ],
+    [
+     "greet-bar",
+     "src/features/pulphome/components/greet-bar.tsx"
+    ],
+    [
+     "screen",
+     "src/app/pulphome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/nordhome/index.tsx",
+  "hero-photo": "src/features/nordhome/components/hero-photo.tsx",
+  "location-row": "src/features/nordhome/components/location-row.tsx",
+  "search-pill": "src/features/nordhome/components/search-pill.tsx",
+  "stay-rail": "src/features/nordhome/components/stay-rail.tsx",
+  "data-home": "src/features/nordhome/data/home.ts",
+  "stay-card": "src/features/nordhome/components/stay-card.tsx",
+  "place-rail": "src/features/nordhome/components/place-rail.tsx",
+  "dock": "src/features/nordhome/components/dock.tsx"
+}

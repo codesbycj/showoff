@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/stridehome/index.tsx",
+  "day-header": "src/features/stridehome/components/day-header.tsx",
+  "readiness-card": "src/features/stridehome/components/readiness-card.tsx",
+  "data-home": "src/features/stridehome/data/home.ts",
+  "readiness-ring": "src/features/stridehome/components/readiness-ring.tsx",
+  "focus-card": "src/features/stridehome/components/focus-card.tsx",
+  "week-card": "src/features/stridehome/components/week-card.tsx",
+  "dock": "src/features/stridehome/components/dock.tsx"
+}

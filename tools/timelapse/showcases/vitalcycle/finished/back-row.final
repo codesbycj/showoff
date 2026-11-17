@@ -1,0 +1,32 @@
+import { Pressable, View } from 'react-native';
+
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { BlockProps } from './_cycle-parts-shared';
+
+/** The back control, alone at the top as the board places it. */
+export function BackRow({ margin, height, onBack }: BlockProps & { onBack: () => void }) {
+  return (
+    <View
+      style={{ marginHorizontal: margin, height, alignItems: 'center', justifyContent: 'center' }}
+    >
+      <Pressable hitSlop={10} onPress={onBack} accessibilityRole="button" accessibilityLabel="Back">
+        {({ pressed }) => (
+          <View
+            style={{
+              width: height,
+              height,
+              borderRadius: height / 2,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'rgba(255,255,255,0.7)',
+              opacity: pressed ? 0.7 : 1,
+            }}
+          >
+            <Glyph name="back" size={18} color={ct.ink} />
+          </View>
+        )}
+      </Pressable>
+    </View>
+  );
+}

@@ -1,0 +1,66 @@
+import { Pressable, View } from 'react-native';
+
+import { money, product, total } from '../data/item';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * How many, and what that costs.
+ *
+ * **R9: the pill is the unit price times the quantity**, computed, so it can
+ * never disagree with the bar below it - the board prints `$ 06.00` against a
+ * quantity of three.
+ */
+export function QtyRow({ margin, height }: Props) {
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    borderWidth: 1,
+    borderColor: ct.line,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Pressable accessibilityRole="button" accessibilityLabel="One fewer">
+        <View style={round}>
+          <Glyph name="minus" size={17} color={ct.ink} strokeWidth={2} />
+        </View>
+      </Pressable>
+
+      <T variant="qty">{String(product.qty).padStart(2, '0')}</T>
+
+      <Pressable accessibilityRole="button" accessibilityLabel="One more">
+        <View style={round}>
+          <Glyph name="plus" size={17} color={ct.ink} strokeWidth={2} />
+        </View>
+      </Pressable>
+
+      <View
+        style={{
+          paddingHorizontal: 18,
+          height: 44,
+          borderRadius: 21,
+          backgroundColor: ct.yellow,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <T variant="pill">{money(total())}</T>
+      </View>
+    </View>
+  );
+}

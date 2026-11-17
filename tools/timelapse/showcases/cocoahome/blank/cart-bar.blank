@@ -1,0 +1,88 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { bar, cartCount } from '../data/shop';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number; onPress: () => void };
+
+/**
+ * The pinned cart.
+ *
+ * **It floats**, so its clearance is budgeted once in `layout.ts` and never
+ * added again here - padding a bar by `insets.bottom` on a non-edge-to-edge
+ * app counts the system strip twice (I3, I11).
+ *
+ * The dark fill lives on an absolutely-filled child so an emptied bar paints
+ * nothing during a reveal (SS5.5), and the count is computed from the cart
+ * rather than typed beside it (R9).
+ */
+export function CartBar({ margin, height, radius, onPress }: Props) {
+  const count = cartCount();
+
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.dark,
+        }}
+      />
+
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${bar.label}, ${count} ${count === 1 ? 'item' : 'items'}`}
+        onPress={onPress}
+        style={{ flex: 1 }}
+      >
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 16,
+            gap: 12,
+          }}
+        >
+          {/* STEP 1.18 view
+          <View
+            style={{
+              minWidth: 26,
+              height: 26,
+              borderRadius: 13,
+              paddingHorizontal: 8,
+              backgroundColor: ct.yellow,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="badge">{String(count)}</T>
+          </View>
+          */}
+
+          <View style={{ flex: 1 }}>
+            {/* STEP 1.19 label
+            <T variant="barLabel">{bar.label}</T>
+            */}
+            {/* STEP 1.20 t
+            <T variant="barCount">{`${count} ${count === 1 ? 'item' : 'items'}`}</T>
+            */}
+          </View>
+
+          {/* STEP 1.21 image
+          <Image
+            source={bar.me}
+            style={{ width: 40, height: 40, borderRadius: 20 }}
+            resizeMode="cover"
+          />
+          */}
+        </View>
+      </Pressable>
+    </View>
+  );
+}

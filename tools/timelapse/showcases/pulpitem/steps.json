@@ -1,0 +1,276 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "@/features/pulpitem/components/item-hero"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import item hero"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/pulpitem/components/item-hero.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "@/features/pulpitem/components/title-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import title row"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "@/features/pulpitem/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import text + size"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "@/features/pulpitem/components/tag-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "STEP 1.07"
+     ]
+    }
+   ],
+   "label": "import tag row"
+  },
+  {
+   "label": "\"Energy boost\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulpitem/data/item.ts",
+    "boost"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "section",
+   "op": "jsx",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "@/features/pulpitem/components/fact-tiles"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import fact tiles"
+  },
+  {
+   "label": "\"Sugar\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulpitem/data/item.ts",
+    "sugar"
+   ]
+  },
+  {
+   "label": "\"Fat\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulpitem/data/item.ts",
+    "fat"
+   ]
+  },
+  {
+   "label": "\"Fiber\"",
+   "op": "entry",
+   "args": [
+    "src/features/pulpitem/data/item.ts",
+    "fiber"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pulpitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "@/features/pulpitem/components/buy-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pulpitem/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import buy row"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/pulpitem/components/buy-row.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/pulpitem/components/buy-row.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/pulpitem/components/buy-row.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "buy-row",
+     "src/features/pulpitem/components/buy-row.tsx"
+    ],
+    [
+     "data-item",
+     "src/features/pulpitem/data/item.ts"
+    ],
+    [
+     "item-hero",
+     "src/features/pulpitem/components/item-hero.tsx"
+    ],
+    [
+     "screen",
+     "src/app/pulpitem/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/sonicexplore/index.tsx",
+  "search-field": "src/features/sonicexplore/components/search-field.tsx",
+  "feature-rail": "src/features/sonicexplore/components/feature-rail.tsx",
+  "data-explore": "src/features/sonicexplore/data/explore.ts",
+  "genre-grid": "src/features/sonicexplore/components/genre-grid.tsx",
+  "dock": "src/features/sonicexplore/components/dock.tsx"
+}

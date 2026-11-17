@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/vitalprog/index.tsx",
+  "calorie-card": "src/features/vitalprog/components/calorie-card.tsx",
+  "leader-banner": "src/features/vitalprog/components/leader-banner.tsx",
+  "trend-list": "src/features/vitalprog/components/trend-list.tsx",
+  "data-programs": "src/features/vitalprog/data/programs.ts"
+}

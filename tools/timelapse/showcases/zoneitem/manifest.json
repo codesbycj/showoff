@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/zoneitem/index.tsx",
+  "item-hero": "src/features/zoneitem/components/item-hero.tsx",
+  "liked-badge": "src/features/zoneitem/components/liked-badge.tsx",
+  "item-title": "src/features/zoneitem/components/item-title.tsx",
+  "addon-head": "src/features/zoneitem/components/addon-head.tsx",
+  "addon-list": "src/features/zoneitem/components/addon-list.tsx",
+  "data-item": "src/features/zoneitem/data/item.ts",
+  "cart-bar": "src/features/zoneitem/components/cart-bar.tsx"
+}

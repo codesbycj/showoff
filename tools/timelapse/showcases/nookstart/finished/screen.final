@@ -1,0 +1,61 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BrandRow } from '@/features/nookstart/components/brand-row';
+import { BrowseLink } from '@/features/nookstart/components/browse-link';
+import { PosedPieces } from '@/features/nookstart/components/posed-pieces';
+import { SeasonCount } from '@/features/nookstart/components/season-count';
+import { SplashTitle } from '@/features/nookstart/components/splash-title';
+import { StartDisc } from '@/features/nookstart/components/start-disc';
+import { useLayout } from '@/features/nookstart/layout';
+import { ct } from '@/features/nookstart/theme';
+
+/**
+ * Nook - the splash.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The posed field is the remainder, so the screen always ends on its action
+ * with no band under it (I3).
+ */
+export default function NookstartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.panel }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <BrandRow margin={L.margin} height={L.brandH} />
+
+      <View style={{ height: L.gapBrand }} />
+      <SplashTitle margin={L.margin} height={L.displayH} />
+
+      <SeasonCount margin={L.margin} height={L.countH} />
+
+      <View style={{ height: L.gapDisplay }} />
+      <PosedPieces
+        width={L.W}
+        height={L.field.h}
+        big={L.field.big}
+        small={L.field.small}
+        margin={L.margin}
+      />
+
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <BrowseLink onPress={() => router.push('/nookshop')} />
+        <StartDisc size={L.cta.h} onPress={() => router.push('/nookshop')} />
+      </View>
+    </View>
+  );
+}

@@ -1,0 +1,242 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "@/features/orlaring/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Menu\"",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "@/features/orlaring/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "kind",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "@/features/orlaring/components/ring-hero"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import ring hero"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/orlaring/components/ring-hero.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "\"Gold\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlaring/data/ring.ts",
+    "gold"
+   ]
+  },
+  {
+   "label": "\"Rose\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlaring/data/ring.ts",
+    "rose"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "@/features/orlaring/components/fact-discs"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlaring/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import fact discs"
+  },
+  {
+   "label": "\"PRICE\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlaring/data/ring.ts",
+    "price"
+   ]
+  },
+  {
+   "label": "\"GOLD\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlaring/data/ring.ts",
+    "metal"
+   ]
+  },
+  {
+   "label": "\"SETTING\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlaring/data/ring.ts",
+    "setting"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "\"Your bag\"",
+   "op": "jsx",
+   "args": [
+    "src/app/orlaring/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-ring",
+     "src/features/orlaring/data/ring.ts"
+    ],
+    [
+     "ring-hero",
+     "src/features/orlaring/components/ring-hero.tsx"
+    ],
+    [
+     "screen",
+     "src/app/orlaring/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

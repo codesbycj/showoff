@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/alpenfly/index.tsx",
+  "data-fly": "src/features/alpenfly/data/fly.ts",
+  "route-card": "src/features/alpenfly/components/route-card.tsx",
+  "filter-chips": "src/features/alpenfly/components/filter-chips.tsx",
+  "ticket-list": "src/features/alpenfly/components/ticket-list.tsx"
+}

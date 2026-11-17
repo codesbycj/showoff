@@ -1,0 +1,98 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { CardFace } from '@/features/foldcard/components/card-face';
+import { CountryRow } from '@/features/foldcard/components/country-row';
+import { FieldList } from '@/features/foldcard/components/field-list';
+import { Glyph } from '@/features/foldcard/components/glyph';
+import { T } from '@/features/foldcard/components/text';
+import { header } from '@/features/foldcard/data/card';
+import { useLayout } from '@/features/foldcard/layout';
+import { ct } from '@/features/foldcard/theme';
+
+/**
+ * Fold - the new card.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The slack lands above the pinned Save, so the screen ends on it (I3).
+ */
+export default function FoldcardScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View style={{ marginHorizontal: L.margin, height: L.topH, justifyContent: 'center' }}>
+        <View style={{ position: 'absolute', left: 0, right: 0, alignItems: 'center' }}>
+          <T variant="section">{header.title}</T>
+        </View>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/foldhome')}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={18} color={ct.ink} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapTop }} />
+      <CardFace margin={L.margin} width={L.face.w} height={L.face.h} />
+
+      <View style={{ height: L.gapFace }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH }}>
+        <T variant="section">{header.section}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <FieldList
+        margin={L.margin}
+        width={L.field.w}
+        height={L.field.h}
+        gap={L.field.gap}
+        radius={L.field.radius}
+      />
+
+      <View style={{ height: L.gapFields }} />
+      <CountryRow margin={L.margin} width={L.field.w} height={L.field.h} radius={L.field.radius} />
+
+      <View style={{ flex: 1 }} />
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={header.cta}
+        onPress={() => router.push('/foldspend')}
+      >
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.cta.h,
+            borderRadius: L.cta.radius,
+            backgroundColor: ct.yellow,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="fieldValue">{header.cta}</T>
+        </View>
+      </Pressable>
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

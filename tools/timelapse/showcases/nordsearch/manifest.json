@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/nordsearch/index.tsx",
+  "search-header": "src/features/nordsearch/components/search-header.tsx",
+  "query-card": "src/features/nordsearch/components/query-card.tsx",
+  "type-chips": "src/features/nordsearch/components/type-chips.tsx",
+  "data-search": "src/features/nordsearch/data/search.ts",
+  "result-list": "src/features/nordsearch/components/result-list.tsx",
+  "result-card": "src/features/nordsearch/components/result-card.tsx"
+}

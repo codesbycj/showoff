@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "tamarstart",
+    "under_floor": true,
+    "planned": 19,
+    "painting": 17,
+    "zero": 0,
+    "errors": 0,
+    "largest": 9.1,
+    "first": 0.0
+  },
+  {
+    "slug": "tamarfind",
+    "planned": 39,
+    "painting": 27,
+    "zero": 0,
+    "errors": 0,
+    "largest": 28.8,
+    "first": 0.2
+  },
+  {
+    "slug": "tamargym",
+    "planned": 31,
+    "painting": 24,
+    "zero": 0,
+    "errors": 0,
+    "largest": 49.3,
+    "first": 49.3
+  },
+  {
+    "slug": "zonestart",
+    "planned": 21,
+    "painting": 17,
+    "zero": 0,
+    "errors": 0,
+    "largest": 51.5,
+    "first": 0.3
+  },
+  {
+    "slug": "zonehome",
+    "planned": 33,
+    "painting": 22,
+    "zero": 0,
+    "errors": 0,
+    "largest": 29.5,
+    "first": 29.5
+  },
+  {
+    "slug": "zonemenu",
+    "planned": 29,
+    "painting": 20,
+    "zero": 0,
+    "errors": 0,
+    "largest": 19.7,
+    "first": 19.7
+  },
+  {
+    "slug": "zoneroute",
+    "planned": 37,
+    "painting": 24,
+    "zero": 0,
+    "errors": 0,
+    "largest": 31.9,
+    "first": 5.8
+  },
+  {
+    "slug": "zoneitem",
+    "planned": 29,
+    "painting": 22,
+    "zero": 0,
+    "errors": 0,
+    "largest": 43.4,
+    "first": 43.4
+  },
+  {
+    "slug": "vitalcycle",
+    "planned": 29,
+    "painting": 24,
+    "zero": 1,
+    "errors": 0,
+    "largest": 16.4,
+    "first": 0.4
+  },
+  {
+    "slug": "vitalweight",
+    "planned": 25,
+    "painting": 19,
+    "zero": 0,
+    "errors": 0,
+    "largest": 15.8,
+    "first": 0.4
+  }
+]

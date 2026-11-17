@@ -1,0 +1,367 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "@/features/sonicplay/components/player-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/player-bar.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import player bar + round"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/player-bar.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "from"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/player-bar.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "album"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/player-bar.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "@/features/sonicplay/components/cover-art"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "import cover art"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "@/features/sonicplay/components/now-playing"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.07"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/now-playing.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "import now playing + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/now-playing.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "artist"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/now-playing.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "\"Save this track\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.11"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "<View style={{ height: 11 }} />"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "@/features/sonicplay/components/scrubber"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/scrubber.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "take the gap back out + import scrubber + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/scrubber.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/scrubber.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.17"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "<View style={{ height: 17 }} />"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "@/features/sonicplay/components/transport"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.19"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/transport.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "take the gap back out + import transport + glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicplay/data/player.ts",
+            "prev"
+          ]
+        }
+      ],
+      "label": "prev"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicplay/data/player.ts",
+            "play"
+          ]
+        }
+      ],
+      "label": "play"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicplay/data/player.ts",
+            "next"
+          ]
+        }
+      ],
+      "label": "next"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicplay/data/player.ts",
+            "repeat"
+          ]
+        }
+      ],
+      "label": "repeat"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "@/features/sonicplay/components/lyrics-handle"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.25"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/lyrics-handle.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "import lyrics handle + lyrics"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicplay/components/lyrics-handle.tsx",
+            "STEP 1.27"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "STEP 1.28"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonicplay/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-player",
+              "src/features/sonicplay/data/player.ts"
+            ],
+            [
+              "lyrics-handle",
+              "src/features/sonicplay/components/lyrics-handle.tsx"
+            ],
+            [
+              "now-playing",
+              "src/features/sonicplay/components/now-playing.tsx"
+            ],
+            [
+              "player-bar",
+              "src/features/sonicplay/components/player-bar.tsx"
+            ],
+            [
+              "screen",
+              "src/app/sonicplay/index.tsx"
+            ],
+            [
+              "scrubber",
+              "src/features/sonicplay/components/scrubber.tsx"
+            ],
+            [
+              "transport",
+              "src/features/sonicplay/components/transport.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "glyph + take the gap back out + tidy up"
+    }
+  ]
+}

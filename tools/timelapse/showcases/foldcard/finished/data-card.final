@@ -1,0 +1,35 @@
+/**
+ * Everything foldcard says, so the components stay presentational.
+ *
+ * **The scheme is invented.** The board sets the VISA mark on the card face
+ * and again in the card-number field; it is not ours to ship, so the scheme
+ * here does not exist and its wordmark is set in the app's own type (I1).
+ *
+ * **The country is a drawn disc, not an emoji.** Flags differ across Windows,
+ * Android and iOS and are missing outright on Windows (I8).
+ *
+ * **Every array is annotated** (I7): a reveal fills them one entry at a time,
+ * and a type inferred from whichever rows happen to be uncommented loses every
+ * property that only appears on a later row.
+ */
+export const header = { title: 'New card', section: 'Card detail', cta: 'Save' };
+
+export const face = {
+  scheme: 'VOLTA',
+  pan: '•••  •••  •••9743',
+  holder: 'Imran Khan',
+  expiry: '02/02',
+  holderLabel: 'Holder',
+  expiryLabel: 'Exp date',
+};
+
+export type Field = { id: string; label: string; half?: boolean; scheme?: boolean };
+
+export const fields: Field[] = [
+  { id: 'number', label: 'Card number', scheme: true },
+  { id: 'expiry', label: 'Expiry date', half: true },
+  { id: 'vcc', label: 'VCC', half: true },
+  { id: 'holder', label: 'Card holder' },
+];
+
+export const country = { label: 'Italy' };

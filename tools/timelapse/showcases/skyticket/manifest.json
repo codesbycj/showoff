@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/skyticket/index.tsx",
+  "ticket-header": "src/features/skyticket/components/ticket-header.tsx",
+  "flight-card": "src/features/skyticket/components/flight-card.tsx",
+  "data-ticket": "src/features/skyticket/data/ticket.ts",
+  "route-arc": "src/features/skyticket/components/route-arc.tsx",
+  "passenger-card": "src/features/skyticket/components/passenger-card.tsx",
+  "barcode": "src/features/skyticket/components/barcode.tsx",
+  "save-button": "src/features/skyticket/components/save-button.tsx"
+}

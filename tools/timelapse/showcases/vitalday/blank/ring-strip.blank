@@ -1,0 +1,75 @@
+import { View } from 'react-native';
+import Svg, { Circle } from 'react-native-svg';
+
+import {
+  average,
+  avatar,
+  followingTitle,
+  follows,
+  headline,
+  months,
+  pct,
+  peak,
+  rings,
+  today,
+} from '../data/day';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { RingProps } from './_day-parts-shared';
+
+/**
+ * The week, as completion rings.
+ *
+ * **Each ring's sweep is its own figure** (R9): the arc is drawn from
+ * `strokeDashoffset` over the real circumference, so a ring at 64% sweeps 64%.
+ *
+ * A day with no reading draws a "?" rather than an empty ring, which is what
+ * the board does and what makes "no data" different from "nothing done".
+ */
+export function RingStrip({ margin, height, size }: RingProps) {
+  const r = size / 2 - 3;
+  const c = 2 * Math.PI * r;
+
+  return (
+    <View style={{ marginHorizontal: margin, height, flexDirection: 'row' }}>
+      {/* STEP 1.06 label
+      {rings.map((ring) => (
+        <View key={ring.id} style={{ flex: 1, alignItems: 'center', gap: 5 }}>
+          <View
+            style={{ width: size, height: size, alignItems: 'center', justifyContent: 'center' }}
+          >
+            <Svg width={size} height={size} style={{ position: 'absolute' }}>
+              <Circle
+                cx={size / 2}
+                cy={size / 2}
+                r={r}
+                stroke={ct.white}
+                strokeWidth={3}
+                fill="none"
+              />
+              {ring.done !== undefined ? (
+                <Circle
+                  cx={size / 2}
+                  cy={size / 2}
+                  r={r}
+                  stroke={ct.accent}
+                  strokeWidth={3}
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeDasharray={`${c}`}
+                  strokeDashoffset={c * (1 - Math.min(Math.max(ring.done, 0), 1))}
+                  transform={`rotate(-90 ${size / 2} ${size / 2})`}
+                />
+              ) : null}
+            </Svg>
+            {ring.unknown ? <Glyph name="question" size={14} color={ct.sub} /> : null}
+          </View>
+          <T variant="ringLabel">{ring.label}</T>
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

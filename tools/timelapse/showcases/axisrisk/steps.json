@@ -1,0 +1,316 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "@/features/axisrisk/components/top-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import top bar"
+  },
+  {
+   "label": "badge",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/top-bar.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "@/features/axisrisk/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "@/features/axisrisk/components/score-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import score card"
+  },
+  {
+   "label": "\"Risk score options\"",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/score-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/score-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/score-card.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/score-card.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "@/features/axisrisk/components/fact-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import fact grid"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/fact-grid.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "\"Creation date\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisrisk/data/risk.ts",
+    "created"
+   ]
+  },
+  {
+   "label": "\"Latest update\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisrisk/data/risk.ts",
+    "updated"
+   ]
+  },
+  {
+   "label": "\"Status\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisrisk/data/risk.ts",
+    "status"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "assessments",
+   "op": "jsx",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "@/features/axisrisk/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Assessors\""
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "\"Add an assessor\"",
+   "op": "jsx",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisrisk/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "@/features/axisrisk/components/assessor-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisrisk/index.tsx",
+      "STEP 1.25"
+     ]
+    }
+   ],
+   "label": "import assessor list"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/axisrisk/components/assessor-list.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "\"Casey Brown\"",
+   "op": "block",
+   "args": [
+    "src/features/axisrisk/data/risk.ts",
+    "casey"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "assessor-list",
+     "src/features/axisrisk/components/assessor-list.tsx"
+    ],
+    [
+     "data-risk",
+     "src/features/axisrisk/data/risk.ts"
+    ],
+    [
+     "fact-grid",
+     "src/features/axisrisk/components/fact-grid.tsx"
+    ],
+    [
+     "score-card",
+     "src/features/axisrisk/components/score-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/axisrisk/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/axisrisk/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

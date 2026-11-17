@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/nookshop/index.tsx",
+  "shop-header": "src/features/nookshop/components/shop-header.tsx",
+  "kind-rail": "src/features/nookshop/components/kind-rail.tsx",
+  "data-shop": "src/features/nookshop/data/shop.ts",
+  "piece-grid": "src/features/nookshop/components/piece-grid.tsx",
+  "promo-card": "src/features/nookshop/components/promo-card.tsx"
+}

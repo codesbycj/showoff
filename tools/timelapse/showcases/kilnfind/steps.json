@@ -1,0 +1,234 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "@/features/kilnfind/components/search-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import search row"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kilnfind/components/search-row.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnfind/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnfind/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "@/features/kilnfind/components/result-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import result header"
+  },
+  {
+   "label": "sort",
+   "op": "jsx",
+   "args": [
+    "src/features/kilnfind/components/result-header.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnfind/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnfind/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "@/features/kilnfind/components/result-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import result grid"
+  },
+  {
+   "label": "\"Stacked Plates, six\"",
+   "op": "block",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "stack"
+   ]
+  },
+  {
+   "label": "\"Unglazed Forms\"",
+   "op": "block",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "raw"
+   ]
+  },
+  {
+   "label": "\"Everyday Cups, four\"",
+   "op": "block",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "cups"
+   ]
+  },
+  {
+   "label": "\"Morning Mug\"",
+   "op": "block",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "mug"
+   ]
+  },
+  {
+   "label": "\"Market Seconds\"",
+   "op": "block",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "market"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnfind/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnfind/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "@/features/kilnfind/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnfind/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kilnfind/components/dock.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "\"Saved\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "saved"
+   ]
+  },
+  {
+   "label": "\"You\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnfind/data/find.ts",
+    "you"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-find",
+     "src/features/kilnfind/data/find.ts"
+    ],
+    [
+     "dock",
+     "src/features/kilnfind/components/dock.tsx"
+    ],
+    [
+     "result-header",
+     "src/features/kilnfind/components/result-header.tsx"
+    ],
+    [
+     "screen",
+     "src/app/kilnfind/index.tsx"
+    ],
+    [
+     "search-row",
+     "src/features/kilnfind/components/search-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

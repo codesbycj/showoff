@@ -1,0 +1,52 @@
+import { Pressable, View } from 'react-native';
+
+import { address } from '../data/checkout';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * Where it is going.
+ *
+ * The pin and the chevron are interface, so they are vectors (I4), and the
+ * whole row is one 64dp control - well past the 44dp floor (I2 / R7).
+ */
+export function AddressRow({ margin, height }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={`${address.line}, ${address.city}`}>
+      <View
+        style={{
+          marginHorizontal: margin,
+          height,
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 14,
+        }}
+      >
+        <View
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            backgroundColor: ct.card,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="pin" size={18} color={ct.ink} strokeWidth={1.7} />
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <T variant="lineName">{address.line}</T>
+          {/* STEP 1.13 city
+          <T variant="meta">{address.city}</T>
+          */}
+        </View>
+
+        <Glyph name="chevron" size={18} color={ct.muted} strokeWidth={1.8} />
+      </View>
+    </Pressable>
+  );
+}

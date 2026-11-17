@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/slurpcart/index.tsx",
+  "screen-bar": "src/features/slurpcart/components/screen-bar.tsx",
+  "line-list": "src/features/slurpcart/components/line-list.tsx",
+  "data-cart": "src/features/slurpcart/data/cart.ts",
+  "promo-row": "src/features/slurpcart/components/promo-row.tsx",
+  "total-row": "src/features/slurpcart/components/total-row.tsx"
+}

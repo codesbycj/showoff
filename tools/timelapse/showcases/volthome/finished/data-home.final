@@ -1,0 +1,134 @@
+/**
+ * Everything volthome says.
+ *
+ * **Every product is invented.** The board's shop front is a named console, a
+ * named phone and a named pair of earbuds; a rebuild that ships those is
+ * impersonation (I1).
+ *
+ * **R5: labels, not prose.** The board's own blurb runs to three lines and
+ * ends in "Read more"; nothing here is longer than a label.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Voltline' };
+
+export const address = { label: 'Delivery address', value: '92 High Street, London' };
+
+export const search = { hint: 'Search the entire shop' };
+
+export const promo = {
+  badge: '50%',
+  lead: 'Delivery is',
+  /** The board's own three words. Longer ran under the banner's own shape. */
+  tail: 'cheaper',
+};
+
+export const sections = {
+  categories: 'Categories',
+  flash: 'Flash Sale',
+  seeAll: 'See all',
+};
+
+/**
+ * The sale timer, in seconds.
+ *
+ * **R9: it counts.** The board types "02:59:23" into a static frame; this one
+ * is a real countdown, so the clock on screen is the time that is left.
+ */
+export const SALE_SECONDS = 2 * 3600 + 59 * 60 + 23;
+
+export type Category = { id: string; label: string; image: number };
+
+/** Five photographs, not five drawn marks — I4's category-tile rule. */
+export const categories: Category[] = [
+  {
+    id: 'audio',
+    label: 'Audio',
+    image: require('../../../../assets/images/volthome/c-audio.jpg'),
+  },
+  {
+    id: 'wear',
+    label: 'Wearables',
+    image: require('../../../../assets/images/volthome/c-wear.jpg'),
+  },
+  {
+    id: 'laptop',
+    label: 'Laptops',
+    image: require('../../../../assets/images/volthome/c-laptop.jpg'),
+  },
+  {
+    id: 'camera',
+    label: 'Cameras',
+    image: require('../../../../assets/images/volthome/c-camera.jpg'),
+  },
+  {
+    id: 'acc',
+    label: 'Accessories',
+    image: require('../../../../assets/images/volthome/c-acc.jpg'),
+  },
+];
+
+export type Product = {
+  id: string;
+  title: string;
+  price: number;
+  was: number;
+  image: number;
+  /** Only the first card is saved; declared, not inferred. */
+  saved?: boolean;
+};
+
+/**
+ * Four, not the board's two. Two filled one row and left 75dp of empty canvas
+ * above the tab bar — an R1 GAP FAIL, and I3 says the fix is the row the board
+ * cropped, never a spacer.
+ */
+export const flash: Product[] = [
+  {
+    id: 'buds',
+    title: 'Voltline Pulse Buds, Graphite',
+    price: 69,
+    was: 85,
+    image: require('../../../../assets/images/volthome/f1.jpg'),
+    saved: true,
+  },
+  {
+    id: 'watch',
+    title: 'Voltline Field Watch, 42mm',
+    price: 149,
+    was: 199,
+    image: require('../../../../assets/images/volthome/f2.jpg'),
+  },
+  {
+    id: 'case',
+    title: 'Voltline Nomad Charge Case',
+    price: 39,
+    was: 55,
+    image: require('../../../../assets/images/volthome/f3.jpg'),
+  },
+  {
+    id: 'laptop',
+    title: 'Voltline Studio 14, Silver',
+    price: 899,
+    was: 1049,
+    image: require('../../../../assets/images/volthome/f4.jpg'),
+  },
+];
+
+export type Tab = {
+  id: string;
+  label: string;
+  glyph: 'home' | 'catalog' | 'cart' | 'heart' | 'profile';
+  /** The cart is the only tab that carries a count; declared, not inferred. */
+  count?: number;
+};
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  { id: 'catalog', label: 'Catalog', glyph: 'catalog' },
+  { id: 'cart', label: 'Cart', glyph: 'cart', count: 3 },
+  { id: 'saved', label: 'Favorites', glyph: 'heart' },
+  { id: 'profile', label: 'Profile', glyph: 'profile' },
+];

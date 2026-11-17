@@ -1,0 +1,285 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "@/features/kovastats/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Insight options\"",
+   "op": "jsx",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "@/features/kovastats/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "label": "period",
+   "op": "jsx",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "@/features/kovastats/components/metric-tiles"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "STEP 1.07"
+     ]
+    }
+   ],
+   "label": "import metric tiles"
+  },
+  {
+   "label": "\"Engagement\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "engagement"
+   ]
+  },
+  {
+   "label": "\"Reach\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "reach"
+   ]
+  },
+  {
+   "label": "\"Impressions\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "impressions"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "@/features/kovastats/components/post-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import post list"
+  },
+  {
+   "label": "\"London day post\"",
+   "op": "block",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "london"
+   ]
+  },
+  {
+   "label": "\"Studio K brand teaser\"",
+   "op": "block",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "studio"
+   ]
+  },
+  {
+   "label": "\"Nora portrait series\"",
+   "op": "block",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "portrait"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "@/features/kovastats/components/pill-dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovastats/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import pill dock"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovastats/components/pill-dock.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovastats/components/pill-dock.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "\"Inbox\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "inbox"
+   ]
+  },
+  {
+   "label": "\"Jobs\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "jobs"
+   ]
+  },
+  {
+   "label": "\"Account\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "me"
+   ]
+  },
+  {
+   "label": "\"New\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovastats/data/stats.ts",
+    "new"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovastats/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-stats",
+     "src/features/kovastats/data/stats.ts"
+    ],
+    [
+     "pill-dock",
+     "src/features/kovastats/components/pill-dock.tsx"
+    ],
+    [
+     "screen",
+     "src/app/kovastats/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

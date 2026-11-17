@@ -1,0 +1,498 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/find-header"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/find-header.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import find header + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/find-header.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "\"Notifications\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/search-field"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "import search field"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/search-field.tsx",
+            "STEP 1.05"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/search-field.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "glyph + placeholder"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/search-field.tsx",
+            "STEP 1.07"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/search-field.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "view + glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/category-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.09"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/category-title.tsx",
+            "STEP 1.10"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/category-title.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "import category title + glyph + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/category-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "import category row"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/map-ground"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/map-pins"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.13"
+          ]
+        }
+      ],
+      "label": "import map ground + import map pins"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "rect"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.15"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.16"
+          ]
+        }
+      ],
+      "label": "the next block + path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.18"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "the next block + path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.21"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/map-ground.tsx",
+            "STEP 1.22"
+          ]
+        }
+      ],
+      "label": "the next block + circle"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamarfind/data/find.ts",
+            "p2"
+          ]
+        }
+      ],
+      "label": "\"Atlas Strength\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamarfind/data/find.ts",
+            "p3"
+          ]
+        }
+      ],
+      "label": "\"Mesa Fitness\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/venue-card"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.25"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/venue-card.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "import venue card + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/venue-card.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/venue-card.tsx",
+            "STEP 1.28"
+          ]
+        }
+      ],
+      "label": "name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/venue-card.tsx",
+            "STEP 1.29"
+          ]
+        }
+      ],
+      "label": "address"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/venue-card.tsx",
+            "STEP 1.30"
+          ]
+        }
+      ],
+      "label": "hours"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/venue-card.tsx",
+            "STEP 1.31"
+          ]
+        }
+      ],
+      "label": "course label"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "@/features/tamarfind/components/tab-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.32"
+          ]
+        }
+      ],
+      "label": "import tab bar"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarfind/components/tab-bar.tsx",
+            "STEP 1.33"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamarfind/data/find.ts",
+            "saved"
+          ]
+        }
+      ],
+      "label": "\"Saved\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamarfind/data/find.ts",
+            "me"
+          ]
+        }
+      ],
+      "label": "\"Account\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamarfind/data/find.ts",
+            "search"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "STEP 1.37"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/tamarfind/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "category-title",
+              "src/features/tamarfind/components/category-title.tsx"
+            ],
+            [
+              "data-find",
+              "src/features/tamarfind/data/find.ts"
+            ],
+            [
+              "find-header",
+              "src/features/tamarfind/components/find-header.tsx"
+            ],
+            [
+              "map-ground",
+              "src/features/tamarfind/components/map-ground.tsx"
+            ],
+            [
+              "screen",
+              "src/app/tamarfind/index.tsx"
+            ],
+            [
+              "search-field",
+              "src/features/tamarfind/components/search-field.tsx"
+            ],
+            [
+              "tab-bar",
+              "src/features/tamarfind/components/tab-bar.tsx"
+            ],
+            [
+              "venue-card",
+              "src/features/tamarfind/components/venue-card.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "\"Search\" + take the gap back out + tidy up"
+    }
+  ]
+}

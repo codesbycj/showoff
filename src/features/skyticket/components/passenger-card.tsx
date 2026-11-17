@@ -1,0 +1,72 @@
+import { Image, View } from 'react-native';
+
+import { passengers, passengersTitle } from '../data/ticket';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { height: number; radius: number };
+
+/**
+ * Who is flying.
+ *
+ * **The travellers are photographs** (I4) — a face is a picture of someone,
+ * and initials on a disc is a fallback state rather than a substitute.
+ *
+ * `passengers` is staged one entry at a time by the reveal, so the divider is
+ * drawn per row rather than from an index into the array (I7).
+ */
+export function PassengerCard({ height, radius }: Props) {
+  return (
+    <View style={{ height }}>
+      {/* STEP 1.18 view
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.surface,
+          shadowColor: '#0B1220',
+          shadowOpacity: 0.07,
+          shadowRadius: 16,
+          shadowOffset: { width: 0, height: 6 },
+          elevation: 3,
+        }}
+      />
+      */}
+
+      {/* STEP 1.19 "SEAT"
+      <View style={{ flex: 1, paddingHorizontal: 18, paddingVertical: 16 }}>
+        <T variant="section">{passengersTitle}</T>
+
+        <View style={{ flex: 1, justifyContent: 'space-evenly' }}>
+          {passengers.map((person) => (
+            <View key={person.id} style={{ flexDirection: 'row', alignItems: 'center', gap: 13 }}>
+              <Image
+                source={person.image}
+                style={{ width: 44, height: 44, borderRadius: 22 }}
+                resizeMode="cover"
+                accessibilityLabel={person.name}
+              />
+
+              <View style={{ flex: 1 }}>
+                <T variant="index">{person.index}</T>
+                <T variant="name" numberOfLines={1}>
+                  {person.name}
+                </T>
+              </View>
+
+              <View style={{ alignItems: 'flex-end' }}>
+                <T variant="index">SEAT</T>
+                <T variant="seat">{person.seat}</T>
+              </View>
+            </View>
+          ))}
+        </View>
+      </View>
+      */}
+    </View>
+  );
+}

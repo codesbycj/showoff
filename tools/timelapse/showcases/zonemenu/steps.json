@@ -1,0 +1,393 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/menu-banner"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/menu-banner.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import menu banner + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/menu-banner.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "kicker"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/place-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "import place title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/place-meta"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.05"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.06"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.07"
+          ]
+        }
+      ],
+      "label": "import place meta + glyph + t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "badge"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-meta.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "distance"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/delivery-card"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/delivery-card.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import delivery card + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/delivery-card.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/offer-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/offer-row.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "import offer row + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonemenu/data/menu.ts",
+            "o2"
+          ]
+        }
+      ],
+      "label": "o2"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/menu-tabs"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "import menu tabs"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/dish-grid"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.20"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/dish-grid.tsx",
+            "STEP 1.21"
+          ]
+        }
+      ],
+      "label": "import dish grid + card"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonemenu/data/menu.ts",
+            "d2"
+          ]
+        }
+      ],
+      "label": "\"Crispy Bites\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonemenu/data/menu.ts",
+            "d3"
+          ]
+        }
+      ],
+      "label": "\"Skinny Fries\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonemenu/data/menu.ts",
+            "d4"
+          ]
+        }
+      ],
+      "label": "\"Grilled Chicken Sub\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "@/features/zonemenu/components/place-disc"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "import place disc"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonemenu/components/place-disc.tsx",
+            "STEP 1.26"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "STEP 1.27"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zonemenu/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-menu",
+              "src/features/zonemenu/data/menu.ts"
+            ],
+            [
+              "delivery-card",
+              "src/features/zonemenu/components/delivery-card.tsx"
+            ],
+            [
+              "dish-grid",
+              "src/features/zonemenu/components/dish-grid.tsx"
+            ],
+            [
+              "menu-banner",
+              "src/features/zonemenu/components/menu-banner.tsx"
+            ],
+            [
+              "offer-row",
+              "src/features/zonemenu/components/offer-row.tsx"
+            ],
+            [
+              "place-disc",
+              "src/features/zonemenu/components/place-disc.tsx"
+            ],
+            [
+              "place-meta",
+              "src/features/zonemenu/components/place-meta.tsx"
+            ],
+            [
+              "screen",
+              "src/app/zonemenu/index.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "glyph + take the gap back out + tidy up"
+    }
+  ]
+}

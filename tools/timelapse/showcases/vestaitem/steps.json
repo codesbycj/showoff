@@ -1,0 +1,487 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/detail-header"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/detail-header.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import detail header + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/detail-header.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/hero-shot"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/hero-shot.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "import hero shot + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/hero-shot.tsx",
+            "STEP 1.06"
+          ]
+        },
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "s2"
+          ]
+        }
+      ],
+      "label": "view + s2"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "s3"
+          ]
+        }
+      ],
+      "label": "s3"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "s4"
+          ]
+        }
+      ],
+      "label": "s4"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "s5"
+          ]
+        }
+      ],
+      "label": "s5"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/shot-rail"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.11"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/shot-rail.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "import shot rail + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/item-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/item-title.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import item title + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/item-title.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/size-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/size-head.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "import size head + size title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/size-head.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "size chart"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/size-picker"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.19"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/size-picker.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "import size picker + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "m"
+          ]
+        }
+      ],
+      "label": "\"M\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "l"
+          ]
+        }
+      ],
+      "label": "\"L\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "xl"
+          ]
+        }
+      ],
+      "label": "\"XL\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "xxl"
+          ]
+        }
+      ],
+      "label": "\"XXL\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestaitem/data/item.ts",
+            "xxxl"
+          ]
+        }
+      ],
+      "label": "\"XXXL\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/blurb-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "import blurb row"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/delivery-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "import delivery row"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/delivery-row.tsx",
+            "STEP 1.28"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/delivery-row.tsx",
+            "STEP 1.29"
+          ]
+        }
+      ],
+      "label": "glyph + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/delivery-row.tsx",
+            "STEP 1.30"
+          ]
+        }
+      ],
+      "label": "when"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "@/features/vestaitem/components/cart-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.31"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/cart-bar.tsx",
+            "STEP 1.32"
+          ]
+        }
+      ],
+      "label": "import cart bar + \"Share this item\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestaitem/components/cart-bar.tsx",
+            "STEP 1.33"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "STEP 1.34"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vestaitem/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "cart-bar",
+              "src/features/vestaitem/components/cart-bar.tsx"
+            ],
+            [
+              "data-item",
+              "src/features/vestaitem/data/item.ts"
+            ],
+            [
+              "delivery-row",
+              "src/features/vestaitem/components/delivery-row.tsx"
+            ],
+            [
+              "detail-header",
+              "src/features/vestaitem/components/detail-header.tsx"
+            ],
+            [
+              "hero-shot",
+              "src/features/vestaitem/components/hero-shot.tsx"
+            ],
+            [
+              "item-title",
+              "src/features/vestaitem/components/item-title.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vestaitem/index.tsx"
+            ],
+            [
+              "shot-rail",
+              "src/features/vestaitem/components/shot-rail.tsx"
+            ],
+            [
+              "size-head",
+              "src/features/vestaitem/components/size-head.tsx"
+            ],
+            [
+              "size-picker",
+              "src/features/vestaitem/components/size-picker.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

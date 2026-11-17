@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/tamarfind/index.tsx",
+  "find-header": "src/features/tamarfind/components/find-header.tsx",
+  "search-field": "src/features/tamarfind/components/search-field.tsx",
+  "category-title": "src/features/tamarfind/components/category-title.tsx",
+  "map-ground": "src/features/tamarfind/components/map-ground.tsx",
+  "data-find": "src/features/tamarfind/data/find.ts",
+  "venue-card": "src/features/tamarfind/components/venue-card.tsx",
+  "tab-bar": "src/features/tamarfind/components/tab-bar.tsx"
+}

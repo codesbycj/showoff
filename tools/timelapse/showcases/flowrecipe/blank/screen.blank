@@ -1,0 +1,233 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Image, Pressable, View } from 'react-native';
+
+// STEP 1.02 import glyph
+// import { Glyph } from '@/features/flowrecipe/components/glyph';
+// STEP 1.20 import ingredient list
+// import { IngredientList } from '@/features/flowrecipe/components/ingredient-list';
+// STEP 1.13 import macro rings
+// import { MacroRings } from '@/features/flowrecipe/components/macro-rings';
+// STEP 1.05 import text
+// import { T } from '@/features/flowrecipe/components/text';
+import { energy, insight, macros, recipe } from '@/features/flowrecipe/data/recipe';
+import { useLayout } from '@/features/flowrecipe/layout';
+import { ct } from '@/features/flowrecipe/theme';
+
+/**
+ * Flowan — the recipe.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The photograph is the remainder and the sheet is sized, so the action always
+ * sits on the foot (I3); every figure on the screen is computed from the
+ * macros (R9).
+ */
+export default function FlowrecipeScreen() {
+  const L = useLayout();
+
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: ct.white,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      {/* STEP 1.01 image
+      <View style={{ height: L.hero.h, backgroundColor: ct.tray }}>
+        <Image
+          source={recipe.image}
+          style={{ width: L.W, height: L.hero.h }}
+          resizeMode="cover"
+          accessibilityLabel={recipe.name}
+        />
+      </View>
+      */}
+
+      <View
+        style={{
+          position: 'absolute',
+          top: L.insets.top + 4,
+          left: L.margin,
+          right: L.margin,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* STEP 1.02 "Back"
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/flowmeals')}
+        >
+          <View style={round}>
+            <Glyph name="back" size={18} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+        */}
+
+        {/* STEP 1.03 "Save this recipe"
+        <Pressable accessibilityRole="button" accessibilityLabel="Save this recipe">
+          <View style={round}>
+            <Glyph name="bookmarked" size={17} color={ct.ink} />
+          </View>
+        </Pressable>
+        */}
+      </View>
+
+      <View
+        style={{
+          flex: 1,
+          marginTop: -26,
+          backgroundColor: ct.page,
+          borderTopLeftRadius: L.sheet.radius,
+          borderTopRightRadius: L.sheet.radius,
+        }}
+      >
+        {/* STEP 1.04 view
+        <View style={{ height: L.handleH, alignItems: 'center', justifyContent: 'center' }}>
+          <View style={{ width: 40, height: 4.5, borderRadius: 3, backgroundColor: ct.line }} />
+        </View>
+        */}
+
+        {/* STEP 1.05 slot
+        <View style={{ marginHorizontal: L.margin, height: L.slotH }}>
+          <T variant="slot">{recipe.slot}</T>
+        </View>
+        */}
+
+        {/* STEP 1.07 a stray gap above it | FIX 1.08 take the gap back out
+        <View style={{ width: 11, height: 11 }} />
+        */}
+        {/* STEP 1.06 name
+        <View style={{ marginHorizontal: L.margin, height: L.titleH, justifyContent: 'center' }}>
+          <T variant="title" numberOfLines={1}>
+            {recipe.name}
+          </T>
+        </View>
+        */}
+
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.factsH,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 8,
+          }}
+        >
+          {/* STEP 1.09 glyph
+          <Glyph name="clock" size={14} color={ct.muted} strokeWidth={1.7} />
+          */}
+          {/* STEP 1.10 t
+          <T variant="facts">
+            {recipe.minutes} min · {energy(macros)} kcal · Serves {recipe.serves}
+          </T>
+          */}
+        </View>
+
+        <View style={{ height: L.gapFacts }} />
+        {/* STEP 1.13 macro rings
+        <MacroRings margin={L.margin} height={L.ringsH} />
+        */}
+
+        <View style={{ height: L.gapRings }} />
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.tip.h,
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 14,
+            gap: 12,
+          }}
+        >
+          {/* STEP 1.14 view
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: L.tip.radius,
+              backgroundColor: ct.lilacSoft,
+            }}
+          />
+          */}
+
+          {/* STEP 1.15 glyph
+          <Glyph name="spark" size={18} color={ct.lilac} />
+          */}
+          <View style={{ flex: 1 }}>
+            {/* STEP 1.17 a stray gap above it | FIX 1.18 take the gap back out
+            <View style={{ width: 17, height: 17 }} />
+            */}
+            {/* STEP 1.16 label
+            <T variant="tipLabel">{insight.label}</T>
+            */}
+            {/* STEP 1.19 body
+            <T variant="tipBody">{insight.body}</T>
+            */}
+          </View>
+        </View>
+
+        <View style={{ height: L.gapTip }} />
+        {/* STEP 1.20 ingredient list
+        <IngredientList margin={L.margin} tabsH={L.tabsH} itemH={L.item.h} gap={L.gapTabs} />
+        */}
+
+        <View style={{ height: L.gapItems }} />
+        <View style={{ marginHorizontal: L.margin }}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={recipe.cta}
+            onPress={() => router.push('/flowmeals')}
+          >
+            <View
+              style={{
+                height: L.cta.h,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 10,
+              }}
+            >
+              {/* STEP 1.27 view
+              <View
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  borderRadius: L.cta.h / 2,
+                  backgroundColor: ct.dark,
+                }}
+              />
+              */}
+
+              {/* STEP 1.28 cta
+              <T variant="cta">{recipe.cta}</T>
+              */}
+              {/* STEP 1.30 a stray gap above it | FIX 1.31 take the gap back out
+              <View style={{ width: 23, height: 23 }} />
+              */}
+              {/* STEP 1.29 glyph
+              <Glyph name="arrow" size={18} color={ct.onDark} strokeWidth={2} />
+              */}
+            </View>
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
+}

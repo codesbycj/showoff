@@ -1,54 +1,94 @@
-"""Bake Fern's portraits.
+"""
+Bake the Fernweh board's photography (travel-app/03).
 
     python tools/bake/fern.py
 
-The reference's Quick Send row is five photographed faces, which is what the
-rules ask for anyway: initials on a disc are a fallback, not a substitute.
+Sources are free-licensed Pexels frames in `tools/bake/sources/fern/`,
+credited per showcase in `assets/images/<slug>/CREDITS.md`.
 
-Sources (Pexels, free to use):
-  17910791  Jobayer (home avatar)
-  37038761  Aliya        31868676  Cody
-  30518441  Wade         3872330   Darrell
-  8727434   the ledger row on the report screen
+**Places and interiors are photographs** (I4): a valley is a picture *of*
+somewhere. The board's flags are emoji, which differ across Windows / Android
+/ iOS and are missing entirely on Windows (I8) - so each flag is a drawn disc,
+which RULES SS2.5 lists as in range.
+
+Everything is written as JPEG. The Pexels CDN content-negotiates to AVIF when
+asked, and Metro cannot bundle AVIF - it would pass every check here and fail
+at `expo export`.
 """
 
 import os
 
 from PIL import Image
 
-HOME = 'assets/images/fernhome'
-REPORT = 'assets/images/fernreport'
+SRC = os.path.join('tools', 'bake', 'sources', 'fern')
+OUT = os.path.join('assets', 'images')
 
-FACES = [
-    ('tools/bake/sources/b3/man-17910791.jpg', HOME, 'jobayer.jpg', 0.70),
-    ('tools/bake/sources/huddle/face-37038761.jpg', HOME, 'aliya.jpg', 0.66),
-    ('tools/bake/sources/wander/p-31868676.jpg', HOME, 'cody.jpg', 0.58),
-    ('tools/bake/sources/huddle/face-30518441.jpg', HOME, 'wade.jpg', 0.95),
-    ('tools/bake/sources/b3/man-3872330.jpg', HOME, 'darrell.jpg', 0.66),
-    ('tools/bake/sources/huddle/face-8727434.jpg', REPORT, 'payee.jpg', 0.70),
+
+def _save(crop, size, dest, bg=None):
+    tw, th = size
+    scale = max(tw / crop.width, th / crop.height)
+    crop = crop.resize((max(1, round(crop.width * scale)), max(1, round(crop.height * scale))),
+                       Image.LANCZOS)
+    left = int((crop.width - tw) / 2)
+    top = int((crop.height - th) / 2)
+    crop = crop.crop((left, top, left + tw, top + th))
+
+    path = os.path.join(OUT, dest)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    crop.save(path, 'JPEG', quality=88, optimize=True)
+    print('%-28s %dx%d' % (dest, tw, th))
+
+
+def cut(pid, box, size, dest):
+    """Crop `box` (fractions of w/h) out of a source and cover-fit it."""
+    im = Image.open(os.path.join(SRC, '%s.jpg' % pid)).convert('RGB')
+    w, h = im.size
+    x0, y0, x1, y1 = box
+    _save(im.crop((int(w * x0), int(h * y0), int(w * x1), int(h * y1))), size, dest)
+
+
+def square(pid, cx, cy, frac, size, dest):
+    """Crop a square of `frac` of the shorter edge, centred on (cx, cy)."""
+    im = Image.open(os.path.join(SRC, '%s.jpg' % pid)).convert('RGB')
+    w, h = im.size
+    side = int(min(w, h) * frac)
+    x = max(0, min(int(w * cx - side / 2), w - side))
+    y = max(0, min(int(h * cy - side / 2), h - side))
+    _save(im.crop((x, y, x + side, y + side)), size, dest)
+
+
+CUTS = [
+    # fernhome - the hero trip.
+    ('p-14845824', (0.04, 0.04, 0.96, 0.96), (820, 760), 'fernhome/hero.jpg'),
+
+    # fernlist - the featured trip and three cards.
+    ('p-27667695', (0.10, 0.02, 0.92, 0.98), (820, 800), 'fernlist/f1.jpg'),
+    ('p-5982829', (0.04, 0.52, 0.96, 0.96), (760, 240), 'fernlist/f2.jpg'),
+    ('p-9674393', (0.04, 0.04, 0.96, 0.52), (760, 240), 'fernlist/f3.jpg'),
+
+    # ferntrip - the summit and the stay.
+    ('p-34666834', (0.02, 0.02, 0.98, 0.98), (900, 900), 'ferntrip/hero.jpg'),
+    ('p-34496701', (0.06, 0.06, 0.94, 0.94), (300, 240), 'ferntrip/stay.jpg'),
+]
+
+SQUARES = [
+    # fernhome - the account photograph in the dock.
+    ('p-31052395', 0.50, 0.40, 0.82, (110, 110), 'fernhome/me.jpg'),
+
+    # fernlist - the party on the featured trip.
+    ('p-31052395', 0.50, 0.40, 0.82, (110, 110), 'fernlist/a1.jpg'),
+    ('p-35555305', 0.50, 0.30, 0.70, (110, 110), 'fernlist/a2.jpg'),
+    ('p-31969127', 0.48, 0.22, 0.52, (110, 110), 'fernlist/a3.jpg'),
+
+    # Three faces on the party avatars.
+    ('p-31052395', 0.50, 0.40, 0.82, (110, 110), 'ferntrip/f1.jpg'),
+    ('p-35555305', 0.50, 0.30, 0.70, (110, 110), 'ferntrip/f2.jpg'),
+    ('p-31969127', 0.48, 0.22, 0.52, (110, 110), 'ferntrip/f3.jpg'),
 ]
 
 
-def face(path, size, share):
-    im = Image.open(path).convert('RGB')
-    w, h = im.size
-    side = int(min(w, h) * share)
-    top = int(h * 0.04)
-    box = (w // 2 - side // 2, top, w // 2 + side // 2, min(h, top + side))
-    im = im.crop(box)
-    scale = max(size / im.width, size / im.height)
-    im = im.resize((int(im.width * scale + 1), int(im.height * scale + 1)), Image.LANCZOS)
-    x, y = (im.width - size) // 2, (im.height - size) // 2
-    return im.crop((x, y, x + size, y + size))
-
-
-def main():
-    for d in (HOME, REPORT):
-        os.makedirs(d, exist_ok=True)
-    for src, out, name, share in FACES:
-        face(src, 168, share).save(os.path.join(out, name), quality=90)
-        print(out + '/' + name)
-
-
 if __name__ == '__main__':
-    main()
+    for job in CUTS:
+        cut(*job)
+    for job in SQUARES:
+        square(*job)

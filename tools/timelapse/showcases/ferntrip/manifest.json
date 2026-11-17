@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/ferntrip/index.tsx",
+  "hero-summit": "src/features/ferntrip/components/hero-summit.tsx",
+  "flag-disc": "src/features/ferntrip/components/flag-disc.tsx",
+  "fact-chips": "src/features/ferntrip/components/fact-chips.tsx",
+  "data-trip": "src/features/ferntrip/data/trip.ts",
+  "stay-card": "src/features/ferntrip/components/stay-card.tsx"
+}

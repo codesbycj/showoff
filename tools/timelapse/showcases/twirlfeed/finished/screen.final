@@ -1,0 +1,67 @@
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { View } from 'react-native';
+
+import { FeedBar } from '@/features/twirlfeed/components/feed-bar';
+import { NextPost } from '@/features/twirlfeed/components/next-post';
+import { PostActions } from '@/features/twirlfeed/components/post-actions';
+import { PostAuthor } from '@/features/twirlfeed/components/post-author';
+import { PostCollage } from '@/features/twirlfeed/components/post-collage';
+import { PostCopy } from '@/features/twirlfeed/components/post-copy';
+import { PostStats } from '@/features/twirlfeed/components/post-stats';
+import { StoryRail } from '@/features/twirlfeed/components/story-rail';
+import { TabBar } from '@/features/twirlfeed/components/tab-bar';
+import { useLayout } from '@/features/twirlfeed/layout';
+import { ct } from '@/features/twirlfeed/theme';
+
+/**
+ * Twirlo — feed.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The collage takes the screen's slack (see `layout.ts`) and the next post's
+ * header sits above the tab bar, which is what the board does and what tells
+ * you the feed continues (R6) — so the foot cannot open a band.
+ */
+export default function TwirlfeedScreen() {
+  const L = useLayout();
+  const [tab, setTab] = useState('feeds');
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page, paddingTop: L.insets.top }}>
+      <StatusBar style="dark" />
+
+      <FeedBar margin={L.margin} height={L.barH} control={L.control} />
+
+      <View style={{ height: L.gapBar }} />
+      <StoryRail margin={L.margin} height={L.story.h} avatar={L.story.avatar} />
+
+      <View style={{ height: L.gapStory }} />
+      <PostAuthor margin={L.margin} height={L.authorH} avatar={L.avatar} />
+
+      <View style={{ height: L.gapAuthor }} />
+      <PostCopy margin={L.margin} titleH={L.titleH} bodyH={L.bodyH} />
+
+      <View style={{ height: L.gapCopy }} />
+      <PostCollage
+        margin={L.margin}
+        height={L.collage.h}
+        gap={L.collage.gap}
+        radius={L.collage.radius}
+        big={L.collage.big}
+        small={L.collage.small}
+      />
+
+      <View style={{ height: L.gapCollage }} />
+      <PostStats margin={L.margin} height={L.statsH} />
+
+      <PostActions margin={L.margin} height={L.actionsH} />
+
+      <NextPost margin={L.margin} height={L.next.h} avatar={L.next.avatar} />
+
+      <TabBar height={L.tabs.h} bottomInset={L.insets.bottom} value={tab} onSelect={setTab} />
+    </View>
+  );
+}

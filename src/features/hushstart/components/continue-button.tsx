@@ -1,0 +1,40 @@
+import { Pressable, View } from 'react-native';
+
+import { onboarding } from '../data/onboarding';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number; onPress: () => void };
+
+/**
+ * The way on.
+ *
+ * The visual box sits on an inner `View`, never on the `Pressable` itself:
+ * `Pressable`'s function styles are dropped in a static render, and a button
+ * that loses its height and fill in the web build is a button nothing can
+ * measure (RULES Part 7).
+ */
+export function ContinueButton({ margin, height, radius, onPress }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={onboarding.cta} onPress={onPress}>
+      <View
+        style={{
+          marginHorizontal: margin,
+          height,
+          borderRadius: radius,
+          backgroundColor: ct.pill,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 10,
+        }}
+      >
+        {/* STEP 1.21 cta
+        <T variant="cta">{onboarding.cta}</T>
+        */}
+        <Glyph name="arrow" size={17} color={ct.onPill} strokeWidth={2} />
+      </View>
+    </Pressable>
+  );
+}

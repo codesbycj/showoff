@@ -1,0 +1,6 @@
+{
+  "screen": "src/app/alpenpick/index.tsx",
+  "data-pick": "src/features/alpenpick/data/pick.ts",
+  "destination-grid": "src/features/alpenpick/components/destination-grid.tsx",
+  "flag-disc": "src/features/alpenpick/components/flag-disc.tsx"
+}

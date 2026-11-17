@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/kovastats/index.tsx",
+  "metric-tiles": "src/features/kovastats/components/metric-tiles.tsx",
+  "data-stats": "src/features/kovastats/data/stats.ts",
+  "post-list": "src/features/kovastats/components/post-list.tsx",
+  "pill-dock": "src/features/kovastats/components/pill-dock.tsx"
+}

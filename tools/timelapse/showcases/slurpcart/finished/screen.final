@@ -1,0 +1,84 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { LineList } from '@/features/slurpcart/components/line-list';
+import { PromoRow } from '@/features/slurpcart/components/promo-row';
+import { ScreenBar } from '@/features/slurpcart/components/screen-bar';
+import { SummaryRows } from '@/features/slurpcart/components/summary-rows';
+import { T } from '@/features/slurpcart/components/text';
+import { TotalRow } from '@/features/slurpcart/components/total-row';
+import { header } from '@/features/slurpcart/data/cart';
+import { useLayout } from '@/features/slurpcart/layout';
+import { ct } from '@/features/slurpcart/theme';
+
+/**
+ * Slurp - the cart.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * Every figure under the lines is computed from them (R9), and the slack lands
+ * above the pinned button so the screen ends on it (I3).
+ */
+export default function SlurpcartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ScreenBar margin={L.margin} height={L.topH} onBack={() => router.push('/slurpdish')} />
+
+      <View style={{ height: L.gapTop }} />
+      <LineList
+        margin={L.margin}
+        height={L.line.h}
+        image={L.line.image}
+        radius={L.line.radius}
+        gap={L.line.gap}
+        step={L.line.step}
+      />
+
+      <View style={{ height: L.gapLines }} />
+      <PromoRow margin={L.margin} height={L.promo.h} radius={L.promo.radius} />
+
+      <View style={{ height: L.gapPromo }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH }}>
+        <T variant="section">{header.summary}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <SummaryRows margin={L.margin} rowH={L.rowH} />
+
+      <View style={{ marginHorizontal: L.margin, height: L.dividerH, justifyContent: 'center' }}>
+        <View style={{ height: 1, backgroundColor: ct.line }} />
+      </View>
+
+      <TotalRow margin={L.margin} height={L.totalH} />
+
+      <View style={{ flex: 1 }} />
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={header.cta}
+        onPress={() => router.push('/slurppay')}
+      >
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.cta.h,
+            borderRadius: L.cta.radius,
+            backgroundColor: ct.dark,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="cta">{header.cta}</T>
+        </View>
+      </Pressable>
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

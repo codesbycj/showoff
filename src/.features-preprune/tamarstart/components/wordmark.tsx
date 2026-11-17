@@ -1,0 +1,34 @@
+import { Pressable, View } from 'react-native';
+
+import { body, brand, cta, headline } from '../data/start';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { WordmarkProps } from './_start-copy-shared';
+
+/**
+ * The mark.
+ *
+ * **The board's Arabic lockup is dropped.** Plus Jakarta Sans carries no Arabic
+ * glyphs, so rendering it would come out as tofu on Android — the exact class
+ * of failure §4.4 says has to be designed out rather than caught by running the
+ * app. The latin wordmark and the runner carry the brand instead. Named in the
+ * handover.
+ */
+export function Wordmark({ height, margin }: WordmarkProps) {
+  return (
+    <View
+      style={{
+        height,
+        marginHorizontal: margin,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+      }}
+    >
+      <Glyph name="runner" size={26} color={ct.ink} />
+      <T variant="wordmark">{brand.name}</T>
+    </View>
+  );
+}

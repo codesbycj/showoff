@@ -1,0 +1,64 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AmountPanel } from '@/features/orbitsend/components/amount-panel';
+import { ContactPicker } from '@/features/orbitsend/components/contact-picker';
+import { Keypad } from '@/features/orbitsend/components/keypad';
+import { RecipientCard } from '@/features/orbitsend/components/recipient-card';
+import { SendHeader } from '@/features/orbitsend/components/send-header';
+import { SlideSend } from '@/features/orbitsend/components/slide-send';
+import { T } from '@/features/orbitsend/components/text';
+import { send } from '@/features/orbitsend/data/send';
+import { useLayout } from '@/features/orbitsend/layout';
+import { ct } from '@/features/orbitsend/theme';
+
+/**
+ * Orbit — send money.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The keypad is the remainder, so the slide control always sits on the foot
+ * with no band under it (I3).
+ */
+export default function OrbitsendScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <SendHeader margin={L.margin} height={L.headerH} onBack={() => router.push('/orbithome')} />
+
+      <View style={{ height: L.gapHeader }} />
+      <ContactPicker margin={L.margin} height={L.railH} />
+
+      <View style={{ height: L.gapRail }} />
+      <RecipientCard margin={L.margin} height={L.recipient.h} radius={L.recipient.radius} />
+
+      <View style={{ height: L.gapRecipient }} />
+      <AmountPanel
+        margin={L.margin}
+        width={L.W - L.margin * 2}
+        height={L.amount.h}
+        radius={L.amount.radius}
+      />
+
+      <View style={{ height: L.gapAmount }} />
+      <View style={{ height: L.balanceH, alignItems: 'center' }}>
+        <T variant="account">
+          {send.balanceLabel}: ${send.balance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
+        </T>
+      </View>
+
+      <View style={{ height: L.gapBalance }} />
+      <Keypad margin={L.margin} height={L.keypad.h} gap={L.keypad.gap} />
+
+      <View style={{ height: L.gapCta }} />
+      <SlideSend margin={L.margin} height={L.cta.h} onPress={() => router.push('/orbitchart')} />
+    </View>
+  );
+}

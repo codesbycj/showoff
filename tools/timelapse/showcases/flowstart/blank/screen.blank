@@ -1,0 +1,78 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.19 import account link
+// import { AccountLink } from '@/features/flowstart/components/account-link';
+// STEP 1.01 import hero photo
+// import { HeroPhoto } from '@/features/flowstart/components/hero-photo';
+// STEP 1.10 import page dots
+// import { PageDots } from '@/features/flowstart/components/page-dots';
+import { SheetGround } from '@/features/flowstart/components/sheet-ground';
+// STEP 1.13 import start button
+// import { StartButton } from '@/features/flowstart/components/start-button';
+// STEP 1.04 import welcome copy
+// import { WelcomeCopy } from '@/features/flowstart/components/welcome-copy';
+import { useLayout } from '@/features/flowstart/layout';
+import { ct } from '@/features/flowstart/theme';
+
+/**
+ * Flowan — welcome.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * Every block here is a component rather than inline JSX, which is what I5
+ * means by extraction — as markup this screen staged to twelve steps, under
+ * the floor, because there was nothing for the stager to descend into.
+ *
+ * The photograph is the remainder and the sheet is sized, so the screen always
+ * ends on its action with no band under it (I3).
+ */
+export default function FlowstartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      {/* STEP 1.01 hero photo
+      <HeroPhoto width={L.W} height={L.hero.h} />
+      */}
+
+      <View style={{ flex: 1, marginTop: -34 }}>
+        <SheetGround radius={L.sheet.radius} />
+
+        <View style={{ height: 28 }} />
+        {/* STEP 1.08 a stray gap above it | FIX 1.09 take the gap back out
+        <View style={{ width: 11, height: 11 }} />
+        */}
+        {/* STEP 1.04 welcome copy
+        <WelcomeCopy margin={L.margin} displayH={L.displayH} gap={L.gapDisplay} bodyH={L.bodyH} />
+        */}
+
+        <View style={{ height: L.gapBody }} />
+        {/* STEP 1.10 page dots
+        <PageDots height={L.dotsH} />
+        */}
+
+        <View style={{ height: L.gapDots }} />
+        {/* STEP 1.17 a stray gap above it | FIX 1.18 take the gap back out
+        <View style={{ width: 17, height: 17 }} />
+        */}
+        {/* STEP 1.13 start button
+        <StartButton margin={L.margin} height={L.cta.h} onPress={() => router.push('/flowhome')} />
+        */}
+
+        <View style={{ height: L.gapCta }} />
+        {/* STEP 1.20 a stray gap above it | FIX 1.21 take the gap back out
+        <View style={{ width: 23, height: 23 }} />
+        */}
+        {/* STEP 1.19 account link
+        <AccountLink height={L.linkH} onPress={() => router.push('/flowhome')} />
+        */}
+      </View>
+    </View>
+  );
+}

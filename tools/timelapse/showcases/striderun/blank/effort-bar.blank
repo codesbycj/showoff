@@ -1,0 +1,54 @@
+import { View } from 'react-native';
+
+import { EFFORT_AT, EFFORT_ZONES, effortLabel } from '../data/run';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * Which effort zone the run is in.
+ *
+ * **R9: the marker sits in the segment it names.** The filled zone is drawn
+ * from the same number the label reads, so "THRESHOLD" cannot end up over the
+ * wrong block. Both ends are clamped, because the reveal can leave this screen
+ * with no zones at all (I7).
+ */
+export function EffortBar({ margin, height }: Props) {
+  const zones = Array.from({ length: Math.max(EFFORT_ZONES, 1) }, (_, i) => i + 1);
+  const at = Math.min(Math.max(EFFORT_AT, 1), zones.length);
+
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center', gap: 10 }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        {/* STEP 1.21 "EFFORT ZONE"
+        <T variant="label" style={{ flex: 1 }}>
+          EFFORT ZONE
+        </T>
+        */}
+        {/* STEP 1.22 t
+        <T variant="label" style={{ color: ct.lime }}>
+          {effortLabel}
+        </T>
+        */}
+      </View>
+
+      {/* STEP 1.23 view
+      <View style={{ flexDirection: 'row', gap: 6 }}>
+        {zones.map((zone) => (
+          <View
+            key={zone}
+            style={{
+              flex: 1,
+              height: 8,
+              borderRadius: 4,
+              backgroundColor: zone <= at ? ct.lime : ct.cardSoft,
+              opacity: zone < at ? 0.5 : 1,
+            }}
+          />
+        ))}
+      </View>
+      */}
+    </View>
+  );
+}

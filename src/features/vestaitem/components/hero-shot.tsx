@@ -1,0 +1,70 @@
+import { Image, View } from 'react-native';
+
+import { activeShot, gallery, product } from '../data/item';
+import { ct } from '../theme';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The product photograph.
+ *
+ * **This is the block that absorbs the screen's slack** (see `layout.ts`): its
+ * height comes from the layout as the remainder. A bigger photograph is a
+ * better product page, which is exactly the kind of block I3 says to grow —
+ * unlike padding, which it forbids.
+ *
+ * The `Image` carries an explicit numeric height; absolute insets alone make an
+ * `Image` paint nothing on native, silently (Part 7).
+ *
+ * **The pager's dot count is `gallery.length`**, not a typed number, so it
+ * cannot disagree with the rail beneath it (R9).
+ */
+export function HeroShot({ margin, height, radius }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      {/* STEP 1.05 image
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          overflow: 'hidden',
+          backgroundColor: ct.card,
+        }}
+      >
+        <Image source={product.hero} style={{ width: '100%', height }} resizeMode="cover" />
+      </View>
+      */}
+
+      {/* STEP 1.06 view
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 14,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 5,
+        }}
+      >
+        {gallery.map((shot, i) => (
+          <View
+            key={shot.id}
+            style={{
+              width: i === activeShot ? 16 : 6,
+              height: 6,
+              borderRadius: 3,
+              backgroundColor: i === activeShot ? ct.accent : 'rgba(255,255,255,0.75)',
+            }}
+          />
+        ))}
+      </View>
+      */}
+    </View>
+  );
+}

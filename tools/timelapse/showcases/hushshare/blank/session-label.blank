@@ -1,0 +1,23 @@
+import { View } from 'react-native';
+
+import { header } from '../data/share';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * What is being shared.
+ *
+ * Two elements, not one string: the reveal paints one element per step, and a
+ * caption that lands whole is two beats spent as one (I9).
+ */
+export function SessionLabel({ margin, height }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center' }}>
+      <T variant="session">{header.session}</T>
+      {/* STEP 1.09 mood
+      <T variant="mood">{header.mood}</T>
+      */}
+    </View>
+  );
+}

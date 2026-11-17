@@ -1,0 +1,246 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "@/features/verdestart/components/hero-panel"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import hero panel"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/hero-panel.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/hero-panel.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Minerals\"",
+   "op": "entry",
+   "args": [
+    "src/features/verdestart/data/start.ts",
+    "minerals"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "@/features/verdestart/components/welcome-copy"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import welcome copy"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/welcome-copy.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/welcome-copy.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/verdestart/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/verdestart/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "@/features/verdestart/components/start-actions"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import start actions"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/start-actions.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "primary",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/start-actions.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/start-actions.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "secondary",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/start-actions.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/verdestart/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/verdestart/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "@/features/verdestart/components/account-foot"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdestart/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import account foot"
+  },
+  {
+   "label": "foot lead",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/account-foot.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "foot link",
+   "op": "jsx",
+   "args": [
+    "src/features/verdestart/components/account-foot.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/verdestart/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/verdestart/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "account-foot",
+     "src/features/verdestart/components/account-foot.tsx"
+    ],
+    [
+     "data-start",
+     "src/features/verdestart/data/start.ts"
+    ],
+    [
+     "hero-panel",
+     "src/features/verdestart/components/hero-panel.tsx"
+    ],
+    [
+     "screen",
+     "src/app/verdestart/index.tsx"
+    ],
+    [
+     "start-actions",
+     "src/features/verdestart/components/start-actions.tsx"
+    ],
+    [
+     "welcome-copy",
+     "src/features/verdestart/components/welcome-copy.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

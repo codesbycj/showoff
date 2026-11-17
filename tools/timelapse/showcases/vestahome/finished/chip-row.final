@@ -1,0 +1,68 @@
+import { Pressable, ScrollView, View } from 'react-native';
+
+import { chips } from '../data/shop';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  height: number;
+  margin: number;
+  radius: number;
+  value: string;
+  onSelect: (id: string) => void;
+};
+
+/**
+ * The category chips.
+ *
+ * **A horizontal `ScrollView`, not a wrap.** The board shows its last chip cut
+ * by the screen edge, and a wrap layout physically cannot reproduce that (R2).
+ * The scroller is pinned to its own height so it cannot absorb the screen's
+ * slack — a `ScrollView` carries `flexGrow: 1` and will happily eat every
+ * spare dp.
+ */
+export function ChipRow({ height, margin, radius, value, onSelect }: Props) {
+  return (
+    <View style={{ height }}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: margin, gap: 8, alignItems: 'center' }}
+      >
+        {chips.map((c) => {
+          const on = c.id === value;
+          return (
+            <Pressable
+              key={c.id}
+              onPress={() => onSelect(c.id)}
+              accessibilityRole="button"
+              accessibilityState={{ selected: on }}
+              accessibilityLabel={c.label}
+            >
+              {({ pressed }) => (
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 6,
+                    height,
+                    paddingHorizontal: 18,
+                    borderRadius: radius,
+                    borderWidth: on ? 0 : 1,
+                    borderColor: ct.fieldEdge,
+                    backgroundColor: on ? ct.ink : ct.field,
+                    opacity: pressed ? 0.75 : 1,
+                  }}
+                >
+                  {c.spark && on ? <Glyph name="spark" size={14} color={ct.accent} /> : null}
+                  <T variant={on ? 'chipOn' : 'chip'}>{c.label}</T>
+                </View>
+              )}
+            </Pressable>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
+}

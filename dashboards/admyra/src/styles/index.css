@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+/*
+ * Tokens read off ref/campaigns.png.
+ *
+ * The reference is a downscaled video frame (1082x618), so its chroma is
+ * shifted by compression: the primary blue samples as #0878be and the logo as
+ * #046bd5, which are the same colour seen through 4:2:0 subsampling. The flat,
+ * large areas survive it and those are the ones trusted literally -- the draft
+ * row tint (#e6f4ef), the zebra/hover grey (#f4f6f6) and the page ground. The
+ * rest are set to the design-system values those samples are pointing at.
+ */
+@theme {
+  --color-ground: #f0f2f5;
+  --color-surface: #ffffff;
+  --color-ink: #1c2b33;
+  --color-muted: #5a6b75;
+  --color-subtle: #8a9aa5;
+  --color-line: #dddfe2;
+  --color-line-strong: #c9ccd1;
+  --color-accent: #0064e0;
+  --color-accent-soft: #e7f0fd;
+  --color-go: #006241;
+  --color-go-soft: #e6f4ef;
+  --color-go-bar: #0a7850;
+  --color-stripe: #f6f5f8;
+  --color-hover: #ebeef2;
+  --color-dot: #bcc0c4;
+  --color-plum: #8c54c8;
+
+  --font-sans:
+    'Figtree Variable', 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    /* A dashboard is a shell: the document itself never scrolls. */
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background: var(--color-ground);
+    font-size: 13px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+    border-radius: 4px;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  input {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  /*
+   * Grows a small control's hit area without changing how it looks. The tick
+   * and the switch are drawn at the reference's 18px and 38x22; this makes
+   * both a 40px target, which is what a pointer actually has to land on.
+   */
+  .hit {
+    position: relative;
+  }
+
+  .hit::after {
+    content: '';
+    position: absolute;
+    inset: -11px;
+  }
+
+  /*
+   * The table scroller's bar. The reference shows a thick rounded grey thumb
+   * sitting clear of the content -- it is part of the design, not chrome, so
+   * it is styled rather than hidden.
+   */
+  .barred {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+
+  .barred::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  .barred::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .barred::-webkit-scrollbar-thumb {
+    background: var(--color-line-strong);
+    border: 3px solid var(--color-surface);
+    border-radius: 999px;
+  }
+
+  .barred::-webkit-scrollbar-thumb:hover {
+    background: #a8adb3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

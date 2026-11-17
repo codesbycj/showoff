@@ -1,0 +1,111 @@
+import { useId } from 'react';
+import { Image, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { places } from '../data/trip';
+import { ct } from '../theme';
+import { FlagDisc } from './flag-disc';
+import { T } from './text';
+
+type Props = { width: number; height: number };
+
+/**
+ * Three places, strung on a dotted route.
+ *
+ * **The places are photographs and the route is drawn** (I4): a place is a
+ * picture of somewhere, a route is an idea.
+ *
+ * The cards are spaced by the block's own height rather than by fixed offsets,
+ * so the stack holds at other screen sizes (I2), and each row's text column is
+ * inset past the saved mark so nothing straddles it (R3).
+ */
+export function PlaceStack({ width, height }: Props) {
+  const key = useId();
+  const cardH = 92;
+  const gap = Math.max((height - cardH * places.length) / Math.max(places.length - 1, 1), 8);
+
+  return (
+    <View style={{ width, height }}>
+      {/* STEP 1.07 path
+      <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+        <Path
+          key={key}
+          d={`M${width * 0.12} 6 C ${width * 0.9} ${height * 0.2}, ${width * 0.04} ${height * 0.55}, ${width * 0.84} ${height - 8}`}
+          stroke={ct.dot}
+          strokeWidth={1.6}
+          strokeDasharray="4 7"
+          fill="none"
+        />
+      </Svg>
+      */}
+
+      {/* STEP 1.08 name
+      {places.map((place, i) => (
+        <View
+          key={place.id}
+          style={{
+            position: 'absolute',
+            top: i * (cardH + gap),
+            left: i % 2 === 0 ? 0 : width * 0.12,
+            width: width * 0.88,
+            height: cardH,
+            borderRadius: 18,
+            backgroundColor: ct.surface,
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 10,
+            gap: 12,
+            shadowColor: '#15171C',
+            shadowOpacity: 0.12,
+            shadowRadius: 16,
+            shadowOffset: { width: 0, height: 8 },
+            elevation: 5,
+          }}
+        >
+          <Image
+            source={place.image}
+            style={{ width: 72, height: 72, borderRadius: 13 }}
+            resizeMode="cover"
+          />
+
+          <View style={{ flex: 1, gap: 2, paddingRight: 22 }}>
+            <T variant="cardTitle" numberOfLines={1}>
+              {place.name}
+            </T>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+              <FlagDisc name={place.flag} size={14} />
+              <T variant="cardMeta">{place.country}</T>
+            </View>
+            <T variant="cardMeta">
+              ★ {place.rating} · {place.reviews} reviews
+            </T>
+          </View>
+
+          <View
+            style={{
+              position: 'absolute',
+              right: 12,
+              top: 12,
+              width: 22,
+              height: 22,
+              borderRadius: 11,
+              backgroundColor: place.saved ? ct.orangeDeep : ct.tray,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <View
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: 4,
+                backgroundColor: place.saved ? ct.white : ct.faint,
+              }}
+            />
+          </View>
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

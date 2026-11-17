@@ -131,7 +131,9 @@
     "dev:skillra": "npm --prefix dashboards/skillra run dev",
     "build:skillra": "npm --prefix dashboards/skillra run build",
     "dev:tasklio": "npm --prefix dashboards/tasklio run dev",
-    "build:tasklio": "npm --prefix dashboards/tasklio run build"
+    "build:tasklio": "npm --prefix dashboards/tasklio run build",
+    "dev:admyra": "npm --prefix dashboards/admyra run dev",
+    "build:admyra": "npm --prefix dashboards/admyra run build"
   },
   "private": true
 }

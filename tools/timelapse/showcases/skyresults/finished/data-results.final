@@ -1,0 +1,91 @@
+/**
+ * Everything skyresults says.
+ *
+ * **The carriers are invented.** The board lists three real airlines and draws
+ * their marks; none of that is reproduced.
+ *
+ * **R9: the arrival clock is computed** from the departure, the block time and
+ * the destination's offset — see `../format`. The board gives all three of its
+ * flights the same 07:47 → 14:30 pair under three different durations, which
+ * cannot all be true.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const header = { title: 'Flight result' };
+
+export type Sort = { id: string; label: string; on?: boolean };
+
+export const sorts: Sort[] = [
+  { id: 'price', label: 'Lowest to Highest', on: true },
+  { id: 'airlines', label: 'Preferred airlines' },
+  { id: 'time', label: 'Flight time' },
+];
+
+export type Offer = {
+  id: string;
+  airline: string;
+  /** The disc behind the carrier's mark. */
+  tint: string;
+  mark: 'lark' | 'auric' | 'nord';
+  departMin: number;
+  durationMin: number;
+  offsetMin: number;
+  fromCode: string;
+  fromCity: string;
+  toCode: string;
+  toCity: string;
+  price: number;
+  /** Only the cheapest row is flagged; the field is declared, not inferred. */
+  best?: boolean;
+};
+
+/** Sorted cheapest first, which is what the active chip claims (R9). */
+export const offers: Offer[] = [
+  {
+    id: 'lark',
+    airline: 'Skylark Air',
+    tint: '#DCE8FD',
+    mark: 'lark',
+    departMin: 11 * 60 + 20,
+    durationMin: 485,
+    offsetMin: -360,
+    fromCode: 'OSL',
+    fromCity: 'Oslo',
+    toCode: 'JFK',
+    toCity: 'New York',
+    price: 321,
+    best: true,
+  },
+  {
+    id: 'auric',
+    airline: 'Auric Airways',
+    tint: '#FDE8DC',
+    mark: 'auric',
+    departMin: 13 * 60 + 5,
+    durationMin: 510,
+    offsetMin: -360,
+    fromCode: 'OSL',
+    fromCity: 'Oslo',
+    toCode: 'JFK',
+    toCity: 'New York',
+    price: 348,
+  },
+  {
+    id: 'nord',
+    airline: 'Nordline',
+    tint: '#DDF3E6',
+    mark: 'nord',
+    departMin: 7 * 60 + 40,
+    durationMin: 545,
+    offsetMin: -360,
+    fromCode: 'OSL',
+    fromCity: 'Oslo',
+    toCode: 'JFK',
+    toCity: 'New York',
+    price: 376,
+  },
+];
+
+export const card = { per: '/person', cta: 'Select flight' };

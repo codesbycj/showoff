@@ -1,0 +1,250 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "@/features/cocoacart/components/cart-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import cart header"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/cart-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "@/features/cocoacart/components/cart-lines"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import cart lines"
+  },
+  {
+   "label": "\"Salted Cashews\"",
+   "op": "block",
+   "args": [
+    "src/features/cocoacart/data/cart.ts",
+    "cashew"
+   ]
+  },
+  {
+   "label": "\"Coconut Chips\"",
+   "op": "block",
+   "args": [
+    "src/features/cocoacart/data/cart.ts",
+    "coconut"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "@/features/cocoacart/components/totals-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import totals card"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/totals-card.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/totals-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/totals-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/totals-card.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/totals-card.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoacart/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "@/features/cocoacart/components/pay-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoacart/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import pay button"
+  },
+  {
+   "label": "pay",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoacart/components/pay-button.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "cart-header",
+     "src/features/cocoacart/components/cart-header.tsx"
+    ],
+    [
+     "data-cart",
+     "src/features/cocoacart/data/cart.ts"
+    ],
+    [
+     "pay-button",
+     "src/features/cocoacart/components/pay-button.tsx"
+    ],
+    [
+     "screen",
+     "src/app/cocoacart/index.tsx"
+    ],
+    [
+     "totals-card",
+     "src/features/cocoacart/components/totals-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

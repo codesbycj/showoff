@@ -1,0 +1,431 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/gym-hero"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-hero.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import gym hero + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-hero.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "\"Back\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-hero.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "view"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "g2"
+          ]
+        }
+      ],
+      "label": "g2"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "g3"
+          ]
+        }
+      ],
+      "label": "g3"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/gym-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.07"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-title.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "import gym title + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-title.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/gym-address"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.10"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-address.tsx",
+            "STEP 1.11"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/gym-address.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "import gym address + glyph + address"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/amenity-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/amenity-row.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import amenity row + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "buffet"
+          ]
+        }
+      ],
+      "label": "\"Buffet\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "coffee"
+          ]
+        }
+      ],
+      "label": "\"Coffee Shop\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "parking"
+          ]
+        }
+      ],
+      "label": "\"Parking\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/price-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.18"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/price-row.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "import price row + unit"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/price-row.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "view"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/about-block"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.21"
+          ]
+        }
+      ],
+      "label": "import about block"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/fact-strip"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.22"
+          ]
+        }
+      ],
+      "label": "import fact strip"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/fact-strip.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "value"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "floor"
+          ]
+        }
+      ],
+      "label": "\"Floor area\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamargym/data/gym.ts",
+            "classes"
+          ]
+        }
+      ],
+      "label": "\"Classes this week\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "@/features/tamargym/components/reserve-cta"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "import reserve cta"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/reserve-cta.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamargym/components/reserve-cta.tsx",
+            "STEP 1.28"
+          ]
+        }
+      ],
+      "label": "\"Reserve\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "STEP 1.29"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/tamargym/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "amenity-row",
+              "src/features/tamargym/components/amenity-row.tsx"
+            ],
+            [
+              "data-gym",
+              "src/features/tamargym/data/gym.ts"
+            ],
+            [
+              "fact-strip",
+              "src/features/tamargym/components/fact-strip.tsx"
+            ],
+            [
+              "gym-address",
+              "src/features/tamargym/components/gym-address.tsx"
+            ],
+            [
+              "gym-hero",
+              "src/features/tamargym/components/gym-hero.tsx"
+            ],
+            [
+              "gym-title",
+              "src/features/tamargym/components/gym-title.tsx"
+            ],
+            [
+              "price-row",
+              "src/features/tamargym/components/price-row.tsx"
+            ],
+            [
+              "reserve-cta",
+              "src/features/tamargym/components/reserve-cta.tsx"
+            ],
+            [
+              "screen",
+              "src/app/tamargym/index.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

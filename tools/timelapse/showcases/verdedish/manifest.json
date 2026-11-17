@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/verdedish/index.tsx",
+  "plate-gallery": "src/features/verdedish/components/plate-gallery.tsx",
+  "data-dish": "src/features/verdedish/data/dish.ts",
+  "dish-facts": "src/features/verdedish/components/dish-facts.tsx",
+  "extras-list": "src/features/verdedish/components/extras-list.tsx",
+  "order-bar": "src/features/verdedish/components/order-bar.tsx"
+}

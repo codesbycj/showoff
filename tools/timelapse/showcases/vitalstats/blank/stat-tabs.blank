@@ -1,0 +1,62 @@
+import { Pressable, View } from 'react-native';
+
+import { tabs } from '../data/stats';
+import { ct } from '../theme';
+import { T } from './text';
+
+import { TabProps } from './_stats-parts-shared';
+
+/** Rankings / Activity. The active tab carries a rule, as the board draws it. */
+export function StatTabs({ margin, height, value, onSelect }: TabProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderBottomColor: ct.hairline,
+      }}
+    >
+      {/* STEP 1.10 label
+      {tabs.map((t) => {
+        const on = t.key === value;
+        return (
+          <Pressable
+            key={t.key}
+            onPress={() => onSelect(t.key)}
+            accessibilityRole="button"
+            accessibilityState={{ selected: on }}
+            accessibilityLabel={t.label}
+            style={{ flex: 1 }}
+          >
+            {({ pressed }) => (
+              <View
+                style={{
+                  flex: 1,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  opacity: pressed ? 0.7 : 1,
+                }}
+              >
+                <T variant={on ? 'athlete' : 'score'}>{t.label}</T>
+                <View
+                  style={{
+                    position: 'absolute',
+                    left: 20,
+                    right: 20,
+                    bottom: 0,
+                    height: 2.5,
+                    borderRadius: 2,
+                    backgroundColor: on ? ct.dark : 'transparent',
+                  }}
+                />
+              </View>
+            )}
+          </Pressable>
+        );
+      })}
+      */}
+    </View>
+  );
+}

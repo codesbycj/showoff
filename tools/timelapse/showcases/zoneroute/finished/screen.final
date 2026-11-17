@@ -1,0 +1,49 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { RouteMap } from '@/features/zoneroute/components/route-map';
+import { RouteBar } from '@/features/zoneroute/components/route-bar';
+import { RouteSheet } from '@/features/zoneroute/components/route-sheet';
+import { useLayout } from '@/features/zoneroute/layout';
+import { ct } from '@/features/zoneroute/theme';
+
+/**
+ * Food Zone — delivery tracking.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The map is full bleed — it is the page's own ground under §5.5 — and the
+ * sheet sits on it, sized from its own rows, so the foot cannot open a band.
+ * The map is built as the map *idea* rather than traced; see `route-map.tsx`
+ * and I4.
+ */
+export default function ZonerouteScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.land }}>
+      <StatusBar style="dark" />
+
+      <RouteMap width={L.W} height={L.map.h} />
+
+      <RouteBar
+        margin={L.margin}
+        topInset={L.insets.top}
+        control={L.control}
+        onBack={() => router.back()}
+      />
+
+      <RouteSheet
+        margin={L.margin}
+        height={L.sheet.h}
+        radius={L.sheet.radius}
+        etaH={L.sheet.etaH}
+        riderH={L.sheet.riderH}
+        stepH={L.sheet.stepH}
+      />
+    </View>
+  );
+}

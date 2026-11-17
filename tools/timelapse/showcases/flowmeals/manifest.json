@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/flowmeals/index.tsx",
+  "meal-card": "src/features/flowmeals/components/meal-card.tsx",
+  "data-meals": "src/features/flowmeals/data/meals.ts",
+  "wide-meal": "src/features/flowmeals/components/wide-meal.tsx",
+  "dock": "src/features/flowmeals/components/dock.tsx"
+}

@@ -1,0 +1,74 @@
+/**
+ * Everything kovacal says.
+ *
+ * **R9: the day strip is generated from the month and the day it is on**, so
+ * the weekday letters, the numbers and the marked day can never disagree - the
+ * board sets "Sat 27" over a strip whose other days do not line up with it.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const header = { title: 'Calendar', range: 'Mar - Apr 2026', today: 'Today' };
+
+export type Mode = { id: string; label: string; on?: boolean };
+
+export const modes: Mode[] = [
+  { id: 'weekly', label: 'Weekly', on: true },
+  { id: 'monthly', label: 'Monthly' },
+];
+
+/** The day the calendar is open on, and the week around it. */
+export const MONTH = 'March';
+export const TODAY = 27;
+export const WEEKDAYS = ['Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue'];
+export const FIRST = 24;
+
+export type Day = { id: string; label: string; date: number; today: boolean; dot: boolean };
+
+/**
+ * Seven days, built from `FIRST` rather than typed - the labels and the
+ * numbers then cannot drift apart (R9).
+ */
+export const days: Day[] = WEEKDAYS.map((label, i) => ({
+  id: `d${FIRST + i}`,
+  label,
+  date: FIRST + i,
+  today: FIRST + i === TODAY,
+  dot: [26, 28].includes(FIRST + i),
+}));
+
+export const reminder = { title: 'Set a reminder' };
+
+export type Option = {
+  id: string;
+  title: string;
+  body: string;
+  glyph: 'profile' | 'stacks' | 'inbox';
+};
+
+export const options: Option[] = [
+  { id: 'me', title: 'Remind me', body: 'Only visible to you', glyph: 'profile' },
+  { id: 'space', title: 'Remind the space', body: 'Visible to everyone in it', glyph: 'stacks' },
+  { id: 'send', title: 'Send to a collaborator', body: 'Notifies them directly', glyph: 'inbox' },
+];
+
+export const job = {
+  chip: 'Collaboration',
+  title: 'Spring capsule shoot',
+  image: require('../../../../assets/images/kovacal/job.jpg'),
+};
+
+export type Tab = {
+  id: string;
+  label: string;
+  glyph: 'home' | 'inbox' | 'stacks' | 'profile' | 'plus';
+};
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  { id: 'inbox', label: 'Inbox', glyph: 'inbox' },
+  { id: 'jobs', label: 'Jobs', glyph: 'stacks' },
+  { id: 'me', label: 'Account', glyph: 'profile' },
+  { id: 'new', label: 'New', glyph: 'plus' },
+];

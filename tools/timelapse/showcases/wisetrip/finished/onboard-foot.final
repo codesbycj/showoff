@@ -1,0 +1,105 @@
+import { Pressable, View } from 'react-native';
+
+import { copy, PAGE_AT, PAGES } from '../data/trip';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = {
+  margin: number;
+  displayH: number;
+  gapDisplay: number;
+  bodyH: number;
+  gapBody: number;
+  dotsH: number;
+  gapDots: number;
+  ctaH: number;
+  onNext?: () => void;
+};
+
+/**
+ * The headline, the body, the pager and the action.
+ *
+ * **R9: the dots count the pages that exist** and mark the one on screen.
+ * Both ends are clamped, because the reveal stages this screen's own data and
+ * an index outside the list would otherwise mark nothing (I7).
+ *
+ * **The CTA is the deeper orange.** White on the board's #F2642A measures
+ * 3.2:1 and fails R4 at this size; on this step it is 5.2:1, and the board's
+ * brighter orange stays on the pager dot, which carries no type.
+ */
+export function OnboardFoot({
+  margin,
+  displayH,
+  gapDisplay,
+  bodyH,
+  gapBody,
+  dotsH,
+  gapDots,
+  ctaH,
+  onNext,
+}: Props) {
+  const pages = Array.from({ length: Math.max(PAGES, 1) }, (_, i) => i);
+  const at = Math.min(Math.max(PAGE_AT, 0), pages.length - 1);
+
+  return (
+    <View>
+      <View style={{ marginHorizontal: margin, height: displayH, justifyContent: 'center' }}>
+        <T variant="display" style={{ textAlign: 'center' }}>
+          {copy.display}
+        </T>
+      </View>
+
+      <View style={{ height: gapDisplay }} />
+      <View style={{ marginHorizontal: margin + 8, height: bodyH }}>
+        <T variant="body" style={{ textAlign: 'center' }}>
+          {copy.body}
+        </T>
+      </View>
+
+      <View style={{ height: gapBody }} />
+      <View
+        style={{
+          height: dotsH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 7,
+        }}
+      >
+        {pages.map((page) => (
+          <View
+            key={page}
+            style={{
+              width: page === at ? 20 : 7,
+              height: 7,
+              borderRadius: 4,
+              backgroundColor: page === at ? ct.orange : ct.line,
+            }}
+          />
+        ))}
+      </View>
+
+      <View style={{ height: gapDots }} />
+      <View style={{ marginHorizontal: margin }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={copy.cta} onPress={onNext}>
+          <View
+            style={{
+              height: ctaH,
+              borderRadius: ctaH / 2,
+              backgroundColor: ct.orangeDeep,
+              alignItems: 'center',
+              justifyContent: 'center',
+              shadowColor: ct.orange,
+              shadowOpacity: 0.34,
+              shadowRadius: 16,
+              shadowOffset: { width: 0, height: 8 },
+              elevation: 6,
+            }}
+          >
+            <T variant="cta">{copy.cta}</T>
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

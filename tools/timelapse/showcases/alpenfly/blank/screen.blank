@@ -1,0 +1,184 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+// STEP 1.19 import date strip
+// import { DateStrip } from '@/features/alpenfly/components/date-strip';
+// STEP 1.16 import filter chips
+// import { FilterChips } from '@/features/alpenfly/components/filter-chips';
+// STEP 1.01 import glyph
+// import { Glyph } from '@/features/alpenfly/components/glyph';
+// STEP 1.04 import route card
+// import { RouteCard } from '@/features/alpenfly/components/route-card';
+// STEP 1.02 import text
+// import { T } from '@/features/alpenfly/components/text';
+// STEP 1.25 import ticket list
+// import { TicketList } from '@/features/alpenfly/components/ticket-list';
+import { labels, modes, tickets } from '@/features/alpenfly/data/fly';
+import { useLayout } from '@/features/alpenfly/layout';
+import { ct } from '@/features/alpenfly/theme';
+
+/**
+ * Alpenroute — flight search.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The ticket list is the remainder and runs off the bottom edge, so the foot
+ * cannot open a band (I3); the count above it is the list's own length (R9).
+ */
+export default function AlpenflyScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 12,
+        }}
+      >
+        {/* STEP 1.01 "Back"
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/alpenpick')}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.white,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+        */}
+
+        {/* STEP 1.02 label
+        <View
+          style={{
+            flex: 1,
+            height: 44,
+            borderRadius: 22,
+            backgroundColor: ct.white,
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 4,
+          }}
+        >
+          {modes.map((mode) => (
+            <Pressable
+              key={mode.id}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: !!mode.on }}
+              accessibilityLabel={mode.label}
+              style={{ flex: 1 }}
+            >
+              <View
+                style={{
+                  height: 36,
+                  borderRadius: 18,
+                  backgroundColor: mode.on ? ct.dark : 'transparent',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <T variant={mode.on ? 'modeOn' : 'modeOff'}>{mode.label}</T>
+              </View>
+            </Pressable>
+          ))}
+        </View>
+        */}
+      </View>
+
+      <View style={{ height: L.gapHeader }} />
+      {/* STEP 1.14 a stray gap above it | FIX 1.15 take the gap back out
+      <View style={{ width: 11, height: 11 }} />
+      */}
+      {/* STEP 1.04 route card
+      <RouteCard
+        margin={L.margin}
+        width={L.W - L.margin * 2}
+        height={L.route.h}
+        radius={L.route.radius}
+      />
+      */}
+
+      <View style={{ height: L.gapRoute }} />
+      {/* STEP 1.16 filter chips
+      <FilterChips margin={L.margin} height={L.filters.h} radius={L.filters.radius} />
+      */}
+
+      <View style={{ height: L.gapFilters }} />
+      {/* STEP 1.19 date strip
+      <DateStrip margin={L.margin} height={L.stripH} />
+      */}
+
+      <View style={{ height: L.gapStrip }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.countH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* STEP 1.22 a stray gap above it | FIX 1.23 take the gap back out
+        <View style={{ width: 17, height: 17 }} />
+        */}
+        {/* STEP 1.20 t
+        <T variant="count">
+          {tickets.length} {labels.found}
+        </T>
+        */}
+
+        {/* STEP 1.24 "Filter results"
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Filter results"
+          hitSlop={{ top: 4, bottom: 4, left: 4, right: 4 }}
+        >
+          <View
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: 19,
+              backgroundColor: ct.white,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="filter" size={17} color={ct.ink} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+        */}
+      </View>
+
+      <View style={{ height: L.gapCount }} />
+      {/* STEP 1.26 a stray gap above it | FIX 1.27 take the gap back out
+      <View style={{ width: 23, height: 23 }} />
+      */}
+      {/* STEP 1.25 ticket list
+      <TicketList
+        margin={L.margin}
+        height={L.ticket.h}
+        gap={L.ticket.gap}
+        radius={L.ticket.radius}
+      />
+      */}
+    </View>
+  );
+}

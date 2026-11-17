@@ -1,0 +1,225 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "@/features/vaultadvisor/components/brand-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import brand bar"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "@/features/vaultadvisor/components/portrait"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import portrait"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "@/features/vaultadvisor/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "role",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "place",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "@/features/vaultadvisor/components/credential-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import credential row"
+  },
+  {
+   "label": "\"With Vaultix\"",
+   "op": "entry",
+   "args": [
+    "src/features/vaultadvisor/data/advisor.ts",
+    "years"
+   ]
+  },
+  {
+   "label": "\"Focus\"",
+   "op": "entry",
+   "args": [
+    "src/features/vaultadvisor/data/advisor.ts",
+    "focus"
+   ]
+  },
+  {
+   "label": "\"Speaks\"",
+   "op": "entry",
+   "args": [
+    "src/features/vaultadvisor/data/advisor.ts",
+    "tongues"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultadvisor/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "@/features/vaultadvisor/components/trust-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultadvisor/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import trust row"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-advisor",
+     "src/features/vaultadvisor/data/advisor.ts"
+    ],
+    [
+     "screen",
+     "src/app/vaultadvisor/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

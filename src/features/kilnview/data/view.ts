@@ -1,0 +1,43 @@
+/**
+ * Everything kilnview says.
+ *
+ * **The board is a luxury watch marketplace and this is a ceramics one.**
+ * Nine stock watch frames were checked at 1:1 and every usable dial carried a
+ * legible mark; RULES SS2.5 says to change the subject to one that keeps the
+ * app's plot rather than ship somebody else's brand. The plot - an object
+ * view, a searchable grid, a provenance page - is unchanged.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const piece = {
+  name: 'Ash Glaze Vessel',
+  maker: 'Studio Fen',
+  image: require('../../../../assets/images/kilnview/piece.png'),
+};
+
+export type Mode = { id: string; label: string; on?: boolean };
+
+export const modes: Mode[] = [
+  { id: 'ar', label: 'AR' },
+  // STEP 1.02 "Object"
+  // { id: 'object', label: 'Object', on: true },
+];
+
+export type Finish = { id: string; label: string; swatch: string; on?: boolean };
+
+/** The finishes are drawn swatches: a glaze colour is an idea, not a picture. */
+export const finishes: Finish[] = [
+  { id: 'ash', label: 'Ash', swatch: '#C9BFAE', on: true },
+  // STEP 1.16 "Cobalt"
+  // { id: 'cobalt', label: 'Cobalt', swatch: '#4A5F84' },
+  // STEP 1.17 "Iron"
+  // { id: 'iron', label: 'Iron', swatch: '#5A4A3E' },
+  // STEP 1.18 "Bone"
+  // { id: 'bone', label: 'Bone', swatch: '#E8E2D6' },
+  // STEP 1.19 "Celadon"
+  // { id: 'celadon', label: 'Celadon', swatch: '#A9BDAE' },
+];
+
+export const labels = { finishes: 'Finishes' };

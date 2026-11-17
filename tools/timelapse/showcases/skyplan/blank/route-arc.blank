@@ -1,0 +1,45 @@
+import { View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { duration } from '../format';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { minutes: number; width?: number };
+
+/**
+ * The dotted hop between two airports, with the block time under it.
+ *
+ * The arc is a dashed `<path>` and the aircraft sits on top of it, rather than
+ * the aircraft being rotated with `<G origin>` — that prop emits an invalid
+ * DOM attribute and red-bars the screen (§7).
+ */
+export function RouteArc({ minutes, width = 86 }: Props) {
+  return (
+    <View style={{ width, alignItems: 'center' }}>
+      {/* STEP 1.27 path
+      <Svg width={width} height={26} viewBox={`0 0 ${width} 26`}>
+        <Path
+          d={`M4 22 Q ${width / 2} -2 ${width - 4} 22`}
+          stroke={ct.dash}
+          strokeWidth={1.4}
+          strokeDasharray="3 4"
+          strokeLinecap="round"
+          fill="none"
+        />
+      </Svg>
+      */}
+
+      {/* STEP 1.28 glyph
+      <View style={{ position: 'absolute', top: 2 }}>
+        <Glyph name="plane" size={19} color={ct.accentFill} />
+      </View>
+      */}
+
+      {/* STEP 1.29 t
+      <T variant="duration">{duration(minutes)}</T>
+      */}
+    </View>
+  );
+}

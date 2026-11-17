@@ -1,0 +1,89 @@
+import { Pressable, View } from 'react-native';
+
+import { dish, extras } from '../data/dish';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; headH: number; rowH: number };
+
+/**
+ * What can be added to the dish.
+ *
+ * **Added, not copied.** The board shows the heading "Customize" with nothing
+ * under it but a quantity stepper, which at 393dp leaves the middle of the
+ * screen empty — I3 says the fix is the row the board cropped. Each ticked row
+ * is then part of the total the button prints (R9).
+ *
+ * Each tick is 24dp with hit slop that takes it past 44 (R7).
+ */
+export function ExtrasList({ margin, headH, rowH }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      {/* STEP 1.20 customise label
+      <View
+        style={{
+          height: headH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <T variant="header" style={{ fontSize: 17, lineHeight: 23 }}>
+          {dish.customiseLabel}
+        </T>
+
+        <Pressable
+          accessibilityRole="link"
+          accessibilityLabel={dish.moreLabel}
+          hitSlop={{ top: 14, bottom: 14, left: 14, right: 10 }}
+          style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}
+        >
+          <T variant="extraPrice" style={{ color: ct.priceInk }}>
+            {dish.moreLabel}
+          </T>
+          <Glyph name="chevron" size={14} color={ct.priceInk} strokeWidth={2} />
+        </Pressable>
+      </View>
+      */}
+
+      {/* STEP 1.21 label
+      {extras.map((extra) => (
+        <View
+          key={extra.id}
+          style={{ height: rowH, flexDirection: 'row', alignItems: 'center', gap: 12 }}
+        >
+          <Pressable
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: !!extra.on }}
+            accessibilityLabel={extra.label}
+            hitSlop={{ top: 11, bottom: 11, left: 11, right: 11 }}
+          >
+            <View
+              style={{
+                width: 24,
+                height: 24,
+                borderRadius: 8,
+                borderWidth: extra.on ? 0 : 1.5,
+                borderColor: ct.line,
+                backgroundColor: extra.on ? ct.greenDeep : ct.white,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {extra.on ? (
+                <Glyph name="tick" size={14} color={ct.onGreen} strokeWidth={2.4} />
+              ) : null}
+            </View>
+          </Pressable>
+
+          <T variant="extra" style={{ flex: 1 }}>
+            {extra.label}
+          </T>
+          <T variant="extraPrice">+ ${extra.price.toFixed(2)}</T>
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

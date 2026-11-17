@@ -1,0 +1,435 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/home-header"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/home-header.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import home header + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/home-header.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "\"Menu\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/category-rail"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/category-rail.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "import category rail + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "steak"
+          ]
+        }
+      ],
+      "label": "\"Steak\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "sea"
+          ]
+        }
+      ],
+      "label": "\"Sea Food\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "dessert"
+          ]
+        }
+      ],
+      "label": "\"Desserts\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "pizza"
+          ]
+        }
+      ],
+      "label": "\"Pizza\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "breakfast"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/section-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.11"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/section-head.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "\"Breakfast\" + import section head + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/section-head.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/restaurant-rail"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.14"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/restaurant-rail.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "glyph + import restaurant rail + card"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "flushing"
+          ]
+        }
+      ],
+      "label": "\"Flushing Table\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/quick-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "import quick head"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/quick-list"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.18"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/quick-list.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "import quick list + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "q2"
+          ]
+        }
+      ],
+      "label": "\"Flushing Table\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "q3"
+          ]
+        }
+      ],
+      "label": "\"Crown Fried\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/search-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.22"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/search-bar.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "import search bar + placeholder"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/search-bar.tsx",
+            "STEP 1.24"
+          ]
+        }
+      ],
+      "label": "\"Map view\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "@/features/zonehome/components/tab-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "import tab bar"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonehome/components/tab-bar.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "saved"
+          ]
+        }
+      ],
+      "label": "\"Saved\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "cart"
+          ]
+        }
+      ],
+      "label": "\"Cart\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "orders"
+          ]
+        }
+      ],
+      "label": "\"Orders\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonehome/data/home.ts",
+            "me"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "STEP 1.31"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zonehome/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "category-rail",
+              "src/features/zonehome/components/category-rail.tsx"
+            ],
+            [
+              "data-home",
+              "src/features/zonehome/data/home.ts"
+            ],
+            [
+              "home-header",
+              "src/features/zonehome/components/home-header.tsx"
+            ],
+            [
+              "quick-list",
+              "src/features/zonehome/components/quick-list.tsx"
+            ],
+            [
+              "restaurant-rail",
+              "src/features/zonehome/components/restaurant-rail.tsx"
+            ],
+            [
+              "screen",
+              "src/app/zonehome/index.tsx"
+            ],
+            [
+              "search-bar",
+              "src/features/zonehome/components/search-bar.tsx"
+            ],
+            [
+              "section-head",
+              "src/features/zonehome/components/section-head.tsx"
+            ],
+            [
+              "tab-bar",
+              "src/features/zonehome/components/tab-bar.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "\"Profile\" + take the gap back out + tidy up"
+    }
+  ]
+}

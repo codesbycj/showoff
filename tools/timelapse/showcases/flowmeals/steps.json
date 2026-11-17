@@ -1,0 +1,294 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "@/features/flowmeals/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import text + display"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "@/features/flowmeals/components/meal-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import meal card"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/meal-card.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "slot",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/meal-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/meal-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/meal-card.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/meal-card.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "meal card",
+   "op": "jsx",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "\"Salmon poke bowl\"",
+   "op": "block",
+   "args": [
+    "src/features/flowmeals/data/meals.ts",
+    "poke"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "@/features/flowmeals/components/wide-meal"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import wide meal"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/wide-meal.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "slot",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/wide-meal.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/wide-meal.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/wide-meal.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/flowmeals/components/wide-meal.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "@/features/flowmeals/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowmeals/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Cycle\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowmeals/data/meals.ts",
+    "cycle"
+   ]
+  },
+  {
+   "label": "\"Train\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowmeals/data/meals.ts",
+    "train"
+   ]
+  },
+  {
+   "label": "\"Nourish\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowmeals/data/meals.ts",
+    "nourish"
+   ]
+  },
+  {
+   "label": "\"Insights\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowmeals/data/meals.ts",
+    "insights"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowmeals/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-meals",
+     "src/features/flowmeals/data/meals.ts"
+    ],
+    [
+     "meal-card",
+     "src/features/flowmeals/components/meal-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/flowmeals/index.tsx"
+    ],
+    [
+     "wide-meal",
+     "src/features/flowmeals/components/wide-meal.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

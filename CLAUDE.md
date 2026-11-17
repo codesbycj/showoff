@@ -1,1 +1,2 @@
 @RULES.md
+@INSPO-RULES.md

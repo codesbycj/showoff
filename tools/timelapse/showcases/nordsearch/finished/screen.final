@@ -1,0 +1,61 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { QueryCard } from '@/features/nordsearch/components/query-card';
+import { ResultList } from '@/features/nordsearch/components/result-list';
+import { SearchHeader } from '@/features/nordsearch/components/search-header';
+import { SheetGround } from '@/features/nordsearch/components/sheet-ground';
+import { SheetHandle } from '@/features/nordsearch/components/sheet-handle';
+import { TypeChips } from '@/features/nordsearch/components/type-chips';
+import { useLayout } from '@/features/nordsearch/layout';
+import { ct } from '@/features/nordsearch/theme';
+
+/**
+ * Nordvik — search.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The screen is the sheet the board draws over the discover screen, so the
+ * page's own ground is the dark strip at the top and everything else is the
+ * sheet — which is why the sheet's fill is an absolutely-filled child rather
+ * than a `backgroundColor` on the block (§5.5).
+ */
+export default function NordsearchScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.dark }}>
+      <StatusBar style="light" />
+
+      <View style={{ flex: 1, marginTop: L.sheetTop }}>
+        <SheetGround radius={L.sheet.radius} />
+
+        <SheetHandle height={L.handleH} />
+        <SearchHeader
+          margin={L.margin}
+          height={L.headerH}
+          onClose={() => router.push('/nordhome')}
+        />
+
+        <View style={{ height: L.gapHeader }} />
+        <QueryCard margin={L.margin} height={L.query.h} radius={L.query.radius} />
+
+        <View style={{ height: L.gapQuery }} />
+        <TypeChips margin={L.margin} height={L.chip.h} radius={L.chip.radius} />
+
+        <View style={{ height: L.gapChips }} />
+        <ResultList
+          margin={L.margin}
+          cardW={L.card.w}
+          photoH={L.card.photoH}
+          radius={L.card.radius}
+          gap={L.cardGap}
+          onSelect={() => router.push('/nordstay')}
+        />
+      </View>
+    </View>
+  );
+}

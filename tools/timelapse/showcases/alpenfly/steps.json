@@ -1,0 +1,304 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "@/features/alpenfly/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "@/features/alpenfly/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import text + label"
+  },
+  {
+   "label": "\"Round trip\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenfly/data/fly.ts",
+    "round"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "@/features/alpenfly/components/route-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import route card"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "from code",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "from city",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "to code",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "to city",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "change",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/alpenfly/components/route-card.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "@/features/alpenfly/components/filter-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import filter chips"
+  },
+  {
+   "label": "\"February 2026\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenfly/data/fly.ts",
+    "month"
+   ]
+  },
+  {
+   "label": "\"8 / 10 seats\"",
+   "op": "entry",
+   "args": [
+    "src/features/alpenfly/data/fly.ts",
+    "party"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "@/features/alpenfly/components/date-strip"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import date strip"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "alpen 2",
+   "op": "block",
+   "args": [
+    "src/features/alpenfly/data/fly.ts",
+    "alpen-2"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "label": "\"Filter results\"",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "@/features/alpenfly/components/ticket-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/alpenfly/index.tsx",
+      "STEP 1.25"
+     ]
+    }
+   ],
+   "label": "import ticket list"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/alpenfly/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-fly",
+     "src/features/alpenfly/data/fly.ts"
+    ],
+    [
+     "route-card",
+     "src/features/alpenfly/components/route-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/alpenfly/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

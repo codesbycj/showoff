@@ -1,0 +1,97 @@
+import { Pressable, View } from 'react-native';
+
+import { face } from '../data/card';
+import { ct } from '../theme';
+import { Folder } from './folder';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; width: number; height: number };
+
+const NOTCH_W = 86;
+const NOTCH_H = 34;
+const PILL_H = 28;
+/** The visual pill is 28dp; the control around it is 44 (I2 / R7). */
+const TAP_H = 44;
+
+/**
+ * The card being added.
+ *
+ * It is a `Folder`, so the pill in its top-right corner sits in a notch cut
+ * out of the card rather than on top of it - a mark that straddles the edge of
+ * what it covers is what `audit.js` reports as COVERED (R3).
+ *
+ * The wordmark is the app's own, not a scheme's: the board's VISA mark is not
+ * ours to ship (I1).
+ */
+export function CardFace({ margin, width, height }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      <Folder width={width} height={height} fill={ct.lime} notchW={NOTCH_W} notchH={NOTCH_H}>
+        <View style={{ marginLeft: 22, marginTop: 16, alignSelf: 'flex-start' }}>
+          <T variant="wordmark">{face.scheme}</T>
+        </View>
+
+        <View style={{ marginLeft: 22, marginTop: 26, alignSelf: 'flex-start' }}>
+          {/* STEP 1.04 pan
+          <T variant="pan">{face.pan}</T>
+          */}
+        </View>
+
+        <View
+          style={{
+            marginHorizontal: 22,
+            marginTop: 30,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <View>
+            {/* STEP 1.05 holder label
+            <T variant="fieldLabel">{face.holderLabel}</T>
+            */}
+            {/* STEP 1.06 holder
+            <T variant="fieldValue">{face.holder}</T>
+            */}
+          </View>
+          <View style={{ minWidth: 96 }}>
+            {/* STEP 1.07 expiry label
+            <T variant="fieldLabel">{face.expiryLabel}</T>
+            */}
+            {/* STEP 1.08 expiry
+            <T variant="fieldValue">{face.expiry}</T>
+            */}
+          </View>
+        </View>
+      </Folder>
+
+      {/* STEP 1.09 glyph
+      <View style={{ position: 'absolute', right: 0, top: (PILL_H - TAP_H) / 2 }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={`${face.scheme} options`}>
+          <View
+            style={{
+              width: NOTCH_W - 12,
+              height: TAP_H,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <View
+              style={{
+                width: NOTCH_W - 12,
+                height: PILL_H,
+                borderRadius: PILL_H / 2,
+                backgroundColor: ct.card,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name="more" size={16} color={ct.ink} strokeWidth={1.6} />
+            </View>
+          </View>
+        </Pressable>
+      </View>
+      */}
+    </View>
+  );
+}

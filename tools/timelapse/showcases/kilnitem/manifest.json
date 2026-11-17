@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/kilnitem/index.tsx",
+  "item-hero": "src/features/kilnitem/components/item-hero.tsx",
+  "frame-rail": "src/features/kilnitem/components/frame-rail.tsx",
+  "data-item": "src/features/kilnitem/data/item.ts",
+  "buy-bar": "src/features/kilnitem/components/buy-bar.tsx"
+}

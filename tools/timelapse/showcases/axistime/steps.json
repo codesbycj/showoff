@@ -1,0 +1,257 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "@/features/axistime/components/top-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import top bar"
+  },
+  {
+   "label": "badge",
+   "op": "jsx",
+   "args": [
+    "src/features/axistime/components/top-bar.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "@/features/axistime/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import text + display"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "@/features/axistime/components/timeline-chart"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import timeline chart"
+  },
+  {
+   "label": "circle",
+   "op": "jsx",
+   "args": [
+    "src/features/axistime/components/timeline-chart.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "\"Tue\"",
+   "op": "entry",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "tue"
+   ]
+  },
+  {
+   "label": "\"Wed\"",
+   "op": "entry",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "wed"
+   ]
+  },
+  {
+   "label": "\"Thu\"",
+   "op": "entry",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "thu"
+   ]
+  },
+  {
+   "label": "\"Fri\"",
+   "op": "entry",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "fri"
+   ]
+  },
+  {
+   "label": "\"Sat\"",
+   "op": "entry",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "sat"
+   ]
+  },
+  {
+   "label": "\"Sun\"",
+   "op": "entry",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "sun"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "@/features/axistime/components/day-axis"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import day axis"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axistime/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "@/features/axistime/components/entry-cards"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axistime/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import entry cards"
+  },
+  {
+   "label": "\"Supplier data encryption attack\"",
+   "op": "block",
+   "args": [
+    "src/features/axistime/data/timeline.ts",
+    "threat"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-timeline",
+     "src/features/axistime/data/timeline.ts"
+    ],
+    [
+     "screen",
+     "src/app/axistime/index.tsx"
+    ],
+    [
+     "timeline-chart",
+     "src/features/axistime/components/timeline-chart.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/axistime/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

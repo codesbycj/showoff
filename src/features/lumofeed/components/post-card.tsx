@@ -1,0 +1,123 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { count, post } from '../data/feed';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  margin: number;
+  width: number;
+  imageH: number;
+  headH: number;
+  actionsH: number;
+  captionH: number;
+  radius: number;
+  onOpen?: () => void;
+};
+
+/**
+ * The post.
+ *
+ * **Every count is formatted, never typed** — 1700 becomes "1.7k" through the
+ * same helper the reel uses, so two screens cannot disagree about the same
+ * post (R9).
+ *
+ * The action row's controls are siblings of the photograph's own `Pressable`,
+ * never children: a `role="button"` inside another is torn apart by the static
+ * web build's HTML parser (§7).
+ */
+export function PostCard({
+  margin,
+  width,
+  imageH,
+  headH,
+  actionsH,
+  captionH,
+  radius,
+  onOpen,
+}: Props) {
+  const actions = [
+    { id: 'like', glyph: post.liked ? ('liked' as const) : ('like' as const), value: post.likes },
+    { id: 'comment', glyph: 'comment' as const, value: post.comments },
+    { id: 'send', glyph: 'send' as const, value: post.shares },
+    { id: 'save', glyph: 'save' as const, value: post.saves },
+  ];
+
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      {/* STEP 1.18 name
+      <View style={{ height: headH, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <Image
+          source={post.avatar}
+          style={{ width: 38, height: 38, borderRadius: 19 }}
+          resizeMode="cover"
+        />
+        <View style={{ flex: 1 }}>
+          <T variant="postName">{post.name}</T>
+          <T variant="postHandle">{post.handle}</T>
+        </View>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`Notify me about ${post.name}`}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        >
+          <View
+            style={{
+              width: 34,
+              height: 34,
+              borderRadius: 17,
+              backgroundColor: ct.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="bell" size={16} color={ct.ink} strokeWidth={1.7} />
+          </View>
+        </Pressable>
+      </View>
+      */}
+
+      {/* STEP 1.19 image
+      <Pressable accessibilityRole="button" accessibilityLabel={post.caption} onPress={onOpen}>
+        <Image
+          source={post.image}
+          style={{ width, height: imageH, borderRadius: radius }}
+          resizeMode="cover"
+        />
+      </Pressable>
+      */}
+
+      {/* STEP 1.20 glyph
+      <View style={{ height: actionsH, flexDirection: 'row', alignItems: 'center', gap: 18 }}>
+        {actions.map((action) => (
+          <Pressable
+            key={action.id}
+            accessibilityRole="button"
+            accessibilityLabel={`${action.id}, ${count(action.value)}`}
+            hitSlop={{ top: 14, bottom: 14, left: 8, right: 8 }}
+            style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}
+          >
+            <Glyph
+              name={action.glyph}
+              size={19}
+              color={action.glyph === 'liked' ? ct.like : ct.ink}
+              strokeWidth={1.8}
+            />
+            <T variant="count">{count(action.value)}</T>
+          </Pressable>
+        ))}
+      </View>
+      */}
+
+      {/* STEP 1.21 caption
+      <View style={{ height: captionH }}>
+        <T variant="caption" numberOfLines={1}>
+          {post.caption}
+        </T>
+      </View>
+      */}
+    </View>
+  );
+}

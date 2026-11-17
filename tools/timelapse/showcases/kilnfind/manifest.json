@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/kilnfind/index.tsx",
+  "search-row": "src/features/kilnfind/components/search-row.tsx",
+  "result-header": "src/features/kilnfind/components/result-header.tsx",
+  "result-grid": "src/features/kilnfind/components/result-grid.tsx",
+  "data-find": "src/features/kilnfind/data/find.ts",
+  "dock": "src/features/kilnfind/components/dock.tsx"
+}

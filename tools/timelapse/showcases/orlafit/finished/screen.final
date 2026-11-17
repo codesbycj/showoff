@@ -1,0 +1,129 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { FitFrame } from '@/features/orlafit/components/fit-frame';
+import { Glyph } from '@/features/orlafit/components/glyph';
+import { T } from '@/features/orlafit/components/text';
+import { fit } from '@/features/orlafit/data/fit';
+import { useLayout } from '@/features/orlafit/layout';
+import { ct } from '@/features/orlafit/theme';
+
+/**
+ * Orla - the virtual fitting.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The camera frame is the remainder, so the screen always ends on its action
+ * with no band under it (I3).
+ */
+export default function OrlafitScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 16,
+        }}
+      >
+        <View style={{ flex: 1 }}>
+          <T variant="fitTitle">{fit.title}</T>
+          <T variant="fitSub">{fit.sub}</T>
+        </View>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Close the fitting"
+          onPress={() => router.push('/orlaring')}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.white,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="close" size={17} color={ct.ink} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapHeader }} />
+      <FitFrame margin={L.margin} height={L.frame.h} corner={L.frame.corner} />
+
+      <View style={{ height: L.gapNote }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.noteH,
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 6,
+        }}
+      >
+        <T variant="fitNote" style={{ textAlign: 'center' }}>
+          {fit.note}
+        </T>
+      </View>
+
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 12,
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={fit.cta}
+          onPress={() => router.push('/orlafind')}
+          style={{ flex: 1 }}
+        >
+          <View
+            style={{
+              height: L.cta.h,
+              borderRadius: L.cta.h / 2,
+              backgroundColor: ct.sageDeep,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="tryCta">{fit.cta}</T>
+          </View>
+        </Pressable>
+
+        <Pressable accessibilityRole="button" accessibilityLabel="Your bag">
+          <View
+            style={{
+              width: L.cta.h,
+              height: L.cta.h,
+              borderRadius: L.cta.h / 2,
+              backgroundColor: ct.blush,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="cart" size={20} color={ct.onBlush} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.footer }} />
+    </View>
+  );
+}

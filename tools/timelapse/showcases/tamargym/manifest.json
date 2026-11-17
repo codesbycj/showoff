@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/tamargym/index.tsx",
+  "gym-hero": "src/features/tamargym/components/gym-hero.tsx",
+  "data-gym": "src/features/tamargym/data/gym.ts",
+  "gym-title": "src/features/tamargym/components/gym-title.tsx",
+  "gym-address": "src/features/tamargym/components/gym-address.tsx",
+  "amenity-row": "src/features/tamargym/components/amenity-row.tsx",
+  "price-row": "src/features/tamargym/components/price-row.tsx",
+  "fact-strip": "src/features/tamargym/components/fact-strip.tsx",
+  "reserve-cta": "src/features/tamargym/components/reserve-cta.tsx"
+}

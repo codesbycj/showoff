@@ -1,0 +1,36 @@
+/**
+ * Everything verdestart says.
+ *
+ * **Two of the board's mistakes are fixed here** (I1): its hero badge reads
+ * "Minerale", which is `Minerals`, and its welcome body is two sentences of
+ * filler — "Good to see you again Continue your journey with a smooth,
+ * connected experience" — which R5 trims to one line of nine words.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Verdeat' };
+
+export const hero = {
+  image: require('../../../../assets/images/verdestart/hero.jpg'),
+};
+
+export type Badge = { id: string; label: string; side: 'left' | 'right' };
+
+/** The two nutrition flags the board floats over its burger. */
+export const badges: Badge[] = [
+  { id: 'vitamin', label: 'Vitamin B3', side: 'left' },
+  // STEP 1.04 "Minerals"
+  // { id: 'minerals', label: 'Minerals', side: 'right' },
+];
+
+export const welcome = {
+  title: 'Welcome back',
+  /** R5: one line, 52 characters. The board's runs to two sentences. */
+  body: 'Your usual order is one tap away.',
+  primary: 'Sign up',
+  secondary: 'Log in',
+  footLead: 'New here?',
+  footLink: 'Create an account',
+};

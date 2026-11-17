@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/zonestart/index.tsx",
+  "join-banner": "src/features/zonestart/components/join-banner.tsx",
+  "headline": "src/features/zonestart/components/headline.tsx",
+  "data-start": "src/features/zonestart/data/start.ts",
+  "burger-hero": "src/features/zonestart/components/burger-hero.tsx",
+  "start-actions": "src/features/zonestart/components/start-actions.tsx"
+}

@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/pulptrack/index.tsx",
+  "map-ground": "src/features/pulptrack/components/map-ground.tsx",
+  "map-pins": "src/features/pulptrack/components/map-pins.tsx",
+  "map-controls": "src/features/pulptrack/components/map-controls.tsx",
+  "eta-chip": "src/features/pulptrack/components/eta-chip.tsx",
+  "stage-rail": "src/features/pulptrack/components/stage-rail.tsx",
+  "data-order": "src/features/pulptrack/data/order.ts",
+  "courier-row": "src/features/pulptrack/components/courier-row.tsx"
+}

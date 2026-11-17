@@ -1,0 +1,53 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BrandBar } from '@/features/orlafind/components/brand-bar';
+import { CollectionCount } from '@/features/orlafind/components/collection-count';
+import { DiscoverTitle } from '@/features/orlafind/components/discover-title';
+import { KindChips } from '@/features/orlafind/components/kind-chips';
+import { RingRail } from '@/features/orlafind/components/ring-rail';
+import { useLayout } from '@/features/orlafind/layout';
+import { ct } from '@/features/orlafind/theme';
+
+/**
+ * Orla - the collection.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The card rail is the remainder and runs past the screen edge, so the screen
+ * ends on a card crossing the frame with no band under it (I3).
+ */
+export default function OrlafindScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <BrandBar margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <DiscoverTitle margin={L.margin} height={L.displayH} />
+
+      <CollectionCount margin={L.margin} height={L.countH} />
+
+      <View style={{ height: L.gapDisplay }} />
+      <KindChips margin={L.margin} height={L.chipH} />
+
+      <View style={{ height: L.gapChips }} />
+      <RingRail
+        margin={L.margin}
+        width={L.card.w}
+        height={L.card.h}
+        radius={L.card.radius}
+        onOpen={() => router.push('/orlaring')}
+      />
+
+      <View style={{ height: L.footer }} />
+    </View>
+  );
+}

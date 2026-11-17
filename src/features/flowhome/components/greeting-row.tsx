@@ -1,0 +1,55 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { account } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * Who is signed in, and the control that logs something.
+ *
+ * **The avatar is a photograph** (I4) — the board draws a lettered disc, which
+ * is a fallback state rather than a substitute.
+ */
+export function GreetingRow({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+      }}
+    >
+      <Image
+        source={account.avatar}
+        style={{ width: 44, height: 44, borderRadius: 22 }}
+        resizeMode="cover"
+        accessibilityLabel={account.name}
+      />
+
+      <View style={{ flex: 1 }}>
+        <T variant="greeting">{account.greeting}</T>
+        <T variant="name">{account.name}</T>
+      </View>
+
+      <Pressable accessibilityRole="button" accessibilityLabel="Log something">
+        <View
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 22,
+            backgroundColor: ct.surface,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="plus" size={19} color={ct.ink} strokeWidth={2} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

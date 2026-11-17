@@ -1,0 +1,66 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AccountRow } from '@/features/verdehome/components/account-row';
+import { CategoryChips } from '@/features/verdehome/components/category-chips';
+import { DishGrid } from '@/features/verdehome/components/dish-grid';
+import { PillDock } from '@/features/verdehome/components/pill-dock';
+import { PromoCard } from '@/features/verdehome/components/promo-card';
+import { SearchRow } from '@/features/verdehome/components/search-row';
+import { SectionRow } from '@/features/verdehome/components/section-row';
+import { sections } from '@/features/verdehome/data/home';
+import { useLayout } from '@/features/verdehome/layout';
+import { ct } from '@/features/verdehome/theme';
+
+/**
+ * Verdeat — home.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The dish grid runs under the floating dock exactly as the board crops it, so
+ * the foot cannot open a band (I3).
+ */
+export default function VerdehomeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <AccountRow margin={L.margin} height={L.headerH} />
+
+      <View style={{ height: L.gapHeader }} />
+      <SearchRow margin={L.margin} height={L.search.h} radius={L.search.radius} />
+
+      <View style={{ height: L.gapSearch }} />
+      <PromoCard
+        margin={L.margin}
+        width={L.W - L.margin * 2}
+        height={L.promo.h}
+        radius={L.promo.radius}
+      />
+
+      <View style={{ height: L.gapPromo }} />
+      <SectionRow margin={L.margin} height={L.sectionH} label={sections.categories} />
+
+      <View style={{ height: L.gapSection }} />
+      <CategoryChips margin={L.margin} height={L.chip.h} radius={L.chip.radius} />
+
+      <View style={{ height: L.gapChips }} />
+      <DishGrid
+        margin={L.margin}
+        width={L.card.w}
+        imageH={L.card.imageH}
+        radius={L.card.radius}
+        bottomPad={L.dock.h + L.dock.bottom}
+        onSelect={() => router.push('/verdedish')}
+      />
+
+      <PillDock height={L.dock.h} bottom={L.dock.bottom} active="home" />
+    </View>
+  );
+}

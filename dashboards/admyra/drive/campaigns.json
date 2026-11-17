@@ -1,0 +1,110 @@
+{
+  "url": "http://localhost:5420/",
+  "width": 1440,
+  "height": 900,
+  "out": "drive/shots/campaigns",
+  "beats": [
+    {
+      "name": "rest",
+      "rest": true
+    },
+    {
+      "name": "hover-row",
+      "hover": "[data-row='c-4'] td:nth-child(3)"
+    },
+    {
+      "name": "hover-row-other",
+      "hover": "[data-row='c-2'] td:nth-child(3)"
+    },
+    {
+      "name": "pick-one",
+      "click": "[data-row='c-1'] [role='checkbox']",
+      "rest": true
+    },
+    {
+      "name": "pick-two",
+      "click": "[data-row='c-4'] [role='checkbox']",
+      "rest": true
+    },
+    {
+      "name": "pick-all",
+      "click": "thead [role='checkbox']",
+      "rest": true
+    },
+    {
+      "name": "pick-none",
+      "click": "thead [role='checkbox']",
+      "rest": true
+    },
+    {
+      "name": "switch-off",
+      "click": "[data-row='c-1'] [role='switch']",
+      "rest": true
+    },
+    {
+      "name": "switch-on-again",
+      "click": "[data-row='c-1'] [role='switch']",
+      "rest": true
+    },
+    {
+      "name": "switch-dormant-on",
+      "click": "[data-row='c-5'] [role='switch']",
+      "rest": true
+    },
+    {
+      "name": "switch-dormant-off",
+      "click": "[data-row='c-5'] [role='switch']",
+      "rest": true
+    },
+    {
+      "name": "sort-name",
+      "click": "[data-sort='name']",
+      "rest": true
+    },
+    {
+      "name": "sort-name-asc",
+      "click": "[data-sort='name']",
+      "rest": true
+    },
+    {
+      "name": "sort-delivery",
+      "click": "[data-sort='delivery']",
+      "rest": true
+    },
+    {
+      "name": "scroll-to-spent",
+      "eval": "document.querySelector('[data-scroller=table]').scrollLeft = 420",
+      "rest": true
+    },
+    {
+      "name": "sort-spent",
+      "click": "[data-sort='spent']",
+      "rest": true
+    },
+    {
+      "name": "sort-spent-asc",
+      "click": "[data-sort='spent']",
+      "rest": true
+    },
+    {
+      "name": "scroll-home",
+      "eval": "document.querySelector('[data-scroller=table]').scrollLeft = 0",
+      "rest": true
+    },
+    {
+      "name": "scroll-right",
+      "eval": "document.querySelector('[data-scroller=table]').scrollLeft = 1700",
+      "rest": true
+    },
+    {
+      "name": "scroll-far-right",
+      "eval": "document.querySelector('[data-scroller=table]').scrollLeft = 3000",
+      "rest": true
+    },
+    {
+      "name": "scroll-back",
+      "eval": "document.querySelector('[data-scroller=table]').scrollLeft = 0",
+      "rest": true
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+/**
+ * Everything slurppay says, so the components stay presentational.
+ *
+ * **The payment brands are invented.** The board sets Mastercard, PayPal and
+ * Apple Pay marks; none of those are ours to ship, so the three methods here
+ * are made up and their marks are drawn (I1 / I4).
+ *
+ * **The summary is computed** (R9). The lines are the cart's, carried here so
+ * the two screens agree, and every figure under them is summed rather than
+ * typed - the board types $30.00 over two lines that add to $13.67.
+ *
+ * **Every array is annotated** (I7): a reveal fills them one entry at a time,
+ * and a type inferred from whichever rows happen to be uncommented loses every
+ * property that only appears on a later row.
+ */
+export const header = {
+  title: 'Checkout',
+  add: 'Add payment method',
+  addressSection: 'Delivery address',
+  summary: 'Order summary',
+  cta: 'Pay now',
+};
+
+export type Mark = 'card' | 'drop' | 'wave';
+
+export type Method = { id: string; name: string; detail: string; mark: Mark; on?: boolean };
+
+export const methods: Method[] = [
+  { id: 'nova', name: 'Nova Card', detail: '•••• •••• 8463', mark: 'card', on: true },
+  { id: 'drift', name: 'Driftpay', detail: 'orb•••••@mail.com', mark: 'drop' },
+  { id: 'tapwell', name: 'Tapwell', detail: 'Tap to pay', mark: 'wave' },
+];
+
+export const address = {
+  line: '11/2 Diriyah, Road no A3',
+  city: 'Riyadh (SA)',
+};
+
+/** The cart's lines, so the subtotal here is the same sum it was there. */
+export type Line = { id: string; price: number; qty: number };
+
+export const lines: Line[] = [
+  { id: 'ramen', price: 5.33, qty: 3 },
+  { id: 'skewers', price: 8.34, qty: 1 },
+  { id: 'ricebowl', price: 7.8, qty: 1 },
+];
+
+export const charges = { promo: -2.2, delivery: 6, tax: 2 };
+
+/** Guarded for the empty case the reveal starts from (I7). */
+export const subtotal = () => lines.reduce((sum, line) => sum + line.price * line.qty, 0);
+
+export const total = () => subtotal() + charges.promo + charges.delivery + charges.tax;
+
+export type Row = { id: string; label: string; value: number };
+
+export const rows = (): Row[] => [
+  { id: 'amount', label: 'Order amount', value: subtotal() },
+  { id: 'promo', label: 'Promo-code', value: charges.promo },
+  { id: 'delivery', label: 'Delivery', value: charges.delivery },
+  { id: 'tax', label: 'Tax', value: charges.tax },
+];
+
+export const money = (n: number) => `${n < 0 ? '-' : ''}$${Math.abs(n).toFixed(2)}`;

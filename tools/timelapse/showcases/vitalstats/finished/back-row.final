@@ -1,0 +1,49 @@
+import { Pressable, View } from 'react-native';
+
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { margin: number; height: number; onPress: () => void };
+
+/**
+ * The back control.
+ *
+ * A component rather than markup in the screen (rule 2), so the screen stays a
+ * list of imports and assembled blocks - and so the disc arriving and the
+ * chevron landing on it are two beats of the reveal rather than one.
+ *
+ * `hitSlop` carries it to 44dp (R7): the disc is drawn at the board's size, and
+ * the fix for a small control is slop, not a bigger circle.
+ *
+ * The visual box sits on an inner `View`, never on the `Pressable`'s own style
+ * function - a function style is dropped in the static web render (Part 7).
+ */
+export function BackRow({ margin, height, onPress }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center' }}>
+      <Pressable
+        hitSlop={10}
+        onPress={onPress}
+        accessibilityRole="button"
+        accessibilityLabel="Back"
+        style={{ alignSelf: 'flex-start' }}
+      >
+        {({ pressed }) => (
+          <View
+            style={{
+              width: height,
+              height,
+              borderRadius: height / 2,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'rgba(255,255,255,0.7)',
+              opacity: pressed ? 0.7 : 1,
+            }}
+          >
+            <Glyph name="back" size={18} color={ct.ink} />
+          </View>
+        )}
+      </Pressable>
+    </View>
+  );
+}

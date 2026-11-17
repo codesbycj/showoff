@@ -1,0 +1,53 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { DayAxis } from '@/features/axistime/components/day-axis';
+import { EntryCards } from '@/features/axistime/components/entry-cards';
+import { PageGround } from '@/features/axistime/components/page-ground';
+import { T } from '@/features/axistime/components/text';
+import { TimelineChart } from '@/features/axistime/components/timeline-chart';
+import { TopBar } from '@/features/axistime/components/top-bar';
+import { header } from '@/features/axistime/data/timeline';
+import { useLayout } from '@/features/axistime/layout';
+import { ct } from '@/features/axistime/theme';
+
+/**
+ * Axis - the timeline.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * Both curves are plotted from the same series the weekday axis labels (R9),
+ * and the plot takes the remainder so the screen is full to the bottom edge
+ * (I3).
+ */
+export default function AxistimeScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.pageMid }}>
+      <StatusBar style="dark" />
+      <PageGround width={L.W} height={L.H} />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <TopBar margin={L.margin} height={L.topH} onBack={() => router.push('/axisrisk')} />
+
+      <View style={{ height: L.gapTop }} />
+      <View style={{ marginHorizontal: L.margin, height: L.displayH }}>
+        <T variant="display">{header.display}</T>
+      </View>
+
+      <View style={{ height: L.gapDisplay }} />
+      <TimelineChart width={L.W} height={L.chartH} margin={L.margin} />
+
+      <DayAxis margin={L.margin} height={L.axisH} />
+
+      <View style={{ height: L.gapAxis }} />
+      <EntryCards margin={L.margin} height={L.card.h} gap={L.card.gap} radius={L.card.radius} />
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

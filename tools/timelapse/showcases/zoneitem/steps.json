@@ -1,0 +1,396 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/item-hero"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-hero.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import item hero + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-hero.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-hero.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-hero.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/liked-badge"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "import liked badge"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/liked-badge.tsx",
+            "STEP 1.07"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/item-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.08"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-title.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "import item title + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-title.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/item-title.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "view"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/item-blurb"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "import item blurb"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/addon-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/addon-head.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import addon head + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/addon-head.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "optional"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/addon-head.tsx",
+            "STEP 1.16"
+          ]
+        }
+      ],
+      "label": "note"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/addon-list"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.17"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/addon-list.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "import addon list + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneitem/data/item.ts",
+            "patty"
+          ]
+        }
+      ],
+      "label": "\"Chicken Patty\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneitem/data/item.ts",
+            "egg"
+          ]
+        }
+      ],
+      "label": "\"Poached Egg\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneitem/data/item.ts",
+            "bacon"
+          ]
+        }
+      ],
+      "label": "\"Smoked Bacon\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "@/features/zoneitem/components/cart-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.22"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/cart-bar.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "import cart bar + \"Fewer\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/cart-bar.tsx",
+            "STEP 1.24"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/cart-bar.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "t + \"More\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneitem/components/cart-bar.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zoneitem/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "addon-head",
+              "src/features/zoneitem/components/addon-head.tsx"
+            ],
+            [
+              "addon-list",
+              "src/features/zoneitem/components/addon-list.tsx"
+            ],
+            [
+              "cart-bar",
+              "src/features/zoneitem/components/cart-bar.tsx"
+            ],
+            [
+              "data-item",
+              "src/features/zoneitem/data/item.ts"
+            ],
+            [
+              "item-hero",
+              "src/features/zoneitem/components/item-hero.tsx"
+            ],
+            [
+              "item-title",
+              "src/features/zoneitem/components/item-title.tsx"
+            ],
+            [
+              "liked-badge",
+              "src/features/zoneitem/components/liked-badge.tsx"
+            ],
+            [
+              "screen",
+              "src/app/zoneitem/index.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

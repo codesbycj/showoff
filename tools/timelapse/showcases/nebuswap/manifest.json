@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/nebuswap/index.tsx",
+  "nebula-ground": "src/features/nebuswap/components/nebula-ground.tsx",
+  "swap-fields": "src/features/nebuswap/components/swap-fields.tsx",
+  "rate-insight": "src/features/nebuswap/components/rate-insight.tsx",
+  "swap-list": "src/features/nebuswap/components/swap-list.tsx",
+  "data-swap": "src/features/nebuswap/data/swap.ts",
+  "dock": "src/features/nebuswap/components/dock.tsx"
+}

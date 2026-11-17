@@ -1,0 +1,328 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "@/features/nordsearch/components/sheet-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import sheet ground"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "@/features/nordsearch/components/sheet-handle"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import sheet handle"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "@/features/nordsearch/components/search-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import search header"
+  },
+  {
+   "label": "\"Close search\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/search-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/search-header.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "\"Filters\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/search-header.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/nordsearch/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nordsearch/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "@/features/nordsearch/components/query-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import query card"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/query-card.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "place",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/query-card.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "meta",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/query-card.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "@/features/nordsearch/components/type-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import type chips"
+  },
+  {
+   "label": "\"Room\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordsearch/data/search.ts",
+    "room"
+   ]
+  },
+  {
+   "label": "\"Entire home\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordsearch/data/search.ts",
+    "home"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "@/features/nordsearch/components/result-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordsearch/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import result list"
+  },
+  {
+   "label": "\"Timber lodge, Hemsedal\"",
+   "op": "block",
+   "args": [
+    "src/features/nordsearch/data/search.ts",
+    "timber"
+   ]
+  },
+  {
+   "label": "\"Hillside studio, Valdres\"",
+   "op": "block",
+   "args": [
+    "src/features/nordsearch/data/search.ts",
+    "hillside"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nordsearch/components/result-card.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/nordsearch/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nordsearch/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-search",
+     "src/features/nordsearch/data/search.ts"
+    ],
+    [
+     "query-card",
+     "src/features/nordsearch/components/query-card.tsx"
+    ],
+    [
+     "result-card",
+     "src/features/nordsearch/components/result-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nordsearch/index.tsx"
+    ],
+    [
+     "search-header",
+     "src/features/nordsearch/components/search-header.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

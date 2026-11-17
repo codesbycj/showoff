@@ -1,0 +1,82 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { AddBar } from '@/features/cocoaitem/components/add-bar';
+import { Glyph } from '@/features/cocoaitem/components/glyph';
+import { ItemHero } from '@/features/cocoaitem/components/item-hero';
+import { QtyRow } from '@/features/cocoaitem/components/qty-row';
+import { T } from '@/features/cocoaitem/components/text';
+import { product } from '@/features/cocoaitem/data/item';
+import { useLayout } from '@/features/cocoaitem/layout';
+import { ct } from '@/features/cocoaitem/theme';
+
+/**
+ * Cocoa - the product.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The photograph is the remainder, so the screen always ends on its action
+ * with no band under it (I3).
+ */
+export default function CocoaitemScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/cocoahome')}
+        >
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={18} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ marginHorizontal: L.margin, height: L.titleH, justifyContent: 'center' }}>
+        <T variant="itemName" numberOfLines={1}>
+          {product.name}
+        </T>
+        <T variant="itemMaker">{product.maker}</T>
+      </View>
+
+      <View style={{ height: L.gapTitle }} />
+      <ItemHero width={L.W} height={L.hero.h} variant={L.hero.variant} margin={L.margin} />
+
+      <QtyRow margin={L.margin} height={L.stepH} />
+
+      <View style={{ height: L.gapStep }} />
+      <AddBar
+        margin={L.margin}
+        height={L.cta.h}
+        radius={L.cta.radius}
+        onPress={() => router.push('/cocoacart')}
+      />
+    </View>
+  );
+}

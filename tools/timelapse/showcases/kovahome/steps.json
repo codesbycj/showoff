@@ -1,0 +1,353 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/greet-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import greet row"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/greet-row.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Notifications\"",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/greet-row.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/stat-strip"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import stat strip"
+  },
+  {
+   "label": "\"Nora D.\"",
+   "op": "block",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "nora"
+   ]
+  },
+  {
+   "label": "\"Studio K\"",
+   "op": "block",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "studio"
+   ]
+  },
+  {
+   "label": "\"Studio K brand shoot\"",
+   "op": "block",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "shoot"
+   ]
+  },
+  {
+   "label": "\"Festival set\"",
+   "op": "block",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "promo"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/section-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import section row"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/section-row.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/section-row.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/client-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import client rail"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/glyph"
+     ]
+    },
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import glyph + import text + add"
+  },
+  {
+   "label": "section row",
+   "op": "jsx",
+   "args": [
+    "src/app/kovahome/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/reminder-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import reminder card"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/reminder-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/reminder-card.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "section row",
+   "op": "jsx",
+   "args": [
+    "src/app/kovahome/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/upcoming-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import upcoming rail"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "@/features/kovahome/components/pill-dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovahome/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import pill dock"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/pill-dock.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovahome/components/pill-dock.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "\"Inbox\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "inbox"
+   ]
+  },
+  {
+   "label": "\"Jobs\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "jobs"
+   ]
+  },
+  {
+   "label": "\"Account\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "me"
+   ]
+  },
+  {
+   "label": "\"New\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovahome/data/home.ts",
+    "new"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovahome/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovahome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-home",
+     "src/features/kovahome/data/home.ts"
+    ],
+    [
+     "greet-row",
+     "src/features/kovahome/components/greet-row.tsx"
+    ],
+    [
+     "pill-dock",
+     "src/features/kovahome/components/pill-dock.tsx"
+    ],
+    [
+     "reminder-card",
+     "src/features/kovahome/components/reminder-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/kovahome/index.tsx"
+    ],
+    [
+     "section-row",
+     "src/features/kovahome/components/section-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

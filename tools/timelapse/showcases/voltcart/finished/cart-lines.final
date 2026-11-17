@@ -1,0 +1,137 @@
+import { Image, Pressable, ScrollView, View } from 'react-native';
+
+import { cartCount, controls, lines } from '../data/cart';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  margin: number;
+  selectH: number;
+  height: number;
+  radius: number;
+  gap: number;
+  bottomPad: number;
+};
+
+/**
+ * What is in the cart.
+ *
+ * Each line's tick, its stepper and its bin are 44dp controls (R7); the board
+ * draws them at 24. The stepper's two buttons are siblings of the row rather
+ * than children of a pressable row, because a `role="button"` inside another
+ * is torn apart by the static web build's parser (§7).
+ */
+export function CartLines({ margin, selectH, height, radius, gap, bottomPad }: Props) {
+  const count = cartCount(lines);
+
+  const tick = (on: boolean) => (
+    <View
+      style={{
+        width: 22,
+        height: 22,
+        borderRadius: 7,
+        borderWidth: on ? 0 : 1.5,
+        borderColor: ct.line,
+        backgroundColor: on ? ct.acid : ct.surface,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {on ? <Glyph name="tick" size={14} color={ct.acidInk} strokeWidth={2.4} /> : null}
+    </View>
+  );
+
+  const step = (label: string, glyph: 'minus' | 'plus') => (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      hitSlop={{ top: 7, bottom: 7, left: 7, right: 7 }}
+    >
+      <View
+        style={{
+          width: 30,
+          height: 30,
+          borderRadius: 15,
+          backgroundColor: ct.tray,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph name={glyph} size={15} color={ct.ink} strokeWidth={2} />
+      </View>
+    </Pressable>
+  );
+
+  return (
+    <ScrollView
+      style={{ flex: 1 }}
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingHorizontal: margin, gap, paddingBottom: bottomPad }}
+    >
+      <View style={{ height: selectH, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <Pressable
+          accessibilityRole="checkbox"
+          accessibilityState={{ checked: true }}
+          accessibilityLabel={controls.selectAll}
+          hitSlop={{ top: 11, bottom: 11, left: 11, right: 11 }}
+        >
+          {tick(true)}
+        </Pressable>
+        <T variant="selectAll">
+          {controls.selectAll} ({count})
+        </T>
+      </View>
+
+      {lines.map((line) => (
+        <View
+          key={line.id}
+          style={{
+            height,
+            borderRadius: radius,
+            backgroundColor: ct.surface,
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 12,
+            gap: 12,
+          }}
+        >
+          <Pressable
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: !!line.selected }}
+            accessibilityLabel={line.title}
+            hitSlop={{ top: 11, bottom: 11, left: 11, right: 11 }}
+          >
+            {tick(!!line.selected)}
+          </Pressable>
+
+          <View
+            style={{
+              width: 64,
+              height: 64,
+              borderRadius: 14,
+              backgroundColor: ct.tray,
+              overflow: 'hidden',
+            }}
+          >
+            <Image source={line.image} style={{ width: 64, height: 64 }} resizeMode="cover" />
+          </View>
+
+          <View style={{ flex: 1, gap: 2 }}>
+            <T variant="lineTitle" numberOfLines={2}>
+              {line.title}
+            </T>
+            <T variant="lineVariant">{line.variant}</T>
+            <T variant="linePrice">£{(line.price * line.qty).toLocaleString('en-GB')}.00</T>
+          </View>
+
+          <View style={{ alignItems: 'center', gap: 6 }}>
+            {step(`Fewer ${line.title}`, 'minus')}
+            <T variant="qty">{line.qty}</T>
+            {step(`More ${line.title}`, 'plus')}
+          </View>
+        </View>
+      ))}
+    </ScrollView>
+  );
+}

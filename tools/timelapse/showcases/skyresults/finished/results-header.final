@@ -1,0 +1,51 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/results';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onBack?: () => void };
+
+/**
+ * Back, title, overflow.
+ *
+ * Both controls are 44dp of real box (R7) — the board draws them at about
+ * 36dp, which is a tap target the artboard could afford and a thumb cannot.
+ */
+export function ResultsHeader({ margin, height, onBack }: Props) {
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: ct.surface,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onBack}>
+        <View style={round}>
+          <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+        </View>
+      </Pressable>
+
+      <T variant="title">{header.title}</T>
+
+      <Pressable accessibilityRole="button" accessibilityLabel="More options">
+        <View style={round}>
+          <Glyph name="more" size={19} color={ct.ink} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

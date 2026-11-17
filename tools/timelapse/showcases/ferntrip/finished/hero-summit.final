@@ -1,0 +1,193 @@
+import { useId } from 'react';
+import { Image, Pressable, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
+
+import { party, summit } from '../data/trip';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  width: number;
+  height: number;
+  dome: number;
+  disc: number;
+  margin: number;
+  insetTop: number;
+  onBack: () => void;
+};
+
+/**
+ * The summit the trip is on — the photograph the screen opens with (I4).
+ *
+ * The sheet's dome is drawn **inside** this block, as a shape across its own
+ * bottom edge, rather than as a sibling pulled up over it: a surface that
+ * straddles another surface's edge is the shape `audit.js` reports as
+ * `COVERED`, and the shape an accident has.
+ *
+ * The caption sits on a scrim so every string clears 4.5:1 over any frame of
+ * the photograph (R4). The scrim is an `<svg>` gradient rather than
+ * `expo-linear-gradient`, which flips a diagonal on web (§7), and its ids come
+ * from `useId` because ids are document-global there.
+ */
+export function HeroSummit({ width, height, dome, disc, margin, insetTop, onBack }: Props) {
+  const gid = useId();
+
+  return (
+    <View style={{ width, height, overflow: 'hidden' }}>
+      <Image
+        source={summit.image}
+        style={{ position: 'absolute', top: 0, left: 0, width, height }}
+        resizeMode="cover"
+      />
+
+      <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+        <Defs>
+          <LinearGradient id={`${gid}-scrim`} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0.34" stopColor="#101A12" stopOpacity="0" />
+            <Stop offset="1" stopColor="#101A12" stopOpacity="0.62" />
+          </LinearGradient>
+        </Defs>
+        <Rect x="0" y="0" width={width} height={height} fill={`url(#${gid}-scrim)`} />
+      </Svg>
+
+      <View
+        style={{
+          marginTop: insetTop,
+          marginHorizontal: margin,
+          height: 52,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onBack}>
+          <View
+            style={{
+              width: disc,
+              height: disc,
+              borderRadius: disc / 2,
+              backgroundColor: ct.scrimDisc,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={20} color={ct.white} strokeWidth={2} />
+          </View>
+        </Pressable>
+
+        <View
+          style={{
+            height: 52,
+            paddingLeft: 6,
+            paddingRight: 16,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 10,
+          }}
+        >
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 26,
+              backgroundColor: ct.white,
+            }}
+          />
+
+          <View
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 20,
+              backgroundColor: ct.page,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="sun" size={24} color="#E8A317" />
+          </View>
+
+          <View>
+            <T variant="weatherLabel">{summit.weatherLabel}</T>
+            <T variant="weather">{summit.weather}</T>
+          </View>
+        </View>
+      </View>
+
+      <View
+        style={{ position: 'absolute', left: margin, right: margin, bottom: dome + 16, gap: 12 }}
+      >
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Glyph name="summit" size={18} color={ct.white} />
+          <T variant="altitude">{summit.altitude}</T>
+        </View>
+
+        <T variant="summit">{summit.name}</T>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          {party.avatars.map((avatar, i) => (
+            <Image
+              key={i}
+              source={avatar}
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 22,
+                borderWidth: 2.5,
+                borderColor: ct.white,
+                marginLeft: i === 0 ? 0 : -12,
+              }}
+              resizeMode="cover"
+            />
+          ))}
+
+          <View
+            style={{
+              height: 44,
+              paddingHorizontal: 13,
+              borderRadius: 22,
+              backgroundColor: ct.white,
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: -12,
+            }}
+          >
+            <T variant="badge">{party.more}</T>
+          </View>
+        </View>
+      </View>
+
+      <Svg
+        width={width}
+        height={dome}
+        style={{ position: 'absolute', left: 0, bottom: 0 }}
+        pointerEvents="none"
+      >
+        <Path d={`M0 ${dome} Q ${width / 2} ${-dome} ${width} ${dome} Z`} fill={ct.page} />
+      </Svg>
+
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`Save ${summit.name.replace('\n', ' ')}`}
+        style={{ position: 'absolute', right: margin + 4, bottom: dome }}
+      >
+        <View
+          style={{
+            width: 68,
+            height: 68,
+            borderRadius: 34,
+            backgroundColor: ct.white,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="star" size={32} color={ct.gold} filled strokeWidth={1.2} />
+        </View>
+      </Pressable>
+    </View>
+  );
+}

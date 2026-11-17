@@ -1,0 +1,51 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/checkout';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The way to add another way to pay.
+ *
+ * **The fill sits on an absolutely-filled child**, never on the row itself.
+ * Descending a container to stage its children leaves the container's own
+ * `backgroundColor` live, so an emptied pill paints a grey strip in frame one
+ * of the reveal - which is what `blank.js` reported here (I9 / SS5.5).
+ */
+export function AddMethod({ margin, height, radius }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={header.add}>
+      <View
+        style={{
+          marginHorizontal: margin,
+          height,
+          borderRadius: radius,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 8,
+        }}
+      >
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: ct.card,
+            borderRadius: radius,
+          }}
+        />
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+          <Glyph name="plus" size={15} color={ct.ink} strokeWidth={2} />
+          <T variant="rowValue">{header.add}</T>
+        </View>
+      </View>
+    </Pressable>
+  );
+}

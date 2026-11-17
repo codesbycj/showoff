@@ -1,0 +1,326 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "@/features/vitalweight/components/glyph"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.01"
+          ]
+        }
+      ],
+      "label": "import glyph + \"Back\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "@/features/vitalweight/components/weight-chart"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.02"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/weight-chart.tsx",
+            "STEP 1.03"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/weight-chart.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/weight-chart.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "stop + stop + line"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/weight-chart.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/weight-chart.tsx",
+            "STEP 1.07"
+          ]
+        }
+      ],
+      "label": "path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/weight-chart.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "@/features/vitalweight/components/breakdown-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "import breakdown title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "<View style={{ height: 11 }} />"
+          ]
+        }
+      ],
+      "label": "take the gap back out"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "@/features/vitalweight/components/stat-grid"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "import stat grid"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.13"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "<View style={{ height: 17 }} />"
+          ]
+        }
+      ],
+      "label": "take the gap back out"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "@/features/vitalweight/components/predict-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "import predict title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "@/features/vitalweight/components/predict-card"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/predict-card.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "import predict card + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/predict-card.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/predict-card.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/predict-card.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/predict-card.tsx",
+            "STEP 1.21"
+          ]
+        }
+      ],
+      "label": "note"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalweight/components/predict-card.tsx",
+            "STEP 1.22"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "glyph + a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalweight/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "predict-card",
+              "src/features/vitalweight/components/predict-card.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vitalweight/index.tsx"
+            ],
+            [
+              "weight-chart",
+              "src/features/vitalweight/components/weight-chart.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

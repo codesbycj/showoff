@@ -1,0 +1,361 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "@/features/sonicexplore/components/search-field"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.01"
+          ]
+        }
+      ],
+      "label": "import search field"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicexplore/components/search-field.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "placeholder"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicexplore/components/search-field.tsx",
+            "STEP 1.03"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "@/features/sonicexplore/components/explore-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "glyph + import explore title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "@/features/sonicexplore/components/feature-rail"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.05"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicexplore/components/feature-rail.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "import feature rail + tag"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "f2"
+          ]
+        }
+      ],
+      "label": "f2"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "f3"
+          ]
+        }
+      ],
+      "label": "f3"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.09"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "<View style={{ height: 11 }} />"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "@/features/sonicexplore/components/moods-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "a stray gap under it + take the gap back out + import moods title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.12"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "<View style={{ height: 17 }} />"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "@/features/sonicexplore/components/genre-grid"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.14"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicexplore/components/genre-grid.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "take the gap back out + import genre grid + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "g2"
+          ]
+        }
+      ],
+      "label": "\"Electronic\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "g3"
+          ]
+        }
+      ],
+      "label": "\"Pop\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "g4"
+          ]
+        }
+      ],
+      "label": "\"Party\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "g5"
+          ]
+        }
+      ],
+      "label": "\"Blues\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "g6"
+          ]
+        }
+      ],
+      "label": "\"Techno\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "@/features/sonicexplore/components/dock"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.21"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonicexplore/components/dock.tsx",
+            "STEP 1.22"
+          ]
+        }
+      ],
+      "label": "import dock + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "search"
+          ]
+        }
+      ],
+      "label": "\"Search\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "add"
+          ]
+        }
+      ],
+      "label": "\"Add\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "library"
+          ]
+        }
+      ],
+      "label": "\"Library\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonicexplore/data/explore.ts",
+            "me"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "STEP 1.27"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonicexplore/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-explore",
+              "src/features/sonicexplore/data/explore.ts"
+            ],
+            [
+              "dock",
+              "src/features/sonicexplore/components/dock.tsx"
+            ],
+            [
+              "feature-rail",
+              "src/features/sonicexplore/components/feature-rail.tsx"
+            ],
+            [
+              "genre-grid",
+              "src/features/sonicexplore/components/genre-grid.tsx"
+            ],
+            [
+              "screen",
+              "src/app/sonicexplore/index.tsx"
+            ],
+            [
+              "search-field",
+              "src/features/sonicexplore/components/search-field.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "\"Profile\" + take the gap back out + tidy up"
+    }
+  ]
+}

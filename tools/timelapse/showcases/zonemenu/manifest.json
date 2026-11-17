@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/zonemenu/index.tsx",
+  "menu-banner": "src/features/zonemenu/components/menu-banner.tsx",
+  "place-meta": "src/features/zonemenu/components/place-meta.tsx",
+  "delivery-card": "src/features/zonemenu/components/delivery-card.tsx",
+  "offer-row": "src/features/zonemenu/components/offer-row.tsx",
+  "data-menu": "src/features/zonemenu/data/menu.ts",
+  "dish-grid": "src/features/zonemenu/components/dish-grid.tsx",
+  "place-disc": "src/features/zonemenu/components/place-disc.tsx"
+}

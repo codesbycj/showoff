@@ -1,0 +1,63 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { FactGrid } from '@/features/axisprofile/components/fact-grid';
+import { PageGround } from '@/features/axisprofile/components/page-ground';
+import { PeopleRow } from '@/features/axisprofile/components/people-row';
+import { TabRow } from '@/features/axisprofile/components/tab-row';
+import { T } from '@/features/axisprofile/components/text';
+import { TopBar } from '@/features/axisprofile/components/top-bar';
+import { description, header } from '@/features/axisprofile/data/profile';
+import { useLayout } from '@/features/axisprofile/layout';
+import { ct } from '@/features/axisprofile/theme';
+
+/**
+ * Axis - the risk profile.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The fact card takes the remainder, so the screen is full to the bottom edge
+ * with no band under it (I3).
+ */
+export default function AxisprofileScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.pageMid }}>
+      <StatusBar style="dark" />
+      <PageGround width={L.W} height={L.H} />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <TopBar margin={L.margin} height={L.topH} onBack={() => router.push('/axisrisk')} />
+
+      <View style={{ height: L.gapTop }} />
+      <TabRow margin={L.margin} height={L.tabH} />
+
+      <View style={{ height: L.gapTabs }} />
+      <View style={{ marginHorizontal: L.margin, height: L.displayH }}>
+        <T variant="display">{header.display}</T>
+      </View>
+
+      <View style={{ height: L.gapDisplay }} />
+      <FactGrid margin={L.margin} height={L.cardH} radius={L.card.radius} />
+
+      <View style={{ height: L.gapCard }} />
+      <PeopleRow margin={L.margin} height={L.peopleH} />
+
+      <View style={{ height: L.gapPeople }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH }}>
+        <T variant="section">{description.label}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <View style={{ marginHorizontal: L.margin, height: L.bodyH }}>
+        <T variant="body">{description.body}</T>
+      </View>
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

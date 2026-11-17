@@ -1,0 +1,52 @@
+/**
+ * Everything nookstart says.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const brand = { name: 'Nook', browse: 'Browse the catalog' };
+
+export const splash = {
+  /** The board's headline, kept verbatim (I1), as its two lines. */
+  displayTop: 'Designer',
+  displayBottom: 'Furniture',
+  /** A count, not a sentence (R5). A splash for a catalogue that will not say
+   *  how big it is leaves the row the board crops (I3). */
+  count: '48 pieces in season',
+  /** A state, not a sentence (R5). */
+  ship: 'Ships in 3 days',
+  /** A state, not a sentence (R5). */
+  returns: 'Free returns',
+  cta: 'Start browsing',
+};
+
+export type Piece = { id: string; label: string; image: number; tint: 'green' | 'blue' | 'sand' };
+
+/**
+ * The three pieces posed on their discs.
+ *
+ * **Each is a cut-out photograph on a drawn disc** (I4): the disc is an idea,
+ * the chair is a picture of a chair. Five of the eight candidates would not
+ * cut cleanly and were dropped rather than tuned (RULES SS6.3).
+ */
+export const pieces: Piece[] = [
+  {
+    id: 'cantilever',
+    label: 'Cantilever chair',
+    image: require('../../../../assets/images/nookstart/f1.png'),
+    tint: 'green',
+  },
+  {
+    id: 'stool',
+    label: 'Bar stool',
+    image: require('../../../../assets/images/nookstart/f2.png'),
+    tint: 'blue',
+  },
+  {
+    id: 'armchair',
+    label: 'Armchair',
+    image: require('../../../../assets/images/nookstart/f3.png'),
+    tint: 'sand',
+  },
+];

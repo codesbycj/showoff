@@ -1,0 +1,56 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AddButton } from '@/features/pawsitem/components/add-button';
+import { FactRow } from '@/features/pawsitem/components/fact-row';
+import { ItemHeader } from '@/features/pawsitem/components/item-header';
+import { ProductHero } from '@/features/pawsitem/components/product-hero';
+import { T } from '@/features/pawsitem/components/text';
+import { product } from '@/features/pawsitem/data/item';
+import { useLayout } from '@/features/pawsitem/layout';
+import { ct } from '@/features/pawsitem/theme';
+
+/**
+ * Paws — the product.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The photograph is the remainder — everything under it is budgeted block by
+ * block — so the screen always ends on its button with no band under it (I3).
+ */
+export default function PawsitemScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ItemHeader margin={L.margin} height={L.headerH} onBack={() => router.push('/pawshome')} />
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ marginHorizontal: L.margin, height: L.titleH, justifyContent: 'center' }}>
+        <T variant="itemName" numberOfLines={1}>
+          {product.name}
+        </T>
+        <T variant="itemSub">{product.sub}</T>
+      </View>
+
+      <View style={{ height: L.gapTitle }} />
+      <ProductHero width={L.W} height={L.hero.h} variant={L.hero.variant} margin={L.margin} />
+
+      <FactRow margin={L.margin} height={L.factsH} />
+
+      <View style={{ height: L.gapFacts }} />
+      <View style={{ marginHorizontal: L.margin, height: L.bodyH }}>
+        <T variant="body">{product.body}</T>
+      </View>
+
+      <View style={{ height: L.gapBody }} />
+      <AddButton margin={L.margin} height={L.cta.h} onPress={() => router.push('/pawshome')} />
+    </View>
+  );
+}

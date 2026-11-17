@@ -1,0 +1,61 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { account } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * Who is signed in, and notifications.
+ *
+ * **The avatar is a photograph** (I4) — initials on a disc is a fallback
+ * state, not a substitute.
+ */
+export function GreetingRow({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+      }}
+    >
+      {/* STEP 1.03 image
+      <Image
+        source={account.avatar}
+        style={{ width: 46, height: 46, borderRadius: 23 }}
+        resizeMode="cover"
+        accessibilityLabel={account.hello}
+      />
+      */}
+
+      {/* STEP 1.04 hello
+      <View style={{ flex: 1 }}>
+        <T variant="hello">{account.hello}</T>
+        <T variant="welcome">{account.welcome}</T>
+      </View>
+      */}
+
+      {/* STEP 1.05 "Notifications"
+      <Pressable accessibilityRole="button" accessibilityLabel="Notifications">
+        <View
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 22,
+            backgroundColor: ct.white,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="bell" size={19} color={ct.ink} strokeWidth={1.7} />
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

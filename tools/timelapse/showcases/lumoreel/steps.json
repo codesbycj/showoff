@@ -1,0 +1,266 @@
+{
+ "1": [
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "STEP 1.01"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "@/features/lumoreel/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Search\"",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "@/features/lumoreel/components/action-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import action rail"
+  },
+  {
+   "label": "comment",
+   "op": "entry",
+   "args": [
+    "src/features/lumoreel/data/reel.ts",
+    "comment"
+   ]
+  },
+  {
+   "label": "share",
+   "op": "entry",
+   "args": [
+    "src/features/lumoreel/data/reel.ts",
+    "share"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "@/features/lumoreel/components/reel-caption"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import reel caption"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "handle",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "caption",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "audio",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoreel/components/reel-caption.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "@/features/lumoreel/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoreel/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Search\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoreel/data/reel.ts",
+    "search"
+   ]
+  },
+  {
+   "label": "\"Post\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoreel/data/reel.ts",
+    "post"
+   ]
+  },
+  {
+   "label": "\"Messages\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoreel/data/reel.ts",
+    "messages"
+   ]
+  },
+  {
+   "label": "\"Profile\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoreel/data/reel.ts",
+    "profile"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/lumoreel/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-reel",
+     "src/features/lumoreel/data/reel.ts"
+    ],
+    [
+     "reel-caption",
+     "src/features/lumoreel/components/reel-caption.tsx"
+    ],
+    [
+     "screen",
+     "src/app/lumoreel/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

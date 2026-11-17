@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/vestahome/index.tsx",
+  "top-bar": "src/features/vestahome/components/top-bar.tsx",
+  "search-row": "src/features/vestahome/components/search-row.tsx",
+  "promo-card": "src/features/vestahome/components/promo-card.tsx",
+  "chip-row": "src/features/vestahome/components/chip-row.tsx",
+  "data-shop": "src/features/vestahome/data/shop.ts",
+  "section-head": "src/features/vestahome/components/section-head.tsx",
+  "product-grid": "src/features/vestahome/components/product-grid.tsx",
+  "dock": "src/features/vestahome/components/dock.tsx"
+}

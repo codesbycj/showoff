@@ -1,0 +1,265 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "@/features/flowtrain/components/exercise-hero"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import exercise hero"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/flowtrain/components/exercise-hero.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Leave the session\"",
+   "op": "jsx",
+   "args": [
+    "src/features/flowtrain/components/exercise-hero.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/flowtrain/components/exercise-hero.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "\"Session options\"",
+   "op": "jsx",
+   "args": [
+    "src/features/flowtrain/components/exercise-hero.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "@/features/flowtrain/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "@/features/flowtrain/components/set-clock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import set clock"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/flowtrain/components/set-clock.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/flowtrain/components/set-clock.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "@/features/flowtrain/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import glyph"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "@/features/flowtrain/components/transport"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowtrain/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import transport"
+  },
+  {
+   "label": "\"Pause\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowtrain/data/train.ts",
+    "pause"
+   ]
+  },
+  {
+   "label": "\"Next exercise\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowtrain/data/train.ts",
+    "next"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowtrain/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-train",
+     "src/features/flowtrain/data/train.ts"
+    ],
+    [
+     "exercise-hero",
+     "src/features/flowtrain/components/exercise-hero.tsx"
+    ],
+    [
+     "screen",
+     "src/app/flowtrain/index.tsx"
+    ],
+    [
+     "set-clock",
+     "src/features/flowtrain/components/set-clock.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

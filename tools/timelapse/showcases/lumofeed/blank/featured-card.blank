@@ -1,0 +1,87 @@
+import { useId } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { featured } from '../data/feed';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; width: number; height: number; radius: number };
+
+/**
+ * The creator promo.
+ *
+ * **The board drops a 3D megaphone render into this card.** A render cannot be
+ * traced and must not be drawn badly (§2.2), so the mark here is the *idea* of
+ * a megaphone and the card keeps the board's gradient.
+ *
+ * The sweep is drawn in `react-native-svg` user space rather than with
+ * `expo-linear-gradient`, which flips a diagonal on web (§7); its id comes
+ * from `useId`, because SVG ids are document-global there.
+ */
+export function FeaturedCard({ margin, width, height, radius }: Props) {
+  const gid = useId();
+
+  return (
+    <View style={{ marginHorizontal: margin, height, borderRadius: radius }}>
+      {/* STEP 1.15 linear gradient
+      <Svg
+        width={width}
+        height={height}
+        style={{ position: 'absolute', top: 0, left: 0, borderRadius: radius }}
+      >
+        <Defs>
+          <LinearGradient id={gid} x1="0" y1="0" x2="1" y2="1">
+            <Stop offset="0" stopColor="#4C1D95" />
+            <Stop offset="1" stopColor="#1F1437" />
+          </LinearGradient>
+        </Defs>
+        <Rect x="0" y="0" width={width} height={height} rx={radius} fill={`url(#${gid})`} />
+      </Svg>
+      */}
+
+      {/* STEP 1.16 title
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 16,
+          gap: 14,
+        }}
+      >
+        <View style={{ flex: 1, gap: 4 }}>
+          <T variant="featured">{featured.title}</T>
+          <T variant="featuredBody">{featured.body}</T>
+
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={featured.cta}
+            hitSlop={{ top: 7, bottom: 7, left: 8, right: 8 }}
+            style={{ alignSelf: 'flex-start' }}
+          >
+            <View
+              style={{
+                marginTop: 6,
+                height: 32,
+                paddingHorizontal: 14,
+                borderRadius: 16,
+                backgroundColor: ct.violetDeep,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <T variant="featuredCta">{featured.cta}</T>
+            </View>
+          </Pressable>
+        </View>
+
+        <View style={{ zIndex: 1 }}>
+          <Glyph name="megaphone" size={54} color={ct.violet} strokeWidth={1.4} />
+        </View>
+      </View>
+      */}
+    </View>
+  );
+}

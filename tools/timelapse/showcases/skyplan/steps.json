@@ -1,0 +1,425 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/sky-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import sky ground"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/plan-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import plan header"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/plan-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Your account\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/plan-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/card-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import card ground"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/trip-fields"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import trip fields"
+  },
+  {
+   "label": "from label",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-fields.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-fields.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "to label",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-fields.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "\"Swap origin and destination\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-fields.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/skyplan/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/trip-options"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import trip options"
+  },
+  {
+   "label": "departure label",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-options.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-options.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "party label",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-options.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/search-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import search button"
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/search-button.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/saved-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import saved header"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/saved-header.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "more",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/saved-header.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/trip-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import trip rail"
+  },
+  {
+   "label": "osl lis",
+   "op": "block",
+   "args": [
+    "src/features/skyplan/data/plan.ts",
+    "osl-lis"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-card.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "\"DEPART\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-card.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-card.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/trip-card.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/route-arc.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/route-arc.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/skyplan/components/route-arc.tsx",
+    "STEP 1.29"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "@/features/skyplan/components/tab-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyplan/index.tsx",
+      "STEP 1.30"
+     ]
+    }
+   ],
+   "label": "import tab bar"
+  },
+  {
+   "label": "\"Flights\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyplan/data/plan.ts",
+    "flights"
+   ]
+  },
+  {
+   "label": "\"Trips\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyplan/data/plan.ts",
+    "trips"
+   ]
+  },
+  {
+   "label": "\"Account\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyplan/data/plan.ts",
+    "me"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/skyplan/index.tsx",
+    "STEP 1.34"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/skyplan/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-plan",
+     "src/features/skyplan/data/plan.ts"
+    ],
+    [
+     "plan-header",
+     "src/features/skyplan/components/plan-header.tsx"
+    ],
+    [
+     "route-arc",
+     "src/features/skyplan/components/route-arc.tsx"
+    ],
+    [
+     "saved-header",
+     "src/features/skyplan/components/saved-header.tsx"
+    ],
+    [
+     "screen",
+     "src/app/skyplan/index.tsx"
+    ],
+    [
+     "search-button",
+     "src/features/skyplan/components/search-button.tsx"
+    ],
+    [
+     "trip-card",
+     "src/features/skyplan/components/trip-card.tsx"
+    ],
+    [
+     "trip-fields",
+     "src/features/skyplan/components/trip-fields.tsx"
+    ],
+    [
+     "trip-options",
+     "src/features/skyplan/components/trip-options.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

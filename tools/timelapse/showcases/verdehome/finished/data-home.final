@@ -1,0 +1,125 @@
+/**
+ * Everything verdehome says.
+ *
+ * **Three of the board's own mistakes are fixed here** (I1): "Kal" is `kcal`,
+ * "Reating" is `rating` on the dish screen, and "Minerale" is `Minerals` on
+ * the welcome screen.
+ *
+ * **R5: labels, not prose.** Every string is a name, a unit or a price.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Verdeat' };
+
+export const account = {
+  welcome: 'Welcome back',
+  name: 'Alexander',
+  avatar: require('../../../../assets/images/verdehome/me.jpg'),
+};
+
+export const search = { hint: 'Search any foods' };
+
+export const promo = {
+  kicker: 'Get 50% off today',
+  title: 'Hot deal of\nthe month',
+  cta: 'Shop now',
+  image: require('../../../../assets/images/verdehome/promo.jpg'),
+};
+
+export const sections = { categories: 'Categories', seeAll: 'See all' };
+
+export type Category = {
+  id: string;
+  label: string;
+  /** "All" is the only chip without a picture; declared, not inferred. */
+  image?: number;
+  on?: boolean;
+};
+
+/**
+ * **Photographs, not emoji** (I4, I8). The board sets a burger, a pear and a
+ * pizza slice as emoji inside its chips; each is a picture of a thing, and
+ * emoji differ across Windows / Android / iOS.
+ */
+export const categories: Category[] = [
+  { id: 'all', label: 'All', on: true },
+  {
+    id: 'burger',
+    label: 'Burgers',
+    image: require('../../../../assets/images/verdehome/c-burger.jpg'),
+  },
+  {
+    id: 'chicken',
+    label: 'Chicken',
+    image: require('../../../../assets/images/verdehome/c-chicken.jpg'),
+  },
+  {
+    id: 'pasta',
+    label: 'Pasta',
+    image: require('../../../../assets/images/verdehome/c-pasta.jpg'),
+  },
+  {
+    id: 'fruit',
+    label: 'Fruit',
+    image: require('../../../../assets/images/verdehome/c-fruit.jpg'),
+  },
+  {
+    id: 'sweet',
+    label: 'Desserts',
+    image: require('../../../../assets/images/verdehome/c-sweet.jpg'),
+  },
+];
+
+export type Dish = {
+  id: string;
+  name: string;
+  kcal: number;
+  price: number;
+  image: number;
+  /** A saved dish carries a filled heart; declared, not inferred. */
+  saved?: boolean;
+};
+
+export const dishes: Dish[] = [
+  {
+    id: 'cheeseburger',
+    name: 'Classic cheese burger',
+    kcal: 540,
+    price: 12.5,
+    image: require('../../../../assets/images/verdehome/d1.jpg'),
+    saved: true,
+  },
+  {
+    id: 'samosa',
+    name: 'Hot samosa, three',
+    kcal: 310,
+    price: 6.0,
+    image: require('../../../../assets/images/verdehome/d2.jpg'),
+    saved: true,
+  },
+  {
+    id: 'pasta',
+    name: 'Creamy tomato pasta',
+    kcal: 620,
+    price: 14.0,
+    image: require('../../../../assets/images/verdehome/d3.jpg'),
+  },
+  {
+    id: 'gelato',
+    name: 'Berry gelato bowl',
+    kcal: 280,
+    price: 7.5,
+    image: require('../../../../assets/images/verdehome/d4.jpg'),
+  },
+];
+
+export type Tab = { id: string; glyph: 'home' | 'map' | 'saved' | 'me'; label: string };
+
+export const tabs: Tab[] = [
+  { id: 'home', glyph: 'home', label: 'Home' },
+  { id: 'near', glyph: 'map', label: 'Near you' },
+  { id: 'saved', glyph: 'saved', label: 'Saved' },
+  { id: 'me', glyph: 'me', label: 'Account' },
+];

@@ -1,0 +1,35 @@
+import { View } from 'react-native';
+
+import { splash } from '../data/start';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * How big the catalogue is.
+ *
+ * A count and a state, not a sentence (R5). The board's splash says nothing
+ * about what is behind it; inventing the row a board cuts is the sanctioned
+ * fix for a short screen (I3).
+ */
+export function SeasonCount({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      <T variant="count">{splash.count}</T>
+      {/* STEP 1.09 ship
+      <T variant="count">{splash.ship}</T>
+      */}
+      {/* STEP 1.10 returns
+      <T variant="count">{splash.returns}</T>
+      */}
+    </View>
+  );
+}

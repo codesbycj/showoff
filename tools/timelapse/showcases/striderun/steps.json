@@ -1,0 +1,328 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "@/features/striderun/components/run-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import run header"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/run-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "state",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/run-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Lock the screen\"",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/run-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "@/features/striderun/components/duration-block"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import duration block"
+  },
+  {
+   "label": "duration label",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/duration-block.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/duration-block.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "@/features/striderun/components/stat-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import stat grid"
+  },
+  {
+   "label": "the next block",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/stat-grid.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/stat-grid.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/stat-grid.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/striderun/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/striderun/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "@/features/striderun/components/splits-strip"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import splits strip"
+  },
+  {
+   "label": "\"SPLITS\"",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/splits-strip.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "km",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/splits-strip.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "k2",
+   "op": "entry",
+   "args": [
+    "src/features/striderun/data/run.ts",
+    "k2"
+   ]
+  },
+  {
+   "label": "k3",
+   "op": "entry",
+   "args": [
+    "src/features/striderun/data/run.ts",
+    "k3"
+   ]
+  },
+  {
+   "label": "k4",
+   "op": "entry",
+   "args": [
+    "src/features/striderun/data/run.ts",
+    "k4"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "@/features/striderun/components/effort-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import effort bar"
+  },
+  {
+   "label": "\"EFFORT ZONE\"",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/effort-bar.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/effort-bar.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/striderun/components/effort-bar.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "@/features/striderun/components/run-controls"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/striderun/index.tsx",
+      "STEP 1.24"
+     ]
+    }
+   ],
+   "label": "import run controls"
+  },
+  {
+   "label": "\"Pause\"",
+   "op": "entry",
+   "args": [
+    "src/features/striderun/data/run.ts",
+    "pause"
+   ]
+  },
+  {
+   "label": "\"Map\"",
+   "op": "entry",
+   "args": [
+    "src/features/striderun/data/run.ts",
+    "map"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/striderun/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/striderun/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-run",
+     "src/features/striderun/data/run.ts"
+    ],
+    [
+     "duration-block",
+     "src/features/striderun/components/duration-block.tsx"
+    ],
+    [
+     "effort-bar",
+     "src/features/striderun/components/effort-bar.tsx"
+    ],
+    [
+     "run-header",
+     "src/features/striderun/components/run-header.tsx"
+    ],
+    [
+     "screen",
+     "src/app/striderun/index.tsx"
+    ],
+    [
+     "splits-strip",
+     "src/features/striderun/components/splits-strip.tsx"
+    ],
+    [
+     "stat-grid",
+     "src/features/striderun/components/stat-grid.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

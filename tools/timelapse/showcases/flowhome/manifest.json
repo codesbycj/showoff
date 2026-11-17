@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/flowhome/index.tsx",
+  "greeting-row": "src/features/flowhome/components/greeting-row.tsx",
+  "week-strip": "src/features/flowhome/components/week-strip.tsx",
+  "data-home": "src/features/flowhome/data/home.ts",
+  "phase-card": "src/features/flowhome/components/phase-card.tsx",
+  "session-card": "src/features/flowhome/components/session-card.tsx",
+  "mood-chips": "src/features/flowhome/components/mood-chips.tsx",
+  "dock": "src/features/flowhome/components/dock.tsx"
+}

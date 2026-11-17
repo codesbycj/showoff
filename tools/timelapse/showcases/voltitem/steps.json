@@ -1,0 +1,354 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/item-gallery"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import item gallery"
+  },
+  {
+   "label": "\"Product photograph\"",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/item-gallery.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/item-gallery.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "g2",
+   "op": "entry",
+   "args": [
+    "src/features/voltitem/data/item.ts",
+    "g2"
+   ]
+  },
+  {
+   "label": "g3",
+   "op": "entry",
+   "args": [
+    "src/features/voltitem/data/item.ts",
+    "g3"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/item-controls"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import item controls"
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/item-controls.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "\"Save\"",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/item-controls.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/item-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import item title"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/item-title.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "maker",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/item-title.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/rating-pills"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import rating pills"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/rating-pills.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/rating-pills.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "comments",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/rating-pills.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/price-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.16"
+     ]
+    }
+   ],
+   "label": "import price row"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/price-row.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/price-row.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/price-row.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/fact-rows"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import fact rows"
+  },
+  {
+   "label": "\"38 hours of playback\"",
+   "op": "entry",
+   "args": [
+    "src/features/voltitem/data/item.ts",
+    "battery"
+   ]
+  },
+  {
+   "label": "\"248 g, folding frame\"",
+   "op": "entry",
+   "args": [
+    "src/features/voltitem/data/item.ts",
+    "weight"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/add-to-cart"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import add to cart"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/add-to-cart.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/voltitem/components/add-to-cart.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "@/features/voltitem/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/voltitem/index.tsx",
+      "STEP 1.26"
+     ]
+    }
+   ],
+   "label": "import text + delivery"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/voltitem/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/voltitem/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "add-to-cart",
+     "src/features/voltitem/components/add-to-cart.tsx"
+    ],
+    [
+     "data-item",
+     "src/features/voltitem/data/item.ts"
+    ],
+    [
+     "item-controls",
+     "src/features/voltitem/components/item-controls.tsx"
+    ],
+    [
+     "item-gallery",
+     "src/features/voltitem/components/item-gallery.tsx"
+    ],
+    [
+     "item-title",
+     "src/features/voltitem/components/item-title.tsx"
+    ],
+    [
+     "price-row",
+     "src/features/voltitem/components/price-row.tsx"
+    ],
+    [
+     "rating-pills",
+     "src/features/voltitem/components/rating-pills.tsx"
+    ],
+    [
+     "screen",
+     "src/app/voltitem/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

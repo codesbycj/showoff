@@ -1,0 +1,92 @@
+import { Pressable, View } from 'react-native';
+
+import { methods } from '../data/checkout';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { Mark, markTile } from './mark';
+import { T } from './text';
+
+type Props = { margin: number; rowH: number; radius: number };
+
+/**
+ * How it gets paid for.
+ *
+ * The card's fill sits on an absolutely-filled child so an emptied card paints
+ * nothing in frame one of the reveal (I9), and each row is its own
+ * `Pressable` **sibling**, never one inside another - the static web build's
+ * HTML parser tears a nested `role="button"` apart (RULES Part 7).
+ */
+export function MethodCard({ margin, rowH, radius }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, borderRadius: radius, paddingVertical: 6 }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.white,
+          borderRadius: radius,
+          borderWidth: 1,
+          borderColor: ct.line,
+        }}
+      />
+
+      {/* STEP 1.04 name
+      {methods.map((method) => (
+        <Pressable
+          key={method.id}
+          accessibilityRole="button"
+          accessibilityLabel={`${method.name}, ${method.detail}`}
+        >
+          <View
+            style={{
+              height: rowH,
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 14,
+              paddingHorizontal: 14,
+            }}
+          >
+            <View
+              style={{
+                width: 44,
+                height: 36,
+                borderRadius: 10,
+                backgroundColor: markTile[method.mark],
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Mark name={method.mark} size={22} />
+            </View>
+
+            <View style={{ flex: 1 }}>
+              <T variant="lineName">{method.name}</T>
+              <T variant="meta">{method.detail}</T>
+            </View>
+
+            <View
+              style={{
+                width: 22,
+                height: 22,
+                borderRadius: 11,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: method.on ? ct.dark : 'transparent',
+                borderWidth: method.on ? 0 : 1.4,
+                borderColor: ct.line,
+              }}
+            >
+              {method.on ? (
+                <Glyph name="check" size={13} color={ct.onDark} strokeWidth={2.2} />
+              ) : null}
+            </View>
+          </View>
+        </Pressable>
+      ))}
+      */}
+    </View>
+  );
+}

@@ -1,0 +1,4 @@
+{
+  "screen": "src/app/orlafit/index.tsx",
+  "fit-frame": "src/features/orlafit/components/fit-frame.tsx"
+}

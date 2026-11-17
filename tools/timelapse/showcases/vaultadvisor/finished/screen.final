@@ -1,0 +1,63 @@
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BrandBar } from '@/features/vaultadvisor/components/brand-bar';
+import { CredentialRow } from '@/features/vaultadvisor/components/credential-row';
+import { Portrait } from '@/features/vaultadvisor/components/portrait';
+import { T } from '@/features/vaultadvisor/components/text';
+import { TrustRow } from '@/features/vaultadvisor/components/trust-row';
+import { advisor } from '@/features/vaultadvisor/data/advisor';
+import { useLayout } from '@/features/vaultadvisor/layout';
+import { ct } from '@/features/vaultadvisor/theme';
+
+/**
+ * Vaultix - the advisor.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The portrait is the remainder, so the screen is full to the bottom edge with
+ * no band under it (I3).
+ */
+export default function VaultadvisorScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <BrandBar margin={L.margin} height={L.topH} />
+
+      <View style={{ height: L.gapTop }} />
+      <Portrait margin={L.margin} height={L.portrait.h} radius={L.portrait.radius} />
+
+      <View style={{ height: L.gapPortrait }} />
+      <View style={{ marginHorizontal: L.margin, height: L.nameH, alignItems: 'center' }}>
+        <T variant="name">{advisor.name}</T>
+      </View>
+
+      <View style={{ marginHorizontal: L.margin, height: L.roleH, alignItems: 'center' }}>
+        <T variant="role">{advisor.role}</T>
+      </View>
+
+      <View style={{ marginHorizontal: L.margin, height: L.placeH, alignItems: 'center' }}>
+        <T variant="place">{advisor.place}</T>
+      </View>
+
+      <View style={{ height: L.gapPlace }} />
+      <CredentialRow margin={L.margin} height={L.credH} />
+
+      <View style={{ height: L.gapCred }} />
+      <View style={{ marginHorizontal: L.margin, height: L.ruleH }}>
+        <View style={{ flex: 1, backgroundColor: ct.ink, opacity: 0.22 }} />
+      </View>
+
+      <View style={{ height: L.gapRule }} />
+      <TrustRow margin={L.margin} height={L.trustH} />
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

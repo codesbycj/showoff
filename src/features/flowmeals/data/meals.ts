@@ -1,0 +1,99 @@
+/**
+ * Everything flowmeals says.
+ *
+ * **The board draws its food as illustration.** An illustration of a bowl is
+ * still a picture *of* a bowl, so the subject is kept and the medium changes
+ * (I4) — free-licensed photography of the same dishes.
+ *
+ * **R5: labels, not prose.** Each meal is a name and a row of facts.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const account = {
+  avatar: require('../../../../assets/images/flowmeals/me.jpg'),
+  name: 'Emma',
+};
+
+export const intro = {
+  /** The board's own headline, kept (I1). */
+  display: 'Eat for your follicular phase',
+  body: 'Light, iron-rich meals while your energy is rising.',
+};
+
+export type Meal = {
+  id: string;
+  slot: string;
+  name: string;
+  kcal: number;
+  tags: string[];
+  image: number;
+  /** Only the hero meal is saved; declared, not inferred. */
+  saved?: boolean;
+};
+
+export const hero: Meal = {
+  id: 'yogurt',
+  slot: 'BREAKFAST',
+  name: 'Yogurt & berry bowl',
+  kcal: 380,
+  tags: ['Protein', 'Antioxidants'],
+  image: require('../../../../assets/images/flowmeals/m1.jpg'),
+  saved: true,
+};
+
+export const moreLabel = 'More for today';
+
+export const more: Meal[] = [
+  {
+    id: 'smoothie',
+    slot: 'SNACK',
+    name: 'Green smoothie',
+    kcal: 210,
+    tags: ['Iron'],
+    image: require('../../../../assets/images/flowmeals/m2.jpg'),
+  },
+  {
+    id: 'poke',
+    slot: 'LUNCH',
+    name: 'Salmon poke bowl',
+    kcal: 560,
+    tags: ['Omega-3'],
+    image: require('../../../../assets/images/flowmeals/m3.jpg'),
+  },
+];
+
+export const dinner: Meal = {
+  id: 'acai',
+  slot: 'DINNER',
+  name: 'Açaí & granola bowl',
+  kcal: 340,
+  tags: ['Antioxidants'],
+  image: require('../../../../assets/images/flowmeals/m4.jpg'),
+};
+
+/**
+ * The day's energy, summed from the meals on the screen.
+ *
+ * **R9**: the board prints no total at all, which is fine until a screen adds
+ * one — so this is computed from the same rows the cards show, and `reduce`
+ * carries an initial value because the reveal stages them one at a time (I7).
+ */
+export function dayKcal(rows: Meal[]) {
+  return rows.reduce((sum, row) => sum + row.kcal, 0);
+}
+
+export type Tab = {
+  id: string;
+  label: string;
+  glyph: 'home' | 'cycle' | 'train' | 'nourish' | 'insights';
+};
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  { id: 'cycle', label: 'Cycle', glyph: 'cycle' },
+  { id: 'train', label: 'Train', glyph: 'train' },
+  { id: 'nourish', label: 'Nourish', glyph: 'nourish' },
+  { id: 'insights', label: 'Insights', glyph: 'insights' },
+];

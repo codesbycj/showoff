@@ -1,0 +1,6 @@
+{
+  "screen": "src/app/orlaring/index.tsx",
+  "ring-hero": "src/features/orlaring/components/ring-hero.tsx",
+  "data-ring": "src/features/orlaring/data/ring.ts",
+  "fact-discs": "src/features/orlaring/components/fact-discs.tsx"
+}

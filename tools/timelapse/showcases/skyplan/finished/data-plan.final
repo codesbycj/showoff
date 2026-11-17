@@ -1,0 +1,104 @@
+/**
+ * Everything skyplan says.
+ *
+ * **R5: labels, not prose.** Every string is a label, a code, a count or a
+ * date.
+ *
+ * **The carriers are invented.** The board shows three real airlines and their
+ * marks; a rebuild that ships those is impersonation.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Skylark' };
+
+export const header = { title: 'Plan your trip' };
+
+export const me = require('../../../../assets/images/skyplan/me.jpg');
+
+export const trip = {
+  fromLabel: 'From',
+  from: 'Oslo (OSL)',
+  toLabel: 'To',
+  to: 'New York (JFK)',
+  departureLabel: 'Departure',
+  departure: 'Tue, 2 Apr',
+  partyLabel: 'Travellers',
+  party: '3 people',
+  cta: 'Search flights',
+};
+
+export const saved = { title: 'Saved trips', more: 'See more' };
+
+export type Trip = {
+  id: string;
+  airline: string;
+  /** Minutes past midnight at the origin. */
+  departMin: number;
+  /** Block time in minutes. */
+  durationMin: number;
+  /** The destination's offset from the origin, in minutes. */
+  offsetMin: number;
+  fromCode: string;
+  fromCity: string;
+  toCode: string;
+  toCity: string;
+  outDate: string;
+  backDate: string;
+  /**
+   * What the saved fare includes. The board's ticket has nothing between its
+   * route and its dates, which at 393dp leaves a 90dp hole in the middle of
+   * the card — R1c says that is still a hole, and I3 says the fix is the row
+   * the board cropped, never a spacer.
+   */
+  facts: string[];
+  /** Only the first saved trip is a return; the field is declared, not inferred. */
+  returning?: boolean;
+};
+
+/**
+ * Oslo is six hours ahead of New York, so 11:20 + 8h 05m lands at 13:25 local
+ * — which is what `arrival()` computes rather than what anything types.
+ */
+export const trips: Trip[] = [
+  {
+    id: 'osl-jfk',
+    airline: 'Skylark',
+    departMin: 11 * 60 + 20,
+    durationMin: 485,
+    offsetMin: -360,
+    fromCode: 'OSL',
+    fromCity: 'Oslo',
+    toCode: 'JFK',
+    toCity: 'New York',
+    outDate: 'Apr 2, 2026',
+    backDate: 'Apr 16, 2026',
+    facts: ['Nonstop', 'Economy', '3 travellers'],
+    returning: true,
+  },
+  {
+    id: 'osl-lis',
+    airline: 'Auric',
+    departMin: 6 * 60 + 40,
+    durationMin: 230,
+    offsetMin: -60,
+    fromCode: 'OSL',
+    fromCity: 'Oslo',
+    toCode: 'LIS',
+    toCity: 'Lisbon',
+    outDate: 'May 9, 2026',
+    backDate: 'May 17, 2026',
+    facts: ['1 stop', 'Economy', '2 travellers'],
+  },
+];
+
+export type Tab = { id: string; label: string; glyph: 'home' | 'flights' | 'trips' | 'me' };
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  { id: 'flights', label: 'Flights', glyph: 'flights' },
+  { id: 'trips', label: 'Trips', glyph: 'trips' },
+  { id: 'me', label: 'Account', glyph: 'me' },
+];

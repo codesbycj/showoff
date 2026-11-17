@@ -1,0 +1,6 @@
+{
+  "screen": "src/app/kovacal/index.tsx",
+  "data-cal": "src/features/kovacal/data/cal.ts",
+  "reminder-options": "src/features/kovacal/components/reminder-options.tsx",
+  "pill-dock": "src/features/kovacal/components/pill-dock.tsx"
+}

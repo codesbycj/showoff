@@ -1,0 +1,450 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/top-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/top-bar.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import top bar + hello"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/top-bar.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "\"Bag\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/search-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/search-row.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "import search row + placeholder"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/search-row.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "\"Filters\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/promo-card"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.07"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/promo-card.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "import promo card + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/promo-card.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/promo-card.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "lead"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/promo-card.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "cta"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/promo-card.tsx",
+            "STEP 1.12"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/promo-card.tsx",
+            "STEP 1.13"
+          ]
+        }
+      ],
+      "label": "the next block + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/chip-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.14"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/chip-row.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "import chip row + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "dresses"
+          ]
+        }
+      ],
+      "label": "\"Dresses\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "jackets"
+          ]
+        }
+      ],
+      "label": "\"Jackets\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "jeans"
+          ]
+        }
+      ],
+      "label": "\"Jeans\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/section-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.19"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/section-head.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "import section head + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/section-head.tsx",
+            "STEP 1.21"
+          ]
+        }
+      ],
+      "label": "more"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/product-grid"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.22"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/product-grid.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "import product grid + card"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "coat"
+          ]
+        }
+      ],
+      "label": "\"Wool Trench Camel\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "hoodie"
+          ]
+        }
+      ],
+      "label": "\"Casual Hoodie Black\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "jacket"
+          ]
+        }
+      ],
+      "label": "\"Biker Jacket Noir\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "@/features/vestahome/components/dock"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.27"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vestahome/components/dock.tsx",
+            "STEP 1.28"
+          ]
+        }
+      ],
+      "label": "import dock + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "shop"
+          ]
+        }
+      ],
+      "label": "\"Shopping\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "saved"
+          ]
+        }
+      ],
+      "label": "\"Saved\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vestahome/data/shop.ts",
+            "me"
+          ]
+        }
+      ],
+      "label": "\"Profile\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "STEP 1.32"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vestahome/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "chip-row",
+              "src/features/vestahome/components/chip-row.tsx"
+            ],
+            [
+              "data-shop",
+              "src/features/vestahome/data/shop.ts"
+            ],
+            [
+              "dock",
+              "src/features/vestahome/components/dock.tsx"
+            ],
+            [
+              "product-grid",
+              "src/features/vestahome/components/product-grid.tsx"
+            ],
+            [
+              "promo-card",
+              "src/features/vestahome/components/promo-card.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vestahome/index.tsx"
+            ],
+            [
+              "search-row",
+              "src/features/vestahome/components/search-row.tsx"
+            ],
+            [
+              "section-head",
+              "src/features/vestahome/components/section-head.tsx"
+            ],
+            [
+              "top-bar",
+              "src/features/vestahome/components/top-bar.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

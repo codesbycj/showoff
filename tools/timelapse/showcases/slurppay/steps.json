@@ -1,0 +1,342 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/glyph"
+     ]
+    },
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/screen-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + import screen bar"
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/screen-bar.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/method-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import method card"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/method-card.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "\"Driftpay\"",
+   "op": "entry",
+   "args": [
+    "src/features/slurppay/data/checkout.ts",
+    "drift"
+   ]
+  },
+  {
+   "label": "\"Tapwell\"",
+   "op": "entry",
+   "args": [
+    "src/features/slurppay/data/checkout.ts",
+    "tapwell"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/mark.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/mark.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/add-method"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import add method"
+  },
+  {
+   "label": "add",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/add-method.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import text + address section"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/address-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import address row"
+  },
+  {
+   "label": "city",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/address-row.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "summary",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/summary-rows"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import summary rows"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "@/features/slurppay/components/total-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/slurppay/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import total row"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/slurppay/components/total-row.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/slurppay/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "add-method",
+     "src/features/slurppay/components/add-method.tsx"
+    ],
+    [
+     "address-row",
+     "src/features/slurppay/components/address-row.tsx"
+    ],
+    [
+     "data-checkout",
+     "src/features/slurppay/data/checkout.ts"
+    ],
+    [
+     "mark",
+     "src/features/slurppay/components/mark.tsx"
+    ],
+    [
+     "method-card",
+     "src/features/slurppay/components/method-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/slurppay/index.tsx"
+    ],
+    [
+     "screen-bar",
+     "src/features/slurppay/components/screen-bar.tsx"
+    ],
+    [
+     "total-row",
+     "src/features/slurppay/components/total-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

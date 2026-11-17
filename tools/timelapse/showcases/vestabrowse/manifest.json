@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/vestabrowse/index.tsx",
+  "search-row": "src/features/vestabrowse/components/search-row.tsx",
+  "chip-row": "src/features/vestabrowse/components/chip-row.tsx",
+  "data-browse": "src/features/vestabrowse/data/browse.ts",
+  "results-row": "src/features/vestabrowse/components/results-row.tsx",
+  "section-head": "src/features/vestabrowse/components/section-head.tsx",
+  "product-grid": "src/features/vestabrowse/components/product-grid.tsx",
+  "dock": "src/features/vestabrowse/components/dock.tsx"
+}

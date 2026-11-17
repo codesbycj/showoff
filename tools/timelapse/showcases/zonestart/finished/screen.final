@@ -1,0 +1,53 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BurgerHero } from '@/features/zonestart/components/burger-hero';
+import { Headline } from '@/features/zonestart/components/headline';
+import { JoinBanner } from '@/features/zonestart/components/join-banner';
+import { LegalNote } from '@/features/zonestart/components/legal-note';
+import { StartActions } from '@/features/zonestart/components/start-actions';
+import { useLayout } from '@/features/zonestart/layout';
+import { ct } from '@/features/zonestart/theme';
+
+/**
+ * Food Zone — welcome.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The burger takes the screen's slack (see `layout.ts`), so the foot cannot
+ * open a band.
+ */
+export default function ZonestartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top, flex: 1 }}>
+        <JoinBanner margin={L.margin} height={L.bannerH} />
+
+        <View style={{ height: L.gapBanner }} />
+        <Headline margin={L.margin} height={L.headlineH} />
+
+        <View style={{ height: L.gapHeadline }} />
+        <BurgerHero width={L.W} height={L.hero.h} />
+
+        <View style={{ height: L.gapHero }} />
+        <StartActions
+          margin={L.margin}
+          height={L.action.h}
+          radius={L.action.radius}
+          gap={L.gapActions}
+          onPress={() => router.push('/zonehome')}
+        />
+
+        <View style={{ height: L.gapLegal }} />
+        <LegalNote margin={L.margin} height={L.legalH} />
+      </View>
+    </View>
+  );
+}

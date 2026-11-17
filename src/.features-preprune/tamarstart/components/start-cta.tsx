@@ -1,0 +1,44 @@
+import { Pressable, View } from 'react-native';
+
+import { body, brand, cta, headline } from '../data/start';
+import { ct } from '../theme';
+import { T } from './text';
+
+import { CtaProps } from './_start-copy-shared';
+
+/**
+ * The primary action — 56dp, so it clears R7 on its own.
+ *
+ * Its fill and shadow sit in one style object: a `Platform.select` for a
+ * shadow is exactly what the web render cannot check (§4.4).
+ */
+export function StartCta({ margin, height, radius, onPress }: CtaProps) {
+  return (
+    <Pressable
+      onPress={onPress}
+      accessibilityRole="button"
+      accessibilityLabel={cta.primary}
+      style={{ marginHorizontal: margin }}
+    >
+      {({ pressed }) => (
+        <View
+          style={{
+            height,
+            borderRadius: radius,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: ct.accent,
+            opacity: pressed ? 0.88 : 1,
+            shadowColor: '#07160B',
+            shadowOpacity: 0.4,
+            shadowRadius: 18,
+            shadowOffset: { width: 0, height: 10 },
+            elevation: 8,
+          }}
+        >
+          <T variant="cta">{cta.primary}</T>
+        </View>
+      )}
+    </Pressable>
+  );
+}

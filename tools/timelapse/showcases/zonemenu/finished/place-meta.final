@@ -1,0 +1,31 @@
+import { View } from 'react-native';
+
+import { place, reviews } from '../data/menu';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { BlockProps } from './_menu-head-shared';
+
+export function PlaceMeta({ margin, height }: BlockProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6,
+      }}
+    >
+      <Glyph name="star" size={12} color={ct.star} />
+      <T variant="rating">{place.rating.toFixed(1)}</T>
+      <T variant="meta">{`(${reviews(place.reviews)})`}</T>
+      <T variant="meta">·</T>
+      <T variant="badge">{place.badge}</T>
+      <T variant="meta">·</T>
+      <T variant="meta">{place.distance}</T>
+    </View>
+  );
+}

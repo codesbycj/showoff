@@ -1,0 +1,54 @@
+/**
+ * Everything pawstart says.
+ *
+ * **The board's own sub-line sells restaurant delivery on a pet-food app** —
+ * "Discover restaurants near you and order your favorite meals in just a few
+ * taps" — which is copy left over from whatever it was adapted from. It is
+ * replaced with a line about the thing this app actually sells (I1).
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Paws', signin: 'I already have an account' };
+
+export const hero = { image: require('../../../../assets/images/pawstart/hero.jpg') };
+
+export const welcome = {
+  /** The board's headline, kept verbatim (I1). */
+  displayTop: 'Your Favorite Food,',
+  displayBottom: 'Delivered Fast',
+  /** R5: one line, 63 characters. The board's is two sentences about restaurants. */
+  body: 'Food, treats and litter for every pet, at your door by morning.',
+  cta: 'Get Started',
+};
+
+export type Benefit = { id: string; label: string };
+
+/**
+ * What the service promises, as labels.
+ *
+ * Three labels, not a sentence (R5) - each a state or a unit. The board crops
+ * the row; inventing the row a board cuts is the sanctioned fix for a short
+ * screen (I3).
+ */
+export const benefits: Benefit[] = [
+  { id: 'delivery', label: 'Free delivery' },
+  { id: 'vet', label: 'Vet-approved' },
+  { id: 'cancel', label: 'Cancel anytime' },
+];
+
+export type Dot = { id: string; label: string; on?: boolean };
+
+/**
+ * The onboarding's pages, one entry per dot.
+ *
+ * **R9: the dots count the pages that exist** and mark the one on screen, so
+ * the pager cannot claim a position the flow does not have. Carried as rows
+ * rather than a computed range because the reveal stages a row at a time (I9).
+ */
+export const dots: Dot[] = [
+  { id: 'p1', label: 'Page 1 of 3', on: true },
+  { id: 'p2', label: 'Page 2 of 3' },
+  { id: 'p3', label: 'Page 3 of 3' },
+];

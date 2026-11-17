@@ -1,0 +1,144 @@
+import { Pressable, View } from 'react-native';
+
+import { swap } from '../data/swap';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { height: number; gap: number; radius: number };
+
+/**
+ * What goes out and what comes back.
+ *
+ * **R9: the receive figure is `amount * price`**, computed here. The board
+ * prices one coin at $2,115.88 on the wallet and 4,692.11 on this screen, and
+ * offers to send 0.3471 of an asset whose balance it prints as 0.0018.
+ *
+ * The reverse control is a sibling of the two cards rather than a child of
+ * either, so a `role="button"` never ends up inside another — the static web
+ * build's HTML parser tears that apart (§7).
+ */
+export function SwapFields({ height, gap, radius }: Props) {
+  const receive = swap.amount * swap.price;
+
+  const card = {
+    height,
+    borderRadius: radius,
+    backgroundColor: ct.card,
+    borderWidth: 1,
+    borderColor: ct.line,
+    paddingHorizontal: 14,
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    gap: 12,
+  };
+
+  const disc = {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: ct.cardSoft,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View>
+      <View style={card}>
+        {/* STEP 1.06 glyph
+        <View style={disc}>
+          <Glyph name={swap.fromMark} size={19} color={ct.ink} strokeWidth={1.7} />
+        </View>
+        */}
+
+        {/* STEP 1.07 send label
+        <View style={{ flex: 1 }}>
+          <T variant="fieldLabel">{swap.sendLabel}</T>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+            <T variant="symbol">{swap.fromSymbol}</T>
+            <Glyph name="chevron" size={15} color={ct.muted} strokeWidth={2} />
+          </View>
+        </View>
+        */}
+
+        {/* STEP 1.08 "Balance"
+        <View style={{ alignItems: 'flex-end' }}>
+          <T variant="field">{swap.amount}</T>
+          <View style={{ flexDirection: 'row', gap: 4 }}>
+            <T variant="balanceLabel">Balance</T>
+            <T variant="balanceValue">
+              {swap.fromBalance} {swap.fromSymbol}
+            </T>
+          </View>
+        </View>
+        */}
+      </View>
+
+      <View style={{ height: gap }} />
+
+      <View style={card}>
+        {/* STEP 1.09 glyph
+        <View style={disc}>
+          <Glyph name={swap.toMark} size={19} color={ct.ink} strokeWidth={1.7} />
+        </View>
+        */}
+
+        {/* STEP 1.10 receive label
+        <View style={{ flex: 1 }}>
+          <T variant="fieldLabel">{swap.receiveLabel}</T>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+            <T variant="symbol">{swap.toSymbol}</T>
+            <Glyph name="chevron" size={15} color={ct.muted} strokeWidth={2} />
+          </View>
+        </View>
+        */}
+
+        {/* STEP 1.11 "Balance"
+        <View style={{ alignItems: 'flex-end' }}>
+          <T variant="field">
+            {receive.toLocaleString('en-US', {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </T>
+          <View style={{ flexDirection: 'row', gap: 4 }}>
+            <T variant="balanceLabel">Balance</T>
+            <T variant="balanceValue">
+              {swap.toBalance} {swap.toSymbol}
+            </T>
+          </View>
+        </View>
+        */}
+      </View>
+
+      {/* STEP 1.12 "Reverse the swap"
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: height + gap / 2 - 24,
+          alignItems: 'center',
+        }}
+      >
+        <Pressable accessibilityRole="button" accessibilityLabel="Reverse the swap">
+          <View
+            style={{
+              width: 48,
+              height: 48,
+              borderRadius: 24,
+              backgroundColor: ct.cardSoft,
+              borderWidth: 1.5,
+              borderColor: ct.g1,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="reverse" size={20} color={ct.ink} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+      </View>
+      */}
+    </View>
+  );
+}

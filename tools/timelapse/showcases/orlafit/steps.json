@@ -1,0 +1,243 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafit/index.tsx",
+      "@/features/orlafit/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafit/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "label": "sub",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafit/index.tsx",
+      "@/features/orlafit/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafit/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Close the fitting\""
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafit/index.tsx",
+      "@/features/orlafit/components/fit-frame"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafit/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import fit frame"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafit/components/fit-frame.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "note",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "\"Your bag\"",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafit/index.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "fit-frame",
+     "src/features/orlafit/components/fit-frame.tsx"
+    ],
+    [
+     "screen",
+     "src/app/orlafit/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

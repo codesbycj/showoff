@@ -1,0 +1,67 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AboutBlock } from '@/features/tamargym/components/about-block';
+import { AmenityRow } from '@/features/tamargym/components/amenity-row';
+import { FactStrip } from '@/features/tamargym/components/fact-strip';
+import { GymAddress } from '@/features/tamargym/components/gym-address';
+import { GymTitle } from '@/features/tamargym/components/gym-title';
+import { PriceRow } from '@/features/tamargym/components/price-row';
+import { ReserveCta } from '@/features/tamargym/components/reserve-cta';
+import { GymHero } from '@/features/tamargym/components/gym-hero';
+import { useLayout } from '@/features/tamargym/layout';
+import { ct } from '@/features/tamargym/theme';
+
+/**
+ * Tamarran — venue detail.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The hero takes the screen's slack (see `layout.ts`), so the foot cannot open
+ * a band — and the Reserve button is the last block in the column rather than a
+ * pill floating over the copy, because covering text is an R3 FAIL.
+ */
+export default function TamargymScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <GymHero
+        width={L.W}
+        height={L.hero.h}
+        topInset={L.insets.top}
+        control={L.hero.control}
+        onBack={() => router.back()}
+      />
+
+      <View style={{ height: L.gapHero }} />
+      <GymTitle margin={L.margin} height={L.titleH} />
+      <GymAddress margin={L.margin} height={L.addressH} />
+
+      <View style={{ height: L.gapTitle }} />
+      <AmenityRow margin={L.margin} height={L.chips.h} radius={L.chips.radius} />
+
+      <View style={{ height: L.gapChips }} />
+      <PriceRow margin={L.margin} height={L.priceH} />
+
+      <View style={{ height: L.gapPrice }} />
+      <AboutBlock margin={L.margin} height={L.aboutH} />
+
+      <View style={{ height: L.gapAbout }} />
+      <FactStrip margin={L.margin} height={L.facts.h} radius={L.facts.radius} />
+
+      <View style={{ height: L.gapFacts }} />
+      <ReserveCta
+        margin={L.margin}
+        height={L.cta.h}
+        radius={L.cta.radius}
+        onPress={() => router.back()}
+      />
+    </View>
+  );
+}

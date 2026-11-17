@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/orbithome/index.tsx",
+  "greeting-row": "src/features/orbithome/components/greeting-row.tsx",
+  "balance-block": "src/features/orbithome/components/balance-block.tsx",
+  "action-row": "src/features/orbithome/components/action-row.tsx",
+  "data-home": "src/features/orbithome/data/home.ts",
+  "section-row": "src/features/orbithome/components/section-row.tsx",
+  "contact-rail": "src/features/orbithome/components/contact-rail.tsx",
+  "promo-rail": "src/features/orbithome/components/promo-rail.tsx",
+  "dock": "src/features/orbithome/components/dock.tsx"
+}

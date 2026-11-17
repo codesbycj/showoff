@@ -1,0 +1,51 @@
+import { View } from 'react-native';
+
+import { clock, session, setProgress } from '../data/train';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; clockH: number; barH: number; gap: number };
+
+/**
+ * How long this set has been going — the dominant element on the screen (R8).
+ *
+ * **R9: the bar is the set's own progress**, `elapsed / setSeconds`, so the
+ * picture and the clock cannot disagree. The fraction is clamped and its
+ * divisor floored at one second, because the reveal can leave this screen with
+ * a zeroed set (I7).
+ */
+export function SetClock({ margin, clockH, barH, gap }: Props) {
+  const fraction = setProgress();
+
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      {/* STEP 1.09 view
+      <View style={{ height: clockH, alignItems: 'center', justifyContent: 'center' }}>
+        <T variant="clock">{clock(session.elapsed)}</T>
+      </View>
+      */}
+
+      <View style={{ height: gap }} />
+
+      {/* STEP 1.10 view
+      <View
+        style={{
+          height: barH,
+          borderRadius: barH / 2,
+          backgroundColor: ct.line,
+          overflow: 'hidden',
+        }}
+      >
+        <View
+          style={{
+            width: `${fraction * 100}%`,
+            height: barH,
+            borderRadius: barH / 2,
+            backgroundColor: ct.amber,
+          }}
+        />
+      </View>
+      */}
+    </View>
+  );
+}

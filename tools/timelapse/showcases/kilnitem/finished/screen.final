@@ -1,0 +1,50 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BuyBar } from '@/features/kilnitem/components/buy-bar';
+import { FrameRail } from '@/features/kilnitem/components/frame-rail';
+import { ShipLine } from '@/features/kilnitem/components/ship-line';
+import { ItemHero } from '@/features/kilnitem/components/item-hero';
+import { T } from '@/features/kilnitem/components/text';
+import { piece } from '@/features/kilnitem/data/item';
+import { useLayout } from '@/features/kilnitem/layout';
+import { ct } from '@/features/kilnitem/theme';
+
+/**
+ * Kiln - the piece.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The photograph is the remainder, so the screen always ends on its pinned
+ * bar with no band under it (I3).
+ */
+export default function KilnitemScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <ItemHero
+        width={L.W}
+        height={L.hero.h}
+        margin={L.margin}
+        insetTop={L.insets.top}
+        onClose={() => router.push('/kilnfind')}
+      />
+
+      <FrameRail margin={L.margin} height={L.rail.h} width={L.rail.w} />
+
+      <View style={{ marginHorizontal: L.margin, height: L.bodyH }}>
+        <T variant="body">{piece.body}</T>
+      </View>
+
+      <ShipLine margin={L.margin} height={L.shipH} />
+
+      <BuyBar height={L.bar.h} onPress={() => router.push('/kilnview')} />
+    </View>
+  );
+}

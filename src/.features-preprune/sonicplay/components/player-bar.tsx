@@ -1,0 +1,30 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { clock, controls, progress, screen, track } from '../data/player';
+import { T } from './text';
+
+import { BarProps, Round } from './_player-parts-shared';
+
+/** Collapse, what is playing, and the overflow. */
+export function PlayerBar({ margin, height, control, onBack }: BarProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      <Round glyph="chevronDown" label="Collapse" size={control} onPress={onBack} />
+      <View style={{ flex: 1, alignItems: 'center' }}>
+        <T variant="fromLabel">{screen.from}</T>
+        <T variant="fromAlbum" numberOfLines={1}>
+          {track.album}
+        </T>
+      </View>
+      <Round glyph="more" label="More" size={control} />
+    </View>
+  );
+}

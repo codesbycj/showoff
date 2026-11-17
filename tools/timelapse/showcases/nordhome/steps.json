@@ -1,0 +1,326 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/hero-photo"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import hero photo"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/hero-photo.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/hero-photo.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/hero-headline"
+     ]
+    },
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/location-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import hero headline + import location row"
+  },
+  {
+   "label": "country",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/location-row.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "\"Account\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/location-row.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/search-pill"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.07"
+     ]
+    }
+   ],
+   "label": "import search pill"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/search-pill.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "search title",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/search-pill.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/section-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import section title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/stay-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import stay rail"
+  },
+  {
+   "label": "\"Tiny home in Rondane\"",
+   "op": "block",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "rondane"
+   ]
+  },
+  {
+   "label": "\"Cabin in Lillehammer\"",
+   "op": "block",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "lillehammer"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/stay-card.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nordhome/components/stay-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "section title",
+   "op": "jsx",
+   "args": [
+    "src/app/nordhome/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/place-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import place rail"
+  },
+  {
+   "label": "\"Mountain hytter\"",
+   "op": "block",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "mountain"
+   ]
+  },
+  {
+   "label": "\"Lakeside stays\"",
+   "op": "block",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "lake"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/nordhome/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "@/features/nordhome/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordhome/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Favorites\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "favorites"
+   ]
+  },
+  {
+   "label": "\"Bookings\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "bookings"
+   ]
+  },
+  {
+   "label": "\"Messages\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordhome/data/home.ts",
+    "messages"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/nordhome/index.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nordhome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-home",
+     "src/features/nordhome/data/home.ts"
+    ],
+    [
+     "hero-photo",
+     "src/features/nordhome/components/hero-photo.tsx"
+    ],
+    [
+     "location-row",
+     "src/features/nordhome/components/location-row.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nordhome/index.tsx"
+    ],
+    [
+     "search-pill",
+     "src/features/nordhome/components/search-pill.tsx"
+    ],
+    [
+     "stay-card",
+     "src/features/nordhome/components/stay-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

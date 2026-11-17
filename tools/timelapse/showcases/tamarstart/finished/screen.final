@@ -1,0 +1,55 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { HeroFrame } from '@/features/tamarstart/components/hero-frame';
+import { Body } from '@/features/tamarstart/components/body';
+import { Headline } from '@/features/tamarstart/components/headline';
+import { StartAside } from '@/features/tamarstart/components/start-aside';
+import { StartCta } from '@/features/tamarstart/components/start-cta';
+import { Wordmark } from '@/features/tamarstart/components/wordmark';
+import { useLayout } from '@/features/tamarstart/layout';
+import { ct } from '@/features/tamarstart/theme';
+
+/**
+ * Tamarran — onboarding.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * `HeroFrame` is full bleed, so under §5.5 it is the page's own ground and may
+ * paint in frame one. The copy is pinned to the foot, so there is no block
+ * that can leave a band under it.
+ */
+export default function TamarstartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+      <HeroFrame width={L.W} height={L.H} scrimH={L.scrim.h} />
+
+      <View style={{ flex: 1, justifyContent: 'flex-end', paddingBottom: L.footer }}>
+        <Wordmark height={L.wordmarkH} margin={L.margin} />
+
+        <View style={{ height: L.gapWordmark }} />
+        <Headline height={L.headlineH} margin={L.margin} />
+
+        <View style={{ height: L.gapHeadline }} />
+        <Body height={L.bodyH} margin={L.margin} />
+
+        <View style={{ height: L.gapBody }} />
+        <StartCta
+          margin={L.margin}
+          height={L.cta.h}
+          radius={L.cta.radius}
+          onPress={() => router.push('/tamarfind')}
+        />
+
+        <View style={{ height: L.gapCta }} />
+        <StartAside margin={L.margin} height={L.asideH} onPress={() => router.push('/tamarfind')} />
+      </View>
+    </View>
+  );
+}

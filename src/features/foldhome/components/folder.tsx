@@ -1,0 +1,84 @@
+import type { ReactNode } from 'react';
+import { View } from 'react-native';
+
+type Props = {
+  width: number;
+  height: number;
+  fill: string;
+  radius?: number;
+  notchW?: number;
+  notchH?: number;
+  children?: ReactNode;
+};
+
+/**
+ * The board's signature shape: a rounded card with a **notch cut out of its
+ * top-right corner**, so the pill that sits there reads as a tab rather than a
+ * sticker laid on top.
+ *
+ * It is built from two filled `View`s rather than one `<path>`, deliberately.
+ * An `<svg>` carries no `backgroundColor` for a hit stack to resolve, and
+ * `audit.js` walks that stack to find the real ground behind a string - over
+ * an svg ground it finds the page and calls every line on the card a 1:1
+ * CONTRAST failure. Two Views give the same outline and a real ground.
+ *
+ * The two fills **touch rather than overlap**: the tab is exactly the notch's
+ * height and the body starts where it ends, with the shared corner left
+ * square. Overlapping them by the corner radius is what `audit.js` reports as
+ * COVERED, since a partial overlap is the shape an accident has (R3).
+ *
+ * The fill lives on these children, never on the container, so an emptied card
+ * paints nothing in frame one of a reveal (I9).
+ */
+export function Folder({
+  width,
+  height,
+  fill,
+  radius = 22,
+  notchW = 0,
+  notchH = 0,
+  children,
+}: Props) {
+  const r = Math.max(0, Math.min(radius, Math.min(width, height) / 2));
+  const notched = notchW > 0 && notchH > 0;
+  const tabW = Math.max(0, width - notchW);
+  const s = Math.min(10, notchH / 2);
+
+  return (
+    <View style={{ width, height }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: notched ? notchH : 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: fill,
+          borderTopLeftRadius: notched ? 0 : r,
+          borderTopRightRadius: r,
+          borderBottomLeftRadius: r,
+          borderBottomRightRadius: r,
+        }}
+      />
+
+      {/* STEP 1.07 view
+      {notched ? (
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: tabW,
+            height: notchH,
+            backgroundColor: fill,
+            borderTopLeftRadius: r,
+            borderTopRightRadius: s,
+          }}
+        />
+      ) : null}
+      */}
+
+      {children}
+    </View>
+  );
+}

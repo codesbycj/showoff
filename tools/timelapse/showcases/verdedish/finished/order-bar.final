@@ -1,0 +1,94 @@
+import { Pressable, View } from 'react-native';
+
+import { dish, extras, orderTotal, START_QTY } from '../data/dish';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onAdd?: () => void };
+
+/**
+ * The quantity and the order.
+ *
+ * **R9: the button's figure is the dish plus the ticked extras, times the
+ * quantity** — computed, never typed, so it cannot contradict the rows above
+ * it. `orderTotal` carries an initial value and clamps the quantity, because
+ * the reveal stages `extras` one entry at a time (I7).
+ *
+ * The stepper's two controls are 36dp with hit slop past 44 (R7), and they are
+ * siblings of the button rather than children of it: a `role="button"` inside
+ * another is torn apart by the static web build's parser (§7).
+ */
+export function OrderBar({ margin, height, onAdd }: Props) {
+  const total = orderTotal(extras, START_QTY);
+
+  const step = (label: string, glyph: 'minus' | 'plus') => (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+    >
+      <View
+        style={{
+          width: 36,
+          height: 36,
+          borderRadius: 18,
+          backgroundColor: ct.white,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph name={glyph} size={16} color={ct.ink} strokeWidth={2.2} />
+      </View>
+    </Pressable>
+  );
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 14,
+      }}
+    >
+      <View
+        style={{
+          height,
+          borderRadius: height / 2,
+          backgroundColor: ct.tray,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 8,
+          gap: 10,
+        }}
+      >
+        {step('One fewer', 'minus')}
+        <T variant="qty">{String(START_QTY).padStart(2, '0')}</T>
+        {step('One more', 'plus')}
+      </View>
+
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${dish.cta}, $${total.toFixed(2)}`}
+        onPress={onAdd}
+        style={{ flex: 1 }}
+      >
+        <View
+          style={{
+            height,
+            borderRadius: height / 2,
+            backgroundColor: ct.greenDeep,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="cta">
+            {dish.cta} · ${total.toFixed(2)}
+          </T>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

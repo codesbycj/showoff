@@ -1,0 +1,56 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { Barcode } from '@/features/skyticket/components/barcode';
+import { FlightCard } from '@/features/skyticket/components/flight-card';
+import { PassengerCard } from '@/features/skyticket/components/passenger-card';
+import { SaveButton } from '@/features/skyticket/components/save-button';
+import { TicketHeader } from '@/features/skyticket/components/ticket-header';
+import { useLayout } from '@/features/skyticket/layout';
+import { ct } from '@/features/skyticket/theme';
+
+/**
+ * Skylark — the boarding pass.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The passenger card is the remainder, so the screen ends on its action with
+ * no band under it and no hole in the middle (I3, R1c).
+ */
+export default function SkyticketScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <TicketHeader
+        margin={L.margin}
+        height={L.headerH}
+        onBack={() => router.push('/skyresults')}
+      />
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ marginHorizontal: L.margin }}>
+        <FlightCard height={L.flight.h} radius={L.flight.radius} />
+      </View>
+
+      <View style={{ height: L.gapCard }} />
+      <View style={{ marginHorizontal: L.margin }}>
+        <PassengerCard height={L.passengers.h} radius={L.passengers.radius} />
+      </View>
+
+      <View style={{ height: L.gapCard }} />
+      <View style={{ marginHorizontal: L.margin }}>
+        <Barcode width={L.W - L.margin * 2} height={L.barcode.h} radius={L.passengers.radius} />
+      </View>
+
+      <View style={{ height: L.gapCta }} />
+      <SaveButton margin={L.margin} height={L.cta.h} />
+    </View>
+  );
+}

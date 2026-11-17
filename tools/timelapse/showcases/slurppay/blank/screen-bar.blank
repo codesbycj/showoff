@@ -1,0 +1,59 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/checkout';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onBack: () => void };
+
+/**
+ * The screen's name between its two controls.
+ *
+ * The title is centred on the **screen**, not between the two discs, because
+ * that is what the board centres it on - a control group lines up with
+ * whatever it sits under, and checking which costs one measurement (RULES
+ * §4.2).
+ */
+export function ScreenBar({ margin, height, onBack }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center' }}>
+      <View style={{ position: 'absolute', left: 0, right: 0, alignItems: 'center' }}>
+        <T variant="screenTitle">{header.title}</T>
+      </View>
+
+      {/* STEP 1.02 "Back"
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={onBack}>
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: ct.card,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="back" size={18} color={ct.ink} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+
+        <Pressable accessibilityRole="button" accessibilityLabel="More">
+          <View
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="more" size={18} color={ct.ink} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+      </View>
+      */}
+    </View>
+  );
+}

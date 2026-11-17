@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/verdehome/index.tsx",
+  "account-row": "src/features/verdehome/components/account-row.tsx",
+  "search-row": "src/features/verdehome/components/search-row.tsx",
+  "promo-card": "src/features/verdehome/components/promo-card.tsx",
+  "section-row": "src/features/verdehome/components/section-row.tsx",
+  "data-home": "src/features/verdehome/data/home.ts",
+  "category-chips": "src/features/verdehome/components/category-chips.tsx",
+  "dish-grid": "src/features/verdehome/components/dish-grid.tsx",
+  "pill-dock": "src/features/verdehome/components/pill-dock.tsx"
+}

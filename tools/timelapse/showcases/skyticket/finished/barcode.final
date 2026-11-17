@@ -1,0 +1,62 @@
+import { View } from 'react-native';
+
+import { code, flight } from '../data/ticket';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { width: number; height: number; radius: number };
+
+/**
+ * The boarding code.
+ *
+ * **Drawn, not photographed** (I4): a barcode is interface, and the widths
+ * come from a fixed sequence in the data rather than from `Math.random()` —
+ * a code that changes on every render is a different picture in every frame
+ * of the reveal, which would make the per-step diff meaningless.
+ *
+ * The sum of the widths is clamped to at least 1 before dividing: the reveal
+ * stages `code` one entry at a time and an empty array would otherwise divide
+ * by zero (I7).
+ */
+export function Barcode({ width, height, radius }: Props) {
+  const pad = 26;
+  const inner = Math.max(width - pad * 2, 1);
+  const units = Math.max(
+    code.reduce((sum, w) => sum + w + 1, 0),
+    1,
+  );
+  const unit = inner / units;
+
+  return (
+    <View
+      style={{
+        height,
+        borderRadius: radius,
+        backgroundColor: ct.surface,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+        shadowColor: '#0B1220',
+        shadowOpacity: 0.07,
+        shadowRadius: 16,
+        shadowOffset: { width: 0, height: 6 },
+        elevation: 3,
+      }}
+    >
+      <View style={{ flexDirection: 'row', height: height - 44, alignItems: 'stretch' }}>
+        {code.map((w, i) => (
+          <View
+            key={`${i}-${w}`}
+            style={{
+              width: Math.max(unit * w, 1),
+              marginRight: unit,
+              backgroundColor: ct.ink,
+            }}
+          />
+        ))}
+      </View>
+
+      <T variant="reference">{flight.reference}</T>
+    </View>
+  );
+}

@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/wisetrip/index.tsx",
+  "wordmark": "src/features/wisetrip/components/wordmark.tsx",
+  "trip-collage": "src/features/wisetrip/components/trip-collage.tsx",
+  "data-trip": "src/features/wisetrip/data/trip.ts",
+  "flag-disc": "src/features/wisetrip/components/flag-disc.tsx",
+  "onboard-foot": "src/features/wisetrip/components/onboard-foot.tsx"
+}

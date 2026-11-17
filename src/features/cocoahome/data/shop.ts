@@ -1,0 +1,68 @@
+/**
+ * Everything cocoahome says.
+ *
+ * **The board sells two real brands by name** - `dang` on the pack and
+ * `GOOD SOURCE` on the card - and photographs their packaging. Both are
+ * invented here and the product is photographed loose (I1, I4).
+ *
+ * **The board also mixes `$ 08.00` and `USD 38.00` in one flow.** Prices here
+ * are numbers and one formatter is applied once (R9).
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const header = { title: 'Order From The Best Of Snacks', collections: 'Choco Collections' };
+
+export type Kind = { id: string; label: string; on?: boolean };
+
+export const kinds: Kind[] = [
+  { id: 'all', label: 'All' },
+  // STEP 1.05 "Choco"
+  // { id: 'choco', label: 'Choco', on: true },
+  // STEP 1.06 "Nuts"
+  // { id: 'nuts', label: 'Nuts' },
+  // STEP 1.07 "Dried"
+  // { id: 'dried', label: 'Dried' },
+];
+
+export type Pack = {
+  id: string;
+  name: string;
+  sub: string;
+  price: number;
+  image: number;
+  tint: 'blush' | 'lime';
+};
+
+export const packs: Pack[] = [
+  {
+    id: 'dark',
+    name: 'Dark Chocolate',
+    sub: 'Perfect snacks',
+    price: 8,
+    image: require('../../../../assets/images/cocoahome/c1.jpg'),
+    tint: 'blush',
+  },
+  // STEP 1.14 "Coconut Chips"
+  // {
+  //   id: 'coconut',
+  //   name: 'Coconut Chips',
+  //   sub: 'Sweet snacks',
+  //   price: 18,
+  //   image: require('../../../../assets/images/cocoahome/c2.jpg'),
+  //   tint: 'lime',
+  // },
+];
+
+export const bar = { label: 'Cart', me: require('../../../../assets/images/cocoahome/me.jpg') };
+
+/** One money format, applied once (R9). */
+export function money(value: number) {
+  return '$' + value.toFixed(2);
+}
+
+/** R9: the bar counts the cart, it does not claim a number of its own. */
+export function cartCount() {
+  return packs.filter((p) => p.id === 'dark').length;
+}

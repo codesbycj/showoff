@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/lumoprofile/index.tsx",
+  "profile-header": "src/features/lumoprofile/components/profile-header.tsx",
+  "stat-row": "src/features/lumoprofile/components/stat-row.tsx",
+  "data-profile": "src/features/lumoprofile/data/profile.ts",
+  "bio-lines": "src/features/lumoprofile/components/bio-lines.tsx",
+  "photo-grid": "src/features/lumoprofile/components/photo-grid.tsx",
+  "dock": "src/features/lumoprofile/components/dock.tsx"
+}

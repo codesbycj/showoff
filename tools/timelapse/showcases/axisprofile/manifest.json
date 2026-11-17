@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/axisprofile/index.tsx",
+  "top-bar": "src/features/axisprofile/components/top-bar.tsx",
+  "tab-row": "src/features/axisprofile/components/tab-row.tsx",
+  "data-profile": "src/features/axisprofile/data/profile.ts",
+  "fact-grid": "src/features/axisprofile/components/fact-grid.tsx",
+  "people-row": "src/features/axisprofile/components/people-row.tsx"
+}

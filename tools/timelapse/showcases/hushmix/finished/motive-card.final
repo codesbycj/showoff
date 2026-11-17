@@ -1,0 +1,95 @@
+import { useId } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Defs, LinearGradient, Stop } from 'react-native-svg';
+
+import { session } from '../data/session';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { radius: number; height: number };
+
+/**
+ * The track the session is shaped around.
+ *
+ * The disc is a drawn gradient, not a cover photograph: it stands for a
+ * generated piece, which has no artwork to photograph (I4). Its gradient id
+ * comes from `useId` because ids are document-global on web and every disc
+ * would otherwise render in the first colour (I8).
+ *
+ * The download control is a **sibling** of the row's `Pressable`, never a
+ * child - a `role="button"` inside another is torn apart by the static web
+ * build's HTML parser (RULES Part 7).
+ */
+export function MotiveCard({ radius, height }: Props) {
+  const gid = useId();
+  const disc = 38;
+
+  return (
+    <View style={{ height, borderRadius: radius }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.card,
+          borderRadius: radius,
+        }}
+      />
+
+      <Pressable accessibilityRole="button" accessibilityLabel={session.motiveLabel}>
+        <View
+          style={{
+            paddingHorizontal: 18,
+            paddingTop: 10,
+            height: 44,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <T variant="rowTitle">{session.motiveLabel}</T>
+          </View>
+          <Glyph name="chevron" size={16} color={ct.onDarkMuted} strokeWidth={1.8} />
+        </View>
+      </Pressable>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 12,
+          paddingHorizontal: 18,
+          paddingTop: 10,
+        }}
+      >
+        <View style={{ width: disc, height: disc }}>
+          <Svg width={disc} height={disc}>
+            <Defs>
+              <LinearGradient id={gid} x1="0" y1="0" x2="1" y2="1">
+                <Stop offset="0" stopColor={ct.discWarm} />
+                <Stop offset="0.5" stopColor={ct.discMid} />
+                <Stop offset="1" stopColor={ct.discCool} />
+              </LinearGradient>
+            </Defs>
+            <Circle cx={disc / 2} cy={disc / 2} r={disc / 2} fill={`url(#${gid})`} />
+            <Circle cx={disc / 2} cy={disc / 2} r={disc / 6} fill={ct.card} />
+          </Svg>
+        </View>
+
+        <View style={{ flex: 1 }}>
+          <T variant="genre">{session.genre}</T>
+          <T variant="track">{session.track}</T>
+        </View>
+
+        <Pressable accessibilityRole="button" accessibilityLabel={`Download ${session.track}`}>
+          <View style={{ width: 44, height: 44, alignItems: 'center', justifyContent: 'center' }}>
+            <Glyph name="download" size={18} color={ct.onDarkMuted} strokeWidth={1.7} />
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

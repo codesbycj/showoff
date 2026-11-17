@@ -1,0 +1,70 @@
+import { Pressable, View } from 'react-native';
+
+import { cartCount, cartTotal, controls, DELIVERY, lines } from '../data/cart';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; summaryH: number; ctaH: number; gap: number };
+
+/**
+ * What the order comes to, and the action.
+ *
+ * **R9: both numbers are computed from the selected lines** — the subtotal is
+ * their price times their quantity, and the button carries the same figure.
+ * The board's cart prints a total beside two items whose own prices do not add
+ * up to it.
+ *
+ * Added, because the board ends on a bare "Checkout" and I3 says the fix for
+ * space above a button is the row the board cropped.
+ */
+export function CheckoutBar({ margin, summaryH, ctaH, gap }: Props) {
+  const subtotal = cartTotal(lines);
+  const count = cartCount(lines);
+  const total = subtotal + DELIVERY;
+
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <View style={{ height: summaryH, justifyContent: 'center', gap: 4 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          {/* STEP 1.18 t
+          <T variant="summaryLabel">
+            Subtotal ({count} {count === 1 ? 'item' : 'items'})
+          </T>
+          */}
+          {/* STEP 1.19 t
+          <T variant="summaryValue">£{subtotal.toLocaleString('en-GB')}.00</T>
+          */}
+        </View>
+
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          {/* STEP 1.20 "Delivery"
+          <T variant="summaryLabel">Delivery</T>
+          */}
+          {/* STEP 1.21 t
+          <T variant="summaryValue">{DELIVERY === 0 ? 'Free' : `£${DELIVERY}.00`}</T>
+          */}
+        </View>
+      </View>
+
+      <View style={{ height: gap }} />
+
+      {/* STEP 1.22 pressable
+      <Pressable accessibilityRole="button" accessibilityLabel={`${controls.checkout}, £${total}`}>
+        <View
+          style={{
+            height: ctaH,
+            borderRadius: ctaH / 2,
+            backgroundColor: ct.acid,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="cta">
+            {controls.checkout} · £{total.toLocaleString('en-GB')}.00
+          </T>
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

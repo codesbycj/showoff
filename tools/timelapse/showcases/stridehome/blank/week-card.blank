@@ -1,0 +1,78 @@
+import { View } from 'react-native';
+
+import { dayPeak, days, week, weekTotal } from '../data/home';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The week's running.
+ *
+ * **R9: the headline is the sum of the bars** and each bar's height is its own
+ * day against the tallest, so the picture and the number cannot disagree.
+ * `dayPeak` clamps its divisor to at least one, because the reveal stages
+ * `days` one entry at a time and an empty array would divide by zero (I7).
+ */
+export function WeekCard({ margin, height, radius }: Props) {
+  const total = weekTotal(days);
+  const peak = dayPeak(days);
+
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      {/* STEP 1.18 view
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.card,
+          borderWidth: 1,
+          borderColor: ct.line,
+        }}
+      />
+      */}
+
+      {/* STEP 1.19 label
+      <View style={{ flex: 1, padding: 16 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <T variant="label" style={{ flex: 1 }}>
+            {week.label}
+          </T>
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 6 }}>
+            <T variant="weekValue">{total.toFixed(1)}</T>
+            <T variant="weekGoal">{week.unit}</T>
+          </View>
+        </View>
+
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+            marginTop: 12,
+          }}
+        >
+          {days.map((entry) => (
+            <View key={entry.id} style={{ alignItems: 'center', gap: 6, flex: 1 }}>
+              <View
+                style={{
+                  width: 26,
+                  height: Math.max(10, (entry.km / peak) * 62),
+                  borderRadius: 8,
+                  backgroundColor: entry.today ? ct.lime : ct.cardSoft,
+                }}
+              />
+              <T variant="day">{entry.label}</T>
+            </View>
+          ))}
+        </View>
+      </View>
+      */}
+    </View>
+  );
+}

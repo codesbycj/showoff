@@ -1,0 +1,73 @@
+/**
+ * Everything nookshop says.
+ *
+ * **The board writes its prices as `EUR1.150` and `EUR850`** - a thousands
+ * separator used where a decimal point belongs, so one piece reads as costing
+ * a thousand times the other. Prices here are numbers and the one format is
+ * applied once (I1, R9).
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const header = { title: 'Catalog', cart: 2 };
+
+export type Kind = {
+  id: string;
+  label: string;
+  glyph: 'lamp' | 'sofa' | 'bed' | 'chair' | 'table';
+  on?: boolean;
+};
+
+export const kinds: Kind[] = [
+  { id: 'lamp', label: 'Lighting', glyph: 'lamp' },
+  // STEP 1.09 "Seating"
+  // { id: 'sofa', label: 'Seating', glyph: 'sofa', on: true },
+  // STEP 1.10 "Beds"
+  // { id: 'bed', label: 'Beds', glyph: 'bed' },
+  // STEP 1.11 "Chairs"
+  // { id: 'chair', label: 'Chairs', glyph: 'chair' },
+  // STEP 1.12 "Tables"
+  // { id: 'table', label: 'Tables', glyph: 'table' },
+];
+
+export type Piece = {
+  id: string;
+  name: string;
+  price: number;
+  image: number;
+  tint: 'card' | 'sand';
+  /** How many frames the card's pager draws; only the first card has more. */
+  frames?: number;
+};
+
+export const pieces: Piece[] = [
+  {
+    id: 'cantilever',
+    name: 'Stylish chair',
+    price: 1150,
+    image: require('../../../../assets/images/nookshop/f1.png'),
+    tint: 'card',
+    frames: 3,
+  },
+  // STEP 1.16 "Minimal stool"
+  // {
+  //   id: 'stool',
+  //   name: 'Minimal stool',
+  //   price: 850,
+  //   image: require('../../../../assets/images/nookshop/f2.png'),
+  //   tint: 'sand',
+  // },
+];
+
+export const promo = {
+  /** The board's own offer, trimmed to one line (R5). */
+  line: 'Get a table — for free',
+  cta: 'I want them',
+  image: require('../../../../assets/images/nookshop/f3.png'),
+};
+
+/** One money format, applied once (R9). */
+export function money(value: number) {
+  return '€' + value.toLocaleString('en-GB');
+}

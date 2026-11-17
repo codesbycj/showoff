@@ -1,0 +1,361 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "@/features/stridehome/components/day-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import day header"
+  },
+  {
+   "label": "date",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/day-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Your profile\"",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/day-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "@/features/stridehome/components/readiness-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import readiness card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/readiness-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/readiness-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "\"RESTING HR\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "rhr"
+   ]
+  },
+  {
+   "label": "\"SLEEP\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "sleep"
+   ]
+  },
+  {
+   "label": "\"Rest rate\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "rest"
+   ]
+  },
+  {
+   "label": "\"Load 7d\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "load"
+   ]
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/readiness-ring.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "score",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/readiness-ring.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "score label",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/readiness-ring.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "@/features/stridehome/components/focus-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import focus card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/focus-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "\"min\"",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/focus-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "@/features/stridehome/components/week-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import week card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/week-card.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/week-card.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "\"T\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "tue"
+   ]
+  },
+  {
+   "label": "\"W\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "wed"
+   ]
+  },
+  {
+   "label": "\"T\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "thu"
+   ]
+  },
+  {
+   "label": "\"F\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "fri"
+   ]
+  },
+  {
+   "label": "\"S\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "sat"
+   ]
+  },
+  {
+   "label": "\"S\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "sun"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "@/features/stridehome/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridehome/index.tsx",
+      "STEP 1.26"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/dock.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "\"Start a run\"",
+   "op": "jsx",
+   "args": [
+    "src/features/stridehome/components/dock.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "\"Train\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "train"
+   ]
+  },
+  {
+   "label": "\"Compete\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "compete"
+   ]
+  },
+  {
+   "label": "\"You\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridehome/data/home.ts",
+    "you"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/stridehome/index.tsx",
+    "STEP 1.32"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/stridehome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-home",
+     "src/features/stridehome/data/home.ts"
+    ],
+    [
+     "day-header",
+     "src/features/stridehome/components/day-header.tsx"
+    ],
+    [
+     "dock",
+     "src/features/stridehome/components/dock.tsx"
+    ],
+    [
+     "focus-card",
+     "src/features/stridehome/components/focus-card.tsx"
+    ],
+    [
+     "readiness-card",
+     "src/features/stridehome/components/readiness-card.tsx"
+    ],
+    [
+     "readiness-ring",
+     "src/features/stridehome/components/readiness-ring.tsx"
+    ],
+    [
+     "screen",
+     "src/app/stridehome/index.tsx"
+    ],
+    [
+     "week-card",
+     "src/features/stridehome/components/week-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

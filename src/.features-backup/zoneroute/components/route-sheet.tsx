@@ -1,0 +1,193 @@
+import { Pressable, View } from 'react-native';
+
+import { distanceKm, etaMinutes, rider, screen, steps } from '../data/route';
+import { ct } from '../theme';
+import { Glyph, type GlyphName } from './glyph';
+import { T } from './text';
+
+function Round({ glyph, label, size, onPress }: { glyph: GlyphName; label: string; size: number; onPress?: () => void }) {
+  return (
+    <Pressable hitSlop={8} onPress={onPress} accessibilityRole="button" accessibilityLabel={label}>
+      {({ pressed }) => (
+        <View
+          style={{
+            width: size,
+            height: size,
+            borderRadius: size / 2,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: ct.white,
+            opacity: pressed ? 0.7 : 1,
+            shadowColor: '#2A1A14',
+            shadowOpacity: 0.18,
+            shadowRadius: 10,
+            shadowOffset: { width: 0, height: 4 },
+            elevation: 5,
+          }}
+        >
+          <Glyph name={glyph} size={17} color={ct.ink} />
+        </View>
+      )}
+    </Pressable>
+  );
+}
+
+type BarProps = { margin: number; topInset: number; control: number; onBack: () => void };
+
+/** The controls, floating over the map. Each sits wholly over the map rather
+ *  than straddling anything it covers (R3). */
+export function RouteBar({ margin, topInset, control, onBack }: BarProps) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: margin,
+        right: margin,
+        top: topInset + 4,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Round glyph="back" label="Back" size={control} onPress={onBack} />
+      <View style={{ flexDirection: 'row', gap: 10 }}>
+        <Round glyph="arrowUpRight" label="Share" size={control} />
+        <Round glyph="search" label={screen.help} size={control} />
+      </View>
+    </View>
+  );
+}
+
+type SheetProps = {
+  margin: number;
+  height: number;
+  radius: number;
+  etaH: number;
+  riderH: number;
+  stepH: number;
+};
+
+/**
+ * The sheet under the map.
+ *
+ * **The fill is on an absolutely-filled child**, carrying the shadow with it,
+ * so a reveal that stages the sheet's rows does not open on an empty white
+ * slab with a shadow under it (§5.5 / I9).
+ *
+ * **The ETA and the distance are computed from the route** (R9) — they are the
+ * summed polyline and the time it takes at a stated speed, so the sheet cannot
+ * disagree with the line drawn above it.
+ *
+ * **The progress rows are mine.** The board's map screen is a map and nothing
+ * else, cropped off at the bottom of its artboard; I3's lever for that space
+ * is the section the board cut.
+ */
+export function RouteSheet({ margin, height, radius, etaH, riderH, stepH }: SheetProps) {
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height,
+        paddingHorizontal: margin,
+        paddingTop: 14,
+      }}
+    >
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderTopLeftRadius: radius,
+          borderTopRightRadius: radius,
+          backgroundColor: ct.white,
+          shadowColor: '#2A1A14',
+          shadowOpacity: 0.16,
+          shadowRadius: 22,
+          shadowOffset: { width: 0, height: -6 },
+          elevation: 12,
+        }}
+      />
+
+      <View style={{ height: etaH, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <View style={{ flex: 1 }}>
+          <T variant="etaLabel">{screen.title}</T>
+          <T variant="eta">{`${etaMinutes()} min`}</T>
+        </View>
+        <View
+          style={{
+            paddingHorizontal: 12,
+            height: 30,
+            borderRadius: 15,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: ct.tile,
+          }}
+        >
+          <T variant="distance">{`${distanceKm().toFixed(1)} km`}</T>
+        </View>
+      </View>
+
+      <View
+        style={{
+          height: riderH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 12,
+          borderTopWidth: 1,
+          borderTopColor: ct.hairline,
+        }}
+      >
+        <View
+          style={{
+            width: 38,
+            height: 38,
+            borderRadius: 19,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: ct.tile,
+          }}
+        >
+          <Glyph name="user" size={19} color={ct.ink} />
+        </View>
+        <View style={{ flex: 1 }}>
+          <T variant="riderName">{rider.name}</T>
+          <T variant="riderRole">{rider.role}</T>
+        </View>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+          <Glyph name="star" size={13} color={ct.star} />
+          <T variant="rating">{rider.rating.toFixed(1)}</T>
+        </View>
+      </View>
+
+      <View style={{ borderTopWidth: 1, borderTopColor: ct.hairline, paddingTop: 8 }}>
+        {steps.map((s) => (
+          <View
+            key={s.id}
+            style={{ height: stepH, flexDirection: 'row', alignItems: 'center', gap: 10 }}
+          >
+            <View
+              style={{
+                width: 16,
+                height: 16,
+                borderRadius: 8,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: s.done ? ct.brand : ct.tile,
+                borderWidth: s.done ? 0 : 1.5,
+                borderColor: ct.fieldEdge,
+              }}
+            >
+              {s.done ? <Glyph name="check" size={11} color={ct.brandInk} strokeWidth={3.2} /> : null}
+            </View>
+            <T variant={s.done ? 'stepDone' : 'stepTodo'}>{s.label}</T>
+          </View>
+        ))}
+      </View>
+    </View>
+  );
+}

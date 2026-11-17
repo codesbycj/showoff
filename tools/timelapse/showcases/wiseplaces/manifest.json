@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/wiseplaces/index.tsx",
+  "wordmark": "src/features/wiseplaces/components/wordmark.tsx",
+  "place-stack": "src/features/wiseplaces/components/place-stack.tsx",
+  "data-trip": "src/features/wiseplaces/data/trip.ts",
+  "flag-disc": "src/features/wiseplaces/components/flag-disc.tsx",
+  "onboard-foot": "src/features/wiseplaces/components/onboard-foot.tsx"
+}

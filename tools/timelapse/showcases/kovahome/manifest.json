@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/kovahome/index.tsx",
+  "greet-row": "src/features/kovahome/components/greet-row.tsx",
+  "stat-strip": "src/features/kovahome/components/stat-strip.tsx",
+  "data-home": "src/features/kovahome/data/home.ts",
+  "section-row": "src/features/kovahome/components/section-row.tsx",
+  "client-rail": "src/features/kovahome/components/client-rail.tsx",
+  "reminder-card": "src/features/kovahome/components/reminder-card.tsx",
+  "upcoming-rail": "src/features/kovahome/components/upcoming-rail.tsx",
+  "pill-dock": "src/features/kovahome/components/pill-dock.tsx"
+}

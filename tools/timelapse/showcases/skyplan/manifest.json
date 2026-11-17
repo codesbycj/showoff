@@ -1,0 +1,13 @@
+{
+  "screen": "src/app/skyplan/index.tsx",
+  "plan-header": "src/features/skyplan/components/plan-header.tsx",
+  "trip-fields": "src/features/skyplan/components/trip-fields.tsx",
+  "trip-options": "src/features/skyplan/components/trip-options.tsx",
+  "search-button": "src/features/skyplan/components/search-button.tsx",
+  "saved-header": "src/features/skyplan/components/saved-header.tsx",
+  "trip-rail": "src/features/skyplan/components/trip-rail.tsx",
+  "data-plan": "src/features/skyplan/data/plan.ts",
+  "trip-card": "src/features/skyplan/components/trip-card.tsx",
+  "route-arc": "src/features/skyplan/components/route-arc.tsx",
+  "tab-bar": "src/features/skyplan/components/tab-bar.tsx"
+}

@@ -1,0 +1,100 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { Glyph } from '@/features/kovastats/components/glyph';
+import { MetricTiles } from '@/features/kovastats/components/metric-tiles';
+import { PillDock } from '@/features/kovastats/components/pill-dock';
+import { PostList } from '@/features/kovastats/components/post-list';
+import { T } from '@/features/kovastats/components/text';
+import { header, topLabel } from '@/features/kovastats/data/stats';
+import { useLayout } from '@/features/kovastats/layout';
+import { ct } from '@/features/kovastats/theme';
+
+/**
+ * Kova — insights.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * Every delta on the tiles is computed from the two periods it compares (R9),
+ * and the post list takes the remainder so the screen reaches the dock — the
+ * board's own insights screen stops two thirds of the way down (I3).
+ */
+export default function KovastatsScreen() {
+  const L = useLayout();
+
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: ct.tray,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/kovahome')}
+        >
+          <View style={round}>
+            <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+
+        <Pressable accessibilityRole="button" accessibilityLabel="Insight options">
+          <View style={round}>
+            <Glyph name="more" size={19} color={ct.ink} />
+          </View>
+        </Pressable>
+      </View>
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ marginHorizontal: L.margin, height: L.titleH, justifyContent: 'center' }}>
+        <T variant="greeting">{header.title}</T>
+        <T variant="postMeta">{header.period}</T>
+      </View>
+
+      <View style={{ height: L.gapTitle }} />
+      <MetricTiles margin={L.margin} width={L.tile.w} height={L.tile.h} radius={L.tile.radius} />
+
+      <View style={{ height: L.gapTiles }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH, justifyContent: 'center' }}>
+        <T variant="section">{topLabel}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <PostList
+        margin={L.margin}
+        height={L.row.h}
+        gap={L.row.gap}
+        radius={L.row.radius}
+        bottomPad={L.dock.h + L.dock.bottom}
+      />
+
+      <PillDock
+        margin={L.margin}
+        height={L.dock.h}
+        bottom={L.dock.bottom}
+        active="me"
+        onCalendar={() => router.push('/kovacal')}
+      />
+    </View>
+  );
+}

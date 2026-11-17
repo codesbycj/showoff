@@ -1,0 +1,331 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Save this session\"",
+   "op": "jsx",
+   "args": [
+    "src/app/hushmix/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "\"Share this session\"",
+   "op": "jsx",
+   "args": [
+    "src/app/hushmix/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/session-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import session card"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/session-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/session-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "\"pleasant\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushmix/data/session.ts",
+    "pleasant"
+   ]
+  },
+  {
+   "label": "\"deep\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushmix/data/session.ts",
+    "deep"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/timer-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import timer card"
+  },
+  {
+   "label": "timer label",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/timer-card.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/foundation-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import foundation card"
+  },
+  {
+   "label": "foundation label",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/foundation-card.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/foundation-card.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "\"Trance\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushmix/data/session.ts",
+    "trance"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/motive-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import motive card"
+  },
+  {
+   "label": "motive label",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/motive-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/motive-card.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "genre",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/motive-card.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/controls-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import controls card"
+  },
+  {
+   "label": "controls label",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/controls-card.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/controls-card.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/controls-card.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/controls-card.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "relaxed",
+   "op": "jsx",
+   "args": [
+    "src/features/hushmix/components/controls-card.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/hushmix/index.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/hushmix/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "@/features/hushmix/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushmix/index.tsx",
+      "STEP 1.27"
+     ]
+    }
+   ],
+   "label": "import text + cta"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "controls-card",
+     "src/features/hushmix/components/controls-card.tsx"
+    ],
+    [
+     "data-session",
+     "src/features/hushmix/data/session.ts"
+    ],
+    [
+     "foundation-card",
+     "src/features/hushmix/components/foundation-card.tsx"
+    ],
+    [
+     "motive-card",
+     "src/features/hushmix/components/motive-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/hushmix/index.tsx"
+    ],
+    [
+     "session-card",
+     "src/features/hushmix/components/session-card.tsx"
+    ],
+    [
+     "timer-card",
+     "src/features/hushmix/components/timer-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

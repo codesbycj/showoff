@@ -1,0 +1,32 @@
+import { Pressable, View } from 'react-native';
+
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { size: number; onPress: () => void };
+
+/**
+ * The way out of the preview.
+ *
+ * It is its own component rather than a branch of a control row, because
+ * `stage.js` stages what the screen mounts: three controls inside one wrapper
+ * reveal as one step, and three mounted side by side reveal as three (I5).
+ */
+export function CloseButton({ size, onPress }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel="Close the preview" onPress={onPress}>
+      <View
+        style={{
+          width: size,
+          height: size,
+          borderRadius: size / 2,
+          backgroundColor: ct.scrim,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Glyph name="close" size={18} color={ct.onInk} strokeWidth={2} />
+      </View>
+    </Pressable>
+  );
+}

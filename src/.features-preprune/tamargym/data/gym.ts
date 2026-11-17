@@ -1,0 +1,87 @@
+/**
+ * Everything tamargym says.
+ *
+ * **The venue is invented.** The board names "GymNation Stars" at a real street
+ * address; a rebuild that ships a real business's name and location is
+ * impersonation, so this is a fictional club on an invented street. Named in
+ * the handover.
+ *
+ * **Every figure derives from one price table** (R9), shared with the sibling
+ * screen. The board prints "253,000" beside "Second Payment: 200,00/mo", which
+ * is two currencies, two separators and no relationship between the numbers.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const screen = { reserve: 'Reserve' };
+
+export type Shot = { id: string; photo: number };
+
+export const hero = require('../../../../assets/images/tamargym/hero.jpg');
+
+/** The pager reads its count off this, so it cannot disagree with the rail. */
+export const gallery: Shot[] = [
+  { id: 'g1', photo: require('../../../../assets/images/tamargym/s1.jpg') },
+  { id: 'g2', photo: require('../../../../assets/images/tamargym/s2.jpg') },
+  { id: 'g3', photo: require('../../../../assets/images/tamargym/s3.jpg') },
+];
+
+export const activeShot = 0;
+
+export const venue = {
+  name: 'Atlas Strength',
+  rating: 4.8,
+  reviews: 130,
+  address: '6157 Marin Rd, Al Zahra',
+};
+
+export type Amenity = { id: string; label: string; glyph: 'wifi' | 'buffet' | 'coffee' | 'parking' };
+
+/** R5: a chip is two words at most. The board's own "Coffe Shop" is a typo. */
+export const amenities: Amenity[] = [
+  { id: 'wifi', label: 'Wifi', glyph: 'wifi' },
+  { id: 'buffet', label: 'Buffet', glyph: 'buffet' },
+  { id: 'coffee', label: 'Coffee Shop', glyph: 'coffee' },
+  { id: 'parking', label: 'Parking', glyph: 'parking' },
+];
+
+/** One price table for the board. A session, and what a month of them costs. */
+export const PRICE = { session: 23, month: 200, months: 12, yearDiscount: 0.1 };
+
+/** FIX: the yearly figure follows from the monthly one, rather than being typed. */
+export const yearly = PRICE.month * PRICE.months * (1 - PRICE.yearDiscount);
+export const yearSaving = PRICE.month * PRICE.months - yearly;
+
+export const pricing = { unit: '/mo', yearLabel: 'or', yearUnit: '/yr' };
+
+/**
+ * What the place is.
+ *
+ * **R5: one run, 104 characters.** The board's own paragraph runs to 243 and is
+ * cut off mid-word by the screen edge.
+ */
+export const about =
+  'Strength, conditioning and mobility across three floors. Coaches on the floor from 6am to 10pm.';
+
+export type Fact = { id: string; label: string; value: string };
+
+/**
+ * The facts.
+ *
+ * **Mine, not the board's.** The board fills the space below its paragraph with
+ * more of the same paragraph, cropped. I3's lever is the row the board cut, and
+ * what a venue page genuinely carries there is its hours, its size and how
+ * busy it is.
+ */
+export const facts: Fact[] = [
+  { id: 'hours', label: 'Open today', value: '06:00 – 22:00' },
+  { id: 'floor', label: 'Floor area', value: '1,840 m²' },
+  { id: 'classes', label: 'Classes this week', value: '16' },
+];
+
+/** Money, formatted once so every figure on the board reads the same way. */
+export function usd(n: number) {
+  return `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}

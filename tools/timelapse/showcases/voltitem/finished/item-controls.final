@@ -1,0 +1,70 @@
+import { Pressable, View } from 'react-native';
+
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { margin: number; top: number; size: number; onBack?: () => void };
+
+/**
+ * Back, save, share — floating on the gallery.
+ *
+ * They sit over the photographs rather than inside the pager, so a swipe never
+ * carries them off the screen, and each is 40dp of box with hit slop past 44
+ * (R7).
+ */
+export function ItemControls({ margin, top, size, onBack }: Props) {
+  const round = {
+    width: size,
+    height: size,
+    borderRadius: size / 2,
+    backgroundColor: ct.surface,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        top,
+        left: margin,
+        right: margin,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Back"
+        onPress={onBack}
+        hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+      >
+        <View style={round}>
+          <Glyph name="back" size={18} color={ct.ink} strokeWidth={2} />
+        </View>
+      </Pressable>
+
+      <View style={{ flexDirection: 'row', gap: 10 }}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Save"
+          hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+        >
+          <View style={round}>
+            <Glyph name="heart" size={18} color={ct.ink} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Share"
+          hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+        >
+          <View style={round}>
+            <Glyph name="share" size={18} color={ct.ink} strokeWidth={1.8} />
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/voltitem/index.tsx",
+  "item-gallery": "src/features/voltitem/components/item-gallery.tsx",
+  "data-item": "src/features/voltitem/data/item.ts",
+  "item-controls": "src/features/voltitem/components/item-controls.tsx",
+  "item-title": "src/features/voltitem/components/item-title.tsx",
+  "rating-pills": "src/features/voltitem/components/rating-pills.tsx",
+  "price-row": "src/features/voltitem/components/price-row.tsx",
+  "fact-rows": "src/features/voltitem/components/fact-rows.tsx",
+  "add-to-cart": "src/features/voltitem/components/add-to-cart.tsx"
+}

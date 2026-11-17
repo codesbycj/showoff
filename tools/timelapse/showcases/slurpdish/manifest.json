@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/slurpdish/index.tsx",
+  "top-bar": "src/features/slurpdish/components/top-bar.tsx",
+  "dish-hero": "src/features/slurpdish/components/dish-hero.tsx",
+  "qty-pill": "src/features/slurpdish/components/qty-pill.tsx",
+  "size-rail": "src/features/slurpdish/components/size-rail.tsx",
+  "data-dish": "src/features/slurpdish/data/dish.ts",
+  "fact-chips": "src/features/slurpdish/components/fact-chips.tsx",
+  "extras-row": "src/features/slurpdish/components/extras-row.tsx",
+  "select-bar": "src/features/slurpdish/components/select-bar.tsx"
+}

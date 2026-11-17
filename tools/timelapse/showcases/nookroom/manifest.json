@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/nookroom/index.tsx",
+  "price-pill": "src/features/nookroom/components/price-pill.tsx",
+  "piece-card": "src/features/nookroom/components/piece-card.tsx",
+  "look-rail": "src/features/nookroom/components/look-rail.tsx",
+  "data-room": "src/features/nookroom/data/room.ts"
+}

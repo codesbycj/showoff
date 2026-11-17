@@ -1,0 +1,55 @@
+import { View } from 'react-native';
+import {
+  kg,
+  prediction,
+  projected,
+  screen,
+  series,
+  stats,
+  unit,
+} from '../data/weight';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { PredictProps } from './_weight-parts-shared';
+
+/**
+ * What the trend implies.
+ *
+ * **Mine, not the board's.** The board's prediction card is cut off by the
+ * artboard edge with nothing in it but a title, which leaves the screen with a
+ * hole where its last block should be. I3's lever for that is the section the
+ * board cut.
+ *
+ * The figure is the trend extrapolated, derived in `data/weight.ts` (R9).
+ */
+export function PredictCard({ margin, height, radius }: PredictProps) {
+  return (
+    <View style={{ marginHorizontal: margin, height, padding: 16 }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.accentSoft,
+        }}
+      />
+
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+        <View style={{ flex: 1 }}>
+          <T variant="statLabel">{prediction.label}</T>
+          <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 4 }}>
+            <T variant="predictValue">{kg(projected())}</T>
+            <T variant="statUnit">{unit}</T>
+          </View>
+          <T variant="noteLine">{prediction.note}</T>
+        </View>
+        <Glyph name="sparkle" size={24} color={ct.accentDeep} />
+      </View>
+    </View>
+  );
+}

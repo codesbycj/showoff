@@ -1,0 +1,107 @@
+import { useState } from 'react';
+import {
+  Image,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+  ScrollView,
+  View,
+} from 'react-native';
+
+import { gallery } from '../data/stay';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { width: number; height: number; radius: number };
+
+/**
+ * The listing's photographs — the dominant element on the screen (R8).
+ *
+ * A real pager, not a still: the board draws four dots and a "1 / 7" counter,
+ * so the counter is computed from the page the scroller is actually on and the
+ * dots count the frames that exist (R9).
+ *
+ * `gallery[0]` is read behind a guard: the reveal stages this array one entry
+ * at a time, and an index into an empty array is the crash shape I7 names.
+ */
+export function Gallery({ width, height, radius }: Props) {
+  const [page, setPage] = useState(0);
+
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const next = Math.round(e.nativeEvent.contentOffset.x / Math.max(width, 1));
+    setPage(Math.min(Math.max(next, 0), Math.max(gallery.length - 1, 0)));
+  };
+
+  return (
+    <View
+      style={{
+        height,
+        borderBottomLeftRadius: radius,
+        borderBottomRightRadius: radius,
+        overflow: 'hidden',
+        backgroundColor: ct.line,
+      }}
+    >
+      <ScrollView
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={onScroll}
+        scrollEventThrottle={32}
+      >
+        {gallery.map((shot) => (
+          <Image
+            key={shot.id}
+            source={shot.image}
+            style={{ width, height }}
+            resizeMode="cover"
+            accessibilityLabel="Listing photograph"
+          />
+        ))}
+      </ScrollView>
+
+      {gallery.length > 0 && (
+        <View
+          style={{
+            position: 'absolute',
+            right: 16,
+            bottom: 18,
+            paddingHorizontal: 10,
+            height: 24,
+            borderRadius: 12,
+            backgroundColor: ct.float,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="counter">
+            {page + 1} / {gallery.length}
+          </T>
+        </View>
+      )}
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 24,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          gap: 6,
+        }}
+      >
+        {gallery.map((shot, i) => (
+          <View
+            key={shot.id}
+            style={{
+              width: i === page ? 7 : 6,
+              height: i === page ? 7 : 6,
+              borderRadius: 4,
+              backgroundColor: i === page ? ct.white : 'rgba(255,255,255,0.55)',
+            }}
+          />
+        ))}
+      </View>
+    </View>
+  );
+}

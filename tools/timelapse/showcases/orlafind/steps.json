@@ -1,0 +1,241 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "@/features/orlafind/components/brand-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import brand bar"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "@/features/orlafind/components/discover-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import discover title"
+  },
+  {
+   "label": "display bottom",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafind/components/discover-title.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "@/features/orlafind/components/collection-count"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import collection count"
+  },
+  {
+   "label": "made",
+   "op": "jsx",
+   "args": [
+    "src/features/orlafind/components/collection-count.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "@/features/orlafind/components/kind-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import kind chips"
+  },
+  {
+   "label": "\"Engagement\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlafind/data/find.ts",
+    "engagement"
+   ]
+  },
+  {
+   "label": "\"Bands\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlafind/data/find.ts",
+    "bands"
+   ]
+  },
+  {
+   "label": "\"Sets\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlafind/data/find.ts",
+    "sets"
+   ]
+  },
+  {
+   "label": "\"Stacking\"",
+   "op": "entry",
+   "args": [
+    "src/features/orlafind/data/find.ts",
+    "stacking"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orlafind/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "@/features/orlafind/components/ring-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orlafind/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import ring rail"
+  },
+  {
+   "label": "\"Aurum\"",
+   "op": "block",
+   "args": [
+    "src/features/orlafind/data/find.ts",
+    "aurum"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "collection-count",
+     "src/features/orlafind/components/collection-count.tsx"
+    ],
+    [
+     "data-find",
+     "src/features/orlafind/data/find.ts"
+    ],
+    [
+     "discover-title",
+     "src/features/orlafind/components/discover-title.tsx"
+    ],
+    [
+     "screen",
+     "src/app/orlafind/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

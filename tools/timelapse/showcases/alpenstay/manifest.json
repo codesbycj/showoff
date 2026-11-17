@@ -1,0 +1,5 @@
+{
+  "screen": "src/app/alpenstay/index.tsx",
+  "stay-gallery": "src/features/alpenstay/components/stay-gallery.tsx",
+  "data-stay": "src/features/alpenstay/data/stay.ts"
+}

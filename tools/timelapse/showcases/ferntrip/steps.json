@@ -1,0 +1,317 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "@/features/ferntrip/components/hero-summit"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import hero summit"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "weather label",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "altitude",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "more",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/hero-summit.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "@/features/ferntrip/components/flag-disc"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import flag disc"
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/flag-disc.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/flag-disc.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/flag-disc.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/flag-disc.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "circle",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/flag-disc.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "@/features/ferntrip/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import text"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/app/ferntrip/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "@/features/ferntrip/components/fact-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import fact chips"
+  },
+  {
+   "label": "\"10 km\"",
+   "op": "entry",
+   "args": [
+    "src/features/ferntrip/data/trip.ts",
+    "distance"
+   ]
+  },
+  {
+   "label": "\"8/10\"",
+   "op": "entry",
+   "args": [
+    "src/features/ferntrip/data/trip.ts",
+    "party"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "@/features/ferntrip/components/stay-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/ferntrip/index.tsx",
+      "STEP 1.25"
+     ]
+    }
+   ],
+   "label": "import stay card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/stay-card.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/ferntrip/components/stay-card.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/ferntrip/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/ferntrip/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-trip",
+     "src/features/ferntrip/data/trip.ts"
+    ],
+    [
+     "flag-disc",
+     "src/features/ferntrip/components/flag-disc.tsx"
+    ],
+    [
+     "hero-summit",
+     "src/features/ferntrip/components/hero-summit.tsx"
+    ],
+    [
+     "screen",
+     "src/app/ferntrip/index.tsx"
+    ],
+    [
+     "stay-card",
+     "src/features/ferntrip/components/stay-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

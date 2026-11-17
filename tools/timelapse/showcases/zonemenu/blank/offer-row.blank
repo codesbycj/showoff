@@ -1,0 +1,42 @@
+import { View } from 'react-native';
+
+import { offers, usd } from '../data/menu';
+import { ct } from '../theme';
+import { T } from './text';
+
+import { OfferProps } from './_menu-head-shared';
+
+/**
+ * The running offers.
+ *
+ * The percentage drives every was-price in the grid below (R9), so an offer
+ * and a card cannot disagree.
+ */
+export function OfferRow({ margin, height, radius, gap }: OfferProps) {
+  return (
+    <View style={{ marginHorizontal: margin, height, flexDirection: 'row', gap }}>
+      {/* STEP 1.17 view
+      {offers.map((o) => (
+        <View
+          key={o.id}
+          style={{
+            flex: 1,
+            borderRadius: radius,
+            borderWidth: 1,
+            borderColor: ct.fieldEdge,
+            backgroundColor: ct.tile,
+            paddingHorizontal: 12,
+            justifyContent: 'center',
+            gap: 2,
+          }}
+        >
+          <T variant="offerValue">{`${Math.round(o.off * 100)}% off`}</T>
+          <T variant="offerNote" numberOfLines={2}>
+            {`Min. order ${usd(o.minOrder)} · ${o.note}`}
+          </T>
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

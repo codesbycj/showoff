@@ -1,0 +1,427 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/greeting-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/greeting-bar.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import greeting bar + hello"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/greeting-bar.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/greeting-bar.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "s2"
+          ]
+        },
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "s3"
+          ]
+        },
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "s4"
+          ]
+        },
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "t2"
+          ]
+        },
+        {
+          "op": "block",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "t3"
+          ]
+        },
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "search"
+          ]
+        },
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "add"
+          ]
+        },
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "library"
+          ]
+        },
+        {
+          "op": "entry",
+          "args": [
+            "src/features/sonichome/data/home.ts",
+            "me"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/category-label"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.14"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/category-label.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "\"Profile\" + import category label + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/category-chips"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/category-chips.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "import category chips + scroll view"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/popular-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "import popular head"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/song-rail"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.19"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/song-rail.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "import song rail + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/collection-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.21"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/collection-head.tsx",
+            "STEP 1.22"
+          ]
+        }
+      ],
+      "label": "import collection head + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/collection-card"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.23"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/collection-card.tsx",
+            "STEP 1.24"
+          ]
+        }
+      ],
+      "label": "import collection card + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/collection-card.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/collection-card.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/collection-card.tsx",
+            "STEP 1.27"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/playlist-head"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.28"
+          ]
+        }
+      ],
+      "label": "glyph + import playlist head"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/track-list"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.29"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/track-list.tsx",
+            "STEP 1.30"
+          ]
+        }
+      ],
+      "label": "import track list + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "@/features/sonichome/components/dock"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.31"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/sonichome/components/dock.tsx",
+            "STEP 1.32"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "STEP 1.33"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/sonichome/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "category-chips",
+              "src/features/sonichome/components/category-chips.tsx"
+            ],
+            [
+              "category-label",
+              "src/features/sonichome/components/category-label.tsx"
+            ],
+            [
+              "collection-card",
+              "src/features/sonichome/components/collection-card.tsx"
+            ],
+            [
+              "collection-head",
+              "src/features/sonichome/components/collection-head.tsx"
+            ],
+            [
+              "data-home",
+              "src/features/sonichome/data/home.ts"
+            ],
+            [
+              "dock",
+              "src/features/sonichome/components/dock.tsx"
+            ],
+            [
+              "greeting-bar",
+              "src/features/sonichome/components/greeting-bar.tsx"
+            ],
+            [
+              "screen",
+              "src/app/sonichome/index.tsx"
+            ],
+            [
+              "song-rail",
+              "src/features/sonichome/components/song-rail.tsx"
+            ],
+            [
+              "track-list",
+              "src/features/sonichome/components/track-list.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "import dock + label + take the gap back out + tidy up"
+    }
+  ]
+}

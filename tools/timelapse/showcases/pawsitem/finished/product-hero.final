@@ -1,0 +1,74 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { product, variants } from '../data/item';
+import { ct } from '../theme';
+
+type Props = { width: number; height: number; variant: number; margin: number };
+
+/**
+ * The product, on its halo, with the colourways beside it.
+ *
+ * **The halo is a drawn ring, the product is a photograph** (I4): the ring is
+ * an idea, the piece is a picture of a thing.
+ *
+ * The product sits at 60% of the halo so the colourway column beside it stays
+ * clear of its box. Two boxes that overlap only in part is the shape an
+ * accident has, and `audit.js` reports it as COVERED (R3).
+ *
+ * The `Image` carries a numeric width and height: absolute insets alone make
+ * it paint nothing, silently (SS7).
+ */
+export function ProductHero({ width, height, variant, margin }: Props) {
+  /**
+   * The halo runs the full width of the screen rather than sitting inside the
+   * page margin. Capped at `width - margin * 2` it could not use the height
+   * the budget gave it, and the slack showed up as a 53dp hole above the
+   * product - which `audit.js` reports as GAP. The fix for a hole is to make
+   * the hero bigger, never to pad around it (R1 / I3).
+   */
+  const halo = Math.min(width, height - 16);
+
+  return (
+    <View style={{ height, alignItems: 'center', justifyContent: 'center' }}>
+      <View
+        style={{
+          position: 'absolute',
+          width: halo,
+          height: halo,
+          borderRadius: halo / 2,
+          backgroundColor: ct.card,
+        }}
+      />
+
+      <Image
+        source={product.image}
+        style={{ width: halo * 0.6, height: halo * 0.6, borderRadius: halo * 0.3 }}
+        resizeMode="cover"
+      />
+
+      <View style={{ position: 'absolute', left: margin, gap: 10 }}>
+        {variants.map((v) => (
+          <Pressable
+            key={v.id}
+            accessibilityRole="button"
+            accessibilityState={{ selected: !!v.on }}
+            accessibilityLabel={v.label}
+            hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+          >
+            <Image
+              source={v.image}
+              style={{
+                width: variant,
+                height: variant,
+                borderRadius: 14,
+                borderWidth: v.on ? 2 : 1,
+                borderColor: v.on ? ct.ink : ct.line,
+              }}
+              resizeMode="cover"
+            />
+          </Pressable>
+        ))}
+      </View>
+    </View>
+  );
+}

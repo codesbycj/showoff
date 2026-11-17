@@ -1,0 +1,5 @@
+{
+  "screen": "src/app/vitalweight/index.tsx",
+  "weight-chart": "src/features/vitalweight/components/weight-chart.tsx",
+  "predict-card": "src/features/vitalweight/components/predict-card.tsx"
+}

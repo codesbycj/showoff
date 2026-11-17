@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/hushstart/index.tsx",
+  "page-dots": "src/features/hushstart/components/page-dots.tsx",
+  "data-onboarding": "src/features/hushstart/data/onboarding.ts",
+  "onboard-title": "src/features/hushstart/components/onboard-title.tsx",
+  "mood-chips": "src/features/hushstart/components/mood-chips.tsx",
+  "continue-button": "src/features/hushstart/components/continue-button.tsx"
+}

@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/orlafind/index.tsx",
+  "brand-bar": "src/features/orlafind/components/brand-bar.tsx",
+  "discover-title": "src/features/orlafind/components/discover-title.tsx",
+  "collection-count": "src/features/orlafind/components/collection-count.tsx",
+  "kind-chips": "src/features/orlafind/components/kind-chips.tsx",
+  "data-find": "src/features/orlafind/data/find.ts",
+  "ring-rail": "src/features/orlafind/components/ring-rail.tsx"
+}

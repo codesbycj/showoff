@@ -1,0 +1,245 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "@/features/cocoaitem/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "@/features/cocoaitem/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "maker",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "@/features/cocoaitem/components/item-hero"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import item hero"
+  },
+  {
+   "label": "claim",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoaitem/components/item-hero.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoaitem/components/item-hero.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "\"Salted\"",
+   "op": "entry",
+   "args": [
+    "src/features/cocoaitem/data/item.ts",
+    "salted"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "@/features/cocoaitem/components/qty-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import qty row"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoaitem/components/qty-row.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoaitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "@/features/cocoaitem/components/add-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoaitem/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import add bar"
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoaitem/components/add-bar.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoaitem/components/add-bar.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "add-bar",
+     "src/features/cocoaitem/components/add-bar.tsx"
+    ],
+    [
+     "data-item",
+     "src/features/cocoaitem/data/item.ts"
+    ],
+    [
+     "item-hero",
+     "src/features/cocoaitem/components/item-hero.tsx"
+    ],
+    [
+     "qty-row",
+     "src/features/cocoaitem/components/qty-row.tsx"
+    ],
+    [
+     "screen",
+     "src/app/cocoaitem/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

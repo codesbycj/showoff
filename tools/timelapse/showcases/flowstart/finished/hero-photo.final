@@ -1,0 +1,47 @@
+import { useId } from 'react';
+import { Image, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { hero } from '../data/start';
+import { ct } from '../theme';
+
+type Props = { width: number; height: number };
+
+/**
+ * The opening photograph — the dominant element on the screen (R8).
+ *
+ * **The board draws this as an illustration of a woman meditating.** An
+ * illustration of a person is still a picture *of* a person, and reproducing
+ * that particular drawing is reproducing an arrangement rather than expressing
+ * an idea — so the subject is kept and the medium changes (I4).
+ *
+ * The wash across its foot is the board's own soft fade into the sheet, drawn
+ * as an `<svg>` gradient rather than `expo-linear-gradient`, which flips a
+ * diagonal on web (§7). Its id comes from `useId`, because ids are
+ * document-global there.
+ */
+export function HeroPhoto({ width, height }: Props) {
+  const gid = useId();
+  const wash = Math.round(height * 0.34);
+
+  return (
+    <View style={{ height, backgroundColor: ct.washTop }}>
+      <Image source={hero.image} style={{ width, height }} resizeMode="cover" />
+
+      <Svg
+        width={width}
+        height={wash}
+        style={{ position: 'absolute', left: 0, bottom: 0 }}
+        pointerEvents="none"
+      >
+        <Defs>
+          <LinearGradient id={gid} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor={ct.page} stopOpacity="0" />
+            <Stop offset="1" stopColor={ct.page} stopOpacity="0.92" />
+          </LinearGradient>
+        </Defs>
+        <Rect x="0" y="0" width={width} height={wash} fill={`url(#${gid})`} />
+      </Svg>
+    </View>
+  );
+}

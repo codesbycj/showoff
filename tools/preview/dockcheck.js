@@ -43,23 +43,43 @@ function probe() {
     return r.width > 0.5 && r.height > 0.5;
   };
 
+  const alpha = (c) => {
+    const m = /rgba?\(([^)]+)\)/.exec(c || '');
+    if (!m) return 0;
+    const p = m[1].split(',').map((n) => parseFloat(n));
+    return p.length > 3 ? p[3] : 1;
+  };
+
   // The bar: the widest shallow box whose bottom is near the screen's foot.
+  //
+  // **It is the box that PAINTS**, not the tidiest box inside it. Preferring
+  // the shallowest match made the probe skip the slab and measure an inner
+  // row, so a bar with 40dp of dead height under its labels reported as a
+  // neat, perfectly centred 44dp bar — twice over, because the padding was
+  // subtracted as well. A painted box is the one the eye calls "the bar", so
+  // among the candidates that have a fill, the tallest wins.
   let bar = null;
   for (const el of all) {
     if (!shown(el)) continue;
     const r = el.getBoundingClientRect();
     if (r.width < W * 0.6 || r.height > 150 || r.height < 30) continue;
     if (r.bottom < H - 130 || r.top > H - 20) continue;
-    // The bar is the box that actually holds the tabs, not the wrapper
-    // around it. Picking the largest qualifying box matched an absolutely
-    // positioned wrapper with no padding and reported every bar inside one
-    // as 34dp top-heavy. Count the controls; tie-break on the shallower box.
+    // Tabs are tabs, buttons or links — a dock built with `accessibilityRole
+    // ="tab"` has no [role="button"] in it at all, and counting only buttons
+    // walked straight past every one of them.
+    const sel = '[role="button"],[role="tab"],[role="link"]';
     const tabs = Array.from(el.children).filter(
-      (c) => c.querySelector('[role="button"]') || c.getAttribute('role') === 'button',
+      (c) => (c.matches && c.matches(sel)) || c.querySelector(sel),
     ).length;
     if (tabs < 2) continue;
-    if (!bar || tabs > bar.tabs || (tabs === bar.tabs && r.height < bar.h)) {
-      bar = { x: r.left, y: r.top, w: r.width, h: r.height, bottom: r.bottom, tabs, el };
+    const filled = alpha(style(el).backgroundColor) > 0.1;
+    if (
+      !bar ||
+      (filled && !bar.filled) ||
+      (filled === bar.filled &&
+        (tabs > bar.tabs || (tabs === bar.tabs && (filled ? r.height > bar.h : r.height < bar.h))))
+    ) {
+      bar = { x: r.left, y: r.top, w: r.width, h: r.height, bottom: r.bottom, tabs, filled, el };
     }
   }
   if (!bar) return { found: false };
@@ -79,9 +99,15 @@ function probe() {
   }
   if (!isFinite(top)) return { found: true, bar, ink: null };
 
-  // The bar's own bottom padding is the home-indicator zone, not part of the
-  // band the icons live in. Counting it made every correctly centred dock
-  // look 34dp top-heavy.
+  // The bar's own bottom padding is excluded from the CENTRING measurement:
+  // it is the home-indicator zone, not part of the band the icons live in,
+  // and counting it made every correctly centred dock look 34dp top-heavy.
+  //
+  // It is NOT excluded from everything. Subtracting it quietly is what let a
+  // bar with 40dp of dead height under its own labels report as a tidy,
+  // perfectly centred 44dp bar — the instrument had been taught to ignore the
+  // defect. `under` is the honest number: ink bottom to painted bottom, with
+  // the padding counted (I11).
   const padBottom = parseFloat(style(bar.el).paddingBottom) || 0;
   const bandBottom = bar.bottom - padBottom;
 
@@ -94,6 +120,9 @@ function probe() {
     below: Math.round(bandBottom - bottom),
     inkH: Math.round(bottom - top),
     gapToEdge: Math.round(H - bar.bottom),
+    pad: Math.round(padBottom),
+    total: Math.round(bar.h),
+    under: Math.round(bar.bottom - bottom),
   };
 }
 
@@ -169,7 +198,21 @@ const chrome = spawn(
   });
 
   const call = '(' + probe.toString() + ')()';
-  console.log('slug            barH  above below  Δ   edge');
+  // What fails a build is not dead height, it is **lopsided** dead height.
+  //
+  // `under` alone condemns an honest floating dock: a 66dp pill holding 20dp
+  // glyphs has 23dp above its ink and 23dp below, and there is nothing wrong
+  // with it. The defect is slack piled under the labels and not over them —
+  // a bar that reserved `insets.bottom` on top of its own height reads 15dp
+  // above and 54dp below, and what the eye calls that is "the tab bar is too
+  // long" (I11).
+  //
+  // So: `skew` = under - above, with the padding counted. It is the centring
+  // check done honestly; the Δ beside it measures the same thing with the
+  // padding subtracted, which is what hid this for a whole batch.
+  const SKEW_MAX = 12;
+  let failed = 0;
+  console.log('slug            barH  pad total above below  Δ  under skew  edge');
   for (const slug of slugs) {
     await send('Page.navigate', { url: `http://localhost:${EXPO_PORT}/${slug}` });
     await new Promise((x) => setTimeout(x, SETTLE_MS));
@@ -182,11 +225,21 @@ const chrome = spawn(
       continue;
     }
     const delta = v.above - v.below;
-    const flag = Math.abs(delta) > 2 ? '  <- off-centre' : '';
+    const skew = v.under - v.above;
+    const flags = [];
+    if (Math.abs(delta) > 2) flags.push('off-centre');
+    if (skew > SKEW_MAX) {
+      flags.push(`FAIL ${skew}dp more slack below the labels than above (max ${SKEW_MAX})`);
+      failed++;
+    }
     console.log(
-      `${slug.padEnd(15)} ${String(v.barH).padStart(4)} ${String(v.above).padStart(5)} ${String(
-        v.below,
-      ).padStart(5)} ${String(delta).padStart(4)} ${String(v.gapToEdge).padStart(4)}${flag}`,
+      `${slug.padEnd(15)} ${String(v.barH).padStart(4)} ${String(v.pad).padStart(4)} ${String(
+        v.total,
+      ).padStart(5)} ${String(v.above).padStart(5)} ${String(v.below).padStart(5)} ${String(
+        delta,
+      ).padStart(4)} ${String(v.under).padStart(5)} ${String(skew).padStart(4)} ${String(
+        v.gapToEdge,
+      ).padStart(5)}${flags.length ? '  <- ' + flags.join(', ') : ''}`,
     );
   }
 
@@ -194,5 +247,11 @@ const chrome = spawn(
   try {
     execSync('taskkill /F /T /PID ' + chrome.pid, { stdio: 'ignore' });
   } catch {}
-  process.exit(0);
+  if (failed) {
+    console.error(
+      `\n${failed} bar(s) carry more slack below their labels than above them (max ${SKEW_MAX}dp).`,
+    );
+    console.error('The fix is to stop the bar reserving insets.bottom (I11), not to move the ink.');
+  }
+  process.exit(failed ? 1 : 0);
 })();

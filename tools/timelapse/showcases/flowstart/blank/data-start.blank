@@ -1,0 +1,43 @@
+/**
+ * Everything flowstart says.
+ *
+ * **R5: labels, not prose.** The board's own sub-line is two lines of
+ * marketing; this is one.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Flowan' };
+
+export const hero = { image: require('../../../../assets/images/flowstart/hero.jpg') };
+
+export const welcome = {
+  /**
+   * The board's own headline, kept verbatim (I1), carried as its two lines
+   * rather than one string with a `\n` in it — the reveal paints a line at a
+   * time, and a headline that lands whole is one step doing the work of two
+   * (I9).
+   */
+  displayTop: 'Train in sync',
+  displayBottom: 'with your body.',
+  body: 'Workouts, food and insight that follow your cycle.',
+  cta: 'Get started',
+  link: 'I already have an account',
+};
+
+export type Dot = { id: string; label: string; on?: boolean };
+
+/**
+ * The onboarding's pages, one entry per dot.
+ *
+ * **R9: the dots count the pages that exist** and mark the one on screen, so
+ * the control cannot claim a position the app does not have.
+ */
+export const dots: Dot[] = [
+  { id: 'p1', label: 'Page 1 of 3', on: true },
+  // STEP 1.11 "Page 2 of 3"
+  // { id: 'p2', label: 'Page 2 of 3' },
+  // STEP 1.12 "Page 3 of 3"
+  // { id: 'p3', label: 'Page 3 of 3' },
+];

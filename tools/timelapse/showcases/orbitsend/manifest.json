@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/orbitsend/index.tsx",
+  "send-header": "src/features/orbitsend/components/send-header.tsx",
+  "contact-picker": "src/features/orbitsend/components/contact-picker.tsx",
+  "data-send": "src/features/orbitsend/data/send.ts",
+  "recipient-card": "src/features/orbitsend/components/recipient-card.tsx",
+  "amount-panel": "src/features/orbitsend/components/amount-panel.tsx",
+  "keypad": "src/features/orbitsend/components/keypad.tsx",
+  "slide-send": "src/features/orbitsend/components/slide-send.tsx"
+}

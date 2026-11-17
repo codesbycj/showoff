@@ -1,0 +1,76 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BuyRow } from '@/features/pulpitem/components/buy-row';
+import { FactTiles } from '@/features/pulpitem/components/fact-tiles';
+import { ItemHero } from '@/features/pulpitem/components/item-hero';
+import { TagRow } from '@/features/pulpitem/components/tag-row';
+import { T } from '@/features/pulpitem/components/text';
+import { TitleRow } from '@/features/pulpitem/components/title-row';
+import { drink } from '@/features/pulpitem/data/item';
+import { useLayout } from '@/features/pulpitem/layout';
+import { ct } from '@/features/pulpitem/theme';
+
+/**
+ * Pulp - the drink.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The photograph is the remainder, so the screen always ends on the buy row
+ * with no band under it (I3).
+ */
+export default function PulpitemScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ItemHero
+        margin={L.margin}
+        height={L.hero.h}
+        radius={L.hero.radius}
+        topH={L.topH}
+        onBack={() => router.push('/pulphome')}
+      />
+
+      <View style={{ height: L.gapHero }} />
+      <TitleRow margin={L.margin} height={L.titleH} />
+
+      <View style={{ marginHorizontal: L.margin, height: L.sizeH }}>
+        <T variant="size">{drink.size}</T>
+      </View>
+
+      <View style={{ height: L.gapSize }} />
+      <TagRow margin={L.margin} height={L.tag.h} radius={L.tag.radius} />
+
+      <View style={{ height: L.gapTags }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH }}>
+        <T variant="section">{drink.section}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <FactTiles
+        margin={L.margin}
+        width={L.tile.w}
+        height={L.tile.h}
+        gap={L.tile.gap}
+        radius={L.tile.radius}
+      />
+
+      <View style={{ flex: 1 }} />
+      <BuyRow
+        margin={L.margin}
+        height={L.buy.h}
+        radius={L.buy.radius}
+        step={L.buy.step}
+        onAdd={() => router.push('/pulptrack')}
+      />
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

@@ -1,0 +1,93 @@
+/**
+ * Everything lumofeed says.
+ *
+ * **Four of the board's own mistakes are fixed here** (I1): its dock reads
+ * "Massage" where it means Messages, its last tab wraps as "Pro file", its
+ * handle reads "@rayyan.offical", and its audio line names a real band. The
+ * creators and their posts are invented.
+ *
+ * **R5: labels, not prose.** The caption is one line of the poster's own
+ * words, not a paragraph.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const account = {
+  name: 'Antony Tayor',
+  handle: '@antony',
+  avatar: require('../../../../assets/images/lumofeed/me.jpg'),
+};
+
+export type Story = { id: string; name: string; image: number; live?: boolean };
+
+export const stories: Story[] = [
+  {
+    id: 's1',
+    name: 'alex',
+    image: require('../../../../assets/images/lumofeed/s1.jpg'),
+    live: true,
+  },
+  { id: 's2', name: 'marco', image: require('../../../../assets/images/lumofeed/s2.jpg') },
+  { id: 's3', name: 'jim', image: require('../../../../assets/images/lumofeed/s3.jpg') },
+  { id: 's4', name: 'tayor', image: require('../../../../assets/images/lumofeed/s4.jpg') },
+  { id: 's5', name: 'noor', image: require('../../../../assets/images/lumofeed/s5.jpg') },
+];
+
+export const featured = {
+  title: 'Featured creator',
+  /** R5: one line, 58 characters. The board's runs to two. */
+  body: 'Live sets from the creators you follow, every Friday.',
+  cta: 'Watch now',
+};
+
+export type Post = {
+  id: string;
+  name: string;
+  handle: string;
+  image: number;
+  avatar: number;
+  likes: number;
+  comments: number;
+  shares: number;
+  saves: number;
+  caption: string;
+  /** Only a liked post is filled in; declared, not inferred. */
+  liked?: boolean;
+};
+
+export const post: Post = {
+  id: 'alone',
+  name: 'Aalone Chika',
+  handle: '@alonechika',
+  image: require('../../../../assets/images/lumofeed/post.jpg'),
+  avatar: require('../../../../assets/images/lumofeed/s1.jpg'),
+  likes: 1700,
+  comments: 454,
+  shares: 174,
+  saves: 174,
+  caption: 'Night set, blue lights, no setlist.',
+  liked: true,
+};
+
+export type Tab = {
+  id: string;
+  label: string;
+  glyph: 'home' | 'search' | 'plus' | 'messages' | 'profile';
+};
+
+/** "Messages" and "Profile" — the board's dock reads "Massage" and "Pro file". */
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  { id: 'search', label: 'Search', glyph: 'search' },
+  { id: 'post', label: 'Post', glyph: 'plus' },
+  { id: 'messages', label: 'Messages', glyph: 'messages' },
+  { id: 'profile', label: 'Profile', glyph: 'profile' },
+];
+
+/** 1700 -> "1.7k". A count is a label, so it is formatted, never typed. */
+export function count(value: number) {
+  if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
+  if (value >= 1000) return `${(value / 1000).toFixed(1)}k`;
+  return String(value);
+}

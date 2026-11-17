@@ -1,0 +1,72 @@
+/**
+ * Everything orlafind says.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const brand = { name: 'Orla' };
+
+export const header = {
+  displayTop: 'Discover',
+  displayBottom: 'New collection',
+  /** A count, not a sentence (R5). */
+  count: '12 new pieces',
+  /** A state, not a sentence (R5). */
+  made: 'Made to order',
+  cta: 'View Details',
+};
+
+export type Kind = { id: string; label: string; on?: boolean };
+
+/**
+ * The collection's cuts.
+ *
+ * The board crops this row at its frame edge; inventing the row a board cuts
+ * is the sanctioned fix for a short screen (I3), and a collection with a rail
+ * of cards and no way to narrow it is missing a control, not a decoration.
+ */
+export const kinds: Kind[] = [
+  { id: 'all', label: 'All', on: true },
+  // STEP 1.13 "Engagement"
+  // { id: 'engagement', label: 'Engagement' },
+  // STEP 1.14 "Bands"
+  // { id: 'bands', label: 'Bands' },
+  // STEP 1.15 "Sets"
+  // { id: 'sets', label: 'Sets' },
+  // STEP 1.16 "Stacking"
+  // { id: 'stacking', label: 'Stacking' },
+];
+
+export type Ring = {
+  id: string;
+  name: string;
+  kind: string;
+  price: number;
+  image: number;
+  saved?: boolean;
+};
+
+export const rings: Ring[] = [
+  {
+    id: 'celeste',
+    name: 'Celeste',
+    kind: 'Diamond Ring',
+    price: 2450,
+    image: require('../../../../assets/images/orlafind/r1.jpg'),
+    saved: true,
+  },
+  // STEP 1.20 "Aurum"
+  // {
+  //   id: 'aurum',
+  //   name: 'Aurum',
+  //   kind: 'Gold Band',
+  //   price: 1180,
+  //   image: require('../../../../assets/images/orlafind/r2.jpg'),
+  // },
+];
+
+/** One money format, applied once (R9). */
+export function money(value: number) {
+  return '$' + value.toLocaleString('en-US');
+}

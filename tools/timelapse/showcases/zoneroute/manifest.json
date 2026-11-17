@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/zoneroute/index.tsx",
+  "route-map": "src/features/zoneroute/components/route-map.tsx",
+  "data-route": "src/features/zoneroute/data/route.ts",
+  "route-bar": "src/features/zoneroute/components/route-bar.tsx",
+  "route-sheet": "src/features/zoneroute/components/route-sheet.tsx"
+}

@@ -1,0 +1,63 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/share';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The link itself, which a share sheet always shows and this board crops.
+ *
+ * Inventing the row a board cuts is the sanctioned fix for a short screen
+ * (I3), and a share surface that will not show you what it is about to send
+ * is missing a control, not a decoration.
+ *
+ * The visual chip is 38dp; the control around it is 44, which is the floor for
+ * a pressable (I2 / R7).
+ */
+export function LinkRow({ margin, height, radius }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        borderRadius: radius,
+        backgroundColor: ct.card,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingLeft: 18,
+        paddingRight: 8,
+      }}
+    >
+      <T variant="link" numberOfLines={1}>
+        {/* STEP 1.13 link
+        {header.link}
+        */}
+      </T>
+
+      {/* STEP 1.14 copy
+      <Pressable accessibilityRole="button" accessibilityLabel={header.copy}>
+        <View style={{ height: 44, justifyContent: 'center' }}>
+          <View
+            style={{
+              height: height - 14,
+              borderRadius: (height - 14) / 2,
+              paddingHorizontal: 16,
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 7,
+              backgroundColor: ct.chip,
+            }}
+          >
+            <Glyph name="link" size={14} color={ct.onDark} strokeWidth={1.7} />
+            <T variant="copy">{header.copy}</T>
+          </View>
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

@@ -1,0 +1,12 @@
+{
+  "screen": "src/app/vestaitem/index.tsx",
+  "detail-header": "src/features/vestaitem/components/detail-header.tsx",
+  "hero-shot": "src/features/vestaitem/components/hero-shot.tsx",
+  "data-item": "src/features/vestaitem/data/item.ts",
+  "shot-rail": "src/features/vestaitem/components/shot-rail.tsx",
+  "item-title": "src/features/vestaitem/components/item-title.tsx",
+  "size-head": "src/features/vestaitem/components/size-head.tsx",
+  "size-picker": "src/features/vestaitem/components/size-picker.tsx",
+  "delivery-row": "src/features/vestaitem/components/delivery-row.tsx",
+  "cart-bar": "src/features/vestaitem/components/cart-bar.tsx"
+}

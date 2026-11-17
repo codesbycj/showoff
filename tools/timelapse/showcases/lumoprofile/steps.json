@@ -1,0 +1,324 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "@/features/lumoprofile/components/wash-ground"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import wash ground"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "@/features/lumoprofile/components/profile-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import profile header"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/profile-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/profile-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "handle",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/profile-header.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "following",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/profile-header.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "message",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/profile-header.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "@/features/lumoprofile/components/stat-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import stat row"
+  },
+  {
+   "label": "\"Followers\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "followers"
+   ]
+  },
+  {
+   "label": "\"Views\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "views"
+   ]
+  },
+  {
+   "label": "\"Likes\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "likes"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoprofile/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/lumoprofile/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "@/features/lumoprofile/components/bio-lines"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import bio lines"
+  },
+  {
+   "label": "studio",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "studio"
+   ]
+  },
+  {
+   "label": "link",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "link"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "@/features/lumoprofile/components/photo-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import photo grid"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/photo-grid.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/lumoprofile/components/photo-grid.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "reels",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "reels"
+   ]
+  },
+  {
+   "label": "liked",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "liked"
+   ]
+  },
+  {
+   "label": "saved",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "saved"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "@/features/lumoprofile/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/lumoprofile/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Search\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "search"
+   ]
+  },
+  {
+   "label": "\"Post\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "post"
+   ]
+  },
+  {
+   "label": "\"Messages\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "messages"
+   ]
+  },
+  {
+   "label": "\"Profile\"",
+   "op": "entry",
+   "args": [
+    "src/features/lumoprofile/data/profile.ts",
+    "profile"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/lumoprofile/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/lumoprofile/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-profile",
+     "src/features/lumoprofile/data/profile.ts"
+    ],
+    [
+     "photo-grid",
+     "src/features/lumoprofile/components/photo-grid.tsx"
+    ],
+    [
+     "profile-header",
+     "src/features/lumoprofile/components/profile-header.tsx"
+    ],
+    [
+     "screen",
+     "src/app/lumoprofile/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

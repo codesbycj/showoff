@@ -1,0 +1,241 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "@/features/nookroom/components/close-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import close button"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "@/features/nookroom/components/price-pill"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import price pill"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/nookroom/components/price-pill.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/nookroom/components/price-pill.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "@/features/nookroom/components/add-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import add button"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "@/features/nookroom/components/piece-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import piece card"
+  },
+  {
+   "label": "piece",
+   "op": "jsx",
+   "args": [
+    "src/features/nookroom/components/piece-card.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "size",
+   "op": "jsx",
+   "args": [
+    "src/features/nookroom/components/piece-card.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "detail",
+   "op": "jsx",
+   "args": [
+    "src/features/nookroom/components/piece-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookroom/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "@/features/nookroom/components/look-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookroom/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import look rail"
+  },
+  {
+   "label": "\"Interior 2\"",
+   "op": "entry",
+   "args": [
+    "src/features/nookroom/data/room.ts",
+    "l2"
+   ]
+  },
+  {
+   "label": "\"Interior 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/nookroom/data/room.ts",
+    "l3"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-room",
+     "src/features/nookroom/data/room.ts"
+    ],
+    [
+     "piece-card",
+     "src/features/nookroom/components/piece-card.tsx"
+    ],
+    [
+     "price-pill",
+     "src/features/nookroom/components/price-pill.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nookroom/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "screen": "src/app/zonehome/index.tsx",
+  "home-header": "src/features/zonehome/components/home-header.tsx",
+  "category-rail": "src/features/zonehome/components/category-rail.tsx",
+  "data-home": "src/features/zonehome/data/home.ts",
+  "section-head": "src/features/zonehome/components/section-head.tsx",
+  "restaurant-rail": "src/features/zonehome/components/restaurant-rail.tsx",
+  "quick-list": "src/features/zonehome/components/quick-list.tsx",
+  "search-bar": "src/features/zonehome/components/search-bar.tsx",
+  "tab-bar": "src/features/zonehome/components/tab-bar.tsx"
+}

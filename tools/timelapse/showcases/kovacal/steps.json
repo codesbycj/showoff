@@ -1,0 +1,297 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "@/features/kovacal/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Agenda view\"",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "@/features/kovacal/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "STEP 1.03"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "range",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "label": "today",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "\"Monthly\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovacal/data/cal.ts",
+    "monthly"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "@/features/kovacal/components/day-strip"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import day strip"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "@/features/kovacal/components/reminder-options"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import reminder options"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/kovacal/components/reminder-options.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/kovacal/components/reminder-options.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "\"Send to a collaborator\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovacal/data/cal.ts",
+    "send"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "chip",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "@/features/kovacal/components/pill-dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kovacal/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import pill dock"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovacal/components/pill-dock.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/kovacal/components/pill-dock.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "\"Inbox\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovacal/data/cal.ts",
+    "inbox"
+   ]
+  },
+  {
+   "label": "\"Jobs\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovacal/data/cal.ts",
+    "jobs"
+   ]
+  },
+  {
+   "label": "\"New\"",
+   "op": "entry",
+   "args": [
+    "src/features/kovacal/data/cal.ts",
+    "new"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kovacal/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-cal",
+     "src/features/kovacal/data/cal.ts"
+    ],
+    [
+     "pill-dock",
+     "src/features/kovacal/components/pill-dock.tsx"
+    ],
+    [
+     "reminder-options",
+     "src/features/kovacal/components/reminder-options.tsx"
+    ],
+    [
+     "screen",
+     "src/app/kovacal/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

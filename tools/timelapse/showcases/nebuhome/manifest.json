@@ -1,0 +1,12 @@
+{
+  "screen": "src/app/nebuhome/index.tsx",
+  "nebula-ground": "src/features/nebuhome/components/nebula-ground.tsx",
+  "account-row": "src/features/nebuhome/components/account-row.tsx",
+  "balance-block": "src/features/nebuhome/components/balance-block.tsx",
+  "data-home": "src/features/nebuhome/data/home.ts",
+  "action-chips": "src/features/nebuhome/components/action-chips.tsx",
+  "holdings-list": "src/features/nebuhome/components/holdings-list.tsx",
+  "featured-holding": "src/features/nebuhome/components/featured-holding.tsx",
+  "holding-row": "src/features/nebuhome/components/holding-row.tsx",
+  "dock": "src/features/nebuhome/components/dock.tsx"
+}

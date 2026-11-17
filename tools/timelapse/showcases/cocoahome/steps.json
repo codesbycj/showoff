@@ -1,0 +1,245 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "@/features/cocoahome/components/shop-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import shop header"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "@/features/cocoahome/components/kind-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import kind chips"
+  },
+  {
+   "label": "\"Choco\"",
+   "op": "entry",
+   "args": [
+    "src/features/cocoahome/data/shop.ts",
+    "choco"
+   ]
+  },
+  {
+   "label": "\"Nuts\"",
+   "op": "entry",
+   "args": [
+    "src/features/cocoahome/data/shop.ts",
+    "nuts"
+   ]
+  },
+  {
+   "label": "\"Dried\"",
+   "op": "entry",
+   "args": [
+    "src/features/cocoahome/data/shop.ts",
+    "dried"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "@/features/cocoahome/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import text + collections"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "@/features/cocoahome/components/pack-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import pack rail"
+  },
+  {
+   "label": "\"Coconut Chips\"",
+   "op": "block",
+   "args": [
+    "src/features/cocoahome/data/shop.ts",
+    "coconut"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/cocoahome/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "@/features/cocoahome/components/cart-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/cocoahome/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import cart bar"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoahome/components/cart-bar.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoahome/components/cart-bar.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoahome/components/cart-bar.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/cocoahome/components/cart-bar.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "cart-bar",
+     "src/features/cocoahome/components/cart-bar.tsx"
+    ],
+    [
+     "data-shop",
+     "src/features/cocoahome/data/shop.ts"
+    ],
+    [
+     "screen",
+     "src/app/cocoahome/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+import { useState } from 'react';
+import {
+  Image,
+  type NativeScrollEvent,
+  type NativeSyntheticEvent,
+  ScrollView,
+  View,
+} from 'react-native';
+
+import { gallery } from '../data/item';
+import { ct } from '../theme';
+
+type Props = { width: number; height: number };
+
+/**
+ * The product's photographs — the dominant element on the screen (R8).
+ *
+ * A real pager: the dots count the frames that exist and mark the one the
+ * scroller is on, so the picture agrees with the control (R9).
+ *
+ * The page index is clamped against `gallery.length - 1` with a floor of
+ * zero, because the reveal stages that array one entry at a time and an index
+ * into an empty array is the crash shape I7 names.
+ */
+export function ItemGallery({ width, height }: Props) {
+  const [page, setPage] = useState(0);
+
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const next = Math.round(e.nativeEvent.contentOffset.x / Math.max(width, 1));
+    setPage(Math.min(Math.max(next, 0), Math.max(gallery.length - 1, 0)));
+  };
+
+  return (
+    <View style={{ height, backgroundColor: ct.tray }}>
+      {/* STEP 1.02 "Product photograph"
+      <ScrollView
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        onScroll={onScroll}
+        scrollEventThrottle={32}
+      >
+        {gallery.map((shot) => (
+          <Image
+            key={shot.id}
+            source={shot.image}
+            style={{ width, height }}
+            resizeMode="cover"
+            accessibilityLabel="Product photograph"
+          />
+        ))}
+      </ScrollView>
+      */}
+
+      {/* STEP 1.03 view
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 16,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          gap: 6,
+        }}
+      >
+        {gallery.map((shot, i) => (
+          <View
+            key={shot.id}
+            style={{
+              width: i === page ? 18 : 6,
+              height: 6,
+              borderRadius: 3,
+              backgroundColor: i === page ? ct.ink : ct.line,
+            }}
+          />
+        ))}
+      </View>
+      */}
+    </View>
+  );
+}

@@ -1,0 +1,38 @@
+import { Pressable, ScrollView, View } from 'react-native';
+
+import {
+  PRICE,
+  about,
+  amenities,
+  facts,
+  pricing,
+  usd,
+  venue,
+  yearSaving,
+  yearly,
+} from '../data/gym';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { BlockProps } from './_gym-body-shared';
+
+/** Where it is. The board's address is a real one; this street is invented. */
+export function GymAddress({ margin, height }: BlockProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+      }}
+    >
+      <Glyph name="pin" size={13} color={ct.sub} />
+      <T variant="address" numberOfLines={1}>
+        {venue.address}
+      </T>
+    </View>
+  );
+}

@@ -1,0 +1,90 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { me, tabs } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { margin: number; height: number; radius: number; pill: number };
+
+/**
+ * The navigation.
+ *
+ * **It floats**, so its clearance is budgeted once in `layout.ts` as a
+ * fallback inset and never added again here — padding a bar by `insets.bottom`
+ * on a non-edge-to-edge app counts the system strip twice, which is the band
+ * that shipped under four screens of a deleted batch (I3 / R1b).
+ *
+ * The forest fill is an absolutely-filled child so an emptied dock paints
+ * nothing during a reveal (§5.5), and the shadow rides with it.
+ */
+export function Dock({ margin, height, radius, pill }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 18,
+      }}
+    >
+      {/* STEP 1.20 view
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.forest,
+          shadowColor: '#0D1A10',
+          shadowOpacity: 0.22,
+          shadowRadius: 16,
+          shadowOffset: { width: 0, height: 8 },
+          elevation: 8,
+        }}
+      />
+      */}
+
+      {/* STEP 1.21 glyph
+      {tabs.map((tab) => (
+        <Pressable
+          key={tab.id}
+          accessibilityRole="button"
+          accessibilityState={{ selected: !!tab.on }}
+          accessibilityLabel={tab.label}
+          hitSlop={{ top: 8, bottom: 8, left: 6, right: 6 }}
+        >
+          <View
+            style={{
+              width: pill,
+              height: pill,
+              borderRadius: pill / 2,
+              backgroundColor: tab.on ? ct.lime : 'transparent',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {tab.glyph ? (
+              <Glyph
+                name={tab.glyph}
+                size={21}
+                color={tab.on ? ct.onLime : 'rgba(255,255,255,0.72)'}
+                strokeWidth={1.8}
+              />
+            ) : (
+              <Image
+                source={me}
+                style={{ width: 32, height: 32, borderRadius: 16 }}
+                resizeMode="cover"
+              />
+            )}
+          </View>
+        </Pressable>
+      ))}
+      */}
+    </View>
+  );
+}

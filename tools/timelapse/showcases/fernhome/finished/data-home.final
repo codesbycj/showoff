@@ -1,0 +1,62 @@
+import type { FlagName } from '../components/flag-disc';
+import type { GlyphName } from '../components/glyph';
+
+/**
+ * Everything fernhome says, so the components stay presentational.
+ *
+ * **Every array is annotated** (I7): the reveal uncomments entries one at a
+ * time, so a type inferred from whichever rows happen to be live loses every
+ * property that only appears on a later row.
+ *
+ * The copy is the board's, trimmed to fit (R5) — labels, units and counts, not
+ * sentences the design does not have.
+ */
+export const account = {
+  greeting: 'Hi, Morgan',
+  weatherLabel: 'Weather',
+  weather: '15 °C',
+} as const;
+
+export const place = {
+  country: 'Norway',
+  flag: 'no' as FlagName,
+  /** Two lines, as the board sets it. */
+  display: 'Nature\nPower',
+} as const;
+
+export type Activity = { id: string; label: string; glyph: GlyphName; on?: boolean };
+
+export const activities: Activity[] = [
+  { id: 'hiking', label: 'Hiking', glyph: 'hike', on: true },
+  { id: 'kayaking', label: 'Kayaking', glyph: 'kayak' },
+  { id: 'biking', label: 'Biking', glyph: 'bike' },
+  { id: 'climbing', label: 'Climbing', glyph: 'climb' },
+];
+
+export const trip = {
+  title: 'The Sounds of Nature',
+  body: 'A real adventure where nature reveals its grandeur in its purest form.',
+  cta: 'Start trip',
+  image: require('../../../../assets/images/fernhome/hero.jpg'),
+} as const;
+
+export type Fact = { id: string; label: string; glyph: GlyphName };
+
+export const facts: Fact[] = [
+  { id: 'days', label: '7 days', glyph: 'days' },
+  { id: 'distance', label: '10 km', glyph: 'distance' },
+  { id: 'party', label: '8/10', glyph: 'party' },
+];
+
+export type Tab = { id: string; label: string; glyph?: GlyphName; on?: boolean };
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home', on: true },
+  { id: 'trips', label: 'Trips', glyph: 'grid' },
+  { id: 'routes', label: 'Routes', glyph: 'distance' },
+  { id: 'dates', label: 'Dates', glyph: 'days' },
+  /** No glyph: the board's last tab is the account photograph (I4). */
+  { id: 'me', label: 'You' },
+];
+
+export const me = require('../../../../assets/images/fernhome/me.jpg');

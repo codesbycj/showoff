@@ -1,0 +1,161 @@
+import { useId } from 'react';
+import { Image, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
+
+import { faces, feature, planned } from '../data/trip';
+import { ct } from '../theme';
+import { FlagDisc } from './flag-disc';
+import { T } from './text';
+
+type Props = { width: number; height: number };
+
+/**
+ * The planner, drawn as the board poses it: a trip card, a list of trips, two
+ * faces and a dotted route behind them.
+ *
+ * **The flags are drawn discs, not emoji** (I8) — Windows ships no flag
+ * glyphs at all, and the web render cannot show that.
+ *
+ * **The two cards do not overlap.** The board's collage stacks them, and the
+ * list card then sits on the trip card's own "Malaysia" and budget lines —
+ * covering text is an R3 FAIL, and the fix is to inset the content rather
+ * than nudge the control, so the list hangs to the right and below instead.
+ */
+export function TripCollage({ width, height }: Props) {
+  const key = useId();
+  const cardW = Math.round(width * 0.46);
+
+  return (
+    <View style={{ width, height }}>
+      {/* STEP 1.07 path
+      <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+        <Path
+          key={key}
+          d={`M${width * 0.08} ${height * 0.62} C ${width * 0.1} ${height * 0.18}, ${width * 0.5} ${height * 0.04}, ${width * 0.84} ${height * 0.22} S ${width * 0.92} ${height * 0.86}, ${width * 0.3} ${height * 0.9}`}
+          stroke={ct.dot}
+          strokeWidth={1.6}
+          strokeDasharray="4 7"
+          fill="none"
+        />
+      </Svg>
+      */}
+
+      <View
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: height * 0.1,
+          width: cardW,
+          borderRadius: 16,
+          backgroundColor: ct.surface,
+          padding: 8,
+          shadowColor: '#15171C',
+          shadowOpacity: 0.12,
+          shadowRadius: 18,
+          shadowOffset: { width: 0, height: 8 },
+          elevation: 5,
+        }}
+      >
+        {/* STEP 1.08 image
+        <Image
+          source={feature.image}
+          style={{ width: cardW - 16, height: 68, borderRadius: 11 }}
+          resizeMode="cover"
+        />
+        */}
+        <View style={{ paddingTop: 6 }}>
+          {/* STEP 1.09 title
+          <T variant="cardTitle" numberOfLines={1}>
+            {feature.title}
+          </T>
+          */}
+          {/* STEP 1.10 country
+          <T variant="cardMeta">{feature.country}</T>
+          */}
+          {/* STEP 1.11 t
+          <T variant="cardMeta">
+            {feature.budgetLabel}: {feature.budget}
+          </T>
+          */}
+        </View>
+      </View>
+
+      {/* STEP 1.12 city
+      <View
+        style={{
+          position: 'absolute',
+          right: 0,
+          top: height * 0.44,
+          width: width * 0.54,
+          borderRadius: 16,
+          backgroundColor: ct.surface,
+          paddingVertical: 8,
+          paddingHorizontal: 10,
+          gap: 8,
+          shadowColor: '#15171C',
+          shadowOpacity: 0.12,
+          shadowRadius: 18,
+          shadowOffset: { width: 0, height: 8 },
+          elevation: 6,
+        }}
+      >
+        {planned.map((trip) => (
+          <View key={trip.id} style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <FlagDisc name={trip.flag} size={16} />
+            <View style={{ flex: 1 }}>
+              <T variant="listName" numberOfLines={1}>
+                {trip.city}
+              </T>
+              <T variant="listMeta">
+                {trip.days} days · {trip.date}
+              </T>
+            </View>
+          </View>
+        ))}
+      </View>
+      */}
+
+      <View
+        style={{
+          position: 'absolute',
+          right: 6,
+          top: height * 0.06,
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 6,
+        }}
+      >
+        {/* STEP 1.13 days
+        <View
+          style={{
+            height: 26,
+            paddingHorizontal: 10,
+            borderRadius: 13,
+            backgroundColor: ct.orangeDeep,
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="budget">{feature.days}</T>
+        </View>
+        */}
+        {/* STEP 1.14 image
+        {faces.map((face, i) => (
+          <Image
+            key={`${key}-face-${i}`}
+            source={face}
+            style={{
+              width: 34,
+              height: 34,
+              borderRadius: 17,
+              borderWidth: 2,
+              borderColor: ct.white,
+              marginLeft: i === 0 ? 0 : -14,
+            }}
+            resizeMode="cover"
+          />
+        ))}
+        */}
+      </View>
+    </View>
+  );
+}

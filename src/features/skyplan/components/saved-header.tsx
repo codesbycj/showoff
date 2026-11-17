@@ -1,0 +1,35 @@
+import { Pressable, View } from 'react-native';
+
+import { saved } from '../data/plan';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/** The saved-trips heading and its link. */
+export function SavedHeader({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      {/* STEP 1.19 title
+      <T variant="section">{saved.title}</T>
+      */}
+
+      {/* STEP 1.20 more
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={saved.more}
+        hitSlop={{ top: 14, bottom: 14, left: 14, right: 10 }}
+      >
+        <T variant="more">{saved.more}</T>
+      </Pressable>
+      */}
+    </View>
+  );
+}

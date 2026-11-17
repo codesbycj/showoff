@@ -1,0 +1,62 @@
+import { Pressable, View } from 'react-native';
+
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = { margin: number; top: number; size: number; onClose?: () => void };
+
+/**
+ * The two controls floating on the gallery.
+ *
+ * They sit over the photograph rather than inside the pager, so a swipe never
+ * carries them off the screen. Both are 40dp of box with hit slop that takes
+ * them past 44dp (R7) — the board draws them at about 32dp.
+ */
+export function GalleryControls({ margin, top, size, onClose }: Props) {
+  const button = {
+    width: size,
+    height: size,
+    borderRadius: size / 2,
+    backgroundColor: ct.float,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        top,
+        left: margin,
+        right: margin,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      }}
+    >
+      {/* STEP 1.09 "Close listing"
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Close listing"
+        onPress={onClose}
+        hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+      >
+        <View style={button}>
+          <Glyph name="close" size={19} color={ct.white} strokeWidth={2} />
+        </View>
+      </Pressable>
+      */}
+
+      {/* STEP 1.10 "Share listing"
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Share listing"
+        hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+      >
+        <View style={button}>
+          <Glyph name="share" size={19} color={ct.white} strokeWidth={1.9} />
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

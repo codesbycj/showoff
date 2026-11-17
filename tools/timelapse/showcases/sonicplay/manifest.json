@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/sonicplay/index.tsx",
+  "player-bar": "src/features/sonicplay/components/player-bar.tsx",
+  "now-playing": "src/features/sonicplay/components/now-playing.tsx",
+  "scrubber": "src/features/sonicplay/components/scrubber.tsx",
+  "transport": "src/features/sonicplay/components/transport.tsx",
+  "data-player": "src/features/sonicplay/data/player.ts",
+  "lyrics-handle": "src/features/sonicplay/components/lyrics-handle.tsx"
+}

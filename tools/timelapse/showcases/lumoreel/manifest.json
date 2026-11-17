@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/lumoreel/index.tsx",
+  "action-rail": "src/features/lumoreel/components/action-rail.tsx",
+  "data-reel": "src/features/lumoreel/data/reel.ts",
+  "reel-caption": "src/features/lumoreel/components/reel-caption.tsx",
+  "dock": "src/features/lumoreel/components/dock.tsx"
+}

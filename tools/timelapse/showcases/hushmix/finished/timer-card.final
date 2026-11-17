@@ -1,0 +1,45 @@
+import { Pressable, View } from 'react-native';
+
+import { session } from '../data/session';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { radius: number; height: number };
+
+/**
+ * How long the session runs.
+ *
+ * The card's fill sits on an absolutely-filled child so an emptied card paints
+ * nothing in frame one of the reveal (I9).
+ */
+export function TimerCard({ radius, height }: Props) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`${session.timerLabel}, ${session.timer}`}
+    >
+      <View style={{ height, borderRadius: radius, padding: 18, justifyContent: 'center' }}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: ct.card,
+            borderRadius: radius,
+          }}
+        />
+
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={{ flex: 1 }}>
+            <T variant="rowTitle">{session.timerLabel}</T>
+            <T variant="rowValue">{session.timer}</T>
+          </View>
+          <Glyph name="chevron" size={16} color={ct.onDarkMuted} strokeWidth={1.8} />
+        </View>
+      </View>
+    </Pressable>
+  );
+}

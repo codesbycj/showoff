@@ -1,0 +1,387 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/greeting-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import greeting row"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/greeting-row.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "greeting",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/greeting-row.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Log something\"",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/greeting-row.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/week-strip"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import week strip"
+  },
+  {
+   "label": "\"T\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "tue"
+   ]
+  },
+  {
+   "label": "\"W\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "wed"
+   ]
+  },
+  {
+   "label": "\"T\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "thu"
+   ]
+  },
+  {
+   "label": "\"F\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "fri"
+   ]
+  },
+  {
+   "label": "\"S\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "sat"
+   ]
+  },
+  {
+   "label": "\"S\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "sun"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/phase-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import phase card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/phase-card.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/phase-card.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/phase-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/phase-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "\"Follicular\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "follicular"
+   ]
+  },
+  {
+   "label": "\"Ovulation\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "ovulation"
+   ]
+  },
+  {
+   "label": "\"Luteal\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "luteal"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import text + section label"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/session-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import session card"
+  },
+  {
+   "label": "tag",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/session-card.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/flowhome/components/session-card.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "question",
+   "op": "jsx",
+   "args": [
+    "src/app/flowhome/index.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/mood-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.25"
+     ]
+    }
+   ],
+   "label": "import mood chips"
+  },
+  {
+   "label": "\"Calm\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "calm"
+   ]
+  },
+  {
+   "label": "\"Tired\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "tired"
+   ]
+  },
+  {
+   "label": "\"Cramps\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "cramps"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "@/features/flowhome/components/dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowhome/index.tsx",
+      "STEP 1.29"
+     ]
+    }
+   ],
+   "label": "import dock"
+  },
+  {
+   "label": "\"Cycle\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "cycle"
+   ]
+  },
+  {
+   "label": "\"Train\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "train"
+   ]
+  },
+  {
+   "label": "\"Nourish\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "nourish"
+   ]
+  },
+  {
+   "label": "\"Insights\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowhome/data/home.ts",
+    "insights"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowhome/index.tsx",
+    "STEP 1.34"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowhome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-home",
+     "src/features/flowhome/data/home.ts"
+    ],
+    [
+     "greeting-row",
+     "src/features/flowhome/components/greeting-row.tsx"
+    ],
+    [
+     "phase-card",
+     "src/features/flowhome/components/phase-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/flowhome/index.tsx"
+    ],
+    [
+     "session-card",
+     "src/features/flowhome/components/session-card.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

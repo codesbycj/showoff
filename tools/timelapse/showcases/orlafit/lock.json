@@ -1,0 +1,21 @@
+{
+ "assets/images/orlafit/CREDITS.md": "c4260592d3a5b0d34b6de6d45373331be144b97c60ae067f1c04af928dc5ef3d",
+ "assets/images/orlafit/hand.jpg": "ef219dc5f783af912c97770f879643dd9cf0307212064771f6d0cc29e551f6d0",
+ "src/app/_layout.tsx": "9c9ba1ad3f5f69e957586fc31eac16d41928b676f47c7ebca5e08c52f77c1f4f",
+ "src/app/index.tsx": "448b169a4f1c93f7084ae891ca01453e642b906e8595f0adb2f1948b8b6dc0dc",
+ "src/app/orlafit/index.tsx": "d3d0b7227451ec4fbab5f0818e55aa6862b1139dd9feadbbf2bc05b23b92b592",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/orlafit/components/fit-frame.tsx": "67f3e99357c773eecce26fa68c927287db4b57293d3832b1175d4ac246c5a68d",
+ "src/features/orlafit/components/glyph.tsx": "dde0d6bdfa5ad388f0aa58f59e5787941a0a55acd957839a0da5ccb77f3515dc",
+ "src/features/orlafit/components/text.tsx": "1599ade6885d5973a7efed23f2875660be6495594f1d9e6fea147212a6eb4717",
+ "src/features/orlafit/data/fit.ts": "0e29776c83480e4680eccc605a8941bc9aa04969a956a08ecf893aa925365e94",
+ "src/features/orlafit/layout.ts": "edd153d30ab36f661fc8c8f609ed1d9e1982a7e3122f1d2de6513ba4575b0c1c",
+ "src/features/orlafit/theme.ts": "734c48e1bfabb017911c638f25ace7457bbc29beff1540d75e9637c479ae1392",
+ "src/features/orlafit/use-insets.ts": "775a32d744a1a98d77db2a8cbb5615f7baa84cd13673722d40ab22be5106bc51",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

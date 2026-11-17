@@ -1,0 +1,49 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { FriendField } from '@/features/wisefriends/components/friend-field';
+import { OnboardFoot } from '@/features/wisefriends/components/onboard-foot';
+import { Wordmark } from '@/features/wisefriends/components/wordmark';
+import { useLayout } from '@/features/wisefriends/layout';
+import { ct } from '@/features/wisefriends/theme';
+
+/**
+ * WanderWise — onboarding, two of three.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The field is the remainder, so the action always sits on the foot with no
+ * band under it (I3) — and it is the map *idea*, never a traced map (I4).
+ */
+export default function WisefriendsScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <Wordmark height={L.markH} />
+
+      <View style={{ height: L.gapMark }} />
+      <View style={{ marginHorizontal: L.margin }}>
+        <FriendField width={L.W - L.margin * 2} height={L.collage.h} />
+      </View>
+
+      <OnboardFoot
+        margin={L.margin}
+        displayH={L.displayH}
+        gapDisplay={L.gapDisplay}
+        bodyH={L.bodyH}
+        gapBody={L.gapBody}
+        dotsH={L.dotsH}
+        gapDots={L.gapDots}
+        ctaH={L.cta.h}
+        onNext={() => router.push('/wiseplaces')}
+      />
+    </View>
+  );
+}

@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/vaultperf/index.tsx",
+  "section-tabs": "src/features/vaultperf/components/section-tabs.tsx",
+  "data-performance": "src/features/vaultperf/data/performance.ts",
+  "return-figure": "src/features/vaultperf/components/return-figure.tsx",
+  "stat-tiles": "src/features/vaultperf/components/stat-tiles.tsx"
+}

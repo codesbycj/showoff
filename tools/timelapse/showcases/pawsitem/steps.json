@@ -1,0 +1,261 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "@/features/pawsitem/components/item-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import item header"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "@/features/pawsitem/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "sub",
+   "op": "jsx",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "@/features/pawsitem/components/product-hero"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import product hero"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/pawsitem/components/product-hero.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/pawsitem/components/product-hero.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "\"Oat\"",
+   "op": "entry",
+   "args": [
+    "src/features/pawsitem/data/item.ts",
+    "oat"
+   ]
+  },
+  {
+   "label": "\"Clay\"",
+   "op": "entry",
+   "args": [
+    "src/features/pawsitem/data/item.ts",
+    "clay"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "@/features/pawsitem/components/fact-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import fact row"
+  },
+  {
+   "label": "\"One fewer\"",
+   "op": "jsx",
+   "args": [
+    "src/features/pawsitem/components/fact-row.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/pawsitem/components/fact-row.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/pawsitem/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "@/features/pawsitem/components/add-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/pawsitem/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import add button"
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/pawsitem/components/add-button.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "add-button",
+     "src/features/pawsitem/components/add-button.tsx"
+    ],
+    [
+     "data-item",
+     "src/features/pawsitem/data/item.ts"
+    ],
+    [
+     "fact-row",
+     "src/features/pawsitem/components/fact-row.tsx"
+    ],
+    [
+     "product-hero",
+     "src/features/pawsitem/components/product-hero.tsx"
+    ],
+    [
+     "screen",
+     "src/app/pawsitem/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

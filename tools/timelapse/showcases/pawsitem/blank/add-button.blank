@@ -1,0 +1,43 @@
+import { Pressable, View } from 'react-native';
+
+import { product, total } from '../data/item';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onPress: () => void };
+
+/**
+ * The primary action.
+ *
+ * The dark fill lives on an absolutely-filled child, so an emptied button
+ * paints nothing during a reveal (§5.5), and the ground and the label are two
+ * beats rather than one.
+ */
+export function AddButton({ margin, height, onPress }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${product.cta}, $${total()}`}
+        onPress={onPress}
+      >
+        <View style={{ height, alignItems: 'center', justifyContent: 'center' }}>
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 16,
+              backgroundColor: ct.ink,
+            }}
+          />
+          {/* STEP 1.22 cta
+          <T variant="cta">{product.cta}</T>
+          */}
+        </View>
+      </Pressable>
+    </View>
+  );
+}

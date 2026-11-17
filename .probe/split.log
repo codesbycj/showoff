@@ -1,0 +1,211 @@
+  _home-parts-shared.tsx   <- Round, BarProps, BlockProps, RegionProps, CardProps, PlaceCard, ListProps, TabProps
+  home-bar.tsx             <- HomeBar
+  greeting.tsx             <- Greeting
+  region-row.tsx           <- RegionRow
+  place-list.tsx           <- PlaceList
+  tab-bar.tsx              <- TabBar
+  _start-parts-shared.tsx  <- HeroProps, StepProps, BlockProps, SlideProps
+  hero-frame.tsx           <- HeroFrame
+  step-bar.tsx             <- StepBar
+  wordmark.tsx             <- Wordmark
+  headline.tsx             <- Headline
+  subline.tsx              <- Subline
+  slide-bar.tsx            <- SlideBar
+  _stay-parts-shared.tsx   <- Round, HeroProps, TitleProps, ChipProps, BlockProps, RailProps, ActionProps
+  stay-hero.tsx            <- StayHero
+  stay-title.tsx           <- StayTitle
+  include-row.tsx          <- IncludeRow
+  overview-title.tsx       <- OverviewTitle
+  about-block.tsx          <- AboutBlock
+  shot-rail.tsx            <- ShotRail
+  action-bar.tsx           <- ActionBar
+  _quick-rail-shared.tsx   <- TitleProps, Props
+  quick-title.tsx          <- QuickTitle
+  quick-rail.tsx           <- QuickRail
+  repointed src\app\lumihome\index.tsx
+  _txn-list-shared.tsx     <- HeadProps, Row, Props
+  recent-head.tsx          <- RecentHead
+  txn-list.tsx             <- TxnList
+  repointed src\app\lumihome\index.tsx
+  _pitch-shared.tsx        <- HeadProps
+  headline.tsx             <- Headline
+  body.tsx                 <- Body
+  _start-cta-shared.tsx    <- Props, AsideProps
+  start-cta.tsx            <- StartCta
+  start-aside.tsx          <- StartAside
+  repointed src\app\lumistart\index.tsx
+  _price-block-shared.tsx  <- Props, BlurbProps
+  price-block.tsx          <- PriceBlock
+  stock-blurb.tsx          <- StockBlurb
+  repointed src\app\lumistock\index.tsx
+  _stat-list-shared.tsx    <- TitleProps, Props, CtaProps
+  stats-title.tsx          <- StatsTitle
+  stat-list.tsx            <- StatList
+  report-cta.tsx           <- ReportCta
+  repointed src\app\lumistock\index.tsx
+  _stock-head-shared.tsx   <- BarProps, IdProps
+  stock-bar.tsx            <- StockBar
+  stock-id.tsx             <- StockId
+  _night-scene-shared.tsx  <- GroundProps, SceneProps
+  sky-ground.tsx           <- SkyGround
+  dome-scene.tsx           <- DomeScene
+  _onboard-parts-shared.tsx <- BarProps, PagerProps, BlockProps, CtaProps, BackProps
+  brand-bar.tsx            <- BrandBar
+  pager.tsx                <- Pager
+  headline.tsx             <- Headline
+  body.tsx                 <- Body
+  primary-cta.tsx          <- PrimaryCta
+  back-disc.tsx            <- BackDisc
+  _night-scene-shared.tsx  <- GroundProps, SceneProps
+  sky-ground.tsx           <- SkyGround
+  dome-scene.tsx           <- DomeScene
+  _onboard-parts-shared.tsx <- BarProps, PagerProps, BlockProps, CtaProps, BackProps
+  brand-bar.tsx            <- BrandBar
+  pager.tsx                <- Pager
+  headline.tsx             <- Headline
+  body.tsx                 <- Body
+  primary-cta.tsx          <- PrimaryCta
+  back-disc.tsx            <- BackDisc
+  _night-scene-shared.tsx  <- GroundProps, archPath, SceneProps
+  sky-ground.tsx           <- SkyGround
+  arch-scene.tsx           <- ArchScene
+  _onboard-parts-shared.tsx <- BarProps, PagerProps, BlockProps, CtaProps, BackProps
+  brand-bar.tsx            <- BrandBar
+  pager.tsx                <- Pager
+  headline.tsx             <- Headline
+  body.tsx                 <- Body
+  primary-cta.tsx          <- PrimaryCta
+  back-disc.tsx            <- BackDisc
+  _explore-parts-shared.tsx <- SearchProps, TitleProps, RailProps, GridProps, DockProps
+  search-field.tsx         <- SearchField
+  explore-title.tsx        <- ExploreTitle
+  moods-title.tsx          <- MoodsTitle
+  feature-rail.tsx         <- FeatureRail
+  genre-grid.tsx           <- GenreGrid
+  dock.tsx                 <- Dock
+  _home-parts-shared.tsx   <- Round, BarProps, BlockProps, ChipProps, HeadProps, RailProps, CardProps, ListProps, DockProps
+  greeting-bar.tsx         <- GreetingBar
+  category-label.tsx       <- CategoryLabel
+  category-chips.tsx       <- CategoryChips
+  section-head.tsx         <- SectionHead
+  popular-head.tsx         <- PopularHead
+  playlist-head.tsx        <- PlaylistHead
+  song-rail.tsx            <- SongRail
+  collection-head.tsx      <- CollectionHead
+  collection-card.tsx      <- CollectionCard
+  track-list.tsx           <- TrackList
+  dock.tsx                 <- Dock
+  _player-parts-shared.tsx <- Round, BarProps, CoverProps, TitleProps, ScrubProps, TransportProps, LyricsProps
+  player-bar.tsx           <- PlayerBar
+  cover-art.tsx            <- CoverArt
+  now-playing.tsx          <- NowPlaying
+  scrubber.tsx             <- Scrubber
+  transport.tsx            <- Transport
+  lyrics-handle.tsx        <- LyricsHandle
+  _find-header-shared.tsx  <- BarProps, SearchProps, TitleProps
+  find-header.tsx          <- FindHeader
+  search-field.tsx         <- SearchField
+  category-title.tsx       <- CategoryTitle
+  repointed src\app\tamarfind\index.tsx
+  _gym-body-shared.tsx     <- BlockProps, ChipProps, FactProps, CtaProps
+  gym-title.tsx            <- GymTitle
+  gym-address.tsx          <- GymAddress
+  amenity-row.tsx          <- AmenityRow
+  price-row.tsx            <- PriceRow
+  about-block.tsx          <- AboutBlock
+  fact-strip.tsx           <- FactStrip
+  reserve-cta.tsx          <- ReserveCta
+  _start-copy-shared.tsx   <- WordmarkProps, BlockProps, CtaProps, AsideProps
+  wordmark.tsx             <- Wordmark
+  headline.tsx             <- Headline
+  body.tsx                 <- Body
+  start-cta.tsx            <- StartCta
+  start-aside.tsx          <- StartAside
+  _feed-parts-shared.tsx   <- BarProps, RailProps, AuthorProps, CopyProps, CollageProps, StatProps, ActionProps, NextProps, TabProps
+  feed-bar.tsx             <- FeedBar
+  story-rail.tsx           <- StoryRail
+  post-author.tsx          <- PostAuthor
+  post-copy.tsx            <- PostCopy
+  post-collage.tsx         <- PostCollage
+  post-stats.tsx           <- PostStats
+  post-actions.tsx         <- PostActions
+  next-post.tsx            <- NextPost
+  tab-bar.tsx              <- TabBar
+  _size-picker-shared.tsx  <- HeadProps, Props
+  size-head.tsx            <- SizeHead
+  size-picker.tsx          <- SizePicker
+  repointed src\app\vestaitem\index.tsx
+  _cycle-parts-shared.tsx  <- TINT, BlockProps, TabProps, StripProps, ChipProps, PromoProps, NoteProps
+  back-row.tsx             <- BackRow
+  headline.tsx             <- Headline
+  range-tabs.tsx           <- RangeTabs
+  day-strip.tsx            <- DayStrip
+  symptom-chips.tsx        <- SymptomChips
+  log-title.tsx            <- LogTitle
+  promo-card.tsx           <- PromoCard
+  note-row.tsx             <- NoteRow
+  _day-parts-shared.tsx    <- TINT, BarProps, RingProps, BlockProps, ChartProps, TileProps
+  day-bar.tsx              <- DayBar
+  ring-strip.tsx           <- RingStrip
+  headline.tsx             <- Headline
+  month-chart.tsx          <- MonthChart
+  following-title.tsx      <- FollowingTitle
+  follow-tiles.tsx         <- FollowTiles
+  _prog-parts-shared.tsx   <- TINT, SparkProps, Sparkline, CalorieProps, TitleProps, BannerProps, WeekTicks, TrendProps
+  calorie-card.tsx         <- CalorieCard
+  programs-title.tsx       <- ProgramsTitle
+  trending-title.tsx       <- TrendingTitle
+  leader-banner.tsx        <- LeaderBanner
+  trend-list.tsx           <- TrendList
+  _stats-parts-shared.tsx  <- BlockProps, TabProps, BoardProps
+  kicker.tsx               <- Kicker
+  headline.tsx             <- Headline
+  stat-tabs.tsx            <- StatTabs
+  leaderboard.tsx          <- Leaderboard
+  _weight-parts-shared.tsx <- ChartProps, TitleProps, GridProps, PredictProps
+  weight-chart.tsx         <- WeightChart
+  breakdown-title.tsx      <- BreakdownTitle
+  stat-grid.tsx            <- StatGrid
+  predict-title.tsx        <- PredictTitle
+  predict-card.tsx         <- PredictCard
+  _home-header-shared.tsx  <- Props, SearchProps
+  home-header.tsx          <- HomeHeader
+  search-bar.tsx           <- SearchBar
+  repointed src\app\zonehome\index.tsx
+  _quick-list-shared.tsx   <- HeadProps, Props
+  quick-head.tsx           <- QuickHead
+  quick-list.tsx           <- QuickList
+  repointed src\app\zonehome\index.tsx
+  _restaurant-rail-shared.tsx <- HeadProps, Card, Props
+  section-head.tsx         <- SectionHead
+  restaurant-rail.tsx      <- RestaurantRail
+  repointed src\app\zonehome\index.tsx
+  _item-parts-shared.tsx   <- Round, HeroProps, BlockProps, TitleProps, OptionProps, BarProps
+  item-hero.tsx            <- ItemHero
+  liked-badge.tsx          <- LikedBadge
+  item-title.tsx           <- ItemTitle
+  item-blurb.tsx           <- ItemBlurb
+  addon-head.tsx           <- AddonHead
+  addon-list.tsx           <- AddonList
+  cart-bar.tsx             <- CartBar
+  _dish-grid-shared.tsx    <- TabProps, Card, Props
+  menu-tabs.tsx            <- MenuTabs
+  dish-grid.tsx            <- DishGrid
+  repointed src\app\zonemenu\index.tsx
+  _menu-head-shared.tsx    <- Round, BannerProps, DiscProps, BlockProps, DeliveryProps, OfferProps
+  menu-banner.tsx          <- MenuBanner
+  place-disc.tsx           <- PlaceDisc
+  place-title.tsx          <- PlaceTitle
+  place-meta.tsx           <- PlaceMeta
+  delivery-card.tsx        <- DeliveryCard
+  offer-row.tsx            <- OfferRow
+  _route-sheet-shared.tsx  <- Round, BarProps, SheetProps
+  route-bar.tsx            <- RouteBar
+  route-sheet.tsx          <- RouteSheet
+  repointed src\app\zoneroute\index.tsx
+  _start-parts-shared.tsx  <- BlockProps, HeroProps, ActionProps
+  join-banner.tsx          <- JoinBanner
+  headline.tsx             <- Headline
+  burger-hero.tsx          <- BurgerHero
+  start-actions.tsx        <- StartActions
+  legal-note.tsx           <- LegalNote

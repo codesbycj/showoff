@@ -1,0 +1,37 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/cart';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number; onPress: () => void };
+
+/**
+ * The way out of the cart.
+ *
+ * The visual box sits on an inner `View`, never on the `Pressable` itself:
+ * `Pressable`'s function styles are dropped in a static render, and a button
+ * that loses its height and fill in the web build is a button nothing can
+ * measure (RULES Part 7).
+ */
+export function PayButton({ margin, height, radius, onPress }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={header.pay} onPress={onPress}>
+        <View
+          style={{
+            height,
+            borderRadius: radius,
+            backgroundColor: ct.white,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {/* STEP 1.22 pay
+          <T variant="cta">{header.pay}</T>
+          */}
+        </View>
+      </Pressable>
+    </View>
+  );
+}

@@ -1,0 +1,115 @@
+import { Pressable, View } from 'react-native';
+
+import { tabs } from '../data/cal';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+
+type Props = {
+  margin: number;
+  height: number;
+  bottom: number;
+  active?: string;
+  onCalendar?: () => void;
+};
+
+/**
+ * The floating dock, drawn as the board draws it: a white pill and a separate
+ * round button beside it.
+ *
+ * **It is not padded by `insets.bottom`.** `bottom` already is the inset plus
+ * a hair; adding the inset to the bar as well reserves the system's strip
+ * twice (R1b, I3).
+ */
+export function PillDock({ margin, height, bottom, active = 'home', onCalendar }: Props) {
+  const main = tabs.filter((tab) => tab.id !== 'new');
+  const extra = tabs.find((tab) => tab.id === 'new');
+
+  return (
+    <View
+      style={{
+        position: 'absolute',
+        left: margin,
+        right: margin,
+        bottom,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+      pointerEvents="box-none"
+    >
+      {/* STEP 1.21 glyph
+      <View
+        style={{
+          flex: 1,
+          height,
+          borderRadius: height / 2,
+          backgroundColor: ct.surface,
+          flexDirection: 'row',
+          alignItems: 'center',
+          shadowColor: '#111317',
+          shadowOpacity: 0.12,
+          shadowRadius: 20,
+          shadowOffset: { width: 0, height: 10 },
+          elevation: 10,
+        }}
+      >
+        {main.map((tab) => {
+          const on = tab.id === active;
+          return (
+            <Pressable
+              key={tab.id}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: on }}
+              accessibilityLabel={tab.label}
+              onPress={tab.id === 'jobs' ? onCalendar : undefined}
+              style={{ flex: 1, height, alignItems: 'center', justifyContent: 'center' }}
+            >
+              <View
+                style={{
+                  width: 42,
+                  height: 42,
+                  borderRadius: 21,
+                  backgroundColor: on ? ct.tray : 'transparent',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Glyph
+                  name={tab.glyph}
+                  size={20}
+                  color={on ? ct.ink : ct.faint}
+                  strokeWidth={on ? 2 : 1.6}
+                />
+              </View>
+            </Pressable>
+          );
+        })}
+      </View>
+      */}
+
+      {/* STEP 1.22 glyph
+      {extra ? (
+        <Pressable accessibilityRole="button" accessibilityLabel={extra.label}>
+          <View
+            style={{
+              width: height,
+              height,
+              borderRadius: height / 2,
+              backgroundColor: ct.surface,
+              alignItems: 'center',
+              justifyContent: 'center',
+              shadowColor: '#111317',
+              shadowOpacity: 0.12,
+              shadowRadius: 20,
+              shadowOffset: { width: 0, height: 10 },
+              elevation: 10,
+            }}
+          >
+            <Glyph name="plus" size={22} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+      ) : null}
+      */}
+    </View>
+  );
+}

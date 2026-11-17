@@ -1,0 +1,82 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { type Meal } from '../data/meals';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  meal: Meal;
+  width: number;
+  height: number;
+  imageH: number;
+  radius: number;
+  big?: boolean;
+  onOpen?: () => void;
+};
+
+/**
+ * One meal.
+ *
+ * **The food is a photograph** (I4); the board draws each dish as an
+ * illustration, and an illustration of a bowl is still a picture of one.
+ *
+ * The bookmark is a sibling of the card's own `Pressable`, never a child: a
+ * `role="button"` inside another is torn apart by the static web build's HTML
+ * parser (§7).
+ */
+export function MealCard({ meal, width, height, imageH, radius, big = false, onOpen }: Props) {
+  return (
+    <View style={{ width, height }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={meal.name} onPress={onOpen}>
+        <View
+          style={{
+            width,
+            height,
+            borderRadius: radius,
+            backgroundColor: ct.surface,
+            overflow: 'hidden',
+          }}
+        >
+          <Image source={meal.image} style={{ width, height: imageH }} resizeMode="cover" />
+
+          <View style={{ flex: 1, paddingHorizontal: 14, paddingTop: 8, gap: 1 }}>
+            <T variant="slot">{meal.slot}</T>
+            <T variant={big ? 'meal' : 'mealSmall'} numberOfLines={1}>
+              {meal.name}
+            </T>
+            <T variant="facts" numberOfLines={1}>
+              {meal.kcal} kcal · {meal.tags.join(' · ')}
+            </T>
+          </View>
+        </View>
+      </Pressable>
+
+      <View style={{ position: 'absolute', top: 12, right: 12 }}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={meal.saved ? 'Saved' : 'Save'}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+        >
+          <View
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: 16,
+              backgroundColor: ct.white,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph
+              name={meal.saved ? 'bookmarked' : 'bookmark'}
+              size={16}
+              color={ct.ink}
+              strokeWidth={1.7}
+            />
+          </View>
+        </Pressable>
+      </View>
+    </View>
+  );
+}

@@ -1,0 +1,50 @@
+/**
+ * Everything hushstart says, so the components stay presentational.
+ *
+ * The wordmark is the app's own name set in its own type, not a traced logo -
+ * a name in a typeface is an idea, not a picture (I4).
+ */
+export const brand = { wordmark: 'hush', skip: 'Skip' };
+
+export type Mood = { id: string; label: string };
+
+/**
+ * What a session can be built for.
+ *
+ * Three labels, not a sentence (R5). The board crops the row; inventing the
+ * row a board cuts is the sanctioned fix for a short screen (I3), and these
+ * are the same moods the session screen names.
+ */
+export const moods: Mood[] = [
+  { id: 'sleep', label: 'Sleep' },
+  { id: 'focus', label: 'Focus' },
+  { id: 'calm', label: 'Calm' },
+];
+
+export type Dot = { id: string; label: string; on?: boolean };
+
+/**
+ * The onboarding's pages, one entry per dot.
+ *
+ * **R9: the dots count the pages that exist** and mark the one on screen, so
+ * the pager cannot claim a position the flow does not have. The board crops
+ * its pager; inventing the row a board cuts is the sanctioned fix for a short
+ * screen (I3).
+ */
+export const dots: Dot[] = [
+  { id: 'p1', label: 'Page 1 of 3', on: true },
+  { id: 'p2', label: 'Page 2 of 3' },
+  { id: 'p3', label: 'Page 3 of 3' },
+];
+
+export const onboarding = {
+  /** Two lines, as two strings: the reveal paints one element per step, and a
+   *  display that lands whole is the biggest thing on the screen arriving in
+   *  one beat (I9). */
+  displayTop: 'Create music',
+  displayBottom: 'sessions by yourself',
+  /** 98 characters - a run of body copy over 110 is a COPY failure (R5). */
+  body: 'Hush lets you shape a session around the mood you want, and keep the ones that work.',
+  cta: 'Continue',
+  image: require('../../../../assets/images/hushstart/hero.jpg'),
+};

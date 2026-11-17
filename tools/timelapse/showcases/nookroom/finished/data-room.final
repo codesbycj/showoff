@@ -1,0 +1,40 @@
+/**
+ * Everything nookroom says.
+ *
+ * **This is a camera surface, not a map.** A photograph of a room with
+ * interface over it is in range: the interface is the vector, the room is the
+ * picture (I4). Nothing here is traced.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const scene = {
+  piece: 'Lounge armchair',
+  maker: 'Nook Studio',
+  /** The dimensions the board crops off the bottom of its frame. Inventing the
+   *  row a board cuts is the sanctioned fix for a short screen (I3). */
+  size: 'W 78 x D 80 x H 74 cm',
+  detail: 'View details',
+  price: 950,
+  image: require('../../../../assets/images/nookroom/room.jpg'),
+  thumb: require('../../../../assets/images/nookshop/f3.png'),
+};
+
+export type Look = { id: string; label: string; image: number; on?: boolean };
+
+export const looks: Look[] = [
+  {
+    id: 'l1',
+    label: 'Interior 1',
+    image: require('../../../../assets/images/nookroom/t1.jpg'),
+    on: true,
+  },
+  { id: 'l2', label: 'Interior 2', image: require('../../../../assets/images/nookroom/t2.jpg') },
+  { id: 'l3', label: 'Interior 3', image: require('../../../../assets/images/nookroom/t3.jpg') },
+];
+
+/** One money format, applied once (R9). */
+export function money(value: number) {
+  return '€' + value.toLocaleString('en-GB');
+}

@@ -1,0 +1,279 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "@/features/tamarstart/components/wordmark"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarstart/components/wordmark.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import wordmark + glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarstart/components/wordmark.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "name"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "@/features/tamarstart/components/headline"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "import headline"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarstart/components/headline.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "text"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/tamarstart/data/start.ts",
+            "h2"
+          ]
+        }
+      ],
+      "label": "h2"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.07"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "<View style={{ height: 11 }} />"
+          ]
+        }
+      ],
+      "label": "take the gap back out"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "@/features/tamarstart/components/body"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "import body"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "@/features/tamarstart/components/start-cta"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "import start cta"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarstart/components/start-cta.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "primary"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "<View style={{ height: 17 }} />"
+          ]
+        }
+      ],
+      "label": "take the gap back out"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "@/features/tamarstart/components/start-aside"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import start aside"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarstart/components/start-aside.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "aside"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/tamarstart/components/start-aside.tsx",
+            "STEP 1.16"
+          ]
+        }
+      ],
+      "label": "glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/tamarstart/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-start",
+              "src/features/tamarstart/data/start.ts"
+            ],
+            [
+              "headline",
+              "src/features/tamarstart/components/headline.tsx"
+            ],
+            [
+              "screen",
+              "src/app/tamarstart/index.tsx"
+            ],
+            [
+              "start-aside",
+              "src/features/tamarstart/components/start-aside.tsx"
+            ],
+            [
+              "start-cta",
+              "src/features/tamarstart/components/start-cta.tsx"
+            ],
+            [
+              "wordmark",
+              "src/features/tamarstart/components/wordmark.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { OfferList } from '@/features/skyresults/components/offer-list';
+import { ResultsHeader } from '@/features/skyresults/components/results-header';
+import { SortChips } from '@/features/skyresults/components/sort-chips';
+import { useLayout } from '@/features/skyresults/layout';
+import { ct } from '@/features/skyresults/theme';
+
+/**
+ * Skylark — flight results.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The list is the remainder and runs off the bottom edge, so the foot cannot
+ * open a band (I3).
+ *
+ * **The board's floating filter button is not reproduced.** It sits on top of
+ * its own third card, over the arrival time — covering text is an R3 FAIL,
+ * the fix for which is to inset the content, and there is no content to inset
+ * in a list that scrolls under it. The sort chips above carry the same
+ * function, so the control is dropped rather than copied.
+ */
+export default function SkyresultsScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ResultsHeader margin={L.margin} height={L.headerH} onBack={() => router.push('/skyplan')} />
+
+      <View style={{ height: L.gapHeader }} />
+      <SortChips margin={L.margin} height={L.chip.h} radius={L.chip.radius} />
+
+      <View style={{ height: L.gapChips }} />
+      <OfferList
+        margin={L.margin}
+        width={L.W - L.margin * 2}
+        height={L.card.h}
+        radius={L.card.radius}
+        gap={L.cardGap}
+        onSelect={() => router.push('/skyticket')}
+      />
+    </View>
+  );
+}

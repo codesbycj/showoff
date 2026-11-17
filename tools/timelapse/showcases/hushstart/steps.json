@@ -1,0 +1,271 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/wordmark"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import wordmark"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/skip-link"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import skip link"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/page-dots"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import page dots"
+  },
+  {
+   "label": "\"Page 2 of 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushstart/data/onboarding.ts",
+    "p2"
+   ]
+  },
+  {
+   "label": "\"Page 3 of 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushstart/data/onboarding.ts",
+    "p3"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/onboard-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import onboard title"
+  },
+  {
+   "label": "display bottom",
+   "op": "jsx",
+   "args": [
+    "src/features/hushstart/components/onboard-title.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/onboard-body"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import onboard body"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/mood-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import mood chips"
+  },
+  {
+   "label": "\"Focus\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushstart/data/onboarding.ts",
+    "focus"
+   ]
+  },
+  {
+   "label": "\"Calm\"",
+   "op": "entry",
+   "args": [
+    "src/features/hushstart/data/onboarding.ts",
+    "calm"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/hushstart/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "@/features/hushstart/components/continue-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/hushstart/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import continue button"
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/hushstart/components/continue-button.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "continue-button",
+     "src/features/hushstart/components/continue-button.tsx"
+    ],
+    [
+     "data-onboarding",
+     "src/features/hushstart/data/onboarding.ts"
+    ],
+    [
+     "onboard-title",
+     "src/features/hushstart/components/onboard-title.tsx"
+    ],
+    [
+     "screen",
+     "src/app/hushstart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

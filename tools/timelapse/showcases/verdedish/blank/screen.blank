@@ -1,0 +1,150 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+// STEP 1.12 import dish facts
+// import { DishFacts } from '@/features/verdedish/components/dish-facts';
+// STEP 1.19 import extras list
+// import { ExtrasList } from '@/features/verdedish/components/extras-list';
+// STEP 1.06 import glyph
+// import { Glyph } from '@/features/verdedish/components/glyph';
+// STEP 1.24 import order bar
+// import { OrderBar } from '@/features/verdedish/components/order-bar';
+// STEP 1.01 import plate gallery
+// import { PlateGallery } from '@/features/verdedish/components/plate-gallery';
+// STEP 1.08 import text
+// import { T } from '@/features/verdedish/components/text';
+import { dish, header } from '@/features/verdedish/data/dish';
+import { useLayout } from '@/features/verdedish/layout';
+import { ct } from '@/features/verdedish/theme';
+
+/**
+ * Verdeat — dish.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The plate is the remainder, so the order bar always sits on the foot (I3)
+ * and every figure on the screen is computed from the dish and its extras (R9).
+ */
+export default function VerdedishScreen() {
+  const L = useLayout();
+
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: ct.white,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      {/* STEP 1.01 plate gallery
+      <PlateGallery width={L.W} height={L.gallery.h} radius={L.gallery.radius} />
+      */}
+
+      <View
+        style={{
+          position: 'absolute',
+          top: L.insets.top + 4,
+          left: L.margin,
+          right: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {/* STEP 1.06 "Back"
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/verdehome')}
+        >
+          <View style={round}>
+            <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+        */}
+
+        {/* STEP 1.07 the next block
+
+        */}
+        {/* STEP 1.08 title
+        <View
+          style={{
+            height: 36,
+            paddingHorizontal: 18,
+            borderRadius: 18,
+            backgroundColor: ct.white,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="header" style={{ fontSize: 16, lineHeight: 22 }}>
+            {header.title}
+          </T>
+        </View>
+        */}
+
+        {/* STEP 1.09 "Save this dish"
+        <Pressable accessibilityRole="button" accessibilityLabel="Save this dish">
+          <View style={round}>
+            <Glyph name="heart" size={19} color={ct.heart} />
+          </View>
+        </Pressable>
+        */}
+      </View>
+
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.titleH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 12,
+        }}
+      >
+        {/* STEP 1.10 name
+        <T variant="title" style={{ flex: 1 }} numberOfLines={2}>
+          {dish.name}
+        </T>
+        */}
+        {/* STEP 1.11 t
+        <T variant="headlinePrice">${dish.price.toFixed(2)}</T>
+        */}
+      </View>
+
+      <View style={{ height: L.gapTitle }} />
+      {/* STEP 1.12 dish facts
+      <DishFacts margin={L.margin} height={L.factsH} />
+      */}
+
+      <View style={{ height: L.gapFacts }} />
+      {/* STEP 1.18 blurb
+      <View style={{ marginHorizontal: L.margin, height: L.blurbH, justifyContent: 'center' }}>
+        <T variant="blurb">{dish.blurb}</T>
+      </View>
+      */}
+
+      <View style={{ height: L.gapBlurb }} />
+      {/* STEP 1.19 extras list
+      <ExtrasList margin={L.margin} headH={L.extras.headH} rowH={L.extras.rowH} />
+      */}
+
+      <View style={{ height: L.gapExtras }} />
+      {/* STEP 1.27 a stray gap above it | FIX 1.28 take the gap back out
+      <View style={{ width: 23, height: 23 }} />
+      */}
+      {/* STEP 1.24 order bar
+      <OrderBar margin={L.margin} height={L.bar.h} onAdd={() => router.push('/verdehome')} />
+      */}
+    </View>
+  );
+}

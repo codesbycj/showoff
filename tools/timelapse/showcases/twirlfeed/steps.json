@@ -1,0 +1,529 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/feed-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/feed-bar.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import feed bar + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/feed-bar.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "\"Notifications\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/story-rail"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/story-rail.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "import story rail + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "u1"
+          ]
+        }
+      ],
+      "label": "\"Adom\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "u2"
+          ]
+        }
+      ],
+      "label": "\"William\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "u3"
+          ]
+        }
+      ],
+      "label": "\"Elizabeth\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "u4"
+          ]
+        }
+      ],
+      "label": "\"Sarah\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "u5"
+          ]
+        }
+      ],
+      "label": "\"Tom\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "u6"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/post-author"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.12"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-author.tsx",
+            "STEP 1.13"
+          ]
+        }
+      ],
+      "label": "\"Noor\" + import post author + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-author.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "author"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-author.tsx",
+            "STEP 1.15"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/post-copy"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-copy.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "\"More options\" + import post copy + title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-copy.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "body"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/post-collage"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.19"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-collage.tsx",
+            "STEP 1.20"
+          ]
+        }
+      ],
+      "label": "import post collage + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-collage.tsx",
+            "STEP 1.21"
+          ]
+        }
+      ],
+      "label": "image"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/post-stats"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.22"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-stats.tsx",
+            "STEP 1.23"
+          ]
+        }
+      ],
+      "label": "import post stats + t"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-stats.tsx",
+            "STEP 1.24"
+          ]
+        }
+      ],
+      "label": "t"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/post-actions"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "import post actions"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-actions.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/post-actions.tsx",
+            "STEP 1.27"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/next-post"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.28"
+          ]
+        }
+      ],
+      "label": "\"Save this post\" + import next post"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/next-post.tsx",
+            "STEP 1.29"
+          ]
+        }
+      ],
+      "label": "image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/next-post.tsx",
+            "STEP 1.30"
+          ]
+        }
+      ],
+      "label": "author"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/next-post.tsx",
+            "STEP 1.31"
+          ]
+        }
+      ],
+      "label": "glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "@/features/twirlfeed/components/tab-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.32"
+          ]
+        }
+      ],
+      "label": "import tab bar"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/twirlfeed/components/tab-bar.tsx",
+            "STEP 1.33"
+          ]
+        }
+      ],
+      "label": "badge"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "videos"
+          ]
+        }
+      ],
+      "label": "\"Videos\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "inbox"
+          ]
+        }
+      ],
+      "label": "\"Inbox\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "market"
+          ]
+        }
+      ],
+      "label": "\"Market\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/twirlfeed/data/feed.ts",
+            "settings"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "STEP 1.38"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/twirlfeed/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-feed",
+              "src/features/twirlfeed/data/feed.ts"
+            ],
+            [
+              "feed-bar",
+              "src/features/twirlfeed/components/feed-bar.tsx"
+            ],
+            [
+              "next-post",
+              "src/features/twirlfeed/components/next-post.tsx"
+            ],
+            [
+              "post-actions",
+              "src/features/twirlfeed/components/post-actions.tsx"
+            ],
+            [
+              "post-author",
+              "src/features/twirlfeed/components/post-author.tsx"
+            ],
+            [
+              "post-collage",
+              "src/features/twirlfeed/components/post-collage.tsx"
+            ],
+            [
+              "post-copy",
+              "src/features/twirlfeed/components/post-copy.tsx"
+            ],
+            [
+              "post-stats",
+              "src/features/twirlfeed/components/post-stats.tsx"
+            ],
+            [
+              "screen",
+              "src/app/twirlfeed/index.tsx"
+            ],
+            [
+              "story-rail",
+              "src/features/twirlfeed/components/story-rail.tsx"
+            ],
+            [
+              "tab-bar",
+              "src/features/twirlfeed/components/tab-bar.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "\"Settings\" + take the gap back out + tidy up"
+    }
+  ]
+}

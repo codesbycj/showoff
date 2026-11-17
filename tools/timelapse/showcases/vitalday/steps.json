@@ -1,0 +1,422 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "@/features/vitalday/components/day-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.01"
+          ]
+        }
+      ],
+      "label": "import day bar"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/day-bar.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/day-bar.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/day-bar.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "\"Add an entry\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "@/features/vitalday/components/ring-strip"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.05"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/ring-strip.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "import ring strip + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "r2"
+          ]
+        }
+      ],
+      "label": "\"T\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "r3"
+          ]
+        }
+      ],
+      "label": "\"W\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "r4"
+          ]
+        }
+      ],
+      "label": "\"T\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "r5"
+          ]
+        }
+      ],
+      "label": "\"F\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "r6"
+          ]
+        }
+      ],
+      "label": "\"S\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "r7"
+          ]
+        }
+      ],
+      "label": "\"S\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "@/features/vitalday/components/headline"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.13"
+          ]
+        }
+      ],
+      "label": "import headline"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "@/features/vitalday/components/month-chart"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.14"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/month-chart.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "import month chart + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/month-chart.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/month-chart.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "the next block + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/month-chart.tsx",
+            "STEP 1.18"
+          ]
+        },
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "m2"
+          ]
+        }
+      ],
+      "label": "label + \"Feb\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "m3"
+          ]
+        }
+      ],
+      "label": "\"Mar\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "m4"
+          ]
+        }
+      ],
+      "label": "\"Apr\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "m5"
+          ]
+        }
+      ],
+      "label": "\"May\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "m6"
+          ]
+        }
+      ],
+      "label": "\"Jun\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "m7"
+          ]
+        }
+      ],
+      "label": "\"Jul\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "@/features/vitalday/components/following-title"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.25"
+          ]
+        }
+      ],
+      "label": "import following title"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "@/features/vitalday/components/follow-tiles"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.26"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalday/components/follow-tiles.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "import follow tiles + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "f2"
+          ]
+        }
+      ],
+      "label": "\"Body\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalday/data/day.ts",
+            "f3"
+          ]
+        }
+      ],
+      "label": "\"Heart\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "STEP 1.30"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalday/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-day",
+              "src/features/vitalday/data/day.ts"
+            ],
+            [
+              "day-bar",
+              "src/features/vitalday/components/day-bar.tsx"
+            ],
+            [
+              "follow-tiles",
+              "src/features/vitalday/components/follow-tiles.tsx"
+            ],
+            [
+              "month-chart",
+              "src/features/vitalday/components/month-chart.tsx"
+            ],
+            [
+              "ring-strip",
+              "src/features/vitalday/components/ring-strip.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vitalday/index.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

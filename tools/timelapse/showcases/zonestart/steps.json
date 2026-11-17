@@ -1,0 +1,293 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "@/features/zonestart/components/join-banner"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.01"
+          ]
+        }
+      ],
+      "label": "import join banner"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/join-banner.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "glyph"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/join-banner.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "@/features/zonestart/components/headline"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/headline.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "import headline + text"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonestart/data/start.ts",
+            "h2"
+          ]
+        }
+      ],
+      "label": "h2"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.07"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "<View style={{ height: 11 }} />"
+          ]
+        }
+      ],
+      "label": "take the gap back out"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "@/features/zonestart/components/burger-hero"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.09"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/burger-hero.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "import burger hero + image"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/burger-hero.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "linear gradient"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/burger-hero.tsx",
+            "STEP 1.12"
+          ]
+        }
+      ],
+      "label": "linear gradient"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "@/features/zonestart/components/start-actions"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zonestart/components/start-actions.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "import start actions + label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zonestart/data/start.ts",
+            "delivery"
+          ]
+        }
+      ],
+      "label": "\"Order Delivery\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.16"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "<View style={{ height: 17 }} />"
+          ]
+        }
+      ],
+      "label": "take the gap back out"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "@/features/zonestart/components/legal-note"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "import legal note"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "a stray gap above it"
+    },
+    {
+      "ops": [
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zonestart/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "burger-hero",
+              "src/features/zonestart/components/burger-hero.tsx"
+            ],
+            [
+              "data-start",
+              "src/features/zonestart/data/start.ts"
+            ],
+            [
+              "headline",
+              "src/features/zonestart/components/headline.tsx"
+            ],
+            [
+              "join-banner",
+              "src/features/zonestart/components/join-banner.tsx"
+            ],
+            [
+              "screen",
+              "src/app/zonestart/index.tsx"
+            ],
+            [
+              "start-actions",
+              "src/features/zonestart/components/start-actions.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "take the gap back out + tidy up"
+    }
+  ]
+}

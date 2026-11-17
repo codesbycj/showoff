@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/orbitchart/index.tsx",
+  "chart-header": "src/features/orbitchart/components/chart-header.tsx",
+  "balance-chart": "src/features/orbitchart/components/balance-chart.tsx",
+  "range-tabs": "src/features/orbitchart/components/range-tabs.tsx",
+  "data-chart": "src/features/orbitchart/data/chart.ts",
+  "activity-sheet": "src/features/orbitchart/components/activity-sheet.tsx"
+}

@@ -1,0 +1,314 @@
+{
+ "1": [
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.01"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "@/features/flowrecipe/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "label": "\"Save this recipe\"",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "@/features/flowrecipe/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import text + slot"
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "\"Carbs\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowrecipe/data/recipe.ts",
+    "carbs"
+   ]
+  },
+  {
+   "label": "\"Fat\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowrecipe/data/recipe.ts",
+    "fat"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "@/features/flowrecipe/components/macro-rings"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import macro rings"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "@/features/flowrecipe/components/ingredient-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowrecipe/index.tsx",
+      "STEP 1.20"
+     ]
+    }
+   ],
+   "label": "import ingredient list"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/flowrecipe/components/ingredient-list.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/flowrecipe/components/ingredient-list.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "\"Method · 4 steps\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowrecipe/data/recipe.ts",
+    "method"
+   ]
+  },
+  {
+   "label": "\"Fresh salmon, sliced\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowrecipe/data/recipe.ts",
+    "salmon"
+   ]
+  },
+  {
+   "label": "\"Avocado\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowrecipe/data/recipe.ts",
+    "avocado"
+   ]
+  },
+  {
+   "label": "\"Edamame\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowrecipe/data/recipe.ts",
+    "edamame"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.29"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "STEP 1.30"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowrecipe/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-recipe",
+     "src/features/flowrecipe/data/recipe.ts"
+    ],
+    [
+     "ingredient-list",
+     "src/features/flowrecipe/components/ingredient-list.tsx"
+    ],
+    [
+     "screen",
+     "src/app/flowrecipe/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

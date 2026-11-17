@@ -1,0 +1,422 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "@/features/zoneroute/components/route-map"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "STEP 1.01"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.02"
+          ]
+        }
+      ],
+      "label": "import route map + path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.03"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.04"
+          ]
+        }
+      ],
+      "label": "the next block + path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.05"
+          ]
+        }
+      ],
+      "label": "path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.06"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.07"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.08"
+          ]
+        }
+      ],
+      "label": "the next block + path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "path"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.10"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.11"
+          ]
+        }
+      ],
+      "label": "the next block + circle"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.12"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.13"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.14"
+          ]
+        }
+      ],
+      "label": "circle + the next block + circle"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.15"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.16"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.17"
+          ]
+        }
+      ],
+      "label": "circle + the next block + circle"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.18"
+          ]
+        }
+      ],
+      "label": "circle"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-map.tsx",
+            "STEP 1.19"
+          ]
+        }
+      ],
+      "label": "circle"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "s2"
+          ]
+        }
+      ],
+      "label": "\"Steiner St\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "s3"
+          ]
+        }
+      ],
+      "label": "\"Marin Blvd\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "s4"
+          ]
+        }
+      ],
+      "label": "\"14th Ave\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "s5"
+          ]
+        }
+      ],
+      "label": "\"South St\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "s6"
+          ]
+        }
+      ],
+      "label": "\"Flushing Ave\""
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "@/features/zoneroute/components/route-bar"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "STEP 1.25"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-bar.tsx",
+            "STEP 1.26"
+          ]
+        }
+      ],
+      "label": "import route bar + round"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-bar.tsx",
+            "STEP 1.27"
+          ]
+        }
+      ],
+      "label": "round"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "@/features/zoneroute/components/route-sheet"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "STEP 1.28"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-sheet.tsx",
+            "STEP 1.29"
+          ]
+        }
+      ],
+      "label": "import route sheet + view"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-sheet.tsx",
+            "STEP 1.30"
+          ]
+        }
+      ],
+      "label": "title"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-sheet.tsx",
+            "STEP 1.31"
+          ]
+        }
+      ],
+      "label": "name"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/zoneroute/components/route-sheet.tsx",
+            "STEP 1.32"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "p2"
+          ]
+        }
+      ],
+      "label": "\"Picked up from Maison Grill\""
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/zoneroute/data/route.ts",
+            "p3"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "STEP 1.35"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/zoneroute/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "data-route",
+              "src/features/zoneroute/data/route.ts"
+            ],
+            [
+              "route-bar",
+              "src/features/zoneroute/components/route-bar.tsx"
+            ],
+            [
+              "route-map",
+              "src/features/zoneroute/components/route-map.tsx"
+            ],
+            [
+              "route-sheet",
+              "src/features/zoneroute/components/route-sheet.tsx"
+            ],
+            [
+              "screen",
+              "src/app/zoneroute/index.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "\"On the way to you\" + take the gap back out + tidy up"
+    }
+  ]
+}

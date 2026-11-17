@@ -1,0 +1,53 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { BackButton } from '@/features/hushshare/components/back-button';
+import { LinkRow } from '@/features/hushshare/components/link-row';
+import { SessionLabel } from '@/features/hushshare/components/session-label';
+import { ShareTitle } from '@/features/hushshare/components/share-title';
+import { TargetRow } from '@/features/hushshare/components/target-row';
+import { WaveArt } from '@/features/hushshare/components/wave-art';
+import { useLayout } from '@/features/hushshare/layout';
+import { ct } from '@/features/hushshare/theme';
+
+/**
+ * Hush - sharing a session.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The artwork takes the remainder, so the screen is full to the bottom edge
+ * with no band under it (I3).
+ */
+export default function HushshareScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View style={{ marginHorizontal: L.margin, height: L.topH, justifyContent: 'center' }}>
+        <BackButton size={44} onPress={() => router.push('/hushmix')} />
+      </View>
+
+      <View style={{ height: L.gapTop }} />
+      <ShareTitle margin={L.margin} height={L.titleH} />
+
+      <View style={{ height: L.gapTitle }} />
+      <WaveArt width={L.W} height={L.waveH} margin={L.margin} />
+
+      <SessionLabel margin={L.margin} height={L.labelH} />
+
+      <View style={{ height: L.gapLabel }} />
+      <LinkRow margin={L.margin} height={L.link.h} radius={L.link.radius} />
+
+      <View style={{ height: L.gapLink }} />
+      <TargetRow margin={L.margin} tile={L.target.tile} height={L.target.h} />
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

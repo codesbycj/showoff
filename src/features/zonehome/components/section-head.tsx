@@ -1,0 +1,40 @@
+import { Pressable, View } from 'react-native';
+
+import { section } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { HeadProps } from './_restaurant-rail-shared';
+
+/** "Popular Restaurants" and the way to the rest. */
+export function SectionHead({ margin, height }: HeadProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      {/* STEP 1.12 title
+      <T variant="sectionTitle">{section.title}</T>
+      */}
+      {/* STEP 1.13 glyph
+      <Pressable
+        hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+        accessibilityRole="button"
+        accessibilityLabel={`See all ${section.title}`}
+      >
+        {({ pressed }) => (
+          <View style={{ opacity: pressed ? 0.6 : 1 }}>
+            <Glyph name="arrowUpRight" size={18} color={ct.brand} strokeWidth={2.1} />
+          </View>
+        )}
+      </Pressable>
+      */}
+    </View>
+  );
+}

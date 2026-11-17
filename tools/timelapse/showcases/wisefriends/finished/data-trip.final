@@ -1,0 +1,74 @@
+/**
+ * Everything wisefriends says.
+ *
+ * **The board's own screen is a dotted world map**, which is a picture *of*
+ * somewhere and so out of drawing range (I4) — tracing one is copying an
+ * arrangement path by path. What is drawn instead is the *idea*: a field of
+ * dots with friends pinned on it. No coastline is depicted and no country is
+ * identifiable.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'WanderWise' };
+
+export type Pin = {
+  id: string;
+  name: string;
+  /** Position on the field, as fractions of its width and height. */
+  x: number;
+  y: number;
+  image: number;
+  /** One friend carries the bubble; declared, not inferred. */
+  note?: string;
+};
+
+export const pins: Pin[] = [
+  {
+    id: 'ana',
+    name: 'Ana',
+    x: 0.22,
+    y: 0.34,
+    image: require('../../../../assets/images/wisefriends/f1.jpg'),
+  },
+  {
+    id: 'mei',
+    name: 'Mei',
+    x: 0.52,
+    y: 0.2,
+    image: require('../../../../assets/images/wisefriends/f2.jpg'),
+    note: 'Currently in Sydney',
+  },
+  {
+    id: 'tom',
+    name: 'Tom',
+    x: 0.78,
+    y: 0.48,
+    image: require('../../../../assets/images/wisefriends/f3.jpg'),
+  },
+];
+
+export const copy = {
+  display: 'Discover\nfriends nearby',
+  /** R5: one line, 61 characters. */
+  body: 'See where your friends are and meet them on the way.',
+  cta: 'Continue',
+};
+
+/** Three pages, because the dots count three (R9). */
+export type Dot = { id: string; label: string; on?: boolean };
+
+/**
+ * The onboarding's pages, one entry per dot.
+ *
+ * **R9: the dots count the pages that exist** and mark the one on screen, so
+ * the pager cannot claim a position the flow does not have. Carried as rows
+ * rather than a computed range because the reveal stages a row at a time, and
+ * a pager that lands whole is one beat doing the work of three (I9).
+ */
+export const dots: Dot[] = [
+  { id: 'p1', label: 'Page 1 of 3' },
+  { id: 'p2', label: 'Page 2 of 3', on: true },
+  { id: 'p3', label: 'Page 3 of 3' },
+];

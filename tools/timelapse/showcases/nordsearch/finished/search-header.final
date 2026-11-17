@@ -1,0 +1,47 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/search';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onClose?: () => void };
+
+/**
+ * The sheet's header: dismiss, title, filters.
+ *
+ * Both controls are 44dp of real box (R7/I2) — the board draws them at about
+ * 28dp, which is under the floor whatever the artboard says.
+ */
+export function SearchHeader({ margin, height, onClose }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Close search"
+        onPress={onClose}
+        style={{ width: 44, height: 44, alignItems: 'flex-start', justifyContent: 'center' }}
+      >
+        <Glyph name="close" size={21} color={ct.ink} strokeWidth={1.9} />
+      </Pressable>
+
+      <T variant="sheetTitle">{header.title}</T>
+
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Filters"
+        style={{ width: 44, height: 44, alignItems: 'flex-end', justifyContent: 'center' }}
+      >
+        <Glyph name="filter" size={21} color={ct.ink} strokeWidth={1.9} />
+      </Pressable>
+    </View>
+  );
+}

@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/vitalcycle/index.tsx",
+  "back-row": "src/features/vitalcycle/components/back-row.tsx",
+  "day-strip": "src/features/vitalcycle/components/day-strip.tsx",
+  "data-cycle": "src/features/vitalcycle/data/cycle.ts",
+  "symptom-chips": "src/features/vitalcycle/components/symptom-chips.tsx",
+  "promo-card": "src/features/vitalcycle/components/promo-card.tsx",
+  "note-row": "src/features/vitalcycle/components/note-row.tsx"
+}

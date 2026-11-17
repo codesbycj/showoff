@@ -1,0 +1,72 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AccountsLink } from '@/features/vaultassets/components/accounts-link';
+import { MenuButton } from '@/features/vaultassets/components/menu-button';
+import { SectionTabs } from '@/features/vaultassets/components/section-tabs';
+import { StatRows } from '@/features/vaultassets/components/stat-rows';
+import { TotalCaption } from '@/features/vaultassets/components/total-caption';
+import { TotalFigure } from '@/features/vaultassets/components/total-figure';
+import { Wordmark } from '@/features/vaultassets/components/wordmark';
+import { useLayout } from '@/features/vaultassets/layout';
+import { ct } from '@/features/vaultassets/theme';
+
+/**
+ * Vaultix - the assets.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The wordmark and the menu are mounted side by side from here rather than
+ * wrapped in one header: `stage.js` stages what the screen mounts, so two
+ * marks in one wrapper reveal as one step (I5).
+ *
+ * The rows take the remainder, so the screen is full to the bottom edge with
+ * no band under it (I3).
+ */
+export default function VaultassetsScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.topH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Wordmark height={L.topH} />
+        <MenuButton size={44} />
+      </View>
+
+      <View style={{ height: L.gapTop }} />
+      <SectionTabs
+        margin={L.margin}
+        height={L.tabH}
+        onSelect={(route) => router.push(route as never)}
+      />
+
+      <View style={{ height: L.gapTabs }} />
+      <TotalFigure margin={L.margin} height={L.figureH} />
+
+      <View style={{ height: L.gapFigure }} />
+      <TotalCaption margin={L.margin} height={L.captionH} />
+
+      <View style={{ height: L.gapCaption }} />
+      <StatRows margin={L.margin} gap={L.row.gap} height={L.row.h} radius={L.row.radius} />
+
+      <View style={{ height: 10 }} />
+      <AccountsLink height={L.footerH} />
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

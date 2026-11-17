@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/tamarstart/index.tsx",
+  "wordmark": "src/features/tamarstart/components/wordmark.tsx",
+  "headline": "src/features/tamarstart/components/headline.tsx",
+  "data-start": "src/features/tamarstart/data/start.ts",
+  "start-cta": "src/features/tamarstart/components/start-cta.tsx",
+  "start-aside": "src/features/tamarstart/components/start-aside.tsx"
+}

@@ -1,0 +1,60 @@
+/**
+ * Everything voltitem says.
+ *
+ * **The product is invented** (I1). The board's detail page sells a named
+ * console by a named maker.
+ *
+ * **R5: labels, not prose.** The board runs three lines of marketing copy and
+ * ends them in "Read more"; here the product is described by a row of facts,
+ * which is what a spec is.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES §5.4, I7).
+ */
+
+export const product = {
+  title: 'Voltline Arc Studio Headphones',
+  maker: 'Voltline Audio',
+  rating: 4.8,
+  reviews: 117,
+  recommend: 94,
+  comments: 8,
+  price: 169,
+  was: 199,
+  /** R9: the monthly line is the price over the term, not a typed number. */
+  financeMonths: 12,
+  delivery: 'Free delivery on 26 October',
+  cta: 'Add to cart',
+};
+
+export type Shot = { id: string; image: number };
+
+/** Three frames, because the pager draws three dots (R9). */
+export const gallery: Shot[] = [
+  { id: 'g1', image: require('../../../../assets/images/voltitem/g1.jpg') },
+  { id: 'g2', image: require('../../../../assets/images/voltitem/g2.jpg') },
+  { id: 'g3', image: require('../../../../assets/images/voltitem/g3.jpg') },
+];
+
+export type Fact = { id: string; glyph: 'wave' | 'battery' | 'weight'; label: string };
+
+/**
+ * The spec row that replaces the board's paragraph.
+ *
+ * Added because the board's own copy block is prose ending in "Read more",
+ * and R5 says the data file carries what the screen says — a unit, a count or
+ * a state, never a sentence the design does not have.
+ */
+export const facts: Fact[] = [
+  { id: 'anc', glyph: 'wave', label: 'Active noise cancelling' },
+  { id: 'battery', glyph: 'battery', label: '38 hours of playback' },
+  { id: 'weight', glyph: 'weight', label: '248 g, folding frame' },
+];
+
+export type Finish = { id: string; label: string; swatch: string; on?: boolean };
+
+export const finishes: Finish[] = [
+  { id: 'black', label: 'Graphite', swatch: '#23252A', on: true },
+  { id: 'tan', label: 'Tan', swatch: '#B07A4C' },
+  { id: 'sand', label: 'Sand', swatch: '#D9CFC0' },
+];

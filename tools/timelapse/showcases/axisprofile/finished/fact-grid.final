@@ -1,0 +1,91 @@
+import { View } from 'react-native';
+
+import { cells } from '../data/profile';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The four facts about this function.
+ *
+ * **It is a measured height, not `flex: 1`.** Flexed, every cell that arrived
+ * resized the three around it, so one cell landing repainted half the frame:
+ * 51.4%, 25.6%, 26.2% for what is one cell each. The height comes from the
+ * window, so the card still fills what is left (I2 / I3).
+ *
+ * The cells are paired by **walking the list** two at a time, not by assuming
+ * there are four: a reveal fills `cells` one entry at a time, and a layout
+ * that assumed two rows would break at one (I7).
+ *
+ * Each tinted cell's fill sits on an absolutely-filled child so an emptied
+ * cell paints nothing in frame one of the reveal (I9).
+ */
+export function FactGrid({ margin, height, radius }: Props) {
+  const tints = { pink: ct.pinkTile, lavender: ct.lavenderTile } as const;
+  const dots = { magenta: ct.magenta, indigo: ct.indigo } as const;
+
+  const rows: (typeof cells)[] = [];
+  for (const cell of cells) {
+    const last = rows[rows.length - 1];
+    if (last && last.length === 1) last.push(cell);
+    else rows.push([cell]);
+  }
+
+  return (
+    <View style={{ marginHorizontal: margin, height, borderRadius: radius }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.card,
+          borderRadius: radius,
+        }}
+      />
+
+      {rows.map((row) => (
+        <View key={row[0].id} style={{ height: height / 2, flexDirection: 'row' }}>
+          {row.map((cell) => (
+            <View key={cell.id} style={{ flex: 1, padding: 18, justifyContent: 'center', gap: 8 }}>
+              {cell.tint ? (
+                <View
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: tints[cell.tint],
+                    borderRadius: radius,
+                  }}
+                />
+              ) : null}
+
+              <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 8 }}>
+                <View style={{ flex: 1 }}>
+                  <T variant="cellLabel">{cell.label}</T>
+                </View>
+                {cell.dot ? (
+                  <View
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: 4,
+                      marginTop: 5,
+                      backgroundColor: dots[cell.dot],
+                    }}
+                  />
+                ) : null}
+              </View>
+
+              <T variant="cellValue">{cell.value}</T>
+            </View>
+          ))}
+        </View>
+      ))}
+    </View>
+  );
+}

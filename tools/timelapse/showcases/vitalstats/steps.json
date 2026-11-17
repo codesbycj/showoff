@@ -1,0 +1,263 @@
+{
+  "1": [
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "@/features/vitalstats/components/back-row"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.01"
+          ]
+        }
+      ],
+      "label": "import back row"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalstats/components/back-row.tsx",
+            "STEP 1.02"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "@/features/vitalstats/components/kicker"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.03"
+          ]
+        }
+      ],
+      "label": "glyph + import kicker"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.04"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "<View style={{ height: 11 }} />"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "@/features/vitalstats/components/headline"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.06"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalstats/components/headline.tsx",
+            "STEP 1.07"
+          ]
+        }
+      ],
+      "label": "take the gap back out + import headline + text"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalstats/data/stats.ts",
+            "h2"
+          ]
+        }
+      ],
+      "label": "h2"
+    },
+    {
+      "ops": [
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "@/features/vitalstats/components/stat-tabs"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.09"
+          ]
+        }
+      ],
+      "label": "import stat tabs"
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalstats/components/stat-tabs.tsx",
+            "STEP 1.10"
+          ]
+        }
+      ],
+      "label": "label"
+    },
+    {
+      "ops": [
+        {
+          "op": "entry",
+          "args": [
+            "src/features/vitalstats/data/stats.ts",
+            "activity"
+          ]
+        }
+      ],
+      "label": "\"Activity\""
+    },
+    {
+      "ops": [
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.12"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "<View style={{ height: 17 }} />"
+          ]
+        },
+        {
+          "op": "imp",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "@/features/vitalstats/components/leaderboard"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.14"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/features/vitalstats/components/leaderboard.tsx",
+            "STEP 1.15"
+          ]
+        }
+      ],
+      "label": "take the gap back out + import leaderboard + name"
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vitalstats/data/stats.ts",
+            "a1"
+          ]
+        }
+      ],
+      "label": "\"David Bennett\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vitalstats/data/stats.ts",
+            "a3"
+          ]
+        }
+      ],
+      "label": "\"Mira Okafor\""
+    },
+    {
+      "ops": [
+        {
+          "op": "block",
+          "args": [
+            "src/features/vitalstats/data/stats.ts",
+            "a4"
+          ]
+        },
+        {
+          "op": "jsx",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "STEP 1.19"
+          ]
+        },
+        {
+          "op": "cutel",
+          "args": [
+            "src/app/vitalstats/index.tsx",
+            "<View style={{ height: 23 }} />"
+          ]
+        },
+        {
+          "op": "final",
+          "args": [
+            [
+              "back-row",
+              "src/features/vitalstats/components/back-row.tsx"
+            ],
+            [
+              "data-stats",
+              "src/features/vitalstats/data/stats.ts"
+            ],
+            [
+              "headline",
+              "src/features/vitalstats/components/headline.tsx"
+            ],
+            [
+              "leaderboard",
+              "src/features/vitalstats/components/leaderboard.tsx"
+            ],
+            [
+              "screen",
+              "src/app/vitalstats/index.tsx"
+            ],
+            [
+              "stat-tabs",
+              "src/features/vitalstats/components/stat-tabs.tsx"
+            ]
+          ]
+        }
+      ],
+      "label": "\"Sam Whitfield\" + take the gap back out + tidy up"
+    }
+  ]
+}

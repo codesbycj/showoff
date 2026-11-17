@@ -1,0 +1,69 @@
+import { Image, Pressable, View } from 'react-native';
+
+import {
+  categories,
+  collection,
+  collectionLine,
+  greeting,
+  playlist,
+  popular,
+  songs,
+  tabs,
+  tracks,
+} from '../data/home';
+import { ct } from '../theme';
+import { T } from './text';
+
+import { ListProps } from './_home-parts-shared';
+
+/**
+ * The playlist.
+ *
+ * **Whole rows, filling the space above the dock** (see `layout.ts`), so
+ * nothing is clipped through its own text (R2) and no band is left at the
+ * foot (I3).
+ */
+export function TrackList({ margin, height, rowH, art, count, onSelect }: ListProps) {
+  const shown = tracks.slice(0, count);
+  return (
+    <View style={{ marginHorizontal: margin, height }}>
+      {/* STEP 1.30 title
+      {shown.map((t, i) => (
+        <Pressable
+          key={t.id}
+          onPress={onSelect}
+          accessibilityRole="button"
+          accessibilityLabel={`${t.title} by ${t.artist}`}
+        >
+          {({ pressed }) => (
+            <View
+              style={{
+                height: rowH,
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 12,
+                borderBottomWidth: i === shown.length - 1 ? 0 : 1,
+                borderBottomColor: ct.hairline,
+                opacity: pressed ? 0.7 : 1,
+              }}
+            >
+              <Image
+                source={t.art}
+                style={{ width: art, height: art, borderRadius: 10 }}
+                resizeMode="cover"
+              />
+              <View style={{ flex: 1 }}>
+                <T variant="trackTitle" numberOfLines={1}>
+                  {t.title}
+                </T>
+                <T variant="trackMeta">{t.artist}</T>
+              </View>
+              <T variant="trackMeta">{t.minutes}</T>
+            </View>
+          )}
+        </Pressable>
+      ))}
+      */}
+    </View>
+  );
+}

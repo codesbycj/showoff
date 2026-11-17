@@ -1,0 +1,273 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "@/features/axisprofile/components/top-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import top bar"
+  },
+  {
+   "label": "badge",
+   "op": "jsx",
+   "args": [
+    "src/features/axisprofile/components/top-bar.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "@/features/axisprofile/components/tab-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import tab row"
+  },
+  {
+   "label": "\"Key indicators\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "indicators"
+   ]
+  },
+  {
+   "label": "\"Tasks\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "tasks"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "@/features/axisprofile/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import text + display"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "@/features/axisprofile/components/fact-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import fact grid"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/axisprofile/components/fact-grid.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "\"Residual risk score\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "residual"
+   ]
+  },
+  {
+   "label": "\"Inherent risk score\"",
+   "op": "block",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "inherent"
+   ]
+  },
+  {
+   "label": "\"Risk methodology\"",
+   "op": "entry",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "method"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "@/features/axisprofile/components/people-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/axisprofile/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import people row"
+  },
+  {
+   "label": "\"Managers\"",
+   "op": "block",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "managers"
+   ]
+  },
+  {
+   "label": "\"Stakeholders\"",
+   "op": "block",
+   "args": [
+    "src/features/axisprofile/data/profile.ts",
+    "stakeholders"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/app/axisprofile/index.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-profile",
+     "src/features/axisprofile/data/profile.ts"
+    ],
+    [
+     "fact-grid",
+     "src/features/axisprofile/components/fact-grid.tsx"
+    ],
+    [
+     "screen",
+     "src/app/axisprofile/index.tsx"
+    ],
+    [
+     "top-bar",
+     "src/features/axisprofile/components/top-bar.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

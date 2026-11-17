@@ -1,0 +1,207 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnview/index.tsx",
+      "@/features/kilnview/components/view-controls"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnview/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import view controls"
+  },
+  {
+   "label": "\"Object\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnview/data/view.ts",
+    "object"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnview/index.tsx",
+      "@/features/kilnview/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnview/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import text + name"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "label": "maker",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/kilnview/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/kilnview/index.tsx",
+      "@/features/kilnview/components/finish-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/kilnview/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import finish rail"
+  },
+  {
+   "label": "pressable",
+   "op": "jsx",
+   "args": [
+    "src/features/kilnview/components/finish-rail.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "\"Cobalt\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnview/data/view.ts",
+    "cobalt"
+   ]
+  },
+  {
+   "label": "\"Iron\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnview/data/view.ts",
+    "iron"
+   ]
+  },
+  {
+   "label": "\"Bone\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnview/data/view.ts",
+    "bone"
+   ]
+  },
+  {
+   "label": "\"Celadon\"",
+   "op": "entry",
+   "args": [
+    "src/features/kilnview/data/view.ts",
+    "celadon"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-view",
+     "src/features/kilnview/data/view.ts"
+    ],
+    [
+     "finish-rail",
+     "src/features/kilnview/components/finish-rail.tsx"
+    ],
+    [
+     "screen",
+     "src/app/kilnview/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

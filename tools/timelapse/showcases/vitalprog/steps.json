@@ -1,0 +1,320 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "@/features/vitalprog/components/glyph"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import glyph + \"Back\""
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "@/features/vitalprog/components/calorie-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import calorie card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/calorie-card.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/calorie-card.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/calorie-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/calorie-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "time",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/calorie-card.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "sparkline",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/calorie-card.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "@/features/vitalprog/components/programs-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "STEP 1.09"
+     ]
+    }
+   ],
+   "label": "import programs title"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/vitalprog/index.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vitalprog/index.tsx",
+    "<View style={{ height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "@/features/vitalprog/components/leader-banner"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "STEP 1.12"
+     ]
+    }
+   ],
+   "label": "import leader banner"
+  },
+  {
+   "label": "stop",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "stop",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "stop",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/leader-banner.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/vitalprog/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vitalprog/index.tsx",
+    "<View style={{ height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "@/features/vitalprog/components/trending-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import trending title"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "@/features/vitalprog/components/trend-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vitalprog/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import trend list"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/vitalprog/components/trend-list.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "\"Walking\"",
+   "op": "block",
+   "args": [
+    "src/features/vitalprog/data/programs.ts",
+    "t2"
+   ]
+  },
+  {
+   "label": "\"Resting heart rate\"",
+   "op": "block",
+   "args": [
+    "src/features/vitalprog/data/programs.ts",
+    "t3"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/vitalprog/index.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vitalprog/index.tsx",
+    "<View style={{ height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "calorie-card",
+     "src/features/vitalprog/components/calorie-card.tsx"
+    ],
+    [
+     "data-programs",
+     "src/features/vitalprog/data/programs.ts"
+    ],
+    [
+     "leader-banner",
+     "src/features/vitalprog/components/leader-banner.tsx"
+    ],
+    [
+     "screen",
+     "src/app/vitalprog/index.tsx"
+    ],
+    [
+     "trend-list",
+     "src/features/vitalprog/components/trend-list.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

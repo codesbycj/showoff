@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/flowstart/index.tsx",
+  "hero-photo": "src/features/flowstart/components/hero-photo.tsx",
+  "welcome-copy": "src/features/flowstart/components/welcome-copy.tsx",
+  "page-dots": "src/features/flowstart/components/page-dots.tsx",
+  "data-start": "src/features/flowstart/data/start.ts",
+  "start-button": "src/features/flowstart/components/start-button.tsx"
+}

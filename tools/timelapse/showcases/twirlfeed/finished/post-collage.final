@@ -1,0 +1,51 @@
+import { Image, View } from 'react-native';
+
+import { post } from '../data/feed';
+import { ct } from '../theme';
+import { CollageProps } from './_feed-parts-shared';
+
+/**
+ * The collage.
+ *
+ * **Photographs, because food is a picture *of* something** (I4). Laid out as
+ * one large frame and two stacked beside it, which is what the board does; the
+ * columns are explicit rather than a wrap, so a reveal can stage one frame at
+ * a time.
+ *
+ * **The column widths are measured, not `flex`.** Flex divides the row between
+ * whatever is mounted, so the big frame filled the width until the right
+ * column arrived and then snapped to two thirds - a step that repainted a
+ * photograph that had not changed (RULES 0.3).
+ *
+ * Each `Image` carries a numeric height — absolute insets alone make an
+ * `Image` paint nothing on native, silently (Part 7).
+ */
+export function PostCollage({ margin, height, gap, radius, big, small: smallW }: CollageProps) {
+  const small = (height - gap) / 2;
+
+  return (
+    <View style={{ marginHorizontal: margin, height, flexDirection: 'row', gap }}>
+      <View
+        style={{ width: big, borderRadius: radius, overflow: 'hidden', backgroundColor: ct.tile }}
+      >
+        <Image source={post.photos[0]} style={{ width: big, height }} resizeMode="cover" />
+      </View>
+      <View style={{ width: smallW, gap }}>
+        <View style={{ borderRadius: radius, overflow: 'hidden', backgroundColor: ct.tile }}>
+          <Image
+            source={post.photos[1]}
+            style={{ width: smallW, height: small }}
+            resizeMode="cover"
+          />
+        </View>
+        <View style={{ borderRadius: radius, overflow: 'hidden', backgroundColor: ct.tile }}>
+          <Image
+            source={post.photos[2]}
+            style={{ width: smallW, height: small }}
+            resizeMode="cover"
+          />
+        </View>
+      </View>
+    </View>
+  );
+}

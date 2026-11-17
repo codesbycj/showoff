@@ -1,0 +1,105 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { DateChips } from '@/features/fernlist/components/date-chips';
+import { FeaturedTrip } from '@/features/fernlist/components/featured-trip';
+import { Glyph } from '@/features/fernlist/components/glyph';
+import { T } from '@/features/fernlist/components/text';
+import { TripDeck } from '@/features/fernlist/components/trip-deck';
+import { header } from '@/features/fernlist/data/list';
+import { useLayout } from '@/features/fernlist/layout';
+import { ct } from '@/features/fernlist/theme';
+
+/**
+ * Fernweh — popular trips.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The deck is the remainder — its front card grows into whatever the header,
+ * the title, the featured trip and the date chips leave — so the screen always
+ * ends on the deck with no band under it (I3).
+ */
+export default function FernlistScreen() {
+  const L = useLayout();
+
+  const round = {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: ct.white,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.headerH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Back"
+          onPress={() => router.push('/fernhome')}
+        >
+          <View style={round}>
+            <Glyph name="back" size={19} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+
+        <View style={{ flexDirection: 'row', gap: 10 }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Filter trips">
+            <View style={round}>
+              <Glyph name="filter" size={18} color={ct.ink} strokeWidth={1.9} />
+            </View>
+          </Pressable>
+
+          <Pressable accessibilityRole="button" accessibilityLabel="Saved trips">
+            <View style={round}>
+              <Glyph name="star" size={18} color={ct.ink} strokeWidth={1.8} />
+            </View>
+          </Pressable>
+        </View>
+      </View>
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ marginHorizontal: L.margin, height: L.titleH, justifyContent: 'center' }}>
+        <T variant="display">{header.title}</T>
+      </View>
+
+      <View style={{ height: L.gapTitle }} />
+      <FeaturedTrip
+        margin={L.margin}
+        height={L.feat.h}
+        radius={L.feat.radius}
+        tile={L.feat.tile}
+        onPress={() => router.push('/ferntrip')}
+      />
+
+      <View style={{ height: L.gapFeat }} />
+      <DateChips margin={L.margin} height={L.chip.h} radius={L.chip.radius} />
+
+      <View style={{ height: L.gapChips }} />
+      <TripDeck
+        margin={L.margin}
+        width={L.deck.w}
+        height={L.deck.h}
+        front={L.deck.front}
+        peek={L.deck.peek}
+        radius={L.deck.radius}
+        inset={L.deck.inset}
+      />
+    </View>
+  );
+}

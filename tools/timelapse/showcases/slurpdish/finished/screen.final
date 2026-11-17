@@ -1,0 +1,88 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { DishHero } from '@/features/slurpdish/components/dish-hero';
+import { ExtrasRow } from '@/features/slurpdish/components/extras-row';
+import { FactChips } from '@/features/slurpdish/components/fact-chips';
+import { QtyPill } from '@/features/slurpdish/components/qty-pill';
+import { SelectBar } from '@/features/slurpdish/components/select-bar';
+import { SheetDome } from '@/features/slurpdish/components/sheet-dome';
+import { SizeRail } from '@/features/slurpdish/components/size-rail';
+import { T } from '@/features/slurpdish/components/text';
+import { TopBar } from '@/features/slurpdish/components/top-bar';
+import { dish } from '@/features/slurpdish/data/dish';
+import { useLayout } from '@/features/slurpdish/layout';
+import { ct } from '@/features/slurpdish/theme';
+
+/**
+ * Slurp - the dish.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The hero is the remainder, so the screen always ends on the pinned bar with
+ * no band under it (I3).
+ */
+export default function SlurpdishScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.dark }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <TopBar margin={L.margin} height={L.topH} onCart={() => router.push('/slurpcart')} />
+
+      <DishHero width={L.W} height={L.hero.h} margin={L.margin} />
+
+      <QtyPill top={L.insets.top + L.topH + L.hero.h * 0.42} />
+
+      <SizeRail height={L.size.h} disc={L.size.disc} />
+
+      <View style={{ flex: 1 }}>
+        <View
+          style={{
+            position: 'absolute',
+            top: L.sheet.domeH,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: ct.white,
+          }}
+        />
+        <SheetDome width={L.W} domeH={L.sheet.domeH} />
+
+        <View style={{ height: L.sheet.domeH }} />
+        <View style={{ marginHorizontal: L.margin, height: L.sheet.titleH, alignItems: 'center' }}>
+          <T variant="sheetTitle">{dish.name}</T>
+        </View>
+
+        <View style={{ height: L.sheet.gapTitle }} />
+        <View style={{ marginHorizontal: L.margin + 14, height: L.sheet.bodyH }}>
+          <T variant="body">{dish.body}</T>
+        </View>
+
+        <View style={{ height: L.sheet.gapBody }} />
+        <FactChips height={L.sheet.chipH} />
+
+        <View style={{ height: L.sheet.gapChips }} />
+        <View style={{ marginHorizontal: L.margin, height: L.sheet.sectionH }}>
+          <T variant="section">{dish.section}</T>
+        </View>
+
+        <View style={{ height: L.sheet.gapSection }} />
+        <ExtrasRow margin={L.margin} height={L.sheet.extraH} />
+
+        <View style={{ flex: 1 }} />
+        <SelectBar
+          margin={L.margin}
+          height={L.sheet.barH}
+          onPress={() => router.push('/slurpcart')}
+        />
+        <View style={{ height: L.sheet.padBottom }} />
+      </View>
+    </View>
+  );
+}

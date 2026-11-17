@@ -1,0 +1,257 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "@/features/nookshop/components/shop-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import shop header"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/nookshop/components/shop-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "@/features/nookshop/components/text"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import text + title"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "@/features/nookshop/components/kind-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import kind rail"
+  },
+  {
+   "label": "\"Seating\"",
+   "op": "entry",
+   "args": [
+    "src/features/nookshop/data/shop.ts",
+    "sofa"
+   ]
+  },
+  {
+   "label": "\"Beds\"",
+   "op": "entry",
+   "args": [
+    "src/features/nookshop/data/shop.ts",
+    "bed"
+   ]
+  },
+  {
+   "label": "\"Chairs\"",
+   "op": "entry",
+   "args": [
+    "src/features/nookshop/data/shop.ts",
+    "chair"
+   ]
+  },
+  {
+   "label": "\"Tables\"",
+   "op": "entry",
+   "args": [
+    "src/features/nookshop/data/shop.ts",
+    "table"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "@/features/nookshop/components/piece-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import piece grid"
+  },
+  {
+   "label": "\"Minimal stool\"",
+   "op": "block",
+   "args": [
+    "src/features/nookshop/data/shop.ts",
+    "stool"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nookshop/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "@/features/nookshop/components/promo-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nookshop/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import promo card"
+  },
+  {
+   "label": "line",
+   "op": "jsx",
+   "args": [
+    "src/features/nookshop/components/promo-card.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/nookshop/components/promo-card.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/nookshop/components/promo-card.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-shop",
+     "src/features/nookshop/data/shop.ts"
+    ],
+    [
+     "promo-card",
+     "src/features/nookshop/components/promo-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nookshop/index.tsx"
+    ],
+    [
+     "shop-header",
+     "src/features/nookshop/components/shop-header.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

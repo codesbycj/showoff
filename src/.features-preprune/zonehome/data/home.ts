@@ -1,0 +1,142 @@
+/**
+ * Everything zonehome says.
+ *
+ * **The restaurants are fictional.** The board lists McDonald's with its real
+ * mark; a rebuild that ships a real chain's logo and name is impersonation.
+ * Named in the handover.
+ *
+ * **The category tiles are photographs.** I4 names this exactly: a row of round
+ * tiles reading Burger / Steak / Sea Food is six *photographs*, and drawing
+ * them in SVG produces a row of cartoons where the design had food. Each entry
+ * below carries a bitmap, not a glyph name.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const location = { label: 'Delivery location', value: '351 Maison Street, NY' };
+
+export const promo = {
+  /** R5: a unit, a count, a state. Never a sentence the design does not have. */
+  value: '15%',
+  label: 'EXTRA\nDISCOUNT',
+  line: 'Get your first order delivery free',
+};
+
+export const search = { placeholder: 'Search by name & restaurant' };
+
+export const texture = require('../../../../assets/images/zonehome/texture.jpg');
+
+export type Category = { id: string; label: string; photo: number };
+
+/** Six photographs, not six drawn icons. See the note above. */
+export const categories: Category[] = [
+  { id: 'burger', label: 'Burger', photo: require('../../../../assets/images/zonehome/c-burger.jpg') },
+  { id: 'steak', label: 'Steak', photo: require('../../../../assets/images/zonehome/c-steak.jpg') },
+  { id: 'sea', label: 'Sea Food', photo: require('../../../../assets/images/zonehome/c-sea.jpg') },
+  { id: 'dessert', label: 'Desserts', photo: require('../../../../assets/images/zonehome/c-dessert.jpg') },
+  { id: 'pizza', label: 'Pizza', photo: require('../../../../assets/images/zonehome/c-pizza.jpg') },
+  { id: 'breakfast', label: 'Breakfast', photo: require('../../../../assets/images/zonehome/c-breakfast.jpg') },
+];
+
+export const section = { title: 'Popular Restaurants' };
+
+export type Restaurant = {
+  id: string;
+  name: string;
+  photo: number;
+  rating: number;
+  reviews: number;
+  kind: string;
+  price: string;
+  /** Only some carry a running offer — hence the annotation. */
+  offer?: string;
+  liked?: boolean;
+};
+
+export const restaurants: Restaurant[] = [
+  {
+    id: 'maison',
+    name: 'Maison Grill',
+    photo: require('../../../../assets/images/zonehome/r1.jpg'),
+    rating: 4.8,
+    reviews: 1652,
+    kind: 'Grill House',
+    price: '$$',
+    offer: '15% off · NEW15',
+    liked: true,
+  },
+  {
+    id: 'flushing',
+    name: 'Flushing Table',
+    photo: require('../../../../assets/images/zonehome/r2.jpg'),
+    rating: 4.6,
+    reviews: 938,
+    kind: 'Pizza Joint',
+    price: '$$',
+    offer: '15% off',
+  },
+];
+
+export const fastest = { title: 'Fastest Delivery' };
+
+export type Quick = {
+  id: string;
+  name: string;
+  photo: number;
+  kind: string;
+  minutes: number;
+  rating: number;
+};
+
+/**
+ * The rows under the rail.
+ *
+ * **Mine, not the board's.** The board's home stops at its restaurant rail and
+ * leaves 91dp of empty canvas above the tab bar — `audit.js` `GAP`, a FAIL.
+ * I3's lever for that is the section the board cut, never a taller block
+ * above it, and what a delivery home genuinely carries there is who is
+ * quickest. Named in the handover.
+ */
+export const quick: Quick[] = [
+  {
+    id: 'q1',
+    name: 'Maison Grill',
+    photo: require('../../../../assets/images/zonehome/r1.jpg'),
+    kind: 'Grill House',
+    minutes: 14,
+    rating: 4.8,
+  },
+  {
+    id: 'q2',
+    name: 'Flushing Table',
+    photo: require('../../../../assets/images/zonehome/r2.jpg'),
+    kind: 'Pizza Joint',
+    minutes: 18,
+    rating: 4.6,
+  },
+  {
+    id: 'q3',
+    name: 'Crown Fried',
+    photo: require('../../../../assets/images/zonehome/c-burger.jpg'),
+    kind: 'Burgers',
+    minutes: 22,
+    rating: 4.5,
+  },
+];
+
+export type Tab = { id: string; label: string; glyph: 'home' | 'heart' | 'bag' | 'orders' | 'user' };
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  { id: 'saved', label: 'Saved', glyph: 'heart' },
+  { id: 'cart', label: 'Cart', glyph: 'bag' },
+  { id: 'orders', label: 'Orders', glyph: 'orders' },
+  { id: 'me', label: 'Profile', glyph: 'user' },
+];
+
+/** Reviews read as a magnitude once they pass a thousand. */
+export function reviews(n: number) {
+  return n >= 1000 ? `${(n / 1000).toFixed(3).replace('.', ',')}` : `${n}`;
+}

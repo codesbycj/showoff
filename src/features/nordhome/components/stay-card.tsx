@@ -1,0 +1,103 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { NIGHTS, type Stay } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  stay: Stay;
+  width: number;
+  photoH: number;
+  radius: number;
+  onPress?: () => void;
+};
+
+/**
+ * One stay on the relevant rail.
+ *
+ * **The heart is a sibling of the card's own Pressable, not a child.** A
+ * `role="button"` inside another is torn apart by the static web build's HTML
+ * parser, and the console names it rather than the screen showing it.
+ *
+ * **R9: the total is computed, never typed.** The board prints "€384" under a
+ * card whose own nightly rate and stay length multiply to €273. Here the
+ * nightly rate times `NIGHTS` is what the line says, so the picture and the
+ * numbers agree.
+ */
+export function StayCard({ stay, width, photoH, radius, onPress }: Props) {
+  const total = stay.nightly * NIGHTS;
+
+  return (
+    <View
+      style={{
+        width,
+        borderRadius: radius,
+        backgroundColor: ct.surface,
+        padding: 8,
+        shadowColor: '#1C1B1A',
+        shadowOpacity: 0.07,
+        shadowRadius: 14,
+        shadowOffset: { width: 0, height: 6 },
+        elevation: 3,
+      }}
+    >
+      {/* STEP 1.14 title
+      <Pressable accessibilityRole="button" accessibilityLabel={stay.title} onPress={onPress}>
+        <View>
+          <Image
+            source={stay.image}
+            style={{ width: width - 16, height: photoH, borderRadius: radius - 4 }}
+            resizeMode="cover"
+          />
+        </View>
+
+        <View style={{ paddingHorizontal: 6, paddingTop: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <T variant="cardTitle" numberOfLines={1} style={{ flex: 1 }}>
+              {stay.title}
+            </T>
+            <Glyph name="star" size={14} color={ct.star} />
+            <T variant="rating">
+              {stay.rating.toFixed(2)} ({stay.reviews})
+            </T>
+          </View>
+
+          <T variant="meta" numberOfLines={1}>
+            {stay.facts.join(' · ')}
+          </T>
+
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+            <T variant="priceWas">€{stay.wasNight}</T>
+            <T variant="priceNow">€{stay.nightly} night</T>
+            <T variant="priceTotal">· €{total} total</T>
+          </View>
+        </View>
+      </Pressable>
+      */}
+
+      {/* STEP 1.15 glyph
+      <View style={{ position: 'absolute', top: 18, right: 18 }}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={stay.saved ? 'Saved' : 'Save'}
+          hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+        >
+          <View
+            style={{
+              width: 34,
+              height: 34,
+              borderRadius: 17,
+              backgroundColor: ct.float,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="heart" size={18} color={ct.white} strokeWidth={1.9} />
+          </View>
+        </Pressable>
+      </View>
+      */}
+    </View>
+  );
+}

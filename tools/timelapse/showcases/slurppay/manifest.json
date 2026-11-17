@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/slurppay/index.tsx",
+  "screen-bar": "src/features/slurppay/components/screen-bar.tsx",
+  "method-card": "src/features/slurppay/components/method-card.tsx",
+  "data-checkout": "src/features/slurppay/data/checkout.ts",
+  "mark": "src/features/slurppay/components/mark.tsx",
+  "add-method": "src/features/slurppay/components/add-method.tsx",
+  "address-row": "src/features/slurppay/components/address-row.tsx",
+  "total-row": "src/features/slurppay/components/total-row.tsx"
+}

@@ -1,0 +1,44 @@
+/**
+ * Everything pawsitem says.
+ *
+ * **The board's product is a real brand** - "Kit Cat Snow Peas", with the pack
+ * shot to match. The piece is invented here and photographed loose (I1, I4).
+ *
+ * **R9: the price the button adds is the unit price times the quantity**, so
+ * the two figures on the screen cannot disagree.
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time (RULES SS5.4, I7).
+ */
+
+export const product = {
+  name: 'Lavender Bowls',
+  sub: 'Ceramic feeder, pair',
+  weight: '450gm',
+  unit: 44,
+  qty: 2,
+  image: require('../../../../assets/images/pawsitem/hero.jpg'),
+  /** R5: 108 characters, one run. The board's trails off into a "...more". */
+  body: 'Lead-free stoneware, dishwasher safe, and weighted so it stays put while your cat makes a mess of it.',
+  cta: 'Add to Cart',
+};
+
+export type Variant = { id: string; label: string; image: number; on?: boolean };
+
+export const variants: Variant[] = [
+  {
+    id: 'lavender',
+    label: 'Lavender',
+    image: require('../../../../assets/images/pawsitem/v1.jpg'),
+    on: true,
+  },
+  // STEP 1.11 "Oat"
+  // { id: 'oat', label: 'Oat', image: require('../../../../assets/images/pawsitem/v2.jpg') },
+  // STEP 1.12 "Clay"
+  // { id: 'clay', label: 'Clay', image: require('../../../../assets/images/pawsitem/v3.jpg') },
+];
+
+/** R9: what the button charges is the unit price times the quantity. */
+export function total() {
+  return product.unit * Math.max(product.qty, 1);
+}

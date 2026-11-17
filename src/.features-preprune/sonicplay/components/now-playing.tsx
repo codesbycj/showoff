@@ -1,0 +1,50 @@
+import { Image, Pressable, View } from 'react-native';
+
+import { clock, controls, progress, screen, track } from '../data/player';
+import { ct } from '../theme';
+import { Glyph, type GlyphName } from './glyph';
+import { T } from './text';
+
+import { TitleProps } from './_player-parts-shared';
+
+/** Title, artist and the save control. */
+export function NowPlaying({ margin, height, control }: TitleProps) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+      }}
+    >
+      <View style={{ flex: 1 }}>
+        <T variant="nowTitle" numberOfLines={1}>
+          {track.title}
+        </T>
+        <T variant="nowArtist">{track.artist}</T>
+      </View>
+
+      <Pressable hitSlop={10} accessibilityRole="button" accessibilityLabel="Save this track">
+        {({ pressed }) => (
+          <View
+            style={{
+              width: control,
+              height: control,
+              alignItems: 'center',
+              justifyContent: 'center',
+              opacity: pressed ? 0.6 : 1,
+            }}
+          >
+            <Glyph
+              name={track.liked ? 'heartFill' : 'heart'}
+              size={21}
+              color={track.liked ? ct.lime : ct.ink}
+            />
+          </View>
+        )}
+      </Pressable>
+    </View>
+  );
+}

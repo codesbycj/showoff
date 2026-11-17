@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/vaultadvisor/index.tsx",
+  "brand-bar": "src/features/vaultadvisor/components/brand-bar.tsx",
+  "credential-row": "src/features/vaultadvisor/components/credential-row.tsx",
+  "data-advisor": "src/features/vaultadvisor/data/advisor.ts",
+  "trust-row": "src/features/vaultadvisor/components/trust-row.tsx"
+}

@@ -1,0 +1,317 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "@/features/stridestart/components/route-map"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import route map"
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "the next block",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "rect",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "the next block",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "circle",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/route-map.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "@/features/stridestart/components/gps-pill"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import gps pill"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/gps-pill.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/gps-pill.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/app/stridestart/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "@/features/stridestart/components/mode-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import mode chips"
+  },
+  {
+   "label": "\"RIDE\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridestart/data/start.ts",
+    "ride"
+   ]
+  },
+  {
+   "label": "\"HIKE\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridestart/data/start.ts",
+    "hike"
+   ]
+  },
+  {
+   "label": "\"GYM\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridestart/data/start.ts",
+    "gym"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "@/features/stridestart/components/option-rows"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import option rows"
+  },
+  {
+   "label": "\"AUDIO CUES\"",
+   "op": "entry",
+   "args": [
+    "src/features/stridestart/data/start.ts",
+    "cues"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "@/features/stridestart/components/start-controls"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/stridestart/index.tsx",
+      "STEP 1.24"
+     ]
+    }
+   ],
+   "label": "import start controls"
+  },
+  {
+   "label": "\"Music\"",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/start-controls.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/start-controls.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "\"Screen brightness\"",
+   "op": "jsx",
+   "args": [
+    "src/features/stridestart/components/start-controls.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/stridestart/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/stridestart/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-start",
+     "src/features/stridestart/data/start.ts"
+    ],
+    [
+     "gps-pill",
+     "src/features/stridestart/components/gps-pill.tsx"
+    ],
+    [
+     "route-map",
+     "src/features/stridestart/components/route-map.tsx"
+    ],
+    [
+     "screen",
+     "src/app/stridestart/index.tsx"
+    ],
+    [
+     "start-controls",
+     "src/features/stridestart/components/start-controls.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

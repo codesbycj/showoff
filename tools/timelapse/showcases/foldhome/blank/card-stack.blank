@@ -1,0 +1,137 @@
+import { Pressable, View } from 'react-native';
+
+import { cards, fields, header } from '../data/home';
+import { ct } from '../theme';
+import { Folder } from './folder';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; width: number; cardH: number; peek: number; onOpen: () => void };
+
+const NOTCH_W = 86;
+const NOTCH_H = 34;
+const PILL_H = 28;
+/** The visual pill is 28dp; the control around it is 44 (I2 / R7). */
+const TAP_H = 44;
+
+/**
+ * The wallet, stacked the way the board stacks it: the dark "add" strip at the
+ * back, the second scheme behind it, the live card in front.
+ *
+ * **A card behind only renders the strip that is visible.** React Native does
+ * not clip, so a full face drawn behind the front card leaves its holder, its
+ * expiry and its number sitting under an opaque card - which `audit.js`
+ * reports as covered text, and is right to (R3).
+ *
+ * Each face is a `Folder`, so the pill in its top-right corner sits in a notch
+ * cut out of the card rather than on top of it. The pill is a **sibling** of
+ * the card's own `Pressable`, never a child - a `role="button"` inside another
+ * is torn apart by the static web build's HTML parser (RULES Part 7).
+ */
+export function CardStack({ margin, width, cardH, peek, onOpen }: Props) {
+  const tints = { lime: ct.lime, yellow: ct.yellow } as const;
+  const front = cards.length - 1;
+
+  const tab = (fill: string, label: string, icon: 'plus' | 'more', onDark: boolean) => (
+    <View style={{ position: 'absolute', right: 0, top: (PILL_H - TAP_H) / 2 }}>
+      <Pressable accessibilityRole="button" accessibilityLabel={label} onPress={onOpen}>
+        <View
+          style={{
+            width: NOTCH_W - 12,
+            height: TAP_H,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <View
+            style={{
+              width: NOTCH_W - 12,
+              height: PILL_H,
+              borderRadius: PILL_H / 2,
+              backgroundColor: fill,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph
+              name={icon}
+              size={16}
+              color={onDark ? ct.onNavy : ct.ink}
+              strokeWidth={icon === 'plus' ? 2 : 1.6}
+            />
+          </View>
+        </View>
+      </Pressable>
+    </View>
+  );
+
+  return (
+    <View style={{ marginHorizontal: margin, height: cardH + peek * cards.length }}>
+      <Folder width={width} height={cardH} fill={ct.navy} notchW={NOTCH_W} notchH={NOTCH_H}>
+        <View
+          style={{ marginLeft: 20, height: peek, justifyContent: 'flex-end', paddingBottom: 6 }}
+        >
+          <View style={{ alignSelf: 'flex-start' }}>
+            <T variant="cardAdd">{header.add}</T>
+          </View>
+        </View>
+      </Folder>
+
+      {/* STEP 1.04 tab
+      {tab(ct.navy, header.add, 'plus', true)}
+      */}
+
+      {/* STEP 1.05 scheme
+      {cards.map((card, i) => (
+        <View key={card.id} style={{ position: 'absolute', left: 0, top: peek * (i + 1) }}>
+          <Folder
+            width={width}
+            height={cardH}
+            fill={tints[card.tint]}
+            notchW={NOTCH_W}
+            notchH={NOTCH_H}
+          >
+            <View
+              style={{ marginLeft: 20, height: peek, justifyContent: 'flex-end', paddingBottom: 4 }}
+            >
+              <View style={{ alignSelf: 'flex-start' }}>
+                <T variant={card.tint === 'lime' ? 'wordmark' : 'wordmarkDark'}>{card.scheme}</T>
+              </View>
+            </View>
+
+            {i === front ? (
+              <View style={{ marginLeft: 20, marginTop: 20 }}>
+                <View style={{ alignSelf: 'flex-start' }}>
+                  <T variant="pan">{card.pan}</T>
+                </View>
+              </View>
+            ) : null}
+
+            {i === front ? (
+              <View
+                style={{
+                  marginHorizontal: 20,
+                  marginTop: 18,
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <View>
+                  <T variant="fieldLabel">{fields.holder}</T>
+                  <T variant="fieldValue">{card.holder}</T>
+                </View>
+                <View style={{ minWidth: 96 }}>
+                  <T variant="fieldLabel">{fields.expiry}</T>
+                  <T variant="fieldValue">{card.expiry}</T>
+                </View>
+              </View>
+            ) : null}
+          </Folder>
+
+          {tab(tints[card.tint], `${card.scheme} options`, 'more', false)}
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

@@ -1,0 +1,56 @@
+import { useId } from 'react';
+import { Pressable, View } from 'react-native';
+import Svg, { Circle, Defs, RadialGradient, Stop } from 'react-native-svg';
+
+import { header } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * Who is signed in, and the scan control.
+ *
+ * The board's disc is a **gradient**, so it is rebuilt as one rather than
+ * flattened to a fill - the gradient id comes from `useId` because ids are
+ * document-global on web and everything would otherwise render in the first
+ * colour (I8).
+ */
+export function GreetRow({ margin, height }: Props) {
+  const gid = useId();
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <View>
+        <T variant="hi">{header.hi}</T>
+        <T variant="welcome">{header.welcome}</T>
+      </View>
+
+      {/* STEP 1.02 "Scan a code"
+      <Pressable accessibilityRole="button" accessibilityLabel="Scan a code">
+        <View style={{ width: 56, alignItems: 'center', gap: 4 }}>
+          <Svg width={44} height={44}>
+            <Defs>
+              <RadialGradient id={gid} cx="35%" cy="30%" r="80%">
+                <Stop offset="0" stopColor="#F4F77A" />
+                <Stop offset="1" stopColor="#A9E63A" />
+              </RadialGradient>
+            </Defs>
+            <Circle cx={22} cy={22} r={22} fill={`url(#${gid})`} />
+          </Svg>
+          <Glyph name="qr" size={16} color={ct.ink} strokeWidth={1.6} />
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

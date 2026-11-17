@@ -1,0 +1,253 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "@/features/flowstart/components/hero-photo"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import hero photo"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/hero-photo.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "linear gradient",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/hero-photo.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "@/features/flowstart/components/welcome-copy"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import welcome copy"
+  },
+  {
+   "label": "display top",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/welcome-copy.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "display bottom",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/welcome-copy.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/welcome-copy.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowstart/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowstart/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "@/features/flowstart/components/page-dots"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import page dots"
+  },
+  {
+   "label": "\"Page 2 of 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowstart/data/start.ts",
+    "p2"
+   ]
+  },
+  {
+   "label": "\"Page 3 of 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/flowstart/data/start.ts",
+    "p3"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "@/features/flowstart/components/start-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "STEP 1.13"
+     ]
+    }
+   ],
+   "label": "import start button"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/start-button.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/start-button.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/flowstart/components/start-button.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowstart/index.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowstart/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "@/features/flowstart/components/account-link"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/flowstart/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import account link"
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/flowstart/index.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/flowstart/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-start",
+     "src/features/flowstart/data/start.ts"
+    ],
+    [
+     "hero-photo",
+     "src/features/flowstart/components/hero-photo.tsx"
+    ],
+    [
+     "screen",
+     "src/app/flowstart/index.tsx"
+    ],
+    [
+     "start-button",
+     "src/features/flowstart/components/start-button.tsx"
+    ],
+    [
+     "welcome-copy",
+     "src/features/flowstart/components/welcome-copy.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

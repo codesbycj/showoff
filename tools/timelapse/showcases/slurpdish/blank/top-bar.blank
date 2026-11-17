@@ -1,0 +1,71 @@
+import { Pressable, View } from 'react-native';
+
+import { delivery } from '../data/dish';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; onCart: () => void };
+
+/**
+ * Where it is going, and the way into the cart.
+ *
+ * The badge is offset clear of the bag's own box rather than sitting on its
+ * shoulder: a mark that straddles the edge of the thing it covers is what
+ * `audit.js` reports as COVERED, and the fix is to inset the content, never to
+ * nudge the control one dp (R3).
+ */
+export function TopBar({ margin, height, onCart }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+        <Glyph name="moped" size={21} color={ct.onDarkMuted} strokeWidth={1.6} />
+        <View>
+          <T variant="barLabel">{delivery.label}</T>
+          <T variant="barValue">{delivery.address}</T>
+        </View>
+      </View>
+
+      {/* STEP 1.02 "Cart"
+      <Pressable accessibilityRole="button" accessibilityLabel="Cart" onPress={onCart}>
+        <View
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 22,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="bag" size={18} color={ct.onDark} strokeWidth={1.6} />
+          <View
+            style={{
+              position: 'absolute',
+              right: -2,
+              top: -2,
+              minWidth: 15,
+              height: 15,
+              borderRadius: 7.5,
+              backgroundColor: ct.accent,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <T variant="extra" style={{ color: ct.onAccent, fontSize: 10, lineHeight: 14 }}>
+              {String(delivery.cart)}
+            </T>
+          </View>
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

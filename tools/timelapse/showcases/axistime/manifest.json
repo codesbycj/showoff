@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/axistime/index.tsx",
+  "top-bar": "src/features/axistime/components/top-bar.tsx",
+  "timeline-chart": "src/features/axistime/components/timeline-chart.tsx",
+  "data-timeline": "src/features/axistime/data/timeline.ts",
+  "day-axis": "src/features/axistime/components/day-axis.tsx",
+  "entry-cards": "src/features/axistime/components/entry-cards.tsx"
+}

@@ -1,0 +1,327 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/account-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import account row"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/account-row.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "welcome",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/account-row.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Notifications\"",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/account-row.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/search-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import search row"
+  },
+  {
+   "label": "hint",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/search-row.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "\"Filters\"",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/search-row.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/promo-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import promo card"
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/promo-card.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "kicker",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/promo-card.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/section-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import section row"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/section-row.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "see all",
+   "op": "jsx",
+   "args": [
+    "src/features/verdehome/components/section-row.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "\"Burgers\"",
+   "op": "block",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "burger"
+   ]
+  },
+  {
+   "label": "\"Chicken\"",
+   "op": "block",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "chicken"
+   ]
+  },
+  {
+   "label": "\"Fruit\"",
+   "op": "block",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "fruit"
+   ]
+  },
+  {
+   "label": "\"Desserts\"",
+   "op": "block",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "sweet"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/category-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import category chips"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/dish-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.19"
+     ]
+    }
+   ],
+   "label": "import dish grid"
+  },
+  {
+   "label": "\"Hot samosa, three\"",
+   "op": "block",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "samosa"
+   ]
+  },
+  {
+   "label": "\"Berry gelato bowl\"",
+   "op": "block",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "gelato"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "@/features/verdehome/components/pill-dock"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/verdehome/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import pill dock"
+  },
+  {
+   "label": "\"Near you\"",
+   "op": "entry",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "near"
+   ]
+  },
+  {
+   "label": "\"Saved\"",
+   "op": "entry",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "saved"
+   ]
+  },
+  {
+   "label": "\"Account\"",
+   "op": "entry",
+   "args": [
+    "src/features/verdehome/data/home.ts",
+    "me"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/verdehome/index.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/verdehome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "account-row",
+     "src/features/verdehome/components/account-row.tsx"
+    ],
+    [
+     "data-home",
+     "src/features/verdehome/data/home.ts"
+    ],
+    [
+     "promo-card",
+     "src/features/verdehome/components/promo-card.tsx"
+    ],
+    [
+     "screen",
+     "src/app/verdehome/index.tsx"
+    ],
+    [
+     "search-row",
+     "src/features/verdehome/components/search-row.tsx"
+    ],
+    [
+     "section-row",
+     "src/features/verdehome/components/section-row.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

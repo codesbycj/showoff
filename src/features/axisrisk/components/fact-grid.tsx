@@ -1,0 +1,79 @@
+import { View } from 'react-native';
+
+import { facts } from '../data/risk';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * The four facts about this risk.
+ *
+ * The cells are paired by **walking the list** two at a time, not by assuming
+ * there are four: a reveal fills `facts` one entry at a time, and a layout
+ * that assumed two rows would break at one (I7).
+ *
+ * **It is a measured height, not `flex: 1`.** Flexed, every cell that arrived
+ * resized the three around it, so one cell landing repainted half the frame.
+ * The height comes from the window, so the card still fills what is left
+ * (I2 / I3).
+ *
+ * The card's fill sits on an absolutely-filled child so an emptied card paints
+ * nothing in frame one of the reveal (I9).
+ */
+export function FactGrid({ margin, height, radius }: Props) {
+  const rows: (typeof facts)[] = [];
+  for (const fact of facts) {
+    const last = rows[rows.length - 1];
+    if (last && last.length === 1) last.push(fact);
+    else rows.push([fact]);
+  }
+
+  return (
+    <View style={{ marginHorizontal: margin, height, borderRadius: radius }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.white,
+          borderRadius: radius,
+        }}
+      />
+
+      {/* STEP 1.10 label
+      {rows.map((row, r) => (
+        <View key={row[0].id} style={{ height: height / 2, flexDirection: 'row' }}>
+          {row.map((fact, i) => (
+            <View
+              key={fact.id}
+              style={{
+                flex: 1,
+                paddingHorizontal: 18,
+                justifyContent: 'center',
+                gap: 2,
+                borderLeftWidth: i === 0 ? 0 : 1,
+                borderTopWidth: r === 0 ? 0 : 1,
+                borderColor: ct.line,
+              }}
+            >
+              <T variant="cellLabel">{fact.label}</T>
+
+              <View style={{ flexDirection: 'row', alignItems: 'center', gap: 7 }}>
+                {fact.live ? (
+                  <View
+                    style={{ width: 7, height: 7, borderRadius: 3.5, backgroundColor: ct.indigo }}
+                  />
+                ) : null}
+                <T variant="cellValue">{fact.value}</T>
+              </View>
+            </View>
+          ))}
+        </View>
+      ))}
+      */}
+    </View>
+  );
+}

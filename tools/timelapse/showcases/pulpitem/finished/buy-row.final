@@ -1,0 +1,114 @@
+import { Pressable, View } from 'react-native';
+
+import { drink, money } from '../data/item';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number; step: number; onAdd: () => void };
+
+/**
+ * How many, and the way off the screen.
+ *
+ * **It is not padded by `insets.bottom`.** When the app is not edge-to-edge
+ * the system already reserves that strip, and adding it here counts it twice -
+ * the defect that put an empty band under four screens of a deleted batch
+ * (R1b / I3). The row carries its own 16dp of clearance and nothing more.
+ *
+ * Each stepper disc is a **sibling** of the next, never nested: a
+ * `role="button"` inside another is torn apart by the static web build's HTML
+ * parser (RULES Part 7).
+ */
+export function BuyRow({ margin, height, radius, step, onAdd }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+      }}
+    >
+      <View
+        style={{
+          height,
+          borderRadius: radius,
+          borderWidth: 1,
+          borderColor: ct.line,
+          backgroundColor: ct.white,
+          flexDirection: 'row',
+          alignItems: 'center',
+          paddingHorizontal: 6,
+        }}
+      >
+        <Pressable accessibilityRole="button" accessibilityLabel="One fewer">
+          <View
+            style={{
+              width: step,
+              height: step,
+              borderRadius: step / 2,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="minus" size={16} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+
+        {/* The count carries a ground. A bare digit between the two discs is
+            sixty pixels of ink — under the step probe's floor, which is to say
+            it arrives without anything appearing to happen — and a stepper's
+            count is worth reading anyway. */}
+        <View
+          style={{
+            minWidth: 34,
+            height: 30,
+            borderRadius: 15,
+            backgroundColor: ct.page,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="qty">{String(drink.qty)}</T>
+        </View>
+
+        <Pressable accessibilityRole="button" accessibilityLabel="One more">
+          <View
+            style={{
+              width: step,
+              height: step,
+              borderRadius: step / 2,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Glyph name="plus" size={16} color={ct.ink} strokeWidth={2} />
+          </View>
+        </Pressable>
+      </View>
+
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={`${drink.cta}, ${money(drink.price * drink.qty)}`}
+        onPress={onAdd}
+        style={{ flex: 1 }}
+      >
+        <View
+          style={{
+            height,
+            borderRadius: radius,
+            backgroundColor: ct.dark,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 12,
+          }}
+        >
+          <T variant="cta">{drink.cta}</T>
+          <T variant="ctaPrice">{money(drink.price * drink.qty)}</T>
+        </View>
+      </Pressable>
+    </View>
+  );
+}

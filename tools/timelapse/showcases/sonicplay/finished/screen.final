@@ -1,0 +1,62 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { CoverArt } from '@/features/sonicplay/components/cover-art';
+import { LyricsHandle } from '@/features/sonicplay/components/lyrics-handle';
+import { NowPlaying } from '@/features/sonicplay/components/now-playing';
+import { PlayerBar } from '@/features/sonicplay/components/player-bar';
+import { Scrubber } from '@/features/sonicplay/components/scrubber';
+import { Transport } from '@/features/sonicplay/components/transport';
+import { useLayout } from '@/features/sonicplay/layout';
+import { ct } from '@/features/sonicplay/theme';
+
+/**
+ * Sonic — player.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The sleeve takes the screen's slack (see `layout.ts`), so the foot cannot
+ * open a band. It is free-licensed photography standing in for a fictional
+ * release — the board's own is a real album cover.
+ */
+export default function SonicplayScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <View style={{ paddingTop: L.insets.top }}>
+        <PlayerBar
+          margin={L.margin}
+          height={L.barH}
+          control={L.control}
+          onBack={() => router.back()}
+        />
+
+        <View style={{ height: L.gapBar }} />
+        <CoverArt margin={L.margin} size={L.cover.size} radius={L.cover.radius} />
+
+        <View style={{ height: L.gapCover }} />
+        <NowPlaying margin={L.margin} height={L.titleH} control={L.control} />
+
+        <View style={{ height: L.gapTitle }} />
+        <Scrubber margin={L.margin} height={L.scrubH} />
+
+        <View style={{ height: L.gapScrub }} />
+        <Transport
+          margin={L.margin}
+          height={L.transport.h}
+          play={L.transport.play}
+          item={L.transport.item}
+        />
+
+        <View style={{ height: L.gapTransport }} />
+        <LyricsHandle margin={L.margin} height={L.lyricsH} />
+      </View>
+    </View>
+  );
+}

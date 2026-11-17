@@ -1,0 +1,46 @@
+import { View } from 'react-native';
+
+import { balance, holdings, totalValue, weightedChange } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { height: number };
+
+/**
+ * The portfolio total — the dominant element on the screen (R8).
+ *
+ * **R9: both numbers are computed from the holdings.** The total is their sum
+ * and the percentage is their value-weighted move, so the headline cannot
+ * disagree with the list under it. Both helpers survive an empty array,
+ * because the reveal stages that array one entry at a time (I7).
+ */
+export function BalanceBlock({ height }: Props) {
+  const total = totalValue(holdings);
+  const change = weightedChange(holdings);
+  const up = change >= 0;
+
+  return (
+    <View style={{ height, alignItems: 'center', justifyContent: 'center' }}>
+      {/* STEP 1.10 label
+      <T variant="balanceLabel">{balance.label}</T>
+      */}
+
+      {/* STEP 1.11 t
+      <T variant="balance">
+        ${total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      </T>
+      */}
+
+      {/* STEP 1.12 glyph
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+        <Glyph name="trend" size={16} color={up ? ct.up : ct.down} strokeWidth={2} />
+        <T variant="change" style={{ color: up ? ct.up : ct.down }}>
+          {up ? '+' : ''}
+          {change.toFixed(2)}%
+        </T>
+      </View>
+      */}
+    </View>
+  );
+}

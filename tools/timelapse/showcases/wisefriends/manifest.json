@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/wisefriends/index.tsx",
+  "wordmark": "src/features/wisefriends/components/wordmark.tsx",
+  "friend-field": "src/features/wisefriends/components/friend-field.tsx",
+  "data-trip": "src/features/wisefriends/data/trip.ts",
+  "onboard-foot": "src/features/wisefriends/components/onboard-foot.tsx"
+}

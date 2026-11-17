@@ -1,0 +1,267 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/wordmark"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import wordmark"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/menu-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.02"
+     ]
+    }
+   ],
+   "label": "import menu button"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "<View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/section-tabs"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import section tabs"
+  },
+  {
+   "label": "\"Advisor\"",
+   "op": "entry",
+   "args": [
+    "src/features/vaultperf/data/performance.ts",
+    "advisor"
+   ]
+  },
+  {
+   "label": "\"Assets\"",
+   "op": "entry",
+   "args": [
+    "src/features/vaultperf/data/performance.ts",
+    "assets"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "<View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/return-figure"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import return figure"
+  },
+  {
+   "label": "compare",
+   "op": "jsx",
+   "args": [
+    "src/features/vaultperf/components/return-figure.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "<View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/return-caption"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import return caption"
+  },
+  {
+   "label": "a stray rule",
+   "op": "jsx",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the rule back out",
+   "op": "cutel",
+   "args": [
+    "src/app/vaultperf/index.tsx",
+    "<View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/stat-tiles"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import stat tiles"
+  },
+  {
+   "label": "\"Operational spending\"",
+   "op": "block",
+   "args": [
+    "src/features/vaultperf/data/performance.ts",
+    "spending"
+   ]
+  },
+  {
+   "label": "\"Dividend income\"",
+   "op": "block",
+   "args": [
+    "src/features/vaultperf/data/performance.ts",
+    "dividend"
+   ]
+  },
+  {
+   "label": "\"Custody and fees\"",
+   "op": "block",
+   "args": [
+    "src/features/vaultperf/data/performance.ts",
+    "fees"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "@/features/vaultperf/components/accounts-link"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/vaultperf/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import accounts link"
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-performance",
+     "src/features/vaultperf/data/performance.ts"
+    ],
+    [
+     "return-figure",
+     "src/features/vaultperf/components/return-figure.tsx"
+    ],
+    [
+     "screen",
+     "src/app/vaultperf/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

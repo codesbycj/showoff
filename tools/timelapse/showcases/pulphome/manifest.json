@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/pulphome/index.tsx",
+  "greet-bar": "src/features/pulphome/components/greet-bar.tsx",
+  "kind-chips": "src/features/pulphome/components/kind-chips.tsx",
+  "data-shop": "src/features/pulphome/data/shop.ts",
+  "bottle-list": "src/features/pulphome/components/bottle-list.tsx",
+  "dock": "src/features/pulphome/components/dock.tsx"
+}

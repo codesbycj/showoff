@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/pawsitem/index.tsx",
+  "item-header": "src/features/pawsitem/components/item-header.tsx",
+  "product-hero": "src/features/pawsitem/components/product-hero.tsx",
+  "data-item": "src/features/pawsitem/data/item.ts",
+  "fact-row": "src/features/pawsitem/components/fact-row.tsx",
+  "add-button": "src/features/pawsitem/components/add-button.tsx"
+}

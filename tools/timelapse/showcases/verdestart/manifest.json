@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/verdestart/index.tsx",
+  "hero-panel": "src/features/verdestart/components/hero-panel.tsx",
+  "data-start": "src/features/verdestart/data/start.ts",
+  "welcome-copy": "src/features/verdestart/components/welcome-copy.tsx",
+  "start-actions": "src/features/verdestart/components/start-actions.tsx",
+  "account-foot": "src/features/verdestart/components/account-foot.tsx"
+}

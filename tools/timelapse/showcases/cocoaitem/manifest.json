@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/cocoaitem/index.tsx",
+  "item-hero": "src/features/cocoaitem/components/item-hero.tsx",
+  "data-item": "src/features/cocoaitem/data/item.ts",
+  "qty-row": "src/features/cocoaitem/components/qty-row.tsx",
+  "add-bar": "src/features/cocoaitem/components/add-bar.tsx"
+}

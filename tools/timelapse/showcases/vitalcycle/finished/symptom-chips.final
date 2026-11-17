@@ -1,0 +1,53 @@
+import { Pressable, View } from 'react-native';
+
+import { chips } from '../data/cycle';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { ChipProps, TINT } from './_cycle-parts-shared';
+
+/**
+ * How the day felt.
+ *
+ * Laid out as two explicit rows rather than a wrap, so a reveal can stage one
+ * chip at a time without the rest reflowing underneath it.
+ */
+export function SymptomChips({ margin, height, rowH, gap }: ChipProps) {
+  const rows = [chips.slice(0, 3), chips.slice(3)];
+
+  return (
+    <View style={{ marginHorizontal: margin, height, gap }}>
+      {rows.map((row) => (
+        <View key={row[0]?.id ?? 'empty'} style={{ flexDirection: 'row', gap }}>
+          {row.map((c) => (
+            <Pressable
+              key={c.id}
+              hitSlop={{ top: 8, bottom: 8, left: 2, right: 2 }}
+              accessibilityRole="button"
+              accessibilityLabel={c.label}
+            >
+              {({ pressed }) => (
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 6,
+                    height: rowH,
+                    paddingHorizontal: 12,
+                    borderRadius: rowH / 2,
+                    backgroundColor: TINT[c.tint],
+                    opacity: pressed ? 0.78 : 1,
+                  }}
+                >
+                  <Glyph name={c.glyph} size={14} color={ct.ink} strokeWidth={1.6} />
+                  <T variant="chip">{c.label}</T>
+                </View>
+              )}
+            </Pressable>
+          ))}
+        </View>
+      ))}
+    </View>
+  );
+}

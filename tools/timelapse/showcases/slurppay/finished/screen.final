@@ -1,0 +1,88 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Pressable, View } from 'react-native';
+
+import { AddMethod } from '@/features/slurppay/components/add-method';
+import { AddressRow } from '@/features/slurppay/components/address-row';
+import { Glyph } from '@/features/slurppay/components/glyph';
+import { MethodCard } from '@/features/slurppay/components/method-card';
+import { ScreenBar } from '@/features/slurppay/components/screen-bar';
+import { SummaryRows } from '@/features/slurppay/components/summary-rows';
+import { T } from '@/features/slurppay/components/text';
+import { TotalRow } from '@/features/slurppay/components/total-row';
+import { header } from '@/features/slurppay/data/checkout';
+import { useLayout } from '@/features/slurppay/layout';
+import { ct } from '@/features/slurppay/theme';
+
+/**
+ * Slurp - the checkout.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * Every payment brand is invented and drawn (I1/I4), every figure is computed
+ * from the lines (R9), and the slack lands above the pinned button so the
+ * screen ends on it (I3).
+ */
+export default function SlurppayScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <ScreenBar margin={L.margin} height={L.topH} onBack={() => router.push('/slurpcart')} />
+
+      <View style={{ height: L.gapTop }} />
+      <MethodCard margin={L.margin} rowH={L.method.rowH} radius={L.method.radius} />
+
+      <View style={{ height: L.gapMethods }} />
+      <AddMethod margin={L.margin} height={L.add.h} radius={L.add.radius} />
+
+      <View style={{ height: L.gapAdd }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH }}>
+        <T variant="section">{header.addressSection}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <AddressRow margin={L.margin} height={L.addressH} />
+
+      <View style={{ height: L.gapAddress }} />
+      <View style={{ marginHorizontal: L.margin, height: L.sectionH }}>
+        <T variant="section">{header.summary}</T>
+      </View>
+
+      <View style={{ height: L.gapSection }} />
+      <SummaryRows margin={L.margin} rowH={L.rowH} />
+
+      <View style={{ marginHorizontal: L.margin, height: L.dividerH, justifyContent: 'center' }}>
+        <View style={{ height: 1, backgroundColor: ct.line }} />
+      </View>
+
+      <TotalRow margin={L.margin} height={L.totalH} />
+
+      <View style={{ flex: 1 }} />
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={header.cta}
+        onPress={() => router.push('/slurpdish')}
+      >
+        <View
+          style={{
+            marginHorizontal: L.margin,
+            height: L.cta.h,
+            borderRadius: L.cta.radius,
+            backgroundColor: ct.dark,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="cta">{header.cta}</T>
+        </View>
+      </Pressable>
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

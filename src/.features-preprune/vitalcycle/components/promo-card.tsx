@@ -1,0 +1,62 @@
+import { Pressable, View } from 'react-native';
+
+import { chips, dayUnit, days, headline, logTitle, notes, promo, ranges } from '../data/cycle';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+import { PromoProps } from './_cycle-parts-shared';
+
+/**
+ * The health prompt.
+ *
+ * **The fill is on an absolutely-filled child**, so a reveal that stages the
+ * copy and the button does not open on a solid peach slab (§5.5 / I9).
+ *
+ * The board's own copy — "Control you're looking to track progress," — is a
+ * sentence with no verb and a trailing comma. Rewritten as a label (R5, I1).
+ */
+export function PromoCard({ margin, height, radius, ctaH }: PromoProps) {
+  return (
+    <View style={{ marginHorizontal: margin, height, padding: 16 }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: radius,
+          backgroundColor: ct.accentSoft,
+        }}
+      />
+
+      <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 10 }}>
+        <View style={{ flex: 1 }}>
+          <T variant="promoTitle">{promo.title}</T>
+          <T variant="promoLine">{promo.line}</T>
+        </View>
+        <Glyph name="sparkle" size={22} color={ct.accentDeep} />
+      </View>
+
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={promo.cta}>
+          {({ pressed }) => (
+            <View
+              style={{
+                height: ctaH,
+                borderRadius: ctaH / 2,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: ct.white,
+                opacity: pressed ? 0.85 : 1,
+              }}
+            >
+              <T variant="promoCta">{promo.cta}</T>
+            </View>
+          )}
+        </Pressable>
+      </View>
+    </View>
+  );
+}

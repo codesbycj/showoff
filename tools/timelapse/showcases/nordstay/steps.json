@@ -1,0 +1,383 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/gallery"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import gallery"
+  },
+  {
+   "label": "\"Listing photograph\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/gallery.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/gallery.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/gallery.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "g2",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "g2"
+   ]
+  },
+  {
+   "label": "g3",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "g3"
+   ]
+  },
+  {
+   "label": "g4",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "g4"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/gallery-controls"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import gallery controls"
+  },
+  {
+   "label": "\"Close listing\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/gallery-controls.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "\"Share listing\"",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/gallery-controls.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/stay-title"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import stay title"
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/stay-title.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/stay-title.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/host-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.14"
+     ]
+    }
+   ],
+   "label": "import host row"
+  },
+  {
+   "label": "kind",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/host-row.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "image",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/host-row.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/amenities"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import amenities"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/amenities.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/amenities.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "\"65\" HDTV\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "tv"
+   ]
+  },
+  {
+   "label": "\"Indoor fireplace\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "fire"
+   ]
+  },
+  {
+   "label": "\"Hair dryer\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "dryer"
+   ]
+  },
+  {
+   "label": "\"Washing machine\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "washer"
+   ]
+  },
+  {
+   "label": "\"Dryer\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "tumble"
+   ]
+  },
+  {
+   "label": "\"Refrigerator\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "fridge"
+   ]
+  },
+  {
+   "label": "\"Dishwasher\"",
+   "op": "entry",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "dish"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/check-in-notes"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.27"
+     ]
+    }
+   ],
+   "label": "import check in notes"
+  },
+  {
+   "label": "\"Great check-in experience\"",
+   "op": "block",
+   "args": [
+    "src/features/nordstay/data/stay.ts",
+    "great"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "@/features/nordstay/components/price-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/nordstay/index.tsx",
+      "STEP 1.29"
+     ]
+    }
+   ],
+   "label": "import price bar"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/price-bar.tsx",
+    "STEP 1.30"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/nordstay/components/price-bar.tsx",
+    "STEP 1.31"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/nordstay/index.tsx",
+    "STEP 1.32"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/nordstay/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "amenities",
+     "src/features/nordstay/components/amenities.tsx"
+    ],
+    [
+     "data-stay",
+     "src/features/nordstay/data/stay.ts"
+    ],
+    [
+     "gallery",
+     "src/features/nordstay/components/gallery.tsx"
+    ],
+    [
+     "gallery-controls",
+     "src/features/nordstay/components/gallery-controls.tsx"
+    ],
+    [
+     "host-row",
+     "src/features/nordstay/components/host-row.tsx"
+    ],
+    [
+     "price-bar",
+     "src/features/nordstay/components/price-bar.tsx"
+    ],
+    [
+     "screen",
+     "src/app/nordstay/index.tsx"
+    ],
+    [
+     "stay-title",
+     "src/features/nordstay/components/stay-title.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

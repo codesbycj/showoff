@@ -1,0 +1,44 @@
+import { Pressable, View } from 'react-native';
+
+import { header } from '../data/cart';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/** The page title and its overflow control. */
+export function CartHeader({ margin, height }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      {/* STEP 1.02 title
+      <T variant="title">{header.title}</T>
+      */}
+
+      {/* STEP 1.03 "Cart options"
+      <Pressable accessibilityRole="button" accessibilityLabel="Cart options">
+        <View
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 22,
+            backgroundColor: ct.surface,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Glyph name="more" size={19} color={ct.ink} />
+        </View>
+      </Pressable>
+      */}
+    </View>
+  );
+}

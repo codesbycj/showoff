@@ -69,6 +69,38 @@ function bootSlug() {
   return parts[parts.length - 1];
 }
 
+/**
+ * Point the boot route at the catalog.
+ *
+ * `src/app/index.tsx` is a derived file: `use`, `rm`, `wipe` and `record.js`
+ * all rewrite it as a redirect, which is right for a take — the device should
+ * open straight on the screen being filmed. This puts it back to the wall of
+ * thumbnails afterwards.
+ */
+function writeCatalogBoot() {
+  fs.writeFileSync(
+    BOOT,
+    `import { Catalog } from '@/components/catalog/catalog';
+
+` +
+      `/**
+` +
+      ` * The app opens on the catalog: every showcase, as a wall of thumbnails.
+` +
+      ` *
+` +
+      ` * This file is derived. \`showcase.js use <slug>\` and \`record.js\` replace it
+` +
+      ` * with a boot redirect for a take; \`showcase.js catalog\` puts it back.
+` +
+      ` */
+` +
+      `export default Catalog;
+`,
+    'utf8',
+  );
+}
+
 function writeBoot(slug) {
   fs.writeFileSync(
     BOOT,
@@ -179,6 +211,12 @@ function bootFallback() {
   console.log('no showcases left; boot redirect points at /_sitemap');
 }
 
+if (cmd === 'catalog') {
+  writeCatalogBoot();
+  console.log('boot route now shows the catalog (python tools/catalog.py rebuilds its thumbnails)');
+  process.exit(0);
+}
+
 if (cmd === 'rm') {
   if (!existing().includes(arg)) {
     console.error(`unknown showcase "${arg}" - have: ${existing().join(', ') || 'none'}`);
@@ -216,5 +254,5 @@ if (cmd === 'wipe') {
   process.exit(0);
 }
 
-console.error('usage: showcase.js <new|use|list|rm|wipe> [slug]');
+console.error('usage: showcase.js <new|use|catalog|list|rm|wipe> [slug]');
 process.exit(1);

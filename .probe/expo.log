@@ -1,0 +1,761 @@
+Starting project at C:\Users\CJ\Documents\Project\Post\showoff
+Using src/app as the root directory for Expo Router.
+Starting Metro Bundler
+
+Error while reading cache, falling back to a full crawl:
+ Error: Unable to deserialize cloned data due to invalid or unsupported version.
+    at deserialize (node:v8:435:7)
+    at DiskCacheManager.read (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\@expo\metro-file-map\build\cache\DiskCacheManager.js:55:41)
+    at async FileMap.read (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\@expo\metro-file-map\build\index.js:371:20)
+    at async C:\Users\CJ\Documents\Project\Post\showoff\node_modules\@expo\metro-file-map\build\index.js:262:35
+    at async DependencyGraph.ready (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\metro\src\node-haste\DependencyGraph.js:94:5)
+    at async Bundler.ready (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\metro\src\Bundler.js:62:5)
+    at async IncrementalBundler.ready (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\metro\src\IncrementalBundler.js:310:5)
+    at async Server.ready (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\metro\src\Server.js:1446:5)
+    at async runMetro (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\metro\src\index.flow.js:142:5)
+    at async createConnectMiddleware (C:\Users\CJ\Documents\Project\Post\showoff\node_modules\metro\src\index.flow.js:147:23)
+Waiting on http://localhost:8082
+
+An update for expo is available: 57.0.21 → ~57.0.32
+7 other packages may need updating. Run npx expo install --check for details.
+Logs for your project will appear below.
+λ Bundled 13007ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (2119 modules)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 14257ms node_modules\expo-router\entry.js (2081 modules)
+λ Bundled 4161ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 5030ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 230ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1225ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 1985ms node_modules\expo-router\entry.js (2071 modules)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 107ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 943ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 255ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 912ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 111ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 127ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1047ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 197ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1147ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 96ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 110ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1016ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 214ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 808ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 106ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 127ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1005ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 235ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1127ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 94ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 195ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1509ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 265ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1190ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 177ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 198ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1551ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 216ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1519ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 127ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 68ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1120ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 253ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1006ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 117ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 169ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 998ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 209ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1252ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 103ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 193ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1278ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 281ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1222ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 134ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  ERROR  
+
+Code: genre-grid.tsx
+[0m [90m 24 |[39m     [33m<[39m[33mView[39m style[33m=[39m{{ marginHorizontal[33m:[39m margin[33m,[39m height[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m 25 |[39m       {rows[33m.[39mmap((row) [33m=>[39m (
+[31m[1m>[22m[39m[90m 26 |[39m         [33m<[39m[33mView[39m key[33m=[39m{row[[35m0[39m][33m?[39m[33m.[39mid [33m?[39m[33m?[39m [32m'empty'[39m} style[33m=[39m{{ flexDirection[33m:[39m [32m'row'[39m[33m,[39m gap[33m:[39m gutter }}[33m>[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m           {row[33m.[39mmap((g) [33m=>[39m (
+ [90m 28 |[39m             [33m<[39m[33mPressable[39m
+ [90m 29 |[39m               key[33m=[39m{g[33m.[39mid}[0m
+Call Stack
+  rows.map$argument_0 (src\features\sonicexplore\components\genre-grid.tsx:26:9)
+  GenreGrid (src\features\sonicexplore\components\genre-grid.tsx:25:13)
+  SonicexploreScreen (src\app\sonicexplore\index.tsx:47:7)
+  RootLayout (src\app\_layout.tsx:27:9)
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 150ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1105ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 90ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1358ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 101ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 58ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 935ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 250ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 855ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 95ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 164ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1385ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 210ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1586ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 122ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 130ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1040ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 267ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1192ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 171ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 191ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1640ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 206ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1325ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 102ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 804ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 3530ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 261ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1174ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 139ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 163ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1973ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 381ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 2094ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 182ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+λ Bundled 308ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 2459ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 436ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 2782ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 172ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+λ Bundled 316ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 2071ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 429ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 2161ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 180ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 160ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1394ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 273ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 1499ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 150ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 288ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1520ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 198ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1717ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 137ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 205ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1617ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 335ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1294ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 138ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 324ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1760ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 309ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1707ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 138ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 203ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1727ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 341ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1475ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 167ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 374ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1436ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 7430ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 9050ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 5199ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 20549ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 24437ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 661ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+props.pointerEvents is deprecated. Use style.pointerEvents
+Web Bundled 4158ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 295ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+λ Bundled 284ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 2094ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 431ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1850ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 210ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".
+λ Bundled 217ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 2717ms node_modules\expo-router\entry.js (1 module)
+λ Bundled 306ms node_modules\expo\node_modules\@expo\cli\node_modules\@expo\router-server\node\render.js (1 module)
+Web Bundled 1817ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 198ms node_modules\expo-router\entry.js (1 module)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Web  LOG  Running application "main" with appParams:
+ {"hydrate": undefined, "rootTag": "#root"} 
+Development-level warnings: ON.
+Performance optimizations: OFF.
+Web  WARN  props.pointerEvents is deprecated. Use style.pointerEvents
+Web  WARN  "shadow*" style props are deprecated. Use "boxShadow".

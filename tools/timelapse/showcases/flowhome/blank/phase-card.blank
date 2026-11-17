@@ -1,0 +1,117 @@
+import { Image, View } from 'react-native';
+
+import { bands, CYCLE_DAY, CYCLE_LENGTH, cycleFraction, daysToPeriod, phase } from '../data/home';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { margin: number; width: number; height: number; radius: number };
+
+/**
+ * Where the cycle is today — the dominant element on the screen (R8).
+ *
+ * **R9 twice.** "Period in N days" is `CYCLE_LENGTH - CYCLE_DAY`, and the
+ * marker on the band sits at `CYCLE_DAY / CYCLE_LENGTH` of its width — the
+ * board prints "Day 9 of 28" and "Period in 19 days" beside a marker placed
+ * by eye. Each band's width is its own share of the cycle, so the four always
+ * add up to the whole.
+ *
+ * **The photograph replaces an illustration** (I4): the board draws a woman
+ * lifting, and an illustration of a person is still a picture of one.
+ */
+export function PhaseCard({ margin, width, height, radius }: Props) {
+  const tone = { rose: ct.rose, lilac: ct.lilac, amber: ct.amber, mint: ct.mint } as const;
+  const total = bands.reduce((sum, band) => sum + band.days, 0) || 1;
+  const photoH = Math.round(height * 0.52);
+
+  return (
+    <View style={{ marginHorizontal: margin, height, borderRadius: radius, overflow: 'hidden' }}>
+      {/* STEP 1.13 view
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: ct.surface,
+          borderRadius: radius,
+        }}
+      />
+      */}
+
+      {/* STEP 1.14 image
+      <Image
+        source={phase.image}
+        style={{ width, height: photoH }}
+        resizeMode="cover"
+        accessibilityLabel={phase.name}
+      />
+      */}
+
+      {/* STEP 1.15 view
+      <View style={{ position: 'absolute', top: 12, left: 12 }}>
+        <View
+          style={{
+            height: 26,
+            paddingHorizontal: 11,
+            borderRadius: 13,
+            backgroundColor: ct.white,
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="chip">
+            Day {CYCLE_DAY} of {CYCLE_LENGTH}
+          </T>
+        </View>
+      </View>
+      */}
+
+      {/* STEP 1.16 name
+      <View style={{ flex: 1, paddingHorizontal: 16, paddingTop: 10, paddingBottom: 14 }}>
+        <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 10 }}>
+          <T variant="phase" style={{ flex: 1 }} numberOfLines={1}>
+            {phase.name}
+          </T>
+          <T variant="phaseMeta">Period in {daysToPeriod()} days</T>
+        </View>
+
+        <T variant="sessionMeta">{phase.body}</T>
+
+        <View style={{ flex: 1 }} />
+
+        <View>
+          <View style={{ flexDirection: 'row', gap: 3 }}>
+            {bands.map((band) => (
+              <View
+                key={band.id}
+                style={{
+                  flex: band.days / total,
+                  height: 7,
+                  borderRadius: 4,
+                  backgroundColor: tone[band.colour],
+                  opacity: 0.85,
+                }}
+              />
+            ))}
+          </View>
+
+          <View
+            style={{
+              position: 'absolute',
+              left: `${cycleFraction() * 100}%`,
+              top: -4,
+              marginLeft: -8,
+              width: 16,
+              height: 16,
+              borderRadius: 8,
+              borderWidth: 3.5,
+              borderColor: ct.ink,
+              backgroundColor: ct.white,
+            }}
+          />
+        </View>
+      </View>
+      */}
+    </View>
+  );
+}

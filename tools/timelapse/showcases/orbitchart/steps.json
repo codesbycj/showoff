@@ -1,0 +1,314 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "@/features/orbitchart/components/chart-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import chart header"
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/chart-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/chart-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Bar view\"",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/chart-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "\"Line view\"",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/chart-header.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "@/features/orbitchart/components/balance-chart"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import balance chart"
+  },
+  {
+   "label": "line",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "line",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "polygon",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "day",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/balance-chart.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/orbitchart/index.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orbitchart/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "@/features/orbitchart/components/range-tabs"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import range tabs"
+  },
+  {
+   "label": "\"7D\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitchart/data/chart.ts",
+    "7d"
+   ]
+  },
+  {
+   "label": "\"30D\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitchart/data/chart.ts",
+    "30d"
+   ]
+  },
+  {
+   "label": "\"1Y\"",
+   "op": "entry",
+   "args": [
+    "src/features/orbitchart/data/chart.ts",
+    "1y"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "@/features/orbitchart/components/activity-sheet"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/orbitchart/index.tsx",
+      "STEP 1.21"
+     ]
+    }
+   ],
+   "label": "import activity sheet"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/activity-sheet.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/activity-sheet.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/activity-sheet.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/orbitchart/components/activity-sheet.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "\"Stefan Kutch\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitchart/data/chart.ts",
+    "stefan"
+   ]
+  },
+  {
+   "label": "\"Martin Varela\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitchart/data/chart.ts",
+    "martin"
+   ]
+  },
+  {
+   "label": "\"Sophie Varela\"",
+   "op": "block",
+   "args": [
+    "src/features/orbitchart/data/chart.ts",
+    "sophie"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/orbitchart/index.tsx",
+    "STEP 1.29"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/orbitchart/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "activity-sheet",
+     "src/features/orbitchart/components/activity-sheet.tsx"
+    ],
+    [
+     "balance-chart",
+     "src/features/orbitchart/components/balance-chart.tsx"
+    ],
+    [
+     "chart-header",
+     "src/features/orbitchart/components/chart-header.tsx"
+    ],
+    [
+     "data-chart",
+     "src/features/orbitchart/data/chart.ts"
+    ],
+    [
+     "screen",
+     "src/app/orbitchart/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

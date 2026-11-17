@@ -1,0 +1,329 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "@/features/skyticket/components/ticket-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import ticket header"
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/ticket-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/ticket-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "@/features/skyticket/components/flight-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "STEP 1.04"
+     ]
+    }
+   ],
+   "label": "import flight card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.05"
+   ]
+  },
+  {
+   "label": "airline",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "from code",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "route arc",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "to code",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/flight-card.tsx",
+    "STEP 1.11"
+   ]
+  },
+  {
+   "label": "\"GATE\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyticket/data/ticket.ts",
+    "gate"
+   ]
+  },
+  {
+   "label": "\"CLASS\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyticket/data/ticket.ts",
+    "class"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/route-arc.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/route-arc.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/route-arc.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "@/features/skyticket/components/passenger-card"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "STEP 1.17"
+     ]
+    }
+   ],
+   "label": "import passenger card"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/passenger-card.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "\"SEAT\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/passenger-card.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "\"Mrs. Samantha Willem\"",
+   "op": "block",
+   "args": [
+    "src/features/skyticket/data/ticket.ts",
+    "p2"
+   ]
+  },
+  {
+   "label": "\"Mr. Victor Adeyemi\"",
+   "op": "block",
+   "args": [
+    "src/features/skyticket/data/ticket.ts",
+    "p3"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "@/features/skyticket/components/barcode"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import barcode"
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/barcode.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "reference",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/barcode.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "@/features/skyticket/components/save-button"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyticket/index.tsx",
+      "STEP 1.25"
+     ]
+    }
+   ],
+   "label": "import save button"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/save-button.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/skyticket/components/save-button.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/skyticket/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/skyticket/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "barcode",
+     "src/features/skyticket/components/barcode.tsx"
+    ],
+    [
+     "data-ticket",
+     "src/features/skyticket/data/ticket.ts"
+    ],
+    [
+     "flight-card",
+     "src/features/skyticket/components/flight-card.tsx"
+    ],
+    [
+     "passenger-card",
+     "src/features/skyticket/components/passenger-card.tsx"
+    ],
+    [
+     "route-arc",
+     "src/features/skyticket/components/route-arc.tsx"
+    ],
+    [
+     "save-button",
+     "src/features/skyticket/components/save-button.tsx"
+    ],
+    [
+     "screen",
+     "src/app/skyticket/index.tsx"
+    ],
+    [
+     "ticket-header",
+     "src/features/skyticket/components/ticket-header.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

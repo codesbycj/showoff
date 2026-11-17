@@ -1,0 +1,239 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/wisefriends/index.tsx",
+      "@/features/wisefriends/components/wordmark"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/wisefriends/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import wordmark"
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/wordmark.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "name",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/wordmark.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/wisefriends/index.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/wisefriends/index.tsx",
+    "<View style={{ width: 11, height: 11 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/wisefriends/index.tsx",
+      "@/features/wisefriends/components/friend-field"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/wisefriends/index.tsx",
+      "STEP 1.06"
+     ]
+    }
+   ],
+   "label": "import friend field"
+  },
+  {
+   "label": "circle",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/friend-field.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "label": "note",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/friend-field.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "\"Mei\"",
+   "op": "block",
+   "args": [
+    "src/features/wisefriends/data/trip.ts",
+    "mei"
+   ]
+  },
+  {
+   "label": "\"Tom\"",
+   "op": "block",
+   "args": [
+    "src/features/wisefriends/data/trip.ts",
+    "tom"
+   ]
+  },
+  {
+   "label": "\"Page 2 of 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/wisefriends/data/trip.ts",
+    "p2"
+   ]
+  },
+  {
+   "label": "\"Page 3 of 3\"",
+   "op": "entry",
+   "args": [
+    "src/features/wisefriends/data/trip.ts",
+    "p3"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/wisefriends/index.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/wisefriends/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/wisefriends/index.tsx",
+      "@/features/wisefriends/components/onboard-foot"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/wisefriends/index.tsx",
+      "STEP 1.15"
+     ]
+    }
+   ],
+   "label": "import onboard foot"
+  },
+  {
+   "label": "display",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/onboard-foot.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "body",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/onboard-foot.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/onboard-foot.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/onboard-foot.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/wisefriends/components/onboard-foot.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/wisefriends/index.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/wisefriends/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-trip",
+     "src/features/wisefriends/data/trip.ts"
+    ],
+    [
+     "friend-field",
+     "src/features/wisefriends/components/friend-field.tsx"
+    ],
+    [
+     "onboard-foot",
+     "src/features/wisefriends/components/onboard-foot.tsx"
+    ],
+    [
+     "screen",
+     "src/app/wisefriends/index.tsx"
+    ],
+    [
+     "wordmark",
+     "src/features/wisefriends/components/wordmark.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

@@ -1,0 +1,104 @@
+/**
+ * Everything nebuhome says.
+ *
+ * **Every token is invented.** The board lists ETH and BTC with their marks;
+ * this wallet holds Nova, Orbit, Solis and Linx, drawn as ideas rather than
+ * traced (I1, I4).
+ *
+ * **R9: the balance is the sum of the holdings and the change is their
+ * value-weighted move.** The board's own numbers do not survive a calculator —
+ * it prices 0.0018 ETH at $3.51 against $2,115.88 a coin (that is $3.81) and
+ * 0.028 BTC at $5.02 against $83,240.71 (that is $2,331).
+ *
+ * Arrays are annotated, never inferred: the reveal stages them one entry at a
+ * time and an inferred type loses any field that only appears on a later row
+ * (RULES §5.4, I7).
+ */
+
+export const brand = { name: 'Nebula' };
+
+export const account = {
+  welcome: 'Welcome back',
+  name: 'Jonatan',
+  avatar: require('../../../../assets/images/nebuhome/me.jpg'),
+};
+
+export const balance = { label: 'Total balance' };
+
+export type Action = { id: string; label: string; glyph: 'receive' | 'send' | 'buy' };
+
+/** "Receive", not the board's "Recieve" — I1: fix it silently, say so once. */
+export const actions: Action[] = [
+  { id: 'receive', label: 'Receive', glyph: 'receive' },
+  // STEP 1.17 "Send"
+  // { id: 'send', label: 'Send', glyph: 'send' },
+  // STEP 1.18 "Buy crypto"
+  // { id: 'buy', label: 'Buy crypto', glyph: 'buy' },
+];
+
+export const sections = { portfolio: 'Portfolio' };
+
+export type Holding = {
+  id: string;
+  symbol: string;
+  mark: 'nova' | 'orbit' | 'solis' | 'link';
+  /** Unit price in dollars. */
+  price: number;
+  /** 24h move, as a percentage. */
+  change: number;
+  /** Units held. */
+  amount: number;
+  /** Only the featured row carries an insight; declared, not inferred. */
+  insight?: { lead: string; body: string };
+};
+
+export const holdings: Holding[] = [
+  {
+    id: 'nova',
+    symbol: 'NOVA',
+    mark: 'nova',
+    price: 2115.88,
+    change: 3.5,
+    amount: 24.5,
+    insight: {
+      lead: 'NOVA is up 3.5% in the last 6 hours.',
+      body: 'Adding 10% would rebalance your portfolio.',
+    },
+  },
+  // STEP 1.13 orbit
+  // { id: 'orbit', symbol: 'ORBT', mark: 'orbit', price: 83240.71, change: 2.4, amount: 0.62 },
+  // STEP 1.14 solis
+  // { id: 'solis', symbol: 'SOL', mark: 'solis', price: 143.26, change: -1.2, amount: 112 },
+  // STEP 1.15 linx
+  // { id: 'linx', symbol: 'LINX', mark: 'link', price: 17.84, change: 4.9, amount: 420 },
+];
+
+/**
+ * Guarded for the empty case, because the reveal stages `holdings` one entry
+ * at a time: `reduce` carries an initial value and the weighted change divides
+ * by a total clamped to at least one cent (I7).
+ */
+export function totalValue(rows: Holding[]) {
+  return rows.reduce((sum, row) => sum + row.price * row.amount, 0);
+}
+
+export function weightedChange(rows: Holding[]) {
+  const total = Math.max(totalValue(rows), 0.01);
+  return rows.reduce((sum, row) => sum + row.change * ((row.price * row.amount) / total), 0);
+}
+
+export type Tab = {
+  id: string;
+  label: string;
+  glyph: 'home' | 'swap' | 'services' | 'support';
+};
+
+export const tabs: Tab[] = [
+  { id: 'home', label: 'Home', glyph: 'home' },
+  // STEP 1.28 "Swap"
+  // { id: 'swap', label: 'Swap', glyph: 'swap' },
+  // STEP 1.29 "Services"
+  // { id: 'services', label: 'Services', glyph: 'services' },
+  // STEP 1.30 "Support"
+  // { id: 'support', label: 'Support', glyph: 'support' },
+];

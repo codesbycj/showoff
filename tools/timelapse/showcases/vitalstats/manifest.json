@@ -1,0 +1,8 @@
+{
+  "screen": "src/app/vitalstats/index.tsx",
+  "back-row": "src/features/vitalstats/components/back-row.tsx",
+  "headline": "src/features/vitalstats/components/headline.tsx",
+  "data-stats": "src/features/vitalstats/data/stats.ts",
+  "stat-tabs": "src/features/vitalstats/components/stat-tabs.tsx",
+  "leaderboard": "src/features/vitalstats/components/leaderboard.tsx"
+}

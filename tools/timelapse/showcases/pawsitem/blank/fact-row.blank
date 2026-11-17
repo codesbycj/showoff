@@ -1,0 +1,83 @@
+import { Pressable, View } from 'react-native';
+
+import { product, total } from '../data/item';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * Weight, quantity and price.
+ *
+ * **R9: the price is the unit price times the quantity**, computed, so the
+ * figure beside the stepper and the figure the button charges cannot drift
+ * apart.
+ */
+export function FactRow({ margin, height }: Props) {
+  /** The visual disc is 34dp; the control around it is 44 (I2 / R7). */
+  const tap = {
+    width: 44,
+    height: 44,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  const step = {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    borderWidth: 1,
+    borderColor: ct.line,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  };
+
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <T variant="price">{product.weight}</T>
+
+      {/* STEP 1.14 "One fewer"
+      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="One fewer"
+          hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+        >
+          <View style={tap}>
+            <View style={step}>
+              <Glyph name="minus" size={16} color={ct.ink} strokeWidth={2} />
+            </View>
+          </View>
+        </Pressable>
+
+        <T variant="rating">{String(product.qty)}</T>
+
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="One more"
+          hitSlop={{ top: 6, bottom: 6, left: 6, right: 6 }}
+        >
+          <View style={tap}>
+            <View style={step}>
+              <Glyph name="plus" size={16} color={ct.ink} strokeWidth={2} />
+            </View>
+          </View>
+        </Pressable>
+      </View>
+      */}
+
+      {/* STEP 1.15 t
+      <T variant="price">${total()}</T>
+      */}
+    </View>
+  );
+}

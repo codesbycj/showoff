@@ -1,0 +1,68 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+import { AccountsLink } from '@/features/vaultperf/components/accounts-link';
+import { MenuButton } from '@/features/vaultperf/components/menu-button';
+import { ReturnCaption } from '@/features/vaultperf/components/return-caption';
+import { ReturnFigure } from '@/features/vaultperf/components/return-figure';
+import { SectionTabs } from '@/features/vaultperf/components/section-tabs';
+import { StatTiles } from '@/features/vaultperf/components/stat-tiles';
+import { Wordmark } from '@/features/vaultperf/components/wordmark';
+import { useLayout } from '@/features/vaultperf/layout';
+import { ct } from '@/features/vaultperf/theme';
+
+/**
+ * Vaultix - performance.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The tiles take the remainder, so the screen is full to the bottom edge with
+ * no band under it (I3).
+ */
+export default function VaultperfScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      <View
+        style={{
+          marginHorizontal: L.margin,
+          height: L.topH,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Wordmark height={L.topH} />
+        <MenuButton size={44} />
+      </View>
+
+      <View style={{ height: L.gapTop }} />
+      <SectionTabs
+        margin={L.margin}
+        height={L.pillH}
+        onSelect={(route) => router.push(route as never)}
+      />
+
+      <View style={{ height: L.gapPill }} />
+      <ReturnFigure margin={L.margin} height={L.figureH} />
+
+      <View style={{ height: L.gapFigure }} />
+      <ReturnCaption margin={L.margin} height={L.captionH} />
+
+      <View style={{ height: L.gapCaption }} />
+      <StatTiles margin={L.margin} gap={L.tile.gap} height={L.tile.h} radius={L.tile.radius} />
+
+      <View style={{ height: 10 }} />
+      <AccountsLink height={L.footerH} />
+
+      <View style={{ height: L.padBottom }} />
+    </View>
+  );
+}

@@ -1,0 +1,53 @@
+import { Pressable, View } from 'react-native';
+
+import { scene } from '../data/room';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; radius: number };
+
+/**
+ * What is being placed, and the way through to it.
+ *
+ * The board crops this row at the bottom of its frame; inventing the row a
+ * board cuts is the sanctioned fix for a short screen, and it is also what
+ * gives the reveal something to say between the controls and the rail (I3).
+ *
+ * The card carries its own white ground because it sits on photography, where
+ * the frame behind a string cannot be relied on for 4.5:1 (R4).
+ */
+export function PieceCard({ margin, height, radius }: Props) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={`${scene.piece}, ${scene.detail}`}>
+      <View
+        style={{
+          marginHorizontal: margin,
+          height,
+          borderRadius: radius,
+          backgroundColor: ct.white,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: 16,
+        }}
+      >
+        <View>
+          {/* STEP 1.13 piece
+          <T variant="pieceName">{scene.piece}</T>
+          */}
+          {/* STEP 1.14 size
+          <T variant="pieceMeta">{scene.size}</T>
+          */}
+        </View>
+
+        {/* STEP 1.15 detail
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+          <T variant="detail">{scene.detail}</T>
+          <Glyph name="chevron" size={14} color={ct.ink} strokeWidth={2} />
+        </View>
+        */}
+      </View>
+    </Pressable>
+  );
+}

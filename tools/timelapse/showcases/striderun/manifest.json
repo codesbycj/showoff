@@ -1,0 +1,10 @@
+{
+  "screen": "src/app/striderun/index.tsx",
+  "run-header": "src/features/striderun/components/run-header.tsx",
+  "duration-block": "src/features/striderun/components/duration-block.tsx",
+  "stat-grid": "src/features/striderun/components/stat-grid.tsx",
+  "splits-strip": "src/features/striderun/components/splits-strip.tsx",
+  "data-run": "src/features/striderun/data/run.ts",
+  "effort-bar": "src/features/striderun/components/effort-bar.tsx",
+  "run-controls": "src/features/striderun/components/run-controls.tsx"
+}

@@ -1,0 +1,96 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+
+import { CategoryRail } from '@/features/zonehome/components/category-rail';
+import { HomeHeader } from '@/features/zonehome/components/home-header';
+import { SearchBar } from '@/features/zonehome/components/search-bar';
+import { QuickHead } from '@/features/zonehome/components/quick-head';
+import { QuickList } from '@/features/zonehome/components/quick-list';
+import { RestaurantRail } from '@/features/zonehome/components/restaurant-rail';
+import { SectionHead } from '@/features/zonehome/components/section-head';
+import { TabBar } from '@/features/zonehome/components/tab-bar';
+import { useLayout } from '@/features/zonehome/layout';
+import { ct } from '@/features/zonehome/theme';
+
+/**
+ * Food Zone — home.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The category tiles and the restaurant cards are **photographs** (I4) — food
+ * is a picture *of* something, and drawing it produces cartoons.
+ */
+export default function ZonehomeScreen() {
+  const L = useLayout();
+  const [tab, setTab] = useState('home');
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="light" />
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: L.scrollPad }}
+      >
+        <HomeHeader
+          width={L.W}
+          height={L.header.h}
+          radius={L.header.radius}
+          margin={L.margin}
+          topInset={L.insets.top}
+          barH={L.barH}
+          gapBar={L.gapBar}
+          promoH={L.promoH}
+        />
+
+        <View style={{ height: L.gapHeader }} />
+        <CategoryRail height={L.cats.h} margin={L.margin} tile={L.cats.tile} gap={L.cats.gap} />
+
+        <View style={{ height: L.gapCats }} />
+        <SectionHead margin={L.margin} height={L.sectionH} />
+
+        <View style={{ height: L.gapSection }} />
+        <RestaurantRail
+          margin={L.margin}
+          width={L.card.w}
+          photoH={L.card.photoH}
+          radius={L.card.radius}
+          gap={L.card.gap}
+          onSelect={() => router.push('/zonemenu')}
+        />
+
+        <View style={{ height: L.gapRail }} />
+        <QuickHead margin={L.margin} height={L.quickHeadH} />
+
+        <View style={{ height: L.gapQuickHead }} />
+        <QuickList
+          margin={L.margin}
+          rowH={L.quick.rowH}
+          thumb={L.quick.thumb}
+          radius={L.quick.radius}
+          onSelect={() => router.push('/zonemenu')}
+        />
+      </ScrollView>
+
+      <SearchBar
+        margin={L.margin}
+        height={L.search.h}
+        control={L.search.control}
+        top={L.header.h - L.search.h / 2}
+      />
+
+      <TabBar
+        height={L.tabs.h}
+        bottomInset={L.insets.bottom}
+        cart={L.tabs.cart}
+        cartLift={L.tabs.cartLift}
+        value={tab}
+        onSelect={(id) => (id === 'cart' ? router.push('/zoneitem') : setTab(id))}
+      />
+    </View>
+  );
+}

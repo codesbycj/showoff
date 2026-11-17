@@ -1,0 +1,319 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyresults/index.tsx",
+      "@/features/skyresults/components/results-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyresults/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import results header"
+  },
+  {
+   "label": "\"Back\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/results-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "title",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/results-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"More options\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/results-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyresults/index.tsx",
+      "@/features/skyresults/components/sort-chips"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyresults/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import sort chips"
+  },
+  {
+   "label": "\"Preferred airlines\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyresults/data/results.ts",
+    "airlines"
+   ]
+  },
+  {
+   "label": "\"Flight time\"",
+   "op": "entry",
+   "args": [
+    "src/features/skyresults/data/results.ts",
+    "time"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/skyresults/index.tsx",
+    "STEP 1.08"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/skyresults/index.tsx",
+    "<View style={{ width: 17, height: 17 }} />"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/skyresults/index.tsx",
+      "@/features/skyresults/components/offer-list"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/skyresults/index.tsx",
+      "STEP 1.10"
+     ]
+    }
+   ],
+   "label": "import offer list"
+  },
+  {
+   "label": "auric",
+   "op": "block",
+   "args": [
+    "src/features/skyresults/data/results.ts",
+    "auric"
+   ]
+  },
+  {
+   "label": "nord",
+   "op": "block",
+   "args": [
+    "src/features/skyresults/data/results.ts",
+    "nord"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "airline",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.15"
+   ]
+  },
+  {
+   "label": "\"CHEAPEST\"",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.16"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.17"
+   ]
+  },
+  {
+   "label": "from code",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.18"
+   ]
+  },
+  {
+   "label": "from city",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "route arc",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.20"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.21"
+   ]
+  },
+  {
+   "label": "to code",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.22"
+   ]
+  },
+  {
+   "label": "to city",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.23"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.24"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.25"
+   ]
+  },
+  {
+   "label": "per",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.26"
+   ]
+  },
+  {
+   "label": "cta",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/offer-card.tsx",
+    "STEP 1.27"
+   ]
+  },
+  {
+   "label": "path",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/route-arc.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/route-arc.tsx",
+    "STEP 1.29"
+   ]
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/skyresults/components/route-arc.tsx",
+    "STEP 1.30"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/skyresults/index.tsx",
+    "STEP 1.31"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/skyresults/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-results",
+     "src/features/skyresults/data/results.ts"
+    ],
+    [
+     "offer-card",
+     "src/features/skyresults/components/offer-card.tsx"
+    ],
+    [
+     "results-header",
+     "src/features/skyresults/components/results-header.tsx"
+    ],
+    [
+     "route-arc",
+     "src/features/skyresults/components/route-arc.tsx"
+    ],
+    [
+     "screen",
+     "src/app/skyresults/index.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

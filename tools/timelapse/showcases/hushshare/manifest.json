@@ -1,0 +1,7 @@
+{
+  "screen": "src/app/hushshare/index.tsx",
+  "session-label": "src/features/hushshare/components/session-label.tsx",
+  "link-row": "src/features/hushshare/components/link-row.tsx",
+  "target-row": "src/features/hushshare/components/target-row.tsx",
+  "data-share": "src/features/hushshare/data/share.ts"
+}

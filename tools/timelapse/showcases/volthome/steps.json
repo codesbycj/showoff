@@ -1,0 +1,343 @@
+{
+ "1": [
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/shop-header"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.01"
+     ]
+    }
+   ],
+   "label": "import shop header"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/shop-header.tsx",
+    "STEP 1.02"
+   ]
+  },
+  {
+   "label": "label",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/shop-header.tsx",
+    "STEP 1.03"
+   ]
+  },
+  {
+   "label": "\"Notifications\"",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/shop-header.tsx",
+    "STEP 1.04"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/search-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.05"
+     ]
+    }
+   ],
+   "label": "import search bar"
+  },
+  {
+   "label": "glyph",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/search-bar.tsx",
+    "STEP 1.06"
+   ]
+  },
+  {
+   "label": "hint",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/search-bar.tsx",
+    "STEP 1.07"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/promo-banner"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.08"
+     ]
+    }
+   ],
+   "label": "import promo banner"
+  },
+  {
+   "label": "circle",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/promo-banner.tsx",
+    "STEP 1.09"
+   ]
+  },
+  {
+   "label": "lead",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/promo-banner.tsx",
+    "STEP 1.10"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/section-row"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.11"
+     ]
+    }
+   ],
+   "label": "import section row"
+  },
+  {
+   "label": "t",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/section-row.tsx",
+    "STEP 1.12"
+   ]
+  },
+  {
+   "label": "view",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/section-row.tsx",
+    "STEP 1.13"
+   ]
+  },
+  {
+   "label": "see all",
+   "op": "jsx",
+   "args": [
+    "src/features/volthome/components/section-row.tsx",
+    "STEP 1.14"
+   ]
+  },
+  {
+   "label": "\"Wearables\"",
+   "op": "block",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "wear"
+   ]
+  },
+  {
+   "label": "\"Cameras\"",
+   "op": "block",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "camera"
+   ]
+  },
+  {
+   "label": "\"Accessories\"",
+   "op": "block",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "acc"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/category-rail"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.18"
+     ]
+    }
+   ],
+   "label": "import category rail"
+  },
+  {
+   "label": "section row",
+   "op": "jsx",
+   "args": [
+    "src/app/volthome/index.tsx",
+    "STEP 1.19"
+   ]
+  },
+  {
+   "label": "\"Voltline Field Watch, 42mm\"",
+   "op": "block",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "watch"
+   ]
+  },
+  {
+   "label": "\"Voltline Nomad Charge Case\"",
+   "op": "block",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "case"
+   ]
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/product-grid"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.22"
+     ]
+    }
+   ],
+   "label": "import product grid"
+  },
+  {
+   "ops": [
+    {
+     "op": "imp",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "@/features/volthome/components/tab-bar"
+     ]
+    },
+    {
+     "op": "jsx",
+     "args": [
+      "src/app/volthome/index.tsx",
+      "STEP 1.23"
+     ]
+    }
+   ],
+   "label": "import tab bar"
+  },
+  {
+   "label": "\"Catalog\"",
+   "op": "entry",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "catalog"
+   ]
+  },
+  {
+   "label": "\"Cart\"",
+   "op": "entry",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "cart"
+   ]
+  },
+  {
+   "label": "\"Favorites\"",
+   "op": "entry",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "saved"
+   ]
+  },
+  {
+   "label": "\"Profile\"",
+   "op": "entry",
+   "args": [
+    "src/features/volthome/data/home.ts",
+    "profile"
+   ]
+  },
+  {
+   "label": "a stray gap above it",
+   "op": "jsx",
+   "args": [
+    "src/app/volthome/index.tsx",
+    "STEP 1.28"
+   ]
+  },
+  {
+   "label": "take the gap back out",
+   "op": "cutel",
+   "args": [
+    "src/app/volthome/index.tsx",
+    "<View style={{ width: 23, height: 23 }} />"
+   ]
+  },
+  {
+   "op": "final",
+   "args": [
+    [
+     "data-home",
+     "src/features/volthome/data/home.ts"
+    ],
+    [
+     "promo-banner",
+     "src/features/volthome/components/promo-banner.tsx"
+    ],
+    [
+     "screen",
+     "src/app/volthome/index.tsx"
+    ],
+    [
+     "search-bar",
+     "src/features/volthome/components/search-bar.tsx"
+    ],
+    [
+     "section-row",
+     "src/features/volthome/components/section-row.tsx"
+    ],
+    [
+     "shop-header",
+     "src/features/volthome/components/shop-header.tsx"
+    ]
+   ],
+   "label": "tidy up"
+  }
+ ]
+}

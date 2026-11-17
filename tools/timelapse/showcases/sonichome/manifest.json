@@ -1,0 +1,12 @@
+{
+  "screen": "src/app/sonichome/index.tsx",
+  "greeting-bar": "src/features/sonichome/components/greeting-bar.tsx",
+  "data-home": "src/features/sonichome/data/home.ts",
+  "category-label": "src/features/sonichome/components/category-label.tsx",
+  "category-chips": "src/features/sonichome/components/category-chips.tsx",
+  "song-rail": "src/features/sonichome/components/song-rail.tsx",
+  "collection-head": "src/features/sonichome/components/collection-head.tsx",
+  "collection-card": "src/features/sonichome/components/collection-card.tsx",
+  "track-list": "src/features/sonichome/components/track-list.tsx",
+  "dock": "src/features/sonichome/components/dock.tsx"
+}

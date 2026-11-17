@@ -1,0 +1,22 @@
+import { View } from 'react-native';
+
+import { splash } from '../data/start';
+import { T } from './text';
+
+type Props = { margin: number; height: number };
+
+/**
+ * The headline - the dominant element on the screen (R8).
+ *
+ * Its two lines are two elements rather than one string with a newline in it:
+ * the reveal paints one element per step, and a two-line display that lands
+ * whole is the biggest thing on the screen arriving in one beat (I9).
+ */
+export function SplashTitle({ margin, height }: Props) {
+  return (
+    <View style={{ marginHorizontal: margin, height, justifyContent: 'center' }}>
+      <T variant="display">{splash.displayTop}</T>
+      <T variant="display">{splash.displayBottom}</T>
+    </View>
+  );
+}

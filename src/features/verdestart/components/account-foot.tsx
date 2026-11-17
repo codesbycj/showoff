@@ -1,0 +1,41 @@
+import { Pressable, View } from 'react-native';
+
+import { welcome } from '../data/start';
+import { T } from './text';
+
+type Props = { height: number; onPress: () => void };
+
+/**
+ * The line under the buttons.
+ *
+ * A text link's tap target is its own line height (19dp here), so the anchor
+ * carries hit slop rather than being left at the size of its glyphs (R7).
+ */
+export function AccountFoot({ height, onPress }: Props) {
+  return (
+    <View
+      style={{
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6,
+      }}
+    >
+      {/* STEP 1.18 foot lead
+      <T variant="footLead">{welcome.footLead}</T>
+      */}
+
+      {/* STEP 1.19 foot link
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={welcome.footLink}
+        hitSlop={{ top: 14, bottom: 14, left: 10, right: 10 }}
+        onPress={onPress}
+      >
+        <T variant="footLink">{welcome.footLink}</T>
+      </Pressable>
+      */}
+    </View>
+  );
+}

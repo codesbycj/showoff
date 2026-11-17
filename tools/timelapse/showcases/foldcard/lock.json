@@ -1,0 +1,23 @@
+{
+ "assets/images/foldcard/CREDITS.md": "a3ad621ca904433371068a583e39b3a1e2091cec5a715a0b732357bbc01ce5d8",
+ "src/app/_layout.tsx": "9c9ba1ad3f5f69e957586fc31eac16d41928b676f47c7ebca5e08c52f77c1f4f",
+ "src/app/foldcard/index.tsx": "3ed27f5fefb679b828a2f040677ab72a1a2234c30a386b0e63906f201b96d92a",
+ "src/app/index.tsx": "448b169a4f1c93f7084ae891ca01453e642b906e8595f0adb2f1948b8b6dc0dc",
+ "src/components/ui/index.ts": "ee1263a7d730455b0bd9a89b33834b384c729dda505335eac038c0f3488eae6e",
+ "src/components/ui/screen.tsx": "a7b5e4b09fb058cc786b4a6e15261aac47c9ce764fc7f699d644edb92d7cd243",
+ "src/components/ui/text.tsx": "08689e01eda91dcf8a7b3e9789f93c1b4b20b4a129b6af8a01e13f77503bcab9",
+ "src/features/foldcard/components/card-face.tsx": "868f372b6355441f639c4821c8dc653b8647acc256690e39137d4e3345e4a60d",
+ "src/features/foldcard/components/country-row.tsx": "16c486a4248e5b89a20862535ceb94b212b34e432011b961465d81d0c440bf1e",
+ "src/features/foldcard/components/field-list.tsx": "0cc96d0070707ff538be51f6980708ee191e128ff9a3b974c4909620a028012d",
+ "src/features/foldcard/components/folder.tsx": "850658f67b44fca3369a852a128f358d7b87cdd5bf60406a5defcf193e285946",
+ "src/features/foldcard/components/glyph.tsx": "af3e847b1733f2d978b9db264d64643f3df38b4928fc202039b0c7d261eb9790",
+ "src/features/foldcard/components/text.tsx": "37c6e0a258ce2170030254f261544d20d348569b9dacb668051481bb48804172",
+ "src/features/foldcard/data/card.ts": "f38fe1e657bcfdf85f106c4f2e4a579083ffc20f8a9225d0826a59fa115f0d05",
+ "src/features/foldcard/layout.ts": "dd79e5e8763ef177a25214f24721154f842d44e55d21412676dc4a2513b2c220",
+ "src/features/foldcard/theme.ts": "f66a7c3961141f282e507db6b08633637e05fc2a003b3aa105d0be4448dba84c",
+ "src/features/foldcard/use-insets.ts": "775a32d744a1a98d77db2a8cbb5615f7baa84cd13673722d40ab22be5106bc51",
+ "src/global.css": "5de87649bbc460da5cf3db084431329c3e1bd3474e309057100a0d43655811ff",
+ "src/theme/fonts.ts": "26386c3efc952f8e523ce759e8968ae1358a637f15d1e9bf9a8be6795645a1e1",
+ "src/theme/use-app-fonts.ts": "c70f1913ca61ce6576d7c7403c6705c477781e84fd165da3ac6d6bcaf1c97233",
+ "tailwind.config.js": "c157367d27cc8e3e549d7d04422d45332f020eab1fa543cdce2a35ec08093329"
+}

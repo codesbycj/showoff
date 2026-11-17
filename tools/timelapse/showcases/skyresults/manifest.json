@@ -1,0 +1,9 @@
+{
+  "screen": "src/app/skyresults/index.tsx",
+  "results-header": "src/features/skyresults/components/results-header.tsx",
+  "sort-chips": "src/features/skyresults/components/sort-chips.tsx",
+  "data-results": "src/features/skyresults/data/results.ts",
+  "offer-list": "src/features/skyresults/components/offer-list.tsx",
+  "offer-card": "src/features/skyresults/components/offer-card.tsx",
+  "route-arc": "src/features/skyresults/components/route-arc.tsx"
+}

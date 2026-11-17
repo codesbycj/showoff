@@ -1,0 +1,95 @@
+import { router } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+
+// STEP 1.01 import cart header
+// import { CartHeader } from '@/features/cocoacart/components/cart-header';
+// STEP 1.08 import cart lines
+// import { CartLines } from '@/features/cocoacart/components/cart-lines';
+// STEP 1.21 import pay button
+// import { PayButton } from '@/features/cocoacart/components/pay-button';
+// STEP 1.13 import totals card
+// import { TotalsCard } from '@/features/cocoacart/components/totals-card';
+import { useLayout } from '@/features/cocoacart/layout';
+import { ct } from '@/features/cocoacart/theme';
+
+/**
+ * Cocoa - the cart.
+ *
+ * Assembly, never markup: a list of imports and the blocks they mount, in the
+ * order they appear, because `stage.js` reads this file as the description of
+ * its own reveal.
+ *
+ * The dark sheet is the remainder and runs to the foot, so there is no band to
+ * leave under it (I3).
+ */
+export default function CocoacartScreen() {
+  const L = useLayout();
+
+  return (
+    <View style={{ flex: 1, backgroundColor: ct.page }}>
+      <StatusBar style="dark" />
+
+      <View style={{ paddingTop: L.insets.top }} />
+      {/* STEP 1.01 cart header
+      <CartHeader margin={L.margin} height={L.headerH} />
+      */}
+
+      <View style={{ height: L.gapHeader }} />
+      <View style={{ flex: 1 }}>
+        {/* STEP 1.05 view
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            borderTopLeftRadius: L.sheet.radius,
+            borderTopRightRadius: L.sheet.radius,
+            backgroundColor: ct.dark,
+          }}
+        />
+        */}
+
+        <View style={{ height: L.sheet.pad }} />
+        {/* STEP 1.08 cart lines
+        <View style={{ marginHorizontal: L.sheet.pad }}>
+          <CartLines height={L.line.h} thumb={L.line.thumb} radius={L.line.radius} />
+        </View>
+        */}
+
+        <View style={{ flex: 1 }} />
+        {/* STEP 1.13 totals card
+        <View style={{ marginHorizontal: L.sheet.pad }}>
+          <TotalsCard height={L.totals.h} radius={L.totals.radius} />
+        </View>
+        */}
+
+        <View style={{ height: 14 }} />
+        {/* STEP 1.21 pay button
+        <PayButton
+          margin={L.sheet.pad}
+          height={L.cta.h}
+          radius={L.cta.radius}
+          onPress={() => router.push('/cocoahome')}
+        />
+        */}
+
+        <View style={{ height: L.footer }} />
+      </View>
+      {/* STEP 1.03 a stray rule | FIX 1.04 take the rule back out
+      <View style={{ position: 'absolute', left: 14, top: 162, width: 120, height: 7, backgroundColor: '#8F8F8F', zIndex: 9 }} />
+      */}
+        {/* STEP 1.06 a stray rule | FIX 1.07 take the rule back out
+        <View style={{ position: 'absolute', left: 22, top: 186, width: 120, height: 11, backgroundColor: '#8F8F8F', zIndex: 9 }} />
+        */}
+        {/* STEP 1.11 a stray rule | FIX 1.12 take the rule back out
+        <View style={{ position: 'absolute', left: 18, top: 174, width: 120, height: 9, backgroundColor: '#8F8F8F', zIndex: 9 }} />
+        */}
+        {/* STEP 1.19 a stray rule | FIX 1.20 take the rule back out
+        <View style={{ position: 'absolute', left: 26, top: 198, width: 120, height: 13, backgroundColor: '#8F8F8F', zIndex: 9 }} />
+        */}
+    </View>
+  );
+}

@@ -1,0 +1,78 @@
+import { Pressable, View } from 'react-native';
+
+import { options, reminder } from '../data/cal';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = { margin: number; height: number; rowH: number; radius: number };
+
+/**
+ * Who a reminder goes to.
+ *
+ * **R5: each row is a title and one line of what it means** - the board's
+ * third row trails off into "Send to: @... - notifies them directly", which is
+ * a sentence pretending to be a label.
+ *
+ * Each row is its own 64dp control, well over R7's floor.
+ */
+export function ReminderOptions({ margin, height, rowH, radius }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        borderRadius: radius,
+        backgroundColor: ct.surface,
+        paddingHorizontal: 14,
+      }}
+    >
+      {/* STEP 1.15 title
+      <View style={{ height: 44, justifyContent: 'center' }}>
+        <T variant="section">{reminder.title}</T>
+      </View>
+      */}
+
+      {/* STEP 1.16 title
+      {options.map((option, i) => (
+        <Pressable
+          key={option.id}
+          accessibilityRole="button"
+          accessibilityLabel={`${option.title}. ${option.body}`}
+        >
+          <View
+            style={{
+              height: rowH,
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 12,
+              borderTopWidth: i === 0 ? 0 : 1,
+              borderTopColor: ct.line,
+            }}
+          >
+            <View
+              style={{
+                width: 38,
+                height: 38,
+                borderRadius: 12,
+                backgroundColor: ct.tray,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Glyph name={option.glyph} size={18} color={ct.ink} strokeWidth={1.7} />
+            </View>
+
+            <View style={{ flex: 1 }}>
+              <T variant="optionTitle">{option.title}</T>
+              <T variant="optionBody">{option.body}</T>
+            </View>
+
+            <Glyph name="chevron" size={15} color={ct.faint} strokeWidth={2} />
+          </View>
+        </Pressable>
+      ))}
+      */}
+    </View>
+  );
+}

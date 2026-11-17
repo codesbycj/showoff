@@ -1,0 +1,69 @@
+import { Pressable, View } from 'react-native';
+
+import { sections } from '../data/home';
+import { ct } from '../theme';
+import { Glyph } from './glyph';
+import { T } from './text';
+
+type Props = {
+  margin: number;
+  height: number;
+  label: string;
+  /** The flash sale's clock, already formatted; absent on other sections. */
+  timer?: string;
+};
+
+/**
+ * A section heading with its "see all" link, and — on the sale — its clock.
+ *
+ * The link's tap target is the row's height plus hit slop, because a text
+ * link's own box is only its line height (R7).
+ */
+export function SectionRow({ margin, height, label, timer }: Props) {
+  return (
+    <View
+      style={{
+        marginHorizontal: margin,
+        height,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      {/* STEP 1.12 t
+      <T variant="section">{label}</T>
+      */}
+
+      {/* STEP 1.13 view
+      {timer ? (
+        <View
+          style={{
+            paddingHorizontal: 10,
+            height: 24,
+            borderRadius: 8,
+            backgroundColor: ct.acid,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <T variant="timer">{timer}</T>
+        </View>
+      ) : null}
+      */}
+
+      <View style={{ flex: 1 }} />
+
+      {/* STEP 1.14 see all
+      <Pressable
+        accessibilityRole="link"
+        accessibilityLabel={`${sections.seeAll} ${label}`}
+        hitSlop={{ top: 14, bottom: 14, left: 14, right: 10 }}
+        style={{ flexDirection: 'row', alignItems: 'center', gap: 4 }}
+      >
+        <T variant="seeAll">{sections.seeAll}</T>
+        <Glyph name="chevron" size={14} color={ct.muted} strokeWidth={2} />
+      </Pressable>
+      */}
+    </View>
+  );
+}

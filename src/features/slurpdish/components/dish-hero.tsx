@@ -1,0 +1,64 @@
+import { useId } from 'react';
+import { Image, View } from 'react-native';
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
+
+import { dish, money } from '../data/dish';
+import { ct } from '../theme';
+import { T } from './text';
+
+type Props = { width: number; height: number; margin: number };
+
+/**
+ * The dish - the dominant element on the screen (R8).
+ *
+ * **The caption sits on a scrim** so every string clears 4.5:1 over any frame
+ * of the photograph (R4); `audit.js` skips text over photography, so this one
+ * is built not to need judging by eye.
+ *
+ * The scrim is an `<svg>` gradient rather than `expo-linear-gradient`, which
+ * flips a diagonal on web, and its id comes from `useId` because gradient ids
+ * are document-global there and everything else would render in the first
+ * colour (I8).
+ */
+export function DishHero({ width, height, margin }: Props) {
+  const gid = useId();
+
+  return (
+    <View style={{ width, height }}>
+      {/* The photograph and its scrim are one element: the picture as it is
+          actually seen. Staged apart, the scrim was a second step repainting
+          the same 18-36% of the frame the photograph had just painted. */}
+      <View style={{ position: 'absolute', top: 0, left: 0, width, height }}>
+        <Image
+          source={dish.image}
+          style={{ position: 'absolute', top: 0, left: 0, width, height }}
+          resizeMode="cover"
+        />
+
+        <Svg width={width} height={height} style={{ position: 'absolute', top: 0, left: 0 }}>
+          <Defs>
+            <LinearGradient id={gid} x1="0" y1="0" x2="1" y2="0">
+              <Stop offset="0" stopColor="#1F1F1F" stopOpacity="0.92" />
+              <Stop offset="0.62" stopColor="#1F1F1F" stopOpacity="0" />
+            </LinearGradient>
+          </Defs>
+          <Rect x="0" y="0" width={width} height={height} fill={`url(#${gid})`} />
+        </Svg>
+      </View>
+
+      {/* STEP 1.04 name
+      <View style={{ marginHorizontal: margin, marginTop: 14 }}>
+        <T variant="heroTitle">{dish.name}</T>
+        <T variant="heroSub">{dish.sub}</T>
+
+        <View style={{ flexDirection: 'row', alignItems: 'flex-start', gap: 3, marginTop: 10 }}>
+          <T variant="heroCur" style={{ marginTop: 6 }}>
+            $
+          </T>
+          <T variant="heroPrice">{money(dish.unit).slice(1)}</T>
+        </View>
+      </View>
+      */}
+    </View>
+  );
+}
